@@ -1,0 +1,95 @@
+info:
+  name: Get All Bank
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/bank"
+  headers:
+    - name: x-token
+      value: "{{master_xtoken}}"
+  body:
+    type: json
+    data: ""
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/bank"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{master_xtoken}}"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 08 Apr 2025 02:36:34 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "372"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "page": 1,
+                  "pageSize": 10,
+                  "total_items": 2,
+                  "banks": [
+                      {
+                          "bank_id": 1,
+                          "bank_name": "bank central sejahtera",
+                          "bi_code": "BSC123",
+                          "is_active": true,
+                          "user_create": "john_doe",
+                          "created_at": "2025-03-18T14:08:41+07:00"
+                      },
+                      {
+                          "bank_id": 2,
+                          "bank_name": "bank rakyat maju",
+                          "bi_code": "BRM456",
+                          "is_active": true,
+                          "user_create": "jane_smith",
+                          "created_at": "2025-04-07T10:30:00+07:00"
+                      }
+                  ]
+              }
+          }

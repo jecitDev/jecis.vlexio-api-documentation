@@ -1,0 +1,229 @@
+info:
+  name: Get Province List
+  type: http
+  seq: 5
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/regions/provinces?is_active=true"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: is_active
+      value: "true"
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL_SERVICE_BROKER}}/v1/regions/provinces"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: admin
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Fri, 31 Oct 2025 00:40:21 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "1933"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "total_items": 38,
+                  "provinces": [
+                      {
+                          "province": "Jawa Tengah",
+                          "total_regions": 8563
+                      },
+                      {
+                          "province": "Jawa Timur",
+                          "total_regions": 8494
+                      },
+                      {
+                          "province": "Aceh",
+                          "total_regions": 6500
+                      },
+                      {
+                          "province": "Sumatera Utara",
+                          "total_regions": 6110
+                      },
+                      {
+                          "province": "Jawa Barat",
+                          "total_regions": 5957
+                      },
+                      {
+                          "province": "Nusa Tenggara Timur",
+                          "total_regions": 3442
+                      },
+                      {
+                          "province": "Sumatera Selatan",
+                          "total_regions": 3258
+                      },
+                      {
+                          "province": "Sulawesi Selatan",
+                          "total_regions": 3058
+                      },
+                      {
+                          "province": "Lampung",
+                          "total_regions": 2651
+                      },
+                      {
+                          "province": "Papua Pegunungan",
+                          "total_regions": 2627
+                      },
+                      {
+                          "province": "Sulawesi Tenggara",
+                          "total_regions": 2287
+                      },
+                      {
+                          "province": "Kalimantan Barat",
+                          "total_regions": 2145
+                      },
+                      {
+                          "province": "Sulawesi Tengah",
+                          "total_regions": 2017
+                      },
+                      {
+                          "province": "Kalimantan Selatan",
+                          "total_regions": 2016
+                      },
+                      {
+                          "province": "Riau",
+                          "total_regions": 1862
+                      },
+                      {
+                          "province": "Sulawesi Utara",
+                          "total_regions": 1839
+                      },
+                      {
+                          "province": "Jambi",
+                          "total_regions": 1585
+                      },
+                      {
+                          "province": "Kalimantan Tengah",
+                          "total_regions": 1571
+                      },
+                      {
+                          "province": "Banten",
+                          "total_regions": 1552
+                      },
+                      {
+                          "province": "Bengkulu",
+                          "total_regions": 1513
+                      },
+                      {
+                          "province": "Sumatera Barat",
+                          "total_regions": 1265
+                      },
+                      {
+                          "province": "Maluku",
+                          "total_regions": 1235
+                      },
+                      {
+                          "province": "Papua Tengah",
+                          "total_regions": 1208
+                      },
+                      {
+                          "province": "Maluku Utara",
+                          "total_regions": 1185
+                      },
+                      {
+                          "province": "Nusa Tenggara Barat",
+                          "total_regions": 1166
+                      },
+                      {
+                          "province": "Kalimantan Timur",
+                          "total_regions": 1038
+                      },
+                      {
+                          "province": "Papua Barat Daya",
+                          "total_regions": 1013
+                      },
+                      {
+                          "province": "Papua",
+                          "total_regions": 999
+                      },
+                      {
+                          "province": "Papua Barat",
+                          "total_regions": 824
+                      },
+                      {
+                          "province": "Gorontalo",
+                          "total_regions": 729
+                      },
+                      {
+                          "province": "Bali",
+                          "total_regions": 716
+                      },
+                      {
+                          "province": "Papua Selatan",
+                          "total_regions": 690
+                      },
+                      {
+                          "province": "Sulawesi Barat",
+                          "total_regions": 648
+                      },
+                      {
+                          "province": "Kalimantan Utara",
+                          "total_regions": 482
+                      },
+                      {
+                          "province": "Daerah Istimewa Yogyakarta",
+                          "total_regions": 438
+                      },
+                      {
+                          "province": "Kepulauan Riau",
+                          "total_regions": 418
+                      },
+                      {
+                          "province": "Kepulauan Bangka Belitung",
+                          "total_regions": 393
+                      },
+                      {
+                          "province": "DKI Jakarta",
+                          "total_regions": 267
+                      }
+                  ]
+              }
+          }

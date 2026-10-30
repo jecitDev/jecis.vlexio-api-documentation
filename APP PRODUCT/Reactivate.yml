@@ -1,0 +1,103 @@
+info:
+  name: Reactivate
+  type: http
+  seq: 7
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/app_product/reactivate/:product_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  params:
+    - name: product_id
+      value: c59a1873-7e7d-44b6-a06c-4f093f59f687
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"updated_at\": \"2024-03-13T09:00:00+07:00\",\r
+
+      \    \"user_update\": \"nando\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Reactivate
+    request:
+      url: "{{BASE_URL}}/v1/app_product/reactivate/:product_id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: product_id
+          value: c59a1873-7e7d-44b6-a06c-4f093f59f687
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"updated_at\": \"2024-03-13T09:00:00+07:00\",\r
+
+          \    \"user_update\": \"nando\"\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Wed, 29 May 2024 09:08:36 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "136"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "product_id": "c59a1873-7e7d-44b6-a06c-4f093f59f687",
+                  "updated_at": "2024-03-13T09:00:00+07:00",
+                  "user_update": "nando"
+              }
+          }

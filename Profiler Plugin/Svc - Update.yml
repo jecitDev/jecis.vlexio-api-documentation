@@ -1,0 +1,114 @@
+info:
+  name: Svc - Update
+  type: http
+  seq: 4
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/profilerplugins/:id/:company_id/"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: id
+      value: "31"
+      type: path
+    - name: company_id
+      value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+      type: path
+  body:
+    type: json
+    data: "{\r\n    \"company_id\": \"2da6a1bd-ba62-43ec-91f8-4085d5d6d498\",\r\n    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r\n    \"profiler_name\": \"Whatsapp KATA AI\",\r\n    \"profiler_description\": \"Whatsapp KATA AI - Whatsapp Configuration\",\r\n    \"profiler_type\": \"ProfilerType-02\",\r\n    \"profiler_config\": {\r\n        \"url\": \"https://api-whatsapp.kata.ai/v1/messages\",\r\n        \"username\": \"jecis-mtg\",\r\n        \"password\": \"\",\r\n        \"token\": \"\",\r\n        \"whatsapp_type\":\"template\",\r\n        \"whatsapp_template_name\":\"test 123\",\r\n        \"whatsapp_recipient_type\":\"individual\",\r\n        \"whatsapp_namespace\":\"123123123\",\r\n        \"whatsapp_language\":\"id\",\r\n        \"smtp_host\": \"\",\r\n        \"smtp_port\": 0,\r\n        \"smtp_username\": \"\",\r\n        \"smtp_password\": \"\",\r\n        \"smtp_enable_ssl\": true,\r\n        \"smtp_enable_tls\": false\r\n    },\r\n    \"is_active\": true,\r\n    \"user_update\": \"Admin1\",\r\n    \"updated_at\": \"2024-04-23T14:10:56+07:00\"\r\n}"
+  auth:
+    type: bearer
+    token: "{{xtoken}}"
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: "Svc - Update #1-240424"
+    request:
+      url: "{{BASE_URL}}/v1/profilerplugins/:id/:company_id/"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: id
+          value: "4"
+          type: path
+        - name: company_id
+          value: "1"
+          type: path
+      body:
+        type: json
+        data: "{\r\n    \"business_unit_id\": \"1,2\",\r\n    \"profiler_name\": \"SEDNA MENTENG Whatsapp\",\r\n    \"profiler_description\": \"SEDNA MENTENG - Whatsapp Configuration\",\r\n    \"profiler_type\": \"ProfilerType-02\",\r\n    \"profiler_config\": {\r\n        \"url\": \"https://api-whatsapp.kata.ai/v1/messages\",\r\n        \"username\": \"jecis-mtg\",\r\n        \"password\": \"\",\r\n        \"token\": \"\",\r\n        \"smtp_host\": \"\",\r\n        \"smtp_port\": 0,\r\n        \"smtp_username\": \"\",\r\n        \"smtp_password\": \"\",\r\n        \"smtp_enable_ssl\": true,\r\n        \"smtp_enable_tls\": false\r\n    },\r\n    \"is_active\": true,\r\n    \"user_update\": \"Checker1\",\r\n    \"updated_at\": \"2024-04-23T15:10:56+07:00\"\r\n}"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Wed, 24 Apr 2024 08:09:38 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "704"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "profiler_id": 4,
+                  "company_id": "1",
+                  "business_unit_id": "1,2",
+                  "profiler_name": "SEDNA MENTENG Whatsapp",
+                  "profiler_description": "SEDNA MENTENG - Whatsapp Configuration",
+                  "profiler_type": "ProfilerType-02",
+                  "profiler_config": {
+                      "url": "https://api-whatsapp.kata.ai/v1/messages",
+                      "username": "jecis-mtg",
+                      "password": "",
+                      "token": "",
+                      "smtp_host": "",
+                      "smtp_port": 0,
+                      "smtp_username": "",
+                      "smtp_password": "",
+                      "smtp_enable_ssl": true,
+                      "smtp_enable_tls": false
+                  },
+                  "is_active": true,
+                  "user_create": "Admin1",
+                  "created_at": "2024-04-23T14:10:56+07:00",
+                  "user_update": "Checker1",
+                  "updated_at": "2024-04-23T15:10:56+07:00"
+              }
+          }

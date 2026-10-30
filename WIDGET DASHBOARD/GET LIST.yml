@@ -1,0 +1,129 @@
+info:
+  name: GET LIST
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/WidgetDashboard?page=1&page_size=10&sort_by=name&sort_order=ASC&is_active=true"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: page_size
+      value: "10"
+      type: query
+    - name: sort_by
+      value: name
+      type: query
+    - name: sort_order
+      value: ASC
+      type: query
+    - name: keywords
+      value: ""
+      type: query
+      disabled: true
+    - name: is_active
+      value: "true"
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: GET LIST
+    request:
+      url: "{{BASE_URL}}/v1/WidgetDashboard?page=1&page_size=10&sort_by=name&sort_order=ASC&is_active=true"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: page_size
+          value: "10"
+          type: query
+        - name: sort_by
+          value: name
+          type: query
+        - name: sort_order
+          value: ASC
+          type: query
+        - name: keywords
+          value: ""
+          type: query
+          disabled: true
+        - name: is_active
+          value: "true"
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 18 Nov 2024 08:51:25 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "291"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "page": 1,
+                  "page_size": 10,
+                  "total_items": 1,
+                  "WidgetDashboards": [
+                      {
+                          "id": "9f0485ab-d06e-4f50-9c8e-6a0302a57038",
+                          "name": "Allergy",
+                          "name_lang": "root.widget.dashboard.allergy",
+                          "component": "allergy",
+                          "user_create": "21170",
+                          "created_at": "2024-11-18T08:00:00+07:00",
+                          "is_active": true
+                      }
+                  ]
+              }
+          }

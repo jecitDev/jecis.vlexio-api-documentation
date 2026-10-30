@@ -1,0 +1,7 @@
+info:
+  name: PENERIMA UANG
+  type: folder
+  seq: 90
+
+request:
+  auth: inherit

@@ -1,0 +1,112 @@
+info:
+  name: Get Regencies By Province
+  type: http
+  seq: 6
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/regions/provinces/:province/regencies?is_active=true"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: is_active
+      value: "true"
+      type: query
+    - name: province
+      value: dki jakarta
+      type: path
+  body:
+    type: json
+    data: ""
+  auth: inherit
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL_SERVICE_BROKER}}/v1/regions/provinces/:province/regencies?is_active=true"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: admin
+      params:
+        - name: is_active
+          value: "true"
+          type: query
+        - name: province
+          value: DKI Jakarta
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Fri, 31 Oct 2025 01:15:10 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "440"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "province": "DKI Jakarta",
+                  "total_items": 6,
+                  "regencies": [
+                      {
+                          "regency": "Administrasi Jakarta Barat",
+                          "total_regions": 56
+                      },
+                      {
+                          "regency": "Administrasi Jakarta Pusat",
+                          "total_regions": 44
+                      },
+                      {
+                          "regency": "Administrasi Jakarta Selatan",
+                          "total_regions": 65
+                      },
+                      {
+                          "regency": "Administrasi Jakarta Timur",
+                          "total_regions": 65
+                      },
+                      {
+                          "regency": "Administrasi Jakarta Utara",
+                          "total_regions": 31
+                      },
+                      {
+                          "regency": "Administrasi Kepulauan Seribu",
+                          "total_regions": 6
+                      }
+                  ]
+              }
+          }

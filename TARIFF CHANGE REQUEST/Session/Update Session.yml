@@ -1,0 +1,271 @@
+info:
+  name: Update Session
+  type: http
+  seq: 3
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/tariff-requests/session/item/:item_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: item_id
+      value: 5f0b808e-2f02-46c3-95a0-28e93ca377d2
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"session_id\": \"d1b250fa-6185-4057-8134-61ff2ba5e2fc\",\r
+
+      \    \"mode\": \"modify\", // modify or remove\r
+
+      \    \"item_name\": \"AC SPLIT 1 PK DAIKINN #edit\",\r
+
+      \    \"is_allow_discount\": true,\r
+
+      \    \"components\": [\r
+
+      \        {\r
+
+      \            \"additionals\": [\r
+
+      \                {\r
+
+      \                    \"additional_id\": \"addition-001\",\r
+
+      \                    \"additional_name\": \"APD\",\r
+
+      \                    \"amount\": \"600000.00\",\r
+
+      \                    \"billed_to_patient\": true,\r
+
+      \                    \"is_not_paid_on_cross\": false\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"additional_id\": \"addition-002\",\r
+
+      \                    \"additional_name\": \"Premi Lasik\",\r
+
+      \                    \"amount\": \"100000.00\",\r
+
+      \                    \"billed_to_patient\": false,\r
+
+      \                    \"is_not_paid_on_cross\": true\r
+
+      \                }\r
+
+      \            ],\r
+
+      \            \"allow_discount\": true,\r
+
+      \            \"amount\": \"10.00\",\r
+
+      \            \"deductions\": [\r
+
+      \                {\r
+
+      \                    \"amount\": \"5.00\",\r
+
+      \                    \"deduction_id\": \"deduct-001\",\r
+
+      \                    \"deduction_name\": \"Togetherness Fee\",\r
+
+      \                    \"is_percent\": false\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"amount\": \"10.00\",\r
+
+      \                    \"deduction_id\": \"deduct-002\",\r
+
+      \                    \"deduction_name\": \"Togetherness\",\r
+
+      \                    \"is_percent\": true\r
+
+      \                }\r
+
+      \            ],\r
+
+      \            \"is_supervision\": true,\r
+
+      \            \"supervision\": {\r
+
+      \                \"dpjp_percentage\": 70,\r
+
+      \                \"supervision_percentage\": 30\r
+
+      \            },\r
+
+      \            \"tariff_component_id\": \"01\"\r
+
+      \        }\r
+
+      \    ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Update Session
+    request:
+      url: "{{BASE_URL}}/v1/tariff-requests/session/item/:item_id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: item_id
+          value: 5f0b808e-2f02-46c3-95a0-28e93ca377d2
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"session_id\": \"d1b250fa-6185-4057-8134-61ff2ba5e2fc\",\r
+
+          \    \"mode\": \"modify\", // modify or remove\r
+
+          \    \"item_name\": \"AC SPLIT 1 PK DAIKINN #edit\",\r
+
+          \    \"is_allow_discount\": true,\r
+
+          \    \"components\": [\r
+
+          \        {\r
+
+          \            \"additionals\": [\r
+
+          \                {\r
+
+          \                    \"additional_id\": \"addition-001\",\r
+
+          \                    \"additional_name\": \"APD\",\r
+
+          \                    \"amount\": \"600000.00\",\r
+
+          \                    \"billed_to_patient\": true,\r
+
+          \                    \"is_not_paid_on_cross\": false\r
+
+          \                },\r
+
+          \                {\r
+
+          \                    \"additional_id\": \"addition-002\",\r
+
+          \                    \"additional_name\": \"Premi Lasik\",\r
+
+          \                    \"amount\": \"100000.00\",\r
+
+          \                    \"billed_to_patient\": false,\r
+
+          \                    \"is_not_paid_on_cross\": true\r
+
+          \                }\r
+
+          \            ],\r
+
+          \            \"allow_discount\": true,\r
+
+          \            \"amount\": \"10.00\",\r
+
+          \            \"deductions\": [\r
+
+          \                {\r
+
+          \                    \"amount\": \"5.00\",\r
+
+          \                    \"deduction_id\": \"deduct-001\",\r
+
+          \                    \"deduction_name\": \"Togetherness Fee\",\r
+
+          \                    \"is_percent\": false\r
+
+          \                },\r
+
+          \                {\r
+
+          \                    \"amount\": \"10.00\",\r
+
+          \                    \"deduction_id\": \"deduct-002\",\r
+
+          \                    \"deduction_name\": \"Togetherness\",\r
+
+          \                    \"is_percent\": true\r
+
+          \                }\r
+
+          \            ],\r
+
+          \            \"is_supervision\": true,\r
+
+          \            \"supervision\": {\r
+
+          \                \"dpjp_percentage\": 70,\r
+
+          \                \"supervision_percentage\": 30\r
+
+          \            },\r
+
+          \            \"tariff_component_id\": \"01\"\r
+
+          \        }\r
+
+          \    ]\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: date
+          value: Wed, 30 Sep 2026 09:40:02 GMT
+        - name: content-type
+          value: application/json
+        - name: content-length
+          value: "66"
+        - name: x-xss-protection
+          value: "0"
+        - name: x-content-type-options
+          value: nosniff
+        - name: x-frame-options
+          value: SAMEORIGIN
+        - name: cross-origin-embedder-policy
+          value: require-corp
+        - name: cross-origin-opener-policy
+          value: same-origin
+        - name: cross-origin-resource-policy
+          value: same-origin
+        - name: origin-agent-cluster
+          value: ?1
+        - name: referrer-policy
+          value: no-referrer
+        - name: x-dns-prefetch-control
+          value: off
+        - name: x-download-options
+          value: noopen
+        - name: x-permitted-cross-domain-policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+            "code": 200,
+            "data": {
+              "message": "Successfully update session item"
+            }
+          }

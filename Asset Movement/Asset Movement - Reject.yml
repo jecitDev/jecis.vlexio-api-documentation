@@ -1,0 +1,101 @@
+info:
+  name: Asset Movement - Reject
+  type: http
+  seq: 11
+
+http:
+  method: PATCH
+  url: http://127.0.0.1:8080/v1/AssetMovement/:movement_id/reject
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: movement_id
+      value: 41a6f078-e3ca-4205-9d9d-45281f3533a4
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"user_update\": \"rick \",\r
+
+      \    \"updated_at\": \"2024-03-13T13:24:42+08:00\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Asset Movement - Reject API
+    request:
+      url: http://127.0.0.1:8080/v1/AssetMovement/:movement_id/reject
+      method: PATCH
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: movement_id
+          value: 41a6f078-e3ca-4205-9d9d-45281f3533a4
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"user_update\": \"rick \",\r
+
+          \    \"updated_at\": \"2024-03-13T13:24:42+08:00\"\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 26 Feb 2026 21:53:11 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "137"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "movement_id": "41a6f078-e3ca-4205-9d9d-45281f3533a4",
+                  "user_update": "rick ",
+                  "updated_at": "2026-02-27T04:53:10+07:00"
+              }
+          }

@@ -1,0 +1,159 @@
+info:
+  name: Insert
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/examsetups"
+  headers:
+    - name: x-token
+      value: "{{medical_record_xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"company_id\": \"2da6a1bd-ba62-43ec-91f8-4085d5d6d498\",\r
+
+      \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+      \    \"version_form_id\": 0,\r
+
+      \    \"form_category_sr_id\": \"FC-01\",\r
+
+      \    \"exam_setup_title\": \"Pediatric Eye Examination\",\r
+
+      \    \"exam_setup_desc\": \"Desc Pediatric Eye Examination\",\r
+
+      \    \"exam_setup_type\": \"Document\",\r
+
+      \    \"exam_setup_data\": null,\r
+
+      \    \"module_in_used\": \"SURGERY\",\r
+
+      \    \"widget_name\": \"\",\r
+
+      \    \"widget_serial_no\": \"\",\r
+
+      \    \"status\": \"1\",\r
+
+      \    \"is_active\": true,\r
+
+      \    \"user_create\": \"rama\",\r
+
+      \    \"created_at\": \"2024-07-31T09:18:21+07:00\",\r
+
+      \    \"user_update\": \"rama\",\r
+
+      \    \"updated_at\": \"2024-09-30T11:08:45+07:00\"\r
+
+      }"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/examsetups"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{medical_record_xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"company_id\": \"2da6a1bd-ba62-43ec-91f8-4085d5d6d498\",\r
+
+          \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+          \    \"version_form_id\": 0,\r
+
+          \    \"form_category_sr_id\": \"FC-01\",\r
+
+          \    \"exam_setup_title\": \"Pediatric Eye Examination\",\r
+
+          \    \"exam_setup_desc\": \"Desc Pediatric Eye Examination\",\r
+
+          \    \"exam_setup_type\": \"Document\",\r
+
+          \    \"exam_setup_data\": null,\r
+
+          \    \"module_in_used\": \"SURGERY\",\r
+
+          \    \"widget_name\": \"\",\r
+
+          \    \"widget_serial_no\": \"\",\r
+
+          \    \"status\": \"1\",\r
+
+          \    \"is_active\": true,\r
+
+          \    \"user_create\": \"rama\",\r
+
+          \    \"created_at\": \"2024-07-31T09:18:21+07:00\",\r
+
+          \    \"user_update\": \"rama\",\r
+
+          \    \"updated_at\": \"2024-09-30T11:08:45+07:00\"\r
+
+          }"
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Date
+          value: Fri, 02 May 2025 10:13:16 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "307"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 201,
+              "data": {
+                  "exam_setup_id": 12,
+                  "exam_setup_title": "Pediatric Eye Examination",
+                  "exam_setup_desc": "Desc Pediatric Eye Examination",
+                  "exam_setup_type": "Document",
+                  "exam_setup_data": {},
+                  "module_in_used": "SURGERY",
+                  "status": "1",
+                  "is_active": true,
+                  "user_create": "rama",
+                  "created_at": "2024-07-31T09:18:21+07:00"
+              }
+          }

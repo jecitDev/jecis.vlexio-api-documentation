@@ -1,0 +1,276 @@
+info:
+  name: Bridge supplier Item - edit
+  type: http
+  seq: 17
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/Supplier/items/:id_supplier/:item_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: sort_by
+      value: id
+      type: query
+      disabled: true
+    - name: sort_order
+      value: asc
+      type: query
+      disabled: true
+    - name: category_code
+      value: CAT001
+      type: query
+      disabled: true
+    - name: id_supplier
+      value: a630a800-ef4c-4b7d-bffa-a3f97f55fb19
+      type: path
+    - name: item_id
+      value: 43341054-68b3-42ac-9ac1-c99c97d0d903
+      type: path
+  body:
+    type: json
+    data: "{ \r
+
+      \  \"id_supplier\": \"a630a800-ef4c-4b7d-bffa-a3f97f55fb20\",\r
+
+      \        \"item_id\": \"43341054-68b3-42ac-9ac1-c99c97d0d903\",\r
+
+      \        \"item_id_portal\": \"744c0373-3443-470c-9725-fa10e65c4972\",\r
+
+      \        \"currency_code\": \"USD\",\r
+
+      \        \"price\": \"150000.0000\",\r
+
+      \        \"purchase_discount1\": \"5.00\",\r
+
+      \        \"purchase_discount2\": \"2.50\",\r
+
+      \        \"discount_in_nominal\": \"7500.0000\",\r
+
+      \        \"price_after_discount\": \"142500.0000\",\r
+
+      \        \"is_active\": true,\r
+
+      \        \"lead_time\": 7,\r
+
+      \        \"dpp\": \"135000.0000\",\r
+
+      \        \"qty\": 100,\r
+
+      \        \"minimal_order\": 10,\r
+
+      \        \"unit\": \"PCS-c\",\r
+
+      \        \"unit_po\": \"BOX-c\",\r
+
+      \        \"ppn\": \"11\",\r
+
+      \        \"price_after_ppn\": \"158175.0000\",\r
+
+      \        \"is_transportation_in\": true,\r
+
+      \        \"transportation_cost\": \"25000.0000\",\r
+
+      \        \"is_consignment\": false,\r
+
+      \        \"conversion_factor\": \"1.0000\",\r
+
+      \        \"item_name_portal\": \"Premium Medical Gloves - Size M\", \r
+
+      \    \"updated_at\": \"2024-03-01T13:24:42+08:00\",\r
+
+      \    \"user_update\": \"rickyEditXX\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Bridge supplier Item - edit API
+    request:
+      url: "{{BASE_URL}}/v1/Supplier/items/:id_supplier/:item_id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: sort_by
+          value: id
+          type: query
+          disabled: true
+        - name: sort_order
+          value: asc
+          type: query
+          disabled: true
+        - name: category_code
+          value: CAT001
+          type: query
+          disabled: true
+        - name: id_supplier
+          value: a630a800-ef4c-4b7d-bffa-a3f97f55fb19
+          type: path
+        - name: item_id
+          value: 43341054-68b3-42ac-9ac1-c99c97d0d903
+          type: path
+      body:
+        type: json
+        data: "{ \r
+
+          \  \"id_supplier\": \"a630a800-ef4c-4b7d-bffa-a3f97f55fb20\",\r
+
+          \        \"item_id\": \"43341054-68b3-42ac-9ac1-c99c97d0d903\",\r
+
+          \        \"item_id_portal\": \"744c0373-3443-470c-9725-fa10e65c4972\",\r
+
+          \        \"currency_code\": \"USD\",\r
+
+          \        \"price\": \"150000.0000\",\r
+
+          \        \"purchase_discount1\": \"5.00\",\r
+
+          \        \"purchase_discount2\": \"2.50\",\r
+
+          \        \"discount_in_nominal\": \"7500.0000\",\r
+
+          \        \"price_after_discount\": \"142500.0000\",\r
+
+          \        \"is_active\": true,\r
+
+          \        \"lead_time\": 7,\r
+
+          \        \"dpp\": \"135000.0000\",\r
+
+          \        \"qty\": 100,\r
+
+          \        \"minimal_order\": 10,\r
+
+          \        \"unit\": \"PCS-c\",\r
+
+          \        \"unit_po\": \"BOX-c\",\r
+
+          \        \"ppn\": \"11\",\r
+
+          \        \"price_after_ppn\": \"158175.0000\",\r
+
+          \        \"is_transportation_in\": true,\r
+
+          \        \"transportation_cost\": \"25000.0000\",\r
+
+          \        \"is_consignment\": false,\r
+
+          \        \"conversion_factor\": \"1.0000\",\r
+
+          \        \"item_name_portal\": \"Premium Medical Gloves - Size M\", \r
+
+          \    \"updated_at\": \"2024-03-01T13:24:42+08:00\",\r
+
+          \    \"user_update\": \"rickyEditXX\"\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 14 Apr 2026 01:26:03 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "1518"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "id_supplier": "a630a800-ef4c-4b7d-bffa-a3f97f55fb19",
+                  "item_id": "43341054-68b3-42ac-9ac1-c99c97d0d903",
+                  "item_id_portal": "744c0373-3443-470c-9725-fa10e65c4972",
+                  "currency_code": "USD",
+                  "price": "150000.0000",
+                  "purchase_discount1": "5.00",
+                  "purchase_discount2": "2.50",
+                  "discount_in_nominal": "7500.0000",
+                  "price_after_discount": "142500.0000",
+                  "is_active": true,
+                  "lead_time": 7,
+                  "dpp": "135000.0000",
+                  "qty": 100,
+                  "minimal_order": 10,
+                  "unit": "PCS-c",
+                  "unit_po": "BOX-c",
+                  "ppn": "11",
+                  "price_after_ppn": "158175.0000",
+                  "is_transportation_in": true,
+                  "transportation_cost": "25000.0000",
+                  "is_consignment": false,
+                  "conversion_factor": "1.0000",
+                  "item_name_portal": "Premium Medical Gloves - Size M",
+                  "object_history": [
+                      {
+                          "id_supplier": "a630a800-ef4c-4b7d-bffa-a3f97f55fb19",
+                          "item_id": "43341054-68b3-42ac-9ac1-c99c97d0d903",
+                          "item_id_portal": "744c0373-3443-470c-9725-fa10e65c4972",
+                          "currency_code": "USD",
+                          "price": "150000.0000",
+                          "purchase_discount1": "5.00",
+                          "purchase_discount2": "2.50",
+                          "discount_in_nominal": "7500.0000",
+                          "price_after_discount": "142500.0000",
+                          "is_active": true,
+                          "lead_time": 7,
+                          "dpp": "135000.0000",
+                          "qty": 100,
+                          "minimal_order": 10,
+                          "unit": "PCS",
+                          "unit_po": "BOX",
+                          "ppn": "11",
+                          "price_after_ppn": "158175.0000",
+                          "is_transportation_in": true,
+                          "transportation_cost": "25000.0000",
+                          "is_consignment": false,
+                          "conversion_factor": "1.0000",
+                          "item_name_portal": "Premium Medical Gloves - Size M",
+                          "action": "update",
+                          "changed_by": "rickyEditXX",
+                          "changed_at": "2026-04-14T08:26:04+07:00"
+                      }
+                  ],
+                  "user_update": "rickyEditXX",
+                  "updated_at": "2024-03-01T13:24:42+08:00",
+                  "supplier_name": ""
+              }
+          }

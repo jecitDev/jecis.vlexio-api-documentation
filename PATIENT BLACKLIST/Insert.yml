@@ -1,0 +1,37 @@
+info:
+  name: Insert
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/trans-patient-black-list"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+      \    \"patient_id\": \"PKDY250324-0001\",\r
+
+      \    \"black_list_date\": \"2025-07-03T14:08:41+07:00\",\r
+
+      \    \"keterangan\": \"Penolakan tindakan medis\",\r
+
+      \    \"alasan_black_list\": \"Mengancam petugas\",\r
+
+      \    \"user_create\": \"admin\",\r
+
+      \    \"created_at\": \"2025-03-18T14:08:41+07:00\"\r
+
+      }"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

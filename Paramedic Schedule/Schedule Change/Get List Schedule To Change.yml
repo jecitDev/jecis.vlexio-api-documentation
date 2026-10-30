@@ -1,0 +1,44 @@
+info:
+  name: Get List Schedule To Change
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/paramedicschedule/get_change?business_unit_id=53aad077-9fb1-4f08-85f3-af9fd9a36517&service_unit_id=SU00001&paramedic_id=DKDY0006&start_date=2025-05-23&end_date=2025-05-29&sr_category_schedule=BPJS&sr_schedule_type=Appointment"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: query
+    - name: service_unit_id
+      value: SU00001
+      type: query
+    - name: paramedic_id
+      value: DKDY0006
+      type: query
+    - name: start_date
+      value: 2025-05-23
+      type: query
+    - name: end_date
+      value: 2025-05-29
+      type: query
+    - name: sr_category_schedule
+      value: BPJS
+      type: query
+    - name: sr_schedule_type
+      value: Appointment
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

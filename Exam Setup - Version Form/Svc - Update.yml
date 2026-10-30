@@ -1,0 +1,177 @@
+info:
+  name: Svc - Update
+  type: http
+  seq: 5
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/versionforms/:id/:code"
+  headers:
+    - name: x-token
+      value: "{{API_TOKEN}}"
+  params:
+    - name: id
+      value: "56"
+      type: path
+    - name: code
+      value: FRM.MRS-003
+      type: path
+  body:
+    type: json
+    data: "{\r\n    \"version_form_revision\": \"10\",\r\n    \"exam_setup_id\": 34,\r\n    \"version_form_description\": \"Update #10 #BE\",\r\n    \"attachment\": \"\",\r\n    \"issuer_date\": \"2024-09-20T17:25:06+07:00\",\r\n    \"version_form_pic\": \"Rama\",\r\n    \"version\": 2,\r\n    \"user_update\": \"Rama2\",\r\n    \"updated_at\": \"2024-09-23T17:25:06+07:00\",\r\n    \"is_active\": true,\r\n    \"is_deleted\": false\r\n}"
+  auth:
+    type: bearer
+    token: "{{xtoken}}"
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: "Svc - Update #1-240708"
+    request:
+      url: "{{BASE_URL}}/v1/versionforms/:id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{API_TOKEN}}"
+      params:
+        - name: id
+          value: "4"
+          type: path
+      body:
+        type: json
+        data: "{\r\n    \"version_form_code\": \"JEC.MRS-038\",\r\n    \"version_form_revision\": \"00\",\r\n    \"exam_setup_id\": 4,\r\n    \"version_form_description\": \"Initial OT Procedure Safety Checklist\",\r\n    \"attachment\": \"\",\r\n    \"issuer_date\": \"2022-07-01T05:00:00+07:00\",\r\n    \"version_form_pic\": \"mia\",\r\n    \"version\":1,\r\n    \"is_active\": true,\r\n    \"is_deleted\": false,\r\n    \"user_update\": \"Admin2\",\r\n    \"updated_at\": \"2022-07-01T17:00:00+07:00\"\r\n}"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 08 Jul 2024 10:15:50 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "431"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "version_form_id": 4,
+                  "version_form_code": "JEC.MRS-038",
+                  "version_form_revision": "00",
+                  "exam_setup_id": 4,
+                  "version_form_description": "Initial OT Procedure Safety Checklist",
+                  "issuer_date": "2022-07-01T05:00:00+07:00",
+                  "version_form_pic": "mia",
+                  "version": 2,
+                  "is_active": true,
+                  "is_deleted": false,
+                  "user_create": "Admin",
+                  "created_at": "2022-07-01T05:00:00+07:00",
+                  "user_update": "Admin2",
+                  "updated_at": "2022-07-01T17:00:00+07:00"
+              }
+          }
+  - name: "Svc - Update #2-240923"
+    request:
+      url: "{{BASE_URL}}/v1/versionforms/:id/:code"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{API_TOKEN}}"
+      params:
+        - name: id
+          value: "56"
+          type: path
+        - name: code
+          value: FRM.MRS-003
+          type: path
+      body:
+        type: json
+        data: "{\r\n    // \"version_form_id\": \"56\",\r\n    // \"version_form_code\": \"FRM.MRS-003\",\r\n    \"version_form_revision\": \"10\",\r\n    \"exam_setup_id\": 34,\r\n    \"version_form_description\": \"Update #10 #BE version #3\",\r\n    \"attachment\": \"\",\r\n    \"issuer_date\": \"2024-09-20T17:25:06+07:00\",\r\n    \"version_form_pic\": \"Rama\",\r\n    \"version\": 3,\r\n    \"user_update\": \"Rama3\",\r\n    \"updated_at\": \"2024-09-23T17:25:06+07:00\",\r\n    \"is_active\": true,\r\n    \"is_deleted\": false\r\n}"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 23 Sep 2024 02:46:50 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "420"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "version_form_id": 56,
+                  "version_form_code": "FRM.MRS-003",
+                  "version_form_revision": "10",
+                  "exam_setup_id": 34,
+                  "version_form_description": "Update #10 #BE version #3",
+                  "issuer_date": "2024-09-20T17:25:06+07:00",
+                  "version_form_pic": "Rama",
+                  "version": 4,
+                  "is_active": true,
+                  "is_deleted": false,
+                  "user_create": "rama",
+                  "created_at": "2024-09-20T17:25:06+07:00",
+                  "user_update": "Rama3",
+                  "updated_at": "2024-09-23T17:25:06+07:00"
+              }
+          }

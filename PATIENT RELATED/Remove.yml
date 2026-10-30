@@ -1,0 +1,37 @@
+info:
+  name: Remove
+  type: http
+  seq: 5
+
+http:
+  method: DELETE
+  url: "{{BASE_URL}}/v1/patient_related/:business_unit_id/:unified_id/:id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+    - name: unified_id
+      value: "18"
+      type: path
+    - name: id
+      value: eabb9847-ec62-4414-bc47-68c595b459d3
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"user_update\": \"admin\",\r
+
+      \    \"updated_at\": \"2025-05-10T14:08:41+07:00\"\r
+
+      }"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

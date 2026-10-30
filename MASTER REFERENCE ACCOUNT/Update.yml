@@ -1,0 +1,138 @@
+info:
+  name: Update
+  type: http
+  seq: 2
+http:
+  method: PUT
+  url: "{{BASE_URL}}/account-references/:id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: id
+      value: aab7419a-8ace-49d3-bf61-343941d7c864
+      type: path
+  body:
+    type: json
+    data: "{\r\n    \"reference_name\": \"CompanyStatus\",\r\n    \"name\": \"Inactive\",\r\n    \"additional_data_1\": \"\",\r\n    \"additional_data_2\": \"\",\r\n    \"updated_at\": \"2025-09-29T14:08:41+07:00\",\r\n    \"user_update\": \"ferdinand\"\r\n}"
+  auth:
+    type: bearer
+    token: "{{xtoken}}"
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/account-references/:id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: id
+          value: feabf150-79b2-43f3-a144-0274e744687e
+          type: path
+      body:
+        type: json
+        data: "{\r\n    \"reference_name\": \"CompanyStatus\",\r\n    \"name\": \"Draft\",\r\n    \"additional_data_1\": \"\",\r\n    \"additional_data_2\": \"\",\r\n    \"updated_at\": \"2025-09-29T14:08:41+07:00\",\r\n    \"user_update\": \"ferdinand\"\r\n}"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 29 Sep 2025 07:05:48 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "165"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "id": "feabf150-79b2-43f3-a144-0274e744687e",
+                  "reference_name": "CompanyStatus",
+                  "updated_at": "2025-09-29T14:08:41+07:00",
+                  "user_update": "ferdinand"
+              }
+          }
+  - name: Not Found
+    request:
+      url: "{{BASE_URL}}/account-references/:id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: id
+          value: feabf150-79b2-43f3-a144-0274e744687f
+          type: path
+      body:
+        type: json
+        data: "{\r\n    \"reference_name\": \"CompanyStatus\",\r\n    \"name\": \"Draft\",\r\n    \"additional_data_1\": \"\",\r\n    \"additional_data_2\": \"\",\r\n    \"updated_at\": \"2025-09-29T14:08:41+07:00\",\r\n    \"user_update\": \"ferdinand\"\r\n}"
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Date
+          value: Mon, 29 Sep 2025 07:09:00 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "46"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+              "message": "reference.not_found",
+              "status": 404
+          }

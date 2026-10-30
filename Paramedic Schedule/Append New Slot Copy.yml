@@ -1,0 +1,52 @@
+info:
+  name: Append New Slot Copy
+  type: http
+  seq: 16
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/paramedicschedule/slot/append/:business_unit_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"service_unit_id\": \"A101\",\r
+
+      \    \"paramedic_id\": \"DKDY0006\",\r
+
+      \    \"schedule_date\": \"2025-07-10T00:00:00+07:00\",\r
+
+      \    \"sr_category_schedule\": \"BPJS\",\r
+
+      \    \"sr_schedule_type\": \"Arrival\",\r
+
+      \    \"operational_time_id\": \"OP001\",\r
+
+      \    \"shift\": \"13:00-17:00\",\r
+
+      \    \"exam_duration\": 10,\r
+
+      \    \"total_slot\": 1,\r
+
+      \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+      \    \"user_create\": \"21170\",\r
+
+      \    \"created_at\": \"2025-07-10T10:02:22+07:00\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

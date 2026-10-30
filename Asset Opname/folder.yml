@@ -1,0 +1,7 @@
+info:
+  name: Asset Opname
+  type: folder
+  seq: 139
+
+request:
+  auth: inherit

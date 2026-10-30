@@ -1,0 +1,92 @@
+info:
+  name: Svc - Generate Code
+  type: http
+  seq: 10
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/autonumbers/generatecode"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+      \    \"sr_auto_number\": \"MaterialRequest\",\r
+
+      \    \"user_update\": \"rickylai\",\r
+
+      \    \"updated_at\": \"2025-10-14T13:24:42+08:00\"\r
+
+      }"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: "Svc - Generate Code #1"
+    request:
+      url: "{{BASE_URL}}/v1/autonumbers/generatecode"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Date
+          value: Wed, 08 Nov 2023 05:25:32 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "187"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 201,
+              "data": {
+                  "sr_auto_number": "MedicalNo",
+                  "healthcare_id": "001",
+                  "last_complete_number": "001-000-00-05",
+                  "user_update": "Admin3",
+                  "updated_at": {
+                      "seconds": 1699446348,
+                      "nanos": 99446348
+                  }
+              }
+          }

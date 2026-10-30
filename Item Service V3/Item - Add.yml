@@ -1,0 +1,22 @@
+info:
+  name: Item - Add
+  type: http
+  seq: 2
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/Item/"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r\n    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r\n    \"item_code\": \"GLAUC-0044\",\r\n    \"item_name\": \"Tubes Implant + ECCE IOL Anestesi Lokal Sedasi X44\",\r\n    \"description\": \"Glaucoma surgery kit with IOL implant\",\r\n    \"item_group_id\": 4101,\r\n    \"sr_item_type\": \"01\",\r\n    \"sr_dosage_form\": \"PCS\",\r\n    \"product_account_id\": \"P01\",\r\n    \"abc_class\": \"X\",\r\n    \"is_maintain_stock\": false,\r\n    \"brand\": \"Pharos\",\r\n    \"registration_no\": \"01.02.04\",\r\n    \"base_uom\": \"BOX\",\r\n    \"transaction_uom\": \"PCS\",\r\n    \"is_consignment\": false,\r\n    \"is_active\": true,\r\n    \"coverage\": [\r\n        \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r\n        \"53aad077-9fb1-4f08-85f3-af9fd9a36518\",\r\n        \"53aad077-9fb1-4f08-85f3-af9fd9a36519\"\r\n    ],\r\n    \"user_create\": \"rickylai\",\r\n    \"created_at\": \"2025-10-20T13:58:23+07:00\"\r\n}"
+  auth:
+    type: bearer
+    token: "{{xtoken}}"
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

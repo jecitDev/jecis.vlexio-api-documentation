@@ -1,0 +1,141 @@
+info:
+  name: Item - Search
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: http://127.0.0.1:8080/v1/Item/search?max_hits=4&page=1&coverage_business_unit_id=53aad077-9fb1-4f08-85f3-af9fd9a36519
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: max_hits
+      value: "4"
+      type: query
+    - name: page
+      value: "1"
+      type: query
+    - name: text
+      value: braito
+      type: query
+      disabled: true
+    - name: coverage_business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36519
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Item - Search API
+    request:
+      url: http://127.0.0.1:8080/v1/Item/search?max_hits=4&page=1&coverage_business_unit_id=53aad077-9fb1-4f08-85f3-af9fd9a36519
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: max_hits
+          value: "4"
+          type: query
+        - name: page
+          value: "1"
+          type: query
+        - name: text
+          value: braito
+          type: query
+          disabled: true
+        - name: coverage_business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36519
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 07 Apr 2026 05:55:24 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "917"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "Total": 3,
+                  "Page": 1,
+                  "result": [
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "item_id": "e7aefc02-dda2-4a92-a051-94db5b5fdf17",
+                          "item_code": "LAP-00002",
+                          "item_name": "Laptop Lenovo edit",
+                          "description": "Laptop Lenovo Yoga edit",
+                          "is_consignment": false,
+                          "coverage": [
+                              "53aad077-9fb1-4f08-85f3-af9fd9a36519"
+                          ]
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "item_id": "aa1f49eb-5588-43da-8e10-fce5f50183de",
+                          "item_code": "ROT-00002",
+                          "item_name": "HandPhone Samsung",
+                          "description": "Samsung Flip 10",
+                          "is_consignment": false,
+                          "coverage": [
+                              "53aad077-9fb1-4f08-85f3-af9fd9a36519",
+                              "53aad077-9fb1-4f08-85f3-af9fd9a36517"
+                          ]
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "item_id": "6df28a4a-132a-4c48-8b63-ecfbe7a3e0e6",
+                          "item_code": "ROT-00002",
+                          "item_name": "Router edit",
+                          "description": "Router Mini Huawei edit",
+                          "is_consignment": false,
+                          "coverage": [
+                              "53aad077-9fb1-4f08-85f3-af9fd9a36519"
+                          ]
+                      }
+                  ]
+              }
+          }

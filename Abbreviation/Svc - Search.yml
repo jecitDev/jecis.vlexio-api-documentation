@@ -1,0 +1,133 @@
+info:
+  name: Svc - Search
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/abbreviations/search?area_id=CC&company_id=2da6a1bd-ba62-43ec-91f8-4085d5d6d498&text=red eye&max_hits=25"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: area_id
+      value: CC
+      type: query
+    - name: company_id
+      value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+      type: query
+    - name: text
+      value: red eye
+      type: query
+    - name: max_hits
+      value: "25"
+      type: query
+  body:
+    type: json
+    data: ""
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Svc - Search
+    request:
+      url: "{{BASE_URL}}/v1/abbreviations/search?area_id=CC&company_id=2da6a1bd-ba62-43ec-91f8-4085d5d6d498&text=red eye&max_hits=25"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{API_TOKEN}}"
+      params:
+        - name: area_id
+          value: CC
+          type: query
+        - name: company_id
+          value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+          type: query
+        - name: text
+          value: red eye
+          type: query
+        - name: max_hits
+          value: "25"
+          type: query
+      body:
+        type: json
+        data: ""
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 20 Mar 2025 03:56:05 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "603"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "result": [
+                      {
+                          "abbrev_code": "RED",
+                          "area_id": "CC",
+                          "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",
+                          "abbrev_description": "red eye",
+                          "priority": 0
+                      },
+                      {
+                          "abbrev_code": "REWD",
+                          "area_id": "CC",
+                          "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",
+                          "abbrev_description": "red eye without discharge",
+                          "priority": 0
+                      },
+                      {
+                          "abbrev_code": "REDD",
+                          "area_id": "CC",
+                          "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",
+                          "abbrev_description": "red eye with discharge",
+                          "priority": 0
+                      },
+                      {
+                          "abbrev_code": "RDLD",
+                          "area_id": "CC",
+                          "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",
+                          "abbrev_description": "red eyelid",
+                          "priority": 0
+                      }
+                  ]
+              }
+          }

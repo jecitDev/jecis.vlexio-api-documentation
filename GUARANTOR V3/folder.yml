@@ -1,0 +1,7 @@
+info:
+  name: GUARANTOR V3
+  type: folder
+  seq: 100
+
+request:
+  auth: inherit

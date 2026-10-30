@@ -1,0 +1,108 @@
+info:
+  name: Svc - Get OTP
+  type: http
+  seq: 7
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/digisigns/requestotp/"
+  headers:
+    - name: x-token
+      value: "{{API_TOKEN}}"
+  params:
+    - name: provider_id
+      value: 3261a59d-ea2c-456b-bcff-cd841a066eb7
+      type: query
+      disabled: true
+    - name: company_id
+      value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: "{\r\n    \"order_id\": \"24186\",\r\n    \"company_id\": \"2da6a1bd-ba62-43ec-91f8-4085d5d6d498\",\r\n    \"system_id\": \"RS-JEC\",\r\n    \"is_send_email\": true,\r\n    \"is_send_sms\": true\r\n}"
+  auth:
+    type: bearer
+    token: "{{xtoken}}"
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: "Svc - Get OTP #1-241121"
+    request:
+      url: "{{BASE_URL}}/v1/digisigns/getotp/:id/:company_id/:system_id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{API_TOKEN}}"
+      params:
+        - name: provider_id
+          value: 3261a59d-ea2c-456b-bcff-cd841a066eb7
+          type: query
+          disabled: true
+        - name: company_id
+          value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+          type: query
+          disabled: true
+        - name: id
+          value: "24186"
+          type: path
+        - name: company_id
+          value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+          type: path
+        - name: system_id
+          value: RS-JEC
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 21 Nov 2024 03:16:40 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "170"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "result_code": "0",
+                  "result_description": "Success",
+                  "data": {
+                      "otp_token": "",
+                      "system_id": "RS-JEC",
+                      "phone": "085747117005"
+                  }
+              }
+          }

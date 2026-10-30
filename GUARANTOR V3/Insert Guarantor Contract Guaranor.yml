@@ -1,0 +1,667 @@
+info:
+  name: Insert Guarantor Contract Guaranor
+  type: http
+  seq: 15
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/marketing/guarantor/contract/guarantor"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"guarantor_id\": \"dc77ae8f-4dd3-4d95-9cfe-7e950888524b\",\r
+
+      \    \"business_unit_id\": [\"53aad077-9fb1-4f08-85f3-af9fd9a36517\", \"53aad077-9fb1-4f08-85f3-af9fd9a36518\"],\r
+
+      \    \"sr_business_method\": \"CREDIT\",\r
+
+      \    \"sr_tariff_type\": \"FIXED\",\r
+
+      \    \"sr_guarantor_rule_type\": \"None\",\r
+
+      \    \"is_value_in_percent\": true,\r
+
+      \    \"amount_value\": 10.5,\r
+
+      \    \"admin_percentage\": 2.5,\r
+
+      \    \"admin_amount_limit\": 500000.0,\r
+
+      \    \"rate_book_id\": \"833bc85c-79d2-40b8-89f2-f01e49bff6f1\",\r
+
+      \    \"is_include_item_medical\": true,\r
+
+      \    \"is_include_item_non_medical\": true,\r
+
+      \    \"is_include_item_optic\": true,\r
+
+      \    \"is_include_item_medical_to_guarantor\": true,\r
+
+      \    \"is_include_item_non_medical_to_guarantor\": true,\r
+
+      \    \"is_include_item_optic_to_guarantor\": true,\r
+
+      \    \"is_include_item_service_to_guarantor\": true,\r
+
+      \    \"is_include_item_service\": true,\r
+
+      \    \"is_include_item_medical_special_rule\": true,\r
+
+      \    \"is_include_item_medical_special_rule_in_percent\": true,\r
+
+      \    \"is_include_item_pharmacy\": true,\r
+
+      \    \"is_include_item_pharmacy_to_guarantor\": false,\r
+
+      \    \"item_medical_special_value\": 15.0,\r
+
+      \    \"is_payment_confirmation\": true,\r
+
+      \    \"is_zero_revenue\": true,\r
+
+      \    \"is_discount_on_payment\": true,\r
+
+      \    \"is_use_cob\": true,\r
+
+      \    \"contract_start\": \"2025-03-23T14:08:41+07:00\",\r
+
+      \    \"contract_end\": \"2025-03-25T14:08:41+07:00\",\r
+
+      \    \"contract_summary\": \"This contract outlines the terms and responsibilities of the guarantor related to the service agreement between the provider and the insured party.\",\r
+
+      \    \"contact_person\": \"John Doe\",\r
+
+      \    \"company_id\": \"2da6a1bd-ba62-43ec-91f8-4085d5d6d498\",\r
+
+      \    \"guarantor_name\": \"PT. Sehat Selalu\",\r
+
+      \    \"short_name\": \"Sehat\",\r
+
+      \    \"sr_guarantor_type\": \"COMPANY\",\r
+
+      \    \"street_name\": \"Jl. Kesehatan No.1\",\r
+
+      \    \"district\": \"Kemang\",\r
+
+      \    \"city\": \"Jakarta Selatan\",\r
+
+      \    \"county\": \"DKI Jakarta\",\r
+
+      \    \"state\": \"Jakarta\",\r
+
+      \    \"zip_code\": \"12345\",\r
+
+      \    \"phone_no\": \"0211234567\",\r
+
+      \    \"fax_no\": \"0211234568\",\r
+
+      \    \"email\": \"info@sehat.com\",\r
+
+      \    \"mobile_phone_no\": \"08123456789\",\r
+
+      \    \"chart_of_account_id\": 101,\r
+
+      \    \"subledger_id\": 202,\r
+
+      \    \"finance_contact_person\": \"Agus Salim\",\r
+
+      \    \"finance_email\": \"finance@sehat.com\",\r
+
+      \    \"sr_guarantor_group\": \"2\",\r
+
+      \    \"sr_guarantor_group_payer\": \"3\",\r
+
+      \    \"user_create\": \"admin_user\",\r
+
+      \    \"created_at\": \"2025-06-05T14:08:41+07:00\",\r
+
+      \    \"sr_payment_type_id\": \"2\",\r
+
+      \    \"sr_payment_method_id\": \"CARD\",\r
+
+      \    \"sr_card_type_id\": \"CREDIT\",\r
+
+      \    \"sr_card_provider_id\": \"BCA\",\r
+
+      \    \"voucher_type_id\": 1\r
+
+      }\r\n"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Invalid Input contract start and date
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/contract"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36518\",\r
+
+          \    \"sr_business_method\": \"CREDIT\",\r
+
+          \    \"sr_tariff_type\": \"FIXED\",\r
+
+          \    \"sr_guarantor_rule_type\": \"None\",\r
+
+          \    \"is_value_in_percent\": true,\r
+
+          \    \"amount_value\": 10.5,\r
+
+          \    \"admin_percentage\": 2.5,\r
+
+          \    \"admin_amount_limit\": 500000.0,\r
+
+          \    \"rate_book_id\": \"833bc85c-79d2-40b8-89f2-f01e49bff6f1\",\r
+
+          \    \"is_include_item_medical\": true,\r
+
+          \    \"is_include_item_non_medical\": true,\r
+
+          \    \"is_include_item_optic\": true,\r
+
+          \    \"is_include_item_medical_to_guarantor\": true,\r
+
+          \    \"is_include_item_non_medical_to_guarantor\": true,\r
+
+          \    \"is_include_item_optic_to_guarantor\": true,\r
+
+          \    \"is_include_item_service_to_guarantor\": true,\r
+
+          \    \"is_include_item_service\": true,\r
+
+          \    \"is_include_item_medical_special_rule\": true,\r
+
+          \    \"is_include_item_medical_special_rule_in_percent\": true,\r
+
+          \    \"item_medical_special_value\": 15.0,\r
+
+          \    \"is_payment_confirmation\": true,\r
+
+          \    \"is_zero_revenue\": true,\r
+
+          \    \"is_discount_on_payment\": true,\r
+
+          \    \"is_use_cob\": true,\r
+
+          \    \"contract_number\": \"CTR-2025-001\",\r
+
+          \    \"contract_start\": \"2025-03-23T14:08:41+07:00\",\r
+
+          \    \"contract_end\": \"2025-03-20T14:08:41+07:00\",\r
+
+          \    \"contract_summary\": \"This contract outlines the terms and responsibilities of the guarantor related to the service agreement between the provider and the insured party.\",\r
+
+          \    \"contact_person\": \"Dina Sasmita\",\r
+
+          \    \"user_create\": \"admin_user\",\r
+
+          \    \"created_at\": \"2025-06-05T14:08:41+07:00\",\r
+
+          \    \"documents\": [\r
+
+          \        {\r
+
+          \        \"document_path\": \"/docs/contract_2025_main.pdf\",\r
+
+          \        \"created_at\": \"2025-03-26T14:08:41+07:00\",\r
+
+          \        \"user_create\": \"admin_user\"\r
+
+          \        },\r
+
+          \        {\r
+
+          \        \"document_path\": \"/docs/contract_2025_terms.pdf\",\r
+
+          \        \"created_at\": \"2025-03-26T14:08:41+07:00\",\r
+
+          \        \"user_create\": \"admin_user\"\r
+
+          \        }\r
+
+          \    ]\r
+
+          }\r\n"
+    response:
+      status: 500
+      statusText: Internal Server Error
+      headers:
+        - name: Date
+          value: Tue, 10 Jun 2025 04:32:29 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "77"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "contract start time greater than contract end time",
+              "status": 500
+          }
+  - name: Not Found
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/contract/guarantor"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"guarantor_id\": \"100984d4-be79-47d2-a6ac-73175a2722e0\",\r
+
+          \    \"business_unit_id\": [\"53aad077-9fb1-4f08-85f3-af9fd9a36518\", \"53aad077-9fb1-4f08-85f3-af9fd9a36517\"],\r
+
+          \    \"sr_business_method\": \"CREDIT\",\r
+
+          \    \"sr_tariff_type\": \"FIXED\",\r
+
+          \    \"sr_guarantor_rule_type\": \"None\",\r
+
+          \    \"is_value_in_percent\": true,\r
+
+          \    \"amount_value\": 10.5,\r
+
+          \    \"admin_percentage\": 2.5,\r
+
+          \    \"admin_amount_limit\": 500000.0,\r
+
+          \    \"rate_book_id\": \"833bc85c-79d2-40b8-89f2-f01e49bff6f1\",\r
+
+          \    \"is_include_item_medical\": true,\r
+
+          \    \"is_include_item_non_medical\": true,\r
+
+          \    \"is_include_item_optic\": true,\r
+
+          \    \"is_include_item_medical_to_guarantor\": true,\r
+
+          \    \"is_include_item_non_medical_to_guarantor\": true,\r
+
+          \    \"is_include_item_optic_to_guarantor\": true,\r
+
+          \    \"is_include_item_service_to_guarantor\": true,\r
+
+          \    \"is_include_item_service\": true,\r
+
+          \    \"is_include_item_medical_special_rule\": true,\r
+
+          \    \"is_include_item_medical_special_rule_in_percent\": true,\r
+
+          \    \"item_medical_special_value\": 15.0,\r
+
+          \    \"is_payment_confirmation\": true,\r
+
+          \    \"is_zero_revenue\": true,\r
+
+          \    \"is_discount_on_payment\": true,\r
+
+          \    \"is_use_cob\": true,\r
+
+          \    \"contract_number\": \"CTR-2025-001\",\r
+
+          \    \"contract_start\": \"2025-03-23T14:08:41+07:00\",\r
+
+          \    \"contract_end\": \"2025-03-25T14:08:41+07:00\",\r
+
+          \    \"contract_summary\": \"This contract outlines the terms and responsibilities of the guarantor related to the service agreement between the provider and the insured party.\",\r
+
+          \    \"contact_person\": \"Dina Sasmita\",\r
+
+          \    \"company_id\": \"df0ff1b4-c381-4f1a-a0ab-0702c789d46b\",\r
+
+          \    \"guarantor_name\": \"PT. Sehat Selalu\",\r
+
+          \    \"short_name\": \"Sehat\",\r
+
+          \    \"sr_guarantor_type\": \"INSURANCE\",\r
+
+          \    \"is_enable\": true,\r
+
+          \    \"street_name\": \"Jl. Kesehatan No.1\",\r
+
+          \    \"district\": \"Kemang\",\r
+
+          \    \"city\": \"Jakarta Selatan\",\r
+
+          \    \"county\": \"DKI Jakarta\",\r
+
+          \    \"state\": \"Jakarta\",\r
+
+          \    \"zip_code\": \"12345\",\r
+
+          \    \"phone_no\": \"0211234567\",\r
+
+          \    \"fax_no\": \"0211234568\",\r
+
+          \    \"email\": \"info@sehat.com\",\r
+
+          \    \"mobile_phone_no\": \"08123456789\",\r
+
+          \    \"chart_of_account_id\": 101,\r
+
+          \    \"subledger_id\": 202,\r
+
+          \    \"finance_contact_person\": \"Agus Salim\",\r
+
+          \    \"finance_email\": \"finance@sehat.com\",\r
+
+          \    \"sr_guarantor_status\": \"Draft\",\r
+
+          \    \"sr_guarantor_group\": \"Internal\",\r
+
+          \    \"sr_guarantor_group_payer\": \"Payer\",\r
+
+          \    \"user_create\": \"admin_user\",\r
+
+          \    \"created_at\": \"2025-06-05T14:08:41+07:00\"\r
+
+          }\r\n"
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Date
+          value: Fri, 13 Jun 2025 09:20:00 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "46"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "guarantor.not_found",
+              "status": 404
+          }
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/contract/guarantor"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"guarantor_id\": \"\",\r
+
+          \    \"business_unit_id\": [\"53aad077-9fb1-4f08-85f3-af9fd9a36517\", \"53aad077-9fb1-4f08-85f3-af9fd9a36518\"],\r
+
+          \    \"sr_business_method\": \"CREDIT\",\r
+
+          \    \"sr_tariff_type\": \"FIXED\",\r
+
+          \    \"sr_guarantor_rule_type\": \"None\",\r
+
+          \    \"is_value_in_percent\": true,\r
+
+          \    \"amount_value\": 10.5,\r
+
+          \    \"admin_percentage\": 2.5,\r
+
+          \    \"admin_amount_limit\": 500000.0,\r
+
+          \    \"rate_book_id\": \"833bc85c-79d2-40b8-89f2-f01e49bff6f1\",\r
+
+          \    \"is_include_item_medical\": true,\r
+
+          \    \"is_include_item_non_medical\": true,\r
+
+          \    \"is_include_item_optic\": true,\r
+
+          \    \"is_include_item_medical_to_guarantor\": true,\r
+
+          \    \"is_include_item_non_medical_to_guarantor\": true,\r
+
+          \    \"is_include_item_optic_to_guarantor\": true,\r
+
+          \    \"is_include_item_service_to_guarantor\": true,\r
+
+          \    \"is_include_item_service\": true,\r
+
+          \    \"is_include_item_medical_special_rule\": true,\r
+
+          \    \"is_include_item_medical_special_rule_in_percent\": true,\r
+
+          \    \"is_include_item_pharmacy\": true,\r
+
+          \    \"is_include_item_pharmacy_to_guarantor\": false,\r
+
+          \    \"item_medical_special_value\": 15.0,\r
+
+          \    \"is_payment_confirmation\": true,\r
+
+          \    \"is_zero_revenue\": true,\r
+
+          \    \"is_discount_on_payment\": true,\r
+
+          \    \"is_use_cob\": true,\r
+
+          \    \"contract_start\": \"2025-03-23T14:08:41+07:00\",\r
+
+          \    \"contract_end\": \"2025-03-25T14:08:41+07:00\",\r
+
+          \    \"contract_summary\": \"This contract outlines the terms and responsibilities of the guarantor related to the service agreement between the provider and the insured party.\",\r
+
+          \    \"contact_person\": \"Dina Sasmita\",\r
+
+          \    \"company_id\": \"df0ff1b4-c381-4f1a-a0ab-0702c789d46b\",\r
+
+          \    \"guarantor_name\": \"PT. Sehat Selalu\",\r
+
+          \    \"short_name\": \"Sehat\",\r
+
+          \    \"sr_guarantor_type\": \"INSURANCE\",\r
+
+          \    \"street_name\": \"Jl. Kesehatan No.1\",\r
+
+          \    \"district\": \"Kemang\",\r
+
+          \    \"city\": \"Jakarta Selatan\",\r
+
+          \    \"county\": \"DKI Jakarta\",\r
+
+          \    \"state\": \"Jakarta\",\r
+
+          \    \"zip_code\": \"12345\",\r
+
+          \    \"phone_no\": \"0211234567\",\r
+
+          \    \"fax_no\": \"0211234568\",\r
+
+          \    \"email\": \"info@sehat.com\",\r
+
+          \    \"mobile_phone_no\": \"08123456789\",\r
+
+          \    \"chart_of_account_id\": 101,\r
+
+          \    \"subledger_id\": 202,\r
+
+          \    \"finance_contact_person\": \"Agus Salim\",\r
+
+          \    \"finance_email\": \"finance@sehat.com\",\r
+
+          \    \"sr_guarantor_group\": \"Internal\",\r
+
+          \    \"sr_guarantor_group_payer\": \"Payer\",\r
+
+          \    \"user_create\": \"admin_user\",\r
+
+          \    \"created_at\": \"2025-06-05T14:08:41+07:00\",\r
+
+          \    \"sr_payment_type_id\": \"2\",\r
+
+          \    \"sr_payment_method_id\": \"CARD\",\r
+
+          \    \"sr_card_type_id\": \"CREDIT\",\r
+
+          \    \"sr_card_provider_id\": \"BCA\",\r
+
+          \    \"voucher_type_id\": 1\r
+
+          }\r\n"
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Date
+          value: Fri, 11 Jul 2025 01:52:14 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "1755"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 201,
+              "data": {
+                  "id": "4a0a04e8-00dc-47d5-a6a2-2502d2fc5edc",
+                  "guarantor_id": "a8186a9e-75d7-47d1-a676-14cd01b8c551",
+                  "business_unit_id": [
+                      "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                      "53aad077-9fb1-4f08-85f3-af9fd9a36518"
+                  ],
+                  "sr_business_method": "CREDIT",
+                  "sr_tariff_type": "FIXED",
+                  "sr_guarantor_rule_type": "None",
+                  "is_value_in_percent": true,
+                  "amount_value": 10.5,
+                  "admin_percentage": 2.5,
+                  "admin_amount_limit": 500000,
+                  "rate_book_id": "833bc85c-79d2-40b8-89f2-f01e49bff6f1",
+                  "is_include_item_medical": true,
+                  "is_include_item_non_medical": true,
+                  "is_include_item_optic": true,
+                  "is_include_item_medical_to_guarantor": true,
+                  "is_include_item_non_medical_to_guarantor": true,
+                  "is_include_item_optic_to_guarantor": true,
+                  "is_include_item_service_to_guarantor": true,
+                  "is_include_item_service": true,
+                  "is_include_item_medical_special_rule": true,
+                  "is_include_item_medical_special_rule_in_percent": true,
+                  "is_include_item_pharmacy": true,
+                  "item_medical_special_value": 15,
+                  "is_payment_confirmation": true,
+                  "is_zero_revenue": true,
+                  "is_discount_on_payment": true,
+                  "sr_guarantor_status": "1",
+                  "contract_no": "GC-KDY/20250711-0001",
+                  "contract_start": "2025-03-23T14:08:41+07:00",
+                  "contract_end": "2025-03-25T14:08:41+07:00",
+                  "contract_summary": "This contract outlines the terms and responsibilities of the guarantor related to the service agreement between the provider and the insured party.",
+                  "contact_person": "Dina Sasmita",
+                  "is_active": true,
+                  "user_create": "admin_user",
+                  "created_at": "2025-06-05T14:08:41+07:00",
+                  "discount_payment": {
+                      "gdp_id": 23,
+                      "contract_id": "4a0a04e8-00dc-47d5-a6a2-2502d2fc5edc",
+                      "sr_payment_type_id": "2",
+                      "sr_payment_method_id": "CARD",
+                      "sr_card_provider_id": "BCA",
+                      "sr_card_type_id": "CREDIT",
+                      "chart_of_account_id": 101,
+                      "user_create": "admin_user",
+                      "created_at": "2025-06-05T14:08:41+07:00",
+                      "voucher_type_id": 1
+                  }
+              }
+          }

@@ -1,0 +1,249 @@
+info:
+  name: Asset Movement - LIST
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/AssetMovement/list"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: page
+      value: "1"
+      type: query
+      disabled: true
+    - name: page_size
+      value: "20"
+      type: query
+      disabled: true
+    - name: sort_by
+      value: id
+      type: query
+      disabled: true
+    - name: is_active
+      value: "false"
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Asset Movement - LIST API
+    request:
+      url: "{{BASE_URL}}/v1/AssetMovement/list?keywords=Marketing Needs"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: page
+          value: "1"
+          type: query
+          disabled: true
+        - name: page_size
+          value: "20"
+          type: query
+          disabled: true
+        - name: sort_by
+          value: id
+          type: query
+          disabled: true
+        - name: sort_order
+          value: asc
+          type: query
+          disabled: true
+        - name: is_active
+          value: "false"
+          type: query
+          disabled: true
+        - name: keywords
+          value: Marketing Needs
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Fri, 27 Feb 2026 01:05:34 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "4540"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "total_items": 9,
+                  "AssetMovements": [
+                      {
+                          "movement_id": "11cd8bd1-0355-4a7b-8232-dec95e201f02",
+                          "movement_code": "MOV/KDY/2602-00017",
+                          "company_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "current_business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "destination_business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "transaction_date": "2024-10-22T00:00:00Z",
+                          "purpose": "Marketing Needs X5 - EditX2",
+                          "status": "draft",
+                          "remarks": "Membership chat GPT",
+                          "is_active": false,
+                          "user_create": "20994",
+                          "created_at": "2026-02-27T07:32:40+07:00",
+                          "user_update": "ricky_Void",
+                          "updated_at": "2026-02-27T07:42:50+07:00"
+                      },
+                      {
+                          "movement_id": "cf3b13f0-70b2-422b-93a5-e8c3840e1269",
+                          "movement_code": "MOV/KDY/2602-00016",
+                          "company_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "current_business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "destination_business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "transaction_date": "2024-10-22T00:00:00Z",
+                          "purpose": "Marketing Needs X5",
+                          "status": "draft",
+                          "remarks": "Membership chat GPT",
+                          "is_active": true,
+                          "user_create": "20994",
+                          "created_at": "2026-02-27T07:26:33+07:00"
+                      },
+                      {
+                          "movement_id": "1fc3465e-4329-462c-aa06-ae6f74b20840",
+                          "movement_code": "MOV/KDY/2602-00015",
+                          "company_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "current_business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "destination_business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "transaction_date": "2024-10-22T00:00:00Z",
+                          "purpose": "Marketing Needs X5",
+                          "status": "draft",
+                          "remarks": "Membership chat GPT",
+                          "is_active": true,
+                          "user_create": "20994",
+                          "created_at": "2026-02-27T07:24:10+07:00"
+                      },
+                      {
+                          "movement_id": "729b2968-e9b7-482b-955d-46fcdbb087ac",
+                          "movement_code": "MOV/KDY/2602-00014",
+                          "company_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "current_business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "destination_business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "transaction_date": "2024-10-22T00:00:00Z",
+                          "purpose": "Marketing Needs X5",
+                          "status": "draft",
+                          "remarks": "Membership chat GPT",
+                          "is_active": true,
+                          "user_create": "20994",
+                          "created_at": "2026-02-27T07:16:46+07:00"
+                      },
+                      {
+                          "movement_id": "e40a8cf4-af9d-47b4-80f5-5d3275470b13",
+                          "movement_code": "MOV/KDY/2602-00013",
+                          "company_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "current_business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "destination_business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "transaction_date": "2024-10-22T00:00:00Z",
+                          "purpose": "Marketing Needs X5",
+                          "status": "draft",
+                          "remarks": "Membership chat GPT",
+                          "is_active": true,
+                          "user_create": "20994",
+                          "created_at": "2026-02-27T05:02:57+07:00"
+                      },
+                      {
+                          "movement_id": "ad66307e-5f38-4886-aba5-642ea7403d0b",
+                          "movement_code": "MOV/KDY/2602-00012",
+                          "company_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "current_business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "destination_business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "transaction_date": "2024-10-22T00:00:00Z",
+                          "purpose": "Marketing Needs X3",
+                          "status": "draft",
+                          "remarks": "Membership chat GPT",
+                          "is_active": true,
+                          "user_create": "20994",
+                          "created_at": "2026-02-27T05:01:58+07:00"
+                      },
+                      {
+                          "movement_id": "0a461fa6-ff37-4437-8f04-e88e876ac2d3",
+                          "movement_code": "MOV/KDY/2602-00011",
+                          "company_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "current_business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "destination_business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "transaction_date": "2024-10-22T00:00:00Z",
+                          "purpose": "Marketing Needs X3",
+                          "status": "draft",
+                          "remarks": "Membership chat GPT",
+                          "is_active": true,
+                          "user_create": "20994",
+                          "created_at": "2026-02-27T04:56:14+07:00"
+                      },
+                      {
+                          "movement_id": "059e778c-9342-48bb-a583-cd810053b8a3",
+                          "movement_code": "MOV/KDY/2602-00009",
+                          "company_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "current_business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "destination_business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "transaction_date": "2024-10-22T00:00:00Z",
+                          "purpose": "Marketing Needs",
+                          "status": "draft",
+                          "remarks": "Membership chat GPT",
+                          "is_active": true,
+                          "user_create": "20994",
+                          "created_at": "2024-10-22T13:24:42+08:00"
+                      },
+                      {
+                          "movement_id": "41a6f078-e3ca-4205-9d9d-45281f3533a4",
+                          "movement_code": "MOV/KDY/2602-00017",
+                          "company_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "current_business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "destination_business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "transaction_date": "2024-10-22T00:00:00Z",
+                          "purpose": "Marketing Needs X5 - EditX",
+                          "status": "draft",
+                          "remarks": "Membership chat GPT",
+                          "is_active": true,
+                          "user_create": "20994",
+                          "created_at": "2024-10-22T13:24:42+08:00",
+                          "user_update": "admin",
+                          "updated_at": "2026-02-27T07:33:31+07:00"
+                      }
+                  ]
+              }
+          }

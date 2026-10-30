@@ -1,0 +1,128 @@
+info:
+  name: Patch
+  type: http
+  seq: 8
+
+http:
+  method: PATCH
+  url: "{{BASE_URL}}/v1/appointments/:business_unit_id?appointment_no=APKDY%2F250521-00013"
+  headers:
+    - name: x-token
+      value: "{{admission_xtoken}}"
+  params:
+    - name: appointment_no
+      value: APKDY%2F250521-00013
+      type: query
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"user_update\": \"admin\",\r
+
+      \    \"updated_at\": \"2025-03-18T14:08:41+07:00\",\r
+
+      \    \"data\": [\r
+
+      \        { \"field\": \"first_name\", \"value\": \"alexander\" },\r
+
+      \        { \"field\": \"middle_name\", \"value\": \"kim\" },\r
+
+      \        { \"field\": \"street_name\", \"value\": \"Jl. Sudirman No. 123\" }\r
+
+      \    ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/appointments/:business_unit_id/:appointment_no"
+      method: PATCH
+      headers:
+        - name: x-token
+          value: "{{admission_xtoken}}"
+      params:
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: path
+        - name: appointment_no
+          value: APKDY%2F250508-00001
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"user_update\": \"admin_user\",\r
+
+          \    \"updated_at\": \"2025-03-18T14:08:41+07:00\",\r
+
+          \    \"data\": [\r
+
+          \        { \"field\": \"first_name\", \"value\": \"alexander\" },\r
+
+          \        { \"field\": \"middle_name\", \"value\": \"kim\" },\r
+
+          \        { \"field\": \"street_name\", \"value\": \"Jl. Sudirman No. 123\" }\r
+
+          \    ]\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Wed, 14 May 2025 04:44:44 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "185"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "appointment_no": "APKDY/250508-00001",
+                  "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "user_update": "admin_user",
+                  "updated_at": "2025-03-18T14:08:41+07:00"
+              }
+          }

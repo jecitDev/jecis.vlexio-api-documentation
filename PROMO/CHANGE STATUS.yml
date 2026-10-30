@@ -1,0 +1,116 @@
+info:
+  name: CHANGE STATUS
+  type: http
+  seq: 3
+
+http:
+  method: PATCH
+  url: "{{BASE_URL}}/v1/promo/id/:id/status"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: id
+      value: c1b3e443-e10a-44d0-bfdf-e1d25269f412
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"package_status\": \"PS002\",\r
+
+      \    \"user_update\": \"Admin\",\r
+
+      \    \"updated_at\": \"2025-04-07T14:51:00+07:00\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: CHANGE STATUS
+    request:
+      url: "{{BASE_URL}}/v1/promo/id/:id/status"
+      method: PATCH
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: id
+          value: c1b3e443-e10a-44d0-bfdf-e1d25269f412
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"package_status\": \"PS002\",\r
+
+          \    \"user_update\": \"Admin\",\r
+
+          \    \"updated_at\": \"2025-04-07T14:51:00+07:00\"\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 07 Apr 2025 07:51:12 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "495"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "package_id": "c1b3e443-e10a-44d0-bfdf-e1d25269f412",
+                  "package_name": "AppointmentNo",
+                  "package_short_name": "AppointmentNo",
+                  "package_status": "PS002",
+                  "package_pic": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "package_type": "Admin2",
+                  "package_start": "apno",
+                  "package_end": "2025-04-06T13:03:45+07:00",
+                  "is_item_non_medical": true,
+                  "bill_receipt_type": "Card",
+                  "user_create": "2025-04-04T13:03:45+07:00",
+                  "updated_at": "Admin1",
+                  "user_update": "2025-04-07T14:51:00+07:00",
+                  "business_unit_id": "Admin"
+              }
+          }

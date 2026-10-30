@@ -1,0 +1,22 @@
+info:
+  name: Get By Data
+  type: http
+  seq: 8
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/appointmentlegend/get_by_data"
+  headers:
+    - name: x-token
+      value: "{{admission_xtoken}}"
+  body:
+    type: json
+    data: "{\r\n    // \"dob\": \"2000-03-18T14:08:41+07:00\",\r\n    // \"appointment_source\": \"WhatsApp\",\r\n    // \"is_blocked\": \"true\",\r\n    \"appointment_status\": \"confirm\",\r\n    // \"reff_no\": \"APKDY/250521-00003\",\r\n    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\"\r\n}"
+  auth:
+    type: bearer
+    token: "{{xtoken}}"
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

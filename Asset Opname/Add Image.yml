@@ -1,0 +1,123 @@
+info:
+  name: Add Image
+  type: http
+  seq: 12
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/AssetOpname/addimageopname"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-User-ID
+      value: surya
+  body:
+    type: multipart-form
+    data:
+      - name: business_unit_id_opname
+        type: text
+        value: 18e9ea73-7343-4be2-a8e4-47b652e56981
+      - name: asset_opname_barcode
+        type: text
+        value: NSD/KDY/2602-13-0003
+      - name: asset_opname_code
+        type: text
+        value: AO-ND-NSD-2026-001
+      - name: asset_opname_room_id
+        type: text
+        value: "00.24"
+      - name: file_name
+        type: text
+        value: insert_terbaru
+      - name: file
+        type: file
+        value:
+          - /C:/Users/MSI_/Downloads/tugas 1.png
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/AssetOpname/addimageopname"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: surya
+      body:
+        type: multipart-form
+        data:
+          - name: business_unit_id_opname
+            type: text
+            value: 18e9ea73-7343-4be2-a8e4-47b652e56981
+          - name: asset_opname_barcode
+            type: text
+            value: NSD/KDY/2602-13-0003
+          - name: asset_opname_code
+            type: text
+            value: AO-ND-NSD-2026-001
+          - name: asset_opname_room_id
+            type: text
+            value: "00.24"
+          - name: file_name
+            type: text
+            value: insert_terbaru
+          - name: file
+            type: file
+            value:
+              - /C:/Users/MSI_/Downloads/tugas 1.png
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: date
+          value: Wed, 30 Sep 2026 05:18:42 GMT
+        - name: content-type
+          value: application/json
+        - name: content-length
+          value: "280"
+        - name: x-xss-protection
+          value: "0"
+        - name: x-content-type-options
+          value: nosniff
+        - name: x-frame-options
+          value: SAMEORIGIN
+        - name: cross-origin-embedder-policy
+          value: require-corp
+        - name: cross-origin-opener-policy
+          value: same-origin
+        - name: cross-origin-resource-policy
+          value: same-origin
+        - name: origin-agent-cluster
+          value: ?1
+        - name: referrer-policy
+          value: no-referrer
+        - name: x-dns-prefetch-control
+          value: off
+        - name: x-download-options
+          value: noopen
+        - name: x-permitted-cross-domain-policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+            "code": 201,
+            "data": {
+              "business_unit_id": "18e9ea73-7343-4be2-a8e4-47b652e56981",
+              "asset_opname_code": "AO-ND-NSD-2026-001",
+              "asset_opname_room_id": "00.24",
+              "asset_opname_barcode": "NSD/KDY/2602-13-0003",
+              "sequence_no": "006",
+              "user_update": "surya",
+              "updated_at": "2026-09-30T12:18:33+07:00"
+            }
+          }

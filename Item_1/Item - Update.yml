@@ -1,0 +1,342 @@
+info:
+  name: Item - Update
+  type: http
+  seq: 7
+
+http:
+  method: PUT
+  url: "http://127.0.0.1:8080/v1/Item/update/:id "
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: "id "
+      value: e7aefc02-dda2-4a92-a051-94db5b5fdf17
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+      \    \"item_id\": \"e7aefc02-dda2-4a92-a051-94db5b5fdf17\",\r
+
+      \    \"item_code\": \"LAP-00002\",\r
+
+      \    \"item_name\": \"Laptop Lenovo edit\",\r
+
+      \    \"description\": \"Laptop Lenovo Yoga edit\",\r
+
+      \    \"item_group_id\": 101,\r
+
+      \    \"sr_item_type\": \"Tech\",\r
+
+      \    \"sr_dosage_form\": \"TABLET\",\r
+
+      \    \"product_account_id\": \"ACC-98765\",\r
+
+      \    \"abc_class\": \"A\",\r
+
+      \    \"is_maintain_stock\": true,\r
+
+      \    \"brand\": \"Panadol\",\r
+
+      \    \"registration_no\": \"REG-2024-0045\",\r
+
+      \    \"base_uom\": \"PCS\",\r
+
+      \    \"transaction_uom\": \"BOX\",\r
+
+      \    \"is_consignment\": false,\r
+
+      \    \"is_active\": true,\r
+
+      \    \"coverage\": [\r
+
+      \        \"53aad077-9fb1-4f08-85f3-af9fd9a36519\"\r
+
+      \    ],\r
+
+      \    \"fabric_id\": \"FAB001\",\r
+
+      \    \"variant\": \"Regular Strength\",\r
+
+      \    \"type\": \"OTC\",\r
+
+      \    \"is_inventory_item\": true,\r
+
+      \    \"notes\": \"Store below 25°C. Keep away from moisture.\",\r
+
+      \    \"is_formularium\": true,\r
+
+      \    \"is_compounding_item\": false,\r
+
+      \    \"is_controlled_substance\": false,\r
+
+      \    \"shelf_life_in_days\": 730,\r
+
+      \    \"end_of_life\": 730,\r
+
+      \    \"valuation_method\": \"FIFO\",\r
+
+      \    \"weight_per_unit\": \"0.5\",\r
+
+      \    \"weight_uom\": \"KG\",\r
+
+      \    \"sr_purchase_unit\": \"BOX\",\r
+
+      \    \"lead_time\": 5,\r
+
+      \    \"min_order\": 10,\r
+
+      \    \"safety_stock\": 50,\r
+
+      \    \"is_allow_purchase\": true,\r
+
+      \    \"updated_at\": \"2024-03-01T13:24:42+08:00\",\r
+
+      \    \"user_update\": \"rickyEdit\",\r
+
+      \    \"object_uom\": [\r
+
+      \        {\r
+
+      \            \"uom\": \"Lusin\",\r
+
+      \            \"conversion_factor\": 45\r
+
+      \        },\r
+
+      \        {\r
+
+      \            \"uom\": \"Dus\",\r
+
+      \            \"conversion_factor\": 25\r
+
+      \        }\r
+
+      \    ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Item - Update API
+    request:
+      url: "http://127.0.0.1:8080/v1/Item/update/:id "
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: "id "
+          value: e7aefc02-dda2-4a92-a051-94db5b5fdf17
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+          \    \"item_id\": \"e7aefc02-dda2-4a92-a051-94db5b5fdf17\",\r
+
+          \    \"item_code\": \"LAP-00002\",\r
+
+          \    \"item_name\": \"Laptop Lenovo edit\",\r
+
+          \    \"description\": \"Laptop Lenovo Yoga edit\",\r
+
+          \    \"item_group_id\": 101,\r
+
+          \    \"sr_item_type\": \"Tech\",\r
+
+          \    \"sr_dosage_form\": \"TABLET\",\r
+
+          \    \"product_account_id\": \"ACC-98765\",\r
+
+          \    \"abc_class\": \"A\",\r
+
+          \    \"is_maintain_stock\": true,\r
+
+          \    \"brand\": \"Panadol\",\r
+
+          \    \"registration_no\": \"REG-2024-0045\",\r
+
+          \    \"base_uom\": \"PCS\",\r
+
+          \    \"transaction_uom\": \"BOX\",\r
+
+          \    \"is_consignment\": false,\r
+
+          \    \"is_active\": true,\r
+
+          \    \"coverage\": [\r
+
+          \        \"53aad077-9fb1-4f08-85f3-af9fd9a36519\"\r
+
+          \    ],\r
+
+          \    \"fabric_id\": \"FAB001\",\r
+
+          \    \"variant\": \"Regular Strength\",\r
+
+          \    \"type\": \"OTC\",\r
+
+          \    \"is_inventory_item\": true,\r
+
+          \    \"notes\": \"Store below 25°C. Keep away from moisture.\",\r
+
+          \    \"is_formularium\": true,\r
+
+          \    \"is_compounding_item\": false,\r
+
+          \    \"is_controlled_substance\": false,\r
+
+          \    \"shelf_life_in_days\": 730,\r
+
+          \    \"end_of_life\": 730,\r
+
+          \    \"valuation_method\": \"FIFO\",\r
+
+          \    \"weight_per_unit\": \"0.5\",\r
+
+          \    \"weight_uom\": \"KG\",\r
+
+          \    \"sr_purchase_unit\": \"BOX\",\r
+
+          \    \"lead_time\": 5,\r
+
+          \    \"min_order\": 10,\r
+
+          \    \"safety_stock\": 50,\r
+
+          \    \"is_allow_purchase\": true,\r
+
+          \    \"updated_at\": \"2024-03-01T13:24:42+08:00\",\r
+
+          \    \"user_update\": \"rickyEdit\",\r
+
+          \    \"object_uom\": [\r
+
+          \        {\r
+
+          \            \"uom\": \"Lusin\",\r
+
+          \            \"conversion_factor\": 45\r
+
+          \        },\r
+
+          \        {\r
+
+          \            \"uom\": \"Dus\",\r
+
+          \            \"conversion_factor\": 25\r
+
+          \        }\r
+
+          \    ]\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 07 Apr 2026 02:56:03 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "1205"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "item_id": "e7aefc02-dda2-4a92-a051-94db5b5fdf17",
+                  "item_code": "LAP-00002",
+                  "item_name": "Laptop Lenovo edit",
+                  "description": "Laptop Lenovo Yoga edit",
+                  "item_group_id": 101,
+                  "sr_item_type": "Tech",
+                  "sr_dosage_form": "TABLET",
+                  "product_account_id": "ACC-98765",
+                  "abc_class": "A",
+                  "is_maintain_stock": true,
+                  "brand": "Panadol",
+                  "registration_no": "REG-2024-0045",
+                  "base_uom": "PCS",
+                  "transaction_uom": "BOX",
+                  "is_consignment": false,
+                  "is_active": true,
+                  "coverage": [
+                      "53aad077-9fb1-4f08-85f3-af9fd9a36519"
+                  ],
+                  "user_create": "ricky",
+                  "created_at": "2026-04-07T09:52:18+07:00",
+                  "user_update": "rickyEdit",
+                  "updated_at": "2026-04-07T09:56:04+07:00",
+                  "fabric_id": "FAB001",
+                  "variant": "Regular Strength",
+                  "type": "OTC",
+                  "is_inventory_item": true,
+                  "notes": "Store below 25°C. Keep away from moisture.",
+                  "is_formularium": true,
+                  "is_compounding_item": false,
+                  "is_controlled_substance": false,
+                  "shelf_life_in_days": 730,
+                  "end_of_life": 730,
+                  "valuation_method": "FIFO",
+                  "weight_per_unit": "0.5",
+                  "weight_uom": "KG",
+                  "sr_purchase_unit": "BOX",
+                  "lead_time": 5,
+                  "min_order": 10,
+                  "safety_stock": 50,
+                  "is_allow_purchase": true,
+                  "object_uom": [
+                      {
+                          "uom": "Lusin",
+                          "conversion_factor": 45
+                      },
+                      {
+                          "uom": "Dus",
+                          "conversion_factor": 25
+                      }
+                  ]
+              }
+          }

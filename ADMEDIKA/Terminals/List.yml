@@ -1,0 +1,156 @@
+info:
+  name: List
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/admedika/terminals?page=1&page_size=10&sort_by=created_at&sort_order=desc"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: page_size
+      value: "10"
+      type: query
+    - name: sort_by
+      value: created_at
+      type: query
+    - name: sort_order
+      value: desc
+      type: query
+    - name: branch_id
+      value: 4927303d-5a90-48ea-b2c5-994bac4942db
+      type: query
+      disabled: true
+    - name: terminal_id
+      value: "12372352"
+      type: query
+      disabled: true
+    - name: is_virtual
+      value: "true"
+      type: query
+      disabled: true
+    - name: is_active
+      value: "true"
+      type: query
+      disabled: true
+    - name: keywords
+      value: lantai
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: List
+    request:
+      url: "{{BASE_URL}}/v1/admedika/terminals?page=1&page_size=10&sort_by=created_at&sort_order=desc"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: page_size
+          value: "10"
+          type: query
+        - name: sort_by
+          value: created_at
+          type: query
+        - name: sort_order
+          value: desc
+          type: query
+        - name: branch_id
+          value: 4927303d-5a90-48ea-b2c5-994bac4942db
+          type: query
+          disabled: true
+        - name: terminal_id
+          value: "12372352"
+          type: query
+          disabled: true
+        - name: is_virtual
+          value: "true"
+          type: query
+          disabled: true
+        - name: is_active
+          value: "true"
+          type: query
+          disabled: true
+        - name: keywords
+          value: lantai
+          type: query
+          disabled: true
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 27 Oct 2026 12:20:12 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "461"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+            "code": 200,
+            "data": {
+              "page": 1,
+              "page_size": 10,
+              "terminals": [
+                {
+                  "branch_id": "bbf0a2cb-8a27-479d-8108-e34a92925d39",
+                  "business_unit_id": "33b109c5-dd64-480c-8100-68fe17deaf3e",
+                  "created_at": "2026-10-27T19:18:55+07:00",
+                  "id": "442dcfda-4a0d-45ea-86f3-6ddd4a58ecef",
+                  "is_active": true,
+                  "is_virtual": true,
+                  "label": "Kasir Rawat Jalan Lantai 2",
+                  "terminal_id": "12372352",
+                  "updated_at": "2026-10-27T19:19:56+07:00",
+                  "user_create": "ferdinan",
+                  "user_update": "ferdinan"
+                }
+              ],
+              "total_items": "1"
+            }
+          }

@@ -1,0 +1,270 @@
+info:
+  name: Update Special Rule
+  type: http
+  seq: 18
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/promo/promo-special-rules/:package_id/:id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: package_id
+      value: 9a368312-f26a-49e1-80bd-b12e085cecaf
+      type: path
+    - name: id
+      value: "4"
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \  \"sr_special_rule_type\": \"Rule-1\",\r
+
+      \  \"description\": \"Test123\",\r
+
+      \  \"user_update\": \"admin\",\r
+
+      \  \"updated_at\": \"2025-08-06T10:30:00+07:00\",\r
+
+      \  \"config\": {\r
+
+      \    \"coa_id_debit\": 124,\r
+
+      \    \"coa_id_credit\": 231,\r
+
+      \    \"supplier_id\": \"Supp_123\",\r
+
+      \    \"amount_value\": {\r
+
+      \      \"monday\": 25000.0,\r
+
+      \      \"tuesday\": 32000.0,\r
+
+      \      \"wednesday\": 12000.0,\r
+
+      \      \"thursday\": 22000.0,\r
+
+      \      \"friday\": 2000.0,\r
+
+      \      \"saturday\": 50000.0,\r
+
+      \      \"sunday\": 40000.0\r
+
+      \    }\r
+
+      \  }\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/promo/promo-special-rules/:package_id/:id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: package_id
+          value: 9a368312-f26a-49e1-80bd-b12e085cecaf
+          type: path
+        - name: id
+          value: "4"
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \  \"sr_special_rule_type\": \"Rule-1\",\r
+
+          \  \"description\": \"Test123\",\r
+
+          \  \"user_update\": \"admin\",\r
+
+          \  \"updated_at\": \"2025-08-06T10:30:00+07:00\",\r
+
+          \  \"config\": {\r
+
+          \    \"coa_id_debit\": 124,\r
+
+          \    \"coa_id_credit\": 231,\r
+
+          \    \"supplier_id\": \"Supp_123\",\r
+
+          \    \"amount_value\": {\r
+
+          \      \"monday\": 25000.0,\r
+
+          \      \"tuesday\": 32000.0,\r
+
+          \      \"wednesday\": 12000.0,\r
+
+          \      \"thursday\": 22000.0,\r
+
+          \      \"friday\": 2000.0,\r
+
+          \      \"saturday\": 50000.0,\r
+
+          \      \"sunday\": 40000.0\r
+
+          \    }\r
+
+          \  }\r
+
+          }"
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Date
+          value: Thu, 07 Aug 2025 06:37:41 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "143"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 201,
+              "data": {
+                  "id": 4,
+                  "package_id": "9a368312-f26a-49e1-80bd-b12e085cecaf",
+                  "user_update": "admin",
+                  "updated_at": "2025-08-06T10:30:00+07:00"
+              }
+          }
+  - name: Not Found
+    request:
+      url: "{{BASE_URL}}/v1/promo/promo-special-rules/:package_id/:id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: package_id
+          value: 9a368312-f26a-49e1-80bd-b12e085cecae
+          type: path
+        - name: id
+          value: "4"
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \  \"sr_special_rule_type\": \"Rule-1\",\r
+
+          \  \"description\": \"Test123\",\r
+
+          \  \"user_update\": \"admin\",\r
+
+          \  \"updated_at\": \"2025-08-06T10:30:00+07:00\",\r
+
+          \  \"config\": {\r
+
+          \    \"coa_id_debit\": 124,\r
+
+          \    \"coa_id_credit\": 231,\r
+
+          \    \"supplier_id\": \"Supp_123\",\r
+
+          \    \"amount_value\": {\r
+
+          \      \"monday\": 25000.0,\r
+
+          \      \"tuesday\": 32000.0,\r
+
+          \      \"wednesday\": 12000.0,\r
+
+          \      \"thursday\": 22000.0,\r
+
+          \      \"friday\": 2000.0,\r
+
+          \      \"saturday\": 50000.0,\r
+
+          \      \"sunday\": 40000.0\r
+
+          \    }\r
+
+          \  }\r
+
+          }"
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Date
+          value: Thu, 07 Aug 2025 06:40:32 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "49"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "special_rule.not_found",
+              "status": 404
+          }

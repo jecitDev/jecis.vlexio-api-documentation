@@ -1,0 +1,128 @@
+info:
+  name: Void
+  type: http
+  seq: 1
+
+http:
+  method: DELETE
+  url: "{{BASE_URL}}/v1/registration_service_unit/:registration_id/:transaction_id"
+  headers:
+    - name: x-token
+      value: "{{admission_xtoken}}"
+  params:
+    - name: paramedic_id
+      value: DKDY0003
+      type: query
+      disabled: true
+    - name: registration_id
+      value: fffff472-1a3f-472b-b16a-214e394ccb93
+      type: path
+    - name: transaction_id
+      value: "4"
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+      \    \"company_id\": \"2da6a1bd-ba62-43ec-91f8-4085d5d6d498\",\r
+
+      \    \"void_notes\": \"test void\",\r
+
+      \    \"void_by_user_id\": \"21613\",\r
+
+      \    \"void_date\": \"2025-06-18T10:00:00+07:00\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/registration_service_unit/:registration_id/:transaction_id"
+      method: DELETE
+      headers:
+        - name: x-token
+          value: "{{admission_xtoken}}"
+      params:
+        - name: paramedic_id
+          value: DKDY0003
+          type: query
+          disabled: true
+        - name: registration_id
+          value: fffff472-1a3f-472b-b16a-214e394ccb93
+          type: path
+        - name: transaction_id
+          value: "4"
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+          \    \"company_id\": \"2da6a1bd-ba62-43ec-91f8-4085d5d6d498\",\r
+
+          \    \"void_notes\": \"test void\",\r
+
+          \    \"void_by_user_id\": \"21613\",\r
+
+          \    \"void_date\": \"2025-06-18T10:00:00+07:00\"\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 25 Sep 2025 23:32:05 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "207"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",
+                  "registration_id": "fffff472-1a3f-472b-b16a-214e394ccb93",
+                  "transaction_id": 4
+              }
+          }

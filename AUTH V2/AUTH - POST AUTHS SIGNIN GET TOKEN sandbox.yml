@@ -1,0 +1,140 @@
+info:
+  name: AUTH - POST AUTHS SIGNIN GET TOKEN sandbox
+  type: http
+  seq: 2
+http:
+  method: POST
+  url: "{{BASE_URL}}/auths/get_token"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r\n    \"email\": \"21170\",\r\n    \"password\": \"\",\r\n    \"company_id\": \"71b53dd1-2802-4527-8b5c-d54173392222\",\r\n    \"business_unit_id\": \"18e9ea73-7343-4be2-a8e4-47b652e56981\",\r\n    \"fcm_token\": \"\",\r\n    \"station_id\": 1,\r\n    \"app\": \"vlexio\"\r\n}\r\n"
+  auth: inherit
+runtime:
+  scripts:
+    - type: after-response
+      code: "var data = res.getBody();\r\nbru.setCollectionVar(\"xtoken\", data.data.access_token);\r\nbru.setCollectionVar(\"x-refresh-token\", data.data.refresh_token);"
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: AUTH - POST AUTHS SIGNIN GET TOKEN
+    request:
+      url: "{{BASE_URL}}/auths/get_token"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+          disabled: true
+      body:
+        type: json
+        data: "{\r\n    \"email\": \"fernando.riyo@jec.co.id\",\r\n    \"password\": \"\",\r\n    \"company_id\": \"706cded9-0fca-4ed8-a68c-08ab6c4f3a7f\",\r\n    \"business_unit_id\": \"e10997e9-7b7f-4037-b299-0e3cd954d619\",\r\n    \"fcm_token\":\"\",\r\n    \"station_id\":1,\r\n    \"app\":\"web\"\r\n}"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 06 Jun 2024 01:53:13 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "1399"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "access_token": "",
+                  "refresh_token": "",
+                  "user_id": "21170",
+                  "user_name": "Fernando Riyo J Simbolon ",
+                  "email": "fernando.riyo@jec.co.id",
+                  "expire_in": 1717640594
+              }
+          }
+docs: |-
+  ## Overview
+
+  This endpoint authenticates a user in the **sandbox** environment and returns:
+
+  - an **access token** (`access_token`) to be used in subsequent API calls, and
+      
+  - a **refresh token** (`refresh_token`) to obtain new access tokens when the current one expires.
+      
+
+  After a successful response, the tokens are stored as collection variables:
+
+  - `xtoken` → access token
+      
+  - `x-refresh-token` → refresh token
+      
+
+  These variables can then be used by other requests in the collection.
+
+  ---
+
+  ## Request
+
+  - **Method:** `POST`
+      
+  - **URL:** `{{BASE_URL}}/auths/get_token`
+      
+  - **Environment:** `SB_JECIS_STAGGING_BACKEND` (uses `{{BASE_URL}}`)
+      
+
+  ---
+
+  ## Headers
+
+  | Name | Type | Required | Description | Example |
+  | --- | --- | --- | --- | --- |
+  | x-token | string | Yes | Token used for sandbox auth flows (e.g., bootstrap or fixed) | `{{xtoken}}` |
+  | Content-Type | string | Yes | Payload is sent as JSON | `application/json` |
+
+  > Note: `x-token` is stored as a collection variable `xtoken`. Make sure it is set/updated before calling this endpoint. 
+    
+
+  ---
+
+  ## Body (JSON)
+
+  Body type: **raw** → **JSON**
+
+  \`\`\`json  
+  {  
+  "email": "21170",  
+  "password": "**",  
+  "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",  
+  "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",  
+  "fcm_token": "123",  
+  "station_id": 1,  
+  "app": "web"  
+  }

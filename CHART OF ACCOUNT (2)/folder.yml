@@ -1,0 +1,7 @@
+info:
+  name: CHART OF ACCOUNT
+  type: folder
+  seq: 129
+
+request:
+  auth: inherit

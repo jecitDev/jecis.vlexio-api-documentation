@@ -1,0 +1,29 @@
+info:
+  name: MAssetGroup List By Param Vlexio
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: https://api.vlexio.com/v1/MAssetGroup/listbyparam?assetgroupid=006&business_unit_id=f64e10b4-0cbf-4fee-ac09-1a4fa199696c
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: assetgroupid
+      value: "006"
+      type: query
+    - name: business_unit_id
+      value: f64e10b4-0cbf-4fee-ac09-1a4fa199696c
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

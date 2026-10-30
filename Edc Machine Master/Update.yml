@@ -1,0 +1,153 @@
+info:
+  name: Update
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/EdcMachineMaster/:id/:businessunitid"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: id
+      value: EDC0002
+      type: path
+    - name: businessunitid
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"healthcare_id\": \"ABC\",\r
+
+      \    \"edc_machine_name\": \"Random Name 3\",\r
+
+      \    \"mac_address\": \"234.213.242\",\r
+
+      \    \"description\": \"Ferdinand\",\r
+
+      \    \"chart_of_account_id\": 1,\r
+
+      \    \"subledger_id\": 1,\r
+
+      \    \"user_update\": \"Ferdinand\",\r
+
+      \    \"updated_at\": \"2025-04-10T13:58:23+07:00\",\r
+
+      \    \"port_name\": \"PORT\",\r
+
+      \    \"baudrate\": 2,\r
+
+      \    \"data_bits\": 16\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Update
+    request:
+      url: "{{BASE_URL}}/v1/EdcMachineMaster/:id/:businessunitid"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: id
+          value: EDC0002
+          type: path
+        - name: businessunitid
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"healthcare_id\": \"ABC\",\r
+
+          \    \"edc_machine_name\": \"Random Name 3\",\r
+
+          \    \"mac_address\": \"234.213.242\",\r
+
+          \    \"description\": \"Ferdinand\",\r
+
+          \    \"chart_of_account_id\": 1,\r
+
+          \    \"subledger_id\": 1,\r
+
+          \    \"user_update\": \"Ferdinand\",\r
+
+          \    \"updated_at\": \"2025-04-10T13:58:23+07:00\",\r
+
+          \    \"port_name\": \"PORT\",\r
+
+          \    \"baudrate\": 2,\r
+
+          \    \"data_bits\": 16\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Fri, 11 Apr 2025 04:05:56 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "372"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "healthcare_id": "ABC",
+                  "edc_machine_id": "EDC0002",
+                  "edc_machine_name": "Random Name 3",
+                  "mac_address": "234.213.242",
+                  "description": "Ferdinand",
+                  "chart_of_account_id": 1,
+                  "subledger_id": 1,
+                  "port_name": "PORT",
+                  "baudrate": 2,
+                  "data_bits": 16,
+                  "user_update": "Ferdinand",
+                  "updated_at": "2025-04-10T13:58:23+07:00"
+              }
+          }

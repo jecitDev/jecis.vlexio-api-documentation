@@ -1,0 +1,34 @@
+info:
+  name: App Parameter
+  type: folder
+  seq: 3
+
+request:
+  auth: inherit
+
+docs:
+  content: |-
+    ### **\[TS-661\] \[MASTER\] APP CONFIG #1.0.1**
+
+    April 26, 2024
+
+    - Add field Eclaim Country; Eclaim City; SIP Pic; MPP Pic; App Company ID and App Healthcare ID `[Enhance]`
+        
+
+    ##### April 17, 2024
+
+    - Add field Company ID and Business Unit ID `[Enhance]`
+        
+
+    ### **\[TS-661\] \[MASTER\] APP CONFIG #1.0.0**
+
+    ##### March 13, 2024
+
+    - CRUD Common
+        
+    - Handle UpdateByUserId and `[Enhance]`
+        
+    - Add field IsVisible; add method GetItem `[Enhance]`
+        
+    - Add method UpdateItem `[Enhance]`
+  type: text/markdown

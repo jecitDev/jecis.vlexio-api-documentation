@@ -1,0 +1,210 @@
+info:
+  name: Patch Guarantor
+  type: http
+  seq: 9
+
+http:
+  method: PATCH
+  url: "{{BASE_URL}}/v1/marketing/guarantor/:guarantor_id/:company_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: guarantor_id
+      value: 100984d4-be79-47d2-a6ac-73175a2722e8
+      type: path
+    - name: company_id
+      value: df0ff1b4-c381-4f1a-a0ab-0702c789d46b
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"user_update\": \"ferdinand\",\r
+
+      \    \"updated_at\": \"2025-03-18T14:08:41+07:00\",\r
+
+      \    \"data\": [\r
+
+      \        {\"field\": \"guarantor_name\", \"value\": \"CV. Aman Sentosa Updated\"},\r
+
+      \        {\"field\": \"is_enable\", \"value\": \"false\"},\r
+
+      \        {\"field\": \"guarantor_id\", \"value\": \"598fea04-dcda-4ebd-8d37-73f8b2b17782\"},\r
+
+      \        {\"field\": \"chart_of_account_id\", \"value\": \"102\"}\r
+
+      \    ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/:guarantor_id/:company_id"
+      method: PATCH
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: guarantor_id
+          value: 100984d4-be79-47d2-a6ac-73175a2722e8
+          type: path
+        - name: company_id
+          value: df0ff1b4-c381-4f1a-a0ab-0702c789d46b
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"user_update\": \"ferdinand\",\r
+
+          \    \"updated_at\": \"2025-03-18T14:08:41+07:00\",\r
+
+          \    \"data\": [\r
+
+          \        {\"field\": \"guarantor_name\", \"value\": \"CV. Aman Sentosa Updated\"},\r
+
+          \        {\"field\": \"is_enable\", \"value\": \"false\"},\r
+
+          \        {\"field\": \"guarantor_id\", \"value\": \"598fea04-dcda-4ebd-8d37-73f8b2b17782\"},\r
+
+          \        {\"field\": \"chart_of_account_id\", \"value\": \"102\"}\r
+
+          \    ]\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Fri, 13 Jun 2025 09:20:35 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "194"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "guarantor_id": "100984d4-be79-47d2-a6ac-73175a2722e8",
+                  "company_id": "df0ff1b4-c381-4f1a-a0ab-0702c789d46b",
+                  "user_update": "ferdinand",
+                  "updated_at": "2025-03-18T14:08:41+07:00"
+              }
+          }
+  - name: Not Found
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/:guarantor_id/:company_id"
+      method: PATCH
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: guarantor_id
+          value: 100984d4-be79-47d2-a6ac-73175a2722e7
+          type: path
+        - name: company_id
+          value: df0ff1b4-c381-4f1a-a0ab-0702c789d46b
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"user_update\": \"ferdinand\",\r
+
+          \    \"updated_at\": \"2025-03-18T14:08:41+07:00\",\r
+
+          \    \"data\": [\r
+
+          \        {\"field\": \"guarantor_name\", \"value\": \"CV. Aman Sentosa Updated\"},\r
+
+          \        {\"field\": \"is_enable\", \"value\": \"false\"},\r
+
+          \        {\"field\": \"guarantor_id\", \"value\": \"598fea04-dcda-4ebd-8d37-73f8b2b17782\"},\r
+
+          \        {\"field\": \"chart_of_account_id\", \"value\": \"102\"}\r
+
+          \    ]\r
+
+          }"
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Date
+          value: Fri, 13 Jun 2025 09:21:00 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "46"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "guarantor.not_found",
+              "status": 404
+          }

@@ -1,0 +1,148 @@
+info:
+  name: BY ID
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/bridgepaymentmethods/:id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: id
+      value: PaymentMethod-002
+      type: path
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: BY ID
+    request:
+      url: "{{BASE_URL}}/v1/bridgepaymentmethods/:id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: id
+          value: PaymentMethod-002
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 13 Nov 2023 07:44:10 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "1094"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "bridgepaymentmethods": [
+                      {
+                          "sr_payment_method_id": "PaymentMethod-002",
+                          "sr_payment_type_id": "PaymentType-001",
+                          "coa_id": 123,
+                          "subledger_id": 123,
+                          "is_active": true,
+                          "user_create": "Admin1",
+                          "created_at": {
+                              "seconds": 1699847234,
+                              "nanos": 169985000
+                          },
+                          "user_update": "nando",
+                          "updated_at": {
+                              "seconds": 1699847234
+                          }
+                      },
+                      {
+                          "sr_payment_method_id": "PaymentMethod-002",
+                          "sr_payment_type_id": "PaymentType-002",
+                          "coa_id": 29,
+                          "subledger_id": 1,
+                          "is_active": true,
+                          "user_create": "Admin1",
+                          "created_at": {
+                              "seconds": 1699847234,
+                              "nanos": 169985000
+                          },
+                          "user_update": "Admin2",
+                          "updated_at": {
+                              "seconds": 1699847234,
+                              "nanos": 699847000
+                          }
+                      },
+                      {
+                          "sr_payment_method_id": "PaymentMethod-002",
+                          "sr_payment_type_id": "PaymentType-006",
+                          "coa_id": -99,
+                          "subledger_id": -99,
+                          "is_active": true,
+                          "user_create": "Admin1",
+                          "created_at": {
+                              "seconds": 1699847234,
+                              "nanos": 169985000
+                          },
+                          "updated_at": {
+                              "seconds": -62135596800
+                          }
+                      },
+                      {
+                          "sr_payment_method_id": "PaymentMethod-002",
+                          "sr_payment_type_id": "PaymentType-009",
+                          "coa_id": -99,
+                          "subledger_id": -99,
+                          "is_active": true,
+                          "user_create": "Admin1",
+                          "created_at": {
+                              "seconds": 1699847234,
+                              "nanos": 169985000
+                          },
+                          "updated_at": {
+                              "seconds": -62135596800
+                          }
+                      }
+                  ]
+              }
+          }

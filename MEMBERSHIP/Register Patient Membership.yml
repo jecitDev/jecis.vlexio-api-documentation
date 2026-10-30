@@ -1,0 +1,186 @@
+info:
+  name: Register Patient Membership
+  type: http
+  seq: 7
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/marketing/membership/register"
+  headers:
+    - name: x-token
+      value: "{{marketing_xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \  \"member_id\": \"9bf7495b-2436-462b-bfb0-68f288b59028\",\r
+
+      \  \"patient_id\": \"2a9d87fc-ad2f-4de6-990b-4515cb311415\",\r
+
+      \  \"member_card_id\": \"e8f5b2c1-6794-4269-a6ad-4d3e04b2b128\",\r
+
+      \  \"is_active\": true,\r
+
+      \  \"member_start\": \"2025-03-26T08:00:00+07:00\",\r
+
+      \  \"member_end\": \"2025-12-31T23:59:59+07:00\",\r
+
+      \  \"user_create\": \"est non in\",\r
+
+      \  \"created_at\": \"2025-03-26T10:30:00+07:00\"\r
+
+      }\r\n"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/marketing/membership/register"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{marketing_xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \  \"member_id\": \"9bf7495b-2436-462b-bfb0-68f288b59028\",\r
+
+          \  \"patient_id\": \"2a9d87fc-ad2f-4de6-990b-4515cb311415\",\r
+
+          \  \"member_card_id\": \"e8f5b2c1-6794-4269-a6ad-4d3e04b2b128\",\r
+
+          \  \"is_active\": true,\r
+
+          \  \"member_start\": \"2025-03-26T08:00:00+07:00\",\r
+
+          \  \"member_end\": \"2025-12-31T23:59:59+07:00\",\r
+
+          \  \"user_create\": \"est non in\",\r
+
+          \  \"created_at\": \"2025-03-26T10:30:00+07:00\"\r
+
+          }\r\n"
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Date
+          value: Thu, 03 Apr 2025 03:30:39 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "177"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 201,
+              "data": {
+                  "success": true,
+                  "message": "Register patient 2a9d87fc-ad2f-4de6-990b-4515cb311415 to member Premium Membership#9bf7495b-2436-462b-bfb0-68f288b59028 success "
+              }
+          }
+  - name: Membership ID Not Found
+    request:
+      url: "{{BASE_URL}}/v1/marketing/membership/register"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{marketing_xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \  \"member_id\": \"9bf7495b-2436-462b-bfb0-68f288b59029\",\r
+
+          \  \"patient_id\": \"2a9d87fc-ad2f-4de6-990b-4515cb311415\",\r
+
+          \  \"member_card_id\": \"e8f5b2c1-6794-4269-a6ad-4d3e04b2b128\",\r
+
+          \  \"is_active\": true,\r
+
+          \  \"member_start\": \"2025-03-26T08:00:00+07:00\",\r
+
+          \  \"member_end\": \"2025-12-31T23:59:59+07:00\",\r
+
+          \  \"user_create\": \"est non in\",\r
+
+          \  \"created_at\": \"2025-03-26T10:30:00+07:00\"\r
+
+          }\r\n"
+    response:
+      status: 500
+      statusText: Internal Server Error
+      headers:
+        - name: Date
+          value: Thu, 03 Apr 2025 03:31:05 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "54"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "no membership program found",
+              "status": 500
+          }

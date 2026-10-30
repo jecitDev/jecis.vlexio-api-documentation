@@ -1,0 +1,284 @@
+info:
+  name: Get Preview
+  type: http
+  seq: 7
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/tariff-requests/:business_unit_id/:tariff_request_id/rate-book-preview"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+    - name: tariff_request_id
+      value: bf59a804-3e7d-4650-a7a2-c751a16dd671
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Get Preview
+    request:
+      url: "{{BASE_URL}}/v1/tariff-requests/:business_unit_id/:tariff_request_id/rate-book-preview"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: path
+        - name: tariff_request_id
+          value: bf59a804-3e7d-4650-a7a2-c751a16dd671
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Wed, 18 Feb 2026 08:35:22 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "3443"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "items": [
+                      {
+                          "components": [
+                              {
+                                  "additionals": [
+                                      {
+                                          "additional_id": "faf1ab28-9ce3-456c-a1ea-a5089f2ff9ee",
+                                          "amount": "500000",
+                                          "billed_to_patient": true,
+                                          "is_not_paid_on_cross": true
+                                      }
+                                  ],
+                                  "deductions": [
+                                      {
+                                          "amount": 5000,
+                                          "deduction_id": "2da63cdf-bb61-4794-a1e9-5cc771080a75",
+                                          "is_percent": false
+                                      }
+                                  ],
+                                  "is_new": false,
+                                  "is_supervision": false,
+                                  "price_after": "200000",
+                                  "price_before": "200000",
+                                  "supervision": {
+                                      "dpjp_percentage": 0,
+                                      "supervision_percentage": 0
+                                  },
+                                  "tariff_component_id": "01"
+                              }
+                          ],
+                          "is_changed": false,
+                          "item_id": "7f79665f-56b4-4435-87e5-cc6a7c33ec12",
+                          "item_name": "Heacting EUA 1 Mata",
+                          "price_after": "200000",
+                          "price_before": "200000"
+                      },
+                      {
+                          "components": [
+                              {
+                                  "additionals": [
+                                      {
+                                          "additional_id": "faf1ab28-9ce3-456c-a1ea-a5089f2ff9ee",
+                                          "amount": "500000",
+                                          "billed_to_patient": true,
+                                          "is_not_paid_on_cross": true
+                                      },
+                                      {
+                                          "additional_id": "faf1ab28-9ce3-456c-a1ea-a5089f2ff9ef",
+                                          "amount": "100000",
+                                          "billed_to_patient": true,
+                                          "is_not_paid_on_cross": true
+                                      }
+                                  ],
+                                  "deductions": [
+                                      {
+                                          "amount": 5,
+                                          "deduction_id": "2da63cdf-bb61-4794-a1e9-5cc771080a75",
+                                          "is_percent": true
+                                      },
+                                      {
+                                          "amount": 10,
+                                          "deduction_id": "2da63cdf-bb61-4794-a1e9-5cc771080a74",
+                                          "is_percent": true
+                                      }
+                                  ],
+                                  "is_new": false,
+                                  "is_supervision": true,
+                                  "price_after": "300000",
+                                  "price_before": "200000",
+                                  "supervision": {
+                                      "dpjp_percentage": 70,
+                                      "supervision_percentage": 30
+                                  },
+                                  "tariff_component_id": "01"
+                              },
+                              {
+                                  "additionals": [
+                                      {
+                                          "additional_id": "faf1ab28-9ce3-456c-a1ea-a5089f2ff9ee",
+                                          "amount": "500000",
+                                          "billed_to_patient": true,
+                                          "is_not_paid_on_cross": true
+                                      },
+                                      {
+                                          "additional_id": "faf1ab28-9ce3-456c-a1ea-a5089f2ff9ef",
+                                          "amount": "100000",
+                                          "billed_to_patient": true,
+                                          "is_not_paid_on_cross": true
+                                      }
+                                  ],
+                                  "deductions": [
+                                      {
+                                          "amount": 5,
+                                          "deduction_id": "2da63cdf-bb61-4794-a1e9-5cc771080a75",
+                                          "is_percent": true
+                                      },
+                                      {
+                                          "amount": 10,
+                                          "deduction_id": "2da63cdf-bb61-4794-a1e9-5cc771080a74",
+                                          "is_percent": true
+                                      }
+                                  ],
+                                  "is_new": false,
+                                  "is_supervision": true,
+                                  "price_after": "400000",
+                                  "price_before": "400000",
+                                  "supervision": {
+                                      "dpjp_percentage": 70,
+                                      "supervision_percentage": 30
+                                  },
+                                  "tariff_component_id": "02"
+                              },
+                              {
+                                  "additionals": [
+                                      {
+                                          "additional_id": "faf1ab28-9ce3-456c-a1ea-a5089f2ff9ee",
+                                          "amount": "400000",
+                                          "billed_to_patient": true,
+                                          "is_not_paid_on_cross": true
+                                      },
+                                      {
+                                          "additional_id": "faf1ab28-9ce3-456c-a1ea-a5089f2ff9ef",
+                                          "amount": "300000",
+                                          "billed_to_patient": true,
+                                          "is_not_paid_on_cross": true
+                                      }
+                                  ],
+                                  "deductions": [
+                                      {
+                                          "amount": 5,
+                                          "deduction_id": "2da63cdf-bb61-4794-a1e9-5cc771080a75",
+                                          "is_percent": true
+                                      },
+                                      {
+                                          "amount": 10,
+                                          "deduction_id": "2da63cdf-bb61-4794-a1e9-5cc771080a74",
+                                          "is_percent": true
+                                      }
+                                  ],
+                                  "is_new": true,
+                                  "is_supervision": true,
+                                  "price_after": "500000",
+                                  "price_before": "0",
+                                  "supervision": {
+                                      "dpjp_percentage": 70,
+                                      "supervision_percentage": 30
+                                  },
+                                  "tariff_component_id": "03"
+                              }
+                          ],
+                          "is_changed": true,
+                          "item_id": "ff971d64-9ee7-4431-8a63-a3c5c9999127",
+                          "item_name": "Laser Trabeculoplasty (Poltrab) (Slt)",
+                          "price_after": "1200000",
+                          "price_before": "600000"
+                      },
+                      {
+                          "components": [
+                              {
+                                  "additionals": [
+                                      {
+                                          "additional_id": "faf1ab28-9ce3-456c-a1ea-a5089f2ff9ee",
+                                          "amount": "500000",
+                                          "billed_to_patient": true,
+                                          "is_not_paid_on_cross": true
+                                      }
+                                  ],
+                                  "deductions": [
+                                      {
+                                          "amount": 5000,
+                                          "deduction_id": "2da63cdf-bb61-4794-a1e9-5cc771080a75",
+                                          "is_percent": false
+                                      }
+                                  ],
+                                  "is_new": true,
+                                  "is_supervision": false,
+                                  "price_after": "200000",
+                                  "price_before": "0",
+                                  "supervision": {
+                                      "dpjp_percentage": 0,
+                                      "supervision_percentage": 0
+                                  },
+                                  "tariff_component_id": "01"
+                              }
+                          ],
+                          "is_changed": false,
+                          "item_id": "714016b3-0517-41f5-9b67-63245cdf8b43",
+                          "item_name": "Veruca 1 Anestesi Lokal",
+                          "price_after": "200000",
+                          "price_before": "0"
+                      }
+                  ],
+                  "rate_book_preview": {
+                      "base_rate_book_version": "V1.0.1",
+                      "reference_no": "TR260211-00005",
+                      "starting_date": "2026-01-21T15:27:28+07:00",
+                      "version": "V1.0.2"
+                  }
+              }
+          }

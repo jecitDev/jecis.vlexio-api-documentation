@@ -1,0 +1,154 @@
+info:
+  name: Bulk Create
+  type: http
+  seq: 8
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/examination-item-step-bridges/bulk"
+  headers:
+    - name: x-token
+      value: "{{medical_record_xtoken}}"
+    - name: X-User-ID
+      value: admin
+  body:
+    type: json
+    data: "{\r
+
+      \    \"bridges\": [\r
+
+      \        {\r
+
+      \            \"examination_item_id\": \"194ed7c0-1944-4f3f-803d-4fa0d9dde925\",\r
+
+      \            \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+      \            \"step_id\": \"e49cdadb-fcef-47bf-8c3e-21873e976b79\",\r
+
+      \            \"is_active\": true\r
+
+      \        },\r
+
+      \        {\r
+
+      \            \"examination_item_id\": \"550e8400-e29b-41d4-a716-446655440001\",\r
+
+      \            \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+      \            \"step_id\": \"550e8400-e29b-41d4-a716-446655440003\",\r
+
+      \            \"is_active\": true\r
+
+      \        }\r
+
+      \    ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/examination-item-step-bridges/bulk"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{medical_record_xtoken}}"
+        - name: X-User-ID
+          value: admin
+      body:
+        type: json
+        data: "{\r
+
+          \    \"bridges\": [\r
+
+          \        {\r
+
+          \            \"examination_item_id\": \"194ed7c0-1944-4f3f-803d-4fa0d9dde925\",\r
+
+          \            \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+          \            \"step_id\": \"e49cdadb-fcef-47bf-8c3e-21873e976b79\",\r
+
+          \            \"is_active\": true\r
+
+          \        },\r
+
+          \        {\r
+
+          \            \"examination_item_id\": \"550e8400-e29b-41d4-a716-446655440001\",\r
+
+          \            \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+          \            \"step_id\": \"550e8400-e29b-41d4-a716-446655440003\",\r
+
+          \            \"is_active\": true\r
+
+          \        }\r
+
+          \    ]\r
+
+          }"
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Date
+          value: Tue, 14 Oct 2025 01:37:42 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "319"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 201,
+              "data": {
+                  "created_count": 1,
+                  "skipped_count": 1,
+                  "bridges": [
+                      {
+                          "examination_item_id": "194ed7c0-1944-4f3f-803d-4fa0d9dde925",
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "step_id": "e49cdadb-fcef-47bf-8c3e-21873e976b79",
+                          "is_active": true,
+                          "user_create": "admin",
+                          "created_at": "2025-10-14T08:37:42+07:00"
+                      }
+                  ]
+              }
+          }

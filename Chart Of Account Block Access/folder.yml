@@ -1,0 +1,7 @@
+info:
+  name: Chart Of Account Block Access
+  type: folder
+  seq: 79
+
+request:
+  auth: inherit

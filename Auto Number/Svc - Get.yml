@@ -1,0 +1,112 @@
+info:
+  name: Svc - Get
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/autonumbers/:id/:eff_date"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: id
+      value: MedicalNoTEST
+      type: path
+    - name: eff_date
+      value: 2023-11-19
+      type: path
+  body:
+    type: json
+    data: ""
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: "Svc - Get #2"
+    request:
+      url: "{{BASE_URL}}/v1/autonumbers/:id/:eff_date"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{XTOKEN}}"
+      params:
+        - name: id
+          value: AppointmentNo
+          type: path
+        - name: eff_date
+          value: 2023-10-25
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 31 Oct 2023 09:31:43 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "456"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "sr_auto_number": "AppointmentNo",
+                  "effective_date": {
+                      "seconds": 1698217200
+                  },
+                  "prefix": "AP",
+                  "is_used_branch": true,
+                  "branch_type": "ALIAS",
+                  "separator_after_branch": "/",
+                  "is_used_year": true,
+                  "year_digit": 2,
+                  "is_used_month": true,
+                  "is_month_in_romawi": true,
+                  "is_used_day": true,
+                  "separator_after_day": "-",
+                  "number_length": 5,
+                  "user_create": "21239",
+                  "created_at": {
+                      "seconds": 1698411796,
+                      "nanos": 361143000
+                  },
+                  "updated_at": {
+                      "seconds": 1698411796,
+                      "nanos": 361143000
+                  }
+              }
+          }

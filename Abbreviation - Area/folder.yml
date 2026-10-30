@@ -1,0 +1,16 @@
+info:
+  name: Abbreviation - Area
+  type: folder
+  seq: 52
+
+request:
+  auth: inherit
+
+docs:
+  content: |-
+    ### \[TS-223\] \[MASTER\]\[BE\] AREA #1.0.0
+
+    ##### Sept 26, 2024
+
+    - CRUD Common
+  type: text/markdown

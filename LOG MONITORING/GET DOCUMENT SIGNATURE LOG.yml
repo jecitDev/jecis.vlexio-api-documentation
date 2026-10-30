@@ -1,0 +1,105 @@
+info:
+  name: GET DOCUMENT SIGNATURE LOG
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/LogMonitoring/document-signature?business_unit_id=53aad077-9fb1-4f08-85f3-af9fd9a36517&document_id=5e40d634-2ce2-439e-a579-7f48a273fa7f"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: query
+    - name: document_id
+      value: 5e40d634-2ce2-439e-a579-7f48a273fa7f
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: GET DOCUMENT SIGNATURE LOG
+    request:
+      url: "{{BASE_URL}}/v1/LogMonitoring/document-signature?business_unit_id=53aad077-9fb1-4f08-85f3-af9fd9a36517&document_id=21312312312"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: query
+        - name: document_id
+          value: "21312312312"
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 06 Jan 2025 02:19:51 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "434"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "log_monitoring": [
+                      {
+                          "doc_id": "9XBiOZQBaQnEaTDacak2",
+                          "start": "2025-01-06T09:00:21+07:00",
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "user_id": "211700",
+                          "user_name": "Fernando RIyo Junedy Simbolon",
+                          "email": "fernando.riyo@jec.co.lid",
+                          "ip_address": "172.16.20.92",
+                          "station_id": "1",
+                          "station_name": "DEFAULT",
+                          "type": "21",
+                          "data": "{\"document_id\":\"21312312312\"}",
+                          "text_message": "Document Sign By Fernando"
+                      }
+                  ]
+              }
+          }

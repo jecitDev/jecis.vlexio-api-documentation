@@ -1,0 +1,283 @@
+info:
+  name: GET From Patient Identity
+  type: http
+  seq: 11
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/patients/from_patient_identity/:company_id/:business_unit_id?start_date=2025-01-01&end_date=2025-06-10"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: start_date
+      value: 2025-01-01
+      type: query
+    - name: end_date
+      value: 2025-06-10
+      type: query
+    - name: company_id
+      value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+      type: path
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+  body:
+    type: json
+    data: ""
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: SUCCESS
+    request:
+      url: "{{BASE_URL}}/v1/patients/from_patient_identity/:company_id/:business_unit_id?start_date=2025-01-01&end_date=2025-06-10"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: start_date
+          value: 2025-01-01
+          type: query
+        - name: end_date
+          value: 2025-06-10
+          type: query
+        - name: company_id
+          value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+          type: path
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: path
+      body:
+        type: json
+        data: ""
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 12 Jun 2025 07:53:52 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "5265"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "patients": [
+                      {
+                          "appointment_date": "2025-06-10",
+                          "appointment_no": "AP250610-00004",
+                          "birth_city": "JAKARTA",
+                          "blood_type": "A",
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "city": "JAKARTA TIMUR",
+                          "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",
+                          "created_at": "2025-06-10T07:59:27.471Z",
+                          "created_by": "landing_page_form",
+                          "date_of_birth": "1988-11-20",
+                          "email": "reyni@jec.co.id",
+                          "first_name": "TILARSIH",
+                          "gender": "F",
+                          "healthcare": "JEC@DEV",
+                          "healthcare_id": "002",
+                          "is_consent_acceptance": true,
+                          "is_consent_satusehat": true,
+                          "job": "KARYAWAN SWASTA",
+                          "last_name": "ANGGRAINI",
+                          "marital_status": "Married",
+                          "mobile_number": "6285693032428",
+                          "nationality_id": "Nationality-096",
+                          "paramedic_id": "D0005",
+                          "paramedic_name": "Dr. Darmayanti, SpM(K)",
+                          "patient_emergency_contact": {
+                              "city": "JAKARTA TIMUR",
+                              "contact_name": "Kahiyang",
+                              "mobile_number": "+6285693032427",
+                              "postal_code": "13790",
+                              "province": "DKI JAKARTA",
+                              "relationship": "child",
+                              "street_name": "JL KENANGA I NO.18",
+                              "subdistrict": "PASAR REBO"
+                          },
+                          "postal_code": "13790",
+                          "province": "DKI JAKARTA",
+                          "religion": "Islam",
+                          "ssn": "3175026011880005",
+                          "street_name": "JL KENANGA I NO.18",
+                          "subdistrict": "PASAR REBO",
+                          "uuid": "f354eaf1-74d1-4a5a-99e2-8859c6f0beba",
+                          "village": "KALISARI",
+                          "ktp_url": "https://jecis-bucket-app.oss-ap-southeast-5.aliyuncs.com/patient-identity/ktp/1749542112_3175026011880005-b61fe896-3dfb-4673-a9bc-f22c89396e67.jpg"
+                      },
+                      {
+                          "appointment_date": "2025-06-10",
+                          "appointment_no": "walk-in",
+                          "birth_city": "JAKARTA",
+                          "blood_type": "A",
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "city": "JAKARTA TIMUR",
+                          "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",
+                          "created_at": "2025-06-11T00:32:16.997Z",
+                          "created_by": "landing_page_form",
+                          "date_of_birth": "1988-11-20",
+                          "email": "reyni@jec.co.id",
+                          "first_name": "TILARSIH",
+                          "gender": "F",
+                          "healthcare": "JEC@KEDOYA",
+                          "healthcare_id": "002",
+                          "is_consent_acceptance": true,
+                          "is_consent_satusehat": true,
+                          "job": "KARYAWAN SWASTA",
+                          "last_education": "Diploma",
+                          "last_name": "ANGGRAINI",
+                          "marital_status": "Married",
+                          "mobile_number": "+6285693032428",
+                          "nationality_id": "Nationality-096",
+                          "patient_emergency_contact": {
+                              "city": "JAKARTA TIMUR",
+                              "contact_name": "Reynand",
+                              "mobile_number": "+6285693032427",
+                              "postal_code": "13790",
+                              "province": "DKI JAKARTA",
+                              "relationship": "child",
+                              "street_name": "JL KENANGA I NO.18",
+                              "subdistrict": "PASAR REBO"
+                          },
+                          "postal_code": "13790",
+                          "province": "DKI JAKARTA",
+                          "religion": "Islam",
+                          "ssn": "3175026011880005",
+                          "street_name": "JL KENANGA I NO.18",
+                          "subdistrict": "PASAR REBO",
+                          "uuid": "97a0bc8a-3e2f-442b-bb2a-b6aa7e47ead8",
+                          "village": "KALISARI",
+                          "ktp_url": "https://jecis-bucket-app.oss-ap-southeast-5.aliyuncs.com/patient-identity/ktp/1749601680_3175026011880005-87e17e61-ea56-4b4f-97c6-581bb0e9f213.jpg"
+                      },
+                      {
+                          "appointment_date": "2025-06-10",
+                          "appointment_no": "walk-in",
+                          "birth_city": "BUKITTINGGI",
+                          "blood_type": "O",
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "city": "JAKARTA SELATAN",
+                          "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",
+                          "created_at": "2025-06-10T10:36:51.386Z",
+                          "created_by": "landing_page_form",
+                          "date_of_birth": "1985-04-12",
+                          "email": "REENABLUES@YAHOO.COM",
+                          "first_name": "ARIFMA",
+                          "gender": "F",
+                          "guarantor_id": "0000000363",
+                          "healthcare": "JEC@KEDOYA",
+                          "healthcare_id": "002",
+                          "is_consent_acceptance": true,
+                          "is_consent_satusehat": true,
+                          "job": "KARYAWAN SWASTA",
+                          "last_education": "S1",
+                          "last_name": " APRINA",
+                          "marital_status": "Single",
+                          "mobile_number": "+628158950072",
+                          "nationality_id": "Nationality-096",
+                          "patient_emergency_contact": {
+                              "city": "JAKARTA SELATAN",
+                              "contact_name": "SURATMAN",
+                              "email": "fernandoriyo7@gmail.com",
+                              "mobile_number": "+6281219651411",
+                              "postal_code": "14350",
+                              "province": "DKI JAKARTA",
+                              "relationship": "relatives",
+                              "street_name": "KEBAGUSAN WATES - GG .  WATES NO . 13, RT RW 011/005",
+                              "subdistrict": "JAGAKARSA"
+                          },
+                          "postal_code": "14350",
+                          "province": "DKI JAKARTA",
+                          "religion": "Islam",
+                          "ssn": "3171035204850002",
+                          "street_name": "KEBAGUSAN WATES - GG .  WATES NO . 13, RT RW 011/005",
+                          "subdistrict": "JAGAKARSA",
+                          "uuid": "97a0bc8a-3e2f-442b-bb2a-b6aa7e47ead8",
+                          "village": "JAGAKARSA"
+                      },
+                      {
+                          "appointment_date": "2025-06-10",
+                          "appointment_no": "walk-in",
+                          "birth_city": "SURABAYA",
+                          "blood_type": "AB",
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "city": "JAKARTA TIMUR",
+                          "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",
+                          "created_at": "2025-06-10T03:12:11.845Z",
+                          "created_by": "landing_page_form",
+                          "date_of_birth": "1990-01-01",
+                          "email": "fernandoriyo7@gmail.com",
+                          "first_name": "BILLY",
+                          "gender": "M",
+                          "healthcare": "JEC@KEDOYA",
+                          "healthcare_id": "002",
+                          "is_consent_acceptance": true,
+                          "is_consent_satusehat": true,
+                          "job": "KARYAWAN SWASTA",
+                          "last_name": "BUMBLEBEE SIFULAN",
+                          "marital_status": "Married",
+                          "mobile_number": "+6281219651411",
+                          "nationality_id": "Nationality-096",
+                          "patient_emergency_contact": {
+                              "city": "JAKARTA TIMUR",
+                              "contact_name": "SURATMAN",
+                              "email": "fernandoriyo7@gmail.com",
+                              "mobile_number": "+6281219651411",
+                              "postal_code": "13440",
+                              "province": "DKI JAKARTA",
+                              "relationship": "parent",
+                              "street_name": "JL DIMANA NO 100",
+                              "subdistrict": "DUREN SAWIT"
+                          },
+                          "postal_code": "13440",
+                          "province": "DKI JAKARTA",
+                          "religion": "Islam",
+                          "ssn": "3175070101909999",
+                          "street_name": "JL DIMANA NO 100",
+                          "subdistrict": "DUREN SAWIT",
+                          "uuid": "53190d24-53bc-4db9-ab40-0a31a5b65a95",
+                          "village": "ANTAH BERANTAH",
+                          "ktp_url": "https://jecis-bucket-app.oss-ap-southeast-5.aliyuncs.com/patient-identity/ktp/1749525131_3175070101909999-86269abf-dc03-425c-8d6c-7130eb0b7a92.jpg"
+                      }
+                  ]
+              }
+          }

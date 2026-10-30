@@ -1,0 +1,259 @@
+info:
+  name: Svc - Get By Item Id
+  type: http
+  seq: 4
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/standardreferenceitems/:id/:company_id/:business_unit_id/:item_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: id
+      value: Relationship
+      type: path
+    - name: company_id
+      value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+      type: path
+    - name: business_unit_id
+      value: 382003f2-2ccb-4dd8-af5b-e39c093f104e,53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+    - name: item_id
+      value: Relationship-002
+      type: path
+  body:
+    type: json
+    data: ""
+  auth:
+    type: bearer
+    token: "{{xtoken}}"
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: Svc - Get By Item Id
+    request:
+      url: "{{BASE_URL}}/v1/standardreferenceitem/:id/:item_id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{XTOKEN}}"
+      params:
+        - name: id
+          value: EmailPriority
+          type: path
+        - name: item_id
+          value: "2"
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Wed, 20 Sep 2023 07:04:09 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "325"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "standard_reference_id": "EmailPriority",
+                  "item_id": "2",
+                  "item_name": "Top",
+                  "note": "Used for email prioritization",
+                  "is_used_by_system": true,
+                  "is_active": true,
+                  "last_update_datetime": {
+                      "seconds": 1695116075,
+                      "nanos": 607059000
+                  },
+                  "last_update_by_user_id": "sa",
+                  "reference_id": "Nothing",
+                  "coa_id": -99,
+                  "subledger_id": -99
+              }
+          }
+  - name: "Svc - Get By Item Id #2"
+    request:
+      url: "{{BASE_URL}}/v1/standardreferenceitems/:id/:item_id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{XTOKEN}}"
+      params:
+        - name: id
+          value: AcctDbCr
+          type: path
+        - name: item_id
+          value: K
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 23 Oct 2023 03:39:53 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "366"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "standard_reference_id": "AcctDbCr",
+                  "item_id": "K",
+                  "subledger_id": -99,
+                  "reference_id": "COA",
+                  "item_name": "CREDIT",
+                  "note": "ipsum et ullamco tempor #grpc",
+                  "is_active": true,
+                  "is_used_by_system": true,
+                  "user_create": "Admin1",
+                  "created_at": {
+                      "seconds": 1698053568,
+                      "nanos": 698054000
+                  },
+                  "user_update": "Admin2",
+                  "updated_at": {
+                      "seconds": 1698054768,
+                      "nanos": 698055000
+                  }
+              }
+          }
+  - name: "Svc - Get By Item Id #3-240322"
+    request:
+      url: "{{BASE_URL}}/v1/standardreferenceitems/:id/:company_id/:business_unit_id/:item_id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{XTOKEN}}"
+      params:
+        - name: id
+          value: UserType
+          type: path
+        - name: company_id
+          value: "1"
+          type: path
+        - name: business_unit_id
+          value: "1"
+          type: path
+        - name: item_id
+          value: Doctor
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Fri, 22 Mar 2024 04:28:10 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "275"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "standard_reference_id": "UserType",
+                  "company_id": "1",
+                  "business_unit_id": "1,2",
+                  "item_id": "Doctor",
+                  "coa_id": -99,
+                  "subledger_id": -99,
+                  "item_name": "Doctor",
+                  "is_active": true,
+                  "is_used_by_system": true,
+                  "user_create": "Nando",
+                  "created_at": "2020-06-18T09:13:00+07:00"
+              }
+          }

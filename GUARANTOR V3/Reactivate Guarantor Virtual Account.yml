@@ -1,0 +1,252 @@
+info:
+  name: Reactivate Guarantor Virtual Account
+  type: http
+  seq: 49
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/marketing/guarantor/guarantor-virtual-accounts/:business_unit_id/:guarantor_id/:id/reactivate"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36518
+      type: path
+    - name: guarantor_id
+      value: e7dd7eba-ec35-491f-b663-e14ee5dc6c72
+      type: path
+    - name: id
+      value: bc1646cb-bdcd-4031-b427-81213e218029
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"user_update\": \"admin\",\r
+
+      \    \"updated_at\": \"2025-07-20T14:00:00+07:00\"\r
+
+      }\r\n"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/guarantor-virtual-accounts/:business_unit_id/:guarantor_id/:id/reactivate"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: path
+        - name: guarantor_id
+          value: e7dd7eba-ec35-491f-b663-e14ee5dc6c72
+          type: path
+        - name: id
+          value: bc1646cb-bdcd-4031-b427-81213e218029
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"user_update\": \"admin\",\r
+
+          \    \"updated_at\": \"2025-07-20T14:00:00+07:00\"\r
+
+          }\r\n"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 24 Jul 2025 04:52:37 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "240"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "id": "bc1646cb-bdcd-4031-b427-81213e218029",
+                  "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "guarantor_id": "e7dd7eba-ec35-491f-b663-e14ee5dc6c72",
+                  "user_update": "admin",
+                  "updated_at": "2025-07-20T14:00:00+07:00"
+              }
+          }
+  - name: Already Active
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/guarantor-virtual-accounts/:business_unit_id/:guarantor_id/:id/reactivate"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: path
+        - name: guarantor_id
+          value: e7dd7eba-ec35-491f-b663-e14ee5dc6c72
+          type: path
+        - name: id
+          value: bc1646cb-bdcd-4031-b427-81213e218029
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"user_update\": \"admin\",\r
+
+          \    \"updated_at\": \"2025-07-20T14:00:00+07:00\"\r
+
+          }\r\n"
+    response:
+      status: 500
+      statusText: Internal Server Error
+      headers:
+        - name: Date
+          value: Thu, 24 Jul 2025 04:53:01 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "67"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "guarantor_virtual_account.already_active",
+              "status": 500
+          }
+  - name: Not Found
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/guarantor-virtual-accounts/:business_unit_id/:guarantor_id/:id/reactivate"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36518
+          type: path
+        - name: guarantor_id
+          value: e7dd7eba-ec35-491f-b663-e14ee5dc6c72
+          type: path
+        - name: id
+          value: bc1646cb-bdcd-4031-b427-81213e218029
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"user_update\": \"admin\",\r
+
+          \    \"updated_at\": \"2025-07-20T14:00:00+07:00\"\r
+
+          }\r\n"
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Date
+          value: Thu, 24 Jul 2025 04:53:22 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "62"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "guarantor_virtual_account.not_found",
+              "status": 404
+          }

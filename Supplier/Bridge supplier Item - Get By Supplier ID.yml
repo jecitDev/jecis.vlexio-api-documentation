@@ -1,0 +1,106 @@
+info:
+  name: Bridge supplier Item - Get By Supplier ID
+  type: http
+  seq: 15
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/Supplier/items/getbysupplierid/:supplier_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: sort_by
+      value: id
+      type: query
+      disabled: true
+    - name: sort_order
+      value: asc
+      type: query
+      disabled: true
+    - name: category_code
+      value: CAT001
+      type: query
+      disabled: true
+    - name: supplier_id
+      value: 1dd3e469-ad93-4cc4-b35c-da0fad6550b2
+      type: path
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Bridge supplier Item - Get By Supplier ID API
+    request:
+      url: "{{BASE_URL}}/v1/Supplier/items/getbysupplierid/:supplier_id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: sort_by
+          value: id
+          type: query
+          disabled: true
+        - name: sort_order
+          value: asc
+          type: query
+          disabled: true
+        - name: category_code
+          value: CAT001
+          type: query
+          disabled: true
+        - name: supplier_id
+          value: dcc8d13e-b67b-41c1-9875-4976155a86f4
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 14 Apr 2026 01:13:19 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "22"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {}
+          }

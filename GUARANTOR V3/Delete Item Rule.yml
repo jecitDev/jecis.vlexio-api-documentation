@@ -1,0 +1,156 @@
+info:
+  name: Delete Item Rule
+  type: http
+  seq: 10
+
+http:
+  method: DELETE
+  url: "{{BASE_URL}}/v1/marketing/guarantor/contract/item_rule/bulk"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"item_rules\": [\r
+
+      \        {\r
+
+      \            \"seq_id\": 10\r
+
+      \        }\r
+
+      \    ]\r
+
+      }"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Not Found
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/contract/item_rule/:contract_id/bulk"
+      method: DELETE
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: contract_id
+          value: dfd91b88-531a-49e1-8bf6-9c1182bdca99
+          type: path
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Date
+          value: Wed, 09 Jul 2025 10:24:30 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "56"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "guarantor_item_rule.not_found",
+              "status": 404
+          }
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/contract/item_rule/bulk"
+      method: DELETE
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"item_rules\": [\r
+
+          \        {\r
+
+          \            \"seq_id\": 10\r
+
+          \        }\r
+
+          \    ]\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 15 Jul 2025 08:35:58 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "40"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "status": "success"
+              }
+          }

@@ -1,0 +1,86 @@
+info:
+  name: Add Package Rate Book Item Rule
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/promo/rate-book/session"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"package_id\": \"8acfdb6d-1189-403d-8abb-82b05ee2432a\"\r
+
+      }\r\n"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/promo/rate-book/session"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"package_id\": \"8acfdb6d-1189-403d-8abb-82b05ee2432a\"\r
+
+          }\r\n"
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Date
+          value: Thu, 04 Sep 2025 02:32:28 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "73"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 201,
+              "data": {
+                  "session_id": "c7ed195f-1509-4188-b142-b43830e76a62"
+              }
+          }

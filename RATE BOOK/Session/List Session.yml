@@ -1,0 +1,227 @@
+info:
+  name: List Session
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/rate-books/session/list?max_hits=10&page=1&session_id=f12017b4-9e10-4bd3-8b04-2919f79338c8"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: max_hits
+      value: "10"
+      type: query
+    - name: page
+      value: "1"
+      type: query
+    - name: text
+      value: ""
+      type: query
+      disabled: true
+    - name: sentra
+      value: glaucoma
+      type: query
+      disabled: true
+    - name: department
+      value: ""
+      type: query
+      disabled: true
+    - name: service_unit
+      value: ""
+      type: query
+      disabled: true
+    - name: item_group
+      value: ""
+      type: query
+      disabled: true
+    - name: session_id
+      value: f12017b4-9e10-4bd3-8b04-2919f79338c8
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: List Session
+    request:
+      url: "{{BASE_URL}}/v1/rate-books/session/list?max_hits=10&page=1&session_id=f12017b4-9e10-4bd3-8b04-2919f79338c8"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: max_hits
+          value: "10"
+          type: query
+        - name: page
+          value: "1"
+          type: query
+        - name: text
+          value: ""
+          type: query
+          disabled: true
+        - name: sentra
+          value: glaucoma
+          type: query
+          disabled: true
+        - name: department
+          value: ""
+          type: query
+          disabled: true
+        - name: service_unit
+          value: ""
+          type: query
+          disabled: true
+        - name: item_group
+          value: ""
+          type: query
+          disabled: true
+        - name: session_id
+          value: f12017b4-9e10-4bd3-8b04-2919f79338c8
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: date
+          value: Thu, 17 Sep 2026 03:12:38 GMT
+        - name: content-type
+          value: application/json
+        - name: content-length
+          value: "1602"
+        - name: x-xss-protection
+          value: "0"
+        - name: x-content-type-options
+          value: nosniff
+        - name: x-frame-options
+          value: SAMEORIGIN
+        - name: cross-origin-embedder-policy
+          value: require-corp
+        - name: cross-origin-opener-policy
+          value: same-origin
+        - name: cross-origin-resource-policy
+          value: same-origin
+        - name: origin-agent-cluster
+          value: ?1
+        - name: referrer-policy
+          value: no-referrer
+        - name: x-dns-prefetch-control
+          value: off
+        - name: x-download-options
+          value: noopen
+        - name: x-permitted-cross-domain-policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+            "code": 200,
+            "data": {
+              "data": [
+                {
+                  "components": [
+                    {
+                      "additionals": [
+                        {
+                          "additional_id": "addition-001",
+                          "amount": "500000.00",
+                          "billed_to_patient": true,
+                          "is_not_paid_on_cross": false
+                        },
+                        {
+                          "additional_id": "addition-002",
+                          "amount": "100000.00",
+                          "billed_to_patient": false,
+                          "is_not_paid_on_cross": true
+                        }
+                      ],
+                      "deductions": [
+                        {
+                          "amount": "5.00",
+                          "deduction_id": "deduct-001",
+                          "is_percent": false
+                        },
+                        {
+                          "amount": "10.00",
+                          "deduction_id": "deduct-002",
+                          "is_percent": true
+                        }
+                      ],
+                      "is_allow_discount": true,
+                      "is_supervision": true,
+                      "price": "10.00",
+                      "supervision": {
+                        "dpjp_percentage": 70,
+                        "supervision_percentage": 30
+                      },
+                      "tariff_component_id": "01"
+                    }
+                  ],
+                  "is_allow_discount": true,
+                  "item_code": "1200030740",
+                  "item_id": "a5cd1e53-3a49-4444-9762-cad109f5397e",
+                  "item_name": "HUGO PAYUNG OTOMATIS BLACKKKK"
+                },
+                {
+                  "components": [],
+                  "is_allow_discount": true,
+                  "item_code": "1200033174",
+                  "item_id": "64e6e830-36af-4389-afcf-34d04c5aa54a",
+                  "item_name": "HUGO PAYUNG OTOMATIS BLACK #updated"
+                },
+                {
+                  "components": [
+                    {
+                      "additionals": [
+                        {
+                          "additional_id": "addition-001",
+                          "amount": "500000.00",
+                          "billed_to_patient": true,
+                          "is_not_paid_on_cross": false
+                        },
+                        {
+                          "additional_id": "addition-002",
+                          "amount": "100000.00",
+                          "billed_to_patient": false,
+                          "is_not_paid_on_cross": true
+                        }
+                      ],
+                      "deductions": [
+                        {
+                          "amount": "5.00",
+                          "deduction_id": "deduct-001",
+                          "is_percent": false
+                        },
+                        {
+                          "amount": "10.00",
+                          "deduction_id": "deduct-002",
+                          "is_percent": true
+                        }
+                      ],
+                      "is_allow_discount": true,
+                      "is_supervision": true,
+                      "price": "10.00",
+                      "supervision": {
+                        "dpjp_percentage": 70,
+                        "supervision_percentage": 30
+                      },
+                      "tariff_component_id": "01"
+                    }
+                  ],
+                  "is_allow_discount": true,
+                  "item_code": "1200033173",
+                  "item_id": "5f0b808e-2f02-46c3-95a0-28e93ca377d2",
+                  "item_name": "AC SPLIT 1 PK DAIKINN #edit"
+                }
+              ],
+              "page": 1,
+              "total": 3
+            }
+          }

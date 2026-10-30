@@ -1,0 +1,32 @@
+info:
+  name: Search
+  type: http
+  seq: 5
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/rate-book/search?page=1&max_hits=10&business_unit_id=53aad077-9fb1-4f08-85f3-af9fd9a36517&text=ver"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: max_hits
+      value: "10"
+      type: query
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: query
+    - name: text
+      value: ver
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

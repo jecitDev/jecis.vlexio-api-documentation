@@ -1,0 +1,7 @@
+info:
+  name: RATE BOOK
+  type: folder
+  seq: 138
+
+request:
+  auth: inherit

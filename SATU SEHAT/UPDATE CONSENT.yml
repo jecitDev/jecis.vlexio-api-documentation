@@ -1,0 +1,32 @@
+info:
+  name: UPDATE CONSENT
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/satu-sehat/consent"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"action\": \"OPTIN\",\r
+
+      \    \"agent\": \"Fernando Riyo Junedy\",\r
+
+      \    \"healthcareId\": \"002\",\r
+
+      \    \"patientNIK\": \"9271060312000001\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

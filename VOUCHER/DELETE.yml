@@ -1,0 +1,152 @@
+info:
+  name: DELETE
+  type: http
+  seq: 6
+
+http:
+  method: DELETE
+  url: "{{BASE_URL}}/v1/promo/bulk/voucher"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"vouchers\": [\r
+
+      \        {\r
+
+      \            \"package_voucher_id\": \"47ced0de-bd91-48f0-9b2e-3813375a41e9\",\r
+
+      \            \"package_id\": \"74a0d456-825f-43d8-b140-008537896628\",\r
+
+      \            \"user_update\": \"admin\",\r
+
+      \            \"updated_at\": \"2025-03-27T14:15:00+07:00\"\r
+
+      \        },\r
+
+      \        {\r
+
+      \            \"package_voucher_id\": \"81120864-38c4-4205-a239-f08c406909ed\",\r
+
+      \            \"package_id\": \"74a0d456-825f-43d8-b140-008537896628\",\r
+
+      \            \"user_update\": \"admin\",\r
+
+      \            \"updated_at\": \"2025-03-27T14:15:00+07:00\"\r
+
+      \        }\r
+
+      \    ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: DELETE
+    request:
+      url: "{{BASE_URL}}/v1/promo/bulk/voucher"
+      method: DELETE
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"vouchers\": [\r
+
+          \        {\r
+
+          \            \"package_voucher_id\": \"d68e5312-252b-425b-a9bf-e0d83f5a287e\",\r
+
+          \            \"package_id\": \"69287a21-eee0-4f69-b25c-4f2bd78719f1\",\r
+
+          \            \"user_update\": \"admin\",\r
+
+          \            \"updated_at\": \"2025-03-27T14:15:00+07:00\"\r
+
+          \        },\r
+
+          \        {\r
+
+          \            \"package_voucher_id\": \"96b4c21b-2c7d-4560-b798-8d91ad9dc65d\",\r
+
+          \            \"package_id\": \"69287a21-eee0-4f69-b25c-4f2bd78719f1\",\r
+
+          \            \"user_update\": \"admin\",\r
+
+          \            \"updated_at\": \"2025-03-27T14:15:00+07:00\"\r
+
+          \        }\r
+
+          \    ]\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 07 Apr 2025 04:27:33 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "388"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "vouchers": [
+                      {
+                          "package_voucher_id": "d68e5312-252b-425b-a9bf-e0d83f5a287e",
+                          "package_id": "69287a21-eee0-4f69-b25c-4f2bd78719f1",
+                          "user_update": "admin",
+                          "updated_at": "2025-03-27T14:15:00+07:00"
+                      },
+                      {
+                          "package_voucher_id": "96b4c21b-2c7d-4560-b798-8d91ad9dc65d",
+                          "package_id": "69287a21-eee0-4f69-b25c-4f2bd78719f1",
+                          "user_update": "admin",
+                          "updated_at": "2025-03-27T14:15:00+07:00"
+                      }
+                  ]
+              }
+          }

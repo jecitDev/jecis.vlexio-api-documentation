@@ -1,0 +1,38 @@
+info:
+  name: Insert
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/room-blocks"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+      \    \"room_id\": \"GM01\",\r
+
+      \    \"start_datetime\": \"2025-07-08\",\r
+
+      \    \"end_datetime\": \"2025-07-11\",\r
+
+      \    \"reason\": \"Scheduled maintenance\",\r
+
+      \    \"user_create\": \"admin\",\r
+
+      \    \"created_at\": \"2025-07-08T14:11:19+07:00\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

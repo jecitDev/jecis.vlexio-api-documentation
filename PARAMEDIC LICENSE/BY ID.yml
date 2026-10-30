@@ -1,0 +1,101 @@
+info:
+  name: BY ID
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/ParamedicLicense/gettbyid?pl_id=2&business_unit_id=53aad077-9fb1-4f08-85f3-af9fd9a36517"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: pl_id
+      value: "2"
+      type: query
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: BY ID
+    request:
+      url: "{{BASE_URL}}/v1/ParamedicLicense/:company_id/:business_unit_id/:paramedic_id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: company_id
+          value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+          type: path
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: path
+        - name: paramedic_id
+          value: D310
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 18 Jun 2024 03:12:35 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "312"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "pl_id": 1,
+                  "paramedic_id": "D310",
+                  "license_no": "123",
+                  "license_periode_start": "2024-03-01T08:00:00+07:00",
+                  "license_periode_end": "2024-06-26T08:00:00+07:00",
+                  "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "is_active": true,
+                  "user_create": "admin",
+                  "created_at": "2024-03-01T08:00:00+07:00"
+              }
+          }

@@ -1,0 +1,307 @@
+info:
+  name: Svc Digisign Doc - List
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/digisigns/?page=1&page_size=10&sort_order=DESC&sort_by=document_id&is_active=true&upload_date_start=2024-10-01T00:00:00%2B07:00&upload_date_end=2024-10-01T23:59:00%2B07:00&document_status_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: page_size
+      value: "10"
+      type: query
+    - name: sort_order
+      value: DESC
+      type: query
+    - name: sort_by
+      value: document_id
+      type: query
+    - name: keywords
+      value: change
+      type: query
+      disabled: true
+    - name: document_id
+      value: a8a8a4ad-fe00-42be-b634-5935b3cecdc2
+      type: query
+      disabled: true
+    - name: company_id
+      value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+      type: query
+      disabled: true
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: query
+      disabled: true
+    - name: organization_id
+      value: 00000000-0000-0000-0000-000000000000
+      type: query
+      disabled: true
+    - name: is_active
+      value: "true"
+      type: query
+    - name: upload_date_start
+      value: 2024-10-01T00:00:00%2B07:00
+      type: query
+    - name: upload_date_end
+      value: 2024-10-01T23:59:00%2B07:00
+      type: query
+    - name: document_status_id
+      value: ""
+      type: query
+  body:
+    type: json
+    data: ""
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: "Svc Digisign Doc - List #1-241030"
+    request:
+      url: "{{BASE_URL}}/v1/digisigns/?page=1&page_size=50&sort_order=DESC&sort_by=document_id&company_id=2da6a1bd-ba62-43ec-91f8-4085d5d6d498&business_unit_id=53aad077-9fb1-4f08-85f3-af9fd9a36517&organization_id=00000000-0000-0000-0000-000000000000"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{API_TOKEN}}"
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: page_size
+          value: "50"
+          type: query
+        - name: sort_order
+          value: DESC
+          type: query
+        - name: sort_by
+          value: document_id
+          type: query
+        - name: keywords
+          value: change
+          type: query
+          disabled: true
+        - name: document_id
+          value: a8a8a4ad-fe00-42be-b634-5935b3cecdc2
+          type: query
+          disabled: true
+        - name: company_id
+          value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+          type: query
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: query
+        - name: organization_id
+          value: 00000000-0000-0000-0000-000000000000
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Wed, 30 Oct 2024 01:57:29 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "4348"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "page": 1,
+                  "page_size": 50,
+                  "total_items": 3,
+                  "digisigndocuments": [
+                      {
+                          "document_id": "a8a8a4ad-fe00-42be-b634-5935b3cecdc2",
+                          "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "organization_id": "730a774b-105f-44aa-99ed-16f24c061a95",
+                          "product_id": "ee197431-276d-453d-857c-412f347dae19",
+                          "provider_id": "3261a59d-ea2c-456b-bcff-cd841a066eb7",
+                          "order_type_id": "OrderType-01",
+                          "document_type_id": "DocumentType-001",
+                          "document_status_id": "SignDocStatus-01",
+                          "document_name": "MEDICAL_RESUME_24_10_29.pdf",
+                          "upload_date": "2024-10-01T05:00:00+07:00",
+                          "expiry_date": "2024-10-04T05:00:00+07:00",
+                          "required_signatures": 1,
+                          "file_url": "https://storage.googleapis.com/digisign/MEDICAL_RESUME_24_09_11.pdf",
+                          "is_active": true,
+                          "metadata": {
+                              "user_created": {
+                                  "user_type_id": "StandardUser",
+                                  "user_id": "21239",
+                                  "full_name": "Fajar Wahyudianto, S.Kom",
+                                  "email": "fajar.wahyudianto@jec.co.id",
+                                  "organization": {
+                                      "organization_id": "730a774b-105f-44aa-99ed-16f24c061a95",
+                                      "organization_code": "MSAS",
+                                      "organization_name": "CORP - Medical & Support Application Service"
+                                  }
+                              },
+                              "created_at": "2024-10-01T03:00:00+07:00",
+                              "user_updated": {
+                                  "user_type_id": "StandardUser",
+                                  "user_id": "21239",
+                                  "full_name": "Fajar Wahyudianto, S.Kom",
+                                  "email": "fajar.wahyudianto@jec.co.id",
+                                  "organization": {
+                                      "organization_id": "730a774b-105f-44aa-99ed-16f24c061a95",
+                                      "organization_code": "MSAS",
+                                      "organization_name": "CORP - Medical & Support Application Service"
+                                  }
+                              },
+                              "updated_at": "2024-10-28T23:00:00+07:00",
+                              "priority": "Medium",
+                              "tags": [
+                                  "EMR",
+                                  "PATIENT DOCUMENTS",
+                                  "CONFIDENTIAL"
+                              ]
+                          },
+                          "company_name": "PT. Nitra Sanatadharma",
+                          "business_unit_name": "JEC @ KEDOYA",
+                          "product_name": "Electronic Medical Record",
+                          "provider_name": "PERURI",
+                          "order_type": "Individual",
+                          "document_type": "Medical",
+                          "status": "Draft"
+                      },
+                      {
+                          "document_id": "975515b3-f237-4c6c-835f-953c25534463",
+                          "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "organization_id": "730a774b-105f-44aa-99ed-16f24c061a95",
+                          "product_id": "ee197431-276d-453d-857c-412f347dae19",
+                          "provider_id": "3261a59d-ea2c-456b-bcff-cd841a066eb7",
+                          "order_type_id": "OrderType-01",
+                          "document_type_id": "DocumentType-001",
+                          "document_status_id": "SignDocStatus-01",
+                          "document_name": "MEDICAL_RESUME_24_09_11.pdf",
+                          "upload_date": "2024-10-01T05:00:00+07:00",
+                          "expiry_date": "2024-10-04T05:00:00+07:00",
+                          "required_signatures": 1,
+                          "file_url": "https://storage.googleapis.com/digisign/MEDICAL_RESUME_24_09_11.pdf",
+                          "is_active": true,
+                          "metadata": {
+                              "user_created": {
+                                  "user_type_id": "StandardUser",
+                                  "user_id": "21239",
+                                  "full_name": "Fajar Wahyudianto, S.Kom",
+                                  "email": "fajar.wahyudianto@jec.co.id",
+                                  "organization": {
+                                      "organization_id": "730a774b-105f-44aa-99ed-16f24c061a95",
+                                      "organization_code": "MSAS",
+                                      "organization_name": "CORP - Medical & Support Application Service"
+                                  }
+                              },
+                              "created_at": "2024-10-01T03:00:00+07:00",
+                              "user_updated": {
+                                  "organization": {}
+                              },
+                              "priority": "High",
+                              "tags": [
+                                  "EMR",
+                                  "PATIENT DOCUMENTS",
+                                  "CONFIDENTIAL"
+                              ]
+                          },
+                          "company_name": "PT. Nitra Sanatadharma",
+                          "business_unit_name": "JEC @ KEDOYA",
+                          "product_name": "Electronic Medical Record",
+                          "provider_name": "PERURI",
+                          "order_type": "Individual",
+                          "document_type": "Medical",
+                          "status": "Draft"
+                      },
+                      {
+                          "document_id": "53d57407-44b0-46e8-bef3-9b601b5df874",
+                          "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "organization_id": "00000000-0000-0000-0000-000000000000",
+                          "product_id": "ee197431-276d-453d-857c-412f347dae19",
+                          "provider_id": "3261a59d-ea2c-456b-bcff-cd841a066eb7",
+                          "order_type_id": "OrderType-01",
+                          "document_type_id": "DocumentType-001",
+                          "document_status_id": "SignDocStatus-01",
+                          "document_name": "MEDICAL_RESUME_24_09_11.pdf",
+                          "upload_date": "2024-10-01T05:00:00+07:00",
+                          "expiry_date": "2024-10-04T05:00:00+07:00",
+                          "required_signatures": 1,
+                          "file_url": "https://storage.googleapis.com/digisign/MEDICAL_RESUME_24_09_11.pdf",
+                          "is_active": true,
+                          "use_templates": [
+                              {}
+                          ],
+                          "signers": [
+                              {
+                                  "user": {
+                                      "organization": {}
+                                  }
+                              }
+                          ],
+                          "metadata": {
+                              "user_created": {
+                                  "organization": {}
+                              },
+                              "created_at": "2024-10-01T03:00:00+07:00",
+                              "user_updated": {
+                                  "organization": {}
+                              },
+                              "updated_at": "2024-10-01T13:00:00+07:00",
+                              "priority": "High",
+                              "tags": [
+                                  "EMR",
+                                  "PATIENT DOCUMENTS",
+                                  "CONFIDENTIAL"
+                              ]
+                          },
+                          "company_name": "PT. Nitra Sanatadharma",
+                          "business_unit_name": "JEC @ KEDOYA",
+                          "product_name": "Electronic Medical Record",
+                          "provider_name": "PERURI",
+                          "order_type": "Individual",
+                          "document_type": "Medical",
+                          "status": "Draft"
+                      }
+                  ]
+              }
+          }

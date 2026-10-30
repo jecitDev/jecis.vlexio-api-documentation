@@ -1,0 +1,40 @@
+info:
+  name: Update
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/trans-patient-black-list/:business_unit_id/:id"
+  headers:
+    - name: x-token
+      value: "{{admission_xtoken}}"
+  params:
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+    - name: id
+      value: 1bd666c7-63be-4f2f-9025-397b6a8c890a
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"black_list_date\": \"2025-03-18T14:08:41+07:00\",\r
+
+      \    \"keterangan\": \"Penolakan tindakan medis\",\r
+
+      \    \"alasan_black_list\": \"Mengancam petugas update\",\r
+
+      \    \"user_update\": \"admin\",\r
+
+      \    \"updated_at\": \"2025-03-18T14:08:41+07:00\"\r
+
+      }"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

@@ -1,0 +1,35 @@
+info:
+  name: Supplier - ReActive
+  type: http
+  seq: 9
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/Supplier/reactivate/:id/:business_unit_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: id
+      value: ""
+      type: path
+    - name: business_unit_id
+      value: ""
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"user_update\": \"admin_reAc2\",\r
+
+      \    \"updated_at\": \"2024-03-13T13:24:42+08:00\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

@@ -1,0 +1,110 @@
+info:
+  name: Search Product Type Variants
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/product-types/search/:id/variants?max_hits=10&page=1&text=galon"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: max_hits
+      value: "10"
+      type: query
+    - name: page
+      value: "1"
+      type: query
+    - name: text
+      value: galon
+      type: query
+    - name: id
+      value: 87175174-f63d-40bb-9249-25673b31f061
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Search Product Type Variants
+    request:
+      url: "{{BASE_URL}}/v1/product-types/search/:id/variants?max_hits=10&page=1&text=pk"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: max_hits
+          value: "10"
+          type: query
+        - name: page
+          value: "1"
+          type: query
+        - name: text
+          value: pk
+          type: query
+        - name: id
+          value: 87175174-f63d-40bb-9249-25673b31f061
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Wed, 05 Aug 2026 09:47:54 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "205"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "total": 2,
+                  "page": 1,
+                  "result": [
+                      {
+                          "variant_id": "4d4368f3-1360-4e89-afa0-38f075913058",
+                          "variant_name": "1.5 PK"
+                      },
+                      {
+                          "variant_id": "f79a44ab-3082-462d-9ab5-7ad536441a25",
+                          "variant_name": "1 PK"
+                      }
+                  ]
+              }
+          }

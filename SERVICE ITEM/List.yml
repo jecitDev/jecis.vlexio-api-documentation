@@ -1,0 +1,162 @@
+info:
+  name: List
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/item-services?business_unit_id=53aad077-9fb1-4f08-85f3-af9fd9a36517&page=1&page_size=10&keyword=surgery&sort_by=item_id&sort_order=asc"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  params:
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: query
+    - name: page
+      value: "1"
+      type: query
+    - name: page_size
+      value: "10"
+      type: query
+    - name: keyword
+      value: surgery
+      type: query
+    - name: sentra_id
+      value: ""
+      type: query
+      disabled: true
+    - name: sub_service_id
+      value: a8af267d-c7fc-49fc-9584-9906e85e8bfa
+      type: query
+      disabled: true
+    - name: allow_variable
+      value: ""
+      type: query
+      disabled: true
+    - name: allow_discount
+      value: ""
+      type: query
+      disabled: true
+    - name: sort_by
+      value: item_id
+      type: query
+    - name: sort_order
+      value: asc
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: List
+    request:
+      url: "{{BASE_URL}}/v1/item-services?business_unit_id=53aad077-9fb1-4f08-85f3-af9fd9a36517&page=1&page_size=10&keyword=surgery&sort_by=item_id&sort_order=asc"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      params:
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: query
+        - name: page
+          value: "1"
+          type: query
+        - name: page_size
+          value: "10"
+          type: query
+        - name: keyword
+          value: surgery
+          type: query
+        - name: sentra_id
+          value: ""
+          type: query
+          disabled: true
+        - name: sub_service_id
+          value: a8af267d-c7fc-49fc-9584-9906e85e8bfa
+          type: query
+          disabled: true
+        - name: allow_variable
+          value: ""
+          type: query
+          disabled: true
+        - name: allow_discount
+          value: ""
+          type: query
+          disabled: true
+        - name: sort_by
+          value: item_id
+          type: query
+        - name: sort_order
+          value: asc
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 20 Jan 2026 08:36:52 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "420"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "items": [
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "created_at": "2026-01-20T15:27:28+07:00",
+                          "is_allow_discount": true,
+                          "is_allow_variable": false,
+                          "item_id": "6f72d759-a253-45e9-97c7-749bbfaefacf",
+                          "item_name": "Tubes Implant + ECCE IOL Anestesi Lokal Sedasi X44",
+                          "sentra_name": "Other Surgery",
+                          "sub_service_name": "Lasik",
+                          "user_create": "ferdinand"
+                      }
+                  ],
+                  "page": 1,
+                  "page_size": 10,
+                  "total_items": 1
+              }
+          }

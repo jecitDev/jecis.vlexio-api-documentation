@@ -1,0 +1,197 @@
+info:
+  name: Asset Opname - Update Status To Close Opname
+  type: http
+  seq: 7
+
+http:
+  method: PATCH
+  url: "{{BASE_URL}}/v1/AssetOpname/updatestatustocloseopname/:business_unit_id_opname/:asset_opname_code"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: business_unit_id_opname
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+    - name: asset_opname_code
+      value: AO-NSD-KDY-2026-002
+      type: path
+  body:
+    type: json
+    data: "\r
+
+      \r
+
+      {\r
+
+      \  \r
+
+      \    \"updated_at\": \"2026-04-07T00:00:00+07:00\", \r
+
+      \    \"user_update\": \"closeOPpname\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Asset Opname - Update Status To Close Opname API
+    request:
+      url: "{{BASE_URL}}/v1/AssetOpname/updatestatustocloseopname/:business_unit_id_opname/:asset_opname_code"
+      method: PATCH
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: business_unit_id_opname
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: path
+        - name: asset_opname_code
+          value: AO%2FNSD%2FKDY%2F2026-003
+          type: path
+      body:
+        type: json
+        data: "\r
+
+          \r
+
+          {\r
+
+          \  \r
+
+          \    \"updated_at\": \"2026-04-07T00:00:00+07:00\", \r
+
+          \    \"user_update\": \"closeOPpname\"\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 20 Apr 2026 03:35:43 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "198"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "business_unit_id_opname": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "asset_opname_code": "AO/NSD/KDY/2026-003",
+                  "user_update": "closeOPpname",
+                  "updated_at": "2026-04-20T10:35:43+07:00"
+              }
+          }
+  - name: Asset Opname - Update Status To Close Opname API
+    request:
+      url: "{{BASE_URL}}/v1/AssetOpname/updatestatustocloseopname/:business_unit_id_opname/:asset_opname_code"
+      method: PATCH
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: business_unit_id_opname
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: path
+        - name: asset_opname_code
+          value: AO-NSD-KDY-2026-002
+          type: path
+      body:
+        type: json
+        data: "\r
+
+          \r
+
+          {\r
+
+          \  \r
+
+          \    \"updated_at\": \"2026-04-07T00:00:00+07:00\", \r
+
+          \    \"user_update\": \"closeOPpname\"\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 20 Apr 2026 03:40:22 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "198"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "business_unit_id_opname": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "asset_opname_code": "AO-NSD-KDY-2026-002",
+                  "user_update": "closeOPpname",
+                  "updated_at": "2026-04-20T10:40:23+07:00"
+              }
+          }

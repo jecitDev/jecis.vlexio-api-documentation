@@ -1,0 +1,19 @@
+info:
+  name: Import to Typesense
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/Item/sync_to_typesense"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

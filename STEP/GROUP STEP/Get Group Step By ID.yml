@@ -1,0 +1,154 @@
+info:
+  name: Get Group Step By ID
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/group-steps/:id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: id
+      value: 7fe44a08-b17a-4839-921e-89a7b5248a7f
+      type: path
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/group-steps/:id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{medical_record_xtoken}}"
+      params:
+        - name: id
+          value: 7545d4a7-224e-41e3-8d04-dce66a611d4f
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Fri, 03 Oct 2025 07:10:12 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "463"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "id": "7545d4a7-224e-41e3-8d04-dce66a611d4f",
+                  "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "name": "Medical Checkup Flow",
+                  "description": "Standard medical checkup process with registration, examination, and reporting",
+                  "steps_id": [
+                      {
+                          "step_id": "48547cc1-818f-47fe-a1d4-1c85f8395c2c",
+                          "order": 1
+                      },
+                      {
+                          "step_id": "c84d4ea9-a474-4be7-bb13-3cc35a528a71",
+                          "order": 2
+                      }
+                  ],
+                  "is_active": true,
+                  "user_create": "admin",
+                  "created_at": "2025-10-03T14:05:15+07:00"
+              }
+          }
+  - name: Err no data found
+    request:
+      url: "{{BASE_URL}}/v1/group-steps/:id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{medical_record_xtoken}}"
+      params:
+        - name: id
+          value: 7545d4a7-224e-41e3-8d04-dce66a611d4a
+          type: path
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Date
+          value: Fri, 03 Oct 2025 07:11:09 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "47"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "group_step.not_found",
+              "status": 404
+          }

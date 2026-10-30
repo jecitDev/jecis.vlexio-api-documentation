@@ -1,0 +1,147 @@
+info:
+  name: Search
+  type: http
+  seq: 4
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/regions/search?text=harapan&page=1&max_hits=4"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: text
+      value: harapan
+      type: query
+    - name: page
+      value: "1"
+      type: query
+    - name: max_hits
+      value: "4"
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL_SERVICE_BROKER}}/v1/regions/search"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: admin
+      body:
+        type: json
+        data: "{\r\n    \"text\": \"jakarta menteng\",\r\n    \"page\": 1,\r\n    \"max_hits\": 4\r\n}"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 30 Oct 2025 04:03:23 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "1427"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "total": 8,
+                  "page": 1,
+                  "result": [
+                      {
+                          "id": "66dd2f27-f0c0-4805-9f90-fb29cf79e812",
+                          "code": 10310,
+                          "village": "Menteng",
+                          "district": "Menteng",
+                          "regency": "Administrasi Jakarta Pusat",
+                          "province": "DKI Jakarta",
+                          "latitude": -6.2024359703063965,
+                          "longitude": 106.83496856689453,
+                          "elevation": 13,
+                          "timezone": "WIB",
+                          "is_active": true,
+                          "user_create": "user_10",
+                          "created_at": "2025-10-21T16:25:31+07:00"
+                      },
+                      {
+                          "id": "57cac5a7-ca79-4073-ac53-d9ab4d365a97",
+                          "code": 13960,
+                          "village": "Ujung Menteng",
+                          "district": "Cakung",
+                          "regency": "Administrasi Jakarta Timur",
+                          "province": "DKI Jakarta",
+                          "latitude": -6.188986778259277,
+                          "longitude": 106.96253204345703,
+                          "elevation": 12,
+                          "timezone": "WIB",
+                          "is_active": true,
+                          "user_create": "user_08",
+                          "created_at": "2025-10-21T16:25:31+07:00"
+                      },
+                      {
+                          "id": "d50e9c44-02ac-4840-9d9c-6eecaacb6c38",
+                          "code": 12870,
+                          "village": "Menteng Dalam",
+                          "district": "Tebet",
+                          "regency": "Administrasi Jakarta Selatan",
+                          "province": "DKI Jakarta",
+                          "latitude": -6.232215881347656,
+                          "longitude": 106.8405990600586,
+                          "elevation": 14,
+                          "timezone": "WIB",
+                          "is_active": true,
+                          "user_create": "user_09",
+                          "created_at": "2025-10-21T16:25:31+07:00"
+                      },
+                      {
+                          "id": "568860bf-61aa-448d-8e61-12622d2513c3",
+                          "code": 12960,
+                          "village": "Menteng Atas",
+                          "district": "Setiabudi",
+                          "regency": "Administrasi Jakarta Selatan",
+                          "province": "DKI Jakarta",
+                          "latitude": -6.217711448669434,
+                          "longitude": 106.83885955810547,
+                          "elevation": 17,
+                          "timezone": "WIB",
+                          "is_active": true,
+                          "user_create": "user_08",
+                          "created_at": "2025-10-21T16:25:31+07:00"
+                      }
+                  ]
+              }
+          }

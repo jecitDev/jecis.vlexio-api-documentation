@@ -1,0 +1,111 @@
+info:
+  name: Insert Guarantor Document
+  type: http
+  seq: 29
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/marketing/guarantor/contract/document/:contract_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: contract_id
+      value: 88348329-da85-4b98-8add-641bf41d98e7
+      type: path
+  body:
+    type: multipart-form
+    data:
+      - name: file
+        type: file
+        value:
+          - /C:/Users/pf2e7/Downloads/lorem.ipsum.pdf
+      - name: user_create
+        type: text
+        value: admin_user
+      - name: created_at
+        type: text
+        value: 2025-06-05T14:08:41+07:00
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/contract/document/:contract_id"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: contract_id
+          value: 7947b8dc-1103-46b1-bec4-721cc7c9e129
+          type: path
+      body:
+        type: multipart-form
+        data:
+          - name: file
+            type: file
+            value:
+              - /C:/Users/pf2e7/Downloads/lorem_ipsum.pdf
+          - name: user_create
+            type: text
+            value: admin_user
+          - name: created_at
+            type: text
+            value: 2025-06-05T14:08:41+07:00
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Date
+          value: Fri, 04 Jul 2025 07:05:18 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "314"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 201,
+              "data": {
+                  "seq_id": 35,
+                  "contract_id": "7947b8dc-1103-46b1-bec4-721cc7c9e129",
+                  "document_path": "/file_storage/a5fe1d55-4afe-4e54-80ca-7b10eb2fcc36/2da6a1bd-ba62-43ec-91f8-4085d5d6d498/53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "is_active": true,
+                  "created_at": "2025-06-05T14:08:41+07:00",
+                  "user_create": "admin_user"
+              }
+          }

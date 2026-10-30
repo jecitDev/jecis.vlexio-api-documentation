@@ -1,0 +1,94 @@
+info:
+  name: Insert Item Rule
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/marketing/guarantor/contract/item_rule/:contract_id/session"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: contract_id
+      value: e5fce88d-8087-4a0f-9416-5cd764f5ffe5
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \  \"session_id\": \"{{guarantor_item_rule_session_id}}\"\r
+
+      }\r\n"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/contract/item_rule/:contract_id/session"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: contract_id
+          value: 5f3627c2-93be-4f3e-bc6a-fc4dfa912e32
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \  \"session_id\": \"0f3076af-c029-476d-8989-7068f0e69af8\"\r
+
+          }\r\n"
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Date
+          value: Tue, 02 Sep 2025 06:41:16 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "40"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 201,
+              "data": {
+                  "status": "success"
+              }
+          }

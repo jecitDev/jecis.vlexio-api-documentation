@@ -1,0 +1,551 @@
+info:
+  name: List
+  type: http
+  seq: 1
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/appointmentlegend?business_unit_id=53aad077-9fb1-4f08-85f3-af9fd9a36517&page=1&page_size=10&keywords"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: query
+    - name: page
+      value: "1"
+      type: query
+    - name: page_size
+      value: "10"
+      type: query
+    - name: keywords
+      value: ""
+      type: query
+  auth:
+    type: bearer
+    token: "{{xtoken}}"
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/appointmentlegend?business_unit_id=53aad077-9fb1-4f08-85f3-af9fd9a36517"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{admission_xtoken}}"
+      params:
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 05 Jun 2025 03:46:06 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "10781"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "total_items": 39,
+                  "appointmentlegends": [
+                      {
+                          "id": 1,
+                          "color_type_id": "ColorType-01",
+                          "legend_name": "Registered",
+                          "legend_description": "Used for registered patients.",
+                          "color_code": "#52AFAB",
+                          "is_active": false,
+                          "user_create": "21239",
+                          "created_at": "2024-03-06T15:56:38+07:00",
+                          "user_update": "rama",
+                          "updated_at": "2025-05-02T17:17:03+07:00",
+                          "color_type_name": "Background"
+                      },
+                      {
+                          "id": 3,
+                          "color_type_id": "ColorType-02",
+                          "legend_name": "> 65 Years Old",
+                          "legend_description": "Adult patients over 65 years (Geriatric)",
+                          "color_code": "#AB19F0",
+                          "is_active": true,
+                          "user_create": "21239",
+                          "created_at": "2024-03-07T18:36:58+07:00",
+                          "user_update": "rama",
+                          "updated_at": "2025-05-02T17:17:48+07:00",
+                          "color_type_name": "Border"
+                      },
+                      {
+                          "id": 4,
+                          "color_type_id": "ColorType-01",
+                          "legend_name": "asd",
+                          "legend_description": "Patients are registered via WhatsApp or chatbot.",
+                          "color_code": "#664f0f",
+                          "is_active": false,
+                          "user_create": "21239",
+                          "created_at": "2024-03-08T10:54:52+07:00",
+                          "user_update": "rama",
+                          "updated_at": "2025-05-09T09:54:36+07:00",
+                          "color_type_name": "Background"
+                      },
+                      {
+                          "id": 5,
+                          "color_type_id": "ColorType-02",
+                          "legend_name": "Walk In id 55",
+                          "legend_description": "Descriptions #1update...",
+                          "color_code": "#b5e61d",
+                          "is_active": false,
+                          "user_create": "21239",
+                          "created_at": "2024-03-01T08:00:00+07:00",
+                          "user_update": "rama",
+                          "updated_at": "2025-05-02T17:16:45+07:00",
+                          "color_type_name": "Border"
+                      },
+                      {
+                          "id": 6,
+                          "color_type_id": "ColorType-02",
+                          "legend_name": "Walk In id 6",
+                          "legend_description": "Descriptions #1update...",
+                          "color_code": "#b5e61d",
+                          "is_active": false,
+                          "user_create": "21239",
+                          "created_at": "2024-03-01T08:00:00+07:00",
+                          "user_update": "rama",
+                          "updated_at": "2025-05-02T17:16:43+07:00",
+                          "color_type_name": "Border"
+                      },
+                      {
+                          "id": 7,
+                          "color_type_id": "ColorType-02",
+                          "legend_name": "test keduas",
+                          "legend_description": "Descriptions #1update...",
+                          "color_code": "#b5e61d",
+                          "is_active": false,
+                          "user_create": "21239",
+                          "created_at": "2024-03-01T08:00:00+07:00",
+                          "user_update": "rama",
+                          "updated_at": "2024-03-01T08:00:00+07:00",
+                          "color_type_name": "Border"
+                      },
+                      {
+                          "id": 8,
+                          "color_type_id": "ColorType-02",
+                          "legend_name": "Walk In22",
+                          "color_code": "#b5e61d",
+                          "is_active": false,
+                          "user_create": "21239",
+                          "created_at": "2024-03-01T08:00:00+07:00",
+                          "user_update": "rama",
+                          "updated_at": "2024-04-26T10:02:27+07:00",
+                          "color_type_name": "Border"
+                      },
+                      {
+                          "id": 9,
+                          "color_type_id": "ColorType-02",
+                          "legend_name": "test pertama",
+                          "legend_description": "test pertama",
+                          "color_code": "#cb2a2a",
+                          "is_active": false,
+                          "user_create": "21239",
+                          "created_at": "2024-03-01T08:00:00+07:00",
+                          "user_update": "rama",
+                          "updated_at": "2024-03-01T08:00:00+07:00",
+                          "color_type_name": "Border"
+                      },
+                      {
+                          "id": 10,
+                          "color_type_id": "ColorType-02",
+                          "legend_name": "test kedua",
+                          "legend_description": "test kedua",
+                          "color_code": "#df2020",
+                          "is_active": false,
+                          "user_create": "21239",
+                          "created_at": "2024-03-01T08:00:00+07:00",
+                          "user_update": "rama",
+                          "updated_at": "2024-03-01T08:00:00+07:00",
+                          "color_type_name": "Border"
+                      },
+                      {
+                          "id": 11,
+                          "color_type_id": "ColorType-02",
+                          "legend_name": "test whites",
+                          "legend_description": "white #ffffff",
+                          "color_code": "#ffffff",
+                          "is_active": false,
+                          "user_create": "21239",
+                          "created_at": "2024-03-01T08:00:00+07:00",
+                          "user_update": "rama",
+                          "updated_at": "2024-04-26T09:50:46+07:00",
+                          "color_type_name": "Border"
+                      },
+                      {
+                          "id": 12,
+                          "color_type_id": "ColorType-02",
+                          "legend_name": "test black",
+                          "color_code": "#721616",
+                          "is_active": false,
+                          "user_create": "21239",
+                          "created_at": "2024-03-01T08:00:00+07:00",
+                          "user_update": "rama",
+                          "updated_at": "2024-07-28T13:41:02+07:00",
+                          "color_type_name": "Border"
+                      },
+                      {
+                          "id": 13,
+                          "color_type_id": "ColorType-01",
+                          "legend_name": "Chatbot2",
+                          "legend_description": "test",
+                          "color_code": "#362222",
+                          "is_active": false,
+                          "user_create": "21239",
+                          "created_at": "2024-03-01T08:00:00+07:00",
+                          "user_update": "rama",
+                          "updated_at": "2025-05-02T17:16:17+07:00",
+                          "color_type_name": "Background"
+                      },
+                      {
+                          "id": 14,
+                          "color_type_id": "ColorType-01",
+                          "legend_name": "Test Blue",
+                          "legend_description": "Blue color #1941d3 jadi #0630c9",
+                          "color_code": "#0630c9",
+                          "is_active": false,
+                          "user_create": "21239",
+                          "created_at": "2024-03-01T08:00:00+07:00",
+                          "user_update": "rama",
+                          "updated_at": "2024-03-01T08:00:00+07:00",
+                          "color_type_name": "Background"
+                      },
+                      {
+                          "id": 15,
+                          "color_type_id": "ColorType-02",
+                          "legend_name": "test toast",
+                          "color_code": "#c73b3b",
+                          "is_active": false,
+                          "user_create": "21239",
+                          "created_at": "2024-03-01T08:00:00+07:00",
+                          "user_update": "rama",
+                          "updated_at": "2024-04-26T09:50:45+07:00",
+                          "color_type_name": "Border"
+                      },
+                      {
+                          "id": 16,
+                          "color_type_id": "ColorType-02",
+                          "legend_name": "Test last",
+                          "legend_description": "lastsss",
+                          "color_code": "#c110b9",
+                          "is_active": false,
+                          "user_create": "21239",
+                          "created_at": "2024-03-01T08:00:00+07:00",
+                          "user_update": "rama",
+                          "updated_at": "2024-03-01T08:00:00+07:00",
+                          "color_type_name": "Border"
+                      },
+                      {
+                          "id": 17,
+                          "color_type_id": "ColorType-02",
+                          "legend_name": "LegendTest123",
+                          "legend_description": "asd",
+                          "color_code": "#000000",
+                          "is_active": false,
+                          "user_create": "21239",
+                          "created_at": "2024-03-01T08:00:00+07:00",
+                          "user_update": "21239",
+                          "updated_at": "2024-04-26T09:50:16+07:00",
+                          "color_type_name": "Border"
+                      },
+                      {
+                          "id": 18,
+                          "color_type_id": "ColorType-02",
+                          "legend_name": "asd",
+                          "legend_description": "asd",
+                          "color_code": "#000000",
+                          "is_active": false,
+                          "user_create": "21239",
+                          "created_at": "2024-03-01T08:00:00+07:00",
+                          "user_update": "rama",
+                          "updated_at": "2025-05-02T17:17:21+07:00",
+                          "color_type_name": "Border"
+                      },
+                      {
+                          "id": 19,
+                          "color_type_id": "ColorType-01",
+                          "legend_name": "Walk In19",
+                          "legend_description": "Descriptions #1update...",
+                          "color_code": "#b5e61d",
+                          "is_active": false,
+                          "user_create": "21239",
+                          "created_at": "2024-03-01T08:00:00+07:00",
+                          "user_update": "21239",
+                          "updated_at": "2024-04-26T09:52:35+07:00",
+                          "color_type_name": "Background"
+                      },
+                      {
+                          "id": 20,
+                          "color_type_id": "ColorType-01",
+                          "legend_name": "Walk In20",
+                          "legend_description": "Descriptions #1update...",
+                          "color_code": "#b5e61d",
+                          "is_active": false,
+                          "user_create": "21239",
+                          "created_at": "2024-03-01T08:00:00+07:00",
+                          "user_update": "rama",
+                          "updated_at": "2025-05-02T17:16:53+07:00",
+                          "color_type_name": "Background"
+                      },
+                      {
+                          "id": 21,
+                          "color_type_id": "ColorType-01",
+                          "legend_name": "Walk In21",
+                          "legend_description": "Descriptions #1update...",
+                          "color_code": "#b5e61d",
+                          "is_active": false,
+                          "user_create": "21239",
+                          "created_at": "2024-03-01T08:00:00+07:00",
+                          "user_update": "21239",
+                          "updated_at": "2024-04-26T09:53:09+07:00",
+                          "color_type_name": "Background"
+                      },
+                      {
+                          "id": 22,
+                          "color_type_id": "ColorType-01",
+                          "legend_name": "Walk In22",
+                          "legend_description": "Descriptions #1update...",
+                          "color_code": "#b5e61d",
+                          "is_active": false,
+                          "user_create": "21239",
+                          "created_at": "2024-03-01T08:00:00+07:00",
+                          "user_update": "rama",
+                          "updated_at": "2024-04-26T10:02:24+07:00",
+                          "color_type_name": "Background"
+                      },
+                      {
+                          "id": 23,
+                          "color_type_id": "ColorType-01",
+                          "legend_name": "Walk In222",
+                          "legend_description": "Descriptions #1update...",
+                          "color_code": "#b5e61d",
+                          "is_active": false,
+                          "user_create": "21239",
+                          "created_at": "2024-03-01T08:00:00+07:00",
+                          "user_update": "rama",
+                          "updated_at": "2025-05-02T17:16:29+07:00",
+                          "color_type_name": "Background"
+                      },
+                      {
+                          "id": 24,
+                          "color_type_id": "ColorType-01",
+                          "legend_name": "Walk In24",
+                          "legend_description": "Descriptions #1update...",
+                          "color_code": "#b5e61d",
+                          "is_active": false,
+                          "user_create": "21239",
+                          "created_at": "2024-03-01T08:00:00+07:00",
+                          "user_update": "rama",
+                          "updated_at": "2025-05-02T17:16:47+07:00",
+                          "color_type_name": "Background"
+                      },
+                      {
+                          "id": 25,
+                          "color_type_id": "ColorType-01",
+                          "legend_name": "Walk In25",
+                          "legend_description": "Descriptions #1update...",
+                          "color_code": "#b5e61d",
+                          "is_active": false,
+                          "user_create": "21239",
+                          "created_at": "2024-03-01T08:00:00+07:00",
+                          "user_update": "21239",
+                          "updated_at": "2024-04-26T09:53:22+07:00",
+                          "color_type_name": "Background"
+                      },
+                      {
+                          "id": 26,
+                          "color_type_id": "ColorType-02",
+                          "legend_name": "testLegendFixBorder",
+                          "legend_description": "testLegendFixBorder",
+                          "color_code": "#c13636",
+                          "is_active": false,
+                          "user_create": "21239",
+                          "created_at": "2024-03-01T08:00:00+07:00",
+                          "user_update": "rama",
+                          "updated_at": "2024-04-26T09:50:38+07:00",
+                          "color_type_name": "Border"
+                      },
+                      {
+                          "id": 27,
+                          "color_type_id": "ColorType-02",
+                          "legend_name": "testasdasd",
+                          "legend_description": "testttt",
+                          "color_code": "#0d2134",
+                          "is_active": false,
+                          "user_create": "21239",
+                          "created_at": "2024-03-01T08:00:00+07:00",
+                          "user_update": "rama",
+                          "updated_at": "2024-04-26T09:50:33+07:00",
+                          "color_type_name": "Border"
+                      },
+                      {
+                          "id": 28,
+                          "color_type_id": "ColorType-02",
+                          "legend_name": "Walk In id 66",
+                          "legend_description": "asd Walk In id 66",
+                          "color_code": "#000000",
+                          "is_active": false,
+                          "user_create": "21239",
+                          "created_at": "2024-03-01T08:00:00+07:00",
+                          "user_update": "rama",
+                          "updated_at": "2025-05-02T17:16:40+07:00",
+                          "color_type_name": "Border"
+                      },
+                      {
+                          "id": 29,
+                          "color_type_id": "ColorType-02",
+                          "legend_name": "testLegendNew",
+                          "legend_description": "testLegendNew",
+                          "color_code": "#e00ce8",
+                          "is_active": false,
+                          "user_create": "21239",
+                          "created_at": "2024-04-24T10:03:10+07:00",
+                          "user_update": "rama",
+                          "updated_at": "2024-04-26T09:50:40+07:00",
+                          "color_type_name": "Border"
+                      },
+                      {
+                          "id": 30,
+                          "color_type_id": "ColorType-02",
+                          "legend_name": "LegendNewTest",
+                          "legend_description": "LegendNewTest",
+                          "color_code": "#2da737",
+                          "is_active": false,
+                          "user_create": "21239",
+                          "created_at": "2024-05-06T14:27:54+07:00",
+                          "user_update": "rama",
+                          "updated_at": "2025-05-02T17:17:13+07:00",
+                          "color_type_name": "Border"
+                      },
+                      {
+                          "id": 32,
+                          "color_type_id": "ColorType-02",
+                          "legend_name": "asd hkbajsd aksjd",
+                          "legend_description": "sad",
+                          "color_code": "#b51515",
+                          "is_active": false,
+                          "user_create": "21239",
+                          "created_at": "2024-05-27T15:11:48+07:00",
+                          "user_update": "rama",
+                          "updated_at": "2025-05-02T17:16:12+07:00",
+                          "color_type_name": "Border"
+                      },
+                      {
+                          "id": 33,
+                          "color_type_id": "ColorType-02",
+                          "legend_name": "huhu ahah hehe",
+                          "legend_description": "#11ca95",
+                          "color_code": "#11ca95",
+                          "is_active": false,
+                          "user_create": "21239",
+                          "created_at": "2024-05-27T15:33:09+07:00",
+                          "user_update": "rama",
+                          "updated_at": "2025-05-02T17:17:11+07:00",
+                          "color_type_name": "Border"
+                      },
+                      {
+                          "id": 34,
+                          "color_type_id": "ColorType-02",
+                          "legend_name": "fix ini mah huhu haha",
+                          "legend_description": "#e90d0d",
+                          "color_code": "#e90d0d",
+                          "is_active": false,
+                          "user_create": "21239",
+                          "created_at": "2024-05-27T15:47:15+07:00",
+                          "user_update": "rama",
+                          "updated_at": "2025-05-02T17:17:15+07:00",
+                          "color_type_name": "Border"
+                      },
+                      {
+                          "id": 35,
+                          "color_type_id": "ColorType-01",
+                          "legend_name": "Test-abc",
+                          "legend_description": "Test-abc",
+                          "color_code": "#e50b0b",
+                          "is_active": false,
+                          "user_create": "21239",
+                          "created_at": "2024-08-15T11:46:28+07:00",
+                          "user_update": "rama",
+                          "updated_at": "2025-05-02T17:17:02+07:00",
+                          "color_type_name": "Background"
+                      },
+                      {
+                          "id": 36,
+                          "color_type_id": "ColorType-01",
+                          "legend_name": "Register",
+                          "color_code": "#b5e61d",
+                          "is_active": true,
+                          "user_create": "ferdi",
+                          "created_at": "2025-04-23T08:00:00+07:00",
+                          "color_type_name": "Background"
+                      },
+                      {
+                          "id": 37,
+                          "color_type_id": "ColorType-01",
+                          "legend_name": "Pre-Surgery",
+                          "legend_description": "Patient has been examined and is awaiting surgery.",
+                          "color_code": "#22b14c",
+                          "is_active": true,
+                          "user_create": "ferdi",
+                          "created_at": "2025-04-23T09:00:00+07:00",
+                          "color_type_name": "Background"
+                      },
+                      {
+                          "id": 38,
+                          "color_type_id": "ColorType-01",
+                          "legend_name": "SUBJECTIVE",
+                          "legend_description": "SUBJECTIVE",
+                          "color_code": "#ff2e2e",
+                          "is_active": false,
+                          "user_create": "21239",
+                          "created_at": "2025-05-02T17:31:58+07:00",
+                          "user_update": "rama",
+                          "updated_at": "2025-05-02T17:32:22+07:00",
+                          "color_type_name": "Background"
+                      }
+                  ]
+              }
+          }

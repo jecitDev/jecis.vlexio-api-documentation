@@ -1,0 +1,7 @@
+info:
+  name: PRODUCT ACCOUNT
+  type: folder
+  seq: 75
+
+request:
+  auth: inherit

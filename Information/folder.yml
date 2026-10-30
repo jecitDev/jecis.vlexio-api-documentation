@@ -1,0 +1,7 @@
+info:
+  name: Information
+  type: folder
+  seq: 93
+
+request:
+  auth: inherit

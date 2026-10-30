@@ -1,0 +1,26 @@
+info:
+  name: Digisign - Document
+  type: folder
+  seq: 56
+
+request:
+  auth: inherit
+
+docs:
+  content: |-
+    ### \[TS-1371\] \[BE\] - DIGITAL SIGN #1.0.0
+
+    ##### Nov 12, 2024
+
+    - Handle Send Document to PERURI Service Gateway `Enhance`
+        
+
+    ##### Oct 31, 2024
+
+    - Handle Upload PDF File to Storage Management `Enhance`
+        
+
+    ##### Oct 30, 2024
+
+    - CRUD Common
+  type: text/markdown

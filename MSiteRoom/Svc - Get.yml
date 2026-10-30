@@ -1,0 +1,111 @@
+info:
+  name: Svc - Get
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/MSiteRoom/:id/:company_id/:business_unit_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: id
+      value: R002
+      type: path
+    - name: company_id
+      value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+      type: path
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+  body:
+    type: text
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Svc - Get
+    request:
+      url: "{{BASE_URL}}/v1/MSiteRoom/:id/:businessunitid"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: id
+          value: R002
+          type: path
+        - name: businessunitid
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Server
+          value: nginx/1.22.0 (Ubuntu)
+        - name: Date
+          value: Fri, 13 Sep 2024 03:50:21 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "393"
+        - name: Connection
+          value: keep-alive
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "MSiteRooms": [
+                      {
+                          "site_room_id": "R002",
+                          "site_id": "001",
+                          "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "site_room_name": "Office Room B",
+                          "site_room_description": "Office room on the first floor",
+                          "floor_level": "01",
+                          "room_id": "RM01",
+                          "is_active": true,
+                          "user_create": "admin",
+                          "created_at": "2024-09-04T07:18:52.94434Z"
+                      }
+                  ]
+              }
+          }

@@ -1,0 +1,7 @@
+info:
+  name: Asset - Bed
+  type: folder
+  seq: 13
+
+request:
+  auth: inherit

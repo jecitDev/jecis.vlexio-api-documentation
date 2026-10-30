@@ -1,0 +1,308 @@
+info:
+  name: List Admedika Logs
+  type: http
+  seq: 18
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/admedika/audit/logs?page=1&page_size=10&sort_by=created_at&sort_order=desc"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-Branch-ID
+      value: "{{xbranchid}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: page_size
+      value: "10"
+      type: query
+    - name: sort_by
+      value: created_at
+      type: query
+    - name: sort_order
+      value: desc
+      type: query
+    - name: branch_id
+      value: REG-260813
+      type: query
+      disabled: true
+    - name: business_unit_id
+      value: ""
+      type: query
+      disabled: true
+    - name: direction
+      value: INBOUND
+      type: query
+      disabled: true
+  auth: inherit
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: List Admedika Logs
+    request:
+      url: "{{BASE_URL}}/v1/admedika/audit/logs?page=1&page_size=10&sort_by=created_at&sort_order=desc"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-Branch-ID
+          value: "{{xbranchid}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: page_size
+          value: "10"
+          type: query
+        - name: sort_by
+          value: created_at
+          type: query
+        - name: sort_order
+          value: desc
+          type: query
+        - name: branch_id
+          value: REG-260813
+          type: query
+          disabled: true
+        - name: business_unit_id
+          value: ""
+          type: query
+          disabled: true
+        - name: direction
+          value: INBOUND
+          type: query
+          disabled: true
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 27 Oct 2026 12:41:56 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "17539"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+            "code": 200,
+            "data": {
+              "logs": [
+                {
+                  "branch_id": "bbf0a2cb-8a27-479d-8108-e34a92925d39",
+                  "business_unit_id": "33b109c5-dd64-480c-8100-68fe17deaf3e",
+                  "client_ip": "127.0.0.1",
+                  "created_at": "2026-10-27T19:41:12+07:00",
+                  "direction": "OUTBOUND",
+                  "endpoint_url": "https://adcpslite.admedika.co.id:553/admedgateway/services/customerhost_dev",
+                  "error_message": "",
+                  "http_method": "POST",
+                  "id": "15",
+                  "latency_ms": "660",
+                  "request_headers": "",
+                  "request_payload": "{\"input\": {\"txnData\": {\"invoiceTrackingRequest\": {\"invoiceTracking\": {\"dateTo\": \"13082026\", \"dateFrom\": \"01082026\", \"dateName\": \"RECEIVED_DATE\", \"invoiceNo\": \"TES\", \"terminalID\": \"12372351\"}}}, \"requestID\": \"51515\", \"serviceID\": \"INVOICE_TRACKING\", \"tokenAuth\": \"\", \"customerID\": \"0383\", \"txnRequestDateTime\": \"20261027194112\"}}",
+                  "response_payload": "{\"output\": {\"server\": \"DEV\", \"txnData\": {\"invoiceTrackingResponse\": {\"invoiceTracking\": {\"errorCode\": 1840, \"errorDesc\": \"Not found! [INVOICE]. Please check your request parameters\"}}}, \"statusMsg\": \"Error on txnData\", \"statusCode\": 910, \"referenceID\": 924538, \"txnResponseDatetime\": \"20261027194113\"}}",
+                  "response_status_code": 200,
+                  "service_name": "INVOICE_TRACKING",
+                  "user_create": "ferdinan"
+                },
+                {
+                  "branch_id": "bbf0a2cb-8a27-479d-8108-e34a92925d39",
+                  "business_unit_id": "33b109c5-dd64-480c-8100-68fe17deaf3e",
+                  "client_ip": "127.0.0.1",
+                  "created_at": "2026-10-27T19:40:46+07:00",
+                  "direction": "OUTBOUND",
+                  "endpoint_url": "https://adcpslite.admedika.co.id:553/admedgateway/services/customerhost_dev",
+                  "error_message": "",
+                  "http_method": "POST",
+                  "id": "14",
+                  "latency_ms": "659",
+                  "request_headers": "",
+                  "request_payload": "{\"input\": {\"txnData\": {\"rePrintOutRequest\": {\"rePrintOut\": {\"clID\": \"28651084\", \"rePrintType\": \"D\"}}}, \"requestID\": \"51515\", \"serviceID\": \"RE_PRINT_OUT\", \"tokenAuth\": \"\", \"customerID\": \"0383\", \"txnRequestDateTime\": \"20261027194046\"}}",
+                  "response_payload": "{\"output\": {\"server\": \"DEV\", \"txnData\": {\"rePrintOutResponse\": {\"rePrintOut\": {\"printOut\": \"PENGESAHAN & TAGIHAN\\r\\nJaminan Kesehatan\\r\\nBA_UAT TEST\\r\\nDIAG:I10 IZIN SAKIT:0\\r\\n***************************************\\r\\nB.DR.SPEC                      0.00\\r\\nB.DR.UMUM                      0.00\\r\\nB.OBAT                         0.00\\r\\n                               0.00\\r\\n***************************************\\r\\nJUM.BIAYA :               90,000.00\\r\\nJUM.DIBYR ASS:                  .00\\r\\nDIBYR PASIEN:             90,000.00\\r\\n=====================\\r\\nSELISIH BIAYA BAYAR DITEMPAT\\r\\n\"}}}, \"statusMsg\": \"Successful\", \"statusCode\": 0, \"referenceID\": 924537, \"txnResponseDatetime\": \"20261027194047\"}}",
+                  "response_status_code": 200,
+                  "service_name": "RE_PRINT_OUT",
+                  "user_create": "ferdinan"
+                },
+                {
+                  "branch_id": "bbf0a2cb-8a27-479d-8108-e34a92925d39",
+                  "business_unit_id": "33b109c5-dd64-480c-8100-68fe17deaf3e",
+                  "client_ip": "127.0.0.1",
+                  "created_at": "2026-10-27T19:40:25+07:00",
+                  "direction": "OUTBOUND",
+                  "endpoint_url": "https://adcpslite.admedika.co.id:553/admedgateway/services/api/customerhost",
+                  "error_message": "",
+                  "http_method": "POST",
+                  "id": "13",
+                  "latency_ms": "1266",
+                  "request_headers": "",
+                  "request_payload": "{\"input\": {\"txnData\": {\"edocsUploadRequest\": {\"edocsUpload\": {\"clID\": \"28651084\", \"cardNo\": \"8000991200072687\", \"docType\": \"HASIL_LAB\", \"remarks\": \"Uploaded via Postman test\", \"patientName\": \"Test Patient\"}}}, \"requestID\": \"51515\", \"serviceID\": \"EDOCS_UPLOAD\", \"tokenAuth\": \"\", \"customerID\": \"0383\", \"txnRequestDateTime\": \"20261027194025\"}}",
+                  "response_payload": "{\"output\": {\"server\": \"PROD\", \"txnData\": null, \"statusMsg\": \"Customer is not registered\", \"statusCode\": 603, \"referenceID\": 0, \"txnResponseDatetime\": \"20261027194027\"}}",
+                  "response_status_code": 200,
+                  "service_name": "EDOCS_UPLOAD",
+                  "user_create": "ferdinan"
+                },
+                {
+                  "branch_id": "bbf0a2cb-8a27-479d-8108-e34a92925d39",
+                  "business_unit_id": "33b109c5-dd64-480c-8100-68fe17deaf3e",
+                  "client_ip": "127.0.0.1",
+                  "created_at": "2026-10-27T19:40:08+07:00",
+                  "direction": "OUTBOUND",
+                  "endpoint_url": "https://mobile.admedika.co.id/admedgateway/services/api/?method=CustomerHost",
+                  "error_message": "",
+                  "http_method": "POST",
+                  "id": "12",
+                  "latency_ms": "578",
+                  "request_headers": "",
+                  "request_payload": "{\"input\": {\"txnData\": {\"finalBillRequest\": {\"finalBill\": {\"clID\": \"28651074\", \"cardNo\": \"8000991200072687\", \"remarks\": \"\", \"finalFlag\": \"N\", \"invoiceNo\": \"INV0001\", \"itemGroups\": [{\"ItemList\": [{\"qty\": \"3\", \"code\": \"RM01\", \"name\": \"VIP Room\", \"benID\": \"1\", \"remarks\": \"\", \"totPrice\": \"3000000\", \"issueDate\": \"10082026\"}], \"groupCode\": \"ROOM\", \"groupName\": \"Room Charges\"}], \"preparedBy\": \"AD2294\", \"terminalID\": \"12372351\", \"invoiceDate\": \"13082026\", \"dateAdmission\": \"10082026\", \"dateDischarge\": \"13082026\", \"providerTransID\": \"TRX0001\"}}}, \"requestID\": \"51515\", \"serviceID\": \"FINAL_BILL\", \"tokenAuth\": \"\", \"customerID\": \"0383\", \"txnRequestDateTime\": \"20261027194008\"}}",
+                  "response_payload": "{\"output\": {\"format\": \"JSON\", \"txnData\": {\"finalBillResponse\": {\"finalBill\": {\"cardNo\": \"8000991200072687\", \"clDesc\": \"VALID CLAIM\", \"clStatus\": \"40\", \"errorCode\": \"1840\", \"errorDesc\": \"The claims was already closed! [cl:28651074] [40 VALID CLAIM] \", \"patientName\": \"ADM TEST LIMA\"}}}, \"statusMsg\": \"error on txnData \", \"statusCode\": \"910\", \"referenceID\": \"924536\", \"txnResponseDateTime\": \"20261027194009\"}}",
+                  "response_status_code": 200,
+                  "service_name": "FINAL_BILL",
+                  "user_create": "ferdinan"
+                },
+                {
+                  "branch_id": "bbf0a2cb-8a27-479d-8108-e34a92925d39",
+                  "business_unit_id": "33b109c5-dd64-480c-8100-68fe17deaf3e",
+                  "client_ip": "127.0.0.1",
+                  "created_at": "2026-10-27T19:39:25+07:00",
+                  "direction": "OUTBOUND",
+                  "endpoint_url": "https://adcpslite.admedika.co.id:553/admedgateway/services/customerhost_dev",
+                  "error_message": "",
+                  "http_method": "POST",
+                  "id": "11",
+                  "latency_ms": "2662",
+                  "request_headers": "",
+                  "request_payload": "{\"input\": {\"txnData\": {\"dischargeRequest\": {\"discharge\": {\"cardNo\": \"8000991200072687\", \"mcDays\": \"0\", \"remarks\": \"\", \"terminalID\": \"12372351\", \"entitlement\": [{\"benID\": \"01\", \"benAmount\": \"90000\", \"benItemList\": [{\"qty\": \"1\", \"code\": \"OBAT\", \"name\": \"Obat Paracetamol\", \"totPrice\": \"90000\", \"dateIssue\": \"26102026\"}]}], \"accidentFlag\": \"N\", \"surgicalFlag\": \"N\", \"physicianName\": \"dr. Test\", \"totalIncurred\": \"260000\", \"diagnosisCodeList\": \"I10\"}}}, \"requestID\": \"51515\", \"serviceID\": \"DISCHARGE_OP\", \"tokenAuth\": \"\", \"customerID\": \"0383\", \"txnRequestDateTime\": \"20261027193925\"}}",
+                  "response_payload": "{\"output\": {\"server\": \"DEV\", \"txnData\": {\"dischargeRequestResponse\": {\"dischargeRequest\": {\"pd\": \"Principal\", \"dob\": \"Jul-05-1992\", \"clID\": \"28651084\", \"cardNo\": \"8000991200072687\", \"clDesc\": \"VALID CLAIM\", \"clStatus\": \"40\", \"planCode\": \"IDR\", \"policyNo\": \"ADM_005X\", \"printOut\": \"PENGESAHAN & TAGIHAN\\nJAMINAN KESEHATAN\\nBA_UAT TEST\\nDIAG:I10 IZIN SAKIT:0\\n***************************************\\nB.DR.SPEC         0\\nB.DR.UMUM         0\\nB.OBAT            0\\n0\\n***************************************\\nJUM.BIAYA : 90000\\nJUM.DIBYR ASS:     0\\nDIBYR PASIEN: 90000\\n=====================\\nSELISIH BIAYA BAYAR DITEMPAT\\n\", \"PayorName\": \"Jaminan Kesehatan\", \"payorCode\": \"ADMEDKA\", \"policyDate\": \"Jan-01-2026 to Dec-31-2026\", \"entitlement\": [{\"benID\": \"01\", \"longName\": \"Biaya Administrasi\", \"shortName\": \"B.ADMIN\", \"amtApproved\": \"0\", \"amtIncurred\": \"90000\", \"amtNotApproved\": \"90000\"}], \"patientName\": \"ADM TEST LIMA\", \"payorMemberID\": \"ADM_005X\", \"principalName\": \"\", \"totAmtApproved\": \"0\", \"totAmtIncurred\": \"90000\", \"totAmtNotApproved\": \"90000\"}}}, \"statusMsg\": \"Successful\", \"statusCode\": 0, \"referenceID\": 924535, \"txnResponseDatetime\": \"20261027193928\"}}",
+                  "response_status_code": 200,
+                  "service_name": "DISCHARGE_OP",
+                  "user_create": "ferdinan"
+                },
+                {
+                  "branch_id": "bbf0a2cb-8a27-479d-8108-e34a92925d39",
+                  "business_unit_id": "33b109c5-dd64-480c-8100-68fe17deaf3e",
+                  "client_ip": "127.0.0.1",
+                  "created_at": "2026-10-27T19:36:37+07:00",
+                  "direction": "OUTBOUND",
+                  "endpoint_url": "https://adcpslite.admedika.co.id:553/admedgateway/services/customerhost_dev",
+                  "error_message": "",
+                  "http_method": "POST",
+                  "id": "10",
+                  "latency_ms": "569",
+                  "request_headers": "",
+                  "request_payload": "{\"input\": {\"txnData\": {\"dailyMonitoringRequest\": {\"dailyMonitoring\": {\"clID\": \"28651084\", \"cardNo\": \"8000991200072687\", \"dmUser\": \"AD2294\", \"dmForms\": [{\"code\": \"OBAT\", \"date\": \"26102026\", \"name\": \"Obat Paracetamol\", \"input\": \"2 strip\"}], \"terminalID\": \"12372351\"}}}, \"requestID\": \"51515\", \"serviceID\": \"DAILY_MONITORING\", \"tokenAuth\": \"\", \"customerID\": \"0383\", \"txnRequestDateTime\": \"20261027193637\"}}",
+                  "response_payload": "{\"output\": {\"server\": \"DEV\", \"txnData\": {\"dailyMonitoringResponse\": {\"dailyMonitoring\": {\"er\": 1, \"ok\": 0, \"msg\": \"Thank you for the daily monitoring! Successfully updated : 0\", \"clID\": \"28651084\", \"cardNo\": \"8000991200072687\", \"clDesc\": \"ELIGIBILITY APPROVED\", \"covCode\": \"GP\", \"dmForms\": [{\"code\": \"OBAT\", \"date\": \"26102026\", \"name\": \"Obat Paracetamol\", \"input\": \"2 strip\", \"status\": \"Skip: codeOBAT was not found. please refer to docs for daily monitoring item code\"}], \"clStatus\": \"08\", \"payorName\": \"JAMINAN KESEHATAN\", \"terminalID\": \"12372351\", \"patientName\": \"ADM TEST LIMA\", \"totAmtApproved\": \"0\", \"totAmtIncurred\": \".00\", \"providerTransID\": null, \"totAmtNotApproved\": \"0\"}}}, \"statusMsg\": \"Successful\", \"statusCode\": 0, \"referenceID\": 924533, \"txnResponseDatetime\": \"20261027193637\"}}",
+                  "response_status_code": 200,
+                  "service_name": "DAILY_MONITORING",
+                  "user_create": "ferdinan"
+                },
+                {
+                  "branch_id": "bbf0a2cb-8a27-479d-8108-e34a92925d39",
+                  "business_unit_id": "33b109c5-dd64-480c-8100-68fe17deaf3e",
+                  "client_ip": "127.0.0.1",
+                  "created_at": "2026-10-27T19:36:13+07:00",
+                  "direction": "OUTBOUND",
+                  "endpoint_url": "https://adcpslite.admedika.co.id:553/admedgateway/services/customerhost_dev",
+                  "error_message": "",
+                  "http_method": "POST",
+                  "id": "9",
+                  "latency_ms": "574",
+                  "request_headers": "",
+                  "request_payload": "{\"input\": {\"txnData\": {\"checkIcdExclusionRequest\": {\"checkIcdExclusion\": {\"covID\": \"02\", \"cardNo\": \"8000991200072687\", \"diagnosisCodeList\": \"I10\"}}}, \"requestID\": \"51515\", \"serviceID\": \"CHECK_ICD_EXCLUSION\", \"tokenAuth\": \"\", \"customerID\": \"0383\", \"txnRequestDateTime\": \"20261027193613\"}}",
+                  "response_payload": "{\"output\": {\"server\": \"DEV\", \"txnData\": {\"checkIcdExclusionResponse\": {\"checkIcdExclusion\": {\"pd\": \"Principal\", \"dob\": \"Jul-05-1992\", \"covID\": \"02\", \"cardNo\": \"8000991200072687\", \"planCode\": \"GP-003\", \"policyNo\": \"ADM_005X\", \"PayorName\": \"Jaminan Kesehatan\", \"policyDate\": \"Jan-01-2026 to Dec-31-2026\", \"patientName\": \"ADM TEST LIMA\", \"payorMemberID\": \"ADM_005X\", \"principalName\": \"\", \"diagnosisCodeList\": \"I10\"}}}, \"statusMsg\": \"Successful\", \"statusCode\": 0, \"referenceID\": 924532, \"txnResponseDatetime\": \"20261027193614\"}}",
+                  "response_status_code": 200,
+                  "service_name": "CHECK_ICD_EXCLUSION",
+                  "user_create": "ferdinan"
+                },
+                {
+                  "branch_id": "bbf0a2cb-8a27-479d-8108-e34a92925d39",
+                  "business_unit_id": "33b109c5-dd64-480c-8100-68fe17deaf3e",
+                  "client_ip": "127.0.0.1",
+                  "created_at": "2026-10-27T19:35:31+07:00",
+                  "direction": "OUTBOUND",
+                  "endpoint_url": "https://mobile.admedika.co.id/admedgateway/services/api/?method=CustomerHost",
+                  "error_message": "",
+                  "http_method": "POST",
+                  "id": "8",
+                  "latency_ms": "560",
+                  "request_headers": "",
+                  "request_payload": "{\"input\": {\"txnData\": {\"getMemberEnrolledPlanTCRequest\": {\"getMemberEnrolledPlanTC\": {\"covID\": \"01\", \"cardNo\": \"8000991200072687\", \"searchForTermCondition\": \"RAWAT JALAN\"}}}, \"requestID\": \"51515\", \"serviceID\": \"GET_MEMBER_ENROLLED_PLAN_TC\", \"tokenAuth\": \"\", \"customerID\": \"0383\", \"txnRequestDateTime\": \"20261027193531\"}}",
+                  "response_payload": "{\"output\": {\"format\": \"JSON\", \"txnData\": {\"getMemberEnrolledPlanTCResponse\": {\"getMemberEnrolledPlanTC\": {\"dob\": \"Jul-05-1992\", \"cardNo\": \"8000991200072687\", \"payorName\": \"Jaminan Kesehatan\", \"patientName\": \"ADM TEST LIMA\", \"enrolledPlan\": [{\"desc\": \"RAWAT INAP\", \"planID\": \"H&S01\", \"covCode\": \"H&S\", \"termCondition\": \"Not found!\"}]}}}, \"statusMsg\": \"Successful \", \"statusCode\": \"00\", \"referenceID\": \"924531\", \"txnResponseDateTime\": \"20261027193532\"}}",
+                  "response_status_code": 200,
+                  "service_name": "GET_MEMBER_ENROLLED_PLAN_TC",
+                  "user_create": "ferdinan"
+                },
+                {
+                  "branch_id": "bbf0a2cb-8a27-479d-8108-e34a92925d39",
+                  "business_unit_id": "33b109c5-dd64-480c-8100-68fe17deaf3e",
+                  "client_ip": "127.0.0.1",
+                  "created_at": "2026-10-27T19:34:41+07:00",
+                  "direction": "OUTBOUND",
+                  "endpoint_url": "https://adcpslite.admedika.co.id:553/admedgateway/services/customerhost_dev",
+                  "error_message": "",
+                  "http_method": "POST",
+                  "id": "7",
+                  "latency_ms": "1622",
+                  "request_headers": "",
+                  "request_payload": "{\"input\": {\"txnData\": {\"getEntitlementRequest\": {\"getEntitlement\": {\"cardNo\": \"8000991200072687\", \"terminalID\": \"12372351\"}}}, \"requestID\": \"51515\", \"serviceID\": \"GET_ENTITLEMENT\", \"tokenAuth\": \"\", \"customerID\": \"0383\", \"txnRequestDateTime\": \"20261027193441\"}}",
+                  "response_payload": "{\"output\": {\"server\": \"DEV\", \"txnData\": {\"getEntitlementResponse\": {\"getEntitlement\": {\"clID\": \"28651084\", \"cardNo\": \"8000991200072687\", \"covCode\": \"GP\", \"clStatus\": \"08\", \"PayorName\": \"Jaminan Kesehatan\", \"entitlement\": [{\"benID\": \"01\", \"freqDesc\": \"YEARLY\", \"longName\": \"Biaya Administrasi\", \"limitDesc\": \"MAX DOLLAR AMOUNT\", \"shortName\": \"B.ADMIN\", \"availLimit\": \"n/a\"}, {\"benID\": \"07\", \"freqDesc\": \"YEARLY\", \"longName\": \"Biaya Dokter Spesialis Per Tahun\", \"limitDesc\": \"MAX DOLLAR AMOUNT\", \"shortName\": \"B.DR.SPEC\", \"availLimit\": \"n/a\"}, {\"benID\": \"39\", \"freqDesc\": \"YEARLY\", \"longName\": \"Biaya Dokter Umum Per Tahun\", \"limitDesc\": \"MAX DOLLAR AMOUNT\", \"shortName\": \"B.DR.UMUM\", \"availLimit\": \"n/a\"}, {\"benID\": \"40\", \"freqDesc\": \"YEARLY\", \"longName\": \"Biaya Laboratorium Per Tahun\", \"limitDesc\": \"MAX DOLLAR AMOUNT\", \"shortName\": \"B.TEST DIAG\", \"availLimit\": \"n/a\"}, {\"benID\": \"41\", \"freqDesc\": \"YEARLY\", \"longName\": \"Biaya Obat Per Tahun\", \"limitDesc\": \"MAX DOLLAR AMOUNT\", \"shortName\": \"B.OBAT\", \"availLimit\": \"n/a\"}, {\"benID\": \"60\", \"freqDesc\": \"YEARLY\", \"longName\": \"Fisiotherapi Per Tahun\", \"limitDesc\": \"MAX DOLLAR AMOUNT\", \"shortName\": \"FISIOTHERAPI\", \"availLimit\": \"n/a\"}], \"patientName\": \"ADM TEST LIMA\", \"clStatusDesc\": \"ELIGIBILITY APPROVED\"}}}, \"statusMsg\": \"Successful\", \"statusCode\": 0, \"referenceID\": 924530, \"txnResponseDatetime\": \"20261027193443\"}}",
+                  "response_status_code": 200,
+                  "service_name": "GET_ENTITLEMENT",
+                  "user_create": "ferdinan"
+                },
+                {
+                  "branch_id": "bbf0a2cb-8a27-479d-8108-e34a92925d39",
+                  "business_unit_id": "33b109c5-dd64-480c-8100-68fe17deaf3e",
+                  "client_ip": "127.0.0.1",
+                  "created_at": "2026-10-27T19:33:18+07:00",
+                  "direction": "OUTBOUND",
+                  "endpoint_url": "https://adcpslite.admedika.co.id:553/admedgateway/services/customerhost_dev",
+                  "error_message": "",
+                  "http_method": "POST",
+                  "id": "6",
+                  "latency_ms": "567",
+                  "request_headers": "",
+                  "request_payload": "{\"input\": {\"txnData\": {\"eligibilityRequest\": {\"eligibility\": {\"covID\": \"02\", \"cardNo\": \"8000991200072687\", \"remarks\": \"\", \"roomType\": \"\", \"roomPrice\": \"\", \"terminalID\": \"12372351\", \"accidentFlag\": \"N\", \"surgicalFlag\": \"N\", \"physicianName\": \"dr. Test\", \"diagnosisCodeList\": \"I10\"}}}, \"requestID\": \"51515\", \"serviceID\": \"ELIGIBILITY\", \"tokenAuth\": \"\", \"customerID\": \"0383\", \"txnRequestDateTime\": \"20261027193318\"}}",
+                  "response_payload": "{\"output\": {\"server\": \"DEV\", \"txnData\": {\"eligibilityResponse\": {\"eligibility\": {\"pd\": \"Principal\", \"cardNo\": \"8000991200072687\", \"printOut\": \"Have a pending outpatient claims [GP @ADMEDIKA MC] [clStatus:08-ELIGIBILITY APPROVED] Please proceed with discharge transaction!\", \"errorCode\": 1998, \"errorDesc\": \"Rejected -> Have a pending outpatient claims [GP @ADMEDIKA MC] [clStatus:08-ELIGIBILITY APPROVED] Please proceed with discharge transaction!\", \"patientName\": \"ADM TEST LIMA\", \"principalName\": \"\"}}}, \"statusMsg\": \"Error on txnData\", \"statusCode\": 910, \"referenceID\": 924527, \"txnResponseDatetime\": \"20261027193319\"}}",
+                  "response_status_code": 200,
+                  "service_name": "ELIGIBILITY",
+                  "user_create": "ferdinan"
+                }
+              ],
+              "page": 1,
+              "page_size": 10,
+              "total_items": 14
+            }
+          }

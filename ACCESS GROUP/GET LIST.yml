@@ -1,0 +1,914 @@
+info:
+  name: GET LIST
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/accessgroup?page=1&page_size=10&sort_by=group_id&sort_order=ASC&is_active=true&business_unit_id=53aad077-9fb1-4f08-85f3-af9fd9a36517"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: page_size
+      value: "10"
+      type: query
+    - name: sort_by
+      value: group_id
+      type: query
+    - name: sort_order
+      value: ASC
+      type: query
+    - name: keywords
+      value: ""
+      type: query
+      disabled: true
+    - name: group_name
+      value: ""
+      type: query
+      disabled: true
+    - name: description
+      value: ""
+      type: query
+      disabled: true
+    - name: admin_type
+      value: ""
+      type: query
+      disabled: true
+    - name: is_active
+      value: "true"
+      type: query
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: GET LIST
+    request:
+      url: "{{BASE_URL}}/v1/accessgroup?page=1&page_size=10&sort_by=group_id&sort_order=ASC&is_active=true&business_unit_id=53aad077-9fb1-4f08-85f3-af9fd9a36517"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: page_size
+          value: "10"
+          type: query
+        - name: sort_by
+          value: group_id
+          type: query
+        - name: sort_order
+          value: ASC
+          type: query
+        - name: keywords
+          value: ""
+          type: query
+          disabled: true
+        - name: group_name
+          value: ""
+          type: query
+          disabled: true
+        - name: description
+          value: ""
+          type: query
+          disabled: true
+        - name: admin_type
+          value: ""
+          type: query
+          disabled: true
+        - name: is_active
+          value: "true"
+          type: query
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 27 Aug 2024 08:08:44 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "17396"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "page": 1,
+                  "page_size": 10,
+                  "total_items": 10,
+                  "accessgroups": [
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "group_id": "admin_jago",
+                          "group_name": "Admin Jago",
+                          "description": "Group testing testin only",
+                          "admin_type": "admin_jago",
+                          "access_program": [
+                              {
+                                  "program_id": "02.01.01",
+                                  "is_program_addable": true,
+                                  "is_program_deleteable": true,
+                                  "is_program_viewable": true,
+                                  "is_program_approveable": true,
+                                  "is_program_unapproveable": true,
+                                  "is_program_voidable": true,
+                                  "is_program_exportable": true
+                              }
+                          ],
+                          "is_active": true,
+                          "user_create": "rama",
+                          "created_at": "2024-07-24T15:42:44+07:00",
+                          "user_update": "rama",
+                          "updated_at": "2024-07-31T10:58:36+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "group_id": "admin_s",
+                          "group_name": "Admin Sakti e",
+                          "description": "Test Group sakti",
+                          "admin_type": "admin_s",
+                          "access_program": [
+                              {
+                                  "program_id": "02.01.01",
+                                  "is_program_addable": true,
+                                  "is_program_editable": true,
+                                  "is_program_deleteable": true,
+                                  "is_program_viewable": true,
+                                  "is_program_approveable": true,
+                                  "is_program_unapproveable": true,
+                                  "is_program_voidable": true,
+                                  "is_program_exportable": true
+                              },
+                              {
+                                  "program_id": "02.01.02",
+                                  "is_program_addable": true,
+                                  "is_program_editable": true,
+                                  "is_program_deleteable": true,
+                                  "is_program_viewable": true,
+                                  "is_program_approveable": true,
+                                  "is_program_unapproveable": true,
+                                  "is_program_voidable": true,
+                                  "is_program_exportable": true
+                              }
+                          ],
+                          "is_active": true,
+                          "user_create": "rama",
+                          "created_at": "2024-07-24T15:45:15+07:00",
+                          "user_update": "rama",
+                          "updated_at": "2024-08-05T13:07:31+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "group_id": "ADMISI",
+                          "group_name": "ADMISI",
+                          "description": "ADMISI",
+                          "admin_type": "-",
+                          "access_program": [
+                              {
+                                  "program_id": "01.01.01",
+                                  "is_program_editable": true,
+                                  "is_program_approveable": true,
+                                  "is_program_unvoidable": true,
+                                  "is_program_direct_void": true,
+                                  "is_program_exportable": true,
+                                  "is_program_printable": true
+                              },
+                              {
+                                  "program_id": "01.01.02",
+                                  "is_program_addable": true,
+                                  "is_program_deleteable": true,
+                                  "is_program_unapproveable": true,
+                                  "is_program_unvoidable": true,
+                                  "is_program_exportable": true,
+                                  "is_program_printable": true
+                              },
+                              {
+                                  "program_id": "01.02.01",
+                                  "is_program_editable": true,
+                                  "is_program_approveable": true,
+                                  "is_program_unvoidable": true,
+                                  "is_program_direct_void": true,
+                                  "is_program_printable": true
+                              },
+                              {
+                                  "program_id": "03.02",
+                                  "is_program_addable": true
+                              }
+                          ],
+                          "is_active": true,
+                          "user_create": "nando",
+                          "created_at": "2024-08-27T08:00:00+07:00",
+                          "user_update": "nando",
+                          "updated_at": "2024-08-27T08:00:00+07:00",
+                          "access_report": [
+                              {
+                                  "report_id": 1
+                              }
+                          ]
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "group_id": "ASSDOC",
+                          "group_name": "ASSDOC",
+                          "description": "ASSDOC",
+                          "admin_type": "-",
+                          "access_program": [
+                              {
+                                  "program_id": "01.01.01",
+                                  "is_program_editable": true,
+                                  "is_program_approveable": true,
+                                  "is_program_unvoidable": true,
+                                  "is_program_direct_void": true,
+                                  "is_program_exportable": true,
+                                  "is_program_printable": true
+                              },
+                              {
+                                  "program_id": "01.01.02",
+                                  "is_program_addable": true,
+                                  "is_program_deleteable": true,
+                                  "is_program_unapproveable": true,
+                                  "is_program_unvoidable": true,
+                                  "is_program_exportable": true,
+                                  "is_program_printable": true
+                              },
+                              {
+                                  "program_id": "01.02.01",
+                                  "is_program_editable": true,
+                                  "is_program_approveable": true,
+                                  "is_program_unvoidable": true,
+                                  "is_program_direct_void": true,
+                                  "is_program_printable": true
+                              },
+                              {
+                                  "program_id": "03.02",
+                                  "is_program_addable": true
+                              }
+                          ],
+                          "is_active": true,
+                          "user_create": "nando",
+                          "created_at": "2024-08-27T08:00:00+07:00",
+                          "access_report": [
+                              {
+                                  "report_id": 1
+                              }
+                          ]
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "group_id": "EMR_ADMIN",
+                          "group_name": "ADMIN EMR",
+                          "description": "Administrator For EMR Service Update",
+                          "admin_type": "EMR_ADMIN",
+                          "access_program": [
+                              {
+                                  "program_id": "01.01.01",
+                                  "is_program_editable": true,
+                                  "is_program_approveable": true,
+                                  "is_program_unvoidable": true,
+                                  "is_program_direct_void": true,
+                                  "is_program_exportable": true,
+                                  "is_program_printable": true
+                              },
+                              {
+                                  "program_id": "01.01.02",
+                                  "is_program_addable": true,
+                                  "is_program_deleteable": true,
+                                  "is_program_unapproveable": true,
+                                  "is_program_unvoidable": true,
+                                  "is_program_exportable": true,
+                                  "is_program_printable": true
+                              },
+                              {
+                                  "program_id": "01.02.01",
+                                  "is_program_editable": true,
+                                  "is_program_approveable": true,
+                                  "is_program_unvoidable": true,
+                                  "is_program_direct_void": true,
+                                  "is_program_printable": true
+                              },
+                              {
+                                  "program_id": "03.02",
+                                  "is_program_addable": true
+                              }
+                          ],
+                          "is_active": true,
+                          "user_create": "nando",
+                          "created_at": "2024-03-01T08:00:00+07:00",
+                          "user_update": "rama",
+                          "updated_at": "2024-07-31T10:54:59+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "group_id": "ITS",
+                          "group_name": "IT SUPPORT",
+                          "description": "IT Support Group",
+                          "admin_type": "ITS",
+                          "access_program": [
+                              {
+                                  "program_id": "01.01.01",
+                                  "is_program_editable": true,
+                                  "is_program_deleteable": true,
+                                  "is_program_unvoidable": true,
+                                  "is_program_direct_void": true,
+                                  "is_program_exportable": true,
+                                  "is_program_printable": true
+                              },
+                              {
+                                  "program_id": "01.01.02",
+                                  "is_program_addable": true,
+                                  "is_program_editable": true,
+                                  "is_program_unvoidable": true,
+                                  "is_program_exportable": true,
+                                  "is_program_printable": true
+                              },
+                              {
+                                  "program_id": "01.02.01",
+                                  "is_program_editable": true,
+                                  "is_program_deleteable": true,
+                                  "is_program_unapproveable": true,
+                                  "is_program_unvoidable": true,
+                                  "is_program_direct_void": true,
+                                  "is_program_printable": true
+                              }
+                          ],
+                          "is_active": true,
+                          "user_create": "nando",
+                          "created_at": "2024-03-01T08:00:00+07:00",
+                          "user_update": "rama",
+                          "updated_at": "2024-07-31T11:09:03+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "group_id": "KBS",
+                          "group_name": "KBS",
+                          "description": "KBS",
+                          "admin_type": "KBS",
+                          "access_program": [
+                              {
+                                  "program_id": "02.01.01",
+                                  "is_program_addable": true,
+                                  "is_program_editable": true,
+                                  "is_program_deleteable": true,
+                                  "is_program_viewable": true,
+                                  "is_program_approveable": true,
+                                  "is_program_voidable": true,
+                                  "is_program_exportable": true
+                              },
+                              {
+                                  "program_id": "03.12",
+                                  "is_program_deleteable": true,
+                                  "is_program_viewable": true
+                              }
+                          ],
+                          "is_active": true,
+                          "user_create": "rama",
+                          "created_at": "2024-07-26T15:02:20+07:00",
+                          "user_update": "rama",
+                          "updated_at": "2024-08-13T14:45:14+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "group_id": "SUPERADMIN",
+                          "group_name": "SUPER ADMIN",
+                          "description": "Super Administrator",
+                          "admin_type": "SUPERADMIN",
+                          "access_program": [
+                              {
+                                  "program_id": "01.01.01",
+                                  "is_program_addable": true,
+                                  "is_program_editable": true,
+                                  "is_program_deleteable": true,
+                                  "is_program_approveable": true,
+                                  "is_program_unapproveable": true,
+                                  "is_program_voidable": true,
+                                  "is_program_unvoidable": true,
+                                  "is_program_direct_void": true,
+                                  "is_program_exportable": true,
+                                  "is_program_printable": true
+                              },
+                              {
+                                  "program_id": "01.01.02",
+                                  "is_program_addable": true,
+                                  "is_program_editable": true,
+                                  "is_program_deleteable": true,
+                                  "is_program_approveable": true,
+                                  "is_program_unapproveable": true,
+                                  "is_program_voidable": true,
+                                  "is_program_unvoidable": true,
+                                  "is_program_exportable": true,
+                                  "is_program_printable": true
+                              },
+                              {
+                                  "program_id": "01.02.01",
+                                  "is_program_addable": true,
+                                  "is_program_editable": true,
+                                  "is_program_deleteable": true,
+                                  "is_program_approveable": true,
+                                  "is_program_unapproveable": true,
+                                  "is_program_voidable": true,
+                                  "is_program_unvoidable": true,
+                                  "is_program_direct_void": true,
+                                  "is_program_exportable": true,
+                                  "is_program_printable": true
+                              },
+                              {
+                                  "program_id": "03",
+                                  "is_program_addable": true,
+                                  "is_program_editable": true,
+                                  "is_program_deleteable": true,
+                                  "is_program_approveable": true,
+                                  "is_program_unapproveable": true,
+                                  "is_program_voidable": true,
+                                  "is_program_unvoidable": true,
+                                  "is_program_direct_void": true,
+                                  "is_program_exportable": true,
+                                  "is_program_printable": true
+                              },
+                              {
+                                  "program_id": "03.01",
+                                  "is_program_addable": true,
+                                  "is_program_editable": true,
+                                  "is_program_deleteable": true,
+                                  "is_program_approveable": true,
+                                  "is_program_unapproveable": true,
+                                  "is_program_voidable": true,
+                                  "is_program_unvoidable": true,
+                                  "is_program_direct_void": true,
+                                  "is_program_exportable": true,
+                                  "is_program_printable": true
+                              },
+                              {
+                                  "program_id": "03.02",
+                                  "is_program_addable": true,
+                                  "is_program_editable": true,
+                                  "is_program_deleteable": true,
+                                  "is_program_approveable": true,
+                                  "is_program_unapproveable": true,
+                                  "is_program_voidable": true,
+                                  "is_program_unvoidable": true,
+                                  "is_program_direct_void": true,
+                                  "is_program_exportable": true,
+                                  "is_program_printable": true
+                              },
+                              {
+                                  "program_id": "03.02.01.01",
+                                  "is_program_addable": true,
+                                  "is_program_editable": true,
+                                  "is_program_deleteable": true,
+                                  "is_program_approveable": true,
+                                  "is_program_unapproveable": true,
+                                  "is_program_voidable": true,
+                                  "is_program_unvoidable": true,
+                                  "is_program_direct_void": true,
+                                  "is_program_exportable": true,
+                                  "is_program_printable": true
+                              },
+                              {
+                                  "program_id": "03.02.01.02",
+                                  "is_program_addable": true,
+                                  "is_program_editable": true,
+                                  "is_program_deleteable": true,
+                                  "is_program_approveable": true,
+                                  "is_program_unapproveable": true,
+                                  "is_program_voidable": true,
+                                  "is_program_unvoidable": true,
+                                  "is_program_direct_void": true,
+                                  "is_program_exportable": true,
+                                  "is_program_printable": true
+                              },
+                              {
+                                  "program_id": "03.02.01.03",
+                                  "is_program_addable": true,
+                                  "is_program_editable": true,
+                                  "is_program_deleteable": true,
+                                  "is_program_approveable": true,
+                                  "is_program_unapproveable": true,
+                                  "is_program_voidable": true,
+                                  "is_program_unvoidable": true,
+                                  "is_program_direct_void": true,
+                                  "is_program_exportable": true,
+                                  "is_program_printable": true
+                              },
+                              {
+                                  "program_id": "03.03",
+                                  "is_program_addable": true,
+                                  "is_program_editable": true,
+                                  "is_program_deleteable": true,
+                                  "is_program_approveable": true,
+                                  "is_program_unapproveable": true,
+                                  "is_program_voidable": true,
+                                  "is_program_unvoidable": true,
+                                  "is_program_direct_void": true,
+                                  "is_program_exportable": true,
+                                  "is_program_printable": true
+                              },
+                              {
+                                  "program_id": "03.04",
+                                  "is_program_addable": true,
+                                  "is_program_editable": true,
+                                  "is_program_deleteable": true,
+                                  "is_program_approveable": true,
+                                  "is_program_unapproveable": true,
+                                  "is_program_voidable": true,
+                                  "is_program_unvoidable": true,
+                                  "is_program_direct_void": true,
+                                  "is_program_exportable": true,
+                                  "is_program_printable": true
+                              },
+                              {
+                                  "program_id": "03.04.01.01",
+                                  "is_program_addable": true,
+                                  "is_program_editable": true,
+                                  "is_program_deleteable": true,
+                                  "is_program_approveable": true,
+                                  "is_program_unapproveable": true,
+                                  "is_program_voidable": true,
+                                  "is_program_unvoidable": true,
+                                  "is_program_direct_void": true,
+                                  "is_program_exportable": true,
+                                  "is_program_printable": true
+                              },
+                              {
+                                  "program_id": "03.04.01.02",
+                                  "is_program_addable": true,
+                                  "is_program_editable": true,
+                                  "is_program_deleteable": true,
+                                  "is_program_approveable": true,
+                                  "is_program_unapproveable": true,
+                                  "is_program_voidable": true,
+                                  "is_program_unvoidable": true,
+                                  "is_program_direct_void": true,
+                                  "is_program_exportable": true,
+                                  "is_program_printable": true
+                              },
+                              {
+                                  "program_id": "03.04.01.03",
+                                  "is_program_addable": true,
+                                  "is_program_editable": true,
+                                  "is_program_deleteable": true,
+                                  "is_program_approveable": true,
+                                  "is_program_unapproveable": true,
+                                  "is_program_voidable": true,
+                                  "is_program_unvoidable": true,
+                                  "is_program_direct_void": true,
+                                  "is_program_exportable": true,
+                                  "is_program_printable": true
+                              },
+                              {
+                                  "program_id": "03.05",
+                                  "is_program_addable": true,
+                                  "is_program_editable": true,
+                                  "is_program_deleteable": true,
+                                  "is_program_approveable": true,
+                                  "is_program_unapproveable": true,
+                                  "is_program_voidable": true,
+                                  "is_program_unvoidable": true,
+                                  "is_program_direct_void": true,
+                                  "is_program_exportable": true,
+                                  "is_program_printable": true
+                              },
+                              {
+                                  "program_id": "03.06",
+                                  "is_program_addable": true,
+                                  "is_program_editable": true,
+                                  "is_program_deleteable": true,
+                                  "is_program_approveable": true,
+                                  "is_program_unapproveable": true,
+                                  "is_program_voidable": true,
+                                  "is_program_unvoidable": true,
+                                  "is_program_direct_void": true,
+                                  "is_program_exportable": true,
+                                  "is_program_printable": true
+                              },
+                              {
+                                  "program_id": "03.07",
+                                  "is_program_addable": true,
+                                  "is_program_editable": true,
+                                  "is_program_deleteable": true,
+                                  "is_program_approveable": true,
+                                  "is_program_unapproveable": true,
+                                  "is_program_voidable": true,
+                                  "is_program_unvoidable": true,
+                                  "is_program_direct_void": true,
+                                  "is_program_exportable": true,
+                                  "is_program_printable": true
+                              },
+                              {
+                                  "program_id": "03.08",
+                                  "is_program_addable": true,
+                                  "is_program_editable": true,
+                                  "is_program_deleteable": true,
+                                  "is_program_approveable": true,
+                                  "is_program_unapproveable": true,
+                                  "is_program_voidable": true,
+                                  "is_program_unvoidable": true,
+                                  "is_program_direct_void": true,
+                                  "is_program_exportable": true,
+                                  "is_program_printable": true
+                              },
+                              {
+                                  "program_id": "03.09",
+                                  "is_program_addable": true,
+                                  "is_program_editable": true,
+                                  "is_program_deleteable": true,
+                                  "is_program_approveable": true,
+                                  "is_program_unapproveable": true,
+                                  "is_program_voidable": true,
+                                  "is_program_unvoidable": true,
+                                  "is_program_direct_void": true,
+                                  "is_program_exportable": true,
+                                  "is_program_printable": true
+                              },
+                              {
+                                  "program_id": "03.10",
+                                  "is_program_addable": true,
+                                  "is_program_editable": true,
+                                  "is_program_deleteable": true,
+                                  "is_program_approveable": true,
+                                  "is_program_unapproveable": true,
+                                  "is_program_voidable": true,
+                                  "is_program_unvoidable": true,
+                                  "is_program_direct_void": true,
+                                  "is_program_exportable": true,
+                                  "is_program_printable": true
+                              },
+                              {
+                                  "program_id": "03.11",
+                                  "is_program_addable": true,
+                                  "is_program_editable": true,
+                                  "is_program_deleteable": true,
+                                  "is_program_approveable": true,
+                                  "is_program_unapproveable": true,
+                                  "is_program_voidable": true,
+                                  "is_program_unvoidable": true,
+                                  "is_program_direct_void": true,
+                                  "is_program_exportable": true,
+                                  "is_program_printable": true
+                              },
+                              {
+                                  "program_id": "03.12",
+                                  "is_program_addable": true,
+                                  "is_program_editable": true,
+                                  "is_program_deleteable": true,
+                                  "is_program_approveable": true,
+                                  "is_program_unapproveable": true,
+                                  "is_program_voidable": true,
+                                  "is_program_unvoidable": true,
+                                  "is_program_direct_void": true,
+                                  "is_program_exportable": true,
+                                  "is_program_printable": true
+                              },
+                              {
+                                  "program_id": "03.13",
+                                  "is_program_addable": true,
+                                  "is_program_editable": true,
+                                  "is_program_deleteable": true,
+                                  "is_program_approveable": true,
+                                  "is_program_unapproveable": true,
+                                  "is_program_voidable": true,
+                                  "is_program_unvoidable": true,
+                                  "is_program_direct_void": true,
+                                  "is_program_exportable": true,
+                                  "is_program_printable": true
+                              },
+                              {
+                                  "program_id": "03.14",
+                                  "is_program_addable": true,
+                                  "is_program_editable": true,
+                                  "is_program_deleteable": true,
+                                  "is_program_approveable": true,
+                                  "is_program_unapproveable": true,
+                                  "is_program_voidable": true,
+                                  "is_program_unvoidable": true,
+                                  "is_program_direct_void": true,
+                                  "is_program_exportable": true,
+                                  "is_program_printable": true
+                              },
+                              {
+                                  "program_id": "03.15",
+                                  "is_program_addable": true,
+                                  "is_program_editable": true,
+                                  "is_program_deleteable": true,
+                                  "is_program_approveable": true,
+                                  "is_program_unapproveable": true,
+                                  "is_program_voidable": true,
+                                  "is_program_unvoidable": true,
+                                  "is_program_direct_void": true,
+                                  "is_program_exportable": true,
+                                  "is_program_printable": true
+                              },
+                              {
+                                  "program_id": "03.16",
+                                  "is_program_addable": true,
+                                  "is_program_editable": true,
+                                  "is_program_deleteable": true,
+                                  "is_program_approveable": true,
+                                  "is_program_unapproveable": true,
+                                  "is_program_voidable": true,
+                                  "is_program_unvoidable": true,
+                                  "is_program_direct_void": true,
+                                  "is_program_exportable": true,
+                                  "is_program_printable": true
+                              },
+                              {
+                                  "program_id": "01.03",
+                                  "is_program_addable": true,
+                                  "is_program_editable": true,
+                                  "is_program_deleteable": true,
+                                  "is_program_approveable": true,
+                                  "is_program_unapproveable": true,
+                                  "is_program_voidable": true,
+                                  "is_program_exportable": true
+                              },
+                              {
+                                  "program_id": "01.04",
+                                  "is_program_addable": true,
+                                  "is_program_editable": true,
+                                  "is_program_deleteable": true,
+                                  "is_program_approveable": true,
+                                  "is_program_unapproveable": true,
+                                  "is_program_voidable": true,
+                                  "is_program_exportable": true
+                              },
+                              {
+                                  "program_id": "02.01.01",
+                                  "is_program_addable": true,
+                                  "is_program_editable": true,
+                                  "is_program_deleteable": true,
+                                  "is_program_viewable": true,
+                                  "is_program_approveable": true,
+                                  "is_program_unapproveable": true,
+                                  "is_program_voidable": true,
+                                  "is_program_exportable": true
+                              },
+                              {
+                                  "program_id": "02.01.02",
+                                  "is_program_addable": true,
+                                  "is_program_editable": true,
+                                  "is_program_deleteable": true,
+                                  "is_program_viewable": true,
+                                  "is_program_approveable": true,
+                                  "is_program_unapproveable": true,
+                                  "is_program_voidable": true,
+                                  "is_program_exportable": true
+                              },
+                              {
+                                  "program_id": "02.01.03",
+                                  "is_program_addable": true,
+                                  "is_program_editable": true,
+                                  "is_program_deleteable": true,
+                                  "is_program_viewable": true,
+                                  "is_program_approveable": true,
+                                  "is_program_unapproveable": true,
+                                  "is_program_voidable": true,
+                                  "is_program_exportable": true
+                              },
+                              {
+                                  "program_id": "02.02.01",
+                                  "is_program_addable": true,
+                                  "is_program_editable": true,
+                                  "is_program_deleteable": true,
+                                  "is_program_viewable": true,
+                                  "is_program_approveable": true,
+                                  "is_program_unapproveable": true,
+                                  "is_program_voidable": true,
+                                  "is_program_exportable": true
+                              },
+                              {
+                                  "program_id": "02.02.02",
+                                  "is_program_addable": true,
+                                  "is_program_editable": true,
+                                  "is_program_deleteable": true,
+                                  "is_program_viewable": true,
+                                  "is_program_approveable": true,
+                                  "is_program_unapproveable": true,
+                                  "is_program_voidable": true,
+                                  "is_program_exportable": true
+                              },
+                              {
+                                  "program_id": "02.02.03",
+                                  "is_program_addable": true,
+                                  "is_program_editable": true,
+                                  "is_program_deleteable": true,
+                                  "is_program_viewable": true,
+                                  "is_program_approveable": true,
+                                  "is_program_unapproveable": true,
+                                  "is_program_voidable": true,
+                                  "is_program_exportable": true
+                              },
+                              {
+                                  "program_id": "02.03",
+                                  "is_program_addable": true,
+                                  "is_program_editable": true,
+                                  "is_program_deleteable": true,
+                                  "is_program_approveable": true,
+                                  "is_program_unapproveable": true,
+                                  "is_program_voidable": true,
+                                  "is_program_exportable": true
+                              },
+                              {
+                                  "program_id": "04.01"
+                              }
+                          ],
+                          "is_active": true,
+                          "user_create": "nando",
+                          "created_at": "2024-03-01T08:00:00+07:00",
+                          "user_update": "21170",
+                          "updated_at": "2024-08-23T11:35:39+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "group_id": "test_group",
+                          "group_name": "Test Group",
+                          "description": "Test Group Baru",
+                          "admin_type": "test_group",
+                          "access_program": [
+                              {
+                                  "program_id": "01.01.01",
+                                  "is_program_editable": true,
+                                  "is_program_deleteable": true,
+                                  "is_program_viewable": true
+                              }
+                          ],
+                          "is_active": true,
+                          "user_create": "rama",
+                          "created_at": "2024-07-24T15:29:55+07:00",
+                          "user_update": "rama",
+                          "updated_at": "2024-07-31T10:55:03+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "group_id": "test_group",
+                          "group_name": "Test Group",
+                          "description": "Test Group Baru",
+                          "admin_type": "test_group",
+                          "access_program": [
+                              {
+                                  "program_id": "01.01.01",
+                                  "is_program_addable": true,
+                                  "is_program_editable": true,
+                                  "is_program_deleteable": true,
+                                  "is_program_viewable": true,
+                                  "is_program_approveable": true,
+                                  "is_program_unapproveable": true,
+                                  "is_program_voidable": true,
+                                  "is_program_exportable": true
+                              }
+                          ],
+                          "is_active": true,
+                          "user_create": "rama",
+                          "created_at": "2024-07-24T15:29:55+07:00",
+                          "user_update": "rama",
+                          "updated_at": "2024-07-31T10:55:03+07:00"
+                      }
+                  ]
+              }
+          }

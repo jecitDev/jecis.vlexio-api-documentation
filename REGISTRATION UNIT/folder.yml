@@ -1,0 +1,7 @@
+info:
+  name: REGISTRATION UNIT
+  type: folder
+  seq: 123
+
+request:
+  auth: inherit

@@ -1,0 +1,230 @@
+info:
+  name: INSERT
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/app_product"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"config\": [\r
+
+      \        {\r
+
+      \            \"component\": \"HISComponent\",\r
+
+      \            \"id\": \"1\",\r
+
+      \            \"name\": \"HIS\"\r
+
+      \        }\r
+
+      \    ],\r
+
+      \    \"created_at\": \"2024-05-29T08:00:00+07:00\",\r
+
+      \    \"description\": \"Hospital Information System\",\r
+
+      \    \"is_active\": true,\r
+
+      \    \"notes\": \"Hospital Information System\",\r
+
+      \    \"product_name\": \"Hospital Information System\",\r
+
+      \    \"user_create\": \"nando\",\r
+
+      \    \"position\": 1,\r
+
+      \    \"icon\": \"PiBrowser\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: DUPLICATE
+    request:
+      url: "{{BASE_URL}}/v1/app_product"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"config\": [\r
+
+          \        {\r
+
+          \            \"component\": \"HISComponent\",\r
+
+          \            \"id\": \"1\",\r
+
+          \            \"name\": \"HIS\"\r
+
+          \        }\r
+
+          \    ],\r
+
+          \    \"created_at\": \"2024-05-29T08:00:00+07:00\",\r
+
+          \    \"description\": \"Hospital Information System\",\r
+
+          \    \"is_active\": true,\r
+
+          \    \"notes\": \"Hospital Information System\",\r
+
+          \    \"product_name\": \"Hospital Information System\",\r
+
+          \    \"user_create\": \"nando\"\r
+
+          }"
+    response:
+      status: 500
+      statusText: Internal Server Error
+      headers:
+        - name: Date
+          value: Wed, 29 May 2024 08:58:00 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "45"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "data already exist",
+              "status": 500
+          }
+  - name: INSERT
+    request:
+      url: "{{BASE_URL}}/v1/app_product"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"config\": [\r
+
+          \        {\r
+
+          \            \"component\": \"HISComponent\",\r
+
+          \            \"id\": \"1\",\r
+
+          \            \"name\": \"HIS\"\r
+
+          \        }\r
+
+          \    ],\r
+
+          \    \"created_at\": \"2024-05-29T08:00:00+07:00\",\r
+
+          \    \"description\": \"Hospital Information System\",\r
+
+          \    \"is_active\": true,\r
+
+          \    \"notes\": \"Hospital Information System\",\r
+
+          \    \"product_name\": \"Hospital Information System\",\r
+
+          \    \"user_create\": \"nando\",\r
+
+          \    \"position\": 1,\r
+
+          \    \"icon\": \"PiBrowser\"\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 15 Dec 2025 02:35:28 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "140"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "created_at": "2025-12-15T09:35:29+07:00",
+                  "product_id": "a54060d8-e820-4b9b-b967-0021b18e728d",
+                  "user_create": "ferdinand"
+              }
+          }

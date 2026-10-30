@@ -1,0 +1,29 @@
+info:
+  name: Item - Update
+  type: http
+  seq: 7
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/Item/:id/:business_unit_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: id
+      value: "0000000043"
+      type: path
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+  body:
+    type: json
+    data: "\r\n{\r\n    \"item_id\": \"0000000043\",\r\n    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r\n    \"sr_product_type\": \"typeA\",\r\n    \"abc_class\": \"C\",\r\n    \"brand_name\": \"coBa\",\r\n    \"sr_item_unit\": \"PCS\",\r\n    \"sr_purchase_unit\": \"BOX\",\r\n    \"conversion_factor\": 1,\r\n    \"dosage\": 1,\r\n    \"sr_dosage_unit\": \"BOx\",\r\n    \"is_formularium\": true,\r\n    \"lead_time\": 2,\r\n    \"is_using_cigna\": false,\r\n    \"therapy_id\": \"T001\",\r\n    \"is_generic\": false,\r\n    \"is_narcotic\": true,\r\n    \"is_psychotropic\": false,\r\n    \"is_antibiotic\": false,\r\n    \"is_vitamin\": false,\r\n    \"is_racik\": true,\r\n    \"is_inventory_item\": false,\r\n    \"is_control_expired\": false,\r\n    \"fabric_id\": \"F001\",\r\n    \"barcode\": \"BarcodeABC\",\r\n    \"sr_item_bin\": \"s001\",\r\n    \"is_consignment\": true,\r\n    \"item_group_id\": 410900,\r\n    \"sr_item_type\": \"11\",\r\n    \"item_name\": \"API Braito 1 edit\",\r\n    \"notes\": \"test ricky\",\r\n    \"sr_billing_group\": \"BillBC\",\r\n    \"product_account_id\": \"PA-C\",\r\n    \"is_need_budget\": true,\r\n    \"updated_at\": \"2024-03-01T13:24:42+08:00\",\r\n    \"user_update\": \"API_Edit\",\r\n    \"Is_Active\": true\r\n}"
+  auth:
+    type: bearer
+    token: "{{xtoken}}"
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

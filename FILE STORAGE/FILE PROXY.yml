@@ -1,0 +1,23 @@
+info:
+  name: FILE PROXY
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/file_proxy?url=https://t25617311.p.clickup-attachments.com/t25617311/5dbae5e5-131b-48f6-bfd5-6ea7200e7462/001390_NX_2.0.8700-3.0.8700_DICOM_Conformance_Statement.pdf"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: url
+      value: https://t25617311.p.clickup-attachments.com/t25617311/5dbae5e5-131b-48f6-bfd5-6ea7200e7462/001390_NX_2.0.8700-3.0.8700_DICOM_Conformance_Statement.pdf
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

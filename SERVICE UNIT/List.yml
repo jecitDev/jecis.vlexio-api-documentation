@@ -1,0 +1,314 @@
+info:
+  name: List
+  type: http
+  seq: 10
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/service-units?page=1&page_size=10&sort_by=service_unit_id&sort_order=desc&company_id=2da6a1bd-ba62-43ec-91f8-4085d5d6d498"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: page_size
+      value: "10"
+      type: query
+    - name: sort_by
+      value: service_unit_id
+      type: query
+    - name: sort_order
+      value: desc
+      type: query
+    - name: keywords
+      value: ""
+      type: query
+      disabled: true
+    - name: company_id
+      value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+      type: query
+    - name: business_unit_id
+      value: ""
+      type: query
+      disabled: true
+    - name: department_id
+      value: 6e6a6fbb-367e-4c6f-bae4-d3e7110ec3b8
+      type: query
+      disabled: true
+    - name: location_id
+      value: ""
+      type: query
+      disabled: true
+    - name: is_dispensary_unit
+      value: "false"
+      type: query
+      disabled: true
+    - name: is_purchasing_unit
+      value: ""
+      type: query
+      disabled: true
+    - name: is_emergency
+      value: ""
+      type: query
+      disabled: true
+    - name: is_telemedicine
+      value: ""
+      type: query
+      disabled: true
+    - name: is_optic
+      value: ""
+      type: query
+      disabled: true
+    - name: is_active
+      value: "false"
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: List
+    request:
+      url: "{{BASE_URL}}/v1/service-units?page=1&page_size=10&sort_by=service_unit_id&sort_order=desc&company_id=2da6a1bd-ba62-43ec-91f8-4085d5d6d498"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: page_size
+          value: "10"
+          type: query
+        - name: sort_by
+          value: service_unit_id
+          type: query
+        - name: sort_order
+          value: desc
+          type: query
+        - name: keywords
+          value: ""
+          type: query
+          disabled: true
+        - name: company_id
+          value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+          type: query
+        - name: business_unit_id
+          value: ""
+          type: query
+          disabled: true
+        - name: department_id
+          value: 6e6a6fbb-367e-4c6f-bae4-d3e7110ec3b8
+          type: query
+          disabled: true
+        - name: location_id
+          value: ""
+          type: query
+          disabled: true
+        - name: is_dispensary_unit
+          value: "false"
+          type: query
+          disabled: true
+        - name: is_purchasing_unit
+          value: ""
+          type: query
+          disabled: true
+        - name: is_emergency
+          value: ""
+          type: query
+          disabled: true
+        - name: is_telemedicine
+          value: ""
+          type: query
+          disabled: true
+        - name: is_optic
+          value: ""
+          type: query
+          disabled: true
+        - name: is_active
+          value: "false"
+          type: query
+          disabled: true
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Wed, 01 Apr 2026 03:46:28 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "3655"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "page": 1,
+                  "page_size": 10,
+                  "service_units": [
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "chart_of_account_id_acrual": "5f0cf8ff-cb2d-451e-8506-f194bf9ebb80",
+                          "color_code": "#FF0000",
+                          "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",
+                          "company_name": "PT. Nitrasanata Dharma",
+                          "created_at": "2026-04-01T10:45:46+07:00",
+                          "department_id": "550e8400-e29b-41d4-a716-446655440020",
+                          "department_name": "",
+                          "is_active": true,
+                          "is_dispensary_unit": false,
+                          "is_emergency": true,
+                          "is_optic": false,
+                          "is_purchasing_unit": false,
+                          "is_telemedicine": false,
+                          "location_id": "LOC001",
+                          "service_unit_id": "SU002",
+                          "service_unit_name": "Emergency Department",
+                          "short_name": "ER",
+                          "sr_registration_type": "EMERGENCY",
+                          "subledger_id_acrual": 200001,
+                          "updated_at": "",
+                          "user_create": "ferdinand",
+                          "user_update": ""
+                      },
+                      {
+                          "business_unit_id": "8667b8cc-80d8-4233-afc6-310f7a59edd7",
+                          "chart_of_account_id_acrual": "5f0cf8ff-cb2d-451e-8506-f194bf9ebb80",
+                          "color_code": "#FF0000",
+                          "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",
+                          "company_name": "PT. Nitrasanata Dharma",
+                          "created_at": "2026-04-01T10:43:27+07:00",
+                          "department_id": "550e8400-e29b-41d4-a716-446655440020",
+                          "department_name": "",
+                          "is_active": true,
+                          "is_dispensary_unit": false,
+                          "is_emergency": true,
+                          "is_optic": false,
+                          "is_purchasing_unit": false,
+                          "is_telemedicine": false,
+                          "location_id": "LOC001",
+                          "service_unit_id": "G302",
+                          "service_unit_name": "Emergency and Trauma Deparment",
+                          "short_name": "ER-TRAUMA",
+                          "sr_registration_type": "EMERGENCY",
+                          "subledger_id_acrual": 200001,
+                          "updated_at": "",
+                          "user_create": "ferdinand",
+                          "user_update": ""
+                      },
+                      {
+                          "business_unit_id": "b15fe928-92ab-478f-99ba-1a156fd8d64c",
+                          "chart_of_account_id_acrual": "5f0cf8ff-cb2d-451e-8506-f194bf9ebb80",
+                          "color_code": "#FF0000",
+                          "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",
+                          "company_name": "PT. Nitrasanata Dharma",
+                          "created_at": "2026-04-01T10:43:58+07:00",
+                          "department_id": "550e8400-e29b-41d4-a716-446655440020",
+                          "department_name": "",
+                          "is_active": true,
+                          "is_dispensary_unit": false,
+                          "is_emergency": true,
+                          "is_optic": false,
+                          "is_purchasing_unit": false,
+                          "is_telemedicine": false,
+                          "location_id": "LOC001",
+                          "service_unit_id": "G301",
+                          "service_unit_name": "ICD",
+                          "short_name": "ICD",
+                          "sr_registration_type": "EMERGENCY",
+                          "subledger_id_acrual": 200001,
+                          "updated_at": "",
+                          "user_create": "ferdinand",
+                          "user_update": ""
+                      },
+                      {
+                          "business_unit_id": "8667b8cc-80d8-4233-afc6-310f7a59edd7",
+                          "chart_of_account_id_acrual": "5f0cf8ff-cb2d-451e-8506-f194bf9ebb80",
+                          "color_code": "",
+                          "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",
+                          "company_name": "PT. Nitrasanata Dharma",
+                          "created_at": "2026-04-01T10:44:20+07:00",
+                          "department_id": "550e8400-e29b-41d4-a716-446655440020",
+                          "department_name": "",
+                          "is_active": true,
+                          "is_dispensary_unit": false,
+                          "is_emergency": true,
+                          "is_optic": false,
+                          "is_purchasing_unit": false,
+                          "is_telemedicine": false,
+                          "location_id": "LOC001",
+                          "service_unit_id": "G301",
+                          "service_unit_name": "ICD",
+                          "short_name": "ICD",
+                          "sr_registration_type": "EMERGENCY",
+                          "subledger_id_acrual": 200001,
+                          "updated_at": "",
+                          "user_create": "ferdinand",
+                          "user_update": ""
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "chart_of_account_id_acrual": "5f0cf8ff-cb2d-451e-8506-f194bf9ebb80",
+                          "color_code": "",
+                          "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",
+                          "company_name": "PT. Nitrasanata Dharma",
+                          "created_at": "2026-04-01T10:46:17+07:00",
+                          "department_id": "550e8400-e29b-41d4-a716-446655440020",
+                          "department_name": "",
+                          "is_active": true,
+                          "is_dispensary_unit": false,
+                          "is_emergency": true,
+                          "is_optic": false,
+                          "is_purchasing_unit": false,
+                          "is_telemedicine": false,
+                          "location_id": "LOC001",
+                          "service_unit_id": "G301",
+                          "service_unit_name": "ICD",
+                          "short_name": "ICD",
+                          "sr_registration_type": "EMERGENCY",
+                          "subledger_id_acrual": 200001,
+                          "updated_at": "",
+                          "user_create": "ferdinand",
+                          "user_update": ""
+                      }
+                  ],
+                  "total_items": 5
+              }
+          }

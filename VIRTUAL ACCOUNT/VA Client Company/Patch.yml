@@ -1,0 +1,117 @@
+info:
+  name: Patch
+  type: http
+  seq: 5
+
+http:
+  method: PATCH
+  url: "{{BASE_URL}}/v1/va-client-companies/:vac_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  params:
+    - name: vac_id
+      value: 0b68981c-ea64-46ab-898e-023081169819
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"data\": [\r
+
+      \        {\r
+
+      \            \"field\": \"bank_name\",\r
+
+      \            \"value\": \"Bank Asia Tengah\"\r
+
+      \        }\r
+
+      \    ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Patch
+    request:
+      url: "{{BASE_URL}}/v1/va-client-companies/:vac_id"
+      method: PATCH
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      params:
+        - name: vac_id
+          value: 0b68981c-ea64-46ab-898e-023081169819
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"data\": [\r
+
+          \        {\r
+
+          \            \"field\": \"bank_name\",\r
+
+          \            \"value\": \"Bank Asia Tengah\"\r
+
+          \        }\r
+
+          \    ]\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: date
+          value: Thu, 08 Oct 2026 06:40:49 GMT
+        - name: content-type
+          value: application/json
+        - name: content-length
+          value: "135"
+        - name: x-xss-protection
+          value: "0"
+        - name: x-content-type-options
+          value: nosniff
+        - name: x-frame-options
+          value: SAMEORIGIN
+        - name: cross-origin-embedder-policy
+          value: require-corp
+        - name: cross-origin-opener-policy
+          value: same-origin
+        - name: cross-origin-resource-policy
+          value: same-origin
+        - name: origin-agent-cluster
+          value: ?1
+        - name: referrer-policy
+          value: no-referrer
+        - name: x-dns-prefetch-control
+          value: off
+        - name: x-download-options
+          value: noopen
+        - name: x-permitted-cross-domain-policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+            "code": 200,
+            "data": {
+              "vac_id": "0b68981c-ea64-46ab-898e-023081169819",
+              "updated_at": "2026-10-08T13:40:49+07:00",
+              "user_update": "ferdinan"
+            }
+          }

@@ -1,0 +1,149 @@
+info:
+  name: Get Guarantor Document By Id
+  type: http
+  seq: 31
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/marketing/guarantor/contract/document/:id/:contract_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: id
+      value: "30"
+      type: path
+    - name: contract_id
+      value: 1b13db98-22a7-4e04-90de-0df645f2a321
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/contract/document/:id/:contract_id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: id
+          value: "30"
+          type: path
+        - name: contract_id
+          value: 1b13db98-22a7-4e04-90de-0df645f2a321
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 19 Jun 2025 04:49:48 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "209"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "seq_id": 30,
+                  "contract_id": "1b13db98-22a7-4e04-90de-0df645f2a321",
+                  "document_path": "/document/test1.txt",
+                  "is_active": true,
+                  "created_at": "2025-06-05T14:08:41+07:00",
+                  "user_create": "admin_user"
+              }
+          }
+  - name: Not Found
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/contract/document/:id/:contract_id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: id
+          value: "30"
+          type: path
+        - name: contract_id
+          value: 1b13db98-22a7-4e04-90de-0df645f2a321
+          type: path
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Date
+          value: Mon, 16 Jun 2025 05:58:47 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "55"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "guarantor_document.not_found",
+              "status": 404
+          }

@@ -1,0 +1,140 @@
+info:
+  name: Get Active Contract_1
+  type: http
+  seq: 51
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/marketing/guarantor/contract/active/:guarantor_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: guarantor_id
+      value: 74307630-cbdf-48c3-9036-8c29997ca0ba
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Not Found
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/contract/by_guarantor/:guarantor_id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: guarantor_id
+          value: 61fc7510-719c-4fbe-927b-b678c6357794
+          type: path
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Date
+          value: Thu, 12 Jun 2025 09:30:54 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "40"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "no data found",
+              "status": 404
+          }
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/contract/active/:guarantor_id/:business_unit_id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: guarantor_id
+          value: 118f0003-404b-4b1a-aec4-d635414b0ea7
+          type: path
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Wed, 16 Jul 2025 10:26:55 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "169"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "contract_id": "58b8a775-dc5a-42d4-91ff-321555f6731a",
+                  "contract_no": "GC-KDY/20250716-0002",
+                  "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517"
+              }
+          }

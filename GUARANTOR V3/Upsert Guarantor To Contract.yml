@@ -1,0 +1,452 @@
+info:
+  name: Upsert Guarantor To Contract
+  type: http
+  seq: 35
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/marketing/guarantor/to/contract/:guarantor_id/:business_unit_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: guarantor_id
+      value: 100984d4-be79-47d2-a6ac-73175a2722e8
+      type: path
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"contract_id\": \"1b13db98-22a7-4e04-90de-0df645f2a321\",\r
+
+      \    \"user_create\": \"admin_user\",\r
+
+      \    \"created_at\": \"2025-06-17T14:08:41+07:00\"\r
+
+      }\r\n"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/to/contract/:guarantor_id/:business_unit_id"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: guarantor_id
+          value: 100984d4-be79-47d2-a6ac-73175a2722e8
+          type: path
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"contract_id\": \"aced9b1e-2592-448d-97ff-3710ce9cd121\",\r
+
+          \    \"user_create\": \"admin_user\",\r
+
+          \    \"created_at\": \"2025-06-05T14:08:41+07:00\"\r
+
+          }\r\n"
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Date
+          value: Tue, 17 Jun 2025 06:10:50 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "254"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 201,
+              "data": {
+                  "guarantor_id": "100984d4-be79-47d2-a6ac-73175a2722e8",
+                  "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "contract_id": "aced9b1e-2592-448d-97ff-3710ce9cd121",
+                  "user_create": "admin_user",
+                  "created_at": "2025-06-05T14:08:41+07:00"
+              }
+          }
+  - name: Business Unit Id Does Not Match With Guarantor
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/to/contract/:guarantor_id/:business_unit_id"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: guarantor_id
+          value: 100984d4-be79-47d2-a6ac-73175a2722e8
+          type: path
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36519
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"contract_id\": \"aced9b1e-2592-448d-97ff-3710ce9cd121\",\r
+
+          \    \"user_create\": \"admin_user\",\r
+
+          \    \"created_at\": \"2025-06-05T14:08:41+07:00\"\r
+
+          }\r\n"
+    response:
+      status: 500
+      statusText: Internal Server Error
+      headers:
+        - name: Date
+          value: Tue, 17 Jun 2025 06:06:09 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "95"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "guarantor_to_contract.business_unit_id_does_not_match_with_guarantor",
+              "status": 500
+          }
+  - name: Guarantor Not Found
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/to/contract/:guarantor_id/:business_unit_id"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: guarantor_id
+          value: 100984d4-be79-47d2-a6ac-73175a2722e0
+          type: path
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"contract_id\": \"aced9b1e-2592-448d-97ff-3710ce9cd121\",\r
+
+          \    \"user_create\": \"admin_user\",\r
+
+          \    \"created_at\": \"2025-06-05T14:08:41+07:00\"\r
+
+          }\r\n"
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Date
+          value: Tue, 17 Jun 2025 06:18:14 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "46"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "guarantor.not_found",
+              "status": 404
+          }
+  - name: Guarantor Contract Not Found
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/to/contract/:guarantor_id/:business_unit_id"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: guarantor_id
+          value: 100984d4-be79-47d2-a6ac-73175a2722e8
+          type: path
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"contract_id\": \"aced9b1e-2592-448d-97ff-3710ce9cd120\",\r
+
+          \    \"user_create\": \"admin_user\",\r
+
+          \    \"created_at\": \"2025-06-05T14:08:41+07:00\"\r
+
+          }\r\n"
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Date
+          value: Tue, 17 Jun 2025 06:19:01 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "55"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "guarantor_contract.not_found",
+              "status": 404
+          }
+  - name: Guarantor Id is Not Equal to Guarantor Contract
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/to/contract/:guarantor_id/:business_unit_id"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: guarantor_id
+          value: 100984d4-be79-47d2-a6ac-73175a2722e8
+          type: path
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"contract_id\": \"6271777e-3cba-4142-ba2a-0541ce03eee8\",\r
+
+          \    \"user_create\": \"admin_user\",\r
+
+          \    \"created_at\": \"2025-06-05T14:08:41+07:00\"\r
+
+          }\r\n"
+    response:
+      status: 500
+      statusText: Internal Server Error
+      headers:
+        - name: Date
+          value: Tue, 17 Jun 2025 06:19:46 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "96"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "guarantor_to_contract.guarantor_id_is_not_equal_to_guarantor_contract",
+              "status": 500
+          }
+  - name: Contract Nof Yet MOU
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/to/contract/:guarantor_id/:business_unit_id"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: guarantor_id
+          value: 100984d4-be79-47d2-a6ac-73175a2722e8
+          type: path
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"contract_id\": \"8184a3ed-043b-40e5-9ab5-52087211e31a\",\r
+
+          \    \"user_create\": \"admin_user\",\r
+
+          \    \"created_at\": \"2025-06-05T14:08:41+07:00\"\r
+
+          }\r\n"
+    response:
+      status: 500
+      statusText: Internal Server Error
+      headers:
+        - name: Date
+          value: Tue, 17 Jun 2025 06:20:45 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "79"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "guarantor_to_contract.guarantor_contract_not_yet_MOU",
+              "status": 500
+          }

@@ -1,0 +1,188 @@
+info:
+  name: Paramedic Schedule-Block Slot
+  type: http
+  seq: 13
+
+http:
+  method: PATCH
+  url: "{{BASE_URL}}/v1/paramedicschedule/slot/block/:business_unit_id/:id_psd"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+    - name: id_psd
+      value: "230"
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"start\": \"09:00\",\r
+
+      \    \"end\": \"09:00\",\r
+
+      \    \"note\": \"testing block slot\",\r
+
+      \    \"user_update\": \"admin\",\r
+
+      \    \"updated_at\": \"2025-05-22T14:08:41+07:00\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Err slot is already locked
+    request:
+      url: "{{BASE_URL}}/v1/paramedicschedule/slot/block/:business_unit_id/:id_psd"
+      method: PATCH
+      headers:
+        - name: x-token
+          value: "{{admission_xtoken}}"
+      params:
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: path
+        - name: id_psd
+          value: "273"
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"start\": \"08:40\",\r
+
+          \    \"end\": \"10:00\",\r
+
+          \    \"user_update\": \"admin\",\r
+
+          \    \"updated_at\": \"2025-05-22T14:08:41+07:00\"\r
+
+          }"
+    response:
+      status: 500
+      statusText: Internal Server Error
+      headers:
+        - name: Date
+          value: Tue, 27 May 2025 02:21:25 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "49"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "slot is already locked",
+              "status": 500
+          }
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/paramedicschedule/slot/block/:business_unit_id/:id_psd"
+      method: PATCH
+      headers:
+        - name: x-token
+          value: "{{admission_xtoken}}"
+      params:
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: path
+        - name: id_psd
+          value: "273"
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"start\": \"08:40\",\r
+
+          \    \"end\": \"10:00\",\r
+
+          \    \"user_update\": \"admin\",\r
+
+          \    \"updated_at\": \"2025-05-22T14:08:41+07:00\"\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 27 May 2025 02:24:34 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "155"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "id_psd": 273,
+                  "user_update": "admin",
+                  "updated_at": "2025-05-22T14:08:41+07:00"
+              }
+          }

@@ -1,0 +1,188 @@
+info:
+  name: Asset Movement - Update
+  type: http
+  seq: 7
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/AssetMovement/update/:movement_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: movement_id
+      value: 11cd8bd1-0355-4a7b-8232-dec95e201f02
+      type: path
+  body:
+    type: json
+    data: "{ \r
+
+      \    \"movement_code\": \"MOV/KDY/2602-00017\",\r
+
+      \    \"company_id\": \"2da6a1bd-ba62-43ec-91f8-4085d5d6d498\",\r
+
+      \    \"current_business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+      \    \"destination_business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+      \    \"transaction_date\": \"2024-10-22T13:24:42+08:00\",\r
+
+      \    \"purpose\": \"Marketing Needs X5 - EditX2\",\r
+
+      \    \"status\": \"draft\",\r
+
+      \    \"remarks\": \"Membership chat GPT\",\r
+
+      \    \"user_update\": \"admin\",\r
+
+      \    \"updated_at\": \"2024-03-01T13:24:42+08:00\",\r
+
+      \    \"details\": [\r
+
+      \        {\r
+
+      \            \"asset_id\": \"GAC-SRV-001\",\r
+
+      \            \"source_site_room_id\": \"BLDG-A-F3-ROOM-301\",\r
+
+      \            \"from_employee\": \"john.doe\",\r
+
+      \            \"target_site_room_id\": \"BLDG-B-F2-ROOM-205\",\r
+
+      \            \"to_employee\": \"jane.smith\",\r
+
+      \            \"status\": \"open\",\r
+
+      \            \"user_update\": \"20994\",\r
+
+      \            \"updated_at\": \"2024-10-22T13:24:42+08:00\"\r
+
+      \        }\r
+
+      \    ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Asset Movement - Update  API
+    request:
+      url: "{{BASE_URL}}/v1/AssetMovement/update/:movement_id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: movement_id
+          value: 11cd8bd1-0355-4a7b-8232-dec95e201f02
+          type: path
+      body:
+        type: json
+        data: "{ \r
+
+          \    \"movement_code\": \"MOV/KDY/2602-00017\",\r
+
+          \    \"company_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+          \    \"current_business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+          \    \"destination_business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+          \    \"transaction_date\": \"2024-10-22T13:24:42+08:00\",\r
+
+          \    \"purpose\": \"Marketing Needs X5 - EditX2\",\r
+
+          \    \"status\": \"draft\",\r
+
+          \    \"remarks\": \"Membership chat GPT\",\r
+
+          \    \"user_update\": \"admin\",\r
+
+          \    \"updated_at\": \"2024-03-01T13:24:42+08:00\",\r
+
+          \    \"details\": [\r
+
+          \        {\r
+
+          \            \"asset_id\": \"GAC-SRV-001\",\r
+
+          \            \"source_site_room_id\": \"BLDG-A-F3-ROOM-301\",\r
+
+          \            \"from_employee\": \"john.doe\",\r
+
+          \            \"target_site_room_id\": \"BLDG-B-F2-ROOM-205\",\r
+
+          \            \"to_employee\": \"jane.smith\",\r
+
+          \            \"status\": \"open\",\r
+
+          \            \"user_update\": \"20994\",\r
+
+          \            \"updated_at\": \"2024-10-22T13:24:42+08:00\"\r
+
+          \        }\r
+
+          \    ]\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Fri, 27 Feb 2026 00:38:19 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "466"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "movement_id": "11cd8bd1-0355-4a7b-8232-dec95e201f02",
+                  "movement_code": "MOV/KDY/2602-00017",
+                  "company_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "current_business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "destination_business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "transaction_date": "2024-10-22T13:24:42+08:00",
+                  "purpose": "Marketing Needs X5 - EditX2",
+                  "status": "draft",
+                  "user_update": "admin",
+                  "updated_at": "2026-02-27T07:38:19+07:00"
+              }
+          }

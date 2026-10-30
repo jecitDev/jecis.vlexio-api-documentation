@@ -1,0 +1,7 @@
+info:
+  name: Asset List Depreciation
+  type: folder
+  seq: 127
+
+request:
+  auth: inherit

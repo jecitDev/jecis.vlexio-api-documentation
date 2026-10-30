@@ -1,0 +1,16 @@
+info:
+  name: Diagnosis
+  type: folder
+  seq: 44
+
+request:
+  auth: inherit
+
+docs:
+  content: |-
+    ### \[TS-228\] \[MASTER\] DIAGNOSIS, ICD 10 & ICD 9-CM #1.0.0
+
+    ##### June 05, 2024
+
+    - CRUD Common
+  type: text/markdown

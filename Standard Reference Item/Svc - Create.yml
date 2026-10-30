@@ -1,0 +1,298 @@
+info:
+  name: Svc - Create
+  type: http
+  seq: 5
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/standardreferenceitems/"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r\n    \"standard_reference_id\": \"ProfilerType\",\r\n    \"company_id\": \"2da6a1bd-ba62-43ec-91f8-4085d5d6d498\",\r\n    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r\n    \"item_id\": \"ProfilerType-06\",\r\n    \"coa_id\": -99,\r\n    \"subledger_id\": -99,\r\n    \"reference_id\": \"\",\r\n    \"reference_id2\": \"\",\r\n    \"item_name\": \"StorageConfig\",\r\n    \"note\": \"\",\r\n    \"is_active\": true,\r\n    \"is_used_by_system\": true,\r\n    \"user_create\": \"21170\",\r\n    \"created_at\": \"2024-04-01T05:06:07+07:00\"\r\n}"
+  auth:
+    type: bearer
+    token: "{{xtoken}}"
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: Svc - Create
+    request:
+      url: "{{BASE_URL}}/v1/standardreferenceitem/"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{XTOKEN}}"
+      body:
+        type: json
+        data: "{\r\n    \"coa_id\": -99,\r\n    \"is_active\": true,\r\n    \"is_used_by_system\": true,\r\n    \"item_id\": \"OS\",\r\n    \"item_name\": \"OS\",\r\n    \"last_update_by_user_id\": \"21239\",\r\n    \"last_update_datetime\": {\r\n        \"seconds\": 1695116075,\r\n        \"nanos\": 607059000\r\n    },\r\n    \"note\": \"2\",\r\n    \"reference_id\": null,\r\n    \"standard_reference_id\": \"RouteSE\",\r\n    \"subledger_id\": 99\r\n}"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Wed, 20 Sep 2023 07:51:56 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "268"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "standard_reference_id": "RouteSE",
+                  "item_id": "OS",
+                  "item_name": "OS",
+                  "note": "2",
+                  "is_used_by_system": true,
+                  "is_active": true,
+                  "last_update_datetime": {
+                      "seconds": 1695116075,
+                      "nanos": 607059000
+                  },
+                  "last_update_by_user_id": "21239",
+                  "coa_id": -99,
+                  "subledger_id": 99
+              }
+          }
+  - name: "Svc - Create #2"
+    request:
+      url: "{{BASE_URL}}/v1/standardreferenceitems/"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{XTOKEN}}"
+      body:
+        type: json
+        data: "{\r\n    \"standard_reference_id\": \"AcctDbCr\",\r\n    \"item_id\": \"0\",\r\n    \"coa_id\": -99,\r\n    \"subledger_id\": -99,\r\n    \"reference_id\": \"COA\",\r\n    \"item_name\": \"---\",\r\n    \"note\": \"ipsum et ullamco teamdu\",\r\n    \"is_active\": true,\r\n    \"is_used_by_system\": true,\r\n    \"user_create\": \"Admin1\",\r\n    \"created_at\": {\r\n        \"nanos\": 98057828,\r\n        \"seconds\": 1698057828\r\n    }\r\n    // \"updated_at\": {\r\n    //     \"nanos\": 698053568,\r\n    //     \"seconds\": \"1698053568\"\r\n    // }\r\n}"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 23 Oct 2023 03:42:44 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "330"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "standard_reference_id": "AcctDbCr",
+                  "item_id": "0",
+                  "coa_id": -99,
+                  "subledger_id": -99,
+                  "reference_id": "COA",
+                  "item_name": "---",
+                  "note": "ipsum et ullamco teamdu",
+                  "is_active": true,
+                  "is_used_by_system": true,
+                  "user_create": "Admin1",
+                  "created_at": {
+                      "seconds": 1698057828,
+                      "nanos": 98057828
+                  },
+                  "updated_at": {
+                      "seconds": -62135596800
+                  }
+              }
+          }
+  - name: "Svc - Create #3-240229"
+    request:
+      url: "{{BASE_URL}}/v1/standardreferenceitems/"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{XTOKEN}}"
+      body:
+        type: json
+        data: "{\r\n    \"standard_reference_id\": \"All Normal\",\r\n    \"item_id\": \"LY\",\r\n    \"coa_id\": -99,\r\n    \"subledger_id\": -99,\r\n    \"reference_id\": \"01.05\",\r\n    \"reference_id2\": \"Anterior\",\r\n    \"item_name\": \"normal lens\",\r\n    \"note\": \"NRML\",\r\n    \"is_active\": true,\r\n    // \"is_used_by_system\": true,\r\n    \"user_create\": \"Admin1\",\r\n    \"created_at\": {\r\n        \"seconds\": 1709186053,\r\n        \"nanos\": 170918605\r\n    }\r\n}"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 29 Feb 2024 05:55:14 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "353"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "standard_reference_id": "All Normal",
+                  "item_id": "LY",
+                  "coa_id": -99,
+                  "subledger_id": -99,
+                  "reference_id": "01.05",
+                  "reference_id2": "Anterior",
+                  "item_name": "normal lens",
+                  "note": "NRML",
+                  "is_active": true,
+                  "is_used_by_system": false,
+                  "user_create": "Admin1",
+                  "created_at": {
+                      "seconds": 1709186053,
+                      "nanos": 170918605
+                  },
+                  "updated_at": {
+                      "seconds": -62135596800
+                  }
+              }
+          }
+  - name: "Svc - Create #4-240322"
+    request:
+      url: "{{BASE_URL}}/v1/standardreferenceitems/"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{XTOKEN}}"
+      body:
+        type: json
+        data: "{\r\n    \"standard_reference_id\": \"UserType\",\r\n    \"company_id\": \"1\",\r\n    \"business_unit_id\": \"1\",\r\n    \"item_id\": \"Pharmacy\",\r\n    \"coa_id\": -99,\r\n    \"subledger_id\": -99,\r\n    \"reference_id\": \"\",\r\n    \"reference_id2\": \"\",\r\n    \"item_name\": \"Pharmacy\",\r\n    \"note\": \"\",\r\n    \"is_active\": true,\r\n    \"is_used_by_system\": true,\r\n    \"user_create\": \"Admin\",\r\n    \"created_at\": \"2024-03-22T09:13:00+07:00\"\r\n}"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Fri, 22 Mar 2024 04:30:28 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "277"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "standard_reference_id": "UserType",
+                  "company_id": "1",
+                  "business_unit_id": "1",
+                  "item_id": "Pharmacy",
+                  "coa_id": -99,
+                  "subledger_id": -99,
+                  "item_name": "Pharmacy",
+                  "is_active": true,
+                  "is_used_by_system": true,
+                  "user_create": "Admin",
+                  "created_at": "2024-03-22T09:13:00+07:00"
+              }
+          }

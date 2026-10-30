@@ -1,0 +1,126 @@
+info:
+  name: GET LIST By Param
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/ServiceRoom/listbyparam?company_id=2da6a1bd-ba62-43ec-91f8-4085d5d6d498&business_unit_id=53aad077-9fb1-4f08-85f3-af9fd9a36517&is_operating_room=true"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: company_id
+      value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+      type: query
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: query
+    - name: roomid
+      value: API011
+      type: query
+      disabled: true
+    - name: service_unit_id
+      value: A103
+      type: query
+      disabled: true
+    - name: is_operating_room
+      value: "true"
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: GET LIST
+    request:
+      url: "{{BASE_URL}}/v1/ServiceRoom?page=3&pageSize=2"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: page
+          value: "3"
+          type: query
+        - name: pageSize
+          value: "2"
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 16 Nov 2023 03:55:37 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "472"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "page": 3,
+                  "pageSize": 2,
+                  "total_items": 5,
+                  "ServiceRooms": [
+                      {
+                          "site_id": "011",
+                          "room_id": "room 010",
+                          "site_room_id": "site 010",
+                          "service_unit_id": "service010",
+                          "room_name": "Sample 1",
+                          "notes": "This is a GRPC ROOM.",
+                          "is_operating_room": true,
+                          "operational_time_from": "08:00",
+                          "operational_time_to": "17:00",
+                          "minutes_per_slot": 30,
+                          "is_active": true,
+                          "user_create": "user010",
+                          "created_at": {
+                              "seconds": 1672574400
+                          },
+                          "user_update": "user010",
+                          "updated_at": {
+                              "seconds": 1672574400
+                          }
+                      }
+                  ]
+              }
+          }

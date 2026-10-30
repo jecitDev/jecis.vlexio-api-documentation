@@ -1,0 +1,138 @@
+info:
+  name: GET LIST
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/referral?page=1&pageSize=2"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: pageSize
+      value: "2"
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: GET LIST
+    request:
+      url: "{{BASE_URL}}/v1/referral?page=1&pageSize=2"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: pageSize
+          value: "2"
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 15 Apr 2025 02:00:00 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "1286"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "page": 1,
+                  "pageSize": 2,
+                  "total_items": 2,
+                  "Referrals": [
+                      {
+                          "referral_id": "R000000001",
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "referral_name": "test nando api 2",
+                          "short_name": "testnando",
+                          "sr_referral_group": "ReferralGroup-001",
+                          "tax_registration_no": "TaxRegis01",
+                          "street_name": "Jl. Terusan Arjuna Utara No.1",
+                          "district": "Kebun Jeruk",
+                          "city": "Jakarta Barat",
+                          "county": "Kedoya",
+                          "state": "Jakarta",
+                          "zip_code": "11520",
+                          "phone_no": "09310932",
+                          "email": "test@mail.com",
+                          "mobile_phone_no": "08123912383",
+                          "work_address": "Jl.Terusan Arjuna Utara No.1",
+                          "spesialis": "SpesialisD",
+                          "is_active": true,
+                          "user_create": "Ferdinand",
+                          "created_at": "2025-04-14T13:58:23+07:00"
+                      },
+                      {
+                          "referral_id": "R000000002",
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "referral_name": "Test Referral",
+                          "short_name": "testreferral",
+                          "sr_referral_group": "ReferralGroup-001",
+                          "tax_registration_no": "TaxRegis02",
+                          "street_name": "Jl. Terusan Arjuna Utara No.1",
+                          "district": "Kebun Jeruk",
+                          "city": "Jakarta Barat",
+                          "county": "Kedoya",
+                          "state": "Jakarta",
+                          "zip_code": "11520",
+                          "phone_no": "09310932",
+                          "email": "ferdinand@mail.com",
+                          "mobile_phone_no": "08123912383",
+                          "work_address": "Jl.Terusan Arjuna Utara No.1",
+                          "spesialis": "SpesialisA",
+                          "is_active": true,
+                          "user_create": "Ferdinand",
+                          "created_at": "2025-04-14T13:58:23+07:00"
+                      }
+                  ]
+              }
+          }

@@ -1,0 +1,206 @@
+info:
+  name: Patch
+  type: http
+  seq: 5
+
+http:
+  method: PATCH
+  url: "{{BASE_URL}}/v1/service-units/auto-bill-items/:business_unit_id/:service_unit_id/:item_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  params:
+    - name: business_unit_id
+      value: 33b109c5-dd64-480c-8100-68fe17deaf3e
+      type: path
+    - name: service_unit_id
+      value: SU001
+      type: path
+    - name: item_id
+      value: ea7eb26c-5411-4919-b9fd-0a86d8a7a048
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"data\": [\r
+
+      \        {\r
+
+      \            \"field\": \"quantity\",\r
+
+      \            \"value\": \"1.5\"\r
+
+      \        }\r
+
+      \    ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Not Found
+    request:
+      url: "{{BASE_URL}}/v1/service-units/auto-bill-items/:business_unit_id/:service_unit_id/:item_id"
+      method: PATCH
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      params:
+        - name: business_unit_id
+          value: 33b109c5-dd64-480c-8100-68fe17deaf3e
+          type: path
+        - name: service_unit_id
+          value: SU003
+          type: path
+        - name: item_id
+          value: ea7eb26c-5411-4919-b9fd-0a86d8a7a048
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"data\": [\r
+
+          \        {\r
+
+          \            \"field\": \"service_unit_name\",\r
+
+          \            \"value\": \"Emergency and Trauma Department\"\r
+
+          \        }\r
+
+          \    ]\r
+
+          }"
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: date
+          value: Wed, 09 Sep 2026 04:47:23 GMT
+        - name: content-type
+          value: application/json
+        - name: content-length
+          value: "64"
+        - name: x-xss-protection
+          value: "0"
+        - name: x-content-type-options
+          value: nosniff
+        - name: x-frame-options
+          value: SAMEORIGIN
+        - name: cross-origin-embedder-policy
+          value: require-corp
+        - name: cross-origin-opener-policy
+          value: same-origin
+        - name: cross-origin-resource-policy
+          value: same-origin
+        - name: origin-agent-cluster
+          value: ?1
+        - name: referrer-policy
+          value: no-referrer
+        - name: x-dns-prefetch-control
+          value: off
+        - name: x-download-options
+          value: noopen
+        - name: x-permitted-cross-domain-policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+            "status": 404,
+            "message": "service_unit_auto_bill_item.not_found"
+          }
+  - name: Patch
+    request:
+      url: "{{BASE_URL}}/v1/service-units/auto-bill-items/:business_unit_id/:service_unit_id/:item_id"
+      method: PATCH
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      params:
+        - name: business_unit_id
+          value: 33b109c5-dd64-480c-8100-68fe17deaf3e
+          type: path
+        - name: service_unit_id
+          value: SU001
+          type: path
+        - name: item_id
+          value: ea7eb26c-5411-4919-b9fd-0a86d8a7a048
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"data\": [\r
+
+          \        {\r
+
+          \            \"field\": \"quantity\",\r
+
+          \            \"value\": \"1.5\"\r
+
+          \        }\r
+
+          \    ]\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: date
+          value: Wed, 09 Sep 2026 04:48:18 GMT
+        - name: content-type
+          value: application/json
+        - name: content-length
+          value: "221"
+        - name: x-xss-protection
+          value: "0"
+        - name: x-content-type-options
+          value: nosniff
+        - name: x-frame-options
+          value: SAMEORIGIN
+        - name: cross-origin-embedder-policy
+          value: require-corp
+        - name: cross-origin-opener-policy
+          value: same-origin
+        - name: cross-origin-resource-policy
+          value: same-origin
+        - name: origin-agent-cluster
+          value: ?1
+        - name: referrer-policy
+          value: no-referrer
+        - name: x-dns-prefetch-control
+          value: off
+        - name: x-download-options
+          value: noopen
+        - name: x-permitted-cross-domain-policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+            "code": 200,
+            "data": {
+              "business_unit_id": "33b109c5-dd64-480c-8100-68fe17deaf3e",
+              "service_unit_id": "SU001",
+              "item_id": "ea7eb26c-5411-4919-b9fd-0a86d8a7a048",
+              "user_update": "ferdinand",
+              "updated_at": "2026-09-09T11:48:19+07:00"
+            }
+          }

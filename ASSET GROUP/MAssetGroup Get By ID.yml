@@ -1,0 +1,29 @@
+info:
+  name: MAssetGroup Get By ID
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/MAssetGroup/?asset_group_id=002&business_unit_id=71b53dd1-2802-4527-8b5c-d54173392222"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: asset_group_id
+      value: "002"
+      type: query
+    - name: business_unit_id
+      value: 71b53dd1-2802-4527-8b5c-d54173392222
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

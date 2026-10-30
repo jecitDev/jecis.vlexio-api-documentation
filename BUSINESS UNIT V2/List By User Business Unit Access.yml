@@ -1,0 +1,575 @@
+info:
+  name: List By User Business Unit Access
+  type: http
+  seq: 15
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/business-units/me?page=1&page_size=10&sort_by=id&sort_order=desc"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: page_size
+      value: "10"
+      type: query
+    - name: sort_by
+      value: id
+      type: query
+    - name: sort_order
+      value: desc
+      type: query
+    - name: keywords
+      value: rs
+      type: query
+      disabled: true
+    - name: company_id
+      value: 71b53dd1-2802-4527-8b5c-d54173392222
+      type: query
+      disabled: true
+    - name: business_unit_id
+      value: eb1bf9ad-00c4-4ebf-ae9f-6f7179e94e02
+      type: query
+      disabled: true
+    - name: oc_template_id
+      value: 12854539-a1f3-4372-a5d4-06f11806754e
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: List By User Business Unit Access
+    request:
+      url: "{{BASE_URL}}/v1/business-units/me?page=1&page_size=10&sort_by=id&sort_order=desc"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: page_size
+          value: "10"
+          type: query
+        - name: sort_by
+          value: id
+          type: query
+        - name: sort_order
+          value: desc
+          type: query
+        - name: keywords
+          value: rs
+          type: query
+          disabled: true
+        - name: company_id
+          value: 71b53dd1-2802-4527-8b5c-d54173392222
+          type: query
+          disabled: true
+        - name: business_unit_id
+          value: eb1bf9ad-00c4-4ebf-ae9f-6f7179e94e02
+          type: query
+          disabled: true
+        - name: oc_template_id
+          value: 12854539-a1f3-4372-a5d4-06f11806754e
+          type: query
+          disabled: true
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: date
+          value: Thu, 08 Oct 2026 02:18:46 GMT
+        - name: content-type
+          value: application/json
+        - name: content-length
+          value: "11761"
+        - name: x-xss-protection
+          value: "0"
+        - name: x-content-type-options
+          value: nosniff
+        - name: x-frame-options
+          value: SAMEORIGIN
+        - name: cross-origin-embedder-policy
+          value: require-corp
+        - name: cross-origin-opener-policy
+          value: same-origin
+        - name: cross-origin-resource-policy
+          value: same-origin
+        - name: origin-agent-cluster
+          value: ?1
+        - name: referrer-policy
+          value: no-referrer
+        - name: x-dns-prefetch-control
+          value: off
+        - name: x-download-options
+          value: noopen
+        - name: x-permitted-cross-domain-policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+            "code": 200,
+            "data": {
+              "business_units": [
+                {
+                  "abbreviation": "PMS",
+                  "addresses": {
+                    "address_line1": "Jl. Kebon Bawang No.1, Tanjung Priok, Jakarta",
+                    "address_line2": "",
+                    "city": "Administrasi Jakarta Utara",
+                    "county": "Kebon Bawang",
+                    "district": "Tanjung Priok",
+                    "lat": "-6.118649482727051",
+                    "long": "106.88720703125",
+                    "postal_code": "14320"
+                  },
+                  "base_currency": "IDR",
+                  "category_id": "",
+                  "code": "004",
+                  "color_code": "#E74C3C",
+                  "company_id": "f494db98-22df-4267-9a6b-75cabc5bc203",
+                  "company_name": "PT JEC Medika Primasana",
+                  "contact": {
+                    "email": "pms@mail.com",
+                    "fax": "",
+                    "phone": "+628041221000",
+                    "website": ""
+                  },
+                  "country": "ID",
+                  "created_at": "2025-01-23T10:00:00+07:00",
+                  "date_of_established": "",
+                  "default_letterhead_id": "",
+                  "description": "",
+                  "id": "316e38ff-d716-4f1c-911d-863d150c6ac2",
+                  "is_corporate": false,
+                  "logo_url": "",
+                  "m_domain_id": "f45b568b-97a1-4f9c-8d7d-174434c27525",
+                  "m_domain_name": "Healthcare",
+                  "m_status_id": "14ac6d2d-1a07-4ac5-a29e-70c646697c4d",
+                  "m_status_name": "Active",
+                  "m_timezone_id": "4106ab0b-5e90-47f9-98a6-e42673a4a616",
+                  "m_timezone_name": "Asia/Jakarta",
+                  "name": "RS Mata JEC PRIMASANA @ Tj. Priok",
+                  "oc_template_id": "bcf8169e-569f-43e2-9e5e-76143cb1e05f",
+                  "updated_at": "2026-03-05T16:49:50+07:00",
+                  "user_create": "21170",
+                  "user_update": "21170"
+                },
+                {
+                  "abbreviation": "RSORB",
+                  "addresses": {
+                    "address_line1": "Jl. Masjid Raya No. 75, Timungan Lompoa, Kec. Bontoala, Kota Makassar, Sulawesi Selatan 90213",
+                    "address_line2": "",
+                    "city": "Makassar",
+                    "county": "Pannampu",
+                    "district": "Tallo",
+                    "lat": "-5.114787578582764",
+                    "long": "119.42571258544922",
+                    "postal_code": "90213"
+                  },
+                  "base_currency": "IDR",
+                  "category_id": "",
+                  "code": "016",
+                  "color_code": "#27AE60",
+                  "company_id": "0fa13644-0e4e-4b38-8af3-9f4c52d23a0d",
+                  "company_name": "PT Orbita Medika Indonesia",
+                  "contact": {
+                    "email": "rs-orbita-mks@mail.com",
+                    "fax": "",
+                    "phone": "+628041221000",
+                    "website": ""
+                  },
+                  "country": "ID",
+                  "created_at": "2025-01-23T10:00:00+07:00",
+                  "date_of_established": "",
+                  "default_letterhead_id": "",
+                  "description": "",
+                  "id": "f7f5f5bd-a1ed-416c-a402-347286ac69d7",
+                  "is_corporate": false,
+                  "logo_url": "",
+                  "m_domain_id": "f45b568b-97a1-4f9c-8d7d-174434c27525",
+                  "m_domain_name": "Healthcare",
+                  "m_status_id": "14ac6d2d-1a07-4ac5-a29e-70c646697c4d",
+                  "m_status_name": "Active",
+                  "m_timezone_id": "4106ab0b-5e90-47f9-98a6-e42673a4a616",
+                  "m_timezone_name": "Asia/Jakarta",
+                  "name": "RS Mata JEC Orbita @ Makassar",
+                  "oc_template_id": "bcf8169e-569f-43e2-9e5e-76143cb1e05f",
+                  "updated_at": "2026-03-05T16:21:51+07:00",
+                  "user_create": "21170",
+                  "user_update": "21170"
+                },
+                {
+                  "abbreviation": "RSCND",
+                  "addresses": {
+                    "address_line1": "Jl. Pamularsih No 112, Gisikdrono, Semarang, Jawa Tengah - 50149",
+                    "address_line2": "",
+                    "city": "Semarang",
+                    "county": "Gisikdrono",
+                    "district": "Semarang Barat",
+                    "lat": "-6.991359710693359",
+                    "long": "110.387451171875",
+                    "postal_code": "50149"
+                  },
+                  "base_currency": "IDR",
+                  "category_id": "",
+                  "code": "011",
+                  "color_code": "#8E44AD",
+                  "company_id": "137dc0d2-ab42-4091-9690-3f3ea25330f3",
+                  "company_name": "PT JEC Candi Sejahtera",
+                  "contact": {
+                    "email": "rscnd@mail.com",
+                    "fax": "",
+                    "phone": "+628041221000",
+                    "website": ""
+                  },
+                  "country": "ID",
+                  "created_at": "2025-01-23T10:00:00+07:00",
+                  "date_of_established": "",
+                  "default_letterhead_id": "",
+                  "description": "",
+                  "id": "a07b4314-19ee-476a-b350-919aa4a0ae6c",
+                  "is_corporate": false,
+                  "logo_url": "",
+                  "m_domain_id": "f45b568b-97a1-4f9c-8d7d-174434c27525",
+                  "m_domain_name": "Healthcare",
+                  "m_status_id": "14ac6d2d-1a07-4ac5-a29e-70c646697c4d",
+                  "m_status_name": "Active",
+                  "m_timezone_id": "4106ab0b-5e90-47f9-98a6-e42673a4a616",
+                  "m_timezone_name": "Asia/Jakarta",
+                  "name": "RS Mata JEC CANDI @ Semarang",
+                  "oc_template_id": "bcf8169e-569f-43e2-9e5e-76143cb1e05f",
+                  "updated_at": "2026-03-05T14:44:34+07:00",
+                  "user_create": "21170",
+                  "user_update": "21170"
+                },
+                {
+                  "abbreviation": "MTG",
+                  "addresses": {
+                    "address_line1": "Jl. Cik Ditiro 46 Menteng Jakarta Pusat 10310",
+                    "address_line2": "",
+                    "city": "Administrasi Jakarta Pusat",
+                    "county": "Menteng",
+                    "district": "Menteng",
+                    "lat": "-6.2024359703063965",
+                    "long": "106.83496856689453",
+                    "postal_code": "10310"
+                  },
+                  "base_currency": "IDR",
+                  "category_id": "",
+                  "code": "001",
+                  "color_code": "#4ECDC4",
+                  "company_id": "71b53dd1-2802-4527-8b5c-d54173392222",
+                  "company_name": "PT. Nitrasanata Dharma",
+                  "contact": {
+                    "email": "care@jec.co.id",
+                    "fax": "",
+                    "phone": "+628041221000",
+                    "website": ""
+                  },
+                  "country": "ID",
+                  "created_at": "2025-01-17T08:00:00+07:00",
+                  "date_of_established": "",
+                  "default_letterhead_id": "",
+                  "description": "",
+                  "id": "1ace280b-f844-4e83-9a06-0215b8a67bc4",
+                  "is_corporate": false,
+                  "logo_url": "",
+                  "m_domain_id": "f45b568b-97a1-4f9c-8d7d-174434c27525",
+                  "m_domain_name": "Healthcare",
+                  "m_status_id": "14ac6d2d-1a07-4ac5-a29e-70c646697c4d",
+                  "m_status_name": "Active",
+                  "m_timezone_id": "4106ab0b-5e90-47f9-98a6-e42673a4a616",
+                  "m_timezone_name": "Asia/Jakarta",
+                  "name": "RS Mata JEC @ Menteng",
+                  "oc_template_id": "bcf8169e-569f-43e2-9e5e-76143cb1e05f",
+                  "updated_at": "2026-03-05T16:13:38+07:00",
+                  "user_create": "21170",
+                  "user_update": "21170"
+                },
+                {
+                  "abbreviation": "KDY",
+                  "addresses": {
+                    "address_line1": "Jl. Terusan Arjuna Utara No. 1 Kedoya Jakarta Barat 11520",
+                    "address_line2": "",
+                    "city": "Administrasi Jakarta Barat",
+                    "county": "Kedoya Selatan",
+                    "district": "Kebon Jeruk",
+                    "lat": "-6.181245803833008",
+                    "long": "106.75692749023438",
+                    "postal_code": "11520"
+                  },
+                  "base_currency": "IDR",
+                  "category_id": "",
+                  "code": "002",
+                  "color_code": "#FF6B6B",
+                  "company_id": "71b53dd1-2802-4527-8b5c-d54173392222",
+                  "company_name": "PT. Nitrasanata Dharma",
+                  "contact": {
+                    "email": "care@jec.co.id",
+                    "fax": "",
+                    "phone": "+622129221000",
+                    "website": "https://jec.co.id"
+                  },
+                  "country": "ID",
+                  "created_at": "2025-01-17T08:00:00+07:00",
+                  "date_of_established": "",
+                  "default_letterhead_id": "",
+                  "description": "",
+                  "id": "18e9ea73-7343-4be2-a8e4-47b652e56981",
+                  "is_corporate": false,
+                  "logo_url": "",
+                  "m_domain_id": "f45b568b-97a1-4f9c-8d7d-174434c27525",
+                  "m_domain_name": "Healthcare",
+                  "m_status_id": "14ac6d2d-1a07-4ac5-a29e-70c646697c4d",
+                  "m_status_name": "Active",
+                  "m_timezone_id": "4106ab0b-5e90-47f9-98a6-e42673a4a616",
+                  "m_timezone_name": "Asia/Jakarta",
+                  "name": "RS Mata JEC @ Kedoya",
+                  "oc_template_id": "bcf8169e-569f-43e2-9e5e-76143cb1e05f",
+                  "updated_at": "2026-03-05T09:37:20+07:00",
+                  "user_create": "21170",
+                  "user_update": "20371"
+                },
+                {
+                  "abbreviation": "NSD",
+                  "addresses": {
+                    "address_line1": "JEC",
+                    "address_line2": "",
+                    "city": "Administrasi Jakarta Barat",
+                    "county": "Kedoya Selatan",
+                    "district": "Kebon Jeruk",
+                    "lat": "-6.181245803833008",
+                    "long": "106.75692749023438",
+                    "postal_code": "11520"
+                  },
+                  "base_currency": "IDR",
+                  "category_id": "",
+                  "code": "999",
+                  "color_code": "#A29BFE",
+                  "company_id": "71b53dd1-2802-4527-8b5c-d54173392222",
+                  "company_name": "PT. Nitrasanata Dharma",
+                  "contact": {
+                    "email": "nsd@mail.com",
+                    "fax": "",
+                    "phone": "+628041221000",
+                    "website": ""
+                  },
+                  "country": "ID",
+                  "created_at": "2025-01-23T10:00:00+07:00",
+                  "date_of_established": "",
+                  "default_letterhead_id": "",
+                  "description": "",
+                  "id": "33b109c5-dd64-480c-8100-68fe17deaf3e",
+                  "is_corporate": true,
+                  "logo_url": "",
+                  "m_domain_id": "f45b568b-97a1-4f9c-8d7d-174434c27525",
+                  "m_domain_name": "Healthcare",
+                  "m_status_id": "14ac6d2d-1a07-4ac5-a29e-70c646697c4d",
+                  "m_status_name": "Active",
+                  "m_timezone_id": "4106ab0b-5e90-47f9-98a6-e42673a4a616",
+                  "m_timezone_name": "Asia/Jakarta",
+                  "name": "PT. Nitrasanata Dharma (JEC Eye Hospitals)",
+                  "oc_template_id": "a79ff9af-c1fd-4691-b01e-8d40737f5311",
+                  "updated_at": "2025-12-29T11:39:54+07:00",
+                  "user_create": "21170",
+                  "user_update": "21170"
+                },
+                {
+                  "abbreviation": "ORB",
+                  "addresses": {
+                    "address_line1": "JEC Orbita @ Makassar Jl. A. P. Pettarani No.186 Banta-Bantaeng Kec. Rappocini Kota Makassar Sulawesi Selatan",
+                    "address_line2": "",
+                    "city": "Makassar",
+                    "county": "Banta-Bantaeng",
+                    "district": "Rappocini",
+                    "lat": "-5.162215709686279",
+                    "long": "119.42680358886719",
+                    "postal_code": "90222"
+                  },
+                  "base_currency": "IDR",
+                  "category_id": "",
+                  "code": "012",
+                  "color_code": "#16A085",
+                  "company_id": "b281ee15-0530-4a7f-9d59-06bc54bb776d",
+                  "company_name": "PT Orbita",
+                  "contact": {
+                    "email": "orbita-mks@mail.com",
+                    "fax": "",
+                    "phone": "+628041221000",
+                    "website": ""
+                  },
+                  "country": "ID",
+                  "created_at": "2025-01-23T10:00:00+07:00",
+                  "date_of_established": "",
+                  "default_letterhead_id": "",
+                  "description": "",
+                  "id": "68a155f4-88d2-4eea-ac22-117711036f63",
+                  "is_corporate": false,
+                  "logo_url": "",
+                  "m_domain_id": "f45b568b-97a1-4f9c-8d7d-174434c27525",
+                  "m_domain_name": "Healthcare",
+                  "m_status_id": "14ac6d2d-1a07-4ac5-a29e-70c646697c4d",
+                  "m_status_name": "Active",
+                  "m_timezone_id": "4106ab0b-5e90-47f9-98a6-e42673a4a616",
+                  "m_timezone_name": "Asia/Jakarta",
+                  "name": "KUM JEC Orbita @ Makassar",
+                  "oc_template_id": "3b89aa14-3891-4f8c-84ff-a5cfb4753cca",
+                  "updated_at": "2026-03-05T14:14:34+07:00",
+                  "user_create": "21170",
+                  "user_update": "21170"
+                },
+                {
+                  "abbreviation": "JAVA",
+                  "addresses": {
+                    "address_line1": "Jl. Raya Darmo No.127, Darmo, Kec. Wonokromo, Kota SBY, Jawa Timur 60264",
+                    "address_line2": "",
+                    "city": "Surabaya",
+                    "county": "Dr. Soetomo",
+                    "district": "Tegalsari",
+                    "lat": "-7.279984951019287",
+                    "long": "112.73241424560547",
+                    "postal_code": "60264"
+                  },
+                  "base_currency": "IDR",
+                  "category_id": "",
+                  "code": "010",
+                  "color_code": "#aab649",
+                  "company_id": "3c4f4698-8b25-4534-8993-b4d6e900ce5d",
+                  "company_name": "PT Graha Mukti Husada",
+                  "contact": {
+                    "email": "java@mail.com",
+                    "fax": "",
+                    "phone": "+628041221000",
+                    "website": ""
+                  },
+                  "country": "ID",
+                  "created_at": "2025-01-23T10:00:00+07:00",
+                  "date_of_established": "",
+                  "default_letterhead_id": "",
+                  "description": "",
+                  "id": "e805ce3a-50de-4330-9986-fe63cfd13605",
+                  "is_corporate": false,
+                  "logo_url": "",
+                  "m_domain_id": "f45b568b-97a1-4f9c-8d7d-174434c27525",
+                  "m_domain_name": "Healthcare",
+                  "m_status_id": "14ac6d2d-1a07-4ac5-a29e-70c646697c4d",
+                  "m_status_name": "Active",
+                  "m_timezone_id": "4106ab0b-5e90-47f9-98a6-e42673a4a616",
+                  "m_timezone_name": "Asia/Jakarta",
+                  "name": "KUM JEC JAVA @ Surabaya",
+                  "oc_template_id": "3b89aa14-3891-4f8c-84ff-a5cfb4753cca",
+                  "updated_at": "2026-03-05T13:55:11+07:00",
+                  "user_create": "21170",
+                  "user_update": "21170"
+                },
+                {
+                  "abbreviation": "DPS",
+                  "addresses": {
+                    "address_line1": "Jl. Teuku Umar Barat No. 170 Padangsambian Klod, Denpasar Barat Kota Denpasar",
+                    "address_line2": "",
+                    "city": "Denpasar",
+                    "county": "Padangsambian Kelod",
+                    "district": "Denpasar Barat",
+                    "lat": "-8.675004005432129",
+                    "long": "115.18213653564453",
+                    "postal_code": "80117"
+                  },
+                  "base_currency": "IDR",
+                  "category_id": "",
+                  "code": "013",
+                  "color_code": "#F1C40F",
+                  "company_id": "d5c68232-ce64-4f63-928d-a025a983defb",
+                  "company_name": "PT JEC BALI VISION",
+                  "contact": {
+                    "email": "denpasar@mail.com",
+                    "fax": "",
+                    "phone": "+628041221000",
+                    "website": ""
+                  },
+                  "country": "ID",
+                  "created_at": "2025-01-23T10:00:00+07:00",
+                  "date_of_established": "",
+                  "default_letterhead_id": "",
+                  "description": "",
+                  "id": "5346ddfd-d5a0-473d-9010-48d0542bc594",
+                  "is_corporate": false,
+                  "logo_url": "",
+                  "m_domain_id": "f45b568b-97a1-4f9c-8d7d-174434c27525",
+                  "m_domain_name": "Healthcare",
+                  "m_status_id": "14ac6d2d-1a07-4ac5-a29e-70c646697c4d",
+                  "m_status_name": "Active",
+                  "m_timezone_id": "4106ab0b-5e90-47f9-98a6-e42673a4a616",
+                  "m_timezone_name": "Asia/Jakarta",
+                  "name": "KUM JEC BALI @ Denpasar",
+                  "oc_template_id": "3b89aa14-3891-4f8c-84ff-a5cfb4753cca",
+                  "updated_at": "2026-03-05T10:50:04+07:00",
+                  "user_create": "21170",
+                  "user_update": "21170"
+                },
+                {
+                  "abbreviation": "ANWARI",
+                  "addresses": {
+                    "address_line1": "Jl.Jatiwinangun No.59",
+                    "address_line2": "",
+                    "city": "Banyumas",
+                    "county": "Purwokerto Lor",
+                    "district": "Purwokerto Timur",
+                    "lat": "-7.421595573425293",
+                    "long": "109.24642181396484",
+                    "postal_code": "53114"
+                  },
+                  "base_currency": "IDR",
+                  "category_id": "",
+                  "code": "008",
+                  "color_code": "#F39C12",
+                  "company_id": "7405fcb1-c6ef-4d66-8717-dcb5d388240b",
+                  "company_name": "PT Mitra Anwari",
+                  "contact": {
+                    "email": "anwari@mail.com",
+                    "fax": "",
+                    "phone": "+628041221000",
+                    "website": "https://jec.co.id"
+                  },
+                  "country": "ID",
+                  "created_at": "2025-01-23T10:00:00+07:00",
+                  "date_of_established": "",
+                  "default_letterhead_id": "",
+                  "description": "",
+                  "id": "795779b1-67a3-4b34-92d2-1e033feb4182",
+                  "is_corporate": false,
+                  "logo_url": "",
+                  "m_domain_id": "f45b568b-97a1-4f9c-8d7d-174434c27525",
+                  "m_domain_name": "Healthcare",
+                  "m_status_id": "14ac6d2d-1a07-4ac5-a29e-70c646697c4d",
+                  "m_status_name": "Active",
+                  "m_timezone_id": "4106ab0b-5e90-47f9-98a6-e42673a4a616",
+                  "m_timezone_name": "Asia/Jakarta",
+                  "name": "KUM JEC ANWARI @ Purwokerto",
+                  "oc_template_id": "3b89aa14-3891-4f8c-84ff-a5cfb4753cca",
+                  "updated_at": "2026-03-05T10:38:06+07:00",
+                  "user_create": "21170",
+                  "user_update": "21170"
+                }
+              ],
+              "page": 1,
+              "page_size": 10,
+              "total_items": 15
+            }
+          }

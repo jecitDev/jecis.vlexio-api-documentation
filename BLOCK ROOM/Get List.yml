@@ -1,0 +1,40 @@
+info:
+  name: Get List
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/room-blocks?business_unit_id=53aad077-9fb1-4f08-85f3-af9fd9a36517&page=1&page_size=10"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: query
+    - name: room_id
+      value: A1-202
+      type: query
+      disabled: true
+    - name: period
+      value: 2025-07-9
+      type: query
+      disabled: true
+    - name: page
+      value: "1"
+      type: query
+    - name: page_size
+      value: "10"
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

@@ -1,0 +1,96 @@
+info:
+  name: Get By Business Unit Id
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/bankaccount/002"
+  headers:
+    - name: x-token
+      value: "{{master_xtoken}}"
+  body:
+    type: json
+    data: ""
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/bankaccount/002"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{master_xtoken}}"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Wed, 09 Apr 2025 03:24:37 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "412"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "page": 1,
+                  "pageSize": 10,
+                  "total_items": 1,
+                  "bankAccounts": [
+                      {
+                          "rek_id": "0001",
+                          "no_rek": "1234567890",
+                          "atas_nama_bank": "John Doe",
+                          "bank_id": 1,
+                          "bank_name": "Bank ABC",
+                          "chart_of_account_id": 2001,
+                          "subledger_id": 3001,
+                          "journal_code": "JRNL001",
+                          "currency_code": "EMC",
+                          "is_pajak": true,
+                          "is_real_bank": true,
+                          "healthcare_id": "002",
+                          "is_active": true,
+                          "user_create": "admin",
+                          "created_at": "2025-04-07T10:30:00+07:00"
+                      }
+                  ]
+              }
+          }

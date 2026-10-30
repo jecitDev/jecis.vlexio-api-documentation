@@ -1,0 +1,228 @@
+info:
+  name: Queue Final Bill
+  type: http
+  seq: 13
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/admedika/queues/:id/final-bill"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-Branch-ID
+      value: "{{xbranchid}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  params:
+    - name: id
+      value: a9de1d85-9349-44c0-9cc1-069952c8abb6
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \  \"terminal_id\": \"12372351\",\r
+
+      \  \"card_no\": \"8000991200072687\",\r
+
+      \  \"provider_trans_id\": \"TRX0001\",\r
+
+      \  \"cl_id\": \"28651074\",\r
+
+      \  \"final_flag\": \"N\",\r
+
+      \  \"invoice_no\": \"INV0001\",\r
+
+      \  \"invoice_date\": \"13082026\",\r
+
+      \  \"date_admission\": \"10082026\",\r
+
+      \  \"date_discharge\": \"13082026\",\r
+
+      \  \"prepared_by\": \"AD2294\",\r
+
+      \  \"item_groups\": [\r
+
+      \    {\r
+
+      \      \"group_code\": \"ROOM\",\r
+
+      \      \"group_name\": \"Room Charges\",\r
+
+      \      \"item_list\": [\r
+
+      \        {\r
+
+      \          \"code\": \"RM01\",\r
+
+      \          \"name\": \"VIP Room\",\r
+
+      \          \"issue_date\": \"10082026\",\r
+
+      \          \"quantity\": \"3\",\r
+
+      \          \"total_price\": \"3000000\",\r
+
+      \          \"benefit_id\": \"1\",\r
+
+      \          \"remarks\": \"\"\r
+
+      \        }\r
+
+      \      ]\r
+
+      \    }\r
+
+      \  ],\r
+
+      \  \"remarks\": \"\",\r
+
+      \  \"business_unit_id\": \"33b109c5-dd64-480c-8100-68fe17deaf3e\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Queue Final Bill
+    request:
+      url: "{{BASE_URL}}/v1/admedika/queues/:id/final-bill"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-Branch-ID
+          value: "{{xbranchid}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      params:
+        - name: id
+          value: a9de1d85-9349-44c0-9cc1-069952c8abb6
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \  \"terminal_id\": \"12372351\",\r
+
+          \  \"card_no\": \"8000991200072687\",\r
+
+          \  \"provider_trans_id\": \"TRX0001\",\r
+
+          \  \"cl_id\": \"28651074\",\r
+
+          \  \"final_flag\": \"N\",\r
+
+          \  \"invoice_no\": \"INV0001\",\r
+
+          \  \"invoice_date\": \"13082026\",\r
+
+          \  \"date_admission\": \"10082026\",\r
+
+          \  \"date_discharge\": \"13082026\",\r
+
+          \  \"prepared_by\": \"AD2294\",\r
+
+          \  \"item_groups\": [\r
+
+          \    {\r
+
+          \      \"group_code\": \"ROOM\",\r
+
+          \      \"group_name\": \"Room Charges\",\r
+
+          \      \"item_list\": [\r
+
+          \        {\r
+
+          \          \"code\": \"RM01\",\r
+
+          \          \"name\": \"VIP Room\",\r
+
+          \          \"issue_date\": \"10082026\",\r
+
+          \          \"quantity\": \"3\",\r
+
+          \          \"total_price\": \"3000000\",\r
+
+          \          \"benefit_id\": \"1\",\r
+
+          \          \"remarks\": \"\"\r
+
+          \        }\r
+
+          \      ]\r
+
+          \    }\r
+
+          \  ],\r
+
+          \  \"remarks\": \"\",\r
+
+          \  \"business_unit_id\": \"33b109c5-dd64-480c-8100-68fe17deaf3e\"\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 27 Oct 2026 12:40:07 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "392"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+            "code": 200,
+            "data": {
+              "output": {
+                "reference_id": "924536",
+                "status_code": "910",
+                "status_msg": "error on txnData ",
+                "txn_data": {
+                  "finalBillResponse": {
+                    "finalBill": {
+                      "cardNo": "8000991200072687",
+                      "clDesc": "VALID CLAIM",
+                      "clStatus": "40",
+                      "errorCode": "1840",
+                      "errorDesc": "The claims was already closed! [cl:28651074] [40 VALID CLAIM] ",
+                      "patientName": "ADM TEST LIMA"
+                    }
+                  }
+                },
+                "txn_response_datetime": "20261027194009"
+              }
+            }
+          }

@@ -1,0 +1,199 @@
+info:
+  name: GET LIST
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/company?page=1&page_size=10&sort_by=company_name&sort_order=ASC&email=nsd@mail.com"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: page_size
+      value: "10"
+      type: query
+    - name: sort_by
+      value: company_name
+      type: query
+    - name: sort_order
+      value: ASC
+      type: query
+    - name: keywords
+      value: untung
+      type: query
+      disabled: true
+    - name: company_name
+      value: ""
+      type: query
+      disabled: true
+    - name: email
+      value: nsd@mail.com
+      type: query
+    - name: phone_no
+      value: ""
+      type: query
+      disabled: true
+    - name: pic
+      value: ""
+      type: query
+      disabled: true
+    - name: is_active
+      value: "true"
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: GET LIST
+    request:
+      url: "{{BASE_URL}}/v1/company?page=1&page_size=10&sort_by=company_name&sort_order=ASC"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: page_size
+          value: "10"
+          type: query
+        - name: sort_by
+          value: company_name
+          type: query
+        - name: sort_order
+          value: ASC
+          type: query
+        - name: keywords
+          value: untung
+          type: query
+          disabled: true
+        - name: company_name
+          value: ""
+          type: query
+          disabled: true
+        - name: email
+          value: nsd@mail.com
+          type: query
+          disabled: true
+        - name: phone_no
+          value: ""
+          type: query
+          disabled: true
+        - name: pic
+          value: ""
+          type: query
+          disabled: true
+        - name: is_active
+          value: "true"
+          type: query
+          disabled: true
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Server
+          value: nginx/1.22.0 (Ubuntu)
+        - name: Date
+          value: Tue, 04 Jun 2024 04:28:28 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "951"
+        - name: Connection
+          value: keep-alive
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "items": [
+                      {
+                          "address_line": "Jl. Terusan Arjuna Utara No.1",
+                          "company_id": 3,
+                          "company_name": "PT. JECMI",
+                          "created_at": "2024-04-29T10:00:00+07:00",
+                          "email": "jecmi@mail.com",
+                          "is_active": true,
+                          "phone_no": "02109310293013",
+                          "pic": "Untung Supri",
+                          "product_ids": [
+                              {
+                                  "product_id": "ee197431-276d-453d-857c-412f347dae19"
+                              },
+                              {
+                                  "product_id": "c59a1873-7e7d-44b6-a06c-4f093f59f687"
+                              }
+                          ],
+                          "updated_at": "2024-04-29T10:00:00+07:00",
+                          "user_create": "nando",
+                          "user_update": "nando"
+                      },
+                      {
+                          "address_line": "Jl. Terusan Arjuna Utara No.1",
+                          "company_id": 1,
+                          "company_name": "PT. Nitra Sanatadharma",
+                          "created_at": "2024-04-29T10:00:00+07:00",
+                          "email": "nsd@mail.com",
+                          "is_active": true,
+                          "phone_no": "02109310293019",
+                          "pic": "Untung Supriyanto",
+                          "product_ids": [
+                              {
+                                  "product_id": "ee197431-276d-453d-857c-412f347dae19"
+                              },
+                              {
+                                  "product_id": "c59a1873-7e7d-44b6-a06c-4f093f59f687"
+                              }
+                          ],
+                          "updated_at": "2024-04-29T10:00:00+07:00",
+                          "user_create": "nando",
+                          "user_update": "nando"
+                      }
+                  ],
+                  "page": 1,
+                  "page_size": 10,
+                  "total_items": 2
+              }
+          }

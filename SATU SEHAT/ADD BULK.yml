@@ -1,0 +1,1190 @@
+info:
+  name: ADD BULK
+  type: http
+  seq: 8
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/satu-sehat/bulking"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: x-trace-id
+      value: /v1/satu-sehat/encounter/add-bulk||20240326110800
+  body:
+    type: json
+    data: "{\r
+
+      \    \"encounter\": {\r
+
+      \        \"HistoryArrived\": {\r
+
+      \            \"Start\": {\r
+
+      \                \"Nanos\": 0,\r
+
+      \                \"Seconds\": 1772505094\r
+
+      \            },\r
+
+      \            \"End\": {\r
+
+      \                \"Nanos\": 0,\r
+
+      \                \"Seconds\": 1772505094\r
+
+      \            }\r
+
+      \        },\r
+
+      \        \"HistoryInprogress\": {\r
+
+      \            \"Start\": {\r
+
+      \                \"Nanos\": 0,\r
+
+      \                \"Seconds\": 1772507505\r
+
+      \            },\r
+
+      \            \"End\": {\r
+
+      \                \"Nanos\": 0,\r
+
+      \                \"Seconds\": 1772508144\r
+
+      \            }\r
+
+      \        },\r
+
+      \        \"HistoryFinish\": {\r
+
+      \            \"Start\": {\r
+
+      \                \"Nanos\": 0,\r
+
+      \                \"Seconds\": 1772508780\r
+
+      \            },\r
+
+      \            \"End\": {\r
+
+      \                \"Nanos\": 0,\r
+
+      \                \"Seconds\": 1772508780\r
+
+      \            }\r
+
+      \        },\r
+
+      \        \"Period\": {\r
+
+      \            \"Start\": {\r
+
+      \                \"Nanos\": 0,\r
+
+      \                \"Seconds\": 1772505094\r
+
+      \            },\r
+
+      \            \"End\": {\r
+
+      \                \"Nanos\": 0,\r
+
+      \                \"Seconds\": 1772508780\r
+
+      \            }\r
+
+      \        }\r
+
+      \    },\r
+
+      \    \"registrationNo\": \"REG/OP/260303-0079\",\r
+
+      \    \"encounterId\": \"1e84f2b7-562e-4e3f-b404-76edc6133acf\",\r
+
+      \    \"patientId\": \"P01086852074\",\r
+
+      \    \"healthcareId\": \"002\",\r
+
+      \    \"locationId\": \"A1-302\",\r
+
+      \    \"paramedicNIK\": \"3173074904830004\",\r
+
+      \    \"patientName\": \"VERA  MARLINATA WIDJAYA\",\r
+
+      \    \"patientNIK\": \"3173075105690004\",\r
+
+      \    \"medicalNo\": \"002-042-21-14\",\r
+
+      \    \"category\": \"outpatient\",\r
+
+      \    \"vitalSign\": {\r
+
+      \        \"diastolic\": 84.0,\r
+
+      \        \"effective_date\": \"2026-03-03T09:42:13+07:00\",\r
+
+      \        \"heart_rate\": 84.0,\r
+
+      \        \"height\": 166.0,\r
+
+      \        \"issued_date\": \"2026-03-03T09:42:13+07:00\",\r
+
+      \        \"practitioner_nik\": \"1218036710980001\",\r
+
+      \        \"respiration\": 18.0,\r
+
+      \        \"systolic\": 139.0,\r
+
+      \        \"temperature\": 36.5,\r
+
+      \        \"weight\": 60.0,\r
+
+      \        \"transaction_id\": \"3\",\r
+
+      \        \"diastolic_id\": \"ac17a1bb-e75e-4415-a49d-314ca540ed16\",\r
+
+      \        \"heart_rate_id\": \"40786100-5fe3-4b9a-8e35-9b8efcfd4273\",\r
+
+      \        \"height_id\": \"40582e55-a588-406f-8739-0f1e45c9eb5b\",\r
+
+      \        \"systolic_id\": \"c773981d-d3b6-49ac-894d-2feb4827be89\",\r
+
+      \        \"temperature_id\": \"984ab54a-b04f-4775-b8a1-37c9e6f7d353\",\r
+
+      \        \"weight_id\": \"2095deee-d11f-48c9-9241-cd2602522d34\",\r
+
+      \        \"respiration_id\": \"3f4f5ea4-09d1-47a1-b3e3-987dad3aff64\"\r
+
+      \    },\r
+
+      \    \"allergy\": [],\r
+
+      \    \"chiefComplain\": [\r
+
+      \        {\r
+
+      \            \"abbrev_code\": \"CHECK\",\r
+
+      \            \"area_id\": \"CC\",\r
+
+      \            \"note\": \"floaters OS satu minggu Riw DM (-) HT (+)&nbsp;\",\r
+
+      \            \"onset_datetime\": \"2026-03-03T10:19:13+07:00\",\r
+
+      \            \"recorded_datetime\": \"2026-03-03T10:19:13+07:00\",\r
+
+      \            \"transaction_id\": \"1\",\r
+
+      \            \"id\": \"f9bc6785-cec9-4beb-9404-9b0a38f0879f\"\r
+
+      \        },\r
+
+      \        {\r
+
+      \            \"abbrev_code\": \"MED-02\",\r
+
+      \            \"area_id\": \"ARP\",\r
+
+      \            \"note\": \"\",\r
+
+      \            \"onset_datetime\": \"2026-03-03T09:42:13+07:00\",\r
+
+      \            \"recorded_datetime\": \"2026-03-03T09:42:13+07:00\",\r
+
+      \            \"transaction_id\": \"31rp\",\r
+
+      \            \"id\": \"15fb7b69-fe46-40a2-8b46-924f7a012046\"\r
+
+      \        }\r
+
+      \    ],\r
+
+      \    \"diagnosis\": [\r
+
+      \        {\r
+
+      \            \"code\": \"H04.1\",\r
+
+      \            \"code_desc\": \"DISORDERS OF LACRIMAL SYSTEM: Other disorders of lacrimal gland\",\r
+
+      \            \"note\": \"\",\r
+
+      \            \"onset_datetime\": \"2026-03-03T09:31:34+07:00\",\r
+
+      \            \"recorded_datetime\": \"2026-03-03T09:31:34+07:00\",\r
+
+      \            \"transaction_id\": \"3\",\r
+
+      \            \"id\": \"0b99b5fd-26a6-42a0-8967-d06b3f10dd9e\"\r
+
+      \        },\r
+
+      \        {\r
+
+      \            \"code\": \"H52.4\",\r
+
+      \            \"code_desc\": \"DISORDERS OF REFRACTION AND ACCOMMODATION: Presbyopia\",\r
+
+      \            \"note\": \"\",\r
+
+      \            \"onset_datetime\": \"2026-03-03T09:31:34+07:00\",\r
+
+      \            \"recorded_datetime\": \"2026-03-03T09:31:34+07:00\",\r
+
+      \            \"transaction_id\": \"2\",\r
+
+      \            \"id\": \"fc57641f-c2c8-40a7-8be4-c1b099dfb33b\"\r
+
+      \        },\r
+
+      \        {\r
+
+      \            \"code\": \"H11.0\",\r
+
+      \            \"code_desc\": \"OTHER DISORDERS OF CONJUNCTIVA: Pterygium\",\r
+
+      \            \"note\": \"\",\r
+
+      \            \"onset_datetime\": \"2026-03-03T09:31:34+07:00\",\r
+
+      \            \"recorded_datetime\": \"2026-03-03T09:31:34+07:00\",\r
+
+      \            \"transaction_id\": \"1\",\r
+
+      \            \"id\": \"10b1a9c7-1368-443b-a67d-d69a50fcccde\"\r
+
+      \        }\r
+
+      \    ],\r
+
+      \    \"iop\": [\r
+
+      \        {\r
+
+      \            \"effective_date\": \"2026-03-03T10:05:27+07:00\",\r
+
+      \            \"issued_date\": \"2026-03-03T10:05:27+07:00\",\r
+
+      \            \"od\": 10.0,\r
+
+      \            \"os\": 13.3,\r
+
+      \            \"practitioner_nik\": \"3279040505990001\",\r
+
+      \            \"transaction_id\": \"1\",\r
+
+      \            \"od_iop_id\": \"d5ef6cc1-70f0-411d-89b2-98de9287ed34\",\r
+
+      \            \"os_iop_id\": \"3a36e2cd-7341-4d96-aa65-6f958e2adeb5\"\r
+
+      \        }\r
+
+      \    ],\r
+
+      \    \"resepKacamata\": [\r
+
+      \        {\r
+
+      \            \"date_created\": \"2026-03-03T10:20:01+07:00\",\r
+
+      \            \"date_written\": \"2026-03-03T10:20:01+07:00\",\r
+
+      \            \"od_axis\": \"135\",\r
+
+      \            \"od_cylinder\": \"-0.5\",\r
+
+      \            \"od_sphere\": \"2\",\r
+
+      \            \"os_axis\": \"95\",\r
+
+      \            \"os_cylinder\": \"-0.5\",\r
+
+      \            \"os_sphere\": \"2\",\r
+
+      \            \"prescriber_nik\": \"3173074904830004\",\r
+
+      \            \"transaction_id\": \"1\",\r
+
+      \            \"id\": \"abfb13dc-5b48-4766-9f6e-e2471f64a527\"\r
+
+      \        }\r
+
+      \    ],\r
+
+      \    \"visus\": [\r
+
+      \        {\r
+
+      \            \"effective_date\": \"2026-03-03T10:06:29+07:00\",\r
+
+      \            \"issued_date\": \"2026-03-03T10:06:29+07:00\",\r
+
+      \            \"od\": {\r
+
+      \                \"denominator\": 1.0,\r
+
+      \                \"numerator\": 0.3\r
+
+      \            },\r
+
+      \            \"os\": {\r
+
+      \                \"denominator\": 1.0,\r
+
+      \                \"numerator\": 0.3\r
+
+      \            },\r
+
+      \            \"practitioner_nik\": \"3279040505990001\",\r
+
+      \            \"transaction_id\": \"1\",\r
+
+      \            \"od_visus_id\": \"9e2b82eb-14ec-4b6f-9101-99631a0767c8\",\r
+
+      \            \"os_visus_id\": \"221685ba-e7de-457b-a083-d439233bd4ea\"\r
+
+      \        }\r
+
+      \    ],\r
+
+      \    \"rencanaTindakLanjut\": [],\r
+
+      \    \"faktorRisiko\": [\r
+
+      \        {\r
+
+      \            \"abbrev_code\": \"HYPER\",\r
+
+      \            \"area_id\": \"AFR\",\r
+
+      \            \"effective_date\": \"2026-03-03T10:33:55+07:00\",\r
+
+      \            \"issued_date\": \"2026-03-03T10:33:55+07:00\",\r
+
+      \            \"practitioner_nik\": null,\r
+
+      \            \"transaction_id\": \"1\",\r
+
+      \            \"id\": null\r
+
+      \        }\r
+
+      \    ],\r
+
+      \    \"tingkatKesadaran\": [\r
+
+      \        {\r
+
+      \            \"abbrev_code\": \"CM\",\r
+
+      \            \"area_id\": \"ATK\",\r
+
+      \            \"effective_date\": \"2026-03-03T09:42:13+07:00\",\r
+
+      \            \"issued_date\": \"2026-03-03T09:42:13+07:00\",\r
+
+      \            \"practitioner_nik\": \"1218036710980001\",\r
+
+      \            \"transaction_id\": \"31\",\r
+
+      \            \"id\": \"1d5dab26-ee56-4fdb-8022-dd5d63cf0436\"\r
+
+      \        }\r
+
+      \    ],\r
+
+      \    \"statusPsikologis\": [\r
+
+      \        {\r
+
+      \            \"abbrev_code\": \"Tenang\",\r
+
+      \            \"area_id\": \"ASP\",\r
+
+      \            \"effective_date\": \"2026-03-03T09:42:13+07:00\",\r
+
+      \            \"issued_date\": \"2026-03-03T09:42:13+07:00\",\r
+
+      \            \"practitioner_nik\": \"1218036710980001\",\r
+
+      \            \"transaction_id\": \"3\",\r
+
+      \            \"id\": \"ad807dae-1240-461c-8ce7-799d98a7a6c0\"\r
+
+      \        }\r
+
+      \    ],\r
+
+      \    \"medicationRequest\": [\r
+
+      \        {\r
+
+      \            \"comment\": \"\",\r
+
+      \            \"freq\": \"Q3H\",\r
+
+      \            \"is_compound\": false,\r
+
+      \            \"iter\": \"6\",\r
+
+      \            \"medication_id\": \"MD-002691\",\r
+
+      \            \"medication_name\": \"HYALUB PLURIDOSE\",\r
+
+      \            \"presc_id\": \"REG/KDY/260303-0086\",\r
+
+      \            \"presc_item_id\": \"REG/KDY/260303-0086-1\",\r
+
+      \            \"quantity\": \"1\",\r
+
+      \            \"route\": \"EYEBO\",\r
+
+      \            \"form\": \"EYD\",\r
+
+      \            \"authorded_on\": \"2026-03-03T10:19:13+07:00\",\r
+
+      \            \"transaction_id\": \"1\",\r
+
+      \            \"id\": \"5a598024-4d25-489d-96e5-f03be684587c\"\r
+
+      \        },\r
+
+      \        {\r
+
+      \            \"comment\": \"\",\r
+
+      \            \"freq\": \"QID\",\r
+
+      \            \"is_compound\": false,\r
+
+      \            \"iter\": \"6\",\r
+
+      \            \"medication_id\": \"MD-000410\",\r
+
+      \            \"medication_name\": \"VITROLENTA 5 ML\",\r
+
+      \            \"presc_id\": \"REG/KDY/260303-0086\",\r
+
+      \            \"presc_item_id\": \"REG/KDY/260303-0086-2\",\r
+
+      \            \"quantity\": \"1\",\r
+
+      \            \"route\": \"EYELE\",\r
+
+      \            \"form\": \"EYD\",\r
+
+      \            \"authorded_on\": \"2026-03-03T10:19:13+07:00\",\r
+
+      \            \"transaction_id\": \"2\",\r
+
+      \            \"id\": \"bd5cb737-df4b-49e8-8feb-663a76755ee6\"\r
+
+      \        }\r
+
+      \    ],\r
+
+      \    \"medicationDispense\": [\r
+
+      \        {\r
+
+      \            \"comment\": \"\",\r
+
+      \            \"freq\": \"Q3H\",\r
+
+      \            \"is_compound\": false,\r
+
+      \            \"iter\": \"6\",\r
+
+      \            \"medication_id\": \"MD-002691\",\r
+
+      \            \"medication_name\": \"HYALUB PLURIDOSE\",\r
+
+      \            \"presc_id\": \"REG/KDY/260303-0086\",\r
+
+      \            \"presc_item_id\": \"REG/KDY/260303-0086-1\",\r
+
+      \            \"quantity\": \"1.00\",\r
+
+      \            \"route\": \"EYEBO\",\r
+
+      \            \"form\": \"EYD\",\r
+
+      \            \"batch_number\": \"\",\r
+
+      \            \"expired_date\": \"1900-01-01T00:00:00+07:00\",\r
+
+      \            \"when_prepared\": \"2026-03-03T00:00:00+07:00\",\r
+
+      \            \"when_handed_over\": \"2026-03-03T00:00:00+07:00\",\r
+
+      \            \"transaction_id\": \"1\",\r
+
+      \            \"id\": \"8b13c06d-225b-4ef5-aa71-c100aeeb2bb6\"\r
+
+      \        },\r
+
+      \        {\r
+
+      \            \"comment\": \"\",\r
+
+      \            \"freq\": \"QID\",\r
+
+      \            \"is_compound\": false,\r
+
+      \            \"iter\": \"6\",\r
+
+      \            \"medication_id\": \"MD-000410\",\r
+
+      \            \"medication_name\": \"VITROLENTA 5 ML\",\r
+
+      \            \"presc_id\": \"REG/KDY/260303-0086\",\r
+
+      \            \"presc_item_id\": \"REG/KDY/260303-0086-2\",\r
+
+      \            \"quantity\": \"1.00\",\r
+
+      \            \"route\": \"EYELE\",\r
+
+      \            \"form\": \"EYD\",\r
+
+      \            \"batch_number\": \"\",\r
+
+      \            \"expired_date\": \"1900-01-01T00:00:00+07:00\",\r
+
+      \            \"when_prepared\": \"2026-03-03T00:00:00+07:00\",\r
+
+      \            \"when_handed_over\": \"2026-03-03T00:00:00+07:00\",\r
+
+      \            \"transaction_id\": \"2\",\r
+
+      \            \"id\": \"22a37603-58bf-4b79-8784-0a406d6f27dc\"\r
+
+      \        }\r
+
+      \    ],\r
+
+      \    \"procedure\": [],\r
+
+      \    \"edukasi\": {\r
+
+      \        \"code_desc\": \"Eye care education\",\r
+
+      \        \"code_id\": \"385906007\",\r
+
+      \        \"code_system\": \"http://snomed.info/sct\",\r
+
+      \        \"performed_end\": \"2026-03-03T10:33:00+07:00\",\r
+
+      \        \"performed_start\": \"2026-03-03T09:31:34+07:00\",\r
+
+      \        \"transaction_id\": \"1\",\r
+
+      \        \"id\": \"9bae110f-78d9-49da-a17a-bb2facf03ab2\"\r
+
+      \    },\r
+
+      \    \"documentComposition\": {\r
+
+      \        \"document_composition_id\": \"f4506c75-f235-4fb0-bc97-e27955ed2312\"\r
+
+      \    },\r
+
+      \    \"laboratorium\": [],\r
+
+      \    \"medicationStatement\": [\r
+
+      \        {\r
+
+      \            \"date_asserted\": \"2026-03-03T09:42:13+07:00\",\r
+
+      \            \"id\": null,\r
+
+      \            \"medication_id\": \"93005622\",\r
+
+      \            \"medication_name\": \"Nebivolol Hydrochloride 5 mg Tablet (NEBILET)\",\r
+
+      \            \"transaction_id\": \"31\"\r
+
+      \        }\r
+
+      \    ],\r
+
+      \    \"questionaryPrescription\": [],\r
+
+      \    \"prognosis\": {}\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: ADD BULK
+    request:
+      url: "{{BASE_URL}}/v1/satu-sehat/encounter/add-bulk"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: x-trace-id
+          value: /v1/satu-sehat/encounter/add-bulk||20240326110800
+      body:
+        type: json
+        data: "{\r
+
+          \    \"encounter\": {\r
+
+          \        \"HistoryArrived\": {\r
+
+          \            \"Start\": {\r
+
+          \                \"Nanos\": 0,\r
+
+          \                \"Seconds\": 1739263876\r
+
+          \            },\r
+
+          \            \"End\": {\r
+
+          \                \"Nanos\": 0,\r
+
+          \                \"Seconds\": 1739263876\r
+
+          \            }\r
+
+          \        },\r
+
+          \        \"HistoryInprogress\": {\r
+
+          \            \"Start\": {\r
+
+          \                \"Nanos\": 0,\r
+
+          \                \"Seconds\": 1739264860\r
+
+          \            },\r
+
+          \            \"End\": {\r
+
+          \                \"Nanos\": 0,\r
+
+          \                \"Seconds\": 1739264927\r
+
+          \            }\r
+
+          \        },\r
+
+          \        \"HistoryFinish\": {\r
+
+          \            \"Start\": {\r
+
+          \                \"Nanos\": 0,\r
+
+          \                \"Seconds\": 1739265120\r
+
+          \            },\r
+
+          \            \"End\": {\r
+
+          \                \"Nanos\": 0,\r
+
+          \                \"Seconds\": 1739265120\r
+
+          \            }\r
+
+          \        },\r
+
+          \        \"Period\": {\r
+
+          \            \"Start\": {\r
+
+          \                \"Nanos\": 0,\r
+
+          \                \"Seconds\": 1739263876\r
+
+          \            },\r
+
+          \            \"End\": {\r
+
+          \                \"Nanos\": 0,\r
+
+          \                \"Seconds\": 1739265120\r
+
+          \            }\r
+
+          \        }\r
+
+          \    },\r
+
+          \    \"registrationNo\": \"REG/OP/250211-0002\",\r
+
+          \    \"encounterId\": \"ca7c6dd0-30c5-47fb-81a4-886bf290a06f\",\r
+
+          \    \"patientId\": \"P03647103112\",\r
+
+          \    \"healthcareId\": \"002\",\r
+
+          \    \"locationId\": \"A1-204\",\r
+
+          \    \"paramedicNIK\": \"6408130207800005\",\r
+
+          \    \"patientName\": \"Claudia  Sintia\",\r
+
+          \    \"patientNIK\": \"9204014804000002\",\r
+
+          \    \"medicalNo\": \"020-91-26\",\r
+
+          \    \"category\": \"outpatient\",\r
+
+          \    \"vitalSign\": {\r
+
+          \        \"diastolic\": 80.0,\r
+
+          \        \"effective_date\": \"2025-02-11T16:04:25+07:00\",\r
+
+          \        \"heart_rate\": 60.0,\r
+
+          \        \"height\": 170.0,\r
+
+          \        \"issued_date\": \"2025-02-11T16:04:25+07:00\",\r
+
+          \        \"practitioner_nik\": \"3313096403900009\",\r
+
+          \        \"respiration\": 50.0,\r
+
+          \        \"systolic\": 120.0,\r
+
+          \        \"temperature\": 36.0,\r
+
+          \        \"weight\": 60.0,\r
+
+          \        \"transaction_id\": \"3\",\r
+
+          \        \"diastolic_id\": \"1bb76f6e-afd0-4ab3-8076-06f6436be0fc\",\r
+
+          \        \"heart_rate_id\": \"ae15201b-9523-42fa-8795-2fddaf8a3e5c\",\r
+
+          \        \"height_id\": \"b8828760-517d-401f-bd9f-be932f62432c\",\r
+
+          \        \"systolic_id\": \"d6971ed4-29db-4922-bcff-9a5d5b17ab35\",\r
+
+          \        \"temperature_id\": \"c6f651da-dfd2-4be6-a7fb-edc4bbe98ca7\",\r
+
+          \        \"weight_id\": \"7a084aed-da7b-4f5a-9cd2-3d97d8079aa0\",\r
+
+          \        \"respiration_id\": \"599f4a6f-0b9a-4641-9725-e0d7c1f65d16\"\r
+
+          \    },\r
+
+          \    \"allergy\": [\r
+
+          \        {\r
+
+          \            \"abbrev_code\": \"\",\r
+
+          \            \"area_id\": \"AL\",\r
+
+          \            \"category\": \"environment\",\r
+
+          \            \"note\": null,\r
+
+          \            \"recorded_datetime\": \"2025-02-11T16:04:25+07:00\",\r
+
+          \            \"practitioner_nik\": \"3313096403900009\",\r
+
+          \            \"transaction_id\": \"31\",\r
+
+          \            \"id\": null\r
+
+          \        },\r
+
+          \        {\r
+
+          \            \"abbrev_code\": \"\",\r
+
+          \            \"area_id\": \"AL\",\r
+
+          \            \"category\": \"medication\",\r
+
+          \            \"note\": null,\r
+
+          \            \"recorded_datetime\": \"2025-02-11T16:04:25+07:00\",\r
+
+          \            \"practitioner_nik\": \"3313096403900009\",\r
+
+          \            \"transaction_id\": \"31m\",\r
+
+          \            \"id\": null\r
+
+          \        }\r
+
+          \    ],\r
+
+          \    \"chiefComplain\": [\r
+
+          \        {\r
+
+          \            \"abbrev_code\": \"CHECK\",\r
+
+          \            \"area_id\": \"CC\",\r
+
+          \            \"note\": \"\",\r
+
+          \            \"onset_datetime\": \"2025-02-11T16:08:40+07:00\",\r
+
+          \            \"recorded_datetime\": \"2025-02-11T16:08:40+07:00\",\r
+
+          \            \"transaction_id\": \"1\",\r
+
+          \            \"id\": \"3943d5e2-4a9d-41b8-a49d-a3371283bf42\"\r
+
+          \        },\r
+
+          \        {\r
+
+          \            \"abbrev_code\": \"\",\r
+
+          \            \"area_id\": \"ARP\",\r
+
+          \            \"note\": \"\",\r
+
+          \            \"onset_datetime\": \"2025-02-11T16:04:25+07:00\",\r
+
+          \            \"recorded_datetime\": \"2025-02-11T16:04:25+07:00\",\r
+
+          \            \"transaction_id\": \"31rp\",\r
+
+          \            \"id\": null\r
+
+          \        }\r
+
+          \    ],\r
+
+          \    \"diagnosis\": [\r
+
+          \        {\r
+
+          \            \"code\": \"H25.2\",\r
+
+          \            \"code_desc\": \"SENILE CATARACT: Senile cataract, morgagnian type\",\r
+
+          \            \"note\": \"\",\r
+
+          \            \"onset_datetime\": \"2025-02-11T16:10:13+07:00\",\r
+
+          \            \"recorded_datetime\": \"2025-02-11T16:10:13+07:00\",\r
+
+          \            \"transaction_id\": \"1\",\r
+
+          \            \"id\": \"0c234735-4a62-4142-aab0-55cd340e14e7\"\r
+
+          \        }\r
+
+          \    ],\r
+
+          \    \"iop\": [\r
+
+          \        {\r
+
+          \            \"effective_date\": \"2025-02-11T16:06:35+07:00\",\r
+
+          \            \"issued_date\": \"2025-02-11T16:06:35+07:00\",\r
+
+          \            \"od\": 15.0,\r
+
+          \            \"os\": 14.0,\r
+
+          \            \"practitioner_nik\": \"6408130207800005\",\r
+
+          \            \"transaction_id\": \"1\",\r
+
+          \            \"od_iop_id\": \"9286cd05-45ab-4032-ad6f-f81d6e1457c4\",\r
+
+          \            \"os_iop_id\": \"9180fa98-8944-43d3-aabe-39b8019aaea8\"\r
+
+          \        }\r
+
+          \    ],\r
+
+          \    \"resepKacamata\": [\r
+
+          \        {\r
+
+          \            \"date_created\": \"2025-02-11T16:08:40+07:00\",\r
+
+          \            \"date_written\": \"2025-02-11T16:08:40+07:00\",\r
+
+          \            \"od_axis\": \"85\",\r
+
+          \            \"od_cylinder\": \"-1\",\r
+
+          \            \"od_sphere\": \"3\",\r
+
+          \            \"os_axis\": \"85\",\r
+
+          \            \"os_cylinder\": \"-1\",\r
+
+          \            \"os_sphere\": \"3\",\r
+
+          \            \"prescriber_nik\": \"6408130207800005\",\r
+
+          \            \"transaction_id\": \"1\",\r
+
+          \            \"id\": \"18e13169-1301-40a7-8c9b-abfe49b0f021\"\r
+
+          \        }\r
+
+          \    ],\r
+
+          \    \"visus\": [\r
+
+          \        {\r
+
+          \            \"effective_date\": \"2025-02-11T16:06:35+07:00\",\r
+
+          \            \"issued_date\": \"2025-02-11T16:06:35+07:00\",\r
+
+          \            \"od\": {\r
+
+          \                \"denominator\": 1.0,\r
+
+          \                \"numerator\": 15.0\r
+
+          \            },\r
+
+          \            \"os\": {\r
+
+          \                \"denominator\": 1.0,\r
+
+          \                \"numerator\": 14.0\r
+
+          \            },\r
+
+          \            \"practitioner_nik\": \"6408130207800005\",\r
+
+          \            \"transaction_id\": \"1\",\r
+
+          \            \"od_visus_id\": \"4eb2cedb-db56-44c7-8a04-c64cb5485aff\",\r
+
+          \            \"os_visus_id\": \"2e84a4c7-85e8-4682-a2c8-23ae963e3bb6\"\r
+
+          \        }\r
+
+          \    ],\r
+
+          \    \"rencanaTindakLanjut\": [],\r
+
+          \    \"faktorRisiko\": [\r
+
+          \        {\r
+
+          \            \"abbrev_code\": \"DM\",\r
+
+          \            \"area_id\": \"AFR\",\r
+
+          \            \"effective_date\": \"2025-04-03T08:56:54+07:00\",\r
+
+          \            \"issued_date\": \"2025-04-03T08:56:54+07:00\",\r
+
+          \            \"practitioner_nik\": \"\",\r
+
+          \            \"transaction_id\": \"1\",\r
+
+          \            \"id\": null\r
+
+          \        }\r
+
+          \    ],\r
+
+          \    \"tingkatKesadaran\": [\r
+
+          \        {\r
+
+          \            \"abbrev_code\": \"CM\",\r
+
+          \            \"area_id\": \"ATK\",\r
+
+          \            \"effective_date\": \"2025-02-11T16:04:25+07:00\",\r
+
+          \            \"issued_date\": \"2025-02-11T16:04:25+07:00\",\r
+
+          \            \"practitioner_nik\": \"3313096403900009\",\r
+
+          \            \"transaction_id\": \"31\",\r
+
+          \            \"id\": \"ab815e4c-5800-4f3e-a93b-1bb624abbb13\"\r
+
+          \        }\r
+
+          \    ],\r
+
+          \    \"statusPsikologis\": [\r
+
+          \        {\r
+
+          \            \"abbrev_code\": \"Tenang\",\r
+
+          \            \"area_id\": \"ASP\",\r
+
+          \            \"effective_date\": \"2025-02-11T16:04:25+07:00\",\r
+
+          \            \"issued_date\": \"2025-02-11T16:04:25+07:00\",\r
+
+          \            \"practitioner_nik\": \"3313096403900009\",\r
+
+          \            \"transaction_id\": \"3\",\r
+
+          \            \"id\": \"90afee49-8436-4238-b038-1990679e610f\"\r
+
+          \        }\r
+
+          \    ],\r
+
+          \    \"medicationRequest\": [\r
+
+          \        {\r
+
+          \            \"comment\": \"\",\r
+
+          \            \"freq\": \"QID\",\r
+
+          \            \"is_compound\": false,\r
+
+          \            \"iter\": \"0\",\r
+
+          \            \"medication_id\": \"MD-000284\",\r
+
+          \            \"medication_name\": \"GIFLOX MD\",\r
+
+          \            \"presc_id\": \"REG/KDY/250211-0002\",\r
+
+          \            \"presc_item_id\": \"REG/KDY/250211-0002-1\",\r
+
+          \            \"quantity\": \"1\",\r
+
+          \            \"route\": \"EYERI\",\r
+
+          \            \"form\": \"EYD\",\r
+
+          \            \"authorded_on\": \"2025-04-03T14:12:24+07:00\",\r
+
+          \            \"transaction_id\": \"1\",\r
+
+          \            \"id\": null\r
+
+          \        }\r
+
+          \    ],\r
+
+          \    \"edukasi\": {\r
+
+          \        \"code_desc\": \"Eye care education\",\r
+
+          \        \"code_id\": \"385906007\",\r
+
+          \        \"code_system\": \"http://snomed.info/sct\",\r
+
+          \        \"performed_end\": \"2025-02-11T16:12:00+07:00\",\r
+
+          \        \"performed_start\": \"2025-02-11T15:51:16+07:00\",\r
+
+          \        \"transaction_id\": \"1\",\r
+
+          \        \"id\": \"0e49f535-0897-4d1e-82a1-3ffc3e7b069f\"\r
+
+          \    },\r
+
+          \    \"documentComposition\": {\r
+
+          \        \"document_composition_id\": \"e61394b8-9e1e-4cde-be2d-da9ccac372ef\"\r
+
+          \    },\r
+
+          \    \"procedure\": [\r
+
+          \        {\r
+
+          \            \"code\": \"95.01\",\r
+
+          \            \"code_desc\": \"Viskas/ Pemeriksaan autoref dengan resep KM\",\r
+
+          \            \"note\": \"Test\",\r
+
+          \            \"ods\": \"ODS\",\r
+
+          \            \"performed_date_time\": \"2025-02-12T06:47:37+07:00\",\r
+
+          \            \"transaction_id\": \"1\"\r
+
+          \        }\r
+
+          \    ]\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Wed, 27 Mar 2024 06:39:48 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "326"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "encounterId": "d95c5f04-24b2-4caa-9d05-a2236a1d8c0c",
+                  "patientId": "P02478375538",
+                  "conditions": [
+                      {
+                          "conditionId": "59ea47ca-337b-413e-b7ea-f481f492d742",
+                          "code": "Z96.1"
+                      },
+                      {
+                          "conditionId": "a18b477f-d0bf-4491-ab06-b65664a47793",
+                          "code": "H40.1"
+                      },
+                      {
+                          "conditionId": "16e834ce-56e2-4b7f-baae-e58b5cab4b9b",
+                          "code": "H25.1"
+                      }
+                  ]
+              }
+          }

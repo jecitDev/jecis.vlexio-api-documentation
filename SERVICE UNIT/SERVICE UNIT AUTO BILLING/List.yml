@@ -1,0 +1,182 @@
+info:
+  name: List
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/service-units/auto-bill-items?page=1&page_size=10&sort_by=created_at&sort_order=desc&business_unit_id=33b109c5-dd64-480c-8100-68fe17deaf3e"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: page_size
+      value: "10"
+      type: query
+    - name: sort_by
+      value: created_at
+      type: query
+    - name: sort_order
+      value: desc
+      type: query
+    - name: business_unit_id
+      value: 33b109c5-dd64-480c-8100-68fe17deaf3e
+      type: query
+    - name: service_unit_id
+      value: ""
+      type: query
+      disabled: true
+    - name: item_id
+      value: ""
+      type: query
+      disabled: true
+    - name: guarantor_id
+      value: ""
+      type: query
+      disabled: true
+    - name: is_active
+      value: ""
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: List
+    request:
+      url: "{{BASE_URL}}/v1/service-units/auto-bill-items?page=1&page_size=10&sort_by=created_at&sort_order=desc&business_unit_id=33b109c5-dd64-480c-8100-68fe17deaf3e"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: page_size
+          value: "10"
+          type: query
+        - name: sort_by
+          value: created_at
+          type: query
+        - name: sort_order
+          value: desc
+          type: query
+        - name: business_unit_id
+          value: 33b109c5-dd64-480c-8100-68fe17deaf3e
+          type: query
+        - name: service_unit_id
+          value: ""
+          type: query
+          disabled: true
+        - name: item_id
+          value: ""
+          type: query
+          disabled: true
+        - name: guarantor_id
+          value: ""
+          type: query
+          disabled: true
+        - name: is_active
+          value: ""
+          type: query
+          disabled: true
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: date
+          value: Wed, 09 Sep 2026 04:39:52 GMT
+        - name: content-type
+          value: application/json
+        - name: content-length
+          value: "1343"
+        - name: x-xss-protection
+          value: "0"
+        - name: x-content-type-options
+          value: nosniff
+        - name: x-frame-options
+          value: SAMEORIGIN
+        - name: cross-origin-embedder-policy
+          value: require-corp
+        - name: cross-origin-opener-policy
+          value: same-origin
+        - name: cross-origin-resource-policy
+          value: same-origin
+        - name: origin-agent-cluster
+          value: ?1
+        - name: referrer-policy
+          value: no-referrer
+        - name: x-dns-prefetch-control
+          value: off
+        - name: x-download-options
+          value: noopen
+        - name: x-permitted-cross-domain-policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+            "code": 200,
+            "data": {
+              "auto_bill_items": [
+                {
+                  "business_unit_id": "33b109c5-dd64-480c-8100-68fe17deaf3e",
+                  "business_unit_name": "PT. Nitrasanata Dharma (JEC Eye Hospitals)",
+                  "created_at": "2026-09-09T11:36:17+07:00",
+                  "guarantor_id": "d4e25bbb-41f1-4178-8062-c2c393149937",
+                  "guarantor_name": "PT. Sehat Selalu",
+                  "is_active": true,
+                  "is_auto_payment": true,
+                  "is_generate_on_new_registration": false,
+                  "is_generate_on_referral": false,
+                  "is_generate_on_registration": true,
+                  "item_id": "ea7eb26c-5411-4919-b9fd-0a86d8a7a048",
+                  "item_name": "FORMULIR REGISTRASI EYE CHECK",
+                  "quantity": 1.5,
+                  "service_unit_id": "SU002",
+                  "service_unit_name": "",
+                  "sr_item_unit": "PCS",
+                  "updated_at": "",
+                  "user_create": "ferdinand",
+                  "user_update": ""
+                },
+                {
+                  "business_unit_id": "33b109c5-dd64-480c-8100-68fe17deaf3e",
+                  "business_unit_name": "PT. Nitrasanata Dharma (JEC Eye Hospitals)",
+                  "created_at": "2026-09-09T11:32:51+07:00",
+                  "guarantor_id": "d4e25bbb-41f1-4178-8062-c2c393149937",
+                  "guarantor_name": "PT. Sehat Selalu",
+                  "is_active": true,
+                  "is_auto_payment": true,
+                  "is_generate_on_referral": false,
+                  "is_generate_on_registration": true,
+                  "item_id": "ea7eb26c-5411-4919-b9fd-0a86d8a7a048",
+                  "item_name": "FORMULIR REGISTRASI EYE CHECK",
+                  "quantity": 1.5,
+                  "service_unit_id": "SU001",
+                  "service_unit_name": "Emergency Department",
+                  "sr_item_unit": "PCS",
+                  "updated_at": "",
+                  "user_create": "ferdinand",
+                  "user_update": ""
+                }
+              ],
+              "page": 1,
+              "page_size": 10,
+              "total_items": 2
+            }
+          }

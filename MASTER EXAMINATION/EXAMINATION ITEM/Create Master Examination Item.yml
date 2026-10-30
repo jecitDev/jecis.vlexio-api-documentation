@@ -1,0 +1,114 @@
+info:
+  name: Create Master Examination Item
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/master-examination-items"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-User-ID
+      value: admin
+  body:
+    type: json
+    data: "{\r
+
+      \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+      \    \"examination_id\": \"dbf32911-15b6-4cdc-9298-339bd216eaf1\",\r
+
+      \    \"name\": \"OCT\",\r
+
+      \    \"description\": \"Pemeriksaan OCT\",\r
+
+      \    \"item_list\": [\"OCT-1\",\"OCT-2\",\"OCT-3\",\"OCT-4\"],\r
+
+      \    \"is_active\": true\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/master-examination-items"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{medical_record_xtoken}}"
+        - name: X-User-ID
+          value: admin
+      body:
+        type: json
+        data: "{\r
+
+          \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+          \    \"examination_id\": \"550e8400-e29b-41d4-a716-446655440000\",\r
+
+          \    \"name\": \"Eye Examination\",\r
+
+          \    \"description\": \"Comprehensive eye examination including visual acuity and OCT\",\r
+
+          \    \"item_list\": [\"OCT-1\",\"OCT-2\",\"OCT-3\"],\r
+
+          \    \"is_active\": true\r
+
+          }"
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Date
+          value: Wed, 08 Oct 2025 00:55:58 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "186"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 201,
+              "data": {
+                  "id": "194ed7c0-1944-4f3f-803d-4fa0d9dde925",
+                  "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "user_create": "admin",
+                  "created_at": "2025-10-08T07:55:55+07:00"
+              }
+          }

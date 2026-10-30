@@ -1,0 +1,7 @@
+info:
+  name: 0. REMOVE - CLASS
+  type: folder
+  seq: 18
+
+request:
+  auth: inherit

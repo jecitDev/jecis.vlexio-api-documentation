@@ -1,0 +1,7 @@
+info:
+  name: Deposit Category
+  type: folder
+  seq: 81
+
+request:
+  auth: inherit

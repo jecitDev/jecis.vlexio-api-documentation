@@ -1,0 +1,7 @@
+info:
+  name: SERVICE ITEM
+  type: folder
+  seq: 132
+
+request:
+  auth: inherit

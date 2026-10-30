@@ -1,0 +1,7 @@
+info:
+  name: PARAMEDIC LICENSE
+  type: folder
+  seq: 91
+
+request:
+  auth: inherit

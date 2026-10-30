@@ -1,0 +1,26 @@
+info:
+  name: DELETE
+  type: http
+  seq: 4
+
+http:
+  method: DELETE
+  url: "{{BASE_URL}}/clickup/comment/:comment_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: comment_id
+      value: ""
+      type: path
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

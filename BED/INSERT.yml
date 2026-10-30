@@ -1,0 +1,145 @@
+info:
+  name: INSERT
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/Bed"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"bed_id\": \"B006\",\r
+
+      \    \"class_id\": \"C001\",\r
+
+      \    \"created_at\": {\r
+
+      \        \"seconds\": 1699931085\r
+
+      \    },\r
+
+      \    \"healthcare_id\": \"011\",\r
+
+      \    \"is_active\": true,\r
+
+      \    \"is_need_confirmation\": true,\r
+
+      \    \"is_temporary\": false,\r
+
+      \    \"registration_no\": \"REGAVASSD\",\r
+
+      \    \"room_id\": \"R002\",\r
+
+      \    \"sr_bed_status\": \"Unavailable\",\r
+
+      \    \"user_create\": \"nando\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: INSERT API
+    request:
+      url: "{{BASE_URL}}/v1/Bed"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"healthcare_id\": \"\",\r
+
+          \    \"bed_id\": \"B0011\",\r
+
+          \    \"room_id\": \"R011\",\r
+
+          \    \"asset_id\": \"03.04.008\",\r
+
+          \    \"class_id\": \"C0010\",\r
+
+          \    \"user_create\": \"ricky\",\r
+
+          \    \"created_at\": \"2024-09-20T13:24:42+08:00\",\r
+
+          \    \"is_temporary\": true,\r
+
+          \    \"is_need_confirmation\": true,\r
+
+          \    \"business_unit_id\": \"382003f2-2ccb-4dd8-af5b-e39c093f104e\",\r
+
+          \    \"company_id\": \"2da6a1bd-ba62-43ec-91f8-4085d5d6d498\",\r
+
+          \    \"description\": \"Room CDC 01\"\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Wed, 11 Jun 2025 08:01:25 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "346"
+        - name: Connection
+          value: keep-alive
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "bed_id": "B0011",
+                  "room_id": "R011",
+                  "asset_id": "03.04.008",
+                  "class_id": "C0010",
+                  "is_temporary": true,
+                  "is_need_confirmation": true,
+                  "user_create": "ricky",
+                  "created_at": "2024-09-20T13:24:42+08:00",
+                  "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",
+                  "business_unit_id": "382003f2-2ccb-4dd8-af5b-e39c093f104e",
+                  "description": "Room CDC 01"
+              }
+          }

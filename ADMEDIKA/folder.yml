@@ -1,0 +1,7 @@
+info:
+  name: ADMEDIKA
+  type: folder
+  seq: 147
+
+request:
+  auth: inherit

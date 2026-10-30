@@ -1,0 +1,183 @@
+info:
+  name: Get Guarantor Contract By Id
+  type: http
+  seq: 18
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/marketing/guarantor/contract/:contract_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: contract_id
+      value: 0f213b29-9768-4eb9-9727-63cbdb7cedad
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Not Found
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/contract/:contract_id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: contract_id
+          value: 2de71b67-d721-40f1-9663-01f4dd65c40f
+          type: path
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Date
+          value: Thu, 12 Jun 2025 09:30:20 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "40"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "no data found",
+              "status": 404
+          }
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/contract/:contract_id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: contract_id
+          value: 0f213b29-9768-4eb9-9727-63cbdb7cedad
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 15 Jul 2025 08:40:17 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "1751"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "id": "0f213b29-9768-4eb9-9727-63cbdb7cedad",
+                  "guarantor_id": "dc77ae8f-4dd3-4d95-9cfe-7e950888524b",
+                  "business_unit_id": [
+                      "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                      "53aad077-9fb1-4f08-85f3-af9fd9a36518"
+                  ],
+                  "sr_business_method": "CREDIT",
+                  "sr_tariff_type": "FIXED",
+                  "sr_guarantor_rule_type": "None",
+                  "is_value_in_percent": true,
+                  "amount_value": 10.5,
+                  "admin_percentage": 2.5,
+                  "admin_amount_limit": 500000,
+                  "rate_book_id": "833bc85c-79d2-40b8-89f2-f01e49bff6f1",
+                  "is_include_item_medical": true,
+                  "is_include_item_non_medical": true,
+                  "is_include_item_optic": true,
+                  "is_include_item_medical_to_guarantor": true,
+                  "is_include_item_non_medical_to_guarantor": true,
+                  "is_include_item_optic_to_guarantor": true,
+                  "is_include_item_service_to_guarantor": true,
+                  "is_include_item_service": true,
+                  "is_include_item_medical_special_rule": true,
+                  "is_include_item_medical_special_rule_in_percent": true,
+                  "is_include_item_pharmacy_to_guarantor": true,
+                  "item_medical_special_value": 15,
+                  "is_payment_confirmation": true,
+                  "is_zero_revenue": true,
+                  "is_discount_on_payment": true,
+                  "sr_guarantor_contract_status": "1",
+                  "contract_no": "GC-KDY/20250715-0001",
+                  "contract_start": "2025-03-23T14:08:41+07:00",
+                  "contract_end": "2025-03-25T14:08:41+07:00",
+                  "contract_summary": "This contract outlines the terms and responsibilities of the guarantor related to the service agreement between the provider and the insured party.",
+                  "contact_person": "Dina Sasmita",
+                  "is_active": true,
+                  "user_create": "admin_user",
+                  "created_at": "2025-06-05T14:08:41+07:00",
+                  "discount_payment": {
+                      "gdp_id": 30,
+                      "contract_id": "0f213b29-9768-4eb9-9727-63cbdb7cedad",
+                      "sr_payment_type_id": "2",
+                      "sr_payment_method_id": "CARD",
+                      "sr_card_provider_id": "BCA",
+                      "sr_card_type_id": "CREDIT",
+                      "user_create": "admin_user",
+                      "created_at": "2025-06-05T14:08:41+07:00",
+                      "voucher_type_id": 1
+                  }
+              }
+          }

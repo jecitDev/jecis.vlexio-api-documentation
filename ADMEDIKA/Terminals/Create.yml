@@ -1,0 +1,114 @@
+info:
+  name: Create
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/admedika/terminals"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"branch_id\": \"bbf0a2cb-8a27-479d-8108-e34a92925d39\",\r
+
+      \    \"terminal_id\": \"12372351\",\r
+
+      \    \"label\": \"Kasir Rawat Jalan Lantai 1\",\r
+
+      \    \"is_virtual\": false,\r
+
+      \    \"is_active\": true,\r
+
+      \    \"business_unit_id\": \"33b109c5-dd64-480c-8100-68fe17deaf3e\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Create
+    request:
+      url: "{{BASE_URL}}/v1/admedika/terminals"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"branch_id\": \"bbf0a2cb-8a27-479d-8108-e34a92925d39\",\r
+
+          \    \"terminal_id\": \"12372351\",\r
+
+          \    \"label\": \"Kasir Rawat Jalan Lantai 1\",\r
+
+          \    \"is_virtual\": false,\r
+
+          \    \"is_active\": true,\r
+
+          \    \"business_unit_id\": \"33b109c5-dd64-480c-8100-68fe17deaf3e\"\r
+
+          }"
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Date
+          value: Tue, 27 Oct 2026 12:18:54 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "319"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+            "code": 201,
+            "data": {
+              "id": "442dcfda-4a0d-45ea-86f3-6ddd4a58ecef",
+              "branch_id": "bbf0a2cb-8a27-479d-8108-e34a92925d39",
+              "terminal_id": "12372351",
+              "label": "Kasir Rawat Jalan Lantai 1",
+              "is_active": true,
+              "created_at": "2026-10-27T19:18:55+07:00",
+              "user_create": "ferdinan",
+              "business_unit_id": "33b109c5-dd64-480c-8100-68fe17deaf3e"
+            }
+          }

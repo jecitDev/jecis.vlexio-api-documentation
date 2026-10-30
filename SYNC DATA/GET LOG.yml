@@ -1,0 +1,102 @@
+info:
+  name: GET LOG
+  type: http
+  seq: 6
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/syncdata/log/:id?url=http://172.16.20.40:5959&date=2024-10-03T08:00:00%2B07:00"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: url
+      value: http://172.16.20.40:5959
+      type: query
+    - name: date
+      value: 2024-10-03T08:00:00%2B07:00
+      type: query
+    - name: id
+      value: "12"
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"updated_at\": \"2024-06-13T08:00:00+07:00\",\r
+
+      \    \"user_update\": \"nando\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: GET LOG
+    request:
+      url: "{{BASE_URL}}/v1/syncdata/log/:id?url=http://172.16.20.40:5959&date=2024-10-03T08:00:00%2B07:00"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: url
+          value: http://172.16.20.40:5959
+          type: query
+        - name: date
+          value: 2024-10-03T08:00:00%2B07:00
+          type: query
+        - name: id
+          value: "12"
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 03 Oct 2024 09:50:54 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "9825"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "data": "2024-10-03 10:12:42.994 +07:00 [INF] Sync 'Email Conversion Service 2' started.\r\n2024-10-03 10:12:43.962 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 10:16:14.008 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 10:19:43.494 +07:00 [INF] Sync 'Email Conversion Service 2' started.\r\n2024-10-03 10:19:44.150 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 10:23:14.199 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 10:26:44.217 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 10:30:14.251 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 10:33:44.288 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 10:37:14.322 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 10:40:44.353 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 10:44:14.402 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 10:47:44.433 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 10:51:14.479 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 10:54:44.512 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 10:58:14.545 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 11:01:44.579 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 11:05:14.613 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 11:08:44.649 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 11:12:14.684 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 11:15:44.715 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 11:19:14.748 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 11:22:44.781 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 11:26:14.811 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 11:29:44.845 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 11:33:14.878 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 11:36:44.911 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 11:40:14.942 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 11:43:44.975 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 11:47:15.009 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 11:50:45.040 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 11:54:15.076 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 11:57:45.110 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 12:01:15.141 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 12:04:45.176 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 12:08:15.334 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 12:11:45.386 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 12:15:15.420 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 12:18:45.455 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 12:22:15.489 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 12:25:45.521 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 12:29:15.555 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 12:32:45.590 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 12:36:15.622 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 12:39:45.656 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 12:43:15.691 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 12:46:45.724 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 12:50:15.755 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 12:53:45.789 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 12:57:15.823 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 13:00:45.854 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 13:04:15.885 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 13:07:45.918 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 13:11:15.948 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 13:14:45.981 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 13:18:16.016 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 13:21:46.053 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 13:25:16.087 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 13:28:46.121 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 13:32:16.155 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 13:35:46.188 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 13:39:16.225 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 13:42:46.262 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 13:46:16.294 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 13:49:46.329 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 13:53:16.360 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 13:56:46.391 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 14:00:16.421 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 14:03:46.455 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 14:07:16.487 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 14:10:46.514 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 14:14:16.546 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 14:17:46.609 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 14:21:16.639 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 14:24:46.675 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 14:28:16.712 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 14:31:46.745 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 14:35:16.782 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 14:38:49.014 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 14:39:26.642 +07:00 [INF] Sync 'Email Conversion Service 2' started.\r\n2024-10-03 14:39:27.798 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 14:42:57.832 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 14:46:27.866 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 14:49:57.918 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 14:53:27.937 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 14:56:57.971 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 15:00:28.001 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 15:03:58.035 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 15:07:28.069 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 15:10:58.101 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 15:14:28.134 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 15:17:58.167 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 15:21:28.198 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 15:24:58.232 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 15:28:28.266 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 15:31:58.300 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 15:35:28.331 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 15:38:58.365 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 15:42:28.400 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 15:45:58.462 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 15:49:28.480 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 15:52:58.530 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 15:56:28.562 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 15:59:58.596 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 16:03:28.630 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 16:06:58.664 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 16:10:28.700 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 16:13:58.737 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 16:17:28.773 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 16:20:58.806 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 16:24:28.842 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 16:27:58.870 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 16:31:28.899 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 16:34:58.932 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 16:38:28.965 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 16:41:58.998 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 16:45:29.021 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n2024-10-03 16:48:59.051 +07:00 [ERR] Error Get Data From Source : Unauthorized:\r\n"
+              }
+          }

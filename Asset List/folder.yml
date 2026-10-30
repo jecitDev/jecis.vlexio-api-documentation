@@ -1,0 +1,7 @@
+info:
+  name: Asset List
+  type: folder
+  seq: 134
+
+request:
+  auth: inherit

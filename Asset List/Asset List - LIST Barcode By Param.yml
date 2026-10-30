@@ -1,0 +1,248 @@
+info:
+  name: Asset List - LIST Barcode By Param
+  type: http
+  seq: 4
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/AssetList/listbarcodebyparam/:business_unit_id/"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: category_level
+      value: "1"
+      type: query
+      disabled: true
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+  body:
+    type: text
+    data: ""
+  auth:
+    type: bearer
+    token: "{{xtoken}}"
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: Asset List - LIST By Param API
+    request:
+      url: "{{BASE_URL}}/v1/AssetList/listbyparam?business_unit_id=f64e10b4-0cbf-4fee-ac09-1a4fa199696c"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: business_unit_id
+          value: f64e10b4-0cbf-4fee-ac09-1a4fa199696c
+          type: query
+        - name: item_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: query
+          disabled: true
+        - name: category_level
+          value: "1"
+          type: query
+          disabled: true
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 06 Jan 2026 03:25:46 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "5035"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "AssetLists": [
+                      {
+                          "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",
+                          "business_unit_id": "f64e10b4-0cbf-4fee-ac09-1a4fa199696c",
+                          "asset_id": "999.ROOM01.001",
+                          "business_unit_id_ownership": "f64e10b4-0cbf-4fee-ac09-1a4fa199696c",
+                          "business_unit_id_ownership_location": "DL102",
+                          "asset_description": "Handphone VIVO S1",
+                          "asset_category_id": 101,
+                          "site_room_id": "ROOM01",
+                          "is_fixed_asset": true,
+                          "asset_quantity": 5,
+                          "asset_uom": "Unit",
+                          "po_business_unit_id": "f64e10b4-0cbf-4fee-ac09-1a4fa199696c",
+                          "po_number": "PO-2025-00123",
+                          "item_id": "ITEM-001",
+                          "purchase_date": "2024-10-21T13:24:42+08:00",
+                          "purchase_value": 12500,
+                          "por_date": "2024-10-22T13:24:42+08:00",
+                          "supplier_id": "SUPP001",
+                          "asset_serial_number": "SN-XP200-887766",
+                          "asset_condition": "GD",
+                          "notes": "Handphone Oppo Note",
+                          "is_depreciate": true,
+                          "sr_depreciation_method": "STRAIGHT",
+                          "depreciation_begin_date": "2024-10-25T13:24:42+08:00",
+                          "depreciation_use_full_life": 10,
+                          "salvage_value": 1250,
+                          "kode_barcode": "NSD/NSD/2410-03-0001",
+                          "por_number": "POR-2025-00123",
+                          "depreciation_method_fiskal": "DECLINE",
+                          "depreciation_begin_date_fiskal": "2024-10-24T13:24:42+08:00",
+                          "depreciation_use_full_life_fiskal": 8,
+                          "salvage_value_fiskal": 1000,
+                          "is_active": true,
+                          "is_existing_asset": true,
+                          "user_create": "rickylaiQ",
+                          "created_at": "2024-10-25T13:24:42+08:00"
+                      },
+                      {
+                          "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",
+                          "business_unit_id": "f64e10b4-0cbf-4fee-ac09-1a4fa199696c",
+                          "asset_id": "999.ROOM01.003",
+                          "business_unit_id_ownership": "f64e10b4-0cbf-4fee-ac09-1a4fa199696c",
+                          "business_unit_id_ownership_location": "DL102",
+                          "asset_description": "Handphone VIVO S1",
+                          "asset_category_id": 101,
+                          "site_room_id": "ROOM01",
+                          "is_fixed_asset": true,
+                          "asset_quantity": 5,
+                          "asset_uom": "Unit",
+                          "po_business_unit_id": "f64e10b4-0cbf-4fee-ac09-1a4fa199696c",
+                          "po_number": "PO-2025-00123",
+                          "item_id": "ITEM-001",
+                          "purchase_date": "2024-10-21T13:24:42+08:00",
+                          "purchase_value": 12500,
+                          "por_date": "2024-10-22T13:24:42+08:00",
+                          "supplier_id": "SUPP001",
+                          "asset_serial_number": "SN-XP200-887766",
+                          "asset_condition": "GD",
+                          "notes": "Handphone Oppo Note",
+                          "is_depreciate": true,
+                          "sr_depreciation_method": "STRAIGHT",
+                          "depreciation_begin_date": "2024-10-25T13:24:42+08:00",
+                          "depreciation_use_full_life": 10,
+                          "salvage_value": 1250,
+                          "kode_barcode": "NSD/NSD/2410-03-0003",
+                          "por_number": "POR-2025-00123",
+                          "depreciation_method_fiskal": "DECLINE",
+                          "depreciation_begin_date_fiskal": "2024-10-24T13:24:42+08:00",
+                          "depreciation_use_full_life_fiskal": 8,
+                          "salvage_value_fiskal": 1000,
+                          "is_active": true,
+                          "is_existing_asset": true,
+                          "user_create": "rickylaiQ",
+                          "created_at": "2025-12-30T14:25:15+07:00"
+                      },
+                      {
+                          "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",
+                          "business_unit_id": "f64e10b4-0cbf-4fee-ac09-1a4fa199696c",
+                          "asset_id": "999.ROOM01.002",
+                          "business_unit_id_ownership": "f64e10b4-0cbf-4fee-ac09-1a4fa199696c",
+                          "business_unit_id_ownership_location": "DL102",
+                          "asset_description": "Handphone amsung FLIP 7",
+                          "asset_category_id": 101,
+                          "site_room_id": "ROOM01",
+                          "is_fixed_asset": true,
+                          "asset_quantity": 5,
+                          "asset_uom": "Unit",
+                          "po_business_unit_id": "f64e10b4-0cbf-4fee-ac09-1a4fa199696c",
+                          "po_number": "PO-2025-00123",
+                          "item_id": "ITEM-001",
+                          "purchase_date": "2024-10-21T13:24:42+08:00",
+                          "purchase_value": 12500,
+                          "por_date": "2024-10-22T13:24:42+08:00",
+                          "supplier_id": "SUPP001",
+                          "asset_serial_number": "SN-XP200-887766",
+                          "asset_condition": "GD",
+                          "notes": "Handphone Oppo Note",
+                          "is_depreciate": true,
+                          "sr_depreciation_method": "STRAIGHT",
+                          "depreciation_begin_date": "2024-10-25T13:24:42+08:00",
+                          "depreciation_use_full_life": 10,
+                          "salvage_value": 1250,
+                          "kode_barcode": "NSD/NSD/2410-03-0002",
+                          "por_number": "POR-2025-00123",
+                          "depreciation_method_fiskal": "DECLINE",
+                          "depreciation_begin_date_fiskal": "2024-10-24T13:24:42+08:00",
+                          "depreciation_use_full_life_fiskal": 8,
+                          "salvage_value_fiskal": 1000,
+                          "is_active": false,
+                          "user_create": "rickylaiQ",
+                          "created_at": "2024-10-25T13:24:42+08:00",
+                          "user_update": "API_VoidX3",
+                          "updated_at": "2026-01-06T10:24:28+07:00"
+                      },
+                      {
+                          "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",
+                          "business_unit_id": "f64e10b4-0cbf-4fee-ac09-1a4fa199696c",
+                          "asset_id": "999.ROOM01.004",
+                          "business_unit_id_ownership": "f64e10b4-0cbf-4fee-ac09-1a4fa199696c",
+                          "business_unit_id_ownership_location": "DL102",
+                          "asset_description": "Handphone VIVO S12 edit",
+                          "asset_category_id": 101,
+                          "site_room_id": "ROOM01",
+                          "is_fixed_asset": true,
+                          "asset_quantity": 5,
+                          "asset_uom": "Unit",
+                          "po_business_unit_id": "f64e10b4-0cbf-4fee-ac09-1a4fa199696c",
+                          "po_number": "PO-2025-00123",
+                          "item_id": "ITEM-001",
+                          "purchase_date": "2024-10-21T13:24:42+08:00",
+                          "purchase_value": 12500,
+                          "por_date": "2024-10-22T13:24:42+08:00",
+                          "supplier_id": "SUPP001",
+                          "asset_serial_number": "SN-XP200-887766",
+                          "asset_condition": "GD",
+                          "notes": "Handphone Oppo Note",
+                          "is_depreciate": true,
+                          "sr_depreciation_method": "STRAIGHT",
+                          "depreciation_begin_date": "2024-10-25T13:24:42+08:00",
+                          "depreciation_use_full_life": 10,
+                          "salvage_value": 1250,
+                          "kode_barcode": "NSD/NSD/2410-03-0004",
+                          "por_number": "POR-2025-00123",
+                          "depreciation_method_fiskal": "DECLINE",
+                          "depreciation_begin_date_fiskal": "2024-10-24T13:24:42+08:00",
+                          "depreciation_use_full_life_fiskal": 8,
+                          "salvage_value_fiskal": 1000,
+                          "is_active": true,
+                          "user_create": "rickylaiQ",
+                          "created_at": "2026-01-06T10:16:47+07:00"
+                      }
+                  ]
+              }
+          }

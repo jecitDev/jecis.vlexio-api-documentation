@@ -1,0 +1,189 @@
+info:
+  name: Get Tree
+  type: http
+  seq: 9
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/org-charts/tree?business_unit_id=607fef10-21b9-4f3c-acb8-eba67c5ecd4a&root_id=2db51d0f-a438-4d51-ac56-ab36c1610abe"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: business_unit_id
+      value: 607fef10-21b9-4f3c-acb8-eba67c5ecd4a
+      type: query
+    - name: root_id
+      value: 2db51d0f-a438-4d51-ac56-ab36c1610abe
+      type: query
+    - name: is_active
+      value: "false"
+      type: query
+      disabled: true
+    - name: max_depth
+      value: "0"
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Get Tree
+    request:
+      url: "{{BASE_URL}}/v1/org-charts/tree?business_unit_id=607fef10-21b9-4f3c-acb8-eba67c5ecd4a&root_id=2db51d0f-a438-4d51-ac56-ab36c1610abe"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: business_unit_id
+          value: 607fef10-21b9-4f3c-acb8-eba67c5ecd4a
+          type: query
+        - name: root_id
+          value: 2db51d0f-a438-4d51-ac56-ab36c1610abe
+          type: query
+        - name: is_active
+          value: "false"
+          type: query
+          disabled: true
+        - name: max_depth
+          value: "0"
+          type: query
+          disabled: true
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Wed, 22 Oct 2025 08:57:21 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "2216"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "tree": [
+                      {
+                          "abbreviation": "Presdir",
+                          "business_unit_id": "607fef10-21b9-4f3c-acb8-eba67c5ecd4a",
+                          "children": [
+                              {
+                                  "abbreviation": "Dirop",
+                                  "business_unit_id": "607fef10-21b9-4f3c-acb8-eba67c5ecd4a",
+                                  "children": [],
+                                  "created_at": "2025-10-21T10:50:55+07:00",
+                                  "description": "",
+                                  "id": "aaf0d2e2-b6f7-4744-b1d5-a150e194a8f4",
+                                  "is_active": true,
+                                  "is_approved": false,
+                                  "is_profit_center": false,
+                                  "level_id": "5fdc7310-5e19-426d-afd1-65d7ad226b4d",
+                                  "level_name": "Director",
+                                  "name": "Director of Operation",
+                                  "parent_id": "2db51d0f-a438-4d51-ac56-ab36c1610abe",
+                                  "pic": "302303",
+                                  "position": "",
+                                  "sort_order": 1,
+                                  "updated_at": "2025-10-22T13:51:44+07:00",
+                                  "user_create": "ferdinand",
+                                  "user_update": "ferdinand"
+                              },
+                              {
+                                  "abbreviation": "DirHC&GA",
+                                  "business_unit_id": "607fef10-21b9-4f3c-acb8-eba67c5ecd4a",
+                                  "children": [],
+                                  "created_at": "2025-10-22T14:14:06+07:00",
+                                  "description": "",
+                                  "id": "14021b10-e134-4d34-b6a6-b3493010f15a",
+                                  "is_active": true,
+                                  "is_approved": false,
+                                  "is_profit_center": false,
+                                  "level_id": "5fdc7310-5e19-426d-afd1-65d7ad226b4d",
+                                  "level_name": "Director",
+                                  "name": "Director of Human Capital & General Affair",
+                                  "parent_id": "2db51d0f-a438-4d51-ac56-ab36c1610abe",
+                                  "pic": "302303",
+                                  "position": "",
+                                  "sort_order": 3,
+                                  "updated_at": "",
+                                  "user_create": "ferdinand",
+                                  "user_update": ""
+                              },
+                              {
+                                  "abbreviation": "Divac#updated",
+                                  "business_unit_id": "607fef10-21b9-4f3c-acb8-eba67c5ecd4a",
+                                  "children": [],
+                                  "created_at": "2025-10-22T09:43:34+07:00",
+                                  "description": "",
+                                  "id": "f52fd70b-4cc2-40b1-b712-28ed0f3ca534",
+                                  "is_active": true,
+                                  "is_approved": false,
+                                  "is_profit_center": false,
+                                  "level_id": "5fdc7310-5e19-426d-afd1-65d7ad226b4d",
+                                  "level_name": "Director",
+                                  "name": "Director of Vacant",
+                                  "parent_id": "2db51d0f-a438-4d51-ac56-ab36c1610abe",
+                                  "pic": "302303",
+                                  "position": "",
+                                  "sort_order": 2,
+                                  "updated_at": "2025-10-22T15:35:02+07:00",
+                                  "user_create": "ferdinand",
+                                  "user_update": "ferdinand"
+                              }
+                          ],
+                          "created_at": "2025-10-21T10:36:35+07:00",
+                          "description": "",
+                          "id": "2db51d0f-a438-4d51-ac56-ab36c1610abe",
+                          "is_active": true,
+                          "is_approved": false,
+                          "is_profit_center": false,
+                          "level_id": "85367399-f601-41c0-834c-6c29d9e69db8",
+                          "level_name": "Board",
+                          "name": "Presiden Director",
+                          "parent_id": "",
+                          "pic": "302303",
+                          "position": "presdir",
+                          "sort_order": 1,
+                          "updated_at": "2025-10-21T16:32:06+07:00",
+                          "user_create": "ferdinand",
+                          "user_update": "ferdinand"
+                      }
+                  ]
+              }
+          }

@@ -1,0 +1,140 @@
+info:
+  name: Create SEP
+  type: http
+  seq: 7
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/bpjs/sep"
+  headers:
+    - name: x-token
+      value: ""
+  body:
+    type: json
+    data: "{\r
+
+      \    \"business_unit_id\": \"\",\r
+
+      \    \"no_kartu\": \"\",\r
+
+      \    \"tgl_sep\": \"\",\r
+
+      \    \"ppk_pelayanan\": \"\",\r
+
+      \    \"jns_pelayanan\": \"\",\r
+
+      \    \"kls_rawat\": {\r
+
+      \        \"kls_rawat_hak\": \"\",\r
+
+      \        \"kls_rawat_naik\": \"\",\r
+
+      \        \"pembiayaan\": \"\",\r
+
+      \        \"penanggung_jawab\": \"\"\r
+
+      \    },\r
+
+      \    \"no_mr\": \"\",\r
+
+      \    \"rujukan\": {\r
+
+      \        \"asal_rujukan\": \"\",\r
+
+      \        \"tgl_rujukan\": \"\",\r
+
+      \        \"no_rujukan\": \"\",\r
+
+      \        \"ppk_rujukan\": \"\"\r
+
+      \    },\r
+
+      \    \"catatan\": \"\",\r
+
+      \    \"diag_awal\": \"\",\r
+
+      \    \"poli\": {\r
+
+      \        \"tujuan\": \"\",\r
+
+      \        \"eksekutif\": \"\"\r
+
+      \    },\r
+
+      \    \"cob\": {\r
+
+      \        \"cob\": \"\"\r
+
+      \    },\r
+
+      \    \"katarak\": {\r
+
+      \        \"katarak\": \"\"\r
+
+      \    },\r
+
+      \    \"jaminan\": {\r
+
+      \        \"laka_lantas\": \"\",\r
+
+      \        \"no_lp\": \"\",\r
+
+      \        \"penjamin\": {\r
+
+      \            \"tgl_kejadian\": \"\",\r
+
+      \            \"keterangan\": \"\",\r
+
+      \            \"suplesi\": {\r
+
+      \                \"suplesi\": \"\",\r
+
+      \                \"no_sep_suplesi\": \"\",\r
+
+      \                \"lokasi_laka\": {\r
+
+      \                    \"kd_propinsi\": \"\",\r
+
+      \                    \"kd_kabupaten\": \"\",\r
+
+      \                    \"kd_kecamatan\": \"\"\r
+
+      \                }\r
+
+      \            }\r
+
+      \        }\r
+
+      \    },\r
+
+      \    \"tujuan_kunj\": \"\",\r
+
+      \    \"flag_procedure\": \"\",\r
+
+      \    \"kd_penunjang\": \"\",\r
+
+      \    \"assesment_pel\": \"\",\r
+
+      \    \"skdp\": {\r
+
+      \        \"no_surat\": \"\",\r
+
+      \        \"kode_dpjp\": \"\"\r
+
+      \    },\r
+
+      \    \"dpjp_layan\": \"\",\r
+
+      \    \"no_telp\": \"\",\r
+
+      \    \"user\": \"\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

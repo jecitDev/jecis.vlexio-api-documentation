@@ -1,0 +1,50 @@
+info:
+  name: CREATE LOG
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/clickup/task/:task_id/comment"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: task_id
+      value: 86cygdh6w
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"comment\": [\r
+
+      \                {\r
+
+      \                    \"text\": \"testing 123 log\",\r
+
+      \                    \"attributes\": {\r
+
+      \                        \"log\": true\r
+
+      \                    }\r
+
+      \                }\r
+
+      \            ],\r
+
+      //   \"comment_text\": \"testing 123 log\",\r
+
+      \  \"assignee\": null,\r
+
+      \  \"notify_all\": true\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

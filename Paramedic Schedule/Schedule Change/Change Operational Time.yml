@@ -1,0 +1,38 @@
+info:
+  name: Change Operational Time
+  type: http
+  seq: 5
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/paramedicschedule/change/operational_time"
+  headers:
+    - name: x-token
+      value: "{{admission_xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+      \    \"id_psd\": [439],\r
+
+      \    \"schedule_date_start\": \"2025-08-05T00:00:00+07:00\",\r
+
+      \    \"schedule_date_end\": \"2025-08-08T00:00:00+07:00\",\r
+
+      \    \"operational_time_id\": \"OP003\",\r
+
+      \    \"user_update\": \"update operational_time\",\r
+
+      \    \"updated_at\": \"2025-08-05T00:00:00+07:00\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

@@ -1,0 +1,16 @@
+info:
+  name: Exam Setup - Widget
+  type: folder
+  seq: 49
+
+request:
+  auth: inherit
+
+docs:
+  content: |-
+    ### \[TS-1374\] \[MASTER\]\[BE\] EXAM SETUP : APPLICATION FORM #1.0.0
+
+    ##### Sept 23, 2024
+
+    - CRUD Common
+  type: text/markdown

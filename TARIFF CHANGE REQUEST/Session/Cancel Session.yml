@@ -1,0 +1,83 @@
+info:
+  name: Cancel Session
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/tariff-requests/session/cancel"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"session_id\": \"53354e61-5606-453b-b793-2c5e6a6b48a6\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Cancel Session
+    request:
+      url: "{{BASE_URL}}/v1/tariff-requests/session/cancel"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"session_id\": \"53354e61-5606-453b-b793-2c5e6a6b48a6\"\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: date
+          value: Wed, 30 Sep 2026 07:51:36 GMT
+        - name: content-type
+          value: application/json
+        - name: content-length
+          value: "61"
+        - name: x-xss-protection
+          value: "0"
+        - name: x-content-type-options
+          value: nosniff
+        - name: x-frame-options
+          value: SAMEORIGIN
+        - name: cross-origin-embedder-policy
+          value: require-corp
+        - name: cross-origin-opener-policy
+          value: same-origin
+        - name: cross-origin-resource-policy
+          value: same-origin
+        - name: origin-agent-cluster
+          value: ?1
+        - name: referrer-policy
+          value: no-referrer
+        - name: x-dns-prefetch-control
+          value: off
+        - name: x-download-options
+          value: noopen
+        - name: x-permitted-cross-domain-policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+            "code": 200,
+            "data": {
+              "message": "Successfully cancel session"
+            }
+          }

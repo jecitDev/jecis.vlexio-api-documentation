@@ -1,0 +1,209 @@
+info:
+  name: Supplier - Update
+  type: http
+  seq: 7
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/Supplier/:id/:business_unit_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: id
+      value: 5608dd05-50e0-4e5f-8614-ad8797c2f291
+      type: path
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \  \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+      \  \"supplier_name\": \"PT Surya Mentari Terangg\",\r
+
+      \  \"sr_supplier_type\": \"Domestic\",\r
+
+      \  \"tax_registration_no\": \"123.456.789-0\",\r
+
+      \  \"siup\": \"SIUP-12346\",\r
+
+      \  \"tax_percentage\": \"11.0\",\r
+
+      \  \"is_qualified\": true,\r
+
+      \  \"start_qualified\": \"2024-01-01T00:00:00+07:00\",\r
+
+      \  \"end_qualified\": \"2025-01-01T00:00:00+07:00\",\r
+
+      \  \"is_pkp\": true,\r
+
+      \  \"credit_limit\": \"100000000\",\r
+
+      \  \"currency_code\": \"IDR\",\r
+
+      \  \"is_active\": true,\r
+
+      \  \"is_block\": false,\r
+
+      \  \"operational_coverage\": [\"53aad077-9fb1-4f08-85f3-af9fd9a36517\"],\r
+
+      \  \"coverage\": [\"53aad077-9fb1-4f08-85f3-af9fd9a36517\"],\r
+
+      \  \"company_website\": \"https://suryamentari.co.id\",\r
+
+      \  \"date_of_establishment\": \"2020-05-20\",\r
+
+      \  \"entity\": \"PT\",\r
+
+      \  \"legal_entity_type\": \"Company\",\r
+
+      \  \"notes\": \"Premium hardware supplier\",\r
+
+      \  \"ownership_status\": \"Private\",\r
+
+      \  \"status\": \"Waiting To Approve\",\r
+
+      \  \"user_update\": \"admin_user\",\r
+
+      \  \"updated_at\":\"2026-04-15T00:00:00+07:00\",\r
+
+      \  \"addresses\": [\r
+
+      \    {\r
+
+      \      \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+      \      \"sr_address_type\": \"Office\",\r
+
+      \      \"address_1\": \"Jl. Sudirman No. 1\",\r
+
+      \      \"address_2\": \"Lt. 10\",\r
+
+      \      \"city\": \"Jakarta\",\r
+
+      \      \"county\": \"Jakarta Selatan\",\r
+
+      \      \"country\": \"Indonesia\",\r
+
+      \                \"id\": 53,\r
+
+      \      \"state\": \"DKI Jakarta\",\r
+
+      \      \"zip_code\": \"12345\",\r
+
+      \      \"region\": \"b131c45d-dae0-4003-a954-4fa9ba3e510c\",\r
+
+      \      \"address_title\": \"Head Office\",\r
+
+      \      \"email\": \"office@suryamentari.tech\",\r
+
+      \      \"phone_number\": \"021-1234567\",\r
+
+      \      \"fax_number\": \"021-7654321\",\r
+
+      \      \"is_preferred_address_billing\": true,\r
+
+      \      \"is_preferred_shipping_address\": true,\r
+
+      \      \"is_active\": true,\r
+
+      \      \"is_primary\": true\r
+
+      \    }\r
+
+      \  ],\r
+
+      \  \"contacts\": [\r
+
+      \    {\r
+
+      \      \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+      \      \"contact_name\": \"John Doe\",\r
+
+      \      \"sr_gender\": \"Male\",\r
+
+      \      \"phone_number\": \"08123456789\",\r
+
+      \                \"id\": 35,\r
+
+      \      \"email\": \"john.doe@suryamentari.tech\",\r
+
+      \      \"contact_type\": \"Sales\",\r
+
+      \      \"position\": \"Account Manager\",\r
+
+      \      \"is_active\": true,\r
+
+      \      \"is_verified\": true\r
+
+      \    }\r
+
+      \  ],\r
+
+      \  \"bank_accounts\": [\r
+
+      \    {\r
+
+      \                \"id\": \"972487a5-183b-4e5f-a5c9-a80542e09464\",\r
+
+      \      \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+      \      \"bank_name\": \"BCA\",\r
+
+      \      \"branch_id\": 1,\r
+
+      \      \"account_number\": \"1234567890\",\r
+
+      \      \"account_holder\": \"PT suryamentari\",\r
+
+      \      \"swift_code\": \"BCACIDJA\",\r
+
+      \      \"currency_id\": \"IDR\",\r
+
+      \      \"is_active\": true\r
+
+      \    }\r
+
+      \  ],\r
+
+      \  \"terms\":[{\r
+
+      \    \"id\":1,\r
+
+      \    \"category\":\"PAYMENT\",\r
+
+      \    \"terms_id\":\"e7d1f4ad-2131-46a7-8bc3-f154323c618d\"\r
+
+      \  },{\r
+
+      \    \"id\":2,\r
+
+      \    \"category\":\"WARANTY\",\r
+
+      \    \"terms_id\":\"e7d1f4ad-2131-46a7-8bc3-f154323c618d\"\r
+
+      \  }],\r
+
+      \  \"cred_working_capital\":100000000,\r
+
+      \  \"cred_equity\":10000000,\r
+
+      \  \"cred_liabilities\":2000000,\r
+
+      \  \"cred_assets\":300000000,\r
+
+      \  \"cred_notes\":\"terst notes\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

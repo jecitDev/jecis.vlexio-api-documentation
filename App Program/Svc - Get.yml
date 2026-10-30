@@ -1,0 +1,212 @@
+info:
+  name: Svc - Get
+  type: http
+  seq: 4
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/appprograms/:id/:product_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: id
+      value: "01.01"
+      type: path
+    - name: product_id
+      value: "01"
+      type: path
+  body:
+    type: json
+    data: ""
+  auth:
+    type: bearer
+    token: "{{xtoken}}"
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: "Svc - Get #1-240503"
+    request:
+      url: "{{BASE_URL}}/v1/appprograms/:id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: id
+          value: "01"
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Fri, 03 May 2024 03:38:32 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "961"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "program_id": "01",
+                  "program_name": "Admission",
+                  "program_title": "Admission",
+                  "program_name_lang": "emr.program.admission",
+                  "program_title_lang": "emr.program.admission.title",
+                  "program_desc": "Admission Module on SEDNA",
+                  "position": 1,
+                  "row_index": 1,
+                  "note": "Admission Module",
+                  "is_program": true,
+                  "is_parent_program": true,
+                  "is_icon_only": false,
+                  "icon_name": "fa emr-admission",
+                  "product_id": "01",
+                  "program_style_class": "emr-admission-style",
+                  "is_program_addable": false,
+                  "is_program_editable": false,
+                  "is_program_deleteable": false,
+                  "is_program_viewable": false,
+                  "is_program_approveable": false,
+                  "is_program_unapproveable": false,
+                  "is_program_voidable": false,
+                  "is_program_unvoidable": false,
+                  "is_program_direct_void": false,
+                  "is_program_exportable": false,
+                  "is_program_printable": false,
+                  "is_menu_home_visible": true,
+                  "is_visible": true,
+                  "is_maintenance": false,
+                  "is_quick_link": false,
+                  "access_key": "",
+                  "expired_date": "2024-04-05T14:59:31+07:00",
+                  "alias": "Admission-Svc"
+              }
+          }
+  - name: "Svc - Get #2-240506"
+    request:
+      url: "{{BASE_URL}}/v1/appprograms/:id/:product_id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: id
+          value: "01.01"
+          type: path
+        - name: product_id
+          value: "01"
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 06 May 2024 04:25:03 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "1034"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "program_id": "01.01",
+                  "parent_program_id": "01",
+                  "product_id": "01",
+                  "program_name": "Appointment",
+                  "program_title": "Appointment",
+                  "program_name_lang": "emr.program.appointment",
+                  "program_title_lang": "emr.program.appointment.title",
+                  "program_desc": "Appointment Module on SEDNA",
+                  "root_level": 1,
+                  "position": 1,
+                  "row_index": 1,
+                  "note": "Appointment Module",
+                  "icon_name": "fa emr-appointment",
+                  "program_style_class": "emr-appointment-style",
+                  "is_program": true,
+                  "is_parent_program": false,
+                  "is_icon_only": false,
+                  "is_program_viewable": true,
+                  "is_program_addable": true,
+                  "is_program_editable": true,
+                  "is_program_deleteable": true,
+                  "is_program_approveable": false,
+                  "is_program_unapproveable": false,
+                  "is_program_voidable": true,
+                  "is_program_unvoidable": false,
+                  "is_program_direct_void": false,
+                  "is_program_exportable": true,
+                  "is_program_printable": true,
+                  "is_menu_home_visible": true,
+                  "is_visible": true,
+                  "is_maintenance": false,
+                  "is_quick_link": false,
+                  "access_key": "",
+                  "revision": "1.0.0",
+                  "expired_date": "2024-05-03T17:47:22+07:00",
+                  "alias": "Appointment-Svc"
+              }
+          }

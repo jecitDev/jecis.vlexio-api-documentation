@@ -1,0 +1,7 @@
+info:
+  name: STICKY NOTES
+  type: folder
+  seq: 62
+
+request:
+  auth: inherit

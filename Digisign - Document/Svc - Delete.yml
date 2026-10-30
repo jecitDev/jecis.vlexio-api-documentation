@@ -1,0 +1,148 @@
+info:
+  name: Svc - Delete
+  type: http
+  seq: 4
+http:
+  method: DELETE
+  url: "{{BASE_URL}}/v1/digisigns/:id/:company_id/:business_unit_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: company_id
+      value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+      type: query
+      disabled: true
+    - name: id
+      value: 8aa61541-96c5-44bb-8e99-9882ad547492
+      type: path
+    - name: company_id
+      value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+      type: path
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+  body:
+    type: json
+    data: "{\r\n    \"metadata\": {\r\n        \"user_created\": {\r\n            \"user_type_id\": \"StandardUser\",\r\n            \"user_id\": \"21239\",\r\n            \"full_name\": \"Fajar Wahyudianto, S.Kom\",\r\n            \"email\": \"fajar.wahyudianto@jec.co.id\",\r\n            \"organization\": {\r\n                \"organization_id\": \"730a774b-105f-44aa-99ed-16f24c061a95\",\r\n                \"organization_code\": \"MSAS\",\r\n                \"organization_name\": \"CORP - Medical & Support Application Service\"\r\n            }\r\n        },\r\n        \"created_at\": \"2024-10-31T03:00:00+07:00\",\r\n        \"user_updated\": {\r\n            \"user_type_id\": \"StandardUser\",\r\n            \"user_id\": \"21239\",\r\n            \"full_name\": \"Fajar Wahyudianto, S.Kom\",\r\n            \"email\": \"fajar.wahyudianto@jec.co.id\",\r\n            \"organization\": {\r\n                \"organization_id\": \"730a774b-105f-44aa-99ed-16f24c061a95\",\r\n                \"organization_code\": \"MSAS\",\r\n                \"organization_name\": \"CORP - Medical & Support Application Service\"\r\n            }\r\n        },\r\n        \"updated_at\": \"2024-10-31T15:00:00+07:00\",\r\n        \"priority\": \"High\",\r\n        \"tags\": [\r\n            \"EMR\",\r\n            \"PATIENT DOCUMENTS\",\r\n            \"CONFIDENTIAL\"\r\n        ]\r\n    }\r\n}"
+  auth:
+    type: bearer
+    token: "{{xtoken}}"
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: "Svc - Delete #1-241031"
+    request:
+      url: "{{BASE_URL}}/v1/digisigns/:id/:company_id/:business_unit_id"
+      method: DELETE
+      headers:
+        - name: x-token
+          value: "{{API_TOKEN}}"
+      params:
+        - name: company_id
+          value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+          type: query
+          disabled: true
+        - name: id
+          value: 8aa61541-96c5-44bb-8e99-9882ad547492
+          type: path
+        - name: company_id
+          value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+          type: path
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: path
+      body:
+        type: json
+        data: "{\r\n    // \"document_id\": \"8aa61541-96c5-44bb-8e99-9882ad547492\",\r\n    // \"company_id\": \"2da6a1bd-ba62-43ec-91f8-4085d5d6d498\",\r\n    // \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r\n    // \"organization_id\": \"730a774b-105f-44aa-99ed-16f24c061a95\",\r\n    \"metadata\": {\r\n        \"user_created\": {\r\n            \"user_type_id\": \"StandardUser\",\r\n            \"user_id\": \"21239\",\r\n            \"full_name\": \"Fajar Wahyudianto, S.Kom\",\r\n            \"email\": \"fajar.wahyudianto@jec.co.id\",\r\n            \"organization\": {\r\n                \"organization_id\": \"730a774b-105f-44aa-99ed-16f24c061a95\",\r\n                \"organization_code\": \"MSAS\",\r\n                \"organization_name\": \"CORP - Medical & Support Application Service\"\r\n            }\r\n        },\r\n        \"created_at\": \"2024-10-31T03:00:00+07:00\",\r\n        \"user_updated\": {\r\n            \"user_type_id\": \"StandardUser\",\r\n            \"user_id\": \"21239\",\r\n            \"full_name\": \"Fajar Wahyudianto, S.Kom\",\r\n            \"email\": \"fajar.wahyudianto@jec.co.id\",\r\n            \"organization\": {\r\n                \"organization_id\": \"730a774b-105f-44aa-99ed-16f24c061a95\",\r\n                \"organization_code\": \"MSAS\",\r\n                \"organization_name\": \"CORP - Medical & Support Application Service\"\r\n            }\r\n        },\r\n        \"updated_at\": \"2024-10-31T15:00:00+07:00\",\r\n        \"priority\": \"High\",\r\n        \"tags\": [\r\n            \"EMR\",\r\n            \"PATIENT DOCUMENTS\",\r\n            \"CONFIDENTIAL\"\r\n        ]\r\n    }\r\n}"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 31 Oct 2024 05:16:48 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "1316"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "document_id": "8aa61541-96c5-44bb-8e99-9882ad547492",
+                  "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",
+                  "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "organization_id": "730a774b-105f-44aa-99ed-16f24c061a95",
+                  "product_id": "ee197431-276d-453d-857c-412f347dae19",
+                  "provider_id": "3261a59d-ea2c-456b-bcff-cd841a066eb7",
+                  "order_type_id": "OrderType-01",
+                  "document_type_id": "DocumentType-001",
+                  "document_status_id": "SignDocStatus-01",
+                  "document_name": "MEDICAL_RESUME_24_10_31_x95.pdf",
+                  "is_active": false,
+                  "metadata": {
+                      "user_created": {
+                          "user_type_id": "StandardUser",
+                          "user_id": "21239",
+                          "full_name": "Fajar Wahyudianto, S.Kom",
+                          "email": "fajar.wahyudianto@jec.co.id",
+                          "organization": {
+                              "organization_id": "730a774b-105f-44aa-99ed-16f24c061a95",
+                              "organization_code": "MSAS",
+                              "organization_name": "CORP - Medical & Support Application Service"
+                          }
+                      },
+                      "created_at": "2024-10-31T03:00:00+07:00",
+                      "user_updated": {
+                          "user_type_id": "StandardUser",
+                          "user_id": "21239",
+                          "full_name": "Fajar Wahyudianto, S.Kom",
+                          "email": "fajar.wahyudianto@jec.co.id",
+                          "organization": {
+                              "organization_id": "730a774b-105f-44aa-99ed-16f24c061a95",
+                              "organization_code": "MSAS",
+                              "organization_name": "CORP - Medical & Support Application Service"
+                          }
+                      },
+                      "updated_at": "2024-10-31T15:00:00+07:00",
+                      "priority": "High",
+                      "tags": [
+                          "EMR",
+                          "PATIENT DOCUMENTS",
+                          "CONFIDENTIAL"
+                      ]
+                  }
+              }
+          }

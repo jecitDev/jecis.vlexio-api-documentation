@@ -1,0 +1,247 @@
+info:
+  name: Create_OPR_Walkin_Registration_Type
+  type: http
+  seq: 11
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/registration"
+  headers:
+    - name: x-token
+      value: "{{admission_xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+      \    \"company_id\": \"2da6a1bd-ba62-43ec-91f8-4085d5d6d498\",\r
+
+      \    \"appointment_no\": \"\",\r
+
+      \    \"registration_datetime\": \"2024-12-31T00:00:00+07:00\",\r
+
+      \    \"paramedic_id\": \"D294\",\r
+
+      \    \"guarantor_id\": \"SELF\",\r
+
+      \    \"patient_id\": \"PKDY250324-0002\",\r
+
+      \    \"patient_name\": \"surya adhi waskito\",\r
+
+      \    \"class_id\": \"C005\",\r
+
+      \    \"sr_shift\": \"ShiftID-003\",\r
+
+      \    \"sr_patient_in_type\": \"\",\r
+
+      \    \"sr_registration_type\": \"OPR\",\r
+
+      \    \"insurance_id\": \"004\",\r
+
+      \    \"sr_patient_category\": \"\",\r
+
+      \    \"sr_visit_reason\": \"\",\r
+
+      \    \"sr_business_method\": \"BusinessMethod-001\",\r
+
+      \    \"service_unit_id\": \"E101\",\r
+
+      \    \"room_id\": \"E1-101\",\r
+
+      \    \"bed_id\": \"\",\r
+
+      \    \"charge_class_id\": \"C005\",\r
+
+      \    \"coverage_class_id\": \"C005\",\r
+
+      \    \"visit_type_id\": \"\",\r
+
+      \    \"notes\": \"\",\r
+
+      \    \"paket_screening\": \"\",\r
+
+      \    \"is_wna\": false,\r
+
+      \    \"is_new_patient\": true,\r
+
+      \    \"user_create\": \"21613\",\r
+
+      \    \"created_at\": \"2025-06-18T10:00:00+07:00\",\r
+
+      \    \"user_update\": \"\",\r
+
+      \    \"updated_at\": \"\",\r
+
+      \    \"status\": \"Closed\",\r
+
+      \    \"void_date\": \"\",\r
+
+      \    \"void_by_user_id\": \"\",\r
+
+      \    \"sr_void_reason\": \"\",\r
+
+      \    \"void_notes\": \"\",\r
+
+      \    \"close_date\": \"2025-06-18T10:00:00+07:00\",\r
+
+      \    \"close_by_user_id\": \"21613\",\r
+
+      \    \"id_date_slot\": 7731,\r
+
+      \    \"lock_start\": \"2025-06-18T10:00:00+07:00\",\r
+
+      \    \"lock_by\": \"surya\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/registration"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{admission_xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+          \    \"company_id\": \"2da6a1bd-ba62-43ec-91f8-4085d5d6d498\",\r
+
+          \    \"appointment_no\": \"\",\r
+
+          \    \"registration_datetime\": \"2024-12-31T00:00:00+07:00\",\r
+
+          \    \"paramedic_id\": \"D294\",\r
+
+          \    \"guarantor_id\": \"SELF\",\r
+
+          \    \"patient_id\": \"PKDY250324-0002\",\r
+
+          \    \"patient_name\": \"surya adhi waskito\",\r
+
+          \    \"class_id\": \"C005\",\r
+
+          \    \"sr_shift\": \"ShiftID-003\",\r
+
+          \    \"sr_patient_in_type\": \"\",\r
+
+          \    \"sr_registration_type\": \"OPR\",\r
+
+          \    \"insurance_id\": \"004\",\r
+
+          \    \"sr_patient_category\": \"\",\r
+
+          \    \"sr_visit_reason\": \"\",\r
+
+          \    \"sr_business_method\": \"BusinessMethod-001\",\r
+
+          \    \"service_unit_id\": \"E101\",\r
+
+          \    \"room_id\": \"E1-101\",\r
+
+          \    \"bed_id\": \"\",\r
+
+          \    \"charge_class_id\": \"C005\",\r
+
+          \    \"coverage_class_id\": \"C005\",\r
+
+          \    \"visit_type_id\": \"\",\r
+
+          \    \"notes\": \"\",\r
+
+          \    \"paket_screening\": \"\",\r
+
+          \    \"is_wna\": false,\r
+
+          \    \"is_new_patient\": true,\r
+
+          \    \"user_create\": \"21613\",\r
+
+          \    \"created_at\": \"2025-06-18T10:00:00+07:00\",\r
+
+          \    \"user_update\": \"\",\r
+
+          \    \"updated_at\": \"\",\r
+
+          \    \"status\": \"Closed\",\r
+
+          \    \"void_date\": \"\",\r
+
+          \    \"void_by_user_id\": \"\",\r
+
+          \    \"sr_void_reason\": \"\",\r
+
+          \    \"void_notes\": \"\",\r
+
+          \    \"close_date\": \"2025-06-18T10:00:00+07:00\",\r
+
+          \    \"close_by_user_id\": \"21613\",\r
+
+          \    \"id_date_slot\": 7731,\r
+
+          \    \"lock_start\": \"2025-06-18T10:00:00+07:00\",\r
+
+          \    \"lock_by\": \"surya\"\r
+
+          }"
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Date
+          value: Fri, 20 Jun 2025 04:00:23 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "247"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 201,
+              "data": {
+                  "registration_no": "REG/KDY/250620-0011",
+                  "registration_id": "85469db2-db84-41bf-a291-0326bba2ab2f",
+                  "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",
+                  "transaction_id": 1
+              }
+          }

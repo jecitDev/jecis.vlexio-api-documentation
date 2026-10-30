@@ -1,0 +1,50 @@
+info:
+  name: Update Rujukan Antar RS
+  type: http
+  seq: 2
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/bpjs/rujukan-antar-rs/:no_rujukan"
+  headers:
+    - name: x-token
+      value: ""
+  params:
+    - name: no_rujukan
+      value: ""
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"business_unit_id\": \"\",\r
+
+      \    \"no_sep\": \"\",\r
+
+      \    \"tgl_rujukan\": \"\",\r
+
+      \    \"tgl_rencana_kunjungan\": \"\",\r
+
+      \    \"ppk_dirujuk\": \"\",\r
+
+      \    \"jns_pelayanan\": \"\",\r
+
+      \    \"catatan\": \"\",\r
+
+      \    \"diag_rujukan\": \"\",\r
+
+      \    \"tipe_rujukan\": \"\",\r
+
+      \    \"poli_rujukan\": \"\",\r
+
+      \    \"user\": \"\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

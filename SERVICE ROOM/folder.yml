@@ -1,0 +1,7 @@
+info:
+  name: SERVICE ROOM
+  type: folder
+  seq: 131
+
+request:
+  auth: inherit

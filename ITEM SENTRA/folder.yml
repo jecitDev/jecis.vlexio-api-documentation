@@ -1,0 +1,7 @@
+info:
+  name: ITEM SENTRA
+  type: folder
+  seq: 89
+
+request:
+  auth: inherit

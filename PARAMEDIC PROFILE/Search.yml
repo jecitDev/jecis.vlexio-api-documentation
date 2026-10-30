@@ -1,0 +1,139 @@
+info:
+  name: Search
+  type: http
+  seq: 9
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/paramedic/search?max_hits=3&page=1&text=vita&business_unit_id=53aad077-9fb1-4f08-85f3-af9fd9a36517"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: max_hits
+      value: "3"
+      type: query
+    - name: page
+      value: "1"
+      type: query
+    - name: text
+      value: vita
+      type: query
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: query
+    - name: specialty
+      value: Specialization-001
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Search
+    request:
+      url: "{{BASE_URL}}/v1/paramedic/search?max_hits=3&page=1&text=vita&business_unit_id=53aad077-9fb1-4f08-85f3-af9fd9a36517"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: max_hits
+          value: "3"
+          type: query
+        - name: page
+          value: "1"
+          type: query
+        - name: text
+          value: vita
+          type: query
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: query
+        - name: specialty
+          value: Specialization-001
+          type: query
+          disabled: true
+      body:
+        type: json
+        data: ""
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Wed, 26 Nov 2025 01:39:16 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "595"
+        - name: Connection
+          value: keep-alive
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "total": 4,
+                  "page": 1,
+                  "result": [
+                      {
+                          "paramedic_id": "DKDY0003",
+                          "user_name": "Budr. Vita Rahayu, Sp.Mdi",
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "specialty": "SMF002",
+                          "registration_no": "7321603323146304"
+                      },
+                      {
+                          "paramedic_id": "D324",
+                          "user_name": "Budr. Vita Rahayu, Sp.Mdi",
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "specialty": "SMF054",
+                          "registration_no": "7321603323146304"
+                      },
+                      {
+                          "paramedic_id": "D324",
+                          "user_name": "Budr. Vita Rahayu, Sp.Mdi",
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "specialty": "SMF054",
+                          "registration_no": "7321603323146304"
+                      }
+                  ]
+              }
+          }

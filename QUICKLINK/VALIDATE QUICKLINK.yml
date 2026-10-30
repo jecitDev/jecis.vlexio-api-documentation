@@ -1,0 +1,233 @@
+info:
+  name: VALIDATE QUICKLINK
+  type: http
+  seq: 1
+http:
+  method: POST
+  url: "{{BASE_URL}}/quicklink/validate_code"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+      disabled: true
+  body:
+    type: json
+    data: "{\r\n    \"quick_link_id\": \"c45f0d2a-3acc-408a-8a08-060873f2ef53\",\r\n    \"url\": \"/signature/view\"\r\n}"
+  auth: inherit
+runtime:
+  scripts:
+    - type: after-response
+      code: "var data = res.getBody();\r\nbru.setCollectionVar(\"xtoken\", data.data.access_token);\r\nbru.setCollectionVar(\"x-refresh-token\", data.data.refresh_token);"
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: SUCCESS
+    request:
+      url: "{{BASE_URL}}/quicklink/validate_code"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+          disabled: true
+      body:
+        type: json
+        data: "{\r\n    \"quick_link_id\": \"c45f0d2a-3acc-408a-8a08-060873f2ef53\",\r\n    \"url\": \"/signature/view\"\r\n}"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 02 Dec 2024 04:08:45 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "1476"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "access_token": "",
+                  "refresh_token": "",
+                  "expire_in": 1733114326,
+                  "user_id": "21170",
+                  "user_name": "Fernando Riyo J Simbolon",
+                  "email": "fernando.riyo@jec.co.id"
+              }
+          }
+  - name: NOT ACTIVE
+    request:
+      url: "{{BASE_URL}}/quicklink/validate_code"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+          disabled: true
+      body:
+        type: json
+        data: "{\r\n    \"quick_link_id\": \"c45f0d2a-3acc-408a-8a08-060873f2ef53\",\r\n    \"url\": \"/signature/view\"\r\n}"
+    response:
+      status: 500
+      statusText: Internal Server Error
+      headers:
+        - name: Date
+          value: Mon, 02 Dec 2024 04:09:13 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "59"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+              "message": "authentication.access_not_active",
+              "status": 500
+          }
+  - name: EXPIRED
+    request:
+      url: "{{BASE_URL}}/quicklink/validate_code"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+          disabled: true
+      body:
+        type: json
+        data: "{\r\n    \"quick_link_id\": \"c45f0d2a-3acc-408a-8a08-060873f2ef53\",\r\n    \"url\": \"/signature/view\"\r\n}"
+    response:
+      status: 500
+      statusText: Internal Server Error
+      headers:
+        - name: Date
+          value: Mon, 02 Dec 2024 04:09:43 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "56"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+              "message": "authentication.access_expired",
+              "status": 500
+          }
+  - name: NOT FOUND
+    request:
+      url: "{{BASE_URL}}/quicklink/validate_code"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+          disabled: true
+      body:
+        type: json
+        data: "{\r\n    \"quick_link_id\": \"c45f0d2a-3acc-408a-8a08-060873f2ef59\",\r\n    \"url\": \"/signature/view\"\r\n}"
+    response:
+      status: 500
+      statusText: Internal Server Error
+      headers:
+        - name: Date
+          value: Mon, 02 Dec 2024 04:10:23 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "36"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+              "message": "not_found",
+              "status": 500
+          }

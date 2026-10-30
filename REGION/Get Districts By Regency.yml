@@ -1,0 +1,124 @@
+info:
+  name: Get Districts By Regency
+  type: http
+  seq: 7
+http:
+  method: GET
+  url: "{{BASE_URL_SERVICE_BROKER}}/v1/regions/regencies/:regency/districts?is_active=true"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: is_active
+      value: "true"
+      type: query
+    - name: regency
+      value: ""
+      type: path
+  body:
+    type: json
+    data: ""
+  auth: inherit
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL_SERVICE_BROKER}}/v1/regions/regencies/:regency/districts?province=dki jakarta&is_active=true"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: admin
+      params:
+        - name: province
+          value: dki jakarta
+          type: query
+        - name: is_active
+          value: "true"
+          type: query
+        - name: regency
+          value: Administrasi Jakarta Pusat
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Fri, 31 Oct 2025 03:24:46 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "459"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "regency": "Administrasi Jakarta Pusat",
+                  "province": "DKI Jakarta",
+                  "total_items": 8,
+                  "districts": [
+                      {
+                          "district": "Cempaka Putih",
+                          "total_regions": 3
+                      },
+                      {
+                          "district": "Gambir",
+                          "total_regions": 6
+                      },
+                      {
+                          "district": "Johar Baru",
+                          "total_regions": 4
+                      },
+                      {
+                          "district": "Kemayoran",
+                          "total_regions": 8
+                      },
+                      {
+                          "district": "Menteng",
+                          "total_regions": 5
+                      },
+                      {
+                          "district": "Sawah Besar",
+                          "total_regions": 5
+                      },
+                      {
+                          "district": "Senen",
+                          "total_regions": 6
+                      },
+                      {
+                          "district": "Tanah Abang",
+                          "total_regions": 7
+                      }
+                  ]
+              }
+          }

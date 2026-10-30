@@ -1,0 +1,7 @@
+info:
+  name: Schedule Change
+  type: folder
+  seq: 1
+
+request:
+  auth: inherit

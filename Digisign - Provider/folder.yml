@@ -1,0 +1,28 @@
+info:
+  name: Digisign - Provider
+  type: folder
+  seq: 54
+
+request:
+  auth: inherit
+
+docs:
+  content: |-
+    ### \[TS-1391\] \[BE\] - MASTER PROVIDER DIGITAL SIGNATURE #1.0.0
+
+    Nov 12, 2024
+
+    - Add Field Provider Code
+        
+    - Add Digisign - Provider Get By Code Service
+        
+
+    ##### Nov 04, 2024
+
+    - Add Fields System ID; Username; Key; API Key; and Token on Configurations Object in All Service `Enhance`
+        
+
+    ##### Oct 17, 2024
+
+    - CRUD Common
+  type: text/markdown

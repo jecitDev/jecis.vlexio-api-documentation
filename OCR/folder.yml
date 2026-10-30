@@ -1,0 +1,7 @@
+info:
+  name: OCR
+  type: folder
+  seq: 140
+
+request:
+  auth: inherit

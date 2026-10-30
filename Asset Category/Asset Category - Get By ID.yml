@@ -1,0 +1,204 @@
+info:
+  name: Asset Category - Get By ID
+  type: http
+  seq: 3
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/AssetCategory/getbyid/:id/:business_unit_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: id
+      value: "3"
+      type: path
+    - name: business_unit_id
+      value: 33b109c5-dd64-480c-8100-68fe17deaf3e
+      type: path
+  body:
+    type: text
+    data: ""
+  auth:
+    type: bearer
+    token: "{{xtoken}}"
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: Asset Category - Get By ID API
+    request:
+      url: http://127.0.0.1:8080/v1/AssetCategory/getbyid/:id/:business_unit_id
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: id
+          value: 03.06.000
+          type: path
+        - name: business_unit_id
+          value: f64e10b4-0cbf-4fee-ac09-1a4fa199696c
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Wed, 17 Dec 2025 09:07:52 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "1055"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "business_unit_id": "f64e10b4-0cbf-4fee-ac09-1a4fa199696c",
+                  "category_id": 691,
+                  "category_code": "03.06.000",
+                  "category_level": 2,
+                  "category_name": "Company Car 12 edit",
+                  "category_parent_id": 14,
+                  "category_description": "Vehicles JEC 123",
+                  "is_active": true,
+                  "is_enable_capital_work": false,
+                  "is_non_depreciable_category": false,
+                  "object_depreciation_method": [
+                      {
+                          "finance_book": "FB1_",
+                          "sr_depreciation_method": "STRAIGHT_LINE_",
+                          "depreciation_use_full_life": 1,
+                          "depreciation_frequency_month": 12
+                      }
+                  ],
+                  "object_account": [
+                      {
+                          "coa_fixed_account": "1200_",
+                          "coa_accumulated_expense": "1290_",
+                          "coa_depreciation_expense": "1290_",
+                          "coa_capital_work_in_progress": "1300_"
+                      }
+                  ],
+                  "user_create": "rickylai",
+                  "created_at": "2025-09-13T13:58:23+07:00",
+                  "user_update": "ricky reAc",
+                  "updated_at": "2024-03-01T13:24:42+08:00",
+                  "categoryid_l2": 14,
+                  "categorycode_l2": "03.01.000",
+                  "categorylevel_l2": 2,
+                  "categoryname_l2": "IT Equipment",
+                  "categoryparentid_l2": 3,
+                  "categoryid_l1": 3,
+                  "categorycode_l1": "03.00.000",
+                  "categorylevel_l1": 1,
+                  "categoryname_l1": "Peralatan Kantor",
+                  "category_level_name": "Sub Category"
+              }
+          }
+  - name: Asset Category - Get By ID API
+    request:
+      url: http://127.0.0.1:8080/v1/AssetCategory/getbyid/:id
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: id
+          value: "104"
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 06 Jan 2026 03:12:09 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "627"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "business_unit_id": "f64e10b4-0cbf-4fee-ac09-1a4fa199696c",
+                  "category_id": 104,
+                  "category_code": "03.02.004",
+                  "category_level": 3,
+                  "category_name": "Access Control System",
+                  "category_parent_id": 15,
+                  "is_active": false,
+                  "user_create": "zico",
+                  "created_at": "2025-08-13T13:58:23+07:00",
+                  "user_update": "ricky del",
+                  "updated_at": "2024-03-01T13:24:42+08:00",
+                  "categoryid_l2": 15,
+                  "categorycode_l2": "03.02.000",
+                  "categorylevel_l2": 2,
+                  "categoryname_l2": "Office Equipment",
+                  "categoryparentid_l2": 3,
+                  "categoryid_l1": 3,
+                  "categorycode_l1": "03.00.000",
+                  "categorylevel_l1": 1,
+                  "categoryname_l1": "Peralatan Kantor",
+                  "category_level_name": "Asset Type"
+              }
+          }

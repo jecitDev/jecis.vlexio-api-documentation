@@ -1,0 +1,7 @@
+info:
+  name: PRINT TEMPLATE
+  type: folder
+  seq: 103
+
+request:
+  auth: inherit

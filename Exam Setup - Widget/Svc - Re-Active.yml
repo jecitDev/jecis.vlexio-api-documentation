@@ -1,0 +1,92 @@
+info:
+  name: Svc - Re-Active
+  type: http
+  seq: 8
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/widgets/reactivate/:id/"
+  headers:
+    - name: x-token
+      value: "{{API_TOKEN}}"
+  params:
+    - name: id
+      value: "5"
+      type: path
+  body:
+    type: json
+    data: "{\r\n    \"user_update\": \"Admin4\",\r\n    \"updated_at\": \"2024-09-23T22:00:00+07:00\"\r\n}"
+  auth:
+    type: bearer
+    token: "{{xtoken}}"
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: "Svc - Re-Active #1-240923"
+    request:
+      url: "{{BASE_URL}}/v1/widgets/reactivate/:id/"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{API_TOKEN}}"
+      params:
+        - name: id
+          value: "5"
+          type: path
+      body:
+        type: json
+        data: "{\r\n    \"user_update\": \"Admin4\",\r\n    \"updated_at\": \"2024-09-23T22:00:00+07:00\"\r\n}"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 23 Sep 2024 08:16:50 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "198"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "widget_id": 5,
+                  "widget_name": "Visual Acuity",
+                  "widget_type": "default",
+                  "component": "patientvision",
+                  "is_active": true,
+                  "user_update": "Admin4",
+                  "updated_at": "2024-09-23T22:00:00+07:00"
+              }
+          }

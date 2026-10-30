@@ -1,0 +1,26 @@
+info:
+  name: Sync To Typesense
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/rate-book/sync-to-typesense"
+  headers:
+    - name: x-token
+      value: "{{admission_xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

@@ -1,0 +1,190 @@
+info:
+  name: CLOSE
+  type: http
+  seq: 8
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/registration/close/:registration_id/:company_id/:business_unit_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: registration_id
+      value: 98b40279-e2f9-47b7-87d7-641068aa831d
+      type: path
+    - name: company_id
+      value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+      type: path
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"close_by_user_id\": \"21170\",\r
+
+      \    \"close_date\": \"2025-01-09T08:00:00+07:00\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: ERROR VOID
+    request:
+      url: "{{BASE_URL}}/v1/registration/close/:registration_id/:company_id/:business_unit_id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: registration_id
+          value: 98b40279-e2f9-47b7-87d7-641068aa831d
+          type: path
+        - name: company_id
+          value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+          type: path
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"close_by_user_id\": \"21170\",\r
+
+          \    \"close_date\": \"2025-01-09T08:00:00+07:00\"\r
+
+          }"
+    response:
+      status: 500
+      statusText: Internal Server Error
+      headers:
+        - name: Server
+          value: nginx/1.20.1
+        - name: Date
+          value: Mon, 13 Jan 2025 10:08:59 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "71"
+        - name: Connection
+          value: keep-alive
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "registration.Cant_Update_Registration_Voided",
+              "status": 500
+          }
+  - name: SUCCESS
+    request:
+      url: "{{BASE_URL}}/v1/registration/close/:registration_id/:company_id/:business_unit_id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: registration_id
+          value: 98b40279-e2f9-47b7-87d7-641068aa831d
+          type: path
+        - name: company_id
+          value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+          type: path
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"close_by_user_id\": \"21170\",\r
+
+          \    \"close_date\": \"2025-01-09T08:00:00+07:00\"\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Server
+          value: nginx/1.20.1
+        - name: Date
+          value: Mon, 13 Jan 2025 10:10:30 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "188"
+        - name: Connection
+          value: keep-alive
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",
+                  "registration_id": "98b40279-e2f9-47b7-87d7-641068aa831d"
+              }
+          }

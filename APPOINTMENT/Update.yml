@@ -1,0 +1,410 @@
+info:
+  name: Update
+  type: http
+  seq: 6
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/appointments/:business_unit_id?appointment_no=APKDY/250523-00053"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: appointment_no
+      value: APKDY/250523-00053
+      type: query
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"company_id\": \"2da6a1bd-ba62-43ec-91f8-4085d5d6d498\",\r
+
+      \    \"service_unit_id\": \"SU002\",\r
+
+      \    \"paramedic_id\": \"PMD123\",\r
+
+      \    \"patient_id\": \"PAT456\",\r
+
+      \    \"visit_type_id\": \"VISIT01\",\r
+
+      \    \"sr_appointment_status\": \"canceled\",\r
+
+      \    \"sr_patient_category\": \"general\",\r
+
+      \    \"sr_salutation\": \"Mr.\",\r
+
+      \    \"first_name\": \"John\",\r
+
+      \    \"middle_name\": \"Alexander\",\r
+
+      \    \"last_name\": \"Doe\",\r
+
+      \    \"gender\": \"male\",\r
+
+      \    \"street_name\": \"Jl. Sudirman No. 123 update\",\r
+
+      \    \"district\": \"Tanah Abang\",\r
+
+      \    \"city\": \"Jakarta\",\r
+
+      \    \"country\": \"Indonesia\",\r
+
+      \    \"state\": \"DKI Jakarta\",\r
+
+      \    \"zip_code\": \"10270\",\r
+
+      \    \"phone_no\": \"0217654321\",\r
+
+      \    \"email\": \"john.doe@example.com\",\r
+
+      \    \"mobile_phone_no\": \"081234567890\",\r
+
+      \    \"sr_mobile_no_type\": [\"whatsapp\", \"line\", \"telegram\"],\r
+
+      \    \"notes\": \"Pasien ingin konsultasi umum.\",\r
+
+      \    \"patient_pic\": \"John Doe\",\r
+
+      \    \"officer_pic\": \"Jane Doe\",\r
+
+      \    \"follow_up_date_time\": \"2025-03-16T14:08:41+07:00\",\r
+
+      \    \"guarantor_id\": \"GRT001\",\r
+
+      \    \"jenis_referensi_bpjs\": 1,\r
+
+      \    \"referensi_bpjs\": \"BPJSREF001\",\r
+
+      \    \"date_of_birth\": \"2000-03-18T14:08:41+07:00\",\r
+
+      \    \"city_of_birth\": \"Bandung\",\r
+
+      \    \"ssn\": \"321-65-0987\",\r
+
+      \    \"no_bpjs\": \"9876543210987\",\r
+
+      \    \"parent_name\": \"Jane Doe\",\r
+
+      \    \"sr_appointment_criteria\": 2,\r
+
+      \    \"no_surat_kontrol\": \"SK123456\",\r
+
+      \    \"sr_appointment_source\": \"mobile_app\",\r
+
+      \    \"emg_contact_name\": \"Jane Smith\",\r
+
+      \    \"sr_emg_contact_type\": \"family\",\r
+
+      \    \"user_update\": \"admin_user\",\r
+
+      \    \"updated_at\": \"2025-03-18T14:08:41+07:00\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Err Data Not Found
+    request:
+      url: "{{BASE_URL}}/v1/appointments/:business_unit_id/:appointment_no"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{admission_xtoken}}"
+      params:
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: path
+        - name: appointment_no
+          value: APKDY%2F250508-009999
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"company_id\": \"2da6a1bd-ba62-43ec-91f8-4085d5d6d498\",\r
+
+          \    \"service_unit_id\": \"SU002\",\r
+
+          \    \"paramedic_id\": \"PMD123\",\r
+
+          \    \"patient_id\": \"PAT456\",\r
+
+          \    \"visit_type_id\": \"VISIT01\",\r
+
+          \    \"sr_appointment_status\": \"scheduled\",\r
+
+          \    \"sr_patient_category\": \"general\",\r
+
+          \    \"sr_salutation\": \"Mr.\",\r
+
+          \    \"first_name\": \"John\",\r
+
+          \    \"middle_name\": \"Alexander\",\r
+
+          \    \"last_name\": \"Doe\",\r
+
+          \    \"gender\": \"male\",\r
+
+          \    \"street_name\": \"Jl. Sudirman No. 123 update\",\r
+
+          \    \"district\": \"Tanah Abang\",\r
+
+          \    \"city\": \"Jakarta\",\r
+
+          \    \"country\": \"Indonesia\",\r
+
+          \    \"state\": \"DKI Jakarta\",\r
+
+          \    \"zip_code\": \"10270\",\r
+
+          \    \"phone_no\": \"0217654321\",\r
+
+          \    \"email\": \"john.doe@example.com\",\r
+
+          \    \"mobile_phone_no\": \"081234567890\",\r
+
+          \    \"sr_mobile_no_type\": [\"whatsapp\", \"line\", \"telegram\"],\r
+
+          \    \"notes\": \"Pasien ingin konsultasi umum.\",\r
+
+          \    \"patient_pic\": \"John Doe\",\r
+
+          \    \"officer_pic\": \"Jane Doe\",\r
+
+          \    \"follow_up_date_time\": \"2025-03-16T14:08:41+07:00\",\r
+
+          \    \"guarantor_id\": \"GRT001\",\r
+
+          \    \"jenis_referensi_bpjs\": 1,\r
+
+          \    \"referensi_bpjs\": \"BPJSREF001\",\r
+
+          \    \"date_of_birth\": \"2000-03-18T14:08:41+07:00\",\r
+
+          \    \"city_of_birth\": \"Bandung\",\r
+
+          \    \"ssn\": \"321-65-0987\",\r
+
+          \    \"no_bpjs\": \"9876543210987\",\r
+
+          \    \"parent_name\": \"Jane Doe\",\r
+
+          \    \"sr_appointment_criteria\": 2,\r
+
+          \    \"no_surat_kontrol\": \"SK123456\",\r
+
+          \    \"sr_appointment_source\": \"mobile_app\",\r
+
+          \    \"emg_contact_name\": \"Jane Smith\",\r
+
+          \    \"sr_emg_contact_type\": \"family\",\r
+
+          \    \"user_update\": \"admin_user\",\r
+
+          \    \"updated_at\": \"2025-03-18T14:08:41+07:00\"\r
+
+          }"
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Date
+          value: Tue, 13 May 2025 05:29:23 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "48"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "appointment.not_found",
+              "status": 404
+          }
+  - name: "200"
+    request:
+      url: "{{BASE_URL}}/v1/appointments/:business_unit_id?appointment_no=APKDY/250523-00053"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: appointment_no
+          value: APKDY/250523-00053
+          type: query
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"company_id\": \"2da6a1bd-ba62-43ec-91f8-4085d5d6d498\",\r
+
+          \    \"service_unit_id\": \"SU002\",\r
+
+          \    \"paramedic_id\": \"PMD123\",\r
+
+          \    \"patient_id\": \"PAT456\",\r
+
+          \    \"visit_type_id\": \"VISIT01\",\r
+
+          \    \"sr_appointment_status\": \"canceled\",\r
+
+          \    \"sr_patient_category\": \"general\",\r
+
+          \    \"sr_salutation\": \"Mr.\",\r
+
+          \    \"first_name\": \"John\",\r
+
+          \    \"middle_name\": \"Alexander\",\r
+
+          \    \"last_name\": \"Doe\",\r
+
+          \    \"gender\": \"male\",\r
+
+          \    \"street_name\": \"Jl. Sudirman No. 123 update\",\r
+
+          \    \"district\": \"Tanah Abang\",\r
+
+          \    \"city\": \"Jakarta\",\r
+
+          \    \"country\": \"Indonesia\",\r
+
+          \    \"state\": \"DKI Jakarta\",\r
+
+          \    \"zip_code\": \"10270\",\r
+
+          \    \"phone_no\": \"0217654321\",\r
+
+          \    \"email\": \"john.doe@example.com\",\r
+
+          \    \"mobile_phone_no\": \"081234567890\",\r
+
+          \    \"sr_mobile_no_type\": [\"whatsapp\", \"line\", \"telegram\"],\r
+
+          \    \"notes\": \"Pasien ingin konsultasi umum.\",\r
+
+          \    \"patient_pic\": \"John Doe\",\r
+
+          \    \"officer_pic\": \"Jane Doe\",\r
+
+          \    \"follow_up_date_time\": \"2025-03-16T14:08:41+07:00\",\r
+
+          \    \"guarantor_id\": \"GRT001\",\r
+
+          \    \"jenis_referensi_bpjs\": 1,\r
+
+          \    \"referensi_bpjs\": \"BPJSREF001\",\r
+
+          \    \"date_of_birth\": \"2000-03-18T14:08:41+07:00\",\r
+
+          \    \"city_of_birth\": \"Bandung\",\r
+
+          \    \"ssn\": \"321-65-0987\",\r
+
+          \    \"no_bpjs\": \"9876543210987\",\r
+
+          \    \"parent_name\": \"Jane Doe\",\r
+
+          \    \"sr_appointment_criteria\": 2,\r
+
+          \    \"no_surat_kontrol\": \"SK123456\",\r
+
+          \    \"sr_appointment_source\": \"mobile_app\",\r
+
+          \    \"emg_contact_name\": \"Jane Smith\",\r
+
+          \    \"sr_emg_contact_type\": \"family\",\r
+
+          \    \"user_update\": \"admin_user\",\r
+
+          \    \"updated_at\": \"2025-03-18T14:08:41+07:00\"\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 26 May 2025 03:34:35 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "185"
+        - name: Connection
+          value: keep-alive
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "appointment_no": "APKDY/250523-00053",
+                  "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "user_update": "admin_user",
+                  "updated_at": "2025-03-18T14:08:41+07:00"
+              }
+          }

@@ -1,0 +1,149 @@
+info:
+  name: Get Package to Patient By Id
+  type: http
+  seq: 22
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/promo/promo-to-patient/:package_id/:patient_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: package_id
+      value: 9a368312-f26a-49e1-80bd-b12e085cecae
+      type: path
+    - name: patient_id
+      value: PKDY250707-0001
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/promo/promo-to-patient/:package_id/:patient_id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: package_id
+          value: 9a368312-f26a-49e1-80bd-b12e085cecaf
+          type: path
+        - name: patient_id
+          value: PKDY250707-0001
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Fri, 08 Aug 2025 03:02:27 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "242"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "package_id": "9a368312-f26a-49e1-80bd-b12e085cecaf",
+                  "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "patient_id": "PKDY250707-0001",
+                  "is_active": true,
+                  "user_create": "admin",
+                  "created_at": "2025-08-06T10:30:00+07:00"
+              }
+          }
+  - name: Not Found
+    request:
+      url: "{{BASE_URL}}/v1/promo/promo-to-patient/:package_id/:patient_id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: package_id
+          value: 9a368312-f26a-49e1-80bd-b12e085cecae
+          type: path
+        - name: patient_id
+          value: PKDY250707-0001
+          type: path
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Date
+          value: Fri, 08 Aug 2025 03:02:47 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "55"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "package_to_patient.not_found",
+              "status": 404
+          }

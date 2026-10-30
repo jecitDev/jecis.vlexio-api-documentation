@@ -1,0 +1,148 @@
+info:
+  name: Get Paramedic Module Access
+  type: http
+  seq: 30
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/business-unit-accounts/paramedic-module/business-units?business_unit_id=f61ff039-a345-4e44-9dda-28fa7a871f5c"
+  headers:
+    - name: x-token
+      value: "{{x-token}}"
+    - name: X-User-ID
+      value: "{{X-User-ID}}"
+  params:
+    - name: business_unit_id
+      value: f61ff039-a345-4e44-9dda-28fa7a871f5c
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/business-unit-accounts/paramedic-module/business-units?business_unit_id=f61ff039-a345-4e44-9dda-28fa7a871f5d"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{x-token}}"
+        - name: X-User-ID
+          value: "{{X-User-ID}}"
+      params:
+        - name: business_unit_id
+          value: f61ff039-a345-4e44-9dda-28fa7a871f5d
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Wed, 26 Nov 2025 09:02:31 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "209"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "business_unit_id": "f61ff039-a345-4e44-9dda-28fa7a871f5d",
+                  "total_items": 1,
+                  "business_units": [
+                      {
+                          "business_unit_id": "f61ff039-a345-4e44-9dda-28fa7a871f5d",
+                          "business_unit_name": "JEC@Tambora"
+                      }
+                  ]
+              }
+          }
+  - name: Not Found
+    request:
+      url: "{{BASE_URL}}/v1/business-unit-accounts/paramedic-module/business-units?business_unit_id=f61ff039-a345-4e44-9dda-28fa7a871f5c"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{x-token}}"
+        - name: X-User-ID
+          value: "{{X-User-ID}}"
+      params:
+        - name: business_unit_id
+          value: f61ff039-a345-4e44-9dda-28fa7a871f5c
+          type: query
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Date
+          value: Wed, 26 Nov 2025 09:02:42 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "73"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "business_unit_accounts.configuration_not_found",
+              "status": 404
+          }

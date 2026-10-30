@@ -1,0 +1,790 @@
+info:
+  name: INSERT
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/accessgroup"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"accessgroup\": {\r
+
+      \        \"access_program\": [\r
+
+      \            {\r
+
+      \                \"program_id\": \"01.01.01\",\r
+
+      \                \"is_program_addable\": false,\r
+
+      \                \"is_program_editable\": true,\r
+
+      \                \"is_program_deleteable\": false,\r
+
+      \                \"is_program_viewable\": false,\r
+
+      \                \"is_program_approveable\": true,\r
+
+      \                \"is_program_unapproveable\": false,\r
+
+      \                \"is_program_voidable\": false,\r
+
+      \                \"is_program_unvoidable\": true,\r
+
+      \                \"is_program_direct_void\": true,\r
+
+      \                \"is_program_exportable\": true,\r
+
+      \                \"is_program_printable\": true\r
+
+      \            },\r
+
+      \            {\r
+
+      \                \"program_id\": \"01.01.02\",\r
+
+      \                \"is_program_addable\": true,\r
+
+      \                \"is_program_editable\": false,\r
+
+      \                \"is_program_deleteable\": true,\r
+
+      \                \"is_program_viewable\": false,\r
+
+      \                \"is_program_approveable\": false,\r
+
+      \                \"is_program_unapproveable\": true,\r
+
+      \                \"is_program_voidable\": false,\r
+
+      \                \"is_program_unvoidable\": true,\r
+
+      \                \"is_program_direct_void\": false,\r
+
+      \                \"is_program_exportable\": true,\r
+
+      \                \"is_program_printable\": true\r
+
+      \            },\r
+
+      \            {\r
+
+      \                \"program_id\": \"01.02.01\",\r
+
+      \                \"is_program_addable\": false,\r
+
+      \                \"is_program_editable\": true,\r
+
+      \                \"is_program_deleteable\": false,\r
+
+      \                \"is_program_viewable\": false,\r
+
+      \                \"is_program_approveable\": true,\r
+
+      \                \"is_program_unapproveable\": false,\r
+
+      \                \"is_program_voidable\": false,\r
+
+      \                \"is_program_unvoidable\": true,\r
+
+      \                \"is_program_direct_void\": true,\r
+
+      \                \"is_program_exportable\": false,\r
+
+      \                \"is_program_printable\": true\r
+
+      \            },\r
+
+      \            {\r
+
+      \                \"program_id\": \"03.02\",\r
+
+      \                \"is_program_addable\": true,\r
+
+      \                \"is_program_editable\": false,\r
+
+      \                \"is_program_deleteable\": false,\r
+
+      \                \"is_program_viewable\": false,\r
+
+      \                \"is_program_approveable\": false,\r
+
+      \                \"is_program_unapproveable\": false,\r
+
+      \                \"is_program_voidable\": false,\r
+
+      \                \"is_program_unvoidable\": false,\r
+
+      \                \"is_program_direct_void\": false,\r
+
+      \                \"is_program_exportable\": false,\r
+
+      \                \"is_program_printable\": false\r
+
+      \            }\r
+
+      \        ],\r
+
+      \        \"access_report\": [\r
+
+      \            {\r
+
+      \                \"report_id\": 1\r
+
+      \            }\r
+
+      \        ],\r
+
+      \        \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+      \        \"admin_type\": \"-\",\r
+
+      \        \"created_at\": \"2024-08-27T08:00:00+07:00\",\r
+
+      \        \"description\": \"ASSDOC5\",\r
+
+      \        \"group_id\": \"ASSDOC4\",\r
+
+      \        \"group_name\": \"ASSDOC6\",\r
+
+      \        \"is_active\": true,\r
+
+      \        \"user_create\": \"nando\"\r
+
+      \    },\r
+
+      \    \"accessgroup_emr\": {\r
+
+      \        \"access_emr_exam\": [\r
+
+      \            {\r
+
+      \                \"is_allow_other_user_edit\": false,\r
+
+      \                \"id\": 1,\r
+
+      \                \"name\": \"SOAP For Opthamologist\",\r
+
+      \                \"exam_setup_type\": \"DEFAULT\",\r
+
+      \                \"module_in_used\": [\r
+
+      \                    \"Outpatient\"\r
+
+      \                ]\r
+
+      \            },\r
+
+      \            {\r
+
+      \                \"is_allow_other_user_edit\": false,\r
+
+      \                \"id\": 2,\r
+
+      \                \"module_in_used\": [\r
+
+      \                    \"Outpatient\"\r
+
+      \                ],\r
+
+      \                \"name\": \"Nursing Assessment\",\r
+
+      \                \"exam_setup_type\": \"Form\"\r
+
+      \            }\r
+
+      \        ],\r
+
+      \        \"access_emr_other\": {\r
+
+      \            \"default_module\": \"Outpatient\",\r
+
+      \            \"doc_access\": [\r
+
+      \                \"Create\",\r
+
+      \                \"Read\",\r
+
+      \                \"Update\"\r
+
+      \            ],\r
+
+      \            \"meddream_access\": {\r
+
+      \                \"meddream_permission\": [\r
+
+      \                    \"ADMIN\",\r
+
+      \                    \"PATIENT_HISTORY\",\r
+
+      \                    \"REPORT_VIEW\",\r
+
+      \                    \"DOCUMENT_VIEW\"\r
+
+      \                ],\r
+
+      \                \"meddream_user\": \"1-sednaview\"\r
+
+      \            },\r
+
+      \            \"research_access\": \"ADMIN\",\r
+
+      \            \"room_access\": [\r
+
+      \                {\r
+
+      \                    \"id\": \"1\",\r
+
+      \                    \"name\": \"Main\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"name\": \"Doctor Rooms\",\r
+
+      \                    \"id\": \"2\"\r
+
+      \                }\r
+
+      \            ]\r
+
+      \        },\r
+
+      \        \"group_id\": \"ASSDOC4\",\r
+
+      \        \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\"\r
+
+      \    },\r
+
+      \    \"accessgroup_digisign\": {\r
+
+      \        \"group_id\": \"ASSDOC4\",\r
+
+      \        \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+      \        \"is_business_unit\": false,\r
+
+      \        \"document_type_access\": [\"DocumentType-001\", \"DocumentType-005\"]\r
+
+      \    },\r
+
+      \    \"accessgroup_his\": {\r
+
+      \        \"group_id\": \"ASSDOC4\"\r
+
+      \    },\r
+
+      \    \"accessgroup_hris\": {\r
+
+      \        \"group_id\": \"ASSDOC4\"\r
+
+      \    },\r
+
+      \    \"accessgroup_crm\": {\r
+
+      \        \"group_id\": \"DEFUSER\",\r
+
+      \        \"business_unit_id\": \"33b109c5-dd64-480c-8100-68fe17deaf3e\",\r
+
+      \        \"is_business_unit\": true,\r
+
+      \        \"coverage_business_units\": [\"33b109c5-dd64-480c-8100-68fe17deaf3e\", \"18e9ea73-7343-4be2-a8e4-47b652e56981\"]\r
+
+      \    }\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: INSERT
+    request:
+      url: "{{BASE_URL}}/v1/accessgroup"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"accessgroup\": {\r
+
+          \        \"access_program\": [\r
+
+          \            {\r
+
+          \                \"program_id\": \"01.01.01\",\r
+
+          \                \"is_program_addable\": false,\r
+
+          \                \"is_program_editable\": true,\r
+
+          \                \"is_program_deleteable\": false,\r
+
+          \                \"is_program_viewable\": false,\r
+
+          \                \"is_program_approveable\": true,\r
+
+          \                \"is_program_unapproveable\": false,\r
+
+          \                \"is_program_voidable\": false,\r
+
+          \                \"is_program_unvoidable\": true,\r
+
+          \                \"is_program_direct_void\": true,\r
+
+          \                \"is_program_exportable\": true,\r
+
+          \                \"is_program_printable\": true\r
+
+          \            },\r
+
+          \            {\r
+
+          \                \"program_id\": \"01.01.02\",\r
+
+          \                \"is_program_addable\": true,\r
+
+          \                \"is_program_editable\": false,\r
+
+          \                \"is_program_deleteable\": true,\r
+
+          \                \"is_program_viewable\": false,\r
+
+          \                \"is_program_approveable\": false,\r
+
+          \                \"is_program_unapproveable\": true,\r
+
+          \                \"is_program_voidable\": false,\r
+
+          \                \"is_program_unvoidable\": true,\r
+
+          \                \"is_program_direct_void\": false,\r
+
+          \                \"is_program_exportable\": true,\r
+
+          \                \"is_program_printable\": true\r
+
+          \            },\r
+
+          \            {\r
+
+          \                \"program_id\": \"01.02.01\",\r
+
+          \                \"is_program_addable\": false,\r
+
+          \                \"is_program_editable\": true,\r
+
+          \                \"is_program_deleteable\": false,\r
+
+          \                \"is_program_viewable\": false,\r
+
+          \                \"is_program_approveable\": true,\r
+
+          \                \"is_program_unapproveable\": false,\r
+
+          \                \"is_program_voidable\": false,\r
+
+          \                \"is_program_unvoidable\": true,\r
+
+          \                \"is_program_direct_void\": true,\r
+
+          \                \"is_program_exportable\": false,\r
+
+          \                \"is_program_printable\": true\r
+
+          \            },\r
+
+          \            {\r
+
+          \                \"program_id\": \"03.02\",\r
+
+          \                \"is_program_addable\": true,\r
+
+          \                \"is_program_editable\": false,\r
+
+          \                \"is_program_deleteable\": false,\r
+
+          \                \"is_program_viewable\": false,\r
+
+          \                \"is_program_approveable\": false,\r
+
+          \                \"is_program_unapproveable\": false,\r
+
+          \                \"is_program_voidable\": false,\r
+
+          \                \"is_program_unvoidable\": false,\r
+
+          \                \"is_program_direct_void\": false,\r
+
+          \                \"is_program_exportable\": false,\r
+
+          \                \"is_program_printable\": false\r
+
+          \            }\r
+
+          \        ],\r
+
+          \        \"access_report\": [\r
+
+          \            {\r
+
+          \                \"report_id\": 1\r
+
+          \            }\r
+
+          \        ],\r
+
+          \        \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+          \        \"admin_type\": \"-\",\r
+
+          \        \"created_at\": \"2024-08-27T08:00:00+07:00\",\r
+
+          \        \"description\": \"ASSDOC5\",\r
+
+          \        \"group_id\": \"ASSDOC4\",\r
+
+          \        \"group_name\": \"ASSDOC6\",\r
+
+          \        \"is_active\": true,\r
+
+          \        \"user_create\": \"nando\"\r
+
+          \    },\r
+
+          \    \"accessgroup_emr\": {\r
+
+          \        \"access_emr_exam\": [\r
+
+          \            {\r
+
+          \                \"is_allow_other_user_edit\": false,\r
+
+          \                \"id\": 1,\r
+
+          \                \"name\": \"SOAP For Opthamologist\",\r
+
+          \                \"exam_setup_type\": \"DEFAULT\",\r
+
+          \                \"module_in_used\": [\r
+
+          \                    \"Outpatient\"\r
+
+          \                ]\r
+
+          \            },\r
+
+          \            {\r
+
+          \                \"is_allow_other_user_edit\": false,\r
+
+          \                \"id\": 2,\r
+
+          \                \"module_in_used\": [\r
+
+          \                    \"Outpatient\"\r
+
+          \                ],\r
+
+          \                \"name\": \"Nursing Assessment\",\r
+
+          \                \"exam_setup_type\": \"Form\"\r
+
+          \            }\r
+
+          \        ],\r
+
+          \        \"access_emr_other\": {\r
+
+          \            \"default_module\": \"Outpatient\",\r
+
+          \            \"doc_access\": [\r
+
+          \                \"Create\",\r
+
+          \                \"Read\",\r
+
+          \                \"Update\"\r
+
+          \            ],\r
+
+          \            \"meddream_access\": {\r
+
+          \                \"meddream_permission\": [\r
+
+          \                    \"ADMIN\",\r
+
+          \                    \"PATIENT_HISTORY\",\r
+
+          \                    \"REPORT_VIEW\",\r
+
+          \                    \"DOCUMENT_VIEW\"\r
+
+          \                ],\r
+
+          \                \"meddream_user\": \"1-sednaview\"\r
+
+          \            },\r
+
+          \            \"research_access\": \"ADMIN\",\r
+
+          \            \"room_access\": [\r
+
+          \                {\r
+
+          \                    \"id\": \"1\",\r
+
+          \                    \"name\": \"Main\"\r
+
+          \                },\r
+
+          \                {\r
+
+          \                    \"name\": \"Doctor Rooms\",\r
+
+          \                    \"id\": \"2\"\r
+
+          \                }\r
+
+          \            ]\r
+
+          \        },\r
+
+          \        \"group_id\": \"ASSDOC4\",\r
+
+          \        \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\"\r
+
+          \    },\r
+
+          \    \"accessgroup_digisign\": {\r
+
+          \        \"group_id\": \"ASSDOC4\",\r
+
+          \        \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+          \        \"is_business_unit\": false,\r
+
+          \        \"document_type_access\": [\"DocumentType-001\", \"DocumentType-005\"]\r
+
+          \    },\r
+
+          \    \"accessgroup_his\": {\r
+
+          \        \"group_id\": \"ASSDOC4\"\r
+
+          \    },\r
+
+          \    \"accessgroup_hris\": {\r
+
+          \        \"group_id\": \"ASSDOC4\"\r
+
+          \    }\r
+
+          }"
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Date
+          value: Thu, 04 Dec 2025 07:10:19 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "2816"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 201,
+              "data": {
+                  "accessgroup": {
+                      "access_program": [
+                          {
+                              "is_program_addable": false,
+                              "is_program_approveable": true,
+                              "is_program_deleteable": false,
+                              "is_program_direct_void": true,
+                              "is_program_editable": true,
+                              "is_program_exportable": true,
+                              "is_program_printable": true,
+                              "is_program_unapproveable": false,
+                              "is_program_unvoidable": true,
+                              "is_program_viewable": false,
+                              "is_program_voidable": false,
+                              "program_id": "01.01.01"
+                          },
+                          {
+                              "is_program_addable": true,
+                              "is_program_approveable": false,
+                              "is_program_deleteable": true,
+                              "is_program_direct_void": false,
+                              "is_program_editable": false,
+                              "is_program_exportable": true,
+                              "is_program_printable": true,
+                              "is_program_unapproveable": true,
+                              "is_program_unvoidable": true,
+                              "is_program_viewable": false,
+                              "is_program_voidable": false,
+                              "program_id": "01.01.02"
+                          },
+                          {
+                              "is_program_addable": false,
+                              "is_program_approveable": true,
+                              "is_program_deleteable": false,
+                              "is_program_direct_void": true,
+                              "is_program_editable": true,
+                              "is_program_exportable": false,
+                              "is_program_printable": true,
+                              "is_program_unapproveable": false,
+                              "is_program_unvoidable": true,
+                              "is_program_viewable": false,
+                              "is_program_voidable": false,
+                              "program_id": "01.02.01"
+                          },
+                          {
+                              "is_program_addable": true,
+                              "is_program_approveable": false,
+                              "is_program_deleteable": false,
+                              "is_program_direct_void": false,
+                              "is_program_editable": false,
+                              "is_program_exportable": false,
+                              "is_program_printable": false,
+                              "is_program_unapproveable": false,
+                              "is_program_unvoidable": false,
+                              "is_program_viewable": false,
+                              "is_program_voidable": false,
+                              "program_id": "03.02"
+                          }
+                      ],
+                      "access_report": [
+                          {
+                              "report_id": 1
+                          }
+                      ],
+                      "access_service_unit": [],
+                      "admin_type": "-",
+                      "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                      "coverage": [
+                          "53aad077-9fb1-4f08-85f3-af9fd9a36517"
+                      ],
+                      "created_at": "2025-12-04T14:10:19+07:00",
+                      "description": "ASSDOC5",
+                      "group_id": "ASSDOC4",
+                      "group_name": "ASSDOC6",
+                      "is_active": true,
+                      "updated_at": "",
+                      "user_create": "nando",
+                      "user_update": ""
+                  },
+                  "accessgroup_digisign": {
+                      "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                      "document_type_access": [
+                          "DocumentType-001",
+                          "DocumentType-005"
+                      ],
+                      "group_id": "ASSDOC4",
+                      "is_business_unit": false
+                  },
+                  "accessgroup_emr": {
+                      "access_emr_exam": [
+                          {
+                              "exam_setup_type": "DEFAULT",
+                              "id": "1",
+                              "is_allow_other_user_edit": false,
+                              "module_in_used": [
+                                  "Outpatient"
+                              ],
+                              "name": "SOAP For Opthamologist"
+                          },
+                          {
+                              "exam_setup_type": "Form",
+                              "id": "2",
+                              "is_allow_other_user_edit": false,
+                              "module_in_used": [
+                                  "Outpatient"
+                              ],
+                              "name": "Nursing Assessment"
+                          }
+                      ],
+                      "access_emr_other": {
+                          "default_module": "Outpatient",
+                          "doc_access": [
+                              "Create",
+                              "Read",
+                              "Update"
+                          ],
+                          "meddream_access": {
+                              "meddream_permission": [
+                                  "ADMIN",
+                                  "PATIENT_HISTORY",
+                                  "REPORT_VIEW",
+                                  "DOCUMENT_VIEW"
+                              ],
+                              "meddream_user": "1-sednaview"
+                          },
+                          "research_access": "ADMIN",
+                          "room_access": [
+                              {
+                                  "id": "1",
+                                  "name": "Main"
+                              },
+                              {
+                                  "id": "2",
+                                  "name": "Doctor Rooms"
+                              }
+                          ]
+                      },
+                      "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                      "group_id": "ASSDOC4"
+                  },
+                  "accessgroup_his": {
+                      "business_unit_id": "",
+                      "group_id": ""
+                  },
+                  "accessgroup_hris": {
+                      "business_unit_id": "",
+                      "group_id": ""
+                  }
+              }
+          }

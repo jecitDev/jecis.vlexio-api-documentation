@@ -1,0 +1,111 @@
+info:
+  name: Delete Image
+  type: http
+  seq: 9
+
+http:
+  method: DELETE
+  url: "{{BASE_URL}}/v1/AssetRegisterMobile/image/delete/:company_id/:business_unit_id/:id_register"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: company_id
+      value: 71b53dd1-2802-4527-8b5c-d54173392222
+      type: path
+    - name: business_unit_id
+      value: 18e9ea73-7343-4be2-a8e4-47b652e56981
+      type: path
+    - name: id_register
+      value: e327b64e-a599-45d0-a350-12edc74c59a3
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"sequence_no\": \"001\",\r
+
+      \    \"user_update\": \"surya\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/AssetRegisterMobile/image/delete/:company_id/:business_unit_id/:id_register"
+      method: DELETE
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: company_id
+          value: 71b53dd1-2802-4527-8b5c-d54173392222
+          type: path
+        - name: business_unit_id
+          value: 18e9ea73-7343-4be2-a8e4-47b652e56981
+          type: path
+        - name: id_register
+          value: e327b64e-a599-45d0-a350-12edc74c59a3
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"sequence_no\": \"001\",\r
+
+          \    \"user_update\": \"surya\"\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: date
+          value: Tue, 06 Oct 2026 02:14:35 GMT
+        - name: content-type
+          value: application/json
+        - name: content-length
+          value: "247"
+        - name: x-xss-protection
+          value: "0"
+        - name: x-content-type-options
+          value: nosniff
+        - name: x-frame-options
+          value: SAMEORIGIN
+        - name: cross-origin-embedder-policy
+          value: require-corp
+        - name: cross-origin-opener-policy
+          value: same-origin
+        - name: cross-origin-resource-policy
+          value: same-origin
+        - name: origin-agent-cluster
+          value: ?1
+        - name: referrer-policy
+          value: no-referrer
+        - name: x-dns-prefetch-control
+          value: off
+        - name: x-download-options
+          value: noopen
+        - name: x-permitted-cross-domain-policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+            "code": 200,
+            "data": {
+              "company_id": "71b53dd1-2802-4527-8b5c-d54173392222",
+              "business_unit_id": "18e9ea73-7343-4be2-a8e4-47b652e56981",
+              "id_register": "e327b64e-a599-45d0-a350-12edc74c59a3",
+              "user_update": "surya",
+              "updated_at": "2026-10-06T09:14:34+07:00"
+            }
+          }

@@ -1,0 +1,143 @@
+info:
+  name: Svc Template - Get
+  type: http
+  seq: 3
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/digisigns/templates/:id/:company_id/:business_unit_id"
+  headers:
+    - name: x-token
+      value: "{{API_TOKEN}}"
+  params:
+    - name: provider_id
+      value: 3261a59d-ea2c-456b-bcff-cd841a066eb7
+      type: query
+      disabled: true
+    - name: company_id
+      value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+      type: query
+      disabled: true
+    - name: id
+      value: c98cef9e-4c30-4f51-81c4-5cd68c5336b4
+      type: path
+    - name: company_id
+      value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+      type: path
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+  body:
+    type: json
+    data: ""
+  auth:
+    type: bearer
+    token: "{{xtoken}}"
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: "Svc Template - Get #1-250311"
+    request:
+      url: "{{BASE_URL}}/v1/digisigns/templates/:id/:company_id/:business_unit_id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{API_TOKEN}}"
+      params:
+        - name: provider_id
+          value: 3261a59d-ea2c-456b-bcff-cd841a066eb7
+          type: query
+          disabled: true
+        - name: company_id
+          value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+          type: query
+          disabled: true
+        - name: id
+          value: c98cef9e-4c30-4f51-81c4-5cd68c5336b4
+          type: path
+        - name: company_id
+          value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+          type: path
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 11 Mar 2025 03:12:26 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "824"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "template_id": "c98cef9e-4c30-4f51-81c4-5cd68c5336b4",
+                  "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",
+                  "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "order_type_id": "OrderType-01",
+                  "template_name": "Template Medical Resume",
+                  "required_signatures": 1,
+                  "file_url": "https://storage.jecis.com/v1/file_storage/6cdee97f-1360-4c9c-b74e-e13327c35f6a/2da6a1bd-ba62-43ec-91f8-4085d5d6d498/53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "templates": [
+                      {
+                          "document_action_id": "SignAction-01",
+                          "role_id": "SignatureRole-01",
+                          "coordinates": [
+                              {
+                                  "page": 1,
+                                  "width": 200,
+                                  "height": 100,
+                                  "position": {
+                                      "x": 50,
+                                      "y": 100
+                                  },
+                                  "lower_left_x": 86,
+                                  "lower_left_y": 88,
+                                  "upper_right_x": 145,
+                                  "upper_right_y": 136,
+                                  "is_visual_sign": true,
+                                  "certificate_level": "NOT_CERTIFIED"
+                              }
+                          ]
+                      }
+                  ],
+                  "is_active": true,
+                  "user_update": "Admin1",
+                  "updated_at": "2024-10-01T03:00:00+07:00"
+              }
+          }

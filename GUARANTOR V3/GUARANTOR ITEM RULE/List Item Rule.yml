@@ -1,0 +1,550 @@
+info:
+  name: List Item Rule
+  type: http
+  seq: 7
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/marketing/guarantor/contract/item_rule/:contract_id?page=1&page_size=10&show_by=item_rule_component"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: page_size
+      value: "10"
+      type: query
+    - name: keywords
+      value: Reposisi Iol Anestesi Umum
+      type: query
+      disabled: true
+    - name: show_by
+      value: item_rule_component
+      type: query
+    - name: contract_id
+      value: 5f3627c2-93be-4f3e-bc6a-fc4dfa912e32
+      type: path
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/contract/item_rule/:contract_id?page=1&page_size=10&show_by=item_rule"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: page_size
+          value: "10"
+          type: query
+        - name: keywords
+          value: Reposisi Iol Anestesi Umum
+          type: query
+          disabled: true
+        - name: show_by
+          value: item_rule
+          type: query
+        - name: contract_id
+          value: 5f3627c2-93be-4f3e-bc6a-fc4dfa912e32
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 02 Sep 2025 06:49:05 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "8493"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "items": [
+                      {
+                          "amount_value": 10,
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "component": [
+                              {
+                                  "TariffComponentId": "1",
+                                  "TariffComponentName": "RS",
+                                  "price": 7384100,
+                                  "price_guarantor": 7384100
+                              },
+                              {
+                                  "TariffComponentId": "3",
+                                  "TariffComponentName": "Anestesi",
+                                  "price": 196900,
+                                  "price_guarantor": 110081.81
+                              },
+                              {
+                                  "TariffComponentId": "4",
+                                  "TariffComponentName": "SpM",
+                                  "price": 1969000,
+                                  "price_guarantor": 1100818.1
+                              }
+                          ],
+                          "created_at": "2025-03-26T14:08:41+07:00",
+                          "is_active": true,
+                          "is_include": true,
+                          "is_to_guarantor": true,
+                          "is_value_in_percent": true,
+                          "item_id": "KATL-0017",
+                          "item_name": "Secunder Iol Non Aspheric ( Di Jec,Beda Operator ) Anestesi Lokal",
+                          "price_guarantor": 8595000,
+                          "price_rate_book": 9550000,
+                          "rate_book_id": "1f5a1e7d-165a-4c4e-ae27-826fd64fc876",
+                          "seq_id": 3802,
+                          "sr_guarantor_rule_type": "DISCOUNT",
+                          "tarif_comp": [
+                              "3",
+                              "4"
+                          ],
+                          "tariff_source": "I",
+                          "updated_at": "",
+                          "user_create": "admin",
+                          "user_update": ""
+                      },
+                      {
+                          "amount_value": 10,
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "component": [
+                              {
+                                  "TariffComponentId": "1",
+                                  "TariffComponentName": "RS",
+                                  "price": 1220000,
+                                  "price_guarantor": 1068720
+                              },
+                              {
+                                  "TariffComponentId": "3",
+                                  "TariffComponentName": "Anestesi",
+                                  "price": 30000,
+                                  "price_guarantor": 26280
+                              },
+                              {
+                                  "TariffComponentId": "4",
+                                  "TariffComponentName": "SpM",
+                                  "price": 300000,
+                                  "price_guarantor": 300000
+                              }
+                          ],
+                          "created_at": "2025-08-25T14:00:00+07:00",
+                          "is_active": true,
+                          "is_include": true,
+                          "is_to_guarantor": true,
+                          "is_value_in_percent": true,
+                          "item_id": "MAT-0007",
+                          "item_name": "Anel Anestesi Lokal",
+                          "price_guarantor": 1395000,
+                          "price_rate_book": 1550000,
+                          "rate_book_id": "1f5a1e7d-165a-4c4e-ae27-826fd64fc876",
+                          "seq_id": 3801,
+                          "sr_guarantor_rule_type": "DISCOUNT",
+                          "tarif_comp": [
+                              "1",
+                              "3"
+                          ],
+                          "tariff_source": "I",
+                          "updated_at": "",
+                          "user_create": "ferdinand",
+                          "user_update": ""
+                      },
+                      {
+                          "amount_value": 10,
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "component": [
+                              {
+                                  "TariffComponentId": "1",
+                                  "TariffComponentName": "RS",
+                                  "price": 1400000,
+                                  "price_guarantor": 1237894.8
+                              },
+                              {
+                                  "TariffComponentId": "3",
+                                  "TariffComponentName": "Anestesi",
+                                  "price": 500000,
+                                  "price_guarantor": 442105.25
+                              },
+                              {
+                                  "TariffComponentId": "4",
+                                  "TariffComponentName": "SpM",
+                                  "price": 300000,
+                                  "price_guarantor": 300000
+                              }
+                          ],
+                          "created_at": "2025-08-25T14:00:00+07:00",
+                          "is_active": true,
+                          "is_include": true,
+                          "is_to_guarantor": true,
+                          "is_value_in_percent": true,
+                          "item_id": "MAT-0008",
+                          "item_name": "Anel Anestesi Umum",
+                          "price_guarantor": 1980000,
+                          "price_rate_book": 2200000,
+                          "rate_book_id": "1f5a1e7d-165a-4c4e-ae27-826fd64fc876",
+                          "seq_id": 3800,
+                          "sr_guarantor_rule_type": "DISCOUNT",
+                          "tarif_comp": [
+                              "1",
+                              "3"
+                          ],
+                          "tariff_source": "I",
+                          "updated_at": "",
+                          "user_create": "ferdinand",
+                          "user_update": ""
+                      },
+                      {
+                          "amount_value": 10,
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "component": [
+                              {
+                                  "TariffComponentId": "1",
+                                  "TariffComponentName": "RS",
+                                  "price": 3350000,
+                                  "price_guarantor": 2988896
+                              },
+                              {
+                                  "TariffComponentId": "3",
+                                  "TariffComponentName": "Anestesi",
+                                  "price": 500000,
+                                  "price_guarantor": 446103.9
+                              },
+                              {
+                                  "TariffComponentId": "4",
+                                  "TariffComponentName": "SpM",
+                                  "price": 300000,
+                                  "price_guarantor": 300000
+                              }
+                          ],
+                          "created_at": "2025-08-25T14:00:00+07:00",
+                          "is_active": true,
+                          "is_include": true,
+                          "is_to_guarantor": true,
+                          "is_value_in_percent": true,
+                          "item_id": "MAT-0055",
+                          "item_name": "Anel Anastesi Umum Anak",
+                          "price_guarantor": 3735000,
+                          "price_rate_book": 4150000,
+                          "rate_book_id": "1f5a1e7d-165a-4c4e-ae27-826fd64fc876",
+                          "seq_id": 3799,
+                          "sr_guarantor_rule_type": "DISCOUNT",
+                          "tarif_comp": [
+                              "1",
+                              "3"
+                          ],
+                          "tariff_source": "I",
+                          "updated_at": "",
+                          "user_create": "ferdinand",
+                          "user_update": ""
+                      },
+                      {
+                          "amount_value": 10,
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "component": [
+                              {
+                                  "TariffComponentId": "1",
+                                  "TariffComponentName": "RS",
+                                  "price": 6320000,
+                                  "price_guarantor": 5560620
+                              },
+                              {
+                                  "TariffComponentId": "3",
+                                  "TariffComponentName": "Anestesi",
+                                  "price": 130000,
+                                  "price_guarantor": 114379.84
+                              },
+                              {
+                                  "TariffComponentId": "4",
+                                  "TariffComponentName": "SpM",
+                                  "price": 1300000,
+                                  "price_guarantor": 1300000
+                              }
+                          ],
+                          "created_at": "2025-08-25T14:00:00+07:00",
+                          "is_active": true,
+                          "is_include": true,
+                          "is_to_guarantor": true,
+                          "is_value_in_percent": true,
+                          "item_id": "OKU-0001",
+                          "item_name": "Botox 1 Anestesi Lokal",
+                          "price_guarantor": 6975000,
+                          "price_rate_book": 7750000,
+                          "rate_book_id": "1f5a1e7d-165a-4c4e-ae27-826fd64fc876",
+                          "seq_id": 3798,
+                          "sr_guarantor_rule_type": "DISCOUNT",
+                          "tarif_comp": [
+                              "1",
+                              "3"
+                          ],
+                          "tariff_source": "I",
+                          "updated_at": "",
+                          "user_create": "ferdinand",
+                          "user_update": ""
+                      },
+                      {
+                          "amount_value": 10,
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "component": [
+                              {
+                                  "TariffComponentId": "1",
+                                  "TariffComponentName": "RS",
+                                  "price": 4370000,
+                                  "price_guarantor": 3806755.5
+                              },
+                              {
+                                  "TariffComponentId": "3",
+                                  "TariffComponentName": "Anestesi",
+                                  "price": 130000,
+                                  "price_guarantor": 113244.445
+                              },
+                              {
+                                  "TariffComponentId": "4",
+                                  "TariffComponentName": "SpM",
+                                  "price": 1300000,
+                                  "price_guarantor": 1300000
+                              }
+                          ],
+                          "created_at": "2025-08-25T14:00:00+07:00",
+                          "is_active": true,
+                          "is_include": true,
+                          "is_to_guarantor": true,
+                          "is_value_in_percent": true,
+                          "item_id": "OKU-0002",
+                          "item_name": "Botox 2 Anestesi Lokal",
+                          "price_guarantor": 5220000,
+                          "price_rate_book": 5800000,
+                          "rate_book_id": "1f5a1e7d-165a-4c4e-ae27-826fd64fc876",
+                          "seq_id": 3797,
+                          "sr_guarantor_rule_type": "DISCOUNT",
+                          "tarif_comp": [
+                              "1",
+                              "3"
+                          ],
+                          "tariff_source": "I",
+                          "updated_at": "",
+                          "user_create": "ferdinand",
+                          "user_update": ""
+                      },
+                      {
+                          "amount_value": 10,
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "component": [
+                              {
+                                  "TariffComponentId": "1",
+                                  "TariffComponentName": "RS",
+                                  "price": 15575000,
+                                  "price_guarantor": 13250187
+                              },
+                              {
+                                  "TariffComponentId": "3",
+                                  "TariffComponentName": "Anestesi",
+                                  "price": 3150000,
+                                  "price_guarantor": 2679813
+                              },
+                              {
+                                  "TariffComponentId": "4",
+                                  "TariffComponentName": "SpM",
+                                  "price": 9225000,
+                                  "price_guarantor": 9225000
+                              }
+                          ],
+                          "created_at": "2025-08-25T14:00:00+07:00",
+                          "is_active": true,
+                          "is_include": true,
+                          "is_to_guarantor": true,
+                          "is_value_in_percent": true,
+                          "item_id": "OKU10-0001",
+                          "item_name": "Blepharoplasty Inferior+superior 10 Anestesi Umum",
+                          "price_guarantor": 25155000,
+                          "price_rate_book": 27950000,
+                          "rate_book_id": "1f5a1e7d-165a-4c4e-ae27-826fd64fc876",
+                          "seq_id": 3784,
+                          "sr_guarantor_rule_type": "DISCOUNT",
+                          "tarif_comp": [
+                              "1",
+                              "3"
+                          ],
+                          "tariff_source": "I",
+                          "updated_at": "",
+                          "user_create": "ferdinand",
+                          "user_update": ""
+                      },
+                      {
+                          "amount_value": 10,
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "component": [
+                              {
+                                  "TariffComponentId": "1",
+                                  "TariffComponentName": "RS",
+                                  "price": 15575000,
+                                  "price_guarantor": 13250187
+                              },
+                              {
+                                  "TariffComponentId": "3",
+                                  "TariffComponentName": "Anestesi",
+                                  "price": 3150000,
+                                  "price_guarantor": 2679813
+                              },
+                              {
+                                  "TariffComponentId": "4",
+                                  "TariffComponentName": "SpM",
+                                  "price": 9225000,
+                                  "price_guarantor": 9225000
+                              }
+                          ],
+                          "created_at": "2025-08-25T14:00:00+07:00",
+                          "is_active": true,
+                          "is_include": true,
+                          "is_to_guarantor": true,
+                          "is_value_in_percent": true,
+                          "item_id": "OKU10-0002",
+                          "item_name": "Exterpasi Tumor Ganas Palpebra+rekonstruksi 10 Anestesi Umum",
+                          "price_guarantor": 25155000,
+                          "price_rate_book": 27950000,
+                          "rate_book_id": "1f5a1e7d-165a-4c4e-ae27-826fd64fc876",
+                          "seq_id": 3783,
+                          "sr_guarantor_rule_type": "DISCOUNT",
+                          "tarif_comp": [
+                              "1",
+                              "3"
+                          ],
+                          "tariff_source": "I",
+                          "updated_at": "",
+                          "user_create": "ferdinand",
+                          "user_update": ""
+                      },
+                      {
+                          "amount_value": 10,
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "component": [
+                              {
+                                  "TariffComponentId": "1",
+                                  "TariffComponentName": "RS",
+                                  "price": 15575000,
+                                  "price_guarantor": 13250187
+                              },
+                              {
+                                  "TariffComponentId": "3",
+                                  "TariffComponentName": "Anestesi",
+                                  "price": 3150000,
+                                  "price_guarantor": 2679813
+                              },
+                              {
+                                  "TariffComponentId": "4",
+                                  "TariffComponentName": "SpM",
+                                  "price": 9225000,
+                                  "price_guarantor": 9225000
+                              }
+                          ],
+                          "created_at": "2025-08-25T14:00:00+07:00",
+                          "is_active": true,
+                          "is_include": true,
+                          "is_to_guarantor": true,
+                          "is_value_in_percent": true,
+                          "item_id": "OKU10-0003",
+                          "item_name": "Fraktur Multiple+dcr+rhinoplasty 10 Anestesi Umum",
+                          "price_guarantor": 25155000,
+                          "price_rate_book": 27950000,
+                          "rate_book_id": "1f5a1e7d-165a-4c4e-ae27-826fd64fc876",
+                          "seq_id": 3782,
+                          "sr_guarantor_rule_type": "DISCOUNT",
+                          "tarif_comp": [
+                              "1",
+                              "3"
+                          ],
+                          "tariff_source": "I",
+                          "updated_at": "",
+                          "user_create": "ferdinand",
+                          "user_update": ""
+                      },
+                      {
+                          "amount_value": 10,
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "component": [
+                              {
+                                  "TariffComponentId": "1",
+                                  "TariffComponentName": "RS",
+                                  "price": 15575000,
+                                  "price_guarantor": 13250187
+                              },
+                              {
+                                  "TariffComponentId": "3",
+                                  "TariffComponentName": "Anestesi",
+                                  "price": 3150000,
+                                  "price_guarantor": 2679813
+                              },
+                              {
+                                  "TariffComponentId": "4",
+                                  "TariffComponentName": "SpM",
+                                  "price": 9225000,
+                                  "price_guarantor": 9225000
+                              }
+                          ],
+                          "created_at": "2025-08-25T14:00:00+07:00",
+                          "is_active": true,
+                          "is_include": true,
+                          "is_to_guarantor": true,
+                          "is_value_in_percent": true,
+                          "item_id": "OKU10-0004",
+                          "item_name": "Fraktur Tripod 10 Anestesi Umum",
+                          "price_guarantor": 25155000,
+                          "price_rate_book": 27950000,
+                          "rate_book_id": "1f5a1e7d-165a-4c4e-ae27-826fd64fc876",
+                          "seq_id": 3781,
+                          "sr_guarantor_rule_type": "DISCOUNT",
+                          "tarif_comp": [
+                              "1",
+                              "3"
+                          ],
+                          "tariff_source": "I",
+                          "updated_at": "",
+                          "user_create": "ferdinand",
+                          "user_update": ""
+                      }
+                  ],
+                  "page": 1,
+                  "page_size": 10,
+                  "total_items": 450
+              }
+          }

@@ -1,0 +1,7 @@
+info:
+  name: COMPANY V2
+  type: folder
+  seq: 115
+
+request:
+  auth: inherit

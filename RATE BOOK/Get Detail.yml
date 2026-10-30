@@ -1,0 +1,248 @@
+info:
+  name: Get Detail
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/rate-books/:business_unit_id/:rate_book_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+    - name: rate_book_id
+      value: 535903f9-513b-45f0-ab40-46afd556f0be
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Get Detail
+    request:
+      url: "{{BASE_URL}}/v1/rate-books/:business_unit_id/:rate_book_id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: path
+        - name: rate_book_id
+          value: b6347186-8ee4-4603-8f27-e41b918088f0
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 13 Apr 2026 06:36:53 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "1852"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "coverage": [
+                      "a20cd8f4-6fb6-426b-8107-f36d0ee73547",
+                      "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                      "23aa0eef-cb81-448f-a7a6-6a7e0f848e3a"
+                  ],
+                  "created_at": "2026-04-13T13:35:35+07:00",
+                  "is_approve": false,
+                  "is_void": false,
+                  "items": [
+                      {
+                          "components": [
+                              {
+                                  "additionals": [],
+                                  "deductions": [],
+                                  "is_allow_discount": true,
+                                  "is_supervision": false,
+                                  "price": "0.00",
+                                  "supervision": {
+                                      "dpjp_percentage": 0,
+                                      "supervision_percentage": 0
+                                  },
+                                  "tariff_component_id": "01"
+                              },
+                              {
+                                  "additionals": [],
+                                  "deductions": [],
+                                  "is_allow_discount": false,
+                                  "is_supervision": false,
+                                  "price": "0.00",
+                                  "supervision": {
+                                      "dpjp_percentage": 0,
+                                      "supervision_percentage": 0
+                                  },
+                                  "tariff_component_id": "02"
+                              }
+                          ],
+                          "is_allow_discount": true,
+                          "item_id": "23ba3c9d-f35a-40ec-8bad-66e13d704df2",
+                          "item_name": "LCD",
+                          "price": "0.00"
+                      },
+                      {
+                          "components": [
+                              {
+                                  "additionals": [
+                                      {
+                                          "additional_id": "addition-001",
+                                          "amount": "500000.00",
+                                          "billed_to_patient": true,
+                                          "is_not_paid_on_cross": true
+                                      },
+                                      {
+                                          "additional_id": "addition-002",
+                                          "amount": "100000.00",
+                                          "billed_to_patient": true,
+                                          "is_not_paid_on_cross": true
+                                      }
+                                  ],
+                                  "deductions": [
+                                      {
+                                          "amount": "5.00",
+                                          "deduction_id": "deduct-001",
+                                          "is_percent": true
+                                      },
+                                      {
+                                          "amount": "10.00",
+                                          "deduction_id": "deduct-002",
+                                          "is_percent": true
+                                      }
+                                  ],
+                                  "is_allow_discount": true,
+                                  "is_supervision": false,
+                                  "price": "0.00",
+                                  "supervision": {
+                                      "dpjp_percentage": 0,
+                                      "supervision_percentage": 0
+                                  },
+                                  "tariff_component_id": "01"
+                              },
+                              {
+                                  "additionals": [],
+                                  "deductions": [],
+                                  "is_allow_discount": false,
+                                  "is_supervision": false,
+                                  "price": "0.00",
+                                  "supervision": {
+                                      "dpjp_percentage": 0,
+                                      "supervision_percentage": 0
+                                  },
+                                  "tariff_component_id": "02"
+                              }
+                          ],
+                          "is_allow_discount": true,
+                          "item_id": "43341054-68b3-42ac-9ac1-c99c97d0d903",
+                          "item_name": "Laptop",
+                          "price": "0.00"
+                      }
+                  ],
+                  "rate_book_id": "b6347186-8ee4-4603-8f27-e41b918088f0",
+                  "rate_book_name": "General Tariff 2026",
+                  "reference_no": "RB-2026-001",
+                  "starting_date": "2026-01-10T15:27:28+07:00",
+                  "user_create": "ferdinand",
+                  "version": "V1.0.0"
+              }
+          }
+  - name: Not Found
+    request:
+      url: "{{BASE_URL}}/v1/rate-books/:business_unit_id/:rate_book_id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: path
+        - name: rate_book_id
+          value: b6347186-8ee4-4603-8f27-e41b918088f1
+          type: path
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Date
+          value: Mon, 13 Apr 2026 06:40:59 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "46"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "status": 404,
+              "message": "book_rate.not_found"
+          }

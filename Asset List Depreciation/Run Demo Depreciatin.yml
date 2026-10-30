@@ -1,0 +1,22 @@
+info:
+  name: Run Demo Depreciatin
+  type: http
+  seq: 2
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/AssetListDepreciation/run-demo"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: text
+    data: ""
+  auth:
+    type: bearer
+    token: "{{xtoken}}"
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

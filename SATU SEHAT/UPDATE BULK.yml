@@ -1,0 +1,377 @@
+info:
+  name: UPDATE BULK
+  type: http
+  seq: 11
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/satu-sehat/encounter/update-bulk/:id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: x-trace-id
+      value: /v1/satu-sehat/encounter/add-bulk||20240326110800
+  params:
+    - name: id
+      value: 439390c5-c70b-45eb-b732-53add3810571
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"condition\": [\r
+
+      \        {\r
+
+      \            \"id\":\"2f4bc377-64c1-4b70-8841-77c533feb030\",\r
+
+      \            \"display\": \"PRESENCE OF OTHER FUNCTIONAL IMPLANTS: Presence of intraocular lens\",\r
+
+      \            \"code\": \"Z96.1\"\r
+
+      \        },\r
+
+      \        {\r
+
+      \            \"id\":\"e4740b97-f8f8-4baf-bdf9-409f148ba09e\",\r
+
+      \            \"display\": \"GLAUCOMA: Primary open-angle glaucoma\",\r
+
+      \            \"code\": \"H40.1\"\r
+
+      \        },\r
+
+      \        {\r
+
+      \            \"id\":\"564aa76d-7c64-4be3-b5c8-aac4cb3d7dab\",\r
+
+      \            \"display\": \"SENILE CATARACT: Senile nuclear cataract\",\r
+
+      \            \"code\": \"H25.1\"\r
+
+      \        }\r
+
+      \    ],\r
+
+      \    \"encounter\": {\r
+
+      \        \"id\":\"439390c5-c70b-45eb-b732-53add3810571\",\r
+
+      \        \"historyArrived\": {\r
+
+      \            \"end\": {\r
+
+      \                \"nanos\": 0,\r
+
+      \                \"seconds\": 1704247422\r
+
+      \            },\r
+
+      \            \"start\": {\r
+
+      \                \"nanos\": 0,\r
+
+      \                \"seconds\": 1704247422\r
+
+      \            }\r
+
+      \        },\r
+
+      \        \"historyFinish\": {\r
+
+      \            \"end\": {\r
+
+      \                \"nanos\": 0,\r
+
+      \                \"seconds\": 1704255060\r
+
+      \            },\r
+
+      \            \"start\": {\r
+
+      \                \"nanos\": 0,\r
+
+      \                \"seconds\": 1704255060\r
+
+      \            }\r
+
+      \        },\r
+
+      \        \"historyInprogress\": {\r
+
+      \            \"end\": {\r
+
+      \                \"nanos\": 0,\r
+
+      \                \"seconds\": 1704253174\r
+
+      \            },\r
+
+      \            \"start\": {\r
+
+      \                \"nanos\": 0,\r
+
+      \                \"seconds\": 1704253150\r
+
+      \            }\r
+
+      \        },\r
+
+      \        \"period\": {\r
+
+      \            \"end\": {\r
+
+      \                \"nanos\": 0,\r
+
+      \                \"seconds\": 1704255060\r
+
+      \            },\r
+
+      \            \"start\": {\r
+
+      \                \"nanos\": 0,\r
+
+      \                \"seconds\": 1704247422\r
+
+      \            }\r
+
+      \        }\r
+
+      \    },\r
+
+      \    \"healthcareId\": \"002\",\r
+
+      \    \"registrationNo\":\"REG/OP/20240327-0001\",\r
+
+      \    \"locationId\": \"A1-303\",\r
+
+      \    \"paramedicNIK\": \"7209061211900001\",\r
+
+      \    \"patientName\": \"PAULINA HAYATININGSIH\",\r
+
+      \    \"patientNIK\": \"9271060312000001\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: UPDATE BULK
+    request:
+      url: "{{BASE_URL}}/v1/satu-sehat/encounter/update-bulk/:id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: x-trace-id
+          value: /v1/satu-sehat/encounter/add-bulk||20240326110800
+      params:
+        - name: id
+          value: 439390c5-c70b-45eb-b732-53add3810571
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"condition\": [\r
+
+          \        {\r
+
+          \            \"id\":\"2f4bc377-64c1-4b70-8841-77c533feb030\",\r
+
+          \            \"display\": \"PRESENCE OF OTHER FUNCTIONAL IMPLANTS: Presence of intraocular lens\",\r
+
+          \            \"code\": \"Z96.1\"\r
+
+          \        },\r
+
+          \        {\r
+
+          \            \"id\":\"e4740b97-f8f8-4baf-bdf9-409f148ba09e\",\r
+
+          \            \"display\": \"GLAUCOMA: Primary open-angle glaucoma\",\r
+
+          \            \"code\": \"H40.1\"\r
+
+          \        },\r
+
+          \        {\r
+
+          \            \"id\":\"564aa76d-7c64-4be3-b5c8-aac4cb3d7dab\",\r
+
+          \            \"display\": \"SENILE CATARACT: Senile nuclear cataract\",\r
+
+          \            \"code\": \"H25.1\"\r
+
+          \        }\r
+
+          \    ],\r
+
+          \    \"encounter\": {\r
+
+          \        \"id\":\"439390c5-c70b-45eb-b732-53add3810571\",\r
+
+          \        \"historyArrived\": {\r
+
+          \            \"end\": {\r
+
+          \                \"nanos\": 0,\r
+
+          \                \"seconds\": 1704247422\r
+
+          \            },\r
+
+          \            \"start\": {\r
+
+          \                \"nanos\": 0,\r
+
+          \                \"seconds\": 1704247422\r
+
+          \            }\r
+
+          \        },\r
+
+          \        \"historyFinish\": {\r
+
+          \            \"end\": {\r
+
+          \                \"nanos\": 0,\r
+
+          \                \"seconds\": 1704255060\r
+
+          \            },\r
+
+          \            \"start\": {\r
+
+          \                \"nanos\": 0,\r
+
+          \                \"seconds\": 1704255060\r
+
+          \            }\r
+
+          \        },\r
+
+          \        \"historyInprogress\": {\r
+
+          \            \"end\": {\r
+
+          \                \"nanos\": 0,\r
+
+          \                \"seconds\": 1704253174\r
+
+          \            },\r
+
+          \            \"start\": {\r
+
+          \                \"nanos\": 0,\r
+
+          \                \"seconds\": 1704253150\r
+
+          \            }\r
+
+          \        },\r
+
+          \        \"period\": {\r
+
+          \            \"end\": {\r
+
+          \                \"nanos\": 0,\r
+
+          \                \"seconds\": 1704255060\r
+
+          \            },\r
+
+          \            \"start\": {\r
+
+          \                \"nanos\": 0,\r
+
+          \                \"seconds\": 1704247422\r
+
+          \            }\r
+
+          \        }\r
+
+          \    },\r
+
+          \    \"healthcareId\": \"002\",\r
+
+          \    \"registrationNo\":\"REG/OP/20240327-0001\",\r
+
+          \    \"locationId\": \"A1-303\",\r
+
+          \    \"paramedicNIK\": \"7209061211900001\",\r
+
+          \    \"patientName\": \"PAULINA HAYATININGSIH\",\r
+
+          \    \"patientNIK\": \"9271060312000001\"\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Wed, 27 Mar 2024 07:09:31 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "509"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "encounterId": "439390c5-c70b-45eb-b732-53add3810571",
+                  "patientId": "P02478375538",
+                  "conditions": [
+                      {
+                          "conditionId": "2f4bc377-64c1-4b70-8841-77c533feb030",
+                          "code": "Z96.1",
+                          "display": "PRESENCE OF OTHER FUNCTIONAL IMPLANTS: Presence of intraocular lens"
+                      },
+                      {
+                          "conditionId": "e4740b97-f8f8-4baf-bdf9-409f148ba09e",
+                          "code": "H40.1",
+                          "display": "GLAUCOMA: Primary open-angle glaucoma"
+                      },
+                      {
+                          "conditionId": "564aa76d-7c64-4be3-b5c8-aac4cb3d7dab",
+                          "code": "H25.1",
+                          "display": "SENILE CATARACT: Senile nuclear cataract"
+                      }
+                  ]
+              }
+          }

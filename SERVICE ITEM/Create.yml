@@ -1,0 +1,210 @@
+info:
+  name: Create
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/item-services"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+      \    \"item\": {\r
+
+      \        \"item_code\": \"GLAUC-0044\",\r
+
+      \        \"item_name\": \"Tubes Implant + ECCE IOL Anestesi Lokal Sedasi X44\",\r
+
+      \        \"description\": \"Glaucoma surgery kit with IOL implant\",\r
+
+      \        \"item_group_id\": 4101,\r
+
+      \        \"sr_item_type\": \"01\",\r
+
+      \        \"sr_dosage_form\": \"PCS\",\r
+
+      \        \"product_account_id\": \"P01\",\r
+
+      \        \"abc_class\": \"X\",\r
+
+      \        \"is_maintain_stock\": false,\r
+
+      \        \"brand\": \"Pharos\",\r
+
+      \        \"registration_no\": \"01.02.04\",\r
+
+      \        \"base_uom\": \"BOX\",\r
+
+      \        \"transaction_uom\": \"PCS\",\r
+
+      \        \"is_consignment\": false,\r
+
+      \        \"is_active\": true,\r
+
+      \        \"coverage\": [\r
+
+      \            \"53aad077-9fb1-4f08-85f3-af9fd9a36517\"\r
+
+      \        ]\r
+
+      \    },\r
+
+      \    \"service\": {\r
+
+      \        \"is_allow_variable\": false,\r
+
+      \        \"is_allow_discount\": true,\r
+
+      \        \"is_print_with_doctor_name\": false,\r
+
+      \        \"sentra_id\": 8,\r
+
+      \        \"sub_service_id\": \"a8af267d-c7fc-49fc-9584-9906e85e8bfa\",\r
+
+      \        \"anestesi_id\": 1,\r
+
+      \        \"anes_composition_rate\": 0.19\r
+
+      \    }\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Create
+    request:
+      url: "{{BASE_URL}}/v1/item-services"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+          \    \"item\": {\r
+
+          \        \"item_code\": \"GLAUC-0044\",\r
+
+          \        \"item_name\": \"Tubes Implant + ECCE IOL Anestesi Lokal Sedasi X44\",\r
+
+          \        \"description\": \"Glaucoma surgery kit with IOL implant\",\r
+
+          \        \"item_group_id\": 4101,\r
+
+          \        \"sr_item_type\": \"01\",\r
+
+          \        \"sr_dosage_form\": \"PCS\",\r
+
+          \        \"product_account_id\": \"P01\",\r
+
+          \        \"abc_class\": \"X\",\r
+
+          \        \"is_maintain_stock\": false,\r
+
+          \        \"brand\": \"Pharos\",\r
+
+          \        \"registration_no\": \"01.02.04\",\r
+
+          \        \"base_uom\": \"BOX\",\r
+
+          \        \"transaction_uom\": \"PCS\",\r
+
+          \        \"is_consignment\": false,\r
+
+          \        \"is_active\": true,\r
+
+          \        \"coverage\": [\r
+
+          \            \"53aad077-9fb1-4f08-85f3-af9fd9a36517\"\r
+
+          \        ]\r
+
+          \    },\r
+
+          \    \"service\": {\r
+
+          \        \"is_allow_variable\": false,\r
+
+          \        \"is_allow_discount\": true,\r
+
+          \        \"is_print_with_doctor_name\": false,\r
+
+          \        \"sentra_id\": 8,\r
+
+          \        \"sub_service_id\": \"a8af267d-c7fc-49fc-9584-9906e85e8bfa\",\r
+
+          \        \"anestesi_id\": 1,\r
+
+          \        \"anes_composition_rate\": 0.19\r
+
+          \    }\r
+
+          }"
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Date
+          value: Tue, 20 Jan 2026 08:27:29 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "195"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 201,
+              "data": {
+                  "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "item_id": "6f72d759-a253-45e9-97c7-749bbfaefacf",
+                  "created_at": "2026-01-20T15:27:28+07:00",
+                  "user_create": "ferdinand"
+              }
+          }

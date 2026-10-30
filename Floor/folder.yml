@@ -1,0 +1,7 @@
+info:
+  name: Floor
+  type: folder
+  seq: 104
+
+request:
+  auth: inherit

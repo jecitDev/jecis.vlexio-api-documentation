@@ -1,0 +1,489 @@
+info:
+  name: Location - LIST By Param
+  type: http
+  seq: 2
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/Location/listbyparam"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: query
+      disabled: true
+    - name: location_id
+      value: GL101{{BASE_URL}}/
+      type: query
+      disabled: true
+  body:
+    type: text
+    data: ""
+  auth:
+    type: bearer
+    token: "{{xtoken}}"
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: Location - LIST By Param API
+    request:
+      url: "{{BASE_URL}}/v1/Location/listbyparam"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: query
+          disabled: true
+        - name: location_id
+          value: GL101{{BASE_URL}}/
+          type: query
+          disabled: true
+      body:
+        type: text
+        data: ""
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Fri, 12 Dec 2025 02:47:03 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "9295"
+        - name: Connection
+          value: keep-alive
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "Locations": [
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "DL101",
+                          "location_name": "INPATIENT",
+                          "is_active": true,
+                          "user_create": "SIJEC",
+                          "created_at": "2015-03-19T13:24:14+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "GL101",
+                          "location_name": "LOGISTIK",
+                          "is_active": true,
+                          "user_create": "jt",
+                          "created_at": "2011-11-11T14:30:42+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "GL111",
+                          "location_name": "RUMAH TANGGA",
+                          "is_active": true,
+                          "user_create": "jt",
+                          "created_at": "2011-11-11T14:38:22+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "GL112",
+                          "location_name": "MEDICAL RECORD",
+                          "is_active": true,
+                          "user_create": "jt",
+                          "created_at": "2011-11-11T14:39:08+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "EL101",
+                          "location_name": "EMERGENCY",
+                          "is_active": true,
+                          "user_create": "SIJEC",
+                          "created_at": "2015-03-19T13:24:44+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "AL101",
+                          "location_name": "CLINIC MATA",
+                          "is_active": true,
+                          "user_create": "SIJEC",
+                          "created_at": "2015-03-19T13:25:53+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "AL201",
+                          "location_name": "CLINIC INTERNIST",
+                          "is_active": true,
+                          "user_create": "SIJEC",
+                          "created_at": "2015-03-19T13:26:02+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "BL201",
+                          "location_name": "RADIOLOGI",
+                          "is_active": true,
+                          "user_create": "SIJEC",
+                          "created_at": "2015-03-19T13:26:26+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "CL101",
+                          "location_name": "OPERATING THEATER",
+                          "is_active": true,
+                          "user_create": "SIJEC",
+                          "created_at": "2015-03-19T13:26:31+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "CL201",
+                          "location_name": "LASIK",
+                          "is_active": true,
+                          "user_create": "SIJEC",
+                          "created_at": "2015-03-19T13:26:49+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "FL101",
+                          "location_name": "OPTIC",
+                          "is_active": true,
+                          "user_create": "SIJEC",
+                          "created_at": "2015-03-19T13:25:04+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "IL101",
+                          "location_name": "PHARMACY",
+                          "is_active": true,
+                          "user_create": "SIJEC",
+                          "created_at": "2015-03-19T13:27:17+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "GL113",
+                          "location_name": "SIJEC     ",
+                          "is_active": true,
+                          "user_create": "jt",
+                          "created_at": "2011-11-11T14:39:23+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "GL114",
+                          "location_name": "PERSONALIA",
+                          "is_active": true,
+                          "user_create": "afan",
+                          "created_at": "2012-11-05T11:00:02+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "GL115",
+                          "location_name": "ACCOUNTING",
+                          "is_active": true,
+                          "user_create": "jt",
+                          "created_at": "2011-11-11T14:39:54+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "GL116",
+                          "location_name": "INFO JEC",
+                          "is_active": true,
+                          "user_create": "jt",
+                          "created_at": "2011-11-11T14:40:27+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "GL117",
+                          "location_name": "KEUANGAN",
+                          "is_active": true,
+                          "user_create": "jt",
+                          "created_at": "2011-11-11T14:40:49+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "GL118",
+                          "location_name": "KEDOYA",
+                          "is_active": true,
+                          "user_create": "jt",
+                          "created_at": "2011-11-11T14:42:09+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "GL201",
+                          "location_name": "ADMISSION",
+                          "is_active": true,
+                          "user_create": "afan",
+                          "created_at": "2014-02-11T12:01:54+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "GL301",
+                          "location_name": "ICD",
+                          "is_active": true,
+                          "user_create": "jt",
+                          "created_at": "2011-11-11T14:32:08+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "GL401",
+                          "location_name": "IPCN      ",
+                          "is_active": true,
+                          "user_create": "jt",
+                          "created_at": "2011-11-11T14:32:21+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "GL501",
+                          "location_name": "Sekretaris Direksi",
+                          "is_active": true,
+                          "user_create": "jt",
+                          "created_at": "2011-11-11T14:45:20+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "GL601",
+                          "location_name": "JCI       ",
+                          "is_active": true,
+                          "user_create": "jt",
+                          "created_at": "2011-11-11T14:33:18+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "GL701",
+                          "location_name": "UMUM  ",
+                          "is_active": true,
+                          "user_create": "jt",
+                          "created_at": "2011-11-11T14:35:36+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "GL810",
+                          "location_name": "PENDIDIKAN",
+                          "is_active": true,
+                          "user_create": "jt",
+                          "created_at": "2011-11-11T14:34:19+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "GL901",
+                          "location_name": "HUMAS",
+                          "is_active": true,
+                          "user_create": "jt",
+                          "created_at": "2011-11-11T14:37:37+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "HL101",
+                          "location_name": "OPD",
+                          "is_active": true,
+                          "user_create": "jt",
+                          "created_at": "2011-11-14T10:47:02+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "HL102",
+                          "location_name": "PROTESA",
+                          "is_active": true,
+                          "user_create": "jt",
+                          "created_at": "2011-11-14T10:47:19+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "HL103",
+                          "location_name": "REFRAKSI",
+                          "is_active": true,
+                          "user_create": "jt",
+                          "created_at": "2011-11-14T10:47:28+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "HL104",
+                          "location_name": "C D C",
+                          "is_active": true,
+                          "user_create": "afan",
+                          "created_at": "2011-11-29T04:15:45+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "AL301",
+                          "location_name": "CHILD EYE CARE",
+                          "is_active": true,
+                          "user_create": "SIJEC",
+                          "created_at": "2015-03-19T13:26:12+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "GL402",
+                          "location_name": "Internal Monitoring",
+                          "is_active": true,
+                          "user_create": "SIJEC",
+                          "created_at": "2015-03-19T13:27:29+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "GL102",
+                          "location_name": "LOGISTIK UNIT",
+                          "is_active": true,
+                          "user_create": "afan",
+                          "created_at": "2012-11-01T12:04:54+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "GL121",
+                          "location_name": "MAINTENANCE",
+                          "short_name": "MAINTENANCE",
+                          "is_active": true,
+                          "user_create": "ronald",
+                          "created_at": "2014-01-28T14:00:27+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "GL122",
+                          "location_name": "SECURITY",
+                          "short_name": "SECURITY",
+                          "is_active": true,
+                          "user_create": "ronald",
+                          "created_at": "2014-01-28T14:01:15+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "LAE0001",
+                          "location_name": "Anestesi",
+                          "short_name": "ANES L",
+                          "is_active": true,
+                          "user_create": "SIJEC",
+                          "created_at": "2015-03-19T13:28:15+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "GL1001",
+                          "location_name": "Komite Medik",
+                          "short_name": "KMD",
+                          "is_active": true,
+                          "user_create": "SIJEC",
+                          "created_at": "2015-03-19T13:25:16+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "AL302",
+                          "location_name": "DIABETIC CLINIC",
+                          "is_active": true,
+                          "user_create": "afan",
+                          "created_at": "2016-10-11T15:42:11+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "LF202",
+                          "location_name": "APOTIK JEC",
+                          "short_name": "APOTIK",
+                          "is_active": false,
+                          "user_create": "ronald",
+                          "created_at": "2020-02-05T09:21:16+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "FL201.01",
+                          "location_name": "APOTIK JEC",
+                          "short_name": "swf",
+                          "is_active": true,
+                          "user_create": "ronald",
+                          "created_at": "2020-01-29T17:57:08+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "DL201",
+                          "location_name": "BOUGENVILE",
+                          "is_active": true,
+                          "user_create": "SIJEC",
+                          "created_at": "2015-03-19T13:24:19+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "DL301",
+                          "location_name": "CEMPAKA",
+                          "is_active": true,
+                          "user_create": "SIJEC",
+                          "created_at": "2015-03-19T13:24:26+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "DL401",
+                          "location_name": "DAHLIA",
+                          "is_active": true,
+                          "user_create": "SIJEC",
+                          "created_at": "2015-03-19T13:24:39+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "SB001",
+                          "location_name": "SANDBOXKEDOYA",
+                          "short_name": "xxxx",
+                          "is_active": true,
+                          "user_create": "21170",
+                          "created_at": "2025-12-11T14:18:47+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "SB002",
+                          "location_name": "SB-2",
+                          "short_name": "SBxx2",
+                          "is_active": true,
+                          "user_create": "fahri",
+                          "created_at": "2025-12-11T16:56:51+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "BL101",
+                          "location_name": "LABORATORIUM X",
+                          "short_name": "qwerty",
+                          "is_active": true,
+                          "user_create": "SIJEC",
+                          "created_at": "2015-03-19T13:26:21+07:00",
+                          "user_update": "21170",
+                          "updated_at": "2025-12-12T09:45:11+07:00"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "BL101",
+                          "location_name": "LABORATORIUM X",
+                          "short_name": "qwerty",
+                          "is_active": true,
+                          "user_create": "21170",
+                          "created_at": "2025-12-11T09:43:04+07:00",
+                          "user_update": "21170",
+                          "updated_at": "2025-12-12T09:45:11+07:00"
+                      }
+                  ]
+              }
+          }

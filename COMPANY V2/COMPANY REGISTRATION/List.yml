@@ -1,0 +1,138 @@
+info:
+  name: List
+  type: http
+  seq: 7
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/company-registrations?page=1&page_size=10&sort_by=id&sort_order=desc&keywords=test&company_id=1dc886f8-8642-4525-b655-861cca4f2b46"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: page_size
+      value: "10"
+      type: query
+    - name: sort_by
+      value: id
+      type: query
+    - name: sort_order
+      value: desc
+      type: query
+    - name: keywords
+      value: test
+      type: query
+    - name: company_id
+      value: 1dc886f8-8642-4525-b655-861cca4f2b46
+      type: query
+    - name: m_type_id
+      value: 35b167a5-cadb-4313-a256-53170d327fa8
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: List
+    request:
+      url: "{{BASE_URL}}/v1/company-registrations?page=1&page_size=10&sort_by=id&sort_order=desc&keywords=test&company_id=1dc886f8-8642-4525-b655-861cca4f2b46"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: page_size
+          value: "10"
+          type: query
+        - name: sort_by
+          value: id
+          type: query
+        - name: sort_order
+          value: desc
+          type: query
+        - name: keywords
+          value: test
+          type: query
+        - name: company_id
+          value: 1dc886f8-8642-4525-b655-861cca4f2b46
+          type: query
+        - name: m_type_id
+          value: ""
+          type: query
+          disabled: true
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Wed, 08 Oct 2025 09:21:45 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "543"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "company_registrations": [
+                      {
+                          "attachment_url": [],
+                          "company_id": "1dc886f8-8642-4525-b655-861cca4f2b46",
+                          "created_at": "2025-10-08T16:03:43+07:00",
+                          "id": "13dfb8a8-4f68-47c7-8b3d-c8bc812205d8",
+                          "is_active": true,
+                          "issuing_country": "IDN",
+                          "m_type_id": "35b167a5-cadb-4313-a256-53170d327fa8",
+                          "updated_at": "2025-10-08T16:18:46+07:00",
+                          "user_create": "ferdinand",
+                          "user_update": "ferdinand",
+                          "valid_from": "2025-10-02T14:08:41+07:00",
+                          "valid_to": "2025-10-20T14:08:41+07:00",
+                          "value": "test value 1 #updated"
+                      }
+                  ],
+                  "page": 1,
+                  "page_size": 10,
+                  "total_items": 1
+              }
+          }

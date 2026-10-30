@@ -1,0 +1,7 @@
+info:
+  name: REGISTRATION SERVICE UNIT Copy
+  type: folder
+  seq: 1
+
+request:
+  auth: inherit

@@ -1,0 +1,142 @@
+info:
+  name: Get By Module
+  type: http
+  seq: 5
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/terms/module/:module_id?page=1&page_size=10&sort_by=created_at&sort_order=asc&keywords=terms&business_unit_id=7a8cf54a-4b22-450e-911f-8a305831cb6a"
+  headers:
+    - name: x-token
+      value: "{{x_token}}"
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: page_size
+      value: "10"
+      type: query
+    - name: sort_by
+      value: created_at
+      type: query
+    - name: sort_order
+      value: asc
+      type: query
+    - name: keywords
+      value: terms
+      type: query
+    - name: business_unit_id
+      value: 7a8cf54a-4b22-450e-911f-8a305831cb6a
+      type: query
+    - name: is_active
+      value: ""
+      type: query
+      disabled: true
+    - name: module_id
+      value: "01.02"
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Get By Module
+    request:
+      url: "{{BASE_URL}}/v1/terms/module/:module_id?page=1&page_size=10&sort_by=created_at&sort_order=asc&keywords=terms&business_unit_id=7a8cf54a-4b22-450e-911f-8a305831cb6a"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{x_token}}"
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: page_size
+          value: "10"
+          type: query
+        - name: sort_by
+          value: created_at
+          type: query
+        - name: sort_order
+          value: asc
+          type: query
+        - name: keywords
+          value: terms
+          type: query
+        - name: business_unit_id
+          value: 7a8cf54a-4b22-450e-911f-8a305831cb6a
+          type: query
+        - name: is_active
+          value: ""
+          type: query
+          disabled: true
+        - name: module_id
+          value: "01.02"
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 17 Nov 2025 03:50:51 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "633"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "page": 1,
+                  "page_size": 10,
+                  "total_items": 1,
+                  "terms": [
+                      {
+                          "id": "27492578-17c4-4e85-9654-f9e8e95fdd64",
+                          "business_unit_id": "7a8cf54a-4b22-450e-911f-8a305831cb6a",
+                          "name": "Terms and Conditions - Registration",
+                          "content": "<html><body><h1>Terms and Conditions</h1><p>By using our services, you agree to the following terms...</p></body></html>",
+                          "module_id": "01.02",
+                          "module_name": "Registration",
+                          "is_active": true,
+                          "created_at": "2025-11-17T10:48:14+07:00",
+                          "user_create": "ferdinand",
+                          "updated_at": "2025-11-17T10:48:50+07:00",
+                          "user_update": "ferdinand"
+                      }
+                  ]
+              }
+          }

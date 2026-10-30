@@ -1,0 +1,209 @@
+info:
+  name: INSERT
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/WidgetDashboardTemplate"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+      \    \"created_at\": \"2024-11-19T08:00:00+07:00\",\r
+
+      \    \"name\": \"Template Dokter Katarak\",\r
+
+      \    \"template\": [\r
+
+      \        {\r
+
+      \            \"h\": 1,\r
+
+      \            \"w\": 2,\r
+
+      \            \"x\": 4,\r
+
+      \            \"y\": 5,\r
+
+      \            \"minH\": 6,\r
+
+      \            \"i\": \"allergi\"\r
+
+      \        },\r
+
+      \        {\r
+
+      \            \"h\": 1,\r
+
+      \            \"w\": 2,\r
+
+      \            \"x\": 3,\r
+
+      \            \"y\": 4,\r
+
+      \            \"minH\": 6,\r
+
+      \            \"maxH\": 2,\r
+
+      \            \"maxW\": 5,\r
+
+      \            \"minW\": 6,\r
+
+      \            \"i\": \"notes\"\r
+
+      \        }\r
+
+      \    ],\r
+
+      \    \"user_create\": \"21170\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: INSERT
+    request:
+      url: "{{BASE_URL}}/v1/WidgetDashboardTemplate"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+          \    \"created_at\": \"2024-11-19T08:00:00+07:00\",\r
+
+          \    \"name\": \"Template Dokter Katarak\",\r
+
+          \    \"template\": [\r
+
+          \        {\r
+
+          \            \"h\": 1,\r
+
+          \            \"w\": 2,\r
+
+          \            \"x\": 4,\r
+
+          \            \"y\": 5,\r
+
+          \            \"minH\": 6,\r
+
+          \            \"i\": \"allergi\"\r
+
+          \        },\r
+
+          \        {\r
+
+          \            \"h\": 1,\r
+
+          \            \"w\": 2,\r
+
+          \            \"x\": 3,\r
+
+          \            \"y\": 4,\r
+
+          \            \"minH\": 6,\r
+
+          \            \"maxH\": 2,\r
+
+          \            \"maxW\": 5,\r
+
+          \            \"minW\": 6,\r
+
+          \            \"i\": \"notes\"\r
+
+          \        }\r
+
+          \    ],\r
+
+          \    \"user_create\": \"21170\"\r
+
+          }"
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Date
+          value: Tue, 19 Nov 2024 04:19:19 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "325"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 201,
+              "data": {
+                  "WidgetDashboardTemplate": {
+                      "id": "511fe855-27ab-416c-95bf-86a41f6d3871",
+                      "name": "Template Dokter Katarak",
+                      "template": [
+                          {
+                              "h": 1,
+                              "w": 2,
+                              "x": 4,
+                              "y": 5,
+                              "minH": 6,
+                              "i": "allergi"
+                          },
+                          {
+                              "h": 1,
+                              "w": 2,
+                              "x": 3,
+                              "y": 4,
+                              "minH": 6,
+                              "minW": 6,
+                              "maxH": 2,
+                              "maxW": 5,
+                              "i": "notes"
+                          }
+                      ],
+                      "user_create": "21170",
+                      "created_at": "2024-11-19T08:00:00+07:00"
+                  }
+              }
+          }

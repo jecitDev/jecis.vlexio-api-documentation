@@ -1,0 +1,7 @@
+info:
+  name: REGION
+  type: folder
+  seq: 122
+
+request:
+  auth: inherit

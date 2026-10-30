@@ -1,0 +1,32 @@
+info:
+  name: Delete SEP
+  type: http
+  seq: 9
+
+http:
+  method: DELETE
+  url: "{{BASE_URL}}/v1/bpjs/sep/:no_sep"
+  headers:
+    - name: x-token
+      value: ""
+  params:
+    - name: no_sep
+      value: ""
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"business_unit_id\": \"\",\r
+
+      \    \"user\": \"\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

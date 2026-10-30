@@ -1,0 +1,180 @@
+info:
+  name: Svc - List
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/autonumbers/"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: page
+      value: "1"
+      type: query
+      disabled: true
+    - name: pageSize
+      value: ""
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: "{\r
+
+      \    \"page\": 1,\r
+
+      \    \"page_size\": 13\r
+
+      }"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: "Svc - List #1"
+    request:
+      url: "{{BASE_URL}}/v1/autonumbers/"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: page
+          value: "1"
+          type: query
+          disabled: true
+        - name: pageSize
+          value: ""
+          type: query
+          disabled: true
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 31 Oct 2023 08:46:51 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "1405"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "page": 1,
+                  "page_size": 10,
+                  "total_items": 3,
+                  "autonumbers": [
+                      {
+                          "sr_auto_number": "AppointmentNo",
+                          "effective_date": {
+                              "seconds": 1698217200
+                          },
+                          "prefix": "AP",
+                          "is_used_branch": true,
+                          "branch_type": "ALIAS",
+                          "separator_after_branch": "/",
+                          "is_used_year": true,
+                          "year_digit": 2,
+                          "is_used_month": true,
+                          "is_month_in_romawi": true,
+                          "is_used_day": true,
+                          "separator_after_day": "-",
+                          "number_length": 5,
+                          "user_create": "21239",
+                          "created_at": {
+                              "seconds": 1698411796,
+                              "nanos": 361143000
+                          },
+                          "updated_at": {
+                              "seconds": 1698411796,
+                              "nanos": 361143000
+                          }
+                      },
+                      {
+                          "sr_auto_number": "MedicalNo",
+                          "effective_date": {
+                              "seconds": 1698217200
+                          },
+                          "is_used_branch": true,
+                          "branch_type": "CODE",
+                          "separator_after_day": "-",
+                          "number_format": "[%BRANCH_ID%]-000-00-00",
+                          "is_active": true,
+                          "user_create": "Admin1",
+                          "created_at": {
+                              "seconds": 1698753085,
+                              "nanos": 698753000
+                          },
+                          "user_update": "Admin4",
+                          "updated_at": {
+                              "seconds": 1698755125,
+                              "nanos": 698755000
+                          }
+                      },
+                      {
+                          "sr_auto_number": "RegistrationNo",
+                          "effective_date": {
+                              "seconds": 1698217200
+                          },
+                          "prefix": "REG",
+                          "separator_after_prefix": "/",
+                          "is_used_branch": true,
+                          "branch_type": "ALIAS",
+                          "separator_after_branch": "/",
+                          "is_used_department": true,
+                          "separator_after_dept": "/",
+                          "is_used_year": true,
+                          "year_digit": 2,
+                          "is_used_month": true,
+                          "is_month_in_romawi": true,
+                          "is_used_day": true,
+                          "separator_after_day": "-",
+                          "number_length": 4,
+                          "is_active": true,
+                          "user_create": "21239",
+                          "created_at": {
+                              "seconds": 1698411796,
+                              "nanos": 361143000
+                          },
+                          "updated_at": {
+                              "seconds": 1698411796,
+                              "nanos": 361143000
+                          }
+                      }
+                  ]
+              }
+          }

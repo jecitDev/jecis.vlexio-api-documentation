@@ -1,0 +1,269 @@
+info:
+  name: List
+  type: http
+  seq: 10
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/promo?business_unit_id=53aad077-9fb1-4f08-85f3-af9fd9a36517&page=1&page_size=10&sort_by=created_at&sort_order=asc"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: query
+    - name: page
+      value: "1"
+      type: query
+    - name: page_size
+      value: "10"
+      type: query
+    - name: sort_by
+      value: created_at
+      type: query
+    - name: sort_order
+      value: asc
+      type: query
+    - name: keywords
+      value: ""
+      type: query
+      disabled: true
+    - name: status
+      value: ""
+      type: query
+      disabled: true
+    - name: package_type
+      value: ""
+      type: query
+      disabled: true
+    - name: is_active
+      value: ""
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: List
+    request:
+      url: "{{BASE_URL}}/v1/promo?page=1&page_size=10&sort_by=created_at&sort_order=asc"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: page_size
+          value: "10"
+          type: query
+        - name: sort_by
+          value: created_at
+          type: query
+        - name: sort_order
+          value: asc
+          type: query
+        - name: keywords
+          value: ""
+          type: query
+          disabled: true
+        - name: status
+          value: ""
+          type: query
+          disabled: true
+        - name: package_type
+          value: ""
+          type: query
+          disabled: true
+        - name: is_active
+          value: ""
+          type: query
+          disabled: true
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 05 Aug 2025 09:29:16 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "4071"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "page": 1,
+                  "page_size": 10,
+                  "total_items": 8,
+                  "promos": [
+                      {
+                          "package_id": "49330500-4792-4f61-850a-0ea120fe6887",
+                          "package_no": "PP-KDY/20250805-0015",
+                          "package_name": "Fall Health Promo 2025",
+                          "package_short_name": "Fall25",
+                          "sr_package_status": "1",
+                          "sr_package_status_name": "Draft",
+                          "package_start": "2025-09-01T00:00:00+07:00",
+                          "package_end": "2025-12-31T23:59:59+07:00",
+                          "is_active": true,
+                          "created_at": "2025-08-04T10:30:00+07:00",
+                          "user_create": "302303",
+                          "user_create_name": "Ferdinand Iskandar",
+                          "sr_campaign_type": "Event",
+                          "sr_campaign_type_name": "Event"
+                      },
+                      {
+                          "package_id": "d9b2aa33-fde6-450e-9964-ecd2f662be5d",
+                          "package_no": "PP-KDY/20250805-0016",
+                          "package_name": "Fall Health Promo 2026",
+                          "package_short_name": "Fall26",
+                          "sr_package_status": "1",
+                          "sr_package_status_name": "Draft",
+                          "package_start": "2025-09-01T00:00:00+07:00",
+                          "package_end": "2025-12-31T23:59:59+07:00",
+                          "is_active": true,
+                          "created_at": "2025-08-04T10:30:00+07:00",
+                          "user_create": "302303",
+                          "user_create_name": "Ferdinand Iskandar",
+                          "sr_campaign_type": "Event",
+                          "sr_campaign_type_name": "Event"
+                      },
+                      {
+                          "package_id": "70c1983a-22c2-4b82-8171-2a49cec3f2d7",
+                          "package_no": "PP-KDY/20250805-0006",
+                          "package_name": "Summer Health Promo 2025",
+                          "package_short_name": "SUM25",
+                          "sr_package_status": "1",
+                          "sr_package_status_name": "Draft",
+                          "package_start": "2025-09-01T00:00:00+07:00",
+                          "package_end": "2025-12-31T23:59:59+07:00",
+                          "is_active": true,
+                          "created_at": "2025-08-04T10:30:00+07:00",
+                          "user_create": "302303",
+                          "user_create_name": "Ferdinand Iskandar",
+                          "sr_campaign_type": "Event",
+                          "sr_campaign_type_name": "Event"
+                      },
+                      {
+                          "package_id": "7722dee1-3694-4dff-b2fe-dd898e73b04d",
+                          "package_no": "PP-KDY/20250805-0007",
+                          "package_name": "Winter Health Promo 2025",
+                          "package_short_name": "WIN25",
+                          "sr_package_status": "1",
+                          "sr_package_status_name": "Draft",
+                          "package_start": "2025-09-01T00:00:00+07:00",
+                          "package_end": "2025-12-31T23:59:59+07:00",
+                          "is_active": true,
+                          "created_at": "2025-08-04T10:30:00+07:00",
+                          "user_create": "302303",
+                          "user_create_name": "Ferdinand Iskandar",
+                          "sr_campaign_type": "Event",
+                          "sr_campaign_type_name": "Event"
+                      },
+                      {
+                          "package_id": "8f96d1fa-5059-4bb9-b78f-b370e70c3732",
+                          "package_no": "PP-KDY/20250805-0005",
+                          "package_name": "Winter Health Promotion 2025",
+                          "package_short_name": "FHP25",
+                          "sr_package_status": "2",
+                          "sr_package_status_name": "Approved",
+                          "package_start": "2025-09-01T00:00:00+07:00",
+                          "package_end": "2025-12-31T23:59:59+07:00",
+                          "is_active": true,
+                          "created_at": "2025-08-04T10:30:00+07:00",
+                          "user_create": "302303",
+                          "user_create_name": "Ferdinand Iskandar",
+                          "updated_at": "2025-08-05T15:30:45+07:00",
+                          "user_update": "302303",
+                          "user_update_name": "Ferdinand Iskandar",
+                          "sr_campaign_type": "PackageSystem",
+                          "sr_campaign_type_name": "Package System"
+                      },
+                      {
+                          "package_id": "b134687f-882d-43a5-afab-e936ca4e7344",
+                          "package_no": "PP-KDY/20250805-0008",
+                          "package_name": "Autumn Health Promo 2025",
+                          "package_short_name": "SUM25",
+                          "sr_package_status": "1",
+                          "sr_package_status_name": "Draft",
+                          "package_start": "2025-09-01T00:00:00+07:00",
+                          "package_end": "2025-12-31T23:59:59+07:00",
+                          "is_active": true,
+                          "created_at": "2025-08-04T10:30:00+07:00",
+                          "user_create": "302303",
+                          "user_create_name": "Ferdinand Iskandar",
+                          "sr_campaign_type": "Event",
+                          "sr_campaign_type_name": "Event"
+                      },
+                      {
+                          "package_id": "97a0f258-1181-4aa2-b2c9-ba1d2bb44661",
+                          "package_no": "PP-KDY/20250805-0012",
+                          "package_name": "Winter Health Promo 2026",
+                          "package_short_name": "SUM25",
+                          "sr_package_status": "1",
+                          "sr_package_status_name": "Draft",
+                          "package_start": "2025-09-01T00:00:00+07:00",
+                          "package_end": "2025-12-31T23:59:59+07:00",
+                          "is_active": true,
+                          "created_at": "2025-08-04T10:30:00+07:00",
+                          "user_create": "302303",
+                          "user_create_name": "Ferdinand Iskandar",
+                          "sr_campaign_type": "Event",
+                          "sr_campaign_type_name": "Event"
+                      },
+                      {
+                          "package_id": "14f2ee9b-aed7-4933-bd85-0a1ee98b42ae",
+                          "package_no": "PP-KDY/20250805-0013",
+                          "package_name": "Autumn Health Promo 2026",
+                          "package_short_name": "AUTU25",
+                          "sr_package_status": "1",
+                          "sr_package_status_name": "Draft",
+                          "package_start": "2025-09-01T00:00:00+07:00",
+                          "package_end": "2025-12-31T23:59:59+07:00",
+                          "is_active": true,
+                          "created_at": "2025-08-04T10:30:00+07:00",
+                          "user_create": "302303",
+                          "user_create_name": "Ferdinand Iskandar",
+                          "sr_campaign_type": "Event",
+                          "sr_campaign_type_name": "Event"
+                      }
+                  ]
+              }
+          }

@@ -1,0 +1,26 @@
+info:
+  name: Get Asset List
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/asset-reconciliation/asset-list?business_unit_id=18e9ea73-7343-4be2-a8e4-47b652e56981"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: business_unit_id
+      value: 18e9ea73-7343-4be2-a8e4-47b652e56981
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

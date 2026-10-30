@@ -1,0 +1,551 @@
+info:
+  name: Svc - List by Param
+  type: http
+  seq: 2
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/standardreferenceitems/listbyparam?standard_reference_id=UserType"
+  headers:
+    - name: x-token
+      value: "{{XTOKEN}}"
+  params:
+    - name: standard_reference_id
+      value: UserType
+      type: query
+    - name: item_name
+      value: Indonesia
+      type: query
+      disabled: true
+    - name: is_active
+      value: "true"
+      type: query
+      disabled: true
+    - name: is_used_by_system
+      value: "true"
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: ""
+  auth:
+    type: bearer
+    token: "{{xtoken}}"
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: "Svc - List By Param #1"
+    request:
+      url: "{{BASE_URL}}/v1/standardreferenceitems/listbyparam"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{XTOKEN}}"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Fri, 23 Feb 2024 07:50:06 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "326"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "standardrefenceitems": [
+                      {
+                          "standard_reference_id": "Nationality",
+                          "item_id": "Nationality-096",
+                          "coa_id": -99,
+                          "subledger_id": -99,
+                          "item_name": "Indonesia",
+                          "is_active": true,
+                          "is_used_by_system": true,
+                          "user_create": "afan",
+                          "created_at": {
+                              "seconds": 1423074240
+                          },
+                          "user_update": "afan",
+                          "updated_at": {
+                              "seconds": 1423074240
+                          }
+                      }
+                  ]
+              }
+          }
+  - name: "Svc - List By Param #2-240229"
+    request:
+      url: "{{BASE_URL}}/v1/standardreferenceitems/listbyparam?standard_reference_id=Nationality&item_name=Indonesia"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{XTOKEN}}"
+      params:
+        - name: standard_reference_id
+          value: Nationality
+          type: query
+        - name: item_name
+          value: Indonesia
+          type: query
+        - name: is_active
+          value: "true"
+          type: query
+          disabled: true
+        - name: is_used_by_system
+          value: "true"
+          type: query
+          disabled: true
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 29 Feb 2024 05:03:08 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "346"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "standardrefenceitems": [
+                      {
+                          "standard_reference_id": "Nationality",
+                          "item_id": "Nationality-096",
+                          "coa_id": -99,
+                          "subledger_id": -99,
+                          "reference_id2": "#",
+                          "item_name": "Indonesia",
+                          "is_active": true,
+                          "is_used_by_system": true,
+                          "user_create": "afan",
+                          "created_at": {
+                              "seconds": 1423074240
+                          },
+                          "user_update": "afan",
+                          "updated_at": {
+                              "seconds": 1423074240
+                          }
+                      }
+                  ]
+              }
+          }
+  - name: "Svc - List by Param #3-240322"
+    request:
+      url: "{{BASE_URL}}/v1/standardreferenceitems/listbyparam?standard_reference_id=UserType"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{XTOKEN}}"
+      params:
+        - name: standard_reference_id
+          value: UserType
+          type: query
+        - name: item_name
+          value: Indonesia
+          type: query
+          disabled: true
+        - name: is_active
+          value: "true"
+          type: query
+          disabled: true
+        - name: is_used_by_system
+          value: "true"
+          type: query
+          disabled: true
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Fri, 22 Mar 2024 04:22:55 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "749"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "standardrefenceitems": [
+                      {
+                          "standard_reference_id": "UserType",
+                          "item_id": "StandardUser",
+                          "coa_id": -99,
+                          "subledger_id": -99,
+                          "item_name": "Standard User",
+                          "is_active": true,
+                          "is_used_by_system": true,
+                          "user_create": "Nando",
+                          "created_at": "2020-06-18T09:13:00+07:00"
+                      },
+                      {
+                          "standard_reference_id": "UserType",
+                          "item_id": "Doctor",
+                          "coa_id": -99,
+                          "subledger_id": -99,
+                          "item_name": "Doctor",
+                          "is_active": true,
+                          "is_used_by_system": true,
+                          "user_create": "Nando",
+                          "created_at": "2020-06-18T09:13:00+07:00"
+                      },
+                      {
+                          "standard_reference_id": "UserType",
+                          "item_id": "Nurse",
+                          "subledger_id": -99,
+                          "item_name": "Nurse",
+                          "is_active": true,
+                          "is_used_by_system": true,
+                          "user_create": "Nando",
+                          "created_at": "2020-06-18T09:13:00+07:00",
+                          "user_update": "Admin",
+                          "updated_at": "2022-03-22T05:00:00+07:00"
+                      }
+                  ]
+              }
+          }
+  - name: "Svc - List By Param with Sort #1"
+    request:
+      url: "{{BASE_URL}}/v1/standardreferenceitems/listbyparamwithsort"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{XTOKEN}}"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Fri, 23 Feb 2024 07:52:12 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "945"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "page": 1,
+                  "page_size": 5,
+                  "total_items": 1188,
+                  "standardrefenceitems": [
+                      {
+                          "standard_reference_id": "Nationality",
+                          "item_id": "Nationality-096",
+                          "coa_id": -99,
+                          "subledger_id": -99,
+                          "item_name": "Indonesia",
+                          "is_active": true,
+                          "is_used_by_system": true,
+                          "user_create": "afan",
+                          "created_at": {
+                              "seconds": 1423074240
+                          },
+                          "user_update": "afan",
+                          "updated_at": {
+                              "seconds": 1423074240
+                          }
+                      },
+                      {
+                          "standard_reference_id": "Nationality",
+                          "item_id": "Nationality-099",
+                          "coa_id": -99,
+                          "subledger_id": -99,
+                          "item_name": "India",
+                          "is_active": true,
+                          "is_used_by_system": true,
+                          "user_create": "afan",
+                          "created_at": {
+                              "seconds": 1423074240
+                          },
+                          "user_update": "afan",
+                          "updated_at": {
+                              "seconds": 1423074240
+                          }
+                      },
+                      {
+                          "standard_reference_id": "Nationality",
+                          "item_id": "Nationality-100",
+                          "coa_id": -99,
+                          "subledger_id": -99,
+                          "item_name": "British Indian Ocean Territory",
+                          "is_active": true,
+                          "is_used_by_system": true,
+                          "user_create": "afan",
+                          "created_at": {
+                              "seconds": 1423074240
+                          },
+                          "user_update": "afan",
+                          "updated_at": {
+                              "seconds": 1423074240
+                          }
+                      }
+                  ]
+              }
+          }
+  - name: "Svc - List by Param with Sort #2-240229"
+    request:
+      url: "{{BASE_URL}}/v1/standardreferenceitems/listbyparamwithsort?page=1&page_size=25&sort_by=item_name&sort_order=ASC&standard_reference_id=All Normal&IsUsedBySystem=false"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{XTOKEN}}"
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: page_size
+          value: "25"
+          type: query
+        - name: sort_by
+          value: item_name
+          type: query
+        - name: sort_order
+          value: ASC
+          type: query
+        - name: keywords
+          value: IND
+          type: query
+          disabled: true
+        - name: standard_reference_id
+          value: All Normal
+          type: query
+        - name: item_name
+          value: Indonesia
+          type: query
+          disabled: true
+        - name: IsActive
+          value: "true"
+          type: query
+          disabled: true
+        - name: IsUsedBySystem
+          value: "false"
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 29 Feb 2024 05:45:57 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "1089"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "page": 1,
+                  "page_size": 25,
+                  "total_items": 3,
+                  "standardrefenceitems": [
+                      {
+                          "standard_reference_id": "All Normal",
+                          "item_id": "CB",
+                          "subledger_id": -99,
+                          "reference_id": "01.05",
+                          "reference_id2": "Anterior",
+                          "item_name": "Normal Conjunctiva",
+                          "note": "NRM",
+                          "is_active": true,
+                          "is_used_by_system": false,
+                          "user_create": "Admin1",
+                          "created_at": {
+                              "seconds": 1708920148,
+                              "nanos": 708920000
+                          },
+                          "user_update": "Admin2",
+                          "updated_at": {
+                              "seconds": 1709180843,
+                              "nanos": 709181000
+                          }
+                      },
+                      {
+                          "standard_reference_id": "All Normal",
+                          "item_id": "CO",
+                          "coa_id": -99,
+                          "subledger_id": -99,
+                          "reference_id": "01.05",
+                          "reference_id2": "Anterior",
+                          "item_name": "normal cornea",
+                          "note": "NRML",
+                          "is_active": false,
+                          "is_used_by_system": false,
+                          "user_create": "Admin1",
+                          "created_at": {
+                              "seconds": 1709181513
+                          },
+                          "updated_at": {
+                              "seconds": -62135596800
+                          }
+                      },
+                      {
+                          "standard_reference_id": "All Normal",
+                          "item_id": "EL",
+                          "coa_id": -99,
+                          "subledger_id": -99,
+                          "reference_id": "01.05",
+                          "reference_id2": "Anterior",
+                          "item_name": "normal eyelids",
+                          "note": "NRM",
+                          "is_active": true,
+                          "is_used_by_system": false,
+                          "user_create": "Admin1",
+                          "created_at": {
+                              "seconds": 1709181649
+                          },
+                          "updated_at": {
+                              "seconds": -62135596800
+                          }
+                      }
+                  ]
+              }
+          }

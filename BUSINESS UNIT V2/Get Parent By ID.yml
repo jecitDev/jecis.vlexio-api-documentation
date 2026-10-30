@@ -1,0 +1,169 @@
+info:
+  name: Get Parent By ID
+  type: http
+  seq: 10
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/business-units/parent/:id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: id
+      value: bac6839f-d5a2-43d7-8a89-a73135691891
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/business-units/:id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: id
+          value: a20cd8f4-6fb6-426b-8107-f36d0ee73547
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Fri, 24 Oct 2025 03:33:12 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "1416"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "abbreviation": "KDY",
+                  "addresses": {
+                      "address_line1": "Jalan Terusan, Jl. Arjuna Utara Jl. Kedoya Pesing No.1, Kedoya Sel., Kec. Kb. Jeruk, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta",
+                      "address_line2": "",
+                      "city": "Jakarta Barat",
+                      "lat": "",
+                      "long": "",
+                      "postal_code": "11520"
+                  },
+                  "base_currency": "IDR",
+                  "category_id": "",
+                  "color_code": "#fcba03",
+                  "company_id": "1dc886f8-8642-4525-b655-861cca4f2b46",
+                  "contact": {
+                      "email": "care@jec.co.id",
+                      "fax": "",
+                      "phone": "+628041221000",
+                      "website": ""
+                  },
+                  "country": "IDN",
+                  "created_at": "2025-10-10T15:24:54+07:00",
+                  "date_of_established": "2012-04-02T00:00:00+07:00",
+                  "default_letterhead_id": "e2331208-f962-4811-9585-36b4fee25a67",
+                  "description": "Rumah Sakit spesialis mata yang telah memiliki standar layanan internasional. Kami memiliki misi dan komitmen untuk dapat meningkatkan kualitas hidup masyarakat melalui pelayanan kesehatan mata. JEC juga selalu berupaya untuk bisa menjadi yang terdepan dalam pelayanan kesehatan khususnya buat pasien yang mengalami gangguan mata.",
+                  "id": "a20cd8f4-6fb6-426b-8107-f36d0ee73547",
+                  "is_corporate": false,
+                  "logo_url": "",
+                  "m_domain_id": "1105caa9-8e07-4502-8eb3-6702b6440cc5",
+                  "m_status_id": "c1939a90-849e-43e0-8309-2f734f250d38",
+                  "m_timezone_id": "3a26a2a8-b4fb-403b-b280-2554e0f3bc81",
+                  "name": "JEC Menteng",
+                  "oc_template_id": "12854539-a1f3-4372-a5d4-06f11806754e",
+                  "updated_at": "2025-10-22T14:19:51+07:00",
+                  "user_create": "ferdinand",
+                  "user_update": "ferdinand"
+              }
+          }
+  - name: Not Found
+    request:
+      url: "{{BASE_URL}}/v1/business-units/:id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: id
+          value: edc38a85-32f8-4fa3-96f0-3149f354bdad
+          type: path
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Date
+          value: Fri, 10 Oct 2025 09:10:51 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "51"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "business_units.not_found",
+              "status": 404
+          }

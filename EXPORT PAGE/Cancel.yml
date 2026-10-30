@@ -1,0 +1,81 @@
+info:
+  name: Cancel
+  type: http
+  seq: 3
+
+http:
+  method: PATCH
+  url: "{{BASE_URL}}/v1/export-pages/:id/cancel"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  params:
+    - name: id
+      value: 0880e76f-656f-4160-8931-6e1ac1755d3a
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Cancel
+    request:
+      url: "{{BASE_URL}}/v1/export-pages/:id/cancel"
+      method: PATCH
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      params:
+        - name: id
+          value: 52c6fe18-4372-4038-a7b3-2bcea9742a96
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: date
+          value: Sun, 04 Oct 2026 16:19:47 GMT
+        - name: content-type
+          value: application/json
+        - name: content-length
+          value: "68"
+        - name: x-xss-protection
+          value: "0"
+        - name: x-content-type-options
+          value: nosniff
+        - name: x-frame-options
+          value: SAMEORIGIN
+        - name: cross-origin-embedder-policy
+          value: require-corp
+        - name: cross-origin-opener-policy
+          value: same-origin
+        - name: cross-origin-resource-policy
+          value: same-origin
+        - name: origin-agent-cluster
+          value: ?1
+        - name: referrer-policy
+          value: no-referrer
+        - name: x-dns-prefetch-control
+          value: off
+        - name: x-download-options
+          value: noopen
+        - name: x-permitted-cross-domain-policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+            "code": 200,
+            "data": {
+              "message": "Successfully cancelled export jobs"
+            }
+          }

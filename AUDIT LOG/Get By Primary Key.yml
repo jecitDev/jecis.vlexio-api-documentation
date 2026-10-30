@@ -1,0 +1,409 @@
+info:
+  name: Get By Primary Key
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/auditLogs/get-by-primary-key?domain=appointment&primary_key=REG%2FKDY%2F260115-0001:53aad077-9fb1-4f08-85f3-af9fd9a36517&sort_order=ASC"
+  headers:
+    - name: x-token
+      value: "{{admission_xtoken}}"
+  params:
+    - name: domain
+      value: appointment
+      type: query
+    - name: primary_key
+      value: REG%2FKDY%2F260115-0001:53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: query
+    - name: month
+      value: 2026-01
+      type: query
+      disabled: true
+    - name: sort_order
+      value: ASC
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Get Patient
+    request:
+      url: "{{BASE_URL}}/v1/auditLogs/get-by-primary-key?domain=patient&primary_key=PKDY260115-0004:53aad077-9fb1-4f08-85f3-af9fd9a36517&month=2026-01&sort_order=ASC"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{admission_xtoken}}"
+      params:
+        - name: domain
+          value: patient
+          type: query
+        - name: primary_key
+          value: PKDY260115-0004:53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: query
+        - name: month
+          value: 2026-01
+          type: query
+        - name: sort_order
+          value: ASC
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 15 Jan 2026 09:32:50 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "668"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "total_items": 1,
+                  "audit_logs": [
+                      {
+                          "id": "a9b0202f-3fdf-431d-a89e-056d33b83310",
+                          "domain": "patient",
+                          "entity": "InsertPatient",
+                          "operation": "CREATE",
+                          "primary_key": {
+                              "value": "PKDY260115-0004:53aad077-9fb1-4f08-85f3-af9fd9a36517"
+                          },
+                          "primary_key_str": "PKDY260115-0004:53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "change_data": {},
+                          "after_data": {
+                              "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                              "medical_no": "002-000-01-76",
+                              "patient_id": "PKDY260115-0004"
+                          },
+                          "changed_by": "admin",
+                          "change_timestamp": "2026-01-15T14:14:57+07:00",
+                          "request_id": "eff47f48-9dcc-46f3-9e8c-2097894ef085",
+                          "user_agent": "grpc-go/1.65.0",
+                          "metadata": {
+                              "duration": 632,
+                              "method": "InsertPatient"
+                          }
+                      }
+                  ]
+              }
+          }
+  - name: Get Appointment
+    request:
+      url: "{{BASE_URL}}/v1/auditLogs/get-by-primary-key?domain=appointment&primary_key=APKDY%2F260115-00005:53aad077-9fb1-4f08-85f3-af9fd9a36517&sort_order=ASC"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{admission_xtoken}}"
+      params:
+        - name: domain
+          value: appointment
+          type: query
+        - name: primary_key
+          value: APKDY%2F260115-00005:53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: query
+        - name: month
+          value: 2026-01
+          type: query
+          disabled: true
+        - name: sort_order
+          value: ASC
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 15 Jan 2026 09:46:30 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "699"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "total_items": 1,
+                  "audit_logs": [
+                      {
+                          "id": "85e32b74-eba8-44e4-bfa8-c53f0fc499fe",
+                          "domain": "appointment",
+                          "entity": "Add",
+                          "operation": "CREATE",
+                          "primary_key": {
+                              "value": "APKDY/260115-00005:53aad077-9fb1-4f08-85f3-af9fd9a36517"
+                          },
+                          "primary_key_str": "APKDY/260115-00005:53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "change_data": {},
+                          "after_data": {
+                              "appointment_no": "APKDY/260115-00005",
+                              "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                              "created_at": "2026-01-15T16:38:47+07:00",
+                              "user_create": "admin"
+                          },
+                          "changed_by": "admin",
+                          "change_timestamp": "2026-01-15T16:38:47+07:00",
+                          "request_id": "4262cb45-d19c-48a6-83e2-cabc00465c5f",
+                          "user_agent": "grpc-go/1.65.0",
+                          "metadata": {
+                              "duration": 415,
+                              "method": "Add"
+                          }
+                      }
+                  ]
+              }
+          }
+  - name: Get Registration
+    request:
+      url: "{{BASE_URL}}/v1/auditLogs/get-by-primary-key?domain=registration&primary_key=098d083d-ca9e-4985-924e-634f6613f225:53aad077-9fb1-4f08-85f3-af9fd9a36517&sort_order=ASC"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{admission_xtoken}}"
+      params:
+        - name: domain
+          value: registration
+          type: query
+        - name: primary_key
+          value: 098d083d-ca9e-4985-924e-634f6613f225:53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: query
+        - name: month
+          value: 2026-01
+          type: query
+          disabled: true
+        - name: sort_order
+          value: ASC
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 15 Jan 2026 09:56:52 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "809"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "total_items": 1,
+                  "audit_logs": [
+                      {
+                          "id": "f183b7e7-3a7b-4bf6-8ef1-3e61ff249242",
+                          "domain": "registration",
+                          "entity": "Insert",
+                          "operation": "CREATE",
+                          "primary_key": {
+                              "value": "098d083d-ca9e-4985-924e-634f6613f225:53aad077-9fb1-4f08-85f3-af9fd9a36517"
+                          },
+                          "primary_key_str": "098d083d-ca9e-4985-924e-634f6613f225:53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "change_data": {},
+                          "after_data": {
+                              "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                              "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",
+                              "registration_id": "098d083d-ca9e-4985-924e-634f6613f225",
+                              "registration_no": "REG/KDY/260115-0001",
+                              "transaction_id": 1
+                          },
+                          "changed_by": "admin",
+                          "change_timestamp": "2026-01-15T16:56:03+07:00",
+                          "request_id": "c35a7ba6-3b33-44da-a309-e67b4e42eba1",
+                          "user_agent": "grpc-go/1.65.0",
+                          "metadata": {
+                              "duration": 635,
+                              "method": "Insert"
+                          }
+                      }
+                  ]
+              }
+          }
+  - name: Get Service Unit Booking
+    request:
+      url: "{{BASE_URL}}/v1/auditLogs/get-by-primary-key?domain=serviceunitbooking&primary_key=BKKDY20260115001:53aad077-9fb1-4f08-85f3-af9fd9a36517&sort_order=ASC"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{admission_xtoken}}"
+      params:
+        - name: domain
+          value: serviceunitbooking
+          type: query
+        - name: primary_key
+          value: BKKDY20260115001:53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: query
+        - name: month
+          value: 2026-01
+          type: query
+          disabled: true
+        - name: sort_order
+          value: ASC
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 15 Jan 2026 09:58:01 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "738"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "total_items": 1,
+                  "audit_logs": [
+                      {
+                          "id": "772981ec-61e0-49a7-b2fc-dfd269222c8c",
+                          "domain": "serviceunitbooking",
+                          "entity": "CreateServiceUnitBooking",
+                          "operation": "CREATE",
+                          "primary_key": {
+                              "value": "BKKDY20260115001:53aad077-9fb1-4f08-85f3-af9fd9a36517"
+                          },
+                          "primary_key_str": "BKKDY20260115001:53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "change_data": {},
+                          "after_data": {
+                              "booking_no": "BKKDY20260115001",
+                              "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                              "created_at": "2026-01-15T16:57:20+07:00",
+                              "user_create": "admin"
+                          },
+                          "changed_by": "admin",
+                          "change_timestamp": "2026-01-15T16:57:21+07:00",
+                          "request_id": "da9c4cf0-1c37-4c55-a8bd-bcda966a1fef",
+                          "user_agent": "grpc-go/1.65.0",
+                          "metadata": {
+                              "duration": 600,
+                              "method": "CreateServiceUnitBooking"
+                          }
+                      }
+                  ]
+              }
+          }

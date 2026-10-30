@@ -1,0 +1,7 @@
+info:
+  name: Asset Register Mobile
+  type: folder
+  seq: 143
+
+request:
+  auth: inherit

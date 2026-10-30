@@ -1,0 +1,38 @@
+info:
+  name: Update Antrean
+  type: http
+  seq: 12
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/bpjs/antrean/:kode_booking"
+  headers:
+    - name: x-token
+      value: ""
+  params:
+    - name: kode_booking
+      value: ""
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"business_unit_id\": \"\",\r
+
+      \    \"kode_booking\": \"\",\r
+
+      \    \"task_id\": 0,\r
+
+      \    \"waktu\": 0,\r
+
+      \    \"jenis_resep\": \"\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

@@ -1,0 +1,7 @@
+info:
+  name: CURRENCY
+  type: folder
+  seq: 111
+
+request:
+  auth: inherit

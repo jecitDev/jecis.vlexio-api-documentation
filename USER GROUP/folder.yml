@@ -1,0 +1,29 @@
+info:
+  name: USER GROUP
+  type: folder
+  seq: 24
+
+request:
+  auth: inherit
+
+docs:
+  content: |-
+    USER GROUP endpoints manage user-to-group assignments and access reporting within a company and business unit.
+
+    Quick start
+    - Base URL: {{BASE_URL}} (from environment SB_JECIS_STAGGING_BACKEND)
+    - Auth: Bearer {{jwt}}
+
+    Endpoints
+    - GET /v1/user_group (list with pagination and filters)
+    - GET /v1/user_group/:user_id/:company_id/:business_unit_id (get by IDs)
+    - GET /v1/user_group/get_access_program/:user_id/:company_id/:business_unit_id (programs by user)
+    - GET /v1/user_group/get_access_report/:user_id/:company_id/:business_unit_id (access report by user)
+    - POST /v1/user_group (create assignment)
+    - DELETE /v1/user_group/:user_id/:group_id/:company_id/:business_unit_id (remove assignment)
+
+    Full documentation
+    See: [USER GROUP - API Docs](notebook/USER_GROUP_API_Docs) for complete schemas, examples, curl snippets, and error handling.
+
+    Note: All endpoints expect Authorization: Bearer {{jwt}} and will resolve {{BASE_URL}} from the active environment.
+  type: text/markdown

@@ -1,0 +1,228 @@
+info:
+  name: Update Package Rate Book Item Rule
+  type: http
+  seq: 2
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/promo/rate-book/session/:session_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: session_id
+      value: 484bad64-66a0-4dc0-80ed-9a2f4f16e7d3
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"item_id\": [\"XX-0008\", \"XX-0007\", \"YAKESGA006\", \"XX-0006\"],\r
+
+      \    \"sr_promo_rule_type\": \"DISCOUNT\",\r
+
+      \    \"amount_value\": 10.0,\r
+
+      \    \"is_value_in_percent\": true,\r
+
+      \t\"is_include\": true,\r
+
+      \    \"tarif_comp\": [\"1\", \"2\", \"3\"],\r
+
+      \    \"user_create\": \"ferdinand\",\r
+
+      \    \"created_at\": \"2025-08-28T10:11:00+07:00\",\r
+
+      \    \"is_force\": true\r
+
+      }\r\n"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Conflict
+    request:
+      url: "{{BASE_URL}}/v1/promo/rate-book/session/:session_id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: session_id
+          value: 484bad64-66a0-4dc0-80ed-9a2f4f16e7d3
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"item_id\": [\"XX-0008\", \"XX-0007\", \"YAKESGA006\", \"XX-0006\"],\r
+
+          \    \"sr_promo_rule_type\": \"DISCOUNT\",\r
+
+          \    \"amount_value\": 10.0,\r
+
+          \    \"is_value_in_percent\": true,\r
+
+          \t\"is_include\": true,\r
+
+          \    \"tarif_comp\": [\"1\", \"2\", \"3\"],\r
+
+          \    \"user_create\": \"ferdinand\",\r
+
+          \    \"created_at\": \"2025-08-28T10:11:00+07:00\",\r
+
+          \    \"is_force\": false\r
+
+          }\r\n"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 09 Sep 2025 02:57:25 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "516"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "conflict_items": [
+                      {
+                          "amount_value": 10,
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "created_at": "2025-08-25T14:00:00+07:00",
+                          "department": "",
+                          "is_include": true,
+                          "is_value_in_percent": true,
+                          "item_id": "XX-0007",
+                          "item_name": "Drill",
+                          "package_id": "",
+                          "price": 610000,
+                          "rate_book_id": "1f5a1e7d-165a-4c4e-ae27-826fd64fc876",
+                          "sentra": "Oculoplasty",
+                          "service_unit": "OPERATING THEATRE",
+                          "sr_promo_rule_type": "DISCOUNT",
+                          "sub_service": "Non Sub Service",
+                          "tarif_comp": [
+                              "1",
+                              "3"
+                          ],
+                          "user_create": "ferdinand"
+                      }
+                  ]
+              }
+          }
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/promo/rate-book/session/:session_id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: session_id
+          value: 484bad64-66a0-4dc0-80ed-9a2f4f16e7d3
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"item_id\": [\"XX-0008\", \"XX-0007\", \"YAKESGA006\", \"XX-0006\"],\r
+
+          \    \"sr_promo_rule_type\": \"DISCOUNT\",\r
+
+          \    \"amount_value\": 10.0,\r
+
+          \    \"is_value_in_percent\": true,\r
+
+          \t\"is_include\": true,\r
+
+          \    \"tarif_comp\": [\"1\", \"2\", \"3\"],\r
+
+          \    \"user_create\": \"ferdinand\",\r
+
+          \    \"created_at\": \"2025-08-28T10:11:00+07:00\",\r
+
+          \    \"is_force\": true\r
+
+          }\r\n"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 09 Sep 2025 02:59:27 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "40"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "status": "success"
+              }
+          }

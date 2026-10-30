@@ -1,0 +1,163 @@
+info:
+  name: Insert Membership
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/marketing/membership"
+  headers:
+    - name: x-token
+      value: "{{marketing_xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"member_name\": \"Premium Membership\",\r
+
+      \    \"short_name\": \"PREMIUM\",\r
+
+      \    \"business_unit_id\": [\r
+
+      \        \"f2c4e8f0-1f6c-4c39-9a30-7fa4d2f9a6ad\",\r
+
+      \        \"6e7b2d8a-b6a2-4f0e-bd2a-d5c37b2a4e87\"\r
+
+      \    ],\r
+
+      \    \"member_start\": \"2025-04-01T00:00:00+07:00\",\r
+
+      \    \"member_end\": \"2026-03-31T23:59:59+07:00\",\r
+
+      \    \"description\": \"One-year premium membership plan\",\r
+
+      \    \"package_type\": \"ANNUAL\",\r
+
+      \    \"is_active\": true,\r
+
+      \    \"is_enable\": true,\r
+
+      \    \"coa_account_id\": 1010,\r
+
+      \    \"subledger_id\": 2020,\r
+
+      \    \"sr_membership_status\": 1,\r
+
+      \    \"user_create\": \"admin_user\",\r
+
+      \    \"created_at\": \"2025-03-26T14:00:00+07:00\"\r
+
+      }"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/marketing/membership"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{marketing_xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"member_name\": \"Premium Membership\",\r
+
+          \    \"short_name\": \"PREMIUM\",\r
+
+          \    \"business_unit_id\": [\r
+
+          \        \"f2c4e8f0-1f6c-4c39-9a30-7fa4d2f9a6ad\",\r
+
+          \        \"6e7b2d8a-b6a2-4f0e-bd2a-d5c37b2a4e87\"\r
+
+          \    ],\r
+
+          \    \"member_start\": \"2025-04-01T00:00:00+07:00\",\r
+
+          \    \"member_end\": \"2026-03-31T23:59:59+07:00\",\r
+
+          \    \"description\": \"One-year premium membership plan\",\r
+
+          \    \"package_type\": \"ANNUAL\",\r
+
+          \    \"is_active\": true,\r
+
+          \    \"is_enable\": true,\r
+
+          \    \"coa_account_id\": 1010,\r
+
+          \    \"subledger_id\": 2020,\r
+
+          \    \"sr_membership_status\": 1,\r
+
+          \    \"user_create\": \"admin_user\",\r
+
+          \    \"created_at\": \"2025-03-26T14:00:00+07:00\"\r
+
+          }"
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Date
+          value: Thu, 03 Apr 2025 02:30:10 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "379"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 201,
+              "data": {
+                  "member_name": "Premium Membership",
+                  "short_name": "PREMIUM",
+                  "business_unit_id": [
+                      "f2c4e8f0-1f6c-4c39-9a30-7fa4d2f9a6ad",
+                      "6e7b2d8a-b6a2-4f0e-bd2a-d5c37b2a4e87"
+                  ],
+                  "description": "One-year premium membership plan",
+                  "package_type": "ANNUAL",
+                  "is_active": true,
+                  "is_enable": true,
+                  "coa_account_id": 1010,
+                  "subledger_id": 2020,
+                  "sr_membership_status": 1,
+                  "user_create": "admin_user"
+              }
+          }

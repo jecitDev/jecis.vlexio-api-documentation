@@ -1,0 +1,271 @@
+info:
+  name: Upsert Guarantor To Credit Limit
+  type: http
+  seq: 36
+
+http:
+  method: PATCH
+  url: "{{BASE_URL}}/v1/marketing/guarantor/credit_limit/:guarantor_id/:business_unit_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: guarantor_id
+      value: 280ec528-1bbc-4cab-8746-1aa433934830
+      type: path
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"user_create\": \"admin_user\",\r
+
+      \    \"created_at\": \"2025-06-17T14:08:41+07:00\",\r
+
+      \    \"data\": [\r
+
+      \        {\"field\": \"credit_limit\", \"value\": \"20000.00\"},\r
+
+      \        {\"field\": \"aging\", \"value\": \"30\"}\r
+
+      \    ]\r
+
+      }\r\n"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/credit_limit/:guarantor_id/:business_unit_id"
+      method: PATCH
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: guarantor_id
+          value: 100984d4-be79-47d2-a6ac-73175a2722e8
+          type: path
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36518
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"user_create\": \"admin_user\",\r
+
+          \    \"created_at\": \"2025-06-17T14:08:41+07:00\",\r
+
+          \    \"data\": [\r
+
+          \        {\"field\": \"credit_limit\", \"value\": \"20000.00\"},\r
+
+          \        {\"field\": \"aging\", \"value\": \"30\"}\r
+
+          \    ]\r
+
+          }\r\n"
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Date
+          value: Tue, 17 Jun 2025 08:22:30 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "201"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 201,
+              "data": {
+                  "guarantor_id": "100984d4-be79-47d2-a6ac-73175a2722e8",
+                  "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36518",
+                  "user_create": "admin_user",
+                  "created_at": "2025-06-17T14:08:41+07:00"
+              }
+          }
+  - name: Business Unit Id Does Not Match With Guarantor
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/credit_limit/:guarantor_id/:business_unit_id"
+      method: PATCH
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: guarantor_id
+          value: 100984d4-be79-47d2-a6ac-73175a2722e8
+          type: path
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36519
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"user_create\": \"admin_user\",\r
+
+          \    \"created_at\": \"2025-06-17T14:08:41+07:00\",\r
+
+          \    \"data\": [\r
+
+          \        {\"field\": \"credit_limit\", \"value\": \"20000.00\"},\r
+
+          \        {\"field\": \"aging\", \"value\": \"30\"}\r
+
+          \    ]\r
+
+          }\r\n"
+    response:
+      status: 500
+      statusText: Internal Server Error
+      headers:
+        - name: Date
+          value: Tue, 17 Jun 2025 08:19:39 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "99"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "guarantor_to_credit_limit.business_unit_id_does_not_match_with_guarantor",
+              "status": 500
+          }
+  - name: Guarantor Not Found
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/credit_limit/:guarantor_id/:business_unit_id"
+      method: PATCH
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: guarantor_id
+          value: 100984d4-be79-47d2-a6ac-73175a2722e9
+          type: path
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36518
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"user_create\": \"admin_user\",\r
+
+          \    \"created_at\": \"2025-06-17T14:08:41+07:00\",\r
+
+          \    \"data\": [\r
+
+          \        {\"field\": \"credit_limit\", \"value\": \"20000.00\"},\r
+
+          \        {\"field\": \"aging\", \"value\": \"30\"}\r
+
+          \    ]\r
+
+          }\r\n"
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Date
+          value: Tue, 17 Jun 2025 08:22:12 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "46"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "guarantor.not_found",
+              "status": 404
+          }

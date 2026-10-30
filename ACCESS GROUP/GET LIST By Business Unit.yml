@@ -1,0 +1,57 @@
+info:
+  name: GET LIST By Business Unit
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/accessgroup/:business_unit_id?page=1&page_size=10&sort_by=group_id&sort_order=ASC&is_active=true"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: page_size
+      value: "10"
+      type: query
+    - name: sort_by
+      value: group_id
+      type: query
+    - name: sort_order
+      value: ASC
+      type: query
+    - name: keywords
+      value: ""
+      type: query
+      disabled: true
+    - name: group_name
+      value: ""
+      type: query
+      disabled: true
+    - name: description
+      value: ""
+      type: query
+      disabled: true
+    - name: admin_type
+      value: ""
+      type: query
+      disabled: true
+    - name: is_active
+      value: "true"
+      type: query
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

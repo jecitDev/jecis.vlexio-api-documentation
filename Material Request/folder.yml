@@ -1,0 +1,7 @@
+info:
+  name: Material Request
+  type: folder
+  seq: 121
+
+request:
+  auth: inherit

@@ -1,0 +1,132 @@
+info:
+  name: Asset Register Mobile - Add Image
+  type: http
+  seq: 8
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/AssetRegisterMobile/image/add/:company_id/:business_unit_id/:id_register"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: company_id
+      value: 71b53dd1-2802-4527-8b5c-d54173392222
+      type: path
+    - name: business_unit_id
+      value: 33b109c5-dd64-480c-8100-68fe17deaf3e
+      type: path
+    - name: id_register
+      value: ea50dfd2-799f-402e-a576-424057046d30
+      type: path
+  body:
+    type: multipart-form
+    data:
+      - name: user_update
+        type: text
+        value: "20994"
+      - name: updated_at
+        type: text
+        value: 2024-10-22T13:24:42+08:00
+      - name: file_name
+        type: text
+        value: assetZX
+      - name: file
+        type: file
+        value:
+          - /C:/Users/USER/Pictures/Screenshot_7.jpg
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Asset Register Mobile - Add Image API
+    request:
+      url: "{{BASE_URL}}/v1/AssetRegisterMobile/image/add/:company_id/:business_unit_id/:id_register"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: company_id
+          value: 71b53dd1-2802-4527-8b5c-d54173392222
+          type: path
+        - name: business_unit_id
+          value: 33b109c5-dd64-480c-8100-68fe17deaf3e
+          type: path
+        - name: id_register
+          value: ea50dfd2-799f-402e-a576-424057046d30
+          type: path
+      body:
+        type: multipart-form
+        data:
+          - name: user_update
+            type: text
+            value: "20994"
+          - name: updated_at
+            type: text
+            value: 2024-10-22T13:24:42+08:00
+          - name: file_name
+            type: text
+            value: assetZX
+          - name: file
+            type: file
+            value:
+              - /C:/Users/USER/Pictures/Screenshot_7.jpg
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Wed, 26 Aug 2026 11:58:29 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "356"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "id_register": "ea50dfd2-799f-402e-a576-424057046d30",
+                  "sequence_no": "001",
+                  "image_url": "/file_storage/8c1e2d64-c27a-4cc6-a692-494552c91703/71b53dd1-2802-4527-8b5c-d54173392222/33b109c5-dd64-480c-8100-68fe17deaf3e",
+                  "file_name": "assetZX.jpg",
+                  "image_ext": "jpg",
+                  "is_void": false,
+                  "user_update": "20994",
+                  "updated_at": "2024-10-22T13:24:42+08:00"
+              }
+          }

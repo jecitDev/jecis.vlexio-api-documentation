@@ -1,0 +1,7 @@
+info:
+  name: APPOINTMENT
+  type: folder
+  seq: 96
+
+request:
+  auth: inherit

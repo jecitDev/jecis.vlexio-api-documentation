@@ -1,0 +1,7 @@
+info:
+  name: BRIDGE PAYMENT METHOD
+  type: folder
+  seq: 71
+
+request:
+  auth: inherit

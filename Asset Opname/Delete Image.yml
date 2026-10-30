@@ -1,0 +1,112 @@
+info:
+  name: Delete Image
+  type: http
+  seq: 11
+
+http:
+  method: DELETE
+  url: "{{BASE_URL}}/v1/AssetOpname/deleteimageopname"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-User-ID
+      value: surya
+  body:
+    type: json
+    data: "{\r
+
+      \    \"business_unit_id\": \"18e9ea73-7343-4be2-a8e4-47b652e56981\",\r
+
+      \    \"asset_opname_barcode\": \"NSD/KDY/2602-13-0003\",\r
+
+      \    \"asset_opname_code\": \"AO-ND-NSD-2026-001\",\r
+
+      \    \"asset_opname_room_id\": \"00.24\",\r
+
+      \    \"sequence_no\": \"006\",\r
+
+      \    \"user_update\": \"surya\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/AssetOpname/deleteimageopname"
+      method: DELETE
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: surya
+      body:
+        type: json
+        data: "{\r
+
+          \    \"business_unit_id\": \"18e9ea73-7343-4be2-a8e4-47b652e56981\",\r
+
+          \    \"asset_opname_barcode\": \"NSD/KDY/2602-13-0003\",\r
+
+          \    \"asset_opname_code\": \"AO-ND-NSD-2026-001\",\r
+
+          \    \"asset_opname_room_id\": \"00.24\",\r
+
+          \    \"sequence_no\": \"006\",\r
+
+          \    \"user_update\": \"surya\"\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: date
+          value: Wed, 30 Sep 2026 05:19:04 GMT
+        - name: content-type
+          value: application/json
+        - name: content-length
+          value: "260"
+        - name: x-xss-protection
+          value: "0"
+        - name: x-content-type-options
+          value: nosniff
+        - name: x-frame-options
+          value: SAMEORIGIN
+        - name: cross-origin-embedder-policy
+          value: require-corp
+        - name: cross-origin-opener-policy
+          value: same-origin
+        - name: cross-origin-resource-policy
+          value: same-origin
+        - name: origin-agent-cluster
+          value: ?1
+        - name: referrer-policy
+          value: no-referrer
+        - name: x-dns-prefetch-control
+          value: off
+        - name: x-download-options
+          value: noopen
+        - name: x-permitted-cross-domain-policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+            "code": 200,
+            "data": {
+              "business_unit_id": "18e9ea73-7343-4be2-a8e4-47b652e56981",
+              "asset_opname_code": "AO-ND-NSD-2026-001",
+              "asset_opname_barcode": "NSD/KDY/2602-13-0003",
+              "asset_opname_room_id": "00.24",
+              "user_update": "surya",
+              "updated_at": "2026-09-30T12:19:04+07:00"
+            }
+          }

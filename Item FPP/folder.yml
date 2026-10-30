@@ -1,0 +1,7 @@
+info:
+  name: Item FPP
+  type: folder
+  seq: 87
+
+request:
+  auth: inherit

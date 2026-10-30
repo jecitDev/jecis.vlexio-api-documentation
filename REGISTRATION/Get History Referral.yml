@@ -1,0 +1,29 @@
+info:
+  name: Get History Referral
+  type: http
+  seq: 15
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/registration/history-referral?patient_id=PKDY260904-0001&business_unit_id=18e9ea73-7343-4be2-a8e4-47b652e56981"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: patient_id
+      value: PKDY260904-0001
+      type: query
+    - name: business_unit_id
+      value: 18e9ea73-7343-4be2-a8e4-47b652e56981
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

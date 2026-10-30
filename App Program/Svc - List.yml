@@ -1,0 +1,1601 @@
+info:
+  name: Svc - List
+  type: http
+  seq: 1
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/appprograms/?page=1&page_size=50&sort_order=ASC&sort_by=program_name&product_id=01&root_level=0&is_visible=true"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: page_size
+      value: "50"
+      type: query
+    - name: sort_order
+      value: ASC
+      type: query
+    - name: sort_by
+      value: program_name
+      type: query
+    - name: keywords
+      value: IND
+      type: query
+      disabled: true
+    - name: program_id
+      value: "01.01"
+      type: query
+      disabled: true
+    - name: parent_program_id
+      value: "01"
+      type: query
+      disabled: true
+    - name: product_id
+      value: "01"
+      type: query
+    - name: program_name
+      value: Appointment
+      type: query
+      disabled: true
+    - name: program_title
+      value: Appointment
+      type: query
+      disabled: true
+    - name: program_name_lang
+      value: emr.program.appointment
+      type: query
+      disabled: true
+    - name: program_title_lang
+      value: emr.program.appointment.title
+      type: query
+      disabled: true
+    - name: program_desc
+      value: Appointment Module on SEDNA
+      type: query
+      disabled: true
+    - name: root_level
+      value: "0"
+      type: query
+    - name: position
+      value: "1"
+      type: query
+      disabled: true
+    - name: row_index
+      value: "1"
+      type: query
+      disabled: true
+    - name: note
+      value: Appointment Module
+      type: query
+      disabled: true
+    - name: icon_name
+      value: fa emr-appointment
+      type: query
+      disabled: true
+    - name: program_style_class
+      value: emr-appointment-style
+      type: query
+      disabled: true
+    - name: is_program
+      value: "true"
+      type: query
+      disabled: true
+    - name: is_parent_program
+      value: "false"
+      type: query
+      disabled: true
+    - name: is_module
+      value: "true"
+      type: query
+      disabled: true
+    - name: is_icon_only
+      value: "false"
+      type: query
+      disabled: true
+    - name: is_program_viewable
+      value: "true"
+      type: query
+      disabled: true
+    - name: is_program_addable
+      value: "false"
+      type: query
+      disabled: true
+    - name: is_program_editable
+      value: "false"
+      type: query
+      disabled: true
+    - name: is_program_deleteable
+      value: "false"
+      type: query
+      disabled: true
+    - name: is_program_approveable
+      value: "false"
+      type: query
+      disabled: true
+    - name: is_program_unapproveable
+      value: "false"
+      type: query
+      disabled: true
+    - name: is_program_voidable
+      value: "false"
+      type: query
+      disabled: true
+    - name: is_program_unvoidable
+      value: "false"
+      type: query
+      disabled: true
+    - name: is_program_direct_void
+      value: "false"
+      type: query
+      disabled: true
+    - name: is_program_exportable
+      value: "false"
+      type: query
+      disabled: true
+    - name: is_program_printable
+      value: "false"
+      type: query
+      disabled: true
+    - name: is_menu_home_visible
+      value: "true"
+      type: query
+      disabled: true
+    - name: is_visible
+      value: "true"
+      type: query
+    - name: is_maintenance
+      value: "false"
+      type: query
+      disabled: true
+    - name: is_quick_link
+      value: "false"
+      type: query
+      disabled: true
+    - name: help_link_id
+      value: /help/appointment
+      type: query
+      disabled: true
+    - name: access_key
+      value: ""
+      type: query
+      disabled: true
+    - name: revision
+      value: 1.0.0
+      type: query
+      disabled: true
+    - name: expired_date
+      value: 2024-04-05T07:59:31.000Z
+      type: query
+      disabled: true
+    - name: alias
+      value: Appointment-Svc
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: ""
+  auth:
+    type: bearer
+    token: "{{xtoken}}"
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: "Svc - List #1-240503"
+    request:
+      url: "{{BASE_URL}}/v1/appprograms/?page=1&page_size=50&sort_order=ASC&sort_by=program_name&is_visible=true"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: page_size
+          value: "50"
+          type: query
+        - name: sort_order
+          value: ASC
+          type: query
+        - name: sort_by
+          value: program_name
+          type: query
+        - name: keywords
+          value: IND
+          type: query
+          disabled: true
+        - name: program_id
+          value: "01"
+          type: query
+          disabled: true
+        - name: is_visible
+          value: "true"
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Fri, 03 May 2024 03:32:21 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "2079"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "page": 1,
+                  "page_size": 50,
+                  "total_items": 2,
+                  "Appprograms": [
+                      {
+                          "program_id": "02",
+                          "program_name": "Administration Panel",
+                          "program_title": "Administration Panel",
+                          "program_name_lang": "emr.program.adm-panel",
+                          "program_title_lang": "emr.program.adm-panel.title",
+                          "program_desc": "Administration Panel Module on SEDNA",
+                          "root_level": -99,
+                          "position": 1,
+                          "row_index": 1,
+                          "note": "Administration Panel Module",
+                          "is_program": true,
+                          "is_parent_program": true,
+                          "is_icon_only": false,
+                          "icon_name": "fa emr-gear-icon",
+                          "product_id": "01",
+                          "program_style_class": "emr-adm-panel-style",
+                          "navigate_url": "/administration-panel",
+                          "is_program_addable": true,
+                          "is_program_editable": true,
+                          "is_program_deleteable": true,
+                          "is_program_viewable": true,
+                          "is_program_approveable": true,
+                          "is_program_unapproveable": false,
+                          "is_program_voidable": true,
+                          "is_program_unvoidable": false,
+                          "is_program_direct_void": false,
+                          "is_program_exportable": true,
+                          "is_program_printable": true,
+                          "is_menu_home_visible": true,
+                          "is_visible": true,
+                          "is_maintenance": false,
+                          "is_quick_link": true,
+                          "access_key": "",
+                          "revision": "01",
+                          "expired_date": "2025-12-31T23:59:59+07:00",
+                          "alias": "Administration-Panel-Svc"
+                      },
+                      {
+                          "program_id": "01",
+                          "program_name": "Admission",
+                          "program_title": "Admission",
+                          "program_name_lang": "emr.program.admission",
+                          "program_title_lang": "emr.program.admission.title",
+                          "program_desc": "Admission Module on SEDNA",
+                          "position": 1,
+                          "row_index": 1,
+                          "note": "Admission Module",
+                          "is_program": true,
+                          "is_parent_program": true,
+                          "is_icon_only": false,
+                          "icon_name": "fa emr-admission",
+                          "product_id": "01",
+                          "program_style_class": "emr-admission-style",
+                          "is_program_addable": false,
+                          "is_program_editable": false,
+                          "is_program_deleteable": false,
+                          "is_program_viewable": false,
+                          "is_program_approveable": false,
+                          "is_program_unapproveable": false,
+                          "is_program_voidable": false,
+                          "is_program_unvoidable": false,
+                          "is_program_direct_void": false,
+                          "is_program_exportable": false,
+                          "is_program_printable": false,
+                          "is_menu_home_visible": true,
+                          "is_visible": true,
+                          "is_maintenance": false,
+                          "is_quick_link": false,
+                          "access_key": "",
+                          "expired_date": "2024-04-05T14:59:31+07:00",
+                          "alias": "Admission-Svc"
+                      }
+                  ]
+              }
+          }
+  - name: Svc - List
+    request:
+      url: "{{BASE_URL}}/v1/appprograms/?page=1&page_size=50&sort_order=ASC&sort_by=program_name&is_visible=true"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: page_size
+          value: "50"
+          type: query
+        - name: sort_order
+          value: ASC
+          type: query
+        - name: sort_by
+          value: program_name
+          type: query
+        - name: keywords
+          value: IND
+          type: query
+          disabled: true
+        - name: program_id
+          value: "01"
+          type: query
+          disabled: true
+        - name: is_visible
+          value: "true"
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Server
+          value: nginx/1.22.0 (Ubuntu)
+        - name: Date
+          value: Thu, 01 Aug 2024 11:10:56 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "32644"
+        - name: Connection
+          value: keep-alive
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "page": 1,
+                  "page_size": 50,
+                  "total_items": 34,
+                  "Appprograms": [
+                      {
+                          "program_id": "03.10",
+                          "parent_program_id": "03",
+                          "product_id": "ee197431-276d-453d-857c-412f347dae19",
+                          "program_name": "ABBREV AREA",
+                          "program_title": "ABBREV AREA",
+                          "program_name_lang": "menu.administration_panel.abbrev_area.name",
+                          "program_title_lang": "menu.administration_panel.abbrev_area.title",
+                          "program_desc": "ABBREV AREA",
+                          "root_level": 2,
+                          "position": 3,
+                          "row_index": 10,
+                          "icon_name": "Abbrev",
+                          "is_program": true,
+                          "is_parent_program": true,
+                          "is_module": true,
+                          "is_no_crud": false,
+                          "is_icon_only": false,
+                          "is_program_viewable": true,
+                          "is_program_addable": true,
+                          "is_program_editable": true,
+                          "is_program_deleteable": true,
+                          "is_program_approveable": false,
+                          "is_program_unapproveable": false,
+                          "is_program_voidable": false,
+                          "is_program_unvoidable": false,
+                          "is_program_direct_void": false,
+                          "is_program_exportable": false,
+                          "is_program_printable": false,
+                          "is_menu_home_visible": false,
+                          "is_visible": true,
+                          "is_maintenance": false,
+                          "is_quick_link": false
+                      },
+                      {
+                          "program_id": "03",
+                          "parent_program_id": "00",
+                          "product_id": "ee197431-276d-453d-857c-412f347dae19",
+                          "program_name": "Administration Panel",
+                          "program_title": "Administration Panel",
+                          "program_name_lang": "menu.administration_panel.name",
+                          "program_title_lang": "menu.administration_panel.title",
+                          "program_desc": "Administration Panel",
+                          "root_level": 1,
+                          "position": 2,
+                          "row_index": 99,
+                          "icon_name": "CogSolidIcon",
+                          "program_style_class": "animate-spin-slow",
+                          "navigate_url": "routes.settings.administrationPanel.index",
+                          "is_program": true,
+                          "is_parent_program": true,
+                          "is_module": true,
+                          "is_no_crud": false,
+                          "is_icon_only": false,
+                          "is_program_viewable": false,
+                          "is_program_addable": false,
+                          "is_program_editable": false,
+                          "is_program_deleteable": false,
+                          "is_program_approveable": false,
+                          "is_program_unapproveable": false,
+                          "is_program_voidable": false,
+                          "is_program_unvoidable": false,
+                          "is_program_direct_void": false,
+                          "is_program_exportable": false,
+                          "is_program_printable": false,
+                          "is_menu_home_visible": false,
+                          "is_visible": true,
+                          "is_maintenance": false,
+                          "is_quick_link": false
+                      },
+                      {
+                          "program_id": "01",
+                          "parent_program_id": "00",
+                          "product_id": "ee197431-276d-453d-857c-412f347dae19",
+                          "program_name": "Admission",
+                          "program_title": "Admission",
+                          "program_name_lang": "menu.admission.name",
+                          "program_title_lang": "menu.admission.title",
+                          "program_desc": "Admission",
+                          "root_level": 1,
+                          "position": 1,
+                          "row_index": 1,
+                          "icon_name": "PiHouse",
+                          "is_program": false,
+                          "is_parent_program": false,
+                          "is_module": true,
+                          "is_no_crud": false,
+                          "is_icon_only": false,
+                          "is_program_viewable": false,
+                          "is_program_addable": false,
+                          "is_program_editable": false,
+                          "is_program_deleteable": false,
+                          "is_program_approveable": false,
+                          "is_program_unapproveable": false,
+                          "is_program_voidable": false,
+                          "is_program_unvoidable": false,
+                          "is_program_direct_void": false,
+                          "is_program_exportable": false,
+                          "is_program_printable": false,
+                          "is_menu_home_visible": false,
+                          "is_visible": true,
+                          "is_maintenance": false,
+                          "is_quick_link": false
+                      },
+                      {
+                          "program_id": "01.01",
+                          "parent_program_id": "01",
+                          "product_id": "ee197431-276d-453d-857c-412f347dae19",
+                          "program_name": "Appointment",
+                          "program_title": "Appointment",
+                          "program_name_lang": "menu.admission.appointment.name",
+                          "program_title_lang": "menu.admission.appointment.title",
+                          "program_desc": "Appointment",
+                          "root_level": 2,
+                          "position": 1,
+                          "row_index": 1,
+                          "icon_name": "PiBrowser",
+                          "is_program": false,
+                          "is_parent_program": false,
+                          "is_module": false,
+                          "is_no_crud": false,
+                          "is_icon_only": false,
+                          "is_program_viewable": false,
+                          "is_program_addable": false,
+                          "is_program_editable": false,
+                          "is_program_deleteable": false,
+                          "is_program_approveable": false,
+                          "is_program_unapproveable": false,
+                          "is_program_voidable": false,
+                          "is_program_unvoidable": false,
+                          "is_program_direct_void": false,
+                          "is_program_exportable": false,
+                          "is_program_printable": false,
+                          "is_menu_home_visible": false,
+                          "is_visible": true,
+                          "is_maintenance": false,
+                          "is_quick_link": false
+                      },
+                      {
+                          "program_id": "03.02",
+                          "parent_program_id": "03",
+                          "product_id": "ee197431-276d-453d-857c-412f347dae19",
+                          "program_name": "APPOINTMENT SETTINGS",
+                          "program_title": "APPOINTMENT SETTINGS",
+                          "program_name_lang": "menu.administration_panel.appointment_settings.name",
+                          "program_title_lang": "menu.administration_panel.appointment_settings.title",
+                          "program_desc": "Appointment Settings",
+                          "root_level": 0,
+                          "position": 3,
+                          "row_index": 2,
+                          "icon_name": "AppointmentSettings",
+                          "navigate_url": "routes.settings.administrationPanel.appointmentSettings.index",
+                          "is_program": true,
+                          "is_parent_program": true,
+                          "is_module": true,
+                          "is_no_crud": false,
+                          "is_icon_only": false,
+                          "is_program_viewable": false,
+                          "is_program_addable": false,
+                          "is_program_editable": false,
+                          "is_program_deleteable": false,
+                          "is_program_approveable": false,
+                          "is_program_unapproveable": false,
+                          "is_program_voidable": false,
+                          "is_program_unvoidable": false,
+                          "is_program_direct_void": false,
+                          "is_program_exportable": false,
+                          "is_program_printable": false,
+                          "is_menu_home_visible": false,
+                          "is_visible": true,
+                          "is_maintenance": false,
+                          "is_quick_link": false
+                      },
+                      {
+                          "program_id": "03.02.01",
+                          "parent_program_id": "03.02",
+                          "product_id": "ee197431-276d-453d-857c-412f347dae19",
+                          "program_name": "APPOINTMENT SETTINGS",
+                          "program_title": "APPOINTMENT SETTINGS",
+                          "program_name_lang": "menu.administration_panel.appointment_settings.name",
+                          "program_title_lang": "menu.administration_panel.appointment_settings.title",
+                          "program_desc": "Appointment Settings",
+                          "root_level": 1,
+                          "position": 1,
+                          "row_index": 2,
+                          "icon_name": "PiTable",
+                          "is_program": false,
+                          "is_parent_program": false,
+                          "is_module": true,
+                          "is_no_crud": false,
+                          "is_icon_only": false,
+                          "is_program_viewable": false,
+                          "is_program_addable": false,
+                          "is_program_editable": false,
+                          "is_program_deleteable": false,
+                          "is_program_approveable": false,
+                          "is_program_unapproveable": false,
+                          "is_program_voidable": false,
+                          "is_program_unvoidable": false,
+                          "is_program_direct_void": false,
+                          "is_program_exportable": false,
+                          "is_program_printable": false,
+                          "is_menu_home_visible": false,
+                          "is_visible": true,
+                          "is_maintenance": false,
+                          "is_quick_link": false
+                      },
+                      {
+                          "program_id": "01.04",
+                          "parent_program_id": "01",
+                          "product_id": "ee197431-276d-453d-857c-412f347dae19",
+                          "program_name": "Edit Patient",
+                          "program_title": "Edit Patient",
+                          "program_name_lang": "menu.admission.edit_patient.name",
+                          "program_title_lang": "menu.admission.edit_patient.title",
+                          "program_desc": "Edit Patient",
+                          "root_level": 2,
+                          "position": 1,
+                          "row_index": 4,
+                          "icon_name": "PiShoppingCart",
+                          "navigate_url": "routes.patient.edit",
+                          "is_program": true,
+                          "is_parent_program": false,
+                          "is_module": false,
+                          "is_no_crud": false,
+                          "is_icon_only": false,
+                          "is_program_viewable": false,
+                          "is_program_addable": false,
+                          "is_program_editable": false,
+                          "is_program_deleteable": false,
+                          "is_program_approveable": false,
+                          "is_program_unapproveable": false,
+                          "is_program_voidable": false,
+                          "is_program_unvoidable": false,
+                          "is_program_direct_void": false,
+                          "is_program_exportable": false,
+                          "is_program_printable": false,
+                          "is_menu_home_visible": false,
+                          "is_visible": true,
+                          "is_maintenance": false,
+                          "is_quick_link": true
+                      },
+                      {
+                          "program_id": "03.08",
+                          "parent_program_id": "03",
+                          "product_id": "ee197431-276d-453d-857c-412f347dae19",
+                          "program_name": "EXAM SETUP",
+                          "program_title": "EXAM SETUP",
+                          "program_name_lang": "menu.administration_panel.exam_setup.name",
+                          "program_title_lang": "menu.administration_panel.exam_setup.title",
+                          "program_desc": "EXAM SETUP",
+                          "root_level": 2,
+                          "position": 3,
+                          "row_index": 8,
+                          "icon_name": "Exam",
+                          "navigate_url": "routes.settings.administrationPanel.examSetup.index",
+                          "is_program": true,
+                          "is_parent_program": true,
+                          "is_module": true,
+                          "is_no_crud": false,
+                          "is_icon_only": false,
+                          "is_program_viewable": true,
+                          "is_program_addable": true,
+                          "is_program_editable": true,
+                          "is_program_deleteable": true,
+                          "is_program_approveable": false,
+                          "is_program_unapproveable": false,
+                          "is_program_voidable": false,
+                          "is_program_unvoidable": false,
+                          "is_program_direct_void": false,
+                          "is_program_exportable": false,
+                          "is_program_printable": false,
+                          "is_menu_home_visible": false,
+                          "is_visible": true,
+                          "is_maintenance": false,
+                          "is_quick_link": false
+                      },
+                      {
+                          "program_id": "03.01",
+                          "parent_program_id": "03",
+                          "product_id": "ee197431-276d-453d-857c-412f347dae19",
+                          "program_name": "GENERAL SETTINGS",
+                          "program_title": "General Setting",
+                          "program_name_lang": "menu.administration_panel.general_setting.name",
+                          "program_title_lang": "menu.administration_panel.general_setting.title",
+                          "program_desc": "General Setting",
+                          "root_level": 2,
+                          "position": 3,
+                          "row_index": 1,
+                          "icon_name": "Settings",
+                          "navigate_url": "routes.settings.administrationPanel.generalSettings",
+                          "is_program": true,
+                          "is_parent_program": true,
+                          "is_module": true,
+                          "is_no_crud": false,
+                          "is_icon_only": false,
+                          "is_program_viewable": false,
+                          "is_program_addable": false,
+                          "is_program_editable": false,
+                          "is_program_deleteable": false,
+                          "is_program_approveable": false,
+                          "is_program_unapproveable": false,
+                          "is_program_voidable": false,
+                          "is_program_unvoidable": false,
+                          "is_program_direct_void": false,
+                          "is_program_exportable": false,
+                          "is_program_printable": false,
+                          "is_menu_home_visible": false,
+                          "is_visible": true,
+                          "is_maintenance": false,
+                          "is_quick_link": false
+                      },
+                      {
+                          "program_id": "03.12",
+                          "parent_program_id": "03",
+                          "product_id": "ee197431-276d-453d-857c-412f347dae19",
+                          "program_name": "GROUP MANAGEMENT",
+                          "program_title": "GROUP MANAGEMENT",
+                          "program_name_lang": "menu.administration_panel.group_management.name",
+                          "program_title_lang": "menu.administration_panel.group_management.title",
+                          "program_desc": "GROUP MANAGEMENT",
+                          "root_level": 2,
+                          "position": 3,
+                          "row_index": 12,
+                          "icon_name": "UserGroup",
+                          "navigate_url": "routes.settings.administrationPanel.groupManagement.index",
+                          "is_program": true,
+                          "is_parent_program": true,
+                          "is_module": true,
+                          "is_no_crud": false,
+                          "is_icon_only": false,
+                          "is_program_viewable": true,
+                          "is_program_addable": true,
+                          "is_program_editable": true,
+                          "is_program_deleteable": true,
+                          "is_program_approveable": false,
+                          "is_program_unapproveable": false,
+                          "is_program_voidable": false,
+                          "is_program_unvoidable": false,
+                          "is_program_direct_void": false,
+                          "is_program_exportable": false,
+                          "is_program_printable": false,
+                          "is_menu_home_visible": false,
+                          "is_visible": true,
+                          "is_maintenance": false,
+                          "is_quick_link": false
+                      },
+                      {
+                          "program_id": "00",
+                          "product_id": "ee197431-276d-453d-857c-412f347dae19",
+                          "program_name": "Home",
+                          "program_title": "Home",
+                          "program_name_lang": "menu.home.name",
+                          "program_title_lang": "menu.home.title",
+                          "root_level": 0,
+                          "position": 1,
+                          "row_index": 1,
+                          "navigate_url": "routes.home",
+                          "is_program": false,
+                          "is_parent_program": true,
+                          "is_module": true,
+                          "is_no_crud": false,
+                          "is_icon_only": false,
+                          "is_program_viewable": false,
+                          "is_program_addable": false,
+                          "is_program_editable": false,
+                          "is_program_deleteable": false,
+                          "is_program_approveable": false,
+                          "is_program_unapproveable": false,
+                          "is_program_voidable": false,
+                          "is_program_unvoidable": false,
+                          "is_program_direct_void": false,
+                          "is_program_exportable": false,
+                          "is_program_printable": false,
+                          "is_menu_home_visible": false,
+                          "is_visible": true,
+                          "is_maintenance": false,
+                          "is_quick_link": false
+                      },
+                      {
+                          "program_id": "03.16",
+                          "parent_program_id": "03",
+                          "product_id": "ee197431-276d-453d-857c-412f347dae19",
+                          "program_name": "ICD 9 & 10 Code",
+                          "program_title": "ICD 9 & 10 Code",
+                          "program_name_lang": "menu.administration_panel.icd.name",
+                          "program_title_lang": "menu.administration_panel.icd.title",
+                          "program_desc": "ICD 9 & 10 Code",
+                          "root_level": 2,
+                          "position": 3,
+                          "row_index": 16,
+                          "icon_name": "ICD",
+                          "navigate_url": "routes.settings.administrationPanel.icdCode.index",
+                          "is_program": true,
+                          "is_parent_program": true,
+                          "is_module": true,
+                          "is_no_crud": false,
+                          "is_icon_only": false,
+                          "is_program_viewable": true,
+                          "is_program_addable": true,
+                          "is_program_editable": true,
+                          "is_program_deleteable": true,
+                          "is_program_approveable": false,
+                          "is_program_unapproveable": false,
+                          "is_program_voidable": false,
+                          "is_program_unvoidable": false,
+                          "is_program_direct_void": false,
+                          "is_program_exportable": false,
+                          "is_program_printable": false,
+                          "is_menu_home_visible": false,
+                          "is_visible": true,
+                          "is_maintenance": false,
+                          "is_quick_link": false,
+                          "expired_date": "2025-01-01T07:00:00+07:00"
+                      },
+                      {
+                          "program_id": "03.04.01.01",
+                          "parent_program_id": "03.04.01",
+                          "product_id": "ee197431-276d-453d-857c-412f347dae19",
+                          "program_name": "Info",
+                          "program_title": "PHYSICIAN INFO",
+                          "program_name_lang": "menu.administration_panel.physician_settings.physician_info.name",
+                          "program_title_lang": "menu.administration_panel.physician_settings.physician_info.title",
+                          "program_desc": "Physician Info",
+                          "root_level": 2,
+                          "position": 1,
+                          "row_index": 1,
+                          "icon_name": "PiBrowser",
+                          "navigate_url": "routes.settings.administrationPanel.physician_setting.physicianInfo.index",
+                          "is_program": true,
+                          "is_parent_program": false,
+                          "is_module": true,
+                          "is_no_crud": false,
+                          "is_icon_only": false,
+                          "is_program_viewable": true,
+                          "is_program_addable": true,
+                          "is_program_editable": true,
+                          "is_program_deleteable": true,
+                          "is_program_approveable": false,
+                          "is_program_unapproveable": false,
+                          "is_program_voidable": false,
+                          "is_program_unvoidable": false,
+                          "is_program_direct_void": false,
+                          "is_program_exportable": false,
+                          "is_program_printable": false,
+                          "is_menu_home_visible": false,
+                          "is_visible": true,
+                          "is_maintenance": false,
+                          "is_quick_link": false
+                      },
+                      {
+                          "program_id": "03.04.01.03",
+                          "parent_program_id": "03.04.01",
+                          "product_id": "ee197431-276d-453d-857c-412f347dae19",
+                          "program_name": "Leave",
+                          "program_title": "PHYSICIAN LEAVE",
+                          "program_name_lang": "menu.administration_panel.physician_settings.physician_leave.name",
+                          "program_title_lang": "menu.administration_panel.physician_settings.physician_leave.title",
+                          "program_desc": "Physician Leave",
+                          "root_level": 2,
+                          "position": 1,
+                          "row_index": 3,
+                          "icon_name": "PiBrowser",
+                          "navigate_url": "routes.settings.administrationPanel.physician_setting.physicianLeave.index",
+                          "is_program": true,
+                          "is_parent_program": false,
+                          "is_module": true,
+                          "is_no_crud": false,
+                          "is_icon_only": false,
+                          "is_program_viewable": true,
+                          "is_program_addable": true,
+                          "is_program_editable": true,
+                          "is_program_deleteable": true,
+                          "is_program_approveable": false,
+                          "is_program_unapproveable": false,
+                          "is_program_voidable": false,
+                          "is_program_unvoidable": false,
+                          "is_program_direct_void": false,
+                          "is_program_exportable": false,
+                          "is_program_printable": false,
+                          "is_menu_home_visible": false,
+                          "is_visible": true,
+                          "is_maintenance": false,
+                          "is_quick_link": false
+                      },
+                      {
+                          "program_id": "03.02.01.01",
+                          "parent_program_id": "03.02.01",
+                          "product_id": "ee197431-276d-453d-857c-412f347dae19",
+                          "program_name": "Legends",
+                          "program_title": "Legends",
+                          "program_name_lang": "menu.administration_panel.appointment_settings.legends.name",
+                          "program_title_lang": "menu.administration_panel.appointment_settings.legends.title",
+                          "program_desc": "APPOINTMENT LEGENDS",
+                          "root_level": 2,
+                          "position": 1,
+                          "row_index": 1,
+                          "icon_name": "PiBrowser",
+                          "navigate_url": "routes.settings.administrationPanel.appointmentSettings.legend",
+                          "is_program": true,
+                          "is_parent_program": false,
+                          "is_module": true,
+                          "is_no_crud": false,
+                          "is_icon_only": false,
+                          "is_program_viewable": false,
+                          "is_program_addable": false,
+                          "is_program_editable": false,
+                          "is_program_deleteable": false,
+                          "is_program_approveable": false,
+                          "is_program_unapproveable": false,
+                          "is_program_voidable": false,
+                          "is_program_unvoidable": false,
+                          "is_program_direct_void": false,
+                          "is_program_exportable": false,
+                          "is_program_printable": false,
+                          "is_menu_home_visible": false,
+                          "is_visible": true,
+                          "is_maintenance": false,
+                          "is_quick_link": false
+                      },
+                      {
+                          "program_id": "01.02.01",
+                          "parent_program_id": "01.02",
+                          "product_id": "ee197431-276d-453d-857c-412f347dae19",
+                          "program_name": "List",
+                          "program_title": "List",
+                          "program_name_lang": "menu.admission.registration.list.name",
+                          "program_title_lang": "menu.admission.registration.list.title",
+                          "program_desc": "Registration List",
+                          "root_level": 3,
+                          "position": 1,
+                          "row_index": 1,
+                          "navigate_url": "routes.registration.list",
+                          "is_program": true,
+                          "is_parent_program": false,
+                          "is_module": false,
+                          "is_no_crud": false,
+                          "is_icon_only": false,
+                          "is_program_viewable": false,
+                          "is_program_addable": false,
+                          "is_program_editable": false,
+                          "is_program_deleteable": false,
+                          "is_program_approveable": false,
+                          "is_program_unapproveable": false,
+                          "is_program_voidable": false,
+                          "is_program_unvoidable": false,
+                          "is_program_direct_void": false,
+                          "is_program_exportable": false,
+                          "is_program_printable": false,
+                          "is_menu_home_visible": false,
+                          "is_visible": true,
+                          "is_maintenance": false,
+                          "is_quick_link": true
+                      },
+                      {
+                          "program_id": "03.13",
+                          "parent_program_id": "03",
+                          "product_id": "ee197431-276d-453d-857c-412f347dae19",
+                          "program_name": "MEDICATION",
+                          "program_title": "MEDICATION",
+                          "program_name_lang": "menu.administration_panel.medication.name",
+                          "program_title_lang": "menu.administration_panel.medication.title",
+                          "program_desc": "MEDICATION",
+                          "root_level": 2,
+                          "position": 3,
+                          "row_index": 13,
+                          "icon_name": "Medication",
+                          "is_program": true,
+                          "is_parent_program": true,
+                          "is_module": true,
+                          "is_no_crud": false,
+                          "is_icon_only": false,
+                          "is_program_viewable": true,
+                          "is_program_addable": true,
+                          "is_program_editable": true,
+                          "is_program_deleteable": true,
+                          "is_program_approveable": false,
+                          "is_program_unapproveable": false,
+                          "is_program_voidable": false,
+                          "is_program_unvoidable": false,
+                          "is_program_direct_void": false,
+                          "is_program_exportable": false,
+                          "is_program_printable": false,
+                          "is_menu_home_visible": false,
+                          "is_visible": true,
+                          "is_maintenance": false,
+                          "is_quick_link": false
+                      },
+                      {
+                          "program_id": "03.09",
+                          "parent_program_id": "03",
+                          "product_id": "ee197431-276d-453d-857c-412f347dae19",
+                          "program_name": "MONITORING LOG",
+                          "program_title": "MONITORING LOG",
+                          "program_name_lang": "menu.administration_panel.monitoring_log.name",
+                          "program_title_lang": "menu.administration_panel.exam_setup.title",
+                          "program_desc": "Monitoring",
+                          "root_level": 2,
+                          "position": 3,
+                          "row_index": 9,
+                          "icon_name": "Monitoring",
+                          "navigate_url": "routes.settings.administrationPanel.monitoringLog",
+                          "is_program": true,
+                          "is_parent_program": true,
+                          "is_module": true,
+                          "is_no_crud": false,
+                          "is_icon_only": false,
+                          "is_program_viewable": true,
+                          "is_program_addable": true,
+                          "is_program_editable": true,
+                          "is_program_deleteable": true,
+                          "is_program_approveable": false,
+                          "is_program_unapproveable": false,
+                          "is_program_voidable": false,
+                          "is_program_unvoidable": false,
+                          "is_program_direct_void": false,
+                          "is_program_exportable": false,
+                          "is_program_printable": false,
+                          "is_menu_home_visible": false,
+                          "is_visible": true,
+                          "is_maintenance": false,
+                          "is_quick_link": false
+                      },
+                      {
+                          "program_id": "01.03",
+                          "parent_program_id": "01",
+                          "product_id": "ee197431-276d-453d-857c-412f347dae19",
+                          "program_name": "New Registration",
+                          "program_title": "New Registration",
+                          "program_name_lang": "menu.admission.new_registration.name",
+                          "program_title_lang": "menu.admission.new_registration.title",
+                          "program_desc": "Create New Registration",
+                          "root_level": 2,
+                          "position": 1,
+                          "row_index": 3,
+                          "icon_name": "PiChartBar",
+                          "navigate_url": "routes.registration.new",
+                          "is_program": true,
+                          "is_parent_program": false,
+                          "is_module": false,
+                          "is_no_crud": false,
+                          "is_icon_only": false,
+                          "is_program_viewable": false,
+                          "is_program_addable": false,
+                          "is_program_editable": false,
+                          "is_program_deleteable": false,
+                          "is_program_approveable": false,
+                          "is_program_unapproveable": false,
+                          "is_program_voidable": false,
+                          "is_program_unvoidable": false,
+                          "is_program_direct_void": false,
+                          "is_program_exportable": false,
+                          "is_program_printable": false,
+                          "is_menu_home_visible": false,
+                          "is_visible": true,
+                          "is_maintenance": false,
+                          "is_quick_link": true
+                      },
+                      {
+                          "program_id": "01.01.01",
+                          "parent_program_id": "01.01",
+                          "product_id": "ee197431-276d-453d-857c-412f347dae19",
+                          "program_name": "Outpatient",
+                          "program_title": "Outpatient",
+                          "program_name_lang": "menu.admission.appointment.outpatient.name",
+                          "program_title_lang": "menu.admission.appointment.outpatient.title",
+                          "program_desc": "Outpatient",
+                          "root_level": 3,
+                          "position": 1,
+                          "row_index": 1,
+                          "navigate_url": "routes.appointment.list",
+                          "is_program": true,
+                          "is_parent_program": false,
+                          "is_module": false,
+                          "is_no_crud": false,
+                          "is_icon_only": false,
+                          "is_program_viewable": true,
+                          "is_program_addable": false,
+                          "is_program_editable": true,
+                          "is_program_deleteable": true,
+                          "is_program_approveable": false,
+                          "is_program_unapproveable": false,
+                          "is_program_voidable": false,
+                          "is_program_unvoidable": false,
+                          "is_program_direct_void": false,
+                          "is_program_exportable": false,
+                          "is_program_printable": false,
+                          "is_menu_home_visible": false,
+                          "is_visible": true,
+                          "is_maintenance": false,
+                          "is_quick_link": true
+                      },
+                      {
+                          "program_id": "03.04.01",
+                          "parent_program_id": "03.04",
+                          "product_id": "ee197431-276d-453d-857c-412f347dae19",
+                          "program_name": "PHYSICIAN SETTINGS",
+                          "program_title": "PHYSICIAN SETTINGS",
+                          "program_name_lang": "menu.administration_panel.physician_settings.name",
+                          "program_title_lang": "menu.administration_panel.physician_settings.title",
+                          "program_desc": "Physician",
+                          "root_level": 1,
+                          "position": 1,
+                          "row_index": 4,
+                          "icon_name": "PiTable",
+                          "is_program": false,
+                          "is_parent_program": false,
+                          "is_module": true,
+                          "is_no_crud": false,
+                          "is_icon_only": false,
+                          "is_program_viewable": true,
+                          "is_program_addable": true,
+                          "is_program_editable": true,
+                          "is_program_deleteable": true,
+                          "is_program_approveable": false,
+                          "is_program_unapproveable": false,
+                          "is_program_voidable": false,
+                          "is_program_unvoidable": false,
+                          "is_program_direct_void": false,
+                          "is_program_exportable": false,
+                          "is_program_printable": false,
+                          "is_menu_home_visible": false,
+                          "is_visible": true,
+                          "is_maintenance": false,
+                          "is_quick_link": false
+                      },
+                      {
+                          "program_id": "03.04",
+                          "parent_program_id": "03",
+                          "product_id": "ee197431-276d-453d-857c-412f347dae19",
+                          "program_name": "PHYSICIAN SETTINGS",
+                          "program_title": "PHYSICIAN SETTINGS",
+                          "program_name_lang": "menu.administration_panel.physician_settings.name",
+                          "program_title_lang": "menu.administration_panel.physician_settings.title",
+                          "program_desc": "Physician",
+                          "root_level": 0,
+                          "position": 3,
+                          "row_index": 4,
+                          "icon_name": "Physician",
+                          "navigate_url": "routes.settings.administrationPanel.physician_setting.index",
+                          "is_program": true,
+                          "is_parent_program": true,
+                          "is_module": true,
+                          "is_no_crud": false,
+                          "is_icon_only": false,
+                          "is_program_viewable": true,
+                          "is_program_addable": true,
+                          "is_program_editable": true,
+                          "is_program_deleteable": true,
+                          "is_program_approveable": false,
+                          "is_program_unapproveable": false,
+                          "is_program_voidable": false,
+                          "is_program_unvoidable": false,
+                          "is_program_direct_void": false,
+                          "is_program_exportable": false,
+                          "is_program_printable": false,
+                          "is_menu_home_visible": false,
+                          "is_visible": true,
+                          "is_maintenance": false,
+                          "is_quick_link": false
+                      },
+                      {
+                          "program_id": "01.02",
+                          "parent_program_id": "01",
+                          "product_id": "ee197431-276d-453d-857c-412f347dae19",
+                          "program_name": "Registration",
+                          "program_title": "Registraion",
+                          "program_name_lang": "menu.admission.registration.name",
+                          "program_title_lang": "menu.admission.registration.title",
+                          "program_desc": "Registration",
+                          "root_level": 2,
+                          "position": 1,
+                          "row_index": 2,
+                          "icon_name": "PiBrowser",
+                          "is_program": false,
+                          "is_parent_program": false,
+                          "is_module": false,
+                          "is_no_crud": false,
+                          "is_icon_only": false,
+                          "is_program_viewable": true,
+                          "is_program_addable": false,
+                          "is_program_editable": false,
+                          "is_program_deleteable": false,
+                          "is_program_approveable": false,
+                          "is_program_unapproveable": false,
+                          "is_program_voidable": false,
+                          "is_program_unvoidable": false,
+                          "is_program_direct_void": false,
+                          "is_program_exportable": false,
+                          "is_program_printable": false,
+                          "is_menu_home_visible": false,
+                          "is_visible": true,
+                          "is_maintenance": false,
+                          "is_quick_link": false
+                      },
+                      {
+                          "program_id": "03.07",
+                          "parent_program_id": "03",
+                          "product_id": "ee197431-276d-453d-857c-412f347dae19",
+                          "program_name": "ROOM MANAGEMENT",
+                          "program_title": "ROOM MANAGEMENT",
+                          "program_name_lang": "menu.administration_panel.room_management.name",
+                          "program_title_lang": "menu.administration_panel.room_management.title",
+                          "program_desc": "ROOM MANAGEMENT",
+                          "root_level": 2,
+                          "position": 3,
+                          "row_index": 7,
+                          "icon_name": "Room",
+                          "navigate_url": "routes.settings.administrationPanel.roomManagement.index",
+                          "is_program": true,
+                          "is_parent_program": true,
+                          "is_module": true,
+                          "is_no_crud": false,
+                          "is_icon_only": false,
+                          "is_program_viewable": true,
+                          "is_program_addable": true,
+                          "is_program_editable": true,
+                          "is_program_deleteable": true,
+                          "is_program_approveable": false,
+                          "is_program_unapproveable": false,
+                          "is_program_voidable": false,
+                          "is_program_unvoidable": false,
+                          "is_program_direct_void": false,
+                          "is_program_exportable": false,
+                          "is_program_printable": false,
+                          "is_menu_home_visible": false,
+                          "is_visible": true,
+                          "is_maintenance": false,
+                          "is_quick_link": false
+                      },
+                      {
+                          "program_id": "03.04.01.02",
+                          "parent_program_id": "03.04.01",
+                          "product_id": "ee197431-276d-453d-857c-412f347dae19",
+                          "program_name": "Schedule",
+                          "program_title": "PHYSICIAN SCHEDULE",
+                          "program_name_lang": "menu.administration_panel.physician_settings.physician_schedule.name",
+                          "program_title_lang": "menu.administration_panel.physician_settings.physician_schedule.title",
+                          "program_desc": "Physician Schedule",
+                          "root_level": 2,
+                          "position": 1,
+                          "row_index": 2,
+                          "icon_name": "PiBrowser",
+                          "navigate_url": "routes.settings.administrationPanel.physician_setting.physicianSchedule.index",
+                          "is_program": true,
+                          "is_parent_program": false,
+                          "is_module": true,
+                          "is_no_crud": false,
+                          "is_icon_only": false,
+                          "is_program_viewable": true,
+                          "is_program_addable": true,
+                          "is_program_editable": true,
+                          "is_program_deleteable": true,
+                          "is_program_approveable": false,
+                          "is_program_unapproveable": false,
+                          "is_program_voidable": false,
+                          "is_program_unvoidable": false,
+                          "is_program_direct_void": false,
+                          "is_program_exportable": false,
+                          "is_program_printable": false,
+                          "is_menu_home_visible": false,
+                          "is_visible": true,
+                          "is_maintenance": false,
+                          "is_quick_link": false
+                      },
+                      {
+                          "program_id": "03.14",
+                          "parent_program_id": "03",
+                          "product_id": "ee197431-276d-453d-857c-412f347dae19",
+                          "program_name": "SERVICE UNIT",
+                          "program_title": "SERVICE UNIT",
+                          "program_name_lang": "menu.administration_panel.service_unit.name",
+                          "program_title_lang": "menu.administration_panel.service_unit.title",
+                          "program_desc": "SERVICE UNIT",
+                          "root_level": 2,
+                          "position": 3,
+                          "row_index": 14,
+                          "icon_name": "ServiceUnit",
+                          "is_program": true,
+                          "is_parent_program": true,
+                          "is_module": true,
+                          "is_no_crud": false,
+                          "is_icon_only": false,
+                          "is_program_viewable": true,
+                          "is_program_addable": true,
+                          "is_program_editable": true,
+                          "is_program_deleteable": true,
+                          "is_program_approveable": false,
+                          "is_program_unapproveable": false,
+                          "is_program_voidable": false,
+                          "is_program_unvoidable": false,
+                          "is_program_direct_void": false,
+                          "is_program_exportable": false,
+                          "is_program_printable": false,
+                          "is_menu_home_visible": false,
+                          "is_visible": true,
+                          "is_maintenance": false,
+                          "is_quick_link": false
+                      },
+                      {
+                          "program_id": "03.02.01.03",
+                          "parent_program_id": "03.02.01",
+                          "product_id": "ee197431-276d-453d-857c-412f347dae19",
+                          "program_name": "Source",
+                          "program_title": "Source",
+                          "program_name_lang": "menu.administration_panel.appointment_settings.source.name",
+                          "program_title_lang": "menu.administration_panel.appointment_settings.source.title",
+                          "program_desc": "APPOINTMENT Source",
+                          "root_level": 2,
+                          "position": 1,
+                          "row_index": 3,
+                          "icon_name": "PiBrowser",
+                          "navigate_url": "routes.settings.administrationPanel.appointmentSettings.source",
+                          "is_program": true,
+                          "is_parent_program": false,
+                          "is_module": true,
+                          "is_no_crud": false,
+                          "is_icon_only": false,
+                          "is_program_viewable": false,
+                          "is_program_addable": false,
+                          "is_program_editable": false,
+                          "is_program_deleteable": false,
+                          "is_program_approveable": false,
+                          "is_program_unapproveable": false,
+                          "is_program_voidable": false,
+                          "is_program_unvoidable": false,
+                          "is_program_direct_void": false,
+                          "is_program_exportable": false,
+                          "is_program_printable": false,
+                          "is_menu_home_visible": false,
+                          "is_visible": true,
+                          "is_maintenance": false,
+                          "is_quick_link": false
+                      },
+                      {
+                          "program_id": "03.06",
+                          "parent_program_id": "03",
+                          "product_id": "ee197431-276d-453d-857c-412f347dae19",
+                          "program_name": "STANDARD REFERENCE",
+                          "program_title": "STANDARD REFERENCE",
+                          "program_name_lang": "menu.administration_panel.standard_reference.name",
+                          "program_title_lang": "menu.administration_panel.standard_reference.title",
+                          "program_desc": "StandardReference",
+                          "root_level": 2,
+                          "position": 3,
+                          "row_index": 6,
+                          "icon_name": "StandardReference",
+                          "navigate_url": "routes.settings.administrationPanel.standardReference.index",
+                          "is_program": true,
+                          "is_parent_program": true,
+                          "is_module": true,
+                          "is_no_crud": false,
+                          "is_icon_only": false,
+                          "is_program_viewable": true,
+                          "is_program_addable": true,
+                          "is_program_editable": true,
+                          "is_program_deleteable": true,
+                          "is_program_approveable": false,
+                          "is_program_unapproveable": false,
+                          "is_program_voidable": false,
+                          "is_program_unvoidable": false,
+                          "is_program_direct_void": false,
+                          "is_program_exportable": false,
+                          "is_program_printable": false,
+                          "is_menu_home_visible": false,
+                          "is_visible": true,
+                          "is_maintenance": false,
+                          "is_quick_link": false
+                      },
+                      {
+                          "program_id": "03.02.01.02",
+                          "parent_program_id": "03.02.01",
+                          "product_id": "ee197431-276d-453d-857c-412f347dae19",
+                          "program_name": "Status",
+                          "program_title": "Status",
+                          "program_name_lang": "menu.administration_panel.appointment_settings.status.name",
+                          "program_title_lang": "menu.administration_panel.appointment_settings.status.title",
+                          "program_desc": "APPOINTMENT Status",
+                          "root_level": 2,
+                          "position": 1,
+                          "row_index": 2,
+                          "icon_name": "PiBrowser",
+                          "navigate_url": "routes.settings.administrationPanel.appointmentSettings.status",
+                          "is_program": true,
+                          "is_parent_program": false,
+                          "is_module": true,
+                          "is_no_crud": false,
+                          "is_icon_only": false,
+                          "is_program_viewable": false,
+                          "is_program_addable": false,
+                          "is_program_editable": false,
+                          "is_program_deleteable": false,
+                          "is_program_approveable": false,
+                          "is_program_unapproveable": false,
+                          "is_program_voidable": false,
+                          "is_program_unvoidable": false,
+                          "is_program_direct_void": false,
+                          "is_program_exportable": false,
+                          "is_program_printable": false,
+                          "is_menu_home_visible": false,
+                          "is_visible": true,
+                          "is_maintenance": false,
+                          "is_quick_link": false
+                      },
+                      {
+                          "program_id": "01.01.02",
+                          "parent_program_id": "01.01",
+                          "product_id": "ee197431-276d-453d-857c-412f347dae19",
+                          "program_name": "Surgery",
+                          "program_title": "Surgery",
+                          "program_name_lang": "menu.admission.appointment.surgery.name",
+                          "program_title_lang": "menu.admission.appointment.surgery.title",
+                          "program_desc": "Surgery",
+                          "root_level": 3,
+                          "position": 1,
+                          "row_index": 2,
+                          "navigate_url": "NULL",
+                          "is_program": true,
+                          "is_parent_program": false,
+                          "is_module": false,
+                          "is_no_crud": false,
+                          "is_icon_only": false,
+                          "is_program_viewable": true,
+                          "is_program_addable": true,
+                          "is_program_editable": false,
+                          "is_program_deleteable": false,
+                          "is_program_approveable": false,
+                          "is_program_unapproveable": false,
+                          "is_program_voidable": false,
+                          "is_program_unvoidable": false,
+                          "is_program_direct_void": false,
+                          "is_program_exportable": false,
+                          "is_program_printable": false,
+                          "is_menu_home_visible": false,
+                          "is_visible": true,
+                          "is_maintenance": false,
+                          "is_quick_link": true
+                      },
+                      {
+                          "program_id": "03.03",
+                          "parent_program_id": "03",
+                          "product_id": "ee197431-276d-453d-857c-412f347dae19",
+                          "program_name": "SURGERY SETTINGS",
+                          "program_title": "SURGERY SETTINGS",
+                          "program_name_lang": "menu.administration_panel.surgery_settings.name",
+                          "program_title_lang": "menu.administration_panel.surgery_settings.title",
+                          "program_desc": "SurgerySettings",
+                          "root_level": 2,
+                          "position": 3,
+                          "row_index": 3,
+                          "icon_name": "SurgerySettings",
+                          "is_program": true,
+                          "is_parent_program": true,
+                          "is_module": true,
+                          "is_no_crud": false,
+                          "is_icon_only": false,
+                          "is_program_viewable": true,
+                          "is_program_addable": true,
+                          "is_program_editable": true,
+                          "is_program_deleteable": true,
+                          "is_program_approveable": false,
+                          "is_program_unapproveable": false,
+                          "is_program_voidable": false,
+                          "is_program_unvoidable": false,
+                          "is_program_direct_void": false,
+                          "is_program_exportable": false,
+                          "is_program_printable": false,
+                          "is_menu_home_visible": false,
+                          "is_visible": true,
+                          "is_maintenance": false,
+                          "is_quick_link": false
+                      },
+                      {
+                          "program_id": "03.05",
+                          "parent_program_id": "03",
+                          "product_id": "ee197431-276d-453d-857c-412f347dae19",
+                          "program_name": "SYNC DATA",
+                          "program_title": "SYNC DATA",
+                          "program_name_lang": "menu.administration_panel.sync_data.name",
+                          "program_title_lang": "menu.administration_panel.sync_data.title",
+                          "program_desc": "Sync",
+                          "root_level": 2,
+                          "position": 3,
+                          "row_index": 5,
+                          "icon_name": "Sync",
+                          "is_program": true,
+                          "is_parent_program": true,
+                          "is_module": true,
+                          "is_no_crud": false,
+                          "is_icon_only": false,
+                          "is_program_viewable": true,
+                          "is_program_addable": true,
+                          "is_program_editable": true,
+                          "is_program_deleteable": true,
+                          "is_program_approveable": false,
+                          "is_program_unapproveable": false,
+                          "is_program_voidable": false,
+                          "is_program_unvoidable": false,
+                          "is_program_direct_void": false,
+                          "is_program_exportable": false,
+                          "is_program_printable": false,
+                          "is_menu_home_visible": false,
+                          "is_visible": true,
+                          "is_maintenance": false,
+                          "is_quick_link": false
+                      },
+                      {
+                          "program_id": "03.15",
+                          "parent_program_id": "03",
+                          "product_id": "ee197431-276d-453d-857c-412f347dae19",
+                          "program_name": "TRANSACTION ITEM",
+                          "program_title": "TRANSACTION ITEM",
+                          "program_name_lang": "menu.administration_panel.transaction_item.name",
+                          "program_title_lang": "menu.administration_panel.transaction_item.title",
+                          "program_desc": "TRANSACTION ITEM",
+                          "root_level": 2,
+                          "position": 3,
+                          "row_index": 15,
+                          "icon_name": "TransactionItem",
+                          "is_program": true,
+                          "is_parent_program": true,
+                          "is_module": true,
+                          "is_no_crud": false,
+                          "is_icon_only": false,
+                          "is_program_viewable": true,
+                          "is_program_addable": true,
+                          "is_program_editable": true,
+                          "is_program_deleteable": true,
+                          "is_program_approveable": false,
+                          "is_program_unapproveable": false,
+                          "is_program_voidable": false,
+                          "is_program_unvoidable": false,
+                          "is_program_direct_void": false,
+                          "is_program_exportable": false,
+                          "is_program_printable": false,
+                          "is_menu_home_visible": false,
+                          "is_visible": true,
+                          "is_maintenance": false,
+                          "is_quick_link": false
+                      },
+                      {
+                          "program_id": "03.11",
+                          "parent_program_id": "03",
+                          "product_id": "ee197431-276d-453d-857c-412f347dae19",
+                          "program_name": "USER MANAGEMENT",
+                          "program_title": "USER MANAGEMENT",
+                          "program_name_lang": "menu.administration_panel.user_management.name",
+                          "program_title_lang": "menu.administration_panel.user_management.title",
+                          "program_desc": "USER MANAGEMENT",
+                          "root_level": 2,
+                          "position": 3,
+                          "row_index": 11,
+                          "icon_name": "UserSettings",
+                          "navigate_url": "routes.settings.administrationPanel.userManagement.index",
+                          "is_program": true,
+                          "is_parent_program": true,
+                          "is_module": true,
+                          "is_no_crud": false,
+                          "is_icon_only": false,
+                          "is_program_viewable": true,
+                          "is_program_addable": true,
+                          "is_program_editable": true,
+                          "is_program_deleteable": true,
+                          "is_program_approveable": false,
+                          "is_program_unapproveable": false,
+                          "is_program_voidable": false,
+                          "is_program_unvoidable": false,
+                          "is_program_direct_void": false,
+                          "is_program_exportable": false,
+                          "is_program_printable": false,
+                          "is_menu_home_visible": false,
+                          "is_visible": true,
+                          "is_maintenance": false,
+                          "is_quick_link": false
+                      }
+                  ]
+              }
+          }

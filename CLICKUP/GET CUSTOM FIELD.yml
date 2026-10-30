@@ -1,0 +1,535 @@
+info:
+  name: GET CUSTOM FIELD
+  type: http
+  seq: 12
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/clickup/list/:list_id/field"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: list_id
+      value: "192896881"
+      type: path
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: GET CUSTOM FIELD
+    request:
+      url: "{{BASE_URL}}/clickup/list/:list_id/field"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: list_id
+          value: "192896881"
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Server
+          value: nginx/1.20.1
+        - name: Date
+          value: Mon, 10 Mar 2025 03:18:07 GMT
+        - name: Content-Type
+          value: application/json; charset=utf-8
+        - name: Content-Length
+          value: "2978"
+        - name: Connection
+          value: keep-alive
+        - name: Content-Encoding
+          value: gzip
+        - name: Timing-Allow-Origin
+          value: "*"
+        - name: X-Received-From
+          value: shard-prod-ap-southeast-2-2
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: Expect-Ct
+          value: max-age=0
+        - name: Strict-Transport-Security
+          value: max-age=31536000; includeSubDomains
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: X-Xss-Protection
+          value: "0"
+        - name: Access-Control-Allow-Origin
+          value: "*"
+        - name: Access-Control-Allow-Credentials
+          value: "true"
+        - name: Access-Control-Expose-Headers
+          value: x-datadog-trace-id
+        - name: Content-Language
+          value: en-US
+        - name: X-Datadog-Trace-Id
+          value: "2264837798455355767"
+        - name: Content-Security-Policy
+          value: frame-ancestors 'self'
+        - name: Cache-Control
+          value: no-cache, no-store
+        - name: Pragma
+          value: no-cache
+        - name: Expires
+          value: "0"
+        - name: X-Ratelimit-Limit
+          value: "100"
+        - name: X-Ratelimit-Remaining
+          value: "99"
+        - name: X-Ratelimit-Reset
+          value: "1741576748"
+        - name: Vary
+          value: accept-encoding
+        - name: X-Cache
+          value: Miss from cloudfront
+        - name: Via
+          value: 1.1 93a74d45373d4f469dbc7c725e999e6e.cloudfront.net (CloudFront)
+        - name: X-Amz-Cf-Pop
+          value: SIN2-P5
+        - name: Alt-Svc
+          value: h3=":443"; ma=86400
+        - name: X-Amz-Cf-Id
+          value: e7hVLJYidyGQYXkfB59WRgHiZpk3hBuxgIFl1Y70OYE591nEAr-Zug==
+      body:
+        type: json
+        data: |-
+          {
+              "fields": [
+                  {
+                      "id": "04dfe434-ae12-45dd-9b7e-419372b82930",
+                      "name": "Pelapor",
+                      "type": "short_text",
+                      "type_config": {},
+                      "date_created": "1658997124721",
+                      "hide_from_guests": false,
+                      "required": false
+                  },
+                  {
+                      "id": "2cf1af8d-d942-4b38-9318-5e60b8f8dc40",
+                      "name": "Kategori Permasalahan/Permintaan",
+                      "type": "drop_down",
+                      "type_config": {
+                          "default": 0,
+                          "sorting": "manual",
+                          "placeholder": null,
+                          "new_drop_down": true,
+                          "options": [
+                              {
+                                  "id": "14003cf8-1b1c-423d-9acf-48b567e591a2",
+                                  "name": "Troubleshooting",
+                                  "color": "#bf55ec",
+                                  "orderindex": 0
+                              },
+                              {
+                                  "id": "e50981e1-34f8-4763-a838-f0812457c109",
+                                  "name": "Permintaan/Perubahan Hak Akses",
+                                  "color": "#E65100",
+                                  "orderindex": 1
+                              },
+                              {
+                                  "id": "61afccc3-5d34-40ae-9a9b-153a8cf3294d",
+                                  "name": "Bugs Program",
+                                  "color": "#e50000",
+                                  "orderindex": 2
+                              },
+                              {
+                                  "id": "2c4e9809-9f05-4ca3-a82b-699f335f6a64",
+                                  "name": "New Feature",
+                                  "color": "#1bbc9c",
+                                  "orderindex": 3
+                              },
+                              {
+                                  "id": "91a5cb40-9ce2-4294-b22a-0cea3f1af620",
+                                  "name": "Data Request",
+                                  "color": "#AF7E2E",
+                                  "orderindex": 4
+                              },
+                              {
+                                  "id": "7cec0cfb-e163-4e49-928a-34f8ddc8f13e",
+                                  "name": "Email",
+                                  "color": "#2eba25",
+                                  "orderindex": 5
+                              },
+                              {
+                                  "id": "9c458509-5dce-4d89-930c-c9232bdb952c",
+                                  "name": "Network",
+                                  "color": "#667684",
+                                  "orderindex": 6
+                              },
+                              {
+                                  "id": "bc343440-8003-4989-a0b7-73e592240968",
+                                  "name": "Server",
+                                  "color": "#f9d900",
+                                  "orderindex": 7
+                              },
+                              {
+                                  "id": "87ceb61b-0c60-445d-96e7-19c157c55be1",
+                                  "name": "Others",
+                                  "color": "#800000",
+                                  "orderindex": 8
+                              },
+                              {
+                                  "id": "69453c83-fd94-45c6-b680-1a56ac81a584",
+                                  "name": "Update",
+                                  "color": "#2468d6",
+                                  "orderindex": 9
+                              },
+                              {
+                                  "id": "679628bf-0a05-4bc4-a7f1-2c490d0711ad",
+                                  "name": "Backdate",
+                                  "color": "#02BCD4",
+                                  "orderindex": 10
+                              }
+                          ]
+                      },
+                      "date_created": "1658998194653",
+                      "hide_from_guests": false,
+                      "required": false
+                  },
+                  {
+                      "id": "4a7143da-773a-4203-bf27-609543e60443",
+                      "name": "Sistem Terkait Permasalahan / Permintaan",
+                      "type": "drop_down",
+                      "type_config": {
+                          "default": 0,
+                          "placeholder": null,
+                          "options": [
+                              {
+                                  "id": "cfb9324d-e9d0-4785-b59b-81bd634e726e",
+                                  "name": "SEDNA",
+                                  "color": "#bf55ec",
+                                  "orderindex": 0
+                              },
+                              {
+                                  "id": "a494bfbd-1291-4ec3-a93c-ca001e64fc81",
+                                  "name": "Albedo",
+                                  "color": "#E65100",
+                                  "orderindex": 1
+                              },
+                              {
+                                  "id": "79bc3396-6acc-4ce5-89c4-ea51b1f12f58",
+                                  "name": "Kiosk",
+                                  "color": "#f9d900",
+                                  "orderindex": 2
+                              },
+                              {
+                                  "id": "d96ea2fb-c3bb-4ca2-b02e-7bcfc31548be",
+                                  "name": "Queue System",
+                                  "color": "#04A9F4",
+                                  "orderindex": 3
+                              },
+                              {
+                                  "id": "e46a33a8-b68b-4442-b6a8-eba744d7b95c",
+                                  "name": "Internet dan Sarana pendukung kerja",
+                                  "color": "#667684",
+                                  "orderindex": 4
+                              },
+                              {
+                                  "id": "6cfcd8b5-7f45-45b5-8972-1b352556e4f6",
+                                  "name": "Mobile Apps SEDNA",
+                                  "color": "#05a18d",
+                                  "orderindex": 5
+                              },
+                              {
+                                  "id": "3ed3085c-543e-4e1e-a20f-371fc6c22e14",
+                                  "name": "Lain-Lain",
+                                  "color": "#fea3ff",
+                                  "orderindex": 6
+                              }
+                          ]
+                      },
+                      "date_created": "1658998768615",
+                      "hide_from_guests": false,
+                      "required": false
+                  },
+                  {
+                      "id": "7c9688a1-6c6a-4dc0-8557-5a10478c60f5",
+                      "name": "RS/ KLINIK",
+                      "type": "drop_down",
+                      "type_config": {
+                          "default": 0,
+                          "sorting": "manual",
+                          "placeholder": null,
+                          "new_drop_down": true,
+                          "options": [
+                              {
+                                  "id": "bc7dbb13-f6c3-4b14-83e4-593f5cfa2488",
+                                  "name": "KORPORAT",
+                                  "color": "#E65100",
+                                  "orderindex": 0
+                              },
+                              {
+                                  "id": "19c804aa-1151-4eca-a26e-b29c928b81dc",
+                                  "name": "JEC@KEDOYA",
+                                  "color": null,
+                                  "orderindex": 1
+                              },
+                              {
+                                  "id": "79e0d77f-85f6-4a63-a0eb-4f910ea82f28",
+                                  "name": "JEC@MENTENG",
+                                  "color": null,
+                                  "orderindex": 2
+                              },
+                              {
+                                  "id": "c1902596-0f24-4a0a-b9e4-3d8826cb827a",
+                                  "name": "JEC@CIBUBUR",
+                                  "color": null,
+                                  "orderindex": 3
+                              },
+                              {
+                                  "id": "17b66956-3a46-46c5-87ee-b1cc50bb98c3",
+                                  "name": "JEC@PRIMASANA",
+                                  "color": null,
+                                  "orderindex": 4
+                              },
+                              {
+                                  "id": "86cb31e4-e51c-4610-9f57-0cecabc0f8e9",
+                                  "name": "JEC@TAMBORA",
+                                  "color": null,
+                                  "orderindex": 5
+                              },
+                              {
+                                  "id": "4cd73668-03d7-4ede-9d77-37fbb75306d7",
+                                  "name": "JEC@CINERE",
+                                  "color": null,
+                                  "orderindex": 6
+                              },
+                              {
+                                  "id": "def84ad9-33be-416a-bdc7-1b0c205f5050",
+                                  "name": "JEC@BEKASI",
+                                  "color": null,
+                                  "orderindex": 7
+                              },
+                              {
+                                  "id": "b327545e-ba34-440e-acce-e86802dce176",
+                                  "name": "CANDI EYE CENTER",
+                                  "color": null,
+                                  "orderindex": 8
+                              },
+                              {
+                                  "id": "0589199b-7a4f-40d4-90ca-0e498cc32c1d",
+                                  "name": "JEC-ANWARI@PURWOKERTO",
+                                  "color": null,
+                                  "orderindex": 9
+                              },
+                              {
+                                  "id": "bc9fa69e-de97-408e-9365-30325f152532",
+                                  "name": "JEC-CANDI@PAMULARSI",
+                                  "color": null,
+                                  "orderindex": 10
+                              },
+                              {
+                                  "id": "9a5872e2-9e56-41f0-8f11-85e71e9d8bfa",
+                                  "name": "JEC@JAVA",
+                                  "color": null,
+                                  "orderindex": 11
+                              },
+                              {
+                                  "id": "8573c016-b0b4-44c2-a34e-eeec5bb8bf92",
+                                  "name": "JEC-ORBITA@MAKASSAR",
+                                  "color": null,
+                                  "orderindex": 12
+                              },
+                              {
+                                  "id": "1bd4e827-07fb-47ce-9909-dcaaf22dc374",
+                                  "name": "JEC-BALI@DENPASAR",
+                                  "color": null,
+                                  "orderindex": 13
+                              },
+                              {
+                                  "id": "cd5cf4ed-a8c2-4261-a421-1bc311f00402",
+                                  "name": "JEC-JAVA@PASURUAN",
+                                  "color": null,
+                                  "orderindex": 14
+                              },
+                              {
+                                  "id": "0262a2e2-02d8-4604-982d-f54f10c4fe64",
+                                  "name": "RS-ORBITA@MAKASSAR",
+                                  "color": null,
+                                  "orderindex": 15
+                              },
+                              {
+                                  "id": "9b9e7f3d-cc07-45a4-8421-53218d07e511",
+                                  "name": "JEC-ORBITA@KENDARI",
+                                  "color": null,
+                                  "orderindex": 16
+                              },
+                              {
+                                  "id": "19347a3a-3c59-4827-9660-e472fdc13f65",
+                                  "name": "JEC-JAVA@KEDIRI",
+                                  "color": null,
+                                  "orderindex": 17
+                              },
+                              {
+                                  "id": "a409109f-af09-4e7b-b465-74b592e2612b",
+                                  "name": "ALL SITE",
+                                  "color": null,
+                                  "orderindex": 18
+                              }
+                          ]
+                      },
+                      "date_created": "1642997490166",
+                      "hide_from_guests": false,
+                      "required": false
+                  },
+                  {
+                      "id": "950f33f1-2908-43e1-a2b4-b57fe79fc139",
+                      "name": "Email Karyawan",
+                      "type": "email",
+                      "type_config": {},
+                      "date_created": "1658998795806",
+                      "hide_from_guests": false,
+                      "required": false
+                  },
+                  {
+                      "id": "ec917621-bbd3-4fe2-b29c-845b25aacf4a",
+                      "name": "Bisnis Unit ,RS/Klinik",
+                      "type": "drop_down",
+                      "type_config": {
+                          "default": 0,
+                          "sorting": "manual",
+                          "placeholder": null,
+                          "new_drop_down": true,
+                          "options": [
+                              {
+                                  "id": "a06b301d-e379-442a-a4ba-bd9dfebfd211",
+                                  "name": "JEC- KORPORAT",
+                                  "color": "#fcb1a0",
+                                  "orderindex": 0
+                              },
+                              {
+                                  "id": "50fc999e-5231-4837-acf2-8d6a9a24f9a7",
+                                  "name": "JEC@KEDOYA",
+                                  "color": "#ffc687",
+                                  "orderindex": 1
+                              },
+                              {
+                                  "id": "a1194f74-cb70-4927-b398-d3dd8c8a32bc",
+                                  "name": "JEC@MENTENG",
+                                  "color": "#feefab",
+                                  "orderindex": 2
+                              },
+                              {
+                                  "id": "923ae384-ca74-4c32-b8ed-2daa17152fac",
+                                  "name": "JEC@PRIMASANA",
+                                  "color": "#cbd496",
+                                  "orderindex": 3
+                              },
+                              {
+                                  "id": "2fbeb28d-86f0-4979-b2f1-f7257059998c",
+                                  "name": "RS Mata JEC-CANDI@SEMARANG",
+                                  "color": "#c2cbea",
+                                  "orderindex": 4
+                              },
+                              {
+                                  "id": "e3052d4f-1eb0-495c-9db2-6eaee58868e3",
+                                  "name": "JEC@CIBUBUR",
+                                  "color": "#fffff4",
+                                  "orderindex": 5
+                              },
+                              {
+                                  "id": "2fda7785-68c4-4e4f-a86d-c23fe9b38d55",
+                                  "name": "JEC@TAMBORA",
+                                  "color": "#ffc0b4",
+                                  "orderindex": 6
+                              },
+                              {
+                                  "id": "6ab80fff-628e-44c5-8a83-a2623bfa37a8",
+                                  "name": "JEC@CINERE",
+                                  "color": "#daf4fd",
+                                  "orderindex": 7
+                              },
+                              {
+                                  "id": "0d527124-a321-4c7f-83e7-39baf9668962",
+                                  "name": "JEC@BEKASI",
+                                  "color": "#a9daf5",
+                                  "orderindex": 8
+                              },
+                              {
+                                  "id": "4090eddb-5949-43c5-a36d-63acae5a51ed",
+                                  "name": "JEC CANDI@SEMARANG",
+                                  "color": "#c8ddc9",
+                                  "orderindex": 9
+                              },
+                              {
+                                  "id": "64e20a2d-63ce-414c-959b-89a5deabd458",
+                                  "name": "JEC-JAVA@SURABAYA",
+                                  "color": "#fae7bc",
+                                  "orderindex": 10
+                              },
+                              {
+                                  "id": "8bfcf401-a093-46af-92ad-15a58bb3a70a",
+                                  "name": "JEC-ANWARI@PURWOKERTO",
+                                  "color": "#daffb2",
+                                  "orderindex": 11
+                              },
+                              {
+                                  "id": "b603d6f1-8db5-4018-85e7-3651ed986c99",
+                                  "name": "JEC-ORBITA@MAKASSAR",
+                                  "color": "#e9f3eb",
+                                  "orderindex": 12
+                              },
+                              {
+                                  "id": "e82f067f-51c9-4fc4-9266-029eb1098104",
+                                  "name": "JEC-BALI@DENPASAR",
+                                  "color": "#f2eb95",
+                                  "orderindex": 13
+                              },
+                              {
+                                  "id": "c9a97fce-a228-47d4-a0a2-68bd5a8278f0",
+                                  "name": "JEC@PASURUAN",
+                                  "color": "#aa99f4",
+                                  "orderindex": 14
+                              },
+                              {
+                                  "id": "07b62972-1bb7-466a-82bc-428391b95bcf",
+                                  "name": "RS Mata JEC-ORBITA@MAKASSAR",
+                                  "color": "#b4bab6",
+                                  "orderindex": 15
+                              },
+                              {
+                                  "id": "4c84e3da-b39b-48d1-ba39-81130700dfa5",
+                                  "name": "JEC-ORBITA@KENDARI",
+                                  "color": "#EA80FC",
+                                  "orderindex": 16
+                              },
+                              {
+                                  "id": "6100d866-7746-4eba-9e09-d8aa87b8376a",
+                                  "name": "JEC-JAVA@KEDIRI",
+                                  "color": "#1bbc9c",
+                                  "orderindex": 17
+                              }
+                          ]
+                      },
+                      "date_created": "1658997210767",
+                      "hide_from_guests": false,
+                      "required": true
+                  },
+                  {
+                      "id": "fe68c063-1f70-4f95-9549-86ac2fb39685",
+                      "name": "Tanggal Laporan",
+                      "type": "date",
+                      "type_config": {},
+                      "date_created": "1659002973098",
+                      "hide_from_guests": false,
+                      "required": false
+                  }
+              ]
+          }

@@ -1,0 +1,134 @@
+info:
+  name: Get Department By User Id And Business Unit Id
+  type: http
+  seq: 6
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/user/business_unit/:user_id/:business_unit_id/departments?page=1&page_size=10"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: page_size
+      value: "10"
+      type: query
+    - name: is_all_service_units
+      value: ""
+      type: query
+      disabled: true
+    - name: user_id
+      value: "21170"
+      type: path
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Get Department By User Id And Business Unit Id
+    request:
+      url: "{{BASE_URL}}/v1/user/business_unit/:user_id/:business_unit_id/departments?page=1&page_size=10"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: page_size
+          value: "10"
+          type: query
+        - name: is_all_service_units
+          value: ""
+          type: query
+          disabled: true
+        - name: user_id
+          value: "21170"
+          type: path
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 24 Nov 2025 03:44:53 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "515"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "departments": [
+                      {
+                          "department_id": "937d88e6-1542-407b-9d4b-843325d233bf",
+                          "department_name": "Internal Monitoring",
+                          "is_all_service_units": true,
+                          "service_units": []
+                      },
+                      {
+                          "department_id": "df55c115-48a4-4d9a-81e3-966c3363a76e",
+                          "department_name": "Surgical",
+                          "is_all_service_units": false,
+                          "service_units": [
+                              {
+                                  "service_unit_id": "SU00002",
+                                  "service_unit_name": "Operating Theatre"
+                              },
+                              {
+                                  "service_unit_id": "C201",
+                                  "service_unit_name": "LASIK"
+                              }
+                          ]
+                      }
+                  ],
+                  "user_id": "21170"
+              }
+          }

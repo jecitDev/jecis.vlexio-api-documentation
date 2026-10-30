@@ -1,0 +1,7 @@
+info:
+  name: CLICKUP
+  type: folder
+  seq: 59
+
+request:
+  auth: inherit

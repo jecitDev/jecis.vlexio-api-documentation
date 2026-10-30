@@ -1,0 +1,7 @@
+info:
+  name: Item Group
+  type: folder
+  seq: 85
+
+request:
+  auth: inherit

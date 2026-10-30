@@ -1,0 +1,7 @@
+info:
+  name: PRODUCT TYPE
+  type: folder
+  seq: 141
+
+request:
+  auth: inherit

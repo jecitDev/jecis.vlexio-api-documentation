@@ -1,0 +1,291 @@
+info:
+  name: BY ID
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/accessgroup/:id/:business_unit_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: id
+      value: ASSDOC
+      type: path
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: BY ID NOT FOUND
+    request:
+      url: "{{BASE_URL}}/v1/accessgroup/:id/:business_unit_id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: id
+          value: EMR_ADMIN
+          type: path
+        - name: business_unit_id
+          value: "3"
+          type: path
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Date
+          value: Wed, 24 Apr 2024 03:55:08 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "41"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "data Not Found",
+              "status": 404
+          }
+  - name: BY ID
+    request:
+      url: "{{BASE_URL}}/v1/accessgroup/:id/:business_unit_id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: id
+          value: ASSDOC
+          type: path
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 04 Dec 2025 07:08:09 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "2804"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "accessgroup": {
+                      "access_program": [
+                          {
+                              "is_program_addable": false,
+                              "is_program_approveable": true,
+                              "is_program_deleteable": false,
+                              "is_program_direct_void": true,
+                              "is_program_editable": true,
+                              "is_program_exportable": true,
+                              "is_program_printable": true,
+                              "is_program_unapproveable": false,
+                              "is_program_unvoidable": true,
+                              "is_program_viewable": false,
+                              "is_program_voidable": false,
+                              "program_id": "01.01.01"
+                          },
+                          {
+                              "is_program_addable": true,
+                              "is_program_approveable": false,
+                              "is_program_deleteable": true,
+                              "is_program_direct_void": false,
+                              "is_program_editable": false,
+                              "is_program_exportable": true,
+                              "is_program_printable": true,
+                              "is_program_unapproveable": true,
+                              "is_program_unvoidable": true,
+                              "is_program_viewable": false,
+                              "is_program_voidable": false,
+                              "program_id": "01.01.02"
+                          },
+                          {
+                              "is_program_addable": false,
+                              "is_program_approveable": true,
+                              "is_program_deleteable": false,
+                              "is_program_direct_void": true,
+                              "is_program_editable": true,
+                              "is_program_exportable": false,
+                              "is_program_printable": true,
+                              "is_program_unapproveable": false,
+                              "is_program_unvoidable": true,
+                              "is_program_viewable": false,
+                              "is_program_voidable": false,
+                              "program_id": "01.02.01"
+                          },
+                          {
+                              "is_program_addable": true,
+                              "is_program_approveable": false,
+                              "is_program_deleteable": false,
+                              "is_program_direct_void": false,
+                              "is_program_editable": false,
+                              "is_program_exportable": false,
+                              "is_program_printable": false,
+                              "is_program_unapproveable": false,
+                              "is_program_unvoidable": false,
+                              "is_program_viewable": false,
+                              "is_program_voidable": false,
+                              "program_id": "03.02"
+                          }
+                      ],
+                      "access_report": [
+                          {
+                              "report_id": 1
+                          }
+                      ],
+                      "access_service_unit": [],
+                      "admin_type": "-",
+                      "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                      "coverage": [
+                          "53aad077-9fb1-4f08-85f3-af9fd9a36517"
+                      ],
+                      "created_at": "2024-08-27T08:00:00+07:00",
+                      "description": "ASSDOC",
+                      "group_id": "ASSDOC",
+                      "group_name": "ASSDOC",
+                      "is_active": true,
+                      "updated_at": "2025-12-04T14:07:49+07:00",
+                      "user_create": "nando",
+                      "user_update": "nando"
+                  },
+                  "accessgroup_digisign": {
+                      "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                      "document_type_access": [],
+                      "group_id": "ASSDOC",
+                      "is_business_unit": false
+                  },
+                  "accessgroup_emr": {
+                      "access_emr_exam": [
+                          {
+                              "exam_setup_type": "DEFAULT",
+                              "id": "1",
+                              "is_allow_other_user_edit": false,
+                              "module_in_used": [
+                                  "Outpatient"
+                              ],
+                              "name": "SOAP For Opthamologist"
+                          },
+                          {
+                              "exam_setup_type": "Form",
+                              "id": "2",
+                              "is_allow_other_user_edit": false,
+                              "module_in_used": [
+                                  "Outpatient"
+                              ],
+                              "name": "Nursing Assessment"
+                          }
+                      ],
+                      "access_emr_other": {
+                          "default_module": "Outpatient",
+                          "doc_access": [
+                              "Create",
+                              "Read",
+                              "Update"
+                          ],
+                          "meddream_access": {
+                              "meddream_permission": [
+                                  "ADMIN",
+                                  "PATIENT_HISTORY",
+                                  "REPORT_VIEW",
+                                  "DOCUMENT_VIEW"
+                              ],
+                              "meddream_user": "1-sednaview"
+                          },
+                          "research_access": "ADMIN",
+                          "room_access": [
+                              {
+                                  "id": "1",
+                                  "name": "Main"
+                              },
+                              {
+                                  "id": "2",
+                                  "name": "Doctor Rooms"
+                              }
+                          ]
+                      },
+                      "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                      "group_id": "ASSDOC"
+                  },
+                  "accessgroup_his": {
+                      "business_unit_id": "",
+                      "group_id": ""
+                  },
+                  "accessgroup_hris": {
+                      "business_unit_id": "",
+                      "group_id": ""
+                  }
+              }
+          }

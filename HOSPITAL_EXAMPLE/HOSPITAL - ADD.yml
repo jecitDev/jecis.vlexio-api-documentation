@@ -1,0 +1,30 @@
+info:
+  name: HOSPITAL - ADD
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/hospitals"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"healthcare_id\":\"03021050\",\r
+
+      \    \"healthcare_name\":\"JEC@KEDOYA50\",\r
+
+      \    \"create_at\":\"2024-02-28T13:24:42\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

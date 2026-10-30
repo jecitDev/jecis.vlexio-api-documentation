@@ -1,0 +1,69 @@
+info:
+  name: Standard Reference Item
+  type: folder
+  seq: 40
+
+request:
+  auth: inherit
+
+docs:
+  content: |-
+    ### **\[TS-220\] \[MASTER\]** STANDARD REFERENCE #1.0.3
+
+    ##### April 18, 2024
+
+    - Add Field Coa Name and Sub Ledger Name in list `[Enhance]`
+        
+
+    ##### April 4, 2024
+
+    - Handle Redis Key `[Enhance]`
+        
+    - Add Field Company ID and Business Unit ID `[Enhance]`
+        
+    - Rename Filename & Package `Refactor`
+        
+
+    ### **\[TS-220\] \[MASTER\]** STANDARD REFERENCE #1.0.2
+
+    Mar 25, 2024
+
+    - Change Format Type Field: CreatedAt & UpdatedAt from Timestamps to ISODateTime
+        
+
+    ### **\[TS-220\] \[MASTER\]** STANDARD REFERENCE #1.0.1
+
+    Feb 28, 2024
+
+    - Handle null value (boolean) for Query Params `Enhance`
+        
+    - Change Body Parser to QueryParams `Enhance`
+        
+
+    ##### Feb 23, 2024
+
+    - Rename Method name `Refactor`
+        
+
+    ##### Oct 23, 2023
+
+    - Add Parameter page; page_size; and keywords
+        
+    - Add Field Reference ID 2
+        
+    - Change Field UserCreate, UserUpdate, CreatedAt, UpdatedAt`Refactor`
+        
+
+    ### **\[TS-220\] \[MASTER\]** STANDARD REFERENCE #1.0.0
+
+    ##### Sept 21, 2023
+
+    - Resolve issue different Redis Key `Fix`
+        
+
+    ##### Sept 18, 2023
+
+    - CRUD Common
+        
+    - Initial Task
+  type: text/markdown

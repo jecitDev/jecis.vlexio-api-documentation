@@ -1,0 +1,243 @@
+info:
+  name: Queue Discharge
+  type: http
+  seq: 12
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/admedika/queues/:id/discharge"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-Branch-ID
+      value: "{{xbranchid}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  params:
+    - name: id
+      value: a9de1d85-9349-44c0-9cc1-069952c8abb6
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \  \"terminal_id\": \"12372351\",\r
+
+      \  \"card_no\":\"8000991200072687\",\r
+
+      \  \"diagnosis_code_list\": \"I10\",\r
+
+      \  \"mc_days\": \"0\",\r
+
+      \  \"physician_name\": \"dr. Test\",\r
+
+      \  \"accident_flag\": \"N\",\r
+
+      \  \"surgical_flag\": \"N\",\r
+
+      \  \"remarks\": \"\",\r
+
+      \  \"entitlement\": [\r
+
+      \    {\r
+
+      \        \"benefit_id\": \"01\",\r
+
+      \        \"benefit_amount\": \"90000\",\r
+
+      \        \"benefit_item_list\": [\r
+
+      \            {\r
+
+      \                \"code\": \"OBAT\",\r
+
+      \                \"name\": \"Obat Paracetamol\",\r
+
+      \                \"issue_date\": \"26102026\",\r
+
+      \                \"quantity\": \"1\",\r
+
+      \                \"total_price\": \"90000\"\r
+
+      \            }\r
+
+      \        ]\r
+
+      \    }\r
+
+      \  ],\r
+
+      \  \"total_incurred\": \"260000\",\r
+
+      \  \"business_unit_id\": \"33b109c5-dd64-480c-8100-68fe17deaf3e\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Queue Discharge
+    request:
+      url: "{{BASE_URL}}/v1/admedika/queues/:id/discharge"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-Branch-ID
+          value: "{{xbranchid}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      params:
+        - name: id
+          value: a9de1d85-9349-44c0-9cc1-069952c8abb6
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \  \"terminal_id\": \"12372351\",\r
+
+          \  \"card_no\":\"8000991200072687\",\r
+
+          \  \"diagnosis_code_list\": \"I10\",\r
+
+          \  \"mc_days\": \"0\",\r
+
+          \  \"physician_name\": \"dr. Test\",\r
+
+          \  \"accident_flag\": \"N\",\r
+
+          \  \"surgical_flag\": \"N\",\r
+
+          \  \"remarks\": \"\",\r
+
+          \  \"entitlement\": [\r
+
+          \    {\r
+
+          \        \"benefit_id\": \"01\",\r
+
+          \        \"benefit_amount\": \"90000\",\r
+
+          \        \"benefit_item_list\": [\r
+
+          \            {\r
+
+          \                \"code\": \"OBAT\",\r
+
+          \                \"name\": \"Obat Paracetamol\",\r
+
+          \                \"issue_date\": \"26102026\",\r
+
+          \                \"quantity\": \"1\",\r
+
+          \                \"total_price\": \"90000\"\r
+
+          \            }\r
+
+          \        ]\r
+
+          \    }\r
+
+          \  ],\r
+
+          \  \"total_incurred\": \"260000\",\r
+
+          \  \"business_unit_id\": \"33b109c5-dd64-480c-8100-68fe17deaf3e\"\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 27 Oct 2026 12:48:49 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "1780"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+            "code": 200,
+            "data": {
+              "ids": [
+                "5153b7c7-94dd-4f74-852a-a00b1669e94d"
+              ],
+              "print_out": "PENGESAHAN & TAGIHAN\r\nJaminan Kesehatan\r\nBA_UAT TEST\r\nDIAG:I10 IZIN SAKIT:0\r\n***************************************\r\nB.DR.SPEC                      0.00\r\nB.DR.UMUM                      0.00\r\nB.OBAT                         0.00\r\n                               0.00\r\n***************************************\r\nJUM.BIAYA :               90,000.00\r\nJUM.DIBYR ASS:                  .00\r\nDIBYR PASIEN:             90,000.00\r\n=====================\r\nSELISIH BIAYA BAYAR DITEMPAT\r\n",
+              "reprint_err": "",
+              "response": {
+                "output": {
+                  "reference_id": 924543,
+                  "status_code": 0,
+                  "status_msg": "Successful",
+                  "txn_data": {
+                    "dischargeRequestResponse": {
+                      "dischargeRequest": {
+                        "PayorName": "Jaminan Kesehatan",
+                        "cardNo": "8000991200072687",
+                        "clDesc": "VALID CLAIM",
+                        "clID": "28651084",
+                        "clStatus": "40",
+                        "dob": "Jul-05-1992",
+                        "entitlement": [
+                          {
+                            "amtApproved": "0",
+                            "amtIncurred": "90000",
+                            "amtNotApproved": "90000",
+                            "benID": "01",
+                            "longName": "Biaya Administrasi",
+                            "shortName": "B.ADMIN"
+                          }
+                        ],
+                        "patientName": "ADM TEST LIMA",
+                        "payorCode": "ADMEDKA",
+                        "payorMemberID": "ADM_005X",
+                        "pd": "Principal",
+                        "planCode": "IDR",
+                        "policyDate": "Jan-01-2026 to Dec-31-2026",
+                        "policyNo": "ADM_005X",
+                        "principalName": "",
+                        "printOut": "PENGESAHAN & TAGIHAN\nJAMINAN KESEHATAN\nBA_UAT TEST\nDIAG:I10 IZIN SAKIT:0\n***************************************\nB.DR.SPEC         0\nB.DR.UMUM         0\nB.OBAT            0\n0\n***************************************\nJUM.BIAYA : 90000\nJUM.DIBYR ASS:     0\nDIBYR PASIEN: 90000\n=====================\nSELISIH BIAYA BAYAR DITEMPAT\n",
+                        "totAmtApproved": "0",
+                        "totAmtIncurred": "90000",
+                        "totAmtNotApproved": "90000"
+                      }
+                    }
+                  },
+                  "txn_response_datetime": "20261027194848"
+                }
+              },
+              "updated_at": "2026-10-27T19:48:37+07:00",
+              "user_update": "ferdinan"
+            }
+          }

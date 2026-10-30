@@ -1,0 +1,1073 @@
+info:
+  name: Get List Slot To Change
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/paramedicschedule/get_slot?business_unit_id=53aad077-9fb1-4f08-85f3-af9fd9a36517&id_psd=415&type=exam_duration&exam_duration=10"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: query
+    - name: id_psd
+      value: "415"
+      type: query
+    - name: type
+      value: exam_duration
+      type: query
+    - name: exam_duration
+      value: "10"
+      type: query
+    - name: operational_time_id
+      value: OP003
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: exam duration 10
+    request:
+      url: "{{BASE_URL}}/v1/paramedicschedule/get_slot?business_unit_id=53aad077-9fb1-4f08-85f3-af9fd9a36517&id_psd=438&type=exam_duration&exam_duration=10"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{admission_xtoken}}"
+      params:
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: query
+        - name: id_psd
+          value: "438"
+          type: query
+        - name: type
+          value: exam_duration
+          type: query
+        - name: exam_duration
+          value: "10"
+          type: query
+        - name: operational_time_id
+          value: OP003
+          type: query
+          disabled: true
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 04 Aug 2025 01:09:59 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "7559"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "data": [
+                      {
+                          "id_date_slot": 7724,
+                          "slot": 1,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "08:00",
+                          "end_time": "08:30",
+                          "shift": "08:00 - 12:00",
+                          "start_time_change": "08:00",
+                          "end_time_change": "08:10",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7725,
+                          "slot": 2,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "08:30",
+                          "end_time": "09:00",
+                          "shift": "08:00 - 12:00",
+                          "start_time_change": "08:10",
+                          "end_time_change": "08:20",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7726,
+                          "slot": 3,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "09:00",
+                          "end_time": "09:30",
+                          "appointment_no": "APKDY/250617-00001",
+                          "shift": "08:00 - 12:00",
+                          "patient_name": "Raihan",
+                          "start_time_change": "08:20",
+                          "end_time_change": "08:30",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7727,
+                          "slot": 4,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "09:30",
+                          "end_time": "10:00",
+                          "appointment_no": "APKDY/250618-00001",
+                          "shift": "08:00 - 12:00",
+                          "patient_name": "muhammad raihan",
+                          "start_time_change": "08:30",
+                          "end_time_change": "08:40",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7728,
+                          "slot": 5,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "10:00",
+                          "end_time": "10:30",
+                          "shift": "08:00 - 12:00",
+                          "start_time_change": "08:40",
+                          "end_time_change": "08:50",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7729,
+                          "slot": 6,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "10:30",
+                          "end_time": "11:00",
+                          "appointment_no": "APKDY/250605-00013",
+                          "shift": "08:00 - 12:00",
+                          "patient_name": "muhammad raihan 123",
+                          "start_time_change": "08:50",
+                          "end_time_change": "09:00",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7730,
+                          "slot": 7,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "11:00",
+                          "end_time": "11:30",
+                          "appointment_no": "APKDY/250619-00001",
+                          "shift": "08:00 - 12:00",
+                          "patient_name": "surya adhi waskito",
+                          "start_time_change": "09:00",
+                          "end_time_change": "09:10",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7731,
+                          "slot": 8,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "11:30",
+                          "end_time": "12:00",
+                          "appointment_no": "REG/KDY/250620-0011",
+                          "shift": "08:00 - 12:00",
+                          "start_time_change": "09:10",
+                          "end_time_change": "09:20",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7732,
+                          "slot": 9,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "13:00",
+                          "end_time": "13:30",
+                          "shift": "13:00 - 17:00",
+                          "start_time_change": "09:20",
+                          "end_time_change": "09:30",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7733,
+                          "slot": 10,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "13:30",
+                          "end_time": "14:00",
+                          "is_block": true,
+                          "shift": "13:00 - 17:00",
+                          "start_time_change": "09:30",
+                          "end_time_change": "09:40",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7734,
+                          "slot": 11,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "14:00",
+                          "end_time": "14:30",
+                          "is_block": true,
+                          "shift": "13:00 - 17:00",
+                          "start_time_change": "09:40",
+                          "end_time_change": "09:50",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7735,
+                          "slot": 12,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "14:30",
+                          "end_time": "15:00",
+                          "appointment_no": "blabla",
+                          "is_block": true,
+                          "shift": "13:00 - 17:00",
+                          "start_time_change": "09:50",
+                          "end_time_change": "10:00",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7736,
+                          "slot": 13,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "15:00",
+                          "end_time": "15:30",
+                          "shift": "13:00 - 17:00",
+                          "start_time_change": "10:00",
+                          "end_time_change": "10:10",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7737,
+                          "slot": 14,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "15:30",
+                          "end_time": "16:00",
+                          "shift": "13:00 - 17:00",
+                          "start_time_change": "10:10",
+                          "end_time_change": "10:20",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7738,
+                          "slot": 15,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "16:00",
+                          "end_time": "16:30",
+                          "shift": "13:00 - 17:00",
+                          "start_time_change": "10:20",
+                          "end_time_change": "10:30",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7739,
+                          "slot": 16,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "16:30",
+                          "end_time": "17:00",
+                          "shift": "13:00 - 17:00",
+                          "start_time_change": "10:30",
+                          "end_time_change": "10:40",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7740,
+                          "slot": 17,
+                          "shift": "08:00 - 12:00",
+                          "start_time_change": "10:40",
+                          "end_time_change": "10:50",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7741,
+                          "slot": 18,
+                          "shift": "08:00 - 12:00",
+                          "start_time_change": "10:50",
+                          "end_time_change": "11:00",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7742,
+                          "slot": 19,
+                          "shift": "08:00 - 12:00",
+                          "start_time_change": "11:00",
+                          "end_time_change": "11:10",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7743,
+                          "slot": 20,
+                          "shift": "08:00 - 12:00",
+                          "start_time_change": "11:10",
+                          "end_time_change": "11:20",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7744,
+                          "slot": 21,
+                          "shift": "08:00 - 12:00",
+                          "start_time_change": "11:20",
+                          "end_time_change": "11:30",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7745,
+                          "slot": 22,
+                          "shift": "08:00 - 12:00",
+                          "start_time_change": "11:30",
+                          "end_time_change": "11:40",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7746,
+                          "slot": 23,
+                          "shift": "08:00 - 12:00",
+                          "start_time_change": "11:40",
+                          "end_time_change": "11:50",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7747,
+                          "slot": 24,
+                          "shift": "08:00 - 12:00",
+                          "start_time_change": "11:50",
+                          "end_time_change": "12:00",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7748,
+                          "slot": 1,
+                          "shift": "13:00 - 17:00",
+                          "start_time_change": "13:00",
+                          "end_time_change": "13:10",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7749,
+                          "slot": 2,
+                          "shift": "13:00 - 17:00",
+                          "start_time_change": "13:10",
+                          "end_time_change": "13:20",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7750,
+                          "slot": 3,
+                          "shift": "13:00 - 17:00",
+                          "start_time_change": "13:20",
+                          "end_time_change": "13:30",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7751,
+                          "slot": 4,
+                          "shift": "13:00 - 17:00",
+                          "start_time_change": "13:30",
+                          "end_time_change": "13:40",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7752,
+                          "slot": 5,
+                          "shift": "13:00 - 17:00",
+                          "start_time_change": "13:40",
+                          "end_time_change": "13:50",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7753,
+                          "slot": 6,
+                          "shift": "13:00 - 17:00",
+                          "start_time_change": "13:50",
+                          "end_time_change": "14:00",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7754,
+                          "slot": 7,
+                          "shift": "13:00 - 17:00",
+                          "start_time_change": "14:00",
+                          "end_time_change": "14:10",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7755,
+                          "slot": 8,
+                          "shift": "13:00 - 17:00",
+                          "start_time_change": "14:10",
+                          "end_time_change": "14:20",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7756,
+                          "slot": 9,
+                          "shift": "13:00 - 17:00",
+                          "start_time_change": "14:20",
+                          "end_time_change": "14:30",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7757,
+                          "slot": 10,
+                          "shift": "13:00 - 17:00",
+                          "start_time_change": "14:30",
+                          "end_time_change": "14:40",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7758,
+                          "slot": 11,
+                          "shift": "13:00 - 17:00",
+                          "start_time_change": "14:40",
+                          "end_time_change": "14:50",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7759,
+                          "slot": 12,
+                          "shift": "13:00 - 17:00",
+                          "start_time_change": "14:50",
+                          "end_time_change": "15:00",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7760,
+                          "slot": 13,
+                          "shift": "13:00 - 17:00",
+                          "start_time_change": "15:00",
+                          "end_time_change": "15:10",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7761,
+                          "slot": 14,
+                          "shift": "13:00 - 17:00",
+                          "start_time_change": "15:10",
+                          "end_time_change": "15:20",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7762,
+                          "slot": 15,
+                          "shift": "13:00 - 17:00",
+                          "start_time_change": "15:20",
+                          "end_time_change": "15:30",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7763,
+                          "slot": 16,
+                          "shift": "13:00 - 17:00",
+                          "start_time_change": "15:30",
+                          "end_time_change": "15:40",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7764,
+                          "slot": 17,
+                          "shift": "13:00 - 17:00",
+                          "start_time_change": "15:40",
+                          "end_time_change": "15:50",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7765,
+                          "slot": 18,
+                          "shift": "13:00 - 17:00",
+                          "start_time_change": "15:50",
+                          "end_time_change": "16:00",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7766,
+                          "slot": 19,
+                          "shift": "13:00 - 17:00",
+                          "start_time_change": "16:00",
+                          "end_time_change": "16:10",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7767,
+                          "slot": 20,
+                          "shift": "13:00 - 17:00",
+                          "start_time_change": "16:10",
+                          "end_time_change": "16:20",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7768,
+                          "slot": 21,
+                          "shift": "13:00 - 17:00",
+                          "start_time_change": "16:20",
+                          "end_time_change": "16:30",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7769,
+                          "slot": 22,
+                          "shift": "13:00 - 17:00",
+                          "start_time_change": "16:30",
+                          "end_time_change": "16:40",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7770,
+                          "slot": 23,
+                          "shift": "13:00 - 17:00",
+                          "start_time_change": "16:40",
+                          "end_time_change": "16:50",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7771,
+                          "slot": 24,
+                          "shift": "13:00 - 17:00",
+                          "start_time_change": "16:50",
+                          "end_time_change": "17:00",
+                          "is_valid": true
+                      }
+                  ]
+              }
+          }
+  - name: exam duration 60
+    request:
+      url: "{{BASE_URL}}/v1/paramedicschedule/get_slot?business_unit_id=53aad077-9fb1-4f08-85f3-af9fd9a36517&id_psd=438&type=exam_duration&exam_duration=60"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{admission_xtoken}}"
+      params:
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: query
+        - name: id_psd
+          value: "438"
+          type: query
+        - name: type
+          value: exam_duration
+          type: query
+        - name: exam_duration
+          value: "60"
+          type: query
+        - name: operational_time_id
+          value: OP003
+          type: query
+          disabled: true
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 04 Aug 2025 01:11:15 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "3081"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "data": [
+                      {
+                          "id_date_slot": 7724,
+                          "slot": 1,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "08:00",
+                          "end_time": "08:30",
+                          "shift": "08:00 - 12:00",
+                          "start_time_change": "08:00",
+                          "end_time_change": "09:00",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7725,
+                          "slot": 2,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "08:30",
+                          "end_time": "09:00",
+                          "shift": "08:00 - 12:00",
+                          "start_time_change": "09:00",
+                          "end_time_change": "10:00",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7726,
+                          "slot": 3,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "09:00",
+                          "end_time": "09:30",
+                          "appointment_no": "APKDY/250617-00001",
+                          "shift": "08:00 - 12:00",
+                          "patient_name": "Raihan",
+                          "start_time_change": "10:00",
+                          "end_time_change": "11:00",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7727,
+                          "slot": 4,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "09:30",
+                          "end_time": "10:00",
+                          "appointment_no": "APKDY/250618-00001",
+                          "shift": "08:00 - 12:00",
+                          "patient_name": "muhammad raihan",
+                          "start_time_change": "11:00",
+                          "end_time_change": "12:00",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7728,
+                          "slot": 5,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "10:00",
+                          "end_time": "10:30",
+                          "shift": "08:00 - 12:00",
+                          "start_time_change": "13:00",
+                          "end_time_change": "14:00",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7729,
+                          "slot": 6,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "10:30",
+                          "end_time": "11:00",
+                          "appointment_no": "APKDY/250605-00013",
+                          "shift": "08:00 - 12:00",
+                          "patient_name": "muhammad raihan 123",
+                          "start_time_change": "14:00",
+                          "end_time_change": "15:00",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7730,
+                          "slot": 7,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "11:00",
+                          "end_time": "11:30",
+                          "appointment_no": "APKDY/250619-00001",
+                          "shift": "08:00 - 12:00",
+                          "patient_name": "surya adhi waskito",
+                          "start_time_change": "15:00",
+                          "end_time_change": "16:00",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7731,
+                          "slot": 8,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "11:30",
+                          "end_time": "12:00",
+                          "appointment_no": "REG/KDY/250620-0011",
+                          "shift": "08:00 - 12:00",
+                          "start_time_change": "16:00",
+                          "end_time_change": "17:00",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7732,
+                          "slot": 1,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "13:00",
+                          "end_time": "13:30",
+                          "shift": "13:00 - 17:00",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7733,
+                          "slot": 2,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "13:30",
+                          "end_time": "14:00",
+                          "is_block": true,
+                          "shift": "13:00 - 17:00",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7734,
+                          "slot": 3,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "14:00",
+                          "end_time": "14:30",
+                          "is_block": true,
+                          "shift": "13:00 - 17:00",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7735,
+                          "slot": 4,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "14:30",
+                          "end_time": "15:00",
+                          "appointment_no": "blabla",
+                          "is_block": true,
+                          "shift": "13:00 - 17:00"
+                      },
+                      {
+                          "id_date_slot": 7736,
+                          "slot": 5,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "15:00",
+                          "end_time": "15:30",
+                          "shift": "13:00 - 17:00",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7737,
+                          "slot": 6,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "15:30",
+                          "end_time": "16:00",
+                          "shift": "13:00 - 17:00",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7738,
+                          "slot": 7,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "16:00",
+                          "end_time": "16:30",
+                          "shift": "13:00 - 17:00",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7739,
+                          "slot": 8,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "16:30",
+                          "end_time": "17:00",
+                          "shift": "13:00 - 17:00",
+                          "is_valid": true
+                      }
+                  ]
+              }
+          }
+  - name: operational time
+    request:
+      url: "{{BASE_URL}}/v1/paramedicschedule/get_slot?business_unit_id=53aad077-9fb1-4f08-85f3-af9fd9a36517&id_psd=438&type=operational_time&operational_time_id=OP003"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{admission_xtoken}}"
+      params:
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: query
+        - name: id_psd
+          value: "438"
+          type: query
+        - name: type
+          value: operational_time
+          type: query
+        - name: exam_duration
+          value: "60"
+          type: query
+          disabled: true
+        - name: operational_time_id
+          value: OP003
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 04 Aug 2025 01:11:41 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "3780"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "data": [
+                      {
+                          "id_date_slot": 7724,
+                          "slot": 1,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "08:00",
+                          "end_time": "08:30",
+                          "shift": "08:00 - 12:00",
+                          "start_time_change": "08:00",
+                          "end_time_change": "08:30",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7725,
+                          "slot": 2,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "08:30",
+                          "end_time": "09:00",
+                          "shift": "08:00 - 12:00",
+                          "start_time_change": "08:30",
+                          "end_time_change": "09:00",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7726,
+                          "slot": 3,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "09:00",
+                          "end_time": "09:30",
+                          "appointment_no": "APKDY/250617-00001",
+                          "shift": "08:00 - 12:00",
+                          "patient_name": "Raihan",
+                          "start_time_change": "09:00",
+                          "end_time_change": "09:30",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7727,
+                          "slot": 4,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "09:30",
+                          "end_time": "10:00",
+                          "appointment_no": "APKDY/250618-00001",
+                          "shift": "08:00 - 12:00",
+                          "patient_name": "muhammad raihan",
+                          "start_time_change": "09:30",
+                          "end_time_change": "10:00",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7728,
+                          "slot": 5,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "10:00",
+                          "end_time": "10:30",
+                          "shift": "08:00 - 12:00",
+                          "start_time_change": "10:00",
+                          "end_time_change": "10:30",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7729,
+                          "slot": 6,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "10:30",
+                          "end_time": "11:00",
+                          "appointment_no": "APKDY/250605-00013",
+                          "shift": "08:00 - 12:00",
+                          "patient_name": "muhammad raihan 123",
+                          "start_time_change": "10:30",
+                          "end_time_change": "11:00",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7730,
+                          "slot": 7,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "11:00",
+                          "end_time": "11:30",
+                          "appointment_no": "APKDY/250619-00001",
+                          "shift": "08:00 - 12:00",
+                          "patient_name": "surya adhi waskito",
+                          "start_time_change": "11:00",
+                          "end_time_change": "11:30",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7731,
+                          "slot": 8,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "11:30",
+                          "end_time": "12:00",
+                          "appointment_no": "REG/KDY/250620-0011",
+                          "shift": "08:00 - 12:00",
+                          "start_time_change": "11:30",
+                          "end_time_change": "12:00",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7732,
+                          "slot": 9,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "13:00",
+                          "end_time": "13:30",
+                          "shift": "13:00 - 17:00",
+                          "start_time_change": "12:00",
+                          "end_time_change": "12:30",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7733,
+                          "slot": 10,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "13:30",
+                          "end_time": "14:00",
+                          "is_block": true,
+                          "shift": "13:00 - 17:00",
+                          "start_time_change": "12:30",
+                          "end_time_change": "13:00",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7734,
+                          "slot": 1,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "14:00",
+                          "end_time": "14:30",
+                          "is_block": true,
+                          "shift": "13:00 - 17:00",
+                          "start_time_change": "14:00",
+                          "end_time_change": "14:30",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7735,
+                          "slot": 2,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "14:30",
+                          "end_time": "15:00",
+                          "appointment_no": "blabla",
+                          "is_block": true,
+                          "shift": "13:00 - 17:00",
+                          "start_time_change": "14:30",
+                          "end_time_change": "15:00",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7736,
+                          "slot": 3,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "15:00",
+                          "end_time": "15:30",
+                          "shift": "13:00 - 17:00",
+                          "start_time_change": "15:00",
+                          "end_time_change": "15:30",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7737,
+                          "slot": 4,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "15:30",
+                          "end_time": "16:00",
+                          "shift": "13:00 - 17:00",
+                          "start_time_change": "15:30",
+                          "end_time_change": "16:00",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7738,
+                          "slot": 5,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "16:00",
+                          "end_time": "16:30",
+                          "shift": "13:00 - 17:00",
+                          "start_time_change": "16:00",
+                          "end_time_change": "16:30",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7739,
+                          "slot": 6,
+                          "schedule_date": "2025-06-24",
+                          "start_time": "16:30",
+                          "end_time": "17:00",
+                          "shift": "13:00 - 17:00",
+                          "start_time_change": "16:30",
+                          "end_time_change": "17:00",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7740,
+                          "slot": 7,
+                          "shift": "13:00 - 17:00",
+                          "start_time_change": "17:00",
+                          "end_time_change": "17:30",
+                          "is_valid": true
+                      },
+                      {
+                          "id_date_slot": 7741,
+                          "slot": 8,
+                          "shift": "13:00 - 17:00",
+                          "start_time_change": "17:30",
+                          "end_time_change": "18:00",
+                          "is_valid": true
+                      }
+                  ]
+              }
+          }

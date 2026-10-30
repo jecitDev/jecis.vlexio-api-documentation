@@ -1,0 +1,186 @@
+info:
+  name: INSERT
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/user/business_unit/"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"active_date\": \"2023-03-14T11:00:00+07:00\",\r
+
+      \    \"business_unit_id\": \"bb36790d-3766-4ee9-ac79-d0428c9211f4\",\r
+
+      \    \"company_id\": \"85beb769-1d89-4d86-a651-25597c6aa376\",\r
+
+      \    \"expire_date\": \"2025-03-14T11:00:00+07:00\",\r
+
+      \    \"is_active\": true,\r
+
+      \    \"user_id\": \"21170\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: INSERT ALREADY EXIST
+    request:
+      url: "{{BASE_URL}}/v1/user/business_unit/"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"active_date\": \"2023-03-14T11:00:00+07:00\",\r
+
+          \    \"business_unit_id\": 1,\r
+
+          \    \"company_id\": 1,\r
+
+          \    \"expire_date\": \"2025-03-14T11:00:00+07:00\",\r
+
+          \    \"is_active\": true,\r
+
+          \    \"updated_at\": \"2024-03-14T11:00:00+07:00\",\r
+
+          \    \"user_id\": \"rama\",\r
+
+          \    \"user_update\": \"admin\"\r
+
+          }"
+    response:
+      status: 409
+      statusText: Conflict
+      headers:
+        - name: Date
+          value: Tue, 07 May 2024 04:30:18 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "54"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "business unit already exist",
+              "status": 409
+          }
+  - name: INSERT
+    request:
+      url: "{{BASE_URL}}/v1/user/business_unit/"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"active_date\": \"2023-03-14T11:00:00+07:00\",\r
+
+          \    \"business_unit_id\": 2,\r
+
+          \    \"company_id\": 1,\r
+
+          \    \"expire_date\": \"2025-03-14T11:00:00+07:00\",\r
+
+          \    \"is_active\": true,\r
+
+          \    \"updated_at\": \"2024-03-14T11:00:00+07:00\",\r
+
+          \    \"user_id\": \"21171\",\r
+
+          \    \"user_update\": \"admin\"\r
+
+          }"
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Date
+          value: Tue, 07 May 2024 04:31:15 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "102"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 201,
+              "data": {
+                  "user_id": "21171",
+                  "user_update": "admin",
+                  "updated_at": "2024-03-14T11:00:00+07:00"
+              }
+          }

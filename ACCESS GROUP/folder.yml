@@ -1,0 +1,7 @@
+info:
+  name: ACCESS GROUP
+  type: folder
+  seq: 128
+
+request:
+  auth: inherit

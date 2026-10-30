@@ -1,0 +1,101 @@
+info:
+  name: REACTIVATE
+  type: http
+  seq: 5
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/user-activation/reactivate/:user_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: user_id
+      value: "302301"
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"updated_at\": \"2025-03-21T14:48:00+07:00\",\r
+
+      \    \"user_update\": \"admin\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: REACTIVATE
+    request:
+      url: "{{GATEWAY_URL}}/v1/user-activation/reactivate/:user_id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: user_id
+          value: "302301"
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"updated_at\": \"2025-03-21T14:48:00+07:00\",\r
+
+          \    \"user_update\": \"admin\"\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Fri, 21 Mar 2025 07:45:21 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "103"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "user_id": "302301",
+                  "user_update": "admin",
+                  "updated_at": "2025-03-21T14:48:00+07:00"
+              }
+          }

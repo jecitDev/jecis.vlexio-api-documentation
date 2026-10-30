@@ -1,0 +1,322 @@
+info:
+  name: Update Guarantor Rate Book Item Rule
+  type: http
+  seq: 8
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/marketing/guarantor/contract/rate-book/session/:session_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: session_id
+      value: 6b960980-61ae-4b69-9207-b15121458c2a
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"item_id\": [\"XX-0008\", \"XX-0007\", \"YAKESGA006\", \"XX-0006\"],\r
+
+      \    \"sr_guarantor_rule_type\": \"DISCOUNT\",\r
+
+      \    \"amount_value\": 20.0,\r
+
+      \    \"is_value_in_percent\": true,\r
+
+      \t\"is_include\": true,\r
+
+      \t\"is_to_guarantor\": false,\r
+
+      \    \"tarif_comp\": [\"1\", \"2\", \"3\", \"4\"],\r
+
+      \t\"tariff_source\": \"I\",\r
+
+      \    \"user_create\": \"ferdinand\",\r
+
+      \    \"created_at\": \"2025-08-28T10:11:00+07:00\",\r
+
+      \    \"is_force\": false\r
+
+      }\r\n"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/contract/rate-book/session/:session_id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: session_id
+          value: c8b6d403-013d-491a-b5ce-ee2c6f4d713b
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"item_id\": [\"XX-0008\", \"XX-0007\", \"YAKESGA006\", \"XX-0006\"],\r
+
+          \    \"sr_guarantor_rule_type\": \"DISCOUNT\",\r
+
+          \    \"amount_value\": 20.0,\r
+
+          \    \"is_value_in_percent\": true,\r
+
+          \t\"is_include\": true,\r
+
+          \t\"is_to_guarantor\": false,\r
+
+          \    \"tarif_comp\": [\"1\", \"2\", \"3\", \"4\"],\r
+
+          \t\"tariff_source\": \"I\",\r
+
+          \    \"user_create\": \"ferdinand\",\r
+
+          \    \"created_at\": \"2025-08-28T10:11:00+07:00\",\r
+
+          \    \"is_force\": true\r
+
+          }\r\n"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 08 Sep 2025 01:46:55 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "40"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "status": "success"
+              }
+          }
+  - name: Conflict
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/contract/rate-book/session/:session_id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: session_id
+          value: 6b960980-61ae-4b69-9207-b15121458c2a
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"item_id\": [\"XX-0008\", \"XX-0007\", \"YAKESGA006\", \"XX-0006\"],\r
+
+          \    \"sr_guarantor_rule_type\": \"DISCOUNT\",\r
+
+          \    \"amount_value\": 20.0,\r
+
+          \    \"is_value_in_percent\": true,\r
+
+          \t\"is_include\": true,\r
+
+          \t\"is_to_guarantor\": false,\r
+
+          \    \"tarif_comp\": [\"1\", \"2\", \"3\", \"4\"],\r
+
+          \t\"tariff_source\": \"I\",\r
+
+          \    \"user_create\": \"ferdinand\",\r
+
+          \    \"created_at\": \"2025-08-28T10:11:00+07:00\",\r
+
+          \    \"is_force\": false\r
+
+          }\r\n"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 08 Sep 2025 01:57:11 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "2222"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "conflict_items": [
+                      {
+                          "amount_value": 20,
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "contract_id": "",
+                          "created_at": "2025-08-28T10:11:00+07:00",
+                          "department": "",
+                          "is_include": true,
+                          "is_to_guarantor": false,
+                          "is_value_in_percent": true,
+                          "item_id": "YAKESGA006",
+                          "item_name": "Phaco IOL Aspheric Anestesi Lokal Sedasi Yankesga",
+                          "price": 13500000,
+                          "rate_book_id": "1f5a1e7d-165a-4c4e-ae27-826fd64fc876",
+                          "sentra": "Refractive",
+                          "service_unit": "OPERATING THEATRE",
+                          "sr_guarantor_rule_type": "DISCOUNT",
+                          "sub_service": "Phaco",
+                          "tarif_comp": [
+                              "1",
+                              "2",
+                              "3",
+                              "4"
+                          ],
+                          "tariff_source": "I",
+                          "user_create": "ferdinand"
+                      },
+                      {
+                          "amount_value": 20,
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "contract_id": "",
+                          "created_at": "2025-08-28T10:11:00+07:00",
+                          "department": "",
+                          "is_include": true,
+                          "is_to_guarantor": false,
+                          "is_value_in_percent": true,
+                          "item_id": "XX-0008",
+                          "item_name": "IOL Budget Non Aspheric",
+                          "price": 460000,
+                          "rate_book_id": "1f5a1e7d-165a-4c4e-ae27-826fd64fc876",
+                          "sentra": "Refractive",
+                          "service_unit": "OPERATING THEATRE",
+                          "sr_guarantor_rule_type": "DISCOUNT",
+                          "sub_service": "Other Refractive",
+                          "tarif_comp": [
+                              "1",
+                              "2",
+                              "3",
+                              "4"
+                          ],
+                          "tariff_source": "I",
+                          "user_create": "ferdinand"
+                      },
+                      {
+                          "amount_value": 20,
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "contract_id": "",
+                          "created_at": "2025-08-28T10:11:00+07:00",
+                          "department": "",
+                          "is_include": true,
+                          "is_to_guarantor": false,
+                          "is_value_in_percent": true,
+                          "item_id": "XX-0007",
+                          "item_name": "Drill",
+                          "price": 610000,
+                          "rate_book_id": "1f5a1e7d-165a-4c4e-ae27-826fd64fc876",
+                          "sentra": "Oculoplasty",
+                          "service_unit": "OPERATING THEATRE",
+                          "sr_guarantor_rule_type": "DISCOUNT",
+                          "sub_service": "Non Sub Service",
+                          "tarif_comp": [
+                              "1",
+                              "2",
+                              "3",
+                              "4"
+                          ],
+                          "tariff_source": "I",
+                          "user_create": "ferdinand"
+                      },
+                      {
+                          "amount_value": 20,
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "contract_id": "",
+                          "created_at": "2025-08-28T10:11:00+07:00",
+                          "department": "",
+                          "is_include": true,
+                          "is_to_guarantor": false,
+                          "is_value_in_percent": true,
+                          "item_id": "XX-0006",
+                          "item_name": "Tubex Tf",
+                          "price": 360000,
+                          "rate_book_id": "1f5a1e7d-165a-4c4e-ae27-826fd64fc876",
+                          "sentra": "Non Centra",
+                          "service_unit": "LABORATORIUM",
+                          "sr_guarantor_rule_type": "DISCOUNT",
+                          "sub_service": "Non Referral",
+                          "tarif_comp": [
+                              "1",
+                              "2",
+                              "3",
+                              "4"
+                          ],
+                          "tariff_source": "I",
+                          "user_create": "ferdinand"
+                      }
+                  ]
+              }
+          }

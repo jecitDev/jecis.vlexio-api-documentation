@@ -1,0 +1,38 @@
+info:
+  name: Location - Add
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/Location/"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+      \    \"location_id\": \"BL101\",\r
+
+      \    \"location_name\": \"LABORATORIUM\",\r
+
+      \    \"Short_Name\":\"xxxx\",\r
+
+      \    \"is_active\": true,\r
+
+      \    \"user_create\": \"SIJEC\",\r
+
+      \    \"created_at\": \"2015-03-19T13:26:21+07:00\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

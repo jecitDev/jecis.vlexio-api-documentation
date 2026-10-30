@@ -1,0 +1,35 @@
+info:
+  name: AUTH - POST AUTHS REFRESH TOKEN
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/auths/refresh_token"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"refresh_token\":\"{{x-refresh-token}}\"\r
+
+      }"
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: "var data = res.getBody();\r
+
+        bru.setCollectionVar(\"xtoken\", data.data.access_token);\r
+
+        bru.setCollectionVar(\"x-refresh-token\", data.data.refresh_token);"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

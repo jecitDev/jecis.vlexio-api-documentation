@@ -1,0 +1,168 @@
+info:
+  name: List
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/letterheads?page=1&page_size=10&sort_by=updated_at&sort_order=asc&business_unit_id=53aad077-9fb1-4f08-85f3-af9fd9a36517"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: page_size
+      value: "10"
+      type: query
+    - name: sort_by
+      value: updated_at
+      type: query
+    - name: sort_order
+      value: asc
+      type: query
+    - name: keywords
+      value: test
+      type: query
+      disabled: true
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: query
+    - name: m_type_id
+      value: 1c7124bc-a4b7-4634-ad26-b39eddf2c19b
+      type: query
+      disabled: true
+    - name: is_active
+      value: "false"
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: List
+    request:
+      url: "{{BASE_URL}}/v1/letterheads?page=1&page_size=10&sort_by=updated_at&sort_order=asc&business_unit_id=53aad077-9fb1-4f08-85f3-af9fd9a36517"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: page_size
+          value: "10"
+          type: query
+        - name: sort_by
+          value: updated_at
+          type: query
+        - name: sort_order
+          value: asc
+          type: query
+        - name: keywords
+          value: test
+          type: query
+          disabled: true
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: query
+        - name: m_type_id
+          value: 1c7124bc-a4b7-4634-ad26-b39eddf2c19b
+          type: query
+          disabled: true
+        - name: is_active
+          value: "false"
+          type: query
+          disabled: true
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Wed, 24 Sep 2025 09:28:04 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "1356"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "page": 1,
+                  "page_size": 10,
+                  "total_items": 3,
+                  "letterHeads": [
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "id": "cb2fac6a-e6d0-45f3-a17e-06c22c51f131",
+                          "name": "test",
+                          "url": "/file_storage/89b56326-dda1-4731-b656-8198151c1eb1/2da6a1bd-ba62-43ec-91f8-4085d5d6d498/53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "m_type_id": "1c7124bc-a4b7-4634-ad26-b39eddf2c19b",
+                          "m_type_name": "-",
+                          "is_active": true,
+                          "created_at": "2025-03-18T14:08:41+07:00",
+                          "user_create": "ferdinand",
+                          "updated_at": "2025-09-24T14:08:41+07:00",
+                          "user_update": "ferdinand"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "id": "e2331208-f962-4811-9585-36b4fee25a67",
+                          "name": "test",
+                          "url": "/file_storage/79b01c03-8539-4d0f-b08d-345e6f3c8980/2da6a1bd-ba62-43ec-91f8-4085d5d6d498/53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "m_type_id": "1c7124bc-a4b7-4634-ad26-b39eddf2c19b",
+                          "m_type_name": "-",
+                          "is_active": true,
+                          "created_at": "2025-03-18T14:08:41+07:00",
+                          "user_create": "ferdinand"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "id": "76876532-e9a4-4597-9564-50ac222fa6fc",
+                          "name": "test",
+                          "url": "/file_storage/7c6c4e01-052e-4730-ac25-ac6141d3fcf8/2da6a1bd-ba62-43ec-91f8-4085d5d6d498/53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "m_type_id": "1c7124bc-a4b7-4634-ad26-b39eddf2c19b",
+                          "m_type_name": "-",
+                          "is_active": true,
+                          "created_at": "2025-03-18T14:08:41+07:00",
+                          "user_create": "ferdinand"
+                      }
+                  ]
+              }
+          }

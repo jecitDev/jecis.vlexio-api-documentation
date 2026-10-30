@@ -1,0 +1,7 @@
+info:
+  name: COUNTRY
+  type: folder
+  seq: 112
+
+request:
+  auth: inherit

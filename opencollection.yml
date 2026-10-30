@@ -1,0 +1,34 @@
+opencollection: 1.0.0
+info:
+  name: 0. JECIS's API Specification
+config:
+  proxy:
+    inherit: true
+    config:
+      protocol: http
+      hostname: ""
+      port: ""
+      auth:
+        username: ""
+        password: ""
+      bypassProxy: ""
+request:
+  variables:
+    - name: xtoken
+      value: ""
+    - name: x-refresh-token
+      value: ""
+    - name: API_TOKEN
+      value: ""
+    - name: master_xtoken
+      value: ""
+    - name: guarantor_item_rule_session_id
+      value: ""
+    - name: clickup_personal_token_0q1l
+      value: ""
+bundled: false
+extensions:
+  bruno:
+    ignore:
+      - node_modules
+      - .git

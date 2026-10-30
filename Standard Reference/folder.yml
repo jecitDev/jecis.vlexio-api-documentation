@@ -1,0 +1,24 @@
+info:
+  name: Standard Reference
+  type: folder
+  seq: 39
+
+request:
+  auth: inherit
+
+docs:
+  content: |-
+    ### **\[TS-220\] \[MASTER\]** STANDARD REFERENCE #1.0.3
+
+    ##### April 4, 2024
+
+    - CRUD Bulk `[Enhance]`
+        
+    - Handle Redis Key `[Enhance]`
+        
+    - CRUD Common `[Enhance]`
+        
+    - Add field Company ID and Business Unit ID `[Enhance]`
+        
+    - Rename Filename & Package `Refactor`
+  type: text/markdown

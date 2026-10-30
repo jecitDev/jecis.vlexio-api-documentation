@@ -1,0 +1,43 @@
+info:
+  name: Patch
+  type: http
+  seq: 5
+
+http:
+  method: PATCH
+  url: "{{BASE_URL}}/v1/bookings/:business_unit_id/:booking_no"
+  headers:
+    - name: x-token
+      value: "{{admission_xtoken}}"
+  params:
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+    - name: booking_no
+      value: TEST-BOOKING-NO
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"user_update\": \"admin\",\r
+
+      \    \"updated_at\": \"2025-03-18T14:08:41+07:00\",\r
+
+      \    \"data\": [\r
+
+      \        { \"field\": \"room_id\", \"value\": \"RM05\" },\r
+
+      \        { \"field\": \"patient_id\", \"value\": \"PT003\" }\r
+
+      \    ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

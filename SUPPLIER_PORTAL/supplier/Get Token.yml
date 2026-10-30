@@ -1,0 +1,28 @@
+info:
+  name: Get Token
+  type: http
+  seq: 8
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/Supplier-Portal/Supplier/GetTokenSupplierPortal"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"email\": \"fernando.ere@mail.com\",\r
+
+      \    \"business_unit_id\": \"33b109c5-dd64-480c-8100-68fe17deaf3e\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

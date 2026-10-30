@@ -1,0 +1,7 @@
+info:
+  name: MASTER REFERENCE ACCOUNT
+  type: folder
+  seq: 113
+
+request:
+  auth: inherit

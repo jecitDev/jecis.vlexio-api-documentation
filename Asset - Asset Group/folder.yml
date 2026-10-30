@@ -1,0 +1,7 @@
+info:
+  name: Asset - Asset Group
+  type: folder
+  seq: 8
+
+request:
+  auth: inherit

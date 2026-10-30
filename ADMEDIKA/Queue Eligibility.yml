@@ -1,0 +1,162 @@
+info:
+  name: Queue Eligibility
+  type: http
+  seq: 7
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/admedika/queues/:id/eligibility"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-Branch-ID
+      value: "{{xbranchid}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  params:
+    - name: id
+      value: a9de1d85-9349-44c0-9cc1-069952c8abb6
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \  \"terminal_id\": \"12372351\",\r
+
+      \  \"card_no\": \"8000991200072687\",\r
+
+      \  \"coverage_id\": \"02\",\r
+
+      \  \"diagnosis_code_list\": \"I10\",\r
+
+      \  \"physician_name\": \"dr. Test\",\r
+
+      \  \"accident_flag\": \"N\",\r
+
+      \  \"surgical_flag\": \"N\",\r
+
+      \  \"room_type\": \"\",\r
+
+      \  \"room_price\": \"\",\r
+
+      \  \"remarks\": \"\",\r
+
+      \  \"business_unit_id\": \"33b109c5-dd64-480c-8100-68fe17deaf3e\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Queue Eligibility
+    request:
+      url: "{{BASE_URL}}/v1/admedika/queues/:id/eligibility"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-Branch-ID
+          value: "{{xbranchid}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      params:
+        - name: id
+          value: a9de1d85-9349-44c0-9cc1-069952c8abb6
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \  \"terminal_id\": \"12372351\",\r
+
+          \  \"card_no\": \"8000991200072687\",\r
+
+          \  \"coverage_id\": \"02\",\r
+
+          \  \"diagnosis_code_list\": \"I10\",\r
+
+          \  \"physician_name\": \"dr. Test\",\r
+
+          \  \"accident_flag\": \"N\",\r
+
+          \  \"surgical_flag\": \"N\",\r
+
+          \  \"room_type\": \"\",\r
+
+          \  \"room_price\": \"\",\r
+
+          \  \"remarks\": \"\",\r
+
+          \  \"business_unit_id\": \"33b109c5-dd64-480c-8100-68fe17deaf3e\"\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 27 Oct 2026 12:33:19 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "740"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+            "code": 200,
+            "data": {
+              "claim_id": "1dcfafc1-abc8-4212-a115-5b6e7522cd59",
+              "created_at": "2026-10-27T19:33:18+07:00",
+              "response": {
+                "output": {
+                  "reference_id": 924527,
+                  "status_code": 910,
+                  "status_msg": "Error on txnData",
+                  "txn_data": {
+                    "eligibilityResponse": {
+                      "eligibility": {
+                        "cardNo": "8000991200072687",
+                        "errorCode": 1998,
+                        "errorDesc": "Rejected -> Have a pending outpatient claims [GP @ADMEDIKA MC] [clStatus:08-ELIGIBILITY APPROVED] Please proceed with discharge transaction!",
+                        "patientName": "ADM TEST LIMA",
+                        "pd": "Principal",
+                        "principalName": "",
+                        "printOut": "Have a pending outpatient claims [GP @ADMEDIKA MC] [clStatus:08-ELIGIBILITY APPROVED] Please proceed with discharge transaction!"
+                      }
+                    }
+                  },
+                  "txn_response_datetime": "20261027193319"
+                }
+              },
+              "user_create": "ferdinan"
+            }
+          }

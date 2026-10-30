@@ -1,0 +1,7 @@
+info:
+  name: Paramedic Schedule
+  type: folder
+  seq: 94
+
+request:
+  auth: inherit

@@ -1,0 +1,195 @@
+info:
+  name: VALIDATE ACTIVATION CODE
+  type: http
+  seq: 7
+
+http:
+  method: GET
+  url: "{{BROKER_URL}}/auth_activation/validate/:user_id/:activation_code"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+      disabled: true
+  params:
+    - name: user_id
+      value: "302308"
+      type: path
+    - name: activation_code
+      value: 6e5cf6f6-94fc-42ff-9db8-5cc6d7caf5f9
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: NOT MATCH
+    request:
+      url: "{{BROKER_URL}}/auth_activation/validate/:user_id/:activation_code"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+          disabled: true
+      params:
+        - name: user_id
+          value: "302301"
+          type: path
+        - name: activation_code
+          value: e36d5626-b96d-45e7-a6a1-3fefd83a3e66
+          type: path
+    response:
+      status: 403
+      statusText: Forbidden
+      headers:
+        - name: Date
+          value: Fri, 21 Mar 2025 08:03:17 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "57"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+              "message": "user_activation.code_not_match",
+              "status": 403
+          }
+  - name: MATCH
+    request:
+      url: "{{BROKER_URL}}/auth_activation/validate/:user_id/:activation_code"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+          disabled: true
+      params:
+        - name: user_id
+          value: "302301"
+          type: path
+        - name: activation_code
+          value: 924ef2a1-23eb-4eba-b3d9-2c4cc6640128
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Fri, 21 Mar 2025 08:04:14 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "137"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "user_id": "302301",
+                  "activation_code": "924ef2a1-23eb-4eba-b3d9-2c4cc6640128",
+                  "email": "iskandarferdinand12@gmail.com"
+              }
+          }
+  - name: ALREADY ACTIVATED
+    request:
+      url: "{{BROKER_URL}}/auth_activation/validate/:user_id/:activation_code"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+          disabled: true
+      params:
+        - name: user_id
+          value: "302301"
+          type: path
+        - name: activation_code
+          value: 4c27bec0-7f9a-4a36-930a-2efd864ec499
+          type: path
+    response:
+      status: 500
+      statusText: Internal Server Error
+      headers:
+        - name: Date
+          value: Mon, 24 Mar 2025 08:23:23 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "60"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+              "message": "user_activation.already_activated",
+              "status": 500
+          }

@@ -1,0 +1,151 @@
+info:
+  name: Patch
+  type: http
+  seq: 3
+http:
+  method: PATCH
+  url: "{{BASE_URL}}/v1/business-unit-registrations/:id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  params:
+    - name: id
+      value: fdafb965-a800-47e3-9440-dbbd32c7e304
+      type: path
+  body:
+    type: json
+    data: "{\r\n    \"updated_at\": \"2025-09-03T14:08:41+07:00\",\r\n    \"user_update\": \"ferdinand\",\r\n    \"data\": [\r\n        {\"field\": \"issuing_country\", \"value\": \"IDN\"}\r\n    ]\r\n}"
+  auth:
+    type: bearer
+    token: "{{xtoken}}"
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/business-unit-registrations/:id"
+      method: PATCH
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      params:
+        - name: id
+          value: fdafb965-a800-47e3-9440-dbbd32c7e304
+          type: path
+      body:
+        type: json
+        data: "{\r\n    \"updated_at\": \"2025-09-03T14:08:41+07:00\",\r\n    \"user_update\": \"ferdinand\",\r\n    \"data\": [\r\n        {\"field\": \"value\", \"value\": \"01.234.567.8-091.000\"}\r\n    ]\r\n}"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 13 Oct 2025 07:33:59 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "132"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "id": "fdafb965-a800-47e3-9440-dbbd32c7e304",
+                  "updated_at": "2025-10-13T14:34:00+07:00",
+                  "user_update": "ferdinand"
+              }
+          }
+  - name: Not Found
+    request:
+      url: "{{BASE_URL}}/v1/business-unit-registrations/:id"
+      method: PATCH
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      params:
+        - name: id
+          value: fdafb965-a800-47e3-9440-dbbd32c7e305
+          type: path
+      body:
+        type: json
+        data: "{\r\n    \"updated_at\": \"2025-09-03T14:08:41+07:00\",\r\n    \"user_update\": \"ferdinand\",\r\n    \"data\": [\r\n        {\"field\": \"value\", \"value\": \"01.234.567.8-091.000\"}\r\n    ]\r\n}"
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Date
+          value: Mon, 13 Oct 2025 07:34:19 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "64"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "business_unit_registrations.not_found",
+              "status": 404
+          }

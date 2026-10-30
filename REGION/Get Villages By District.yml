@@ -1,0 +1,143 @@
+info:
+  name: Get Villages By District
+  type: http
+  seq: 8
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/regions/districts/:district/villages?regency=administrasi jakarta pusat&province=dki jakarta&is_active=true&page=1&page_size=10"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: regency
+      value: administrasi jakarta pusat
+      type: query
+    - name: province
+      value: dki jakarta
+      type: query
+    - name: is_active
+      value: "true"
+      type: query
+    - name: page
+      value: "1"
+      type: query
+    - name: page_size
+      value: "10"
+      type: query
+    - name: district
+      value: Cempaka Putih
+      type: path
+  body:
+    type: json
+    data: ""
+  auth: inherit
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL_SERVICE_BROKER}}/v1/regions/districts/:district/villages?regency=administrasi jakarta pusat&province=dki jakarta&is_active=true&page=1&page_size=10"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: admin
+      params:
+        - name: regency
+          value: administrasi jakarta pusat
+          type: query
+        - name: province
+          value: dki jakarta
+          type: query
+        - name: is_active
+          value: "true"
+          type: query
+        - name: page
+          value: "1"
+          type: query
+        - name: page_size
+          value: "10"
+          type: query
+        - name: district
+          value: Cempaka Putih
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Fri, 31 Oct 2025 03:28:57 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "655"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "district": "Cempaka Putih",
+                  "regency": "Administrasi Jakarta Pusat",
+                  "province": "DKI Jakarta",
+                  "page": 1,
+                  "page_size": 10,
+                  "total_items": 3,
+                  "villages": [
+                      {
+                          "id": "e82b3ced-fd56-431f-8478-12a0debc49cc",
+                          "code": 10520,
+                          "village": "Cempaka Putih Barat",
+                          "latitude": -6.1808996,
+                          "longitude": 106.86339,
+                          "elevation": 11,
+                          "timezone": "WIB"
+                      },
+                      {
+                          "id": "b98891df-ca37-4ba9-9042-7c20e08a437f",
+                          "code": 10510,
+                          "village": "Cempaka Putih Timur",
+                          "latitude": -6.1775465,
+                          "longitude": 106.87157,
+                          "elevation": 8,
+                          "timezone": "WIB"
+                      },
+                      {
+                          "id": "3ed4b8aa-61e1-4654-9623-7fb14dad6df8",
+                          "code": 10570,
+                          "village": "Rawasari",
+                          "latitude": -6.1896553,
+                          "longitude": 106.866684,
+                          "elevation": 11,
+                          "timezone": "WIB"
+                      }
+                  ]
+              }
+          }

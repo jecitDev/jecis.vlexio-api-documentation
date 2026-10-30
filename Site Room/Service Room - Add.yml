@@ -1,0 +1,145 @@
+info:
+  name: Service Room - Add
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/MSiteRoom"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{ \r
+
+      \    \"company_id\": \"2da6a1bd-ba62-43ec-91f8-4085d5d6d498\",\r
+
+      \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+      \    \"department_id\": \"1\",\r
+
+      \    \"site_room_name\": \"IT ROOM 07\",\r
+
+      \    \"site_room_description\": \"Desc Consultation IT ROOM\",\r
+
+      \    \"floor_level\": \"2\",\r
+
+      \    \"room_id\": \"zSK07\",\r
+
+      \    \"is_active\": true,\r
+
+      \    \"user_create\": \"rama\",\r
+
+      \    \"created_at\": \"2024-09-30T07:56:26+07:00\",\r
+
+      \    \"ext_code\": \"N/A\",\r
+
+      \    \"location_id\": \"G001\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Service Room - Add API
+    request:
+      url: "{{BASE_URL}}/v1/ServiceRoom"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"site_room_id\": \"SK07\",\r
+
+          \    \"company_id\": \"2da6a1bd-ba62-43ec-91f8-4085d5d6d498\",\r
+
+          \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+          \    \"department_id\": \"1\",\r
+
+          \    \"site_room_name\": \"IT ROOM 07\",\r
+
+          \    \"site_room_description\": \"Desc Consultation IT ROOM\",\r
+
+          \    \"floor_level\": \"2\",\r
+
+          \    \"room_id\": \"zSK07\",\r
+
+          \    \"is_active\": true,\r
+
+          \    \"user_create\": \"rama\",\r
+
+          \    \"created_at\": \"2024-09-30T07:56:26+07:00\",\r
+
+          \    \"ext_code\": \"N/A\",\r
+
+          \    \"location_id\": \"G001\"\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Fri, 13 Feb 2026 01:06:39 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "409"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "site_room_id": "02.03",
+                  "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",
+                  "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "department_id": "1",
+                  "site_room_name": "IT ROOM 07",
+                  "site_room_description": "Desc Consultation IT ROOM",
+                  "floor_level": "2",
+                  "room_id": "zSK07",
+                  "is_active": true,
+                  "user_create": "rama",
+                  "created_at": "2026-02-13T08:06:36+07:00",
+                  "ext_code": "N/A",
+                  "location_id": "G001"
+              }
+          }

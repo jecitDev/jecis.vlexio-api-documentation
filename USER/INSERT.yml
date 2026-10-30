@@ -1,0 +1,131 @@
+info:
+  name: INSERT
+  type: http
+  seq: 5
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/user"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r\n    \"address\": \"Jln. Terusan arjuna utara no 1\",\r\n    \"auto_capital\": false,\r\n    \"city\": \"Jakarta\",\r\n    \"county\": \"Jakarta\",\r\n    \"created_at\": \"2024-03-14T00:00:00+07:00\",\r\n    \"date_birth\": \"1994-01-01T00:00:00+07:00\",\r\n    \"email\": \"vita.rahayu@jec.co.id\",\r\n    \"font_size\": \"12\",\r\n    \"img_url\": \"\",\r\n    \"is_active\": true,\r\n    \"krs_id\": \"D324\",\r\n    \"mobile_no\": \"081219651411\",\r\n    \"nationality\": \"Indonesia\",\r\n    \"nik\": \"7371026502880231\",\r\n    \"npwp\": \"\",\r\n    \"page_after_login\": \"\",\r\n    \"phone_no\": \"\",\r\n    \"province\": \"DKI Jakarta\",\r\n    \"religion\": \"\",\r\n    \"sex\": \"M\",\r\n    \"signature_url\": \"\",\r\n    \"sr_language\": \"id-ID\",\r\n    \"sr_profession\": 1,\r\n    \"status\": \"1\",\r\n    \"user_create\": \"admin\",\r\n    \"user_id\": \"vita\",\r\n    \"user_initials\": \"dr. Vita\",\r\n    \"user_name\": \"Budr. Vita Rahayu, Sp.Mdi\",\r\n    \"user_type\": \"Doctor\",\r\n    \"password\": \"\"\r\n}"
+  auth: inherit
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: INSERT
+    request:
+      url: "{{BASE_URL}}/v1/user"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r\n    \"address\": \"Jln. Terusan arjuna utara no 1\",\r\n    \"auto_capital\": false,\r\n    \"city\": \"Jakarta\",\r\n    \"county\": \"Jakarta\",\r\n    \"created_at\": \"2024-03-14T00:00:00+07:00\",\r\n    \"date_birth\": \"1994-01-01T00:00:00+07:00\",\r\n    \"email\": \"budi@mail.com\",\r\n    \"font_size\": \"12\",\r\n    \"img_url\": \"\",\r\n    \"is_active\": true,\r\n    \"krs_id\": \"21170\",\r\n    \"mobile_no\": \"081219651411\",\r\n    \"nationality\": \"Indonesia\",\r\n    \"nik\": \"12081293091221\",\r\n    \"npwp\": \"\",\r\n    \"page_after_login\": \"\",\r\n    \"phone_no\": \"\",\r\n    \"province\": \"DKI Jakarta\",\r\n    \"religion\": \"\",\r\n    \"sex\": \"M\",\r\n    \"signature_url\": \"\",\r\n    \"sr_language\": \"id-ID\",\r\n    \"sr_profession\": 1,\r\n    \"status\": \"1\",\r\n    \"user_create\": \"admin\",\r\n    \"user_id\": \"budi\",\r\n    \"user_initials\": \"FRJS\",\r\n    \"user_name\": \"Budi\",\r\n    \"user_type\": \"StandardUser\",\r\n    \"password\": \"\"\r\n}"
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Date
+          value: Tue, 07 May 2024 04:43:12 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "101"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 201,
+              "data": {
+                  "user_id": "budi",
+                  "user_create": "admin",
+                  "created_at": "2024-03-14T00:00:00+07:00"
+              }
+          }
+  - name: DUPLICATE USER ID OR EMAIL
+    request:
+      url: "{{BASE_URL}}/v1/user"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r\n    \"address\": \"Jln. Terusan arjuna utara no 1\",\r\n    \"auto_capital\": false,\r\n    \"city\": \"Jakarta\",\r\n    \"county\": \"Jakarta\",\r\n    \"created_at\": \"2024-03-14T00:00:00+07:00\",\r\n    \"date_birth\": \"1994-01-01T00:00:00+07:00\",\r\n    \"email\": \"budi@mail.com\",\r\n    \"font_size\": \"12\",\r\n    \"img_url\": \"\",\r\n    \"is_active\": true,\r\n    \"krs_id\": \"21170\",\r\n    \"mobile_no\": \"081219651411\",\r\n    \"nationality\": \"Indonesia\",\r\n    \"nik\": \"12081293091221\",\r\n    \"npwp\": \"\",\r\n    \"page_after_login\": \"\",\r\n    \"phone_no\": \"\",\r\n    \"province\": \"DKI Jakarta\",\r\n    \"religion\": \"\",\r\n    \"sex\": \"M\",\r\n    \"signature_url\": \"\",\r\n    \"sr_language\": \"id-ID\",\r\n    \"sr_profession\": 1,\r\n    \"status\": \"1\",\r\n    \"user_create\": \"admin\",\r\n    \"user_id\": \"budi\",\r\n    \"user_initials\": \"FRJS\",\r\n    \"user_name\": \"Budi\",\r\n    \"user_type\": \"StandardUser\",\r\n    \"password\": \"\"\r\n}"
+    response:
+      status: 500
+      statusText: Internal Server Error
+      headers:
+        - name: Date
+          value: Tue, 07 May 2024 04:43:41 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "60"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "user id or email is already exist",
+              "status": 500
+          }

@@ -1,0 +1,7 @@
+info:
+  name: MASTER EXAMINATION
+  type: folder
+  seq: 119
+
+request:
+  auth: inherit

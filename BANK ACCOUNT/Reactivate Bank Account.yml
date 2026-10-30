@@ -1,0 +1,92 @@
+info:
+  name: Reactivate Bank Account
+  type: http
+  seq: 6
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/bankaccount/reactivate/0001/53aad077-9fb1-4f08-85f3-af9fd9a36517"
+  headers:
+    - name: x-token
+      value: "{{master_xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"user_update\": \"reactivate data\",\r
+
+      \    \"updated_at\": \"2025-04-07T10:30:00+07:00\"\r
+
+      }"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/bankaccount/reactivate/0001/53aad077-9fb1-4f08-85f3-af9fd9a36517"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{master_xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"user_update\": \"reactivate data\",\r
+
+          \    \"updated_at\": \"2025-04-07T10:30:00+07:00\"\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Wed, 09 Apr 2025 07:49:04 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "127"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "rek_id": "0001",
+                  "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "user_update": "reactivate data"
+              }
+          }

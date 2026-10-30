@@ -1,0 +1,121 @@
+info:
+  name: Insert
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/export-pages"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"business_unit_id\": \"33b109c5-dd64-480c-8100-68fe17deaf3e\",\r
+
+      \    \"export_type\": \"AssetList\",\r
+
+      \    \"format\": \"xlsx\",\r
+
+      \    \"filters\": {\r
+
+      \        \"filters\":{\r
+
+      \            \"business_unit_id\": \"33b109c5-dd64-480c-8100-68fe17deaf3e\",\r
+
+      \            \"company_id\":\"\",\r
+
+      \            \"business_unit_id_ownership\":\"33b109c5-dd64-480c-8100-68fe17deaf3e\",\r
+
+      \            \"created_at_start\":\"2026-08-01T12:10:33+07:00\",\r
+
+      \            \"created_at_end\":\"2026-10-03T12:10:33+07:00\"\r
+
+      \        },\r
+
+      \        \"fields\":[\"asset_id\",\"asset_description\",\"kode_barcode\"]\r
+
+      \    }\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Insert
+    request:
+      url: "{{BASE_URL}}/v1/export-pages"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"business_unit_id\": \"33b109c5-dd64-480c-8100-68fe17deaf3e\",\r
+
+          \    \"export_type\": \"AssetList\",\r
+
+          \    \"format\": \"pdf\",\r
+
+          \    \"filters\": {\r
+
+          \        \"test\": \"123\"\r
+
+          \    }\r
+
+          }"
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: date
+          value: Mon, 05 Oct 2026 07:30:38 GMT
+        - name: content-type
+          value: application/json
+        - name: content-length
+          value: "65"
+        - name: x-xss-protection
+          value: "0"
+        - name: x-content-type-options
+          value: nosniff
+        - name: x-frame-options
+          value: SAMEORIGIN
+        - name: cross-origin-embedder-policy
+          value: require-corp
+        - name: cross-origin-opener-policy
+          value: same-origin
+        - name: cross-origin-resource-policy
+          value: same-origin
+        - name: origin-agent-cluster
+          value: ?1
+        - name: referrer-policy
+          value: no-referrer
+        - name: x-dns-prefetch-control
+          value: off
+        - name: x-download-options
+          value: noopen
+        - name: x-permitted-cross-domain-policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+            "code": 201,
+            "data": {
+              "id": "47986026-10ed-462c-9fc8-b1c3afdc76a0"
+            }
+          }

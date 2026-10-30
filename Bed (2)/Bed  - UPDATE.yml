@@ -1,0 +1,149 @@
+info:
+  name: Bed  - UPDATE
+  type: http
+  seq: 5
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/Bed/:id/:company_id/:business_unit_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: id
+      value: B0010
+      type: path
+    - name: company_id
+      value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+      type: path
+    - name: business_unit_id
+      value: 382003f2-2ccb-4dd8-af5b-e39c093f104e
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"room_id\": \"R010\",\r
+
+      \    \"asset_id\": \"A010\",\r
+
+      \    \"class_id\": \"C0010\",\r
+
+      \    \"is_temporary\": true,\r
+
+      \    \"is_need_confirmation\": true,\r
+
+      \    \"description\": \"API desc ricky edit2\",\r
+
+      \    \"user_update\": \"GRPCEdit2\",\r
+
+      \    \"updated_at\": \"2024-09-25T13:24:42+08:00\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: API Bed  - UPDATE
+    request:
+      url: "{{BASE_URL}}/v1/Bed/:id/:company_id/:business_unit_id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: id
+          value: B0010
+          type: path
+        - name: company_id
+          value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+          type: path
+        - name: business_unit_id
+          value: 382003f2-2ccb-4dd8-af5b-e39c093f104e
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \   \r
+
+          \    \"room_id\": \"R010\",\r
+
+          \    \"asset_id\": \"A010\",\r
+
+          \    \"class_id\": \"C0010\",\r
+
+          \    \"is_temporary\": true,\r
+
+          \    \"is_need_confirmation\": true,\r
+
+          \   \r
+
+          \    \"description\": \"API desc ricky edit2\",\r
+
+          \    \"user_update\": \"GRPCEdit2\",\r
+
+          \    \"updated_at\": \"2024-09-25T13:24:42+08:00\"\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 24 Sep 2024 04:00:31 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "354"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "bed_id": "B0010",
+                  "room_id": "R010",
+                  "asset_id": "A010",
+                  "class_id": "C0010",
+                  "is_temporary": true,
+                  "is_need_confirmation": true,
+                  "user_update": "GRPCEdit2",
+                  "updated_at": "2024-09-25T13:24:42+08:00",
+                  "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",
+                  "business_unit_id": "382003f2-2ccb-4dd8-af5b-e39c093f104e",
+                  "description": "API desc ricky edit2"
+              }
+          }

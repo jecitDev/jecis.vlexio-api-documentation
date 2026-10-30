@@ -1,0 +1,7 @@
+info:
+  name: Appointment Legend
+  type: folder
+  seq: 97
+
+request:
+  auth: inherit

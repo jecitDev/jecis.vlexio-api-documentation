@@ -1,0 +1,183 @@
+info:
+  name: Update
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/ChartOfAccount/modules/:chart_of_account_id/:program_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  params:
+    - name: chart_of_account_id
+      value: e9635c50-6f5e-4249-8183-22a1dfe3309b
+      type: path
+    - name: program_id
+      value: "01.01"
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \  \"function\": \"NON_OPERATIONAL\",\r
+
+      \  \"contra_account\": \"e9635c50-6f5e-4249-8183-22a1dfe3309b\",\r
+
+      \  \"is_active\": true\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Update
+    request:
+      url: "{{BASE_URL}}/v1/ChartOfAccount/modules/:chart_of_account_id/:program_id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      params:
+        - name: chart_of_account_id
+          value: e9635c50-6f5e-4249-8183-22a1dfe3309b
+          type: path
+        - name: program_id
+          value: "01.01"
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \  \"function\": \"NON_OPERATIONAL\",\r
+
+          \  \"contra_account\": \"e9635c50-6f5e-4249-8183-22a1dfe3309b\",\r
+
+          \  \"is_active\": true\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: date
+          value: Fri, 11 Sep 2026 08:32:08 GMT
+        - name: content-type
+          value: application/json
+        - name: content-length
+          value: "305"
+        - name: x-xss-protection
+          value: "0"
+        - name: x-content-type-options
+          value: nosniff
+        - name: x-frame-options
+          value: SAMEORIGIN
+        - name: cross-origin-embedder-policy
+          value: require-corp
+        - name: cross-origin-opener-policy
+          value: same-origin
+        - name: cross-origin-resource-policy
+          value: same-origin
+        - name: origin-agent-cluster
+          value: ?1
+        - name: referrer-policy
+          value: no-referrer
+        - name: x-dns-prefetch-control
+          value: off
+        - name: x-download-options
+          value: noopen
+        - name: x-permitted-cross-domain-policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+            "code": 200,
+            "data": {
+              "chart_of_account_id": "e9635c50-6f5e-4249-8183-22a1dfe3309b",
+              "contra_account": "e9635c50-6f5e-4249-8183-22a1dfe3309b",
+              "created_at": "",
+              "function": "NON_OPERATIONAL",
+              "is_active": true,
+              "program_id": "01.01",
+              "updated_at": "2026-09-11T15:32:08+07:00",
+              "user_create": "",
+              "user_update": "ferdinand"
+            }
+          }
+  - name: Not Found
+    request:
+      url: "{{BASE_URL}}/v1/ChartOfAccount/modules/:chart_of_account_id/:program_id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      params:
+        - name: chart_of_account_id
+          value: e9635c50-6f5e-4249-8183-22a1dfe3309b
+          type: path
+        - name: program_id
+          value: "01.02"
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \  \"function\": \"NON_OPERATIONAL\",\r
+
+          \  \"contra_account\": \"e9635c50-6f5e-4249-8183-22a1dfe3309b\",\r
+
+          \  \"is_active\": true\r
+
+          }"
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: date
+          value: Fri, 11 Sep 2026 08:32:48 GMT
+        - name: content-type
+          value: application/json
+        - name: content-length
+          value: "57"
+        - name: x-xss-protection
+          value: "0"
+        - name: x-content-type-options
+          value: nosniff
+        - name: x-frame-options
+          value: SAMEORIGIN
+        - name: cross-origin-embedder-policy
+          value: require-corp
+        - name: cross-origin-opener-policy
+          value: same-origin
+        - name: cross-origin-resource-policy
+          value: same-origin
+        - name: origin-agent-cluster
+          value: ?1
+        - name: referrer-policy
+          value: no-referrer
+        - name: x-dns-prefetch-control
+          value: off
+        - name: x-download-options
+          value: noopen
+        - name: x-permitted-cross-domain-policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+            "status": 404,
+            "message": "ChartOfAccountModule.not_found"
+          }

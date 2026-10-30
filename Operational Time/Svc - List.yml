@@ -1,0 +1,234 @@
+info:
+  name: Svc - List
+  type: http
+  seq: 1
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/operationaltime/?page=1&page_size=10&is_active=true&keywords=emma&sort=ASC&sort_by=operational_time_name"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: page_size
+      value: "10"
+      type: query
+    - name: is_active
+      value: "true"
+      type: query
+    - name: keywords
+      value: emma
+      type: query
+    - name: sort
+      value: ASC
+      type: query
+    - name: sort_by
+      value: operational_time_name
+      type: query
+  body:
+    type: json
+    data: "{\r\n    \"page\": 1,\r\n    \"page_size\": 100\r\n}"
+  auth:
+    type: bearer
+    token: "{{xtoken}}"
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: Svc - List
+    request:
+      url: "{{BASE_URL}}/v1/operationaltime/?page=1&pageSize"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{XTOKEN}}"
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: pageSize
+          value: ""
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Wed, 20 Sep 2023 10:17:54 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "762"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "page": 1,
+                  "page_size": 10,
+                  "total_items": 3,
+                  "operationaltimes": [
+                      {
+                          "operational_time_id": "CESC",
+                          "operational_time_name": "10.30-16.45",
+                          "start_time_1": "10:30",
+                          "end_time_1": "16:45",
+                          "operational_time_back_color": "#FF99CC",
+                          "last_update_date_time": {
+                              "seconds": 1695203979,
+                              "nanos": 669623000
+                          },
+                          "last_update_by_user_id": "21239"
+                      },
+                      {
+                          "operational_time_id": "DR. KOAS",
+                          "operational_time_name": "08.00-11.30",
+                          "start_time_1": "08:00",
+                          "end_time_1": "11:30",
+                          "last_update_date_time": {
+                              "seconds": 1695203265,
+                              "nanos": 128682000
+                          },
+                          "last_update_by_user_id": "21239"
+                      },
+                      {
+                          "operational_time_id": "DR. TAMU",
+                          "operational_time_name": "08.00-8.30",
+                          "start_time_1": "08:00",
+                          "end_time_1": "20:30",
+                          "last_update_date_time": {
+                              "seconds": 1695202955,
+                              "nanos": 790494000
+                          },
+                          "last_update_by_user_id": "21239"
+                      }
+                  ]
+              }
+          }
+  - name: "Svc - List #2"
+    request:
+      url: "{{BASE_URL}}/v1/operationaltime/?page=1&pageSize"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{XTOKEN}}"
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: pageSize
+          value: ""
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 24 Oct 2023 05:31:49 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "650"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "page": 1,
+                  "page_size": 10,
+                  "total_items": 2,
+                  "operationaltimes": [
+                      {
+                          "operational_time_id": "POI8:00-35",
+                          "operational_time_name": "PO Dr. Iwan 08:00-08:35",
+                          "start_time_1": "08:00",
+                          "end_time_1": "08:35",
+                          "is_active": true,
+                          "created_at": {
+                              "seconds": -62135596800
+                          },
+                          "user_update": "Admin2",
+                          "updated_at": {
+                              "seconds": 1698081588,
+                              "nanos": 98082000
+                          }
+                      },
+                      {
+                          "operational_time_id": "Dr.Iwan PO",
+                          "operational_time_name": "PO Dr. Iwan",
+                          "start_time_1": "07:30",
+                          "end_time_1": "08:30",
+                          "operational_time_back_color": "#3366FF",
+                          "is_active": true,
+                          "user_create": "21239",
+                          "created_at": {
+                              "seconds": 1698055662,
+                              "nanos": 621900000
+                          },
+                          "updated_at": {
+                              "seconds": 1698055662,
+                              "nanos": 621900000
+                          }
+                      }
+                  ]
+              }
+          }

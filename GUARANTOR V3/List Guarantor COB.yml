@@ -1,0 +1,141 @@
+info:
+  name: List Guarantor COB
+  type: http
+  seq: 24
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/marketing/guarantor/cob?page=1&page_size=3&guarantor_id=168016fc-3dde-4b0e-83e0-1076fdebe9c4"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: page_size
+      value: "3"
+      type: query
+    - name: sort_order
+      value: ""
+      type: query
+      disabled: true
+    - name: sort_by
+      value: ""
+      type: query
+      disabled: true
+    - name: guarantor_id
+      value: 168016fc-3dde-4b0e-83e0-1076fdebe9c4
+      type: query
+    - name: guarantor_id_cob
+      value: ""
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/cob?page=1&page_size=3&guarantor_id=100984d4-be79-47d2-a6ac-73175a2722e8"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: page_size
+          value: "3"
+          type: query
+        - name: sort_order
+          value: ""
+          type: query
+          disabled: true
+        - name: sort_by
+          value: ""
+          type: query
+          disabled: true
+        - name: guarantor_id
+          value: 100984d4-be79-47d2-a6ac-73175a2722e8
+          type: query
+        - name: guarantor_id_cob
+          value: ""
+          type: query
+          disabled: true
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 19 Jun 2025 04:47:24 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "650"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "page": 1,
+                  "page_size": 3,
+                  "total_items": 2,
+                  "cobs": [
+                      {
+                          "seq_id": 2,
+                          "guarantor_id_cob": "ef8b39cc-0dc4-4093-9f79-47994255c7eb",
+                          "guarantor_name_cob": "PT. Sehat Selalu",
+                          "guarantor_id": "100984d4-be79-47d2-a6ac-73175a2722e8",
+                          "is_active": true,
+                          "user_create": "admin_create",
+                          "created_at": "2025-06-09T14:08:41+07:00"
+                      },
+                      {
+                          "seq_id": 1,
+                          "guarantor_id_cob": "ab0a2fe1-6d74-4404-b099-80b4130167f3",
+                          "guarantor_name_cob": "CV. Aman Sentosa Updated",
+                          "guarantor_id": "100984d4-be79-47d2-a6ac-73175a2722e8",
+                          "is_active": true,
+                          "user_create": "admin_create",
+                          "created_at": "2025-06-09T14:08:41+07:00",
+                          "user_update": "update data",
+                          "updated_at": "2025-03-26T14:08:41+07:00"
+                      }
+                  ]
+              }
+          }

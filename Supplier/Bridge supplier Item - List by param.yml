@@ -1,0 +1,141 @@
+info:
+  name: Bridge supplier Item - List by param
+  type: http
+  seq: 13
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/Supplier/items/listbyparam?id_supplier=a630a800-ef4c-4b7d-bffa-a3f97f55fb17"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: id_supplier
+      value: a630a800-ef4c-4b7d-bffa-a3f97f55fb17
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Bridge supplier Item - List by param API
+    request:
+      url: "{{BASE_URL}}/v1/Supplier/items/listbyparam?id_supplier=a630a800-ef4c-4b7d-bffa-a3f97f55fb17"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: id_supplier
+          value: a630a800-ef4c-4b7d-bffa-a3f97f55fb17
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 14 Apr 2026 01:19:49 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "1547"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "items": [
+                      {
+                          "id_supplier": "a630a800-ef4c-4b7d-bffa-a3f97f55fb17",
+                          "item_id": "43341054-68b3-42ac-9ac1-c99c97d0d903",
+                          "item_id_portal": "744c0373-3443-470c-9725-fa10e65c4972",
+                          "currency_code": "USD",
+                          "price": "150000.0000",
+                          "purchase_discount1": "5.00",
+                          "purchase_discount2": "2.50",
+                          "discount_in_nominal": "7500.0000",
+                          "price_after_discount": "142500.0000",
+                          "is_active": true,
+                          "lead_time": 7,
+                          "dpp": "135000.0000",
+                          "qty": 100,
+                          "minimal_order": 10,
+                          "unit": "PCS",
+                          "unit_po": "BOX",
+                          "ppn": "11",
+                          "price_after_ppn": "158175.0000",
+                          "is_transportation_in": true,
+                          "transportation_cost": "25000.0000",
+                          "is_consignment": false,
+                          "conversion_factor": "1.0000",
+                          "item_name_portal": "Premium Medical Gloves - Size M",
+                          "user_create": "admin_user",
+                          "created_at": "2024-02-28T13:24:42+08:00",
+                          "supplier_name": "PT Maju Bersama Jaya"
+                      },
+                      {
+                          "id_supplier": "a630a800-ef4c-4b7d-bffa-a3f97f55fb17",
+                          "item_id": "43341054-68b3-42ac-9ac1-c99c97d0d904",
+                          "item_id_portal": "744c0373-3443-470c-9725-fa10e65c4972",
+                          "currency_code": "USD",
+                          "price": "150000.0000",
+                          "purchase_discount1": "5.00",
+                          "purchase_discount2": "2.50",
+                          "discount_in_nominal": "7500.0000",
+                          "price_after_discount": "142500.0000",
+                          "is_active": true,
+                          "lead_time": 7,
+                          "dpp": "135000.0000",
+                          "qty": 100,
+                          "minimal_order": 10,
+                          "unit": "PCS",
+                          "unit_po": "BOX",
+                          "ppn": "11",
+                          "price_after_ppn": "158175.0000",
+                          "is_transportation_in": true,
+                          "transportation_cost": "25000.0000",
+                          "is_consignment": false,
+                          "conversion_factor": "1.0000",
+                          "item_name_portal": "Premium Medical Gloves - Size M",
+                          "user_create": "admin_user",
+                          "created_at": "2024-02-28T13:24:42+08:00",
+                          "supplier_name": "PT Maju Bersama Jaya"
+                      }
+                  ]
+              }
+          }

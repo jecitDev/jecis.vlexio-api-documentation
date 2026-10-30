@@ -1,0 +1,108 @@
+info:
+  name: Validate Patient
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/registration/validate_patient?patient_id=PKDY250714-0003&company_id=2da6a1bd-ba62-43ec-91f8-4085d5d6d498&business_unit_id=53aad077-9fb1-4f08-85f3-af9fd9a36517&registration_date=2025-07-21T08:00:00%2b07:00"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: patient_id
+      value: PKDY250714-0003
+      type: query
+    - name: company_id
+      value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+      type: query
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: query
+    - name: registration_date
+      value: 2025-07-21T08:00:00%2b07:00
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Validate Patient
+    request:
+      url: "{{BASE_URL}}/v1/registration/validate_patient?patient_id=PKDY250714-0003&company_id=2da6a1bd-ba62-43ec-91f8-4085d5d6d498&business_unit_id=53aad077-9fb1-4f08-85f3-af9fd9a36517&registration_date=2025-07-21T08:00:00%2b07:00"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: patient_id
+          value: PKDY250714-0003
+          type: query
+        - name: company_id
+          value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+          type: query
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: query
+        - name: registration_date
+          value: 2025-07-21T08:00:00%2b07:00
+          type: query
+      body:
+        type: json
+        data: ""
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 21 Jul 2025 03:54:17 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "183"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",
+                  "patient_id": "PKDY250714-0003",
+                  "is_available": false
+              }
+          }

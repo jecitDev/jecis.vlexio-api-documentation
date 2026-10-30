@@ -1,0 +1,81 @@
+info:
+  name: Download
+  type: http
+  seq: 4
+
+http:
+  method: PATCH
+  url: "{{BASE_URL}}/v1/export-pages/:id/download"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  params:
+    - name: id
+      value: 026baea6-7237-4b1f-901b-ba092b78217b
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Download
+    request:
+      url: "{{BASE_URL}}/v1/export-pages/:id/download"
+      method: PATCH
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      params:
+        - name: id
+          value: 038e9583-e23a-43bc-a2e1-debb00477185
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: date
+          value: Sun, 04 Oct 2026 16:30:33 GMT
+        - name: content-type
+          value: application/json
+        - name: content-length
+          value: "67"
+        - name: x-xss-protection
+          value: "0"
+        - name: x-content-type-options
+          value: nosniff
+        - name: x-frame-options
+          value: SAMEORIGIN
+        - name: cross-origin-embedder-policy
+          value: require-corp
+        - name: cross-origin-opener-policy
+          value: same-origin
+        - name: cross-origin-resource-policy
+          value: same-origin
+        - name: origin-agent-cluster
+          value: ?1
+        - name: referrer-policy
+          value: no-referrer
+        - name: x-dns-prefetch-control
+          value: off
+        - name: x-download-options
+          value: noopen
+        - name: x-permitted-cross-domain-policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+            "code": 200,
+            "data": {
+              "message": "Successfully download export jobs"
+            }
+          }

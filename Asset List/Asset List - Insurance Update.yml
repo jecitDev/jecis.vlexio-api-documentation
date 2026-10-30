@@ -1,0 +1,146 @@
+info:
+  name: Asset List - Insurance Update
+  type: http
+  seq: 13
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/AssetList/insurance/:id/:company_id/:business_unit_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: id
+      value: 999.ROOM01.001
+      type: path
+    - name: company_id
+      value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+      type: path
+    - name: business_unit_id
+      value: f64e10b4-0cbf-4fee-ac09-1a4fa199696c
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"sequence_no\": \"001\",\r
+
+      \    \"policy_number\": \"P000212\",\r
+
+      \    \"insurer\": \"PT naNdoTama Abadi 2 edit API\",\r
+
+      \    \"insured_number\": \"INS0021\",\r
+
+      \    \"insurance_start_date\": \"2024-11-03T13:24:42+08:00\",\r
+
+      \    \"insurance_end_date\": \"2025-10-09T13:24:42+08:00\",\r
+
+      \    \"comprehensive_insurance\": \"adadadasdasd\",\r
+
+      \    \"user_update\": \"rickylaiQ\",\r
+
+      \    \"updated_at\": \"2024-11-03T13:24:42+08:00\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Asset List - Insurance Add API
+    request:
+      url: "{{BASE_URL}}/v1/AssetList/insurance/:id/:company_id/:business_unit_id"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: id
+          value: 999.ROOM01.002
+          type: path
+        - name: company_id
+          value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+          type: path
+        - name: business_unit_id
+          value: f64e10b4-0cbf-4fee-ac09-1a4fa199696c
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"policy_number\": \"P000212\",\r
+
+          \    \"insurer\": \"PT naNdoTama Abadi 2\",\r
+
+          \    \"insured_number\": \"INS0021\",\r
+
+          \    \"insurance_start_date\": \"2024-11-03T13:24:42+08:00\",\r
+
+          \    \"insurance_end_date\": \"2025-10-09T13:24:42+08:00\",\r
+
+          \    \"comprehensive_insurance\": \"adadadasdasd\",\r
+
+          \    \"user_update\": \"ricky\",\r
+
+          \    \"updated_at\": \"2024-11-03T13:24:42+08:00\"\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Wed, 07 Jan 2026 04:18:26 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "359"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "asset_id": "999.ROOM01.002",
+                  "sequence_no": "002",
+                  "policy_number": "P000212",
+                  "insurer": "PT naNdoTama Abadi 2",
+                  "insured_number": "INS0021",
+                  "insurance_start_date": "2024-11-03T13:24:42+08:00",
+                  "insurance_end_date": "2025-10-09T13:24:42+08:00",
+                  "comprehensive_insurance": "adadadasdasd",
+                  "user_update": "ricky",
+                  "updated_at": "2026-01-07T11:18:26+07:00"
+              }
+          }

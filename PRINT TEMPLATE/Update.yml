@@ -1,0 +1,128 @@
+info:
+  name: Update
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/print-templates/:company_id/:id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: company_id
+      value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+      type: path
+    - name: id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"name\": \"Template D\",\r
+
+      \    \"description\": \"Optional description\",\r
+
+      \    \"component\": \"discharge\",\r
+
+      \    \"sr_print_type\": \"A4\",\r
+
+      \    \"note\": \"Optional note update\",\r
+
+      \    \"is_active\": true,\r
+
+      \    \"user_update\": \"update\",\r
+
+      \    \"updated_at\": \"2025-07-16T12:00:00+07:00\"\r
+
+      }"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Update
+    request:
+      url: "{{BASE_URL}}/v1/print-templates/:company_id/:id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: company_id
+          value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+          type: path
+        - name: id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"name\": \"Template D\",\r
+
+          \    \"description\": \"Optional description\",\r
+
+          \    \"component\": \"discharge\",\r
+
+          \    \"sr_print_type\": \"A4\",\r
+
+          \    \"note\": \"Optional note update\",\r
+
+          \    \"is_active\": true,\r
+
+          \    \"user_update\": \"update\",\r
+
+          \    \"updated_at\": \"2025-07-16T12:00:00+07:00\"\r
+
+          }"
+    response:
+      status: 400
+      statusText: Bad Request
+      headers:
+        - name: Date
+          value: Tue, 29 Jul 2025 02:36:46 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "65"
+        - name: Connection
+          value: keep-alive
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "[validation_request|required|IsActive]",
+              "status": 400
+          }

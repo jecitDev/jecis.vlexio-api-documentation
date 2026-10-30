@@ -1,0 +1,171 @@
+info:
+  name: Reactivate
+  type: http
+  seq: 7
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/letterheads/:id/reactivate"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: id
+      value: 12ed7342-dee6-453d-bc21-095fb2be7eac
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"updated_at\": \"2025-09-24T14:08:41+07:00\",\r
+
+      \    \"user_update\": \"ferdinand\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/letterheads/:id/reactivate"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: id
+          value: 12ed7342-dee6-453d-bc21-095fb2be7ead
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"updated_at\": \"2025-09-24T14:08:41+07:00\",\r
+
+          \    \"user_update\": \"ferdinand\"\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Wed, 24 Sep 2025 09:31:00 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "361"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36518",
+                  "id": "12ed7342-dee6-453d-bc21-095fb2be7ead",
+                  "name": "test123",
+                  "url": "test123/doc321",
+                  "m_type_id": "1c7124bc-a4b7-4634-ad26-b39eddf2c19b",
+                  "is_active": true,
+                  "created_at": "2025-03-18T14:08:41+07:00",
+                  "user_create": "admin",
+                  "updated_at": "2025-09-24T14:08:41+07:00",
+                  "user_update": "ferdinand"
+              }
+          }
+  - name: Not Found
+    request:
+      url: "{{BASE_URL}}/v1/letterheads/:id/reactivate"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: id
+          value: 12ed7342-dee6-453d-bc21-095fb2be7eac
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"updated_at\": \"2025-09-24T14:08:41+07:00\",\r
+
+          \    \"user_update\": \"ferdinand\"\r
+
+          }"
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Date
+          value: Wed, 24 Sep 2025 09:31:18 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "49"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "letter_heads.not_found",
+              "status": 404
+          }

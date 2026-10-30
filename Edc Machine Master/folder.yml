@@ -1,0 +1,7 @@
+info:
+  name: Edc Machine Master
+  type: folder
+  seq: 83
+
+request:
+  auth: inherit

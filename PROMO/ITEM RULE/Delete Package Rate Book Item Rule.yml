@@ -1,0 +1,94 @@
+info:
+  name: Delete Package Rate Book Item Rule
+  type: http
+  seq: 4
+
+http:
+  method: DELETE
+  url: "{{BASE_URL}}/v1/promo/rate-book/session/:session_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: session_id
+      value: 484bad64-66a0-4dc0-80ed-9a2f4f16e7d3
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"item_id\": [\"XX-0008\", \"XX-0006\"]\r
+
+      }\r\n"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/promo/rate-book/session/:session_id"
+      method: DELETE
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: session_id
+          value: 484bad64-66a0-4dc0-80ed-9a2f4f16e7d3
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"item_id\": [\"XX-0008\", \"XX-0006\"]\r
+
+          }\r\n"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 09 Sep 2025 03:03:05 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "40"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "status": "success"
+              }
+          }

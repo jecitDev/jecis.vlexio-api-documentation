@@ -1,0 +1,171 @@
+info:
+  name: Create
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/polyclinics"
+  headers:
+    - name: x-token
+      value: "{{admission_xtoken}}"
+    - name: X-User-ID
+      value: admin
+  body:
+    type: json
+    data: "{\r
+
+      \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+      \    \"name\": \"General Medicine Polyclinic\",\r
+
+      \    \"sr_registration_type\": \"IPR\",\r
+
+      \    \"is_active\": true\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Err business unit not found
+    request:
+      url: "{{BASE_URL}}/v1/polyclinics"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{admission_xtoken}}"
+        - name: X-User-ID
+          value: admin
+      body:
+        type: json
+        data: "{\r
+
+          \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36519\",\r
+
+          \    \"name\": \"General Medicine Polyclinic\",\r
+
+          \    \"sr_registration_type\": \"OUTPATIENT\",\r
+
+          \    \"is_active\": true\r
+
+          }"
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Date
+          value: Sun, 16 Nov 2025 13:31:38 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "50"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "business_unit.not_found",
+              "status": 404
+          }
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/polyclinics"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{admission_xtoken}}"
+        - name: X-User-ID
+          value: admin
+      body:
+        type: json
+        data: "{\r
+
+          \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+          \    \"name\": \"General Medicine Polyclinic\",\r
+
+          \    \"sr_registration_type\": \"IPR\",\r
+
+          \    \"is_active\": true\r
+
+          }"
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Date
+          value: Sun, 16 Nov 2025 13:48:07 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "186"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 201,
+              "data": {
+                  "id": "f0cd5207-49d5-46e8-9674-bda7c701c355",
+                  "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "user_create": "admin",
+                  "created_at": "2025-11-16T20:48:07+07:00"
+              }
+          }

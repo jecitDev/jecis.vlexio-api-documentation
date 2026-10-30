@@ -1,0 +1,38 @@
+info:
+  name: Update
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/MasterFloorLevel/:id/:business_unit_id"
+  headers:
+    - name: x-token
+      value: "{{master_xtoken}}"
+  params:
+    - name: id
+      value: "4"
+      type: path
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"floor_number\": \"121\",\r
+
+      \    \"is_active\": true,\r
+
+      \    \"user_update\": \"update data\",\r
+
+      \    \"updated_at\": \"2025-04-08T10:30:00+07:00\"\r
+
+      }"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

@@ -1,0 +1,141 @@
+info:
+  name: UPDATE
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/company/:company_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: company_id
+      value: "1"
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"updated_at\": \"2024-04-29T10:00:00+07:00\",\r
+
+      \    \"is_active\": true,\r
+
+      \    \"company_name\":\"PT. Nitra Sanatadharma\",\r
+
+      \    \"address_line\":\"Jl. Terusan Arjuna Utara No.1\",\r
+
+      \    \"phone_no\":\"02109310293019\",\r
+
+      \    \"email\":\"nsd@mail.com\",\r
+
+      \    \"pic\":\"Untung Supriyanto\",\r
+
+      \    \"user_update\": \"nando\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: UPDATE
+    request:
+      url: "{{BASE_URL}}/v1/company/:company_id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: company_id
+          value: "1"
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"updated_at\": \"2024-04-29T10:00:00+07:00\",\r
+
+          \    \"is_active\": true,\r
+
+          \    \"company_name\": \"PT. Nitra Sanatadharma\",\r
+
+          \    \"address_line\": \"Jl. Terusan Arjuna Utara No.1\",\r
+
+          \    \"phone_no\": \"02109310293019\",\r
+
+          \    \"email\": \"nsd@mail.com\",\r
+
+          \    \"pic\": \"Untung Supriyanto\",\r
+
+          \    \"user_update\": \"nando\",\r
+
+          \    \"product_ids\": [\r
+
+          \        {\r
+
+          \            \"product_id\": \"ee197431-276d-453d-857c-412f347dae19\"\r
+
+          \        },\r
+
+          \        {\r
+
+          \            \"product_id\": \"c59a1873-7e7d-44b6-a06c-4f093f59f687\"\r
+
+          \        }\r
+
+          \    ]\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 30 May 2024 01:42:18 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "99"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "company_id": 1,
+                  "user_update": "nando",
+                  "updated_at": "2024-04-29T10:00:00+07:00"
+              }
+          }

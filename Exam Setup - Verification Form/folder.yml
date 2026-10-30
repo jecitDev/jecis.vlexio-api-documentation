@@ -1,0 +1,16 @@
+info:
+  name: Exam Setup - Verification Form
+  type: folder
+  seq: 48
+
+request:
+  auth: inherit
+
+docs:
+  content: |-
+    ### \[TS-1305\] \[MASTER\]\[BE\] EXAM SETUP : VERIFICATION FORM #1.0.0
+
+    ##### Sept 17, 2024
+
+    - CRUD Common
+  type: text/markdown

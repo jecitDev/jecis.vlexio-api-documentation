@@ -1,0 +1,113 @@
+info:
+  name: Search
+  type: http
+  seq: 9
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/location/search?max_hits=3&page=1&text=LOC001&business_unit_id=53aad077-9fb1-4f08-85f3-af9fd9a36517"
+  headers:
+    - name: x-token
+      value: "{{master_xtoken}}"
+  params:
+    - name: max_hits
+      value: "3"
+      type: query
+    - name: page
+      value: "1"
+      type: query
+    - name: text
+      value: LOC001
+      type: query
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: query
+  body:
+    type: json
+    data: ""
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/location/search?max_hits=3&page=1&text=LOC001&business_unit_id=53aad077-9fb1-4f08-85f3-af9fd9a36517"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{master_xtoken}}"
+      params:
+        - name: max_hits
+          value: "3"
+          type: query
+        - name: page
+          value: "1"
+          type: query
+        - name: text
+          value: LOC001
+          type: query
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 16 Dec 2025 09:21:02 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "275"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "total": 1,
+                  "page": 1,
+                  "result": [
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "location_id": "LOC001",
+                          "location_name": "Jakarta Head Office",
+                          "short_name": "JKT-HQ",
+                          "parent_id": "DL101",
+                          "latitude": -7.434522174830995,
+                          "longitude": 109.25477383912381
+                      }
+                  ]
+              }
+          }

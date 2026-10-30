@@ -1,0 +1,35 @@
+info:
+  name: Append Slot Duration
+  type: http
+  seq: 19
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/paramedicschedule/slot/append-duration/:business_unit_id/:id_date_slot"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: business_unit_id
+      value: 18e9ea73-7343-4be2-a8e4-47b652e56981
+      type: path
+    - name: id_date_slot
+      value: "2697"
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"lock_start\": \"2026-09-04T16:02:46+07:00\",\r
+
+      \    \"lock_by\": \"22344\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

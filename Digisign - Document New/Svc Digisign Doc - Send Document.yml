@@ -1,0 +1,330 @@
+info:
+  name: Svc Digisign Doc - Send Document
+  type: http
+  seq: 14
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/digisigns/senddocument/"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: provider_id
+      value: 3261a59d-ea2c-456b-bcff-cd841a066eb7
+      type: query
+      disabled: true
+    - name: company_id
+      value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+      type: query
+      disabled: true
+    - name: provider_name
+      value: PERURI
+      type: query
+      disabled: true
+    - name: endpoint_api
+      value: https://apgdev.peruri.co.id:19044/gateway
+      type: query
+      disabled: true
+    - name: user_update
+      value: Admin3
+      type: query
+      disabled: true
+  body:
+    type: multipart-form
+    data:
+      - name: pdf_file
+        type: file
+        value:
+          - /C:/Users/ASUS/Downloads/Template SmallPDF.pdf
+      - name: document_id
+        type: text
+        value: 207c54ba-e218-4bb3-95a4-6ac507e373c7
+      - name: company_id
+        type: text
+        value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+      - name: business_unit_id
+        type: text
+        value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      - name: organization_id
+        type: text
+        value: c88f07d7-8830-4e59-a9aa-5aac3f056380
+      - name: fcm_token
+        type: text
+        value: ""
+      - name: system_id
+        type: text
+        value: RS-JEC
+      - name: file_name
+        type: text
+        value: Template SmallPDF
+      - name: file_url
+        type: text
+        value: /file_storage/81e6c10a-862b-49fe-a3f8-fd87207351c5/2da6a1bd-ba62-43ec-91f8-4085d5d6d498/53aad077-9fb1-4f08-85f3-af9fd9a36517
+      - name: document_content
+        type: text
+        value: ""
+        disabled: true
+      - name: is_send_notification
+        type: text
+        value: "true"
+      - name: user_create
+        type: text
+        value: raihan
+      - name: created_at
+        type: text
+        value: 2025-06-11T04:05:08.000Z
+  auth:
+    type: bearer
+    token: "{{xtoken}}"
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: "Svc Digisign Doc - Send Document #1-241112"
+    request:
+      url: "{{BASE_URL}}/v1/digisigns/sentdocument/"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{API_TOKEN}}"
+      params:
+        - name: provider_id
+          value: 3261a59d-ea2c-456b-bcff-cd841a066eb7
+          type: query
+          disabled: true
+        - name: company_id
+          value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+          type: query
+          disabled: true
+        - name: provider_name
+          value: PERURI
+          type: query
+          disabled: true
+        - name: endpoint_api
+          value: https://apgdev.peruri.co.id:19044/gateway
+          type: query
+          disabled: true
+        - name: user_update
+          value: Admin3
+          type: query
+          disabled: true
+      body:
+        type: multipart-form
+        data:
+          - name: pdf_file
+            type: file
+            value:
+              - postman-cloud:///1ef968f8-fe1b-4bc0-ae08-3001dc0f1d2e
+          - name: document_id
+            type: text
+            value: a8a8a4ad-fe00-42be-b634-5935b3cecdc2
+          - name: company_id
+            type: text
+            value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+          - name: business_unit_id
+            type: text
+            value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          - name: organization_id
+            type: text
+            value: 730a774b-105f-44aa-99ed-16f24c061a95
+          - name: fcm_token
+            type: text
+            value: ""
+          - name: system_id
+            type: text
+            value: RS-JEC
+          - name: file_name
+            type: text
+            value: MEDICAL_RESUME_24_11_08_x99.pdf
+          - name: file_url
+            type: text
+            value: /file_storage/1f6180d2-92cb-47fb-80cb-73eee585ab7c/2da6a1bd-ba62-43ec-91f8-4085d5d6d498/53aad077-9fb1-4f08-85f3-af9fd9a36517
+          - name: document_content
+            type: text
+            value: ""
+            disabled: true
+          - name: is_send_notification
+            type: text
+            value: "false"
+          - name: user_create
+            type: text
+            value: Checker1
+          - name: created_at
+            type: text
+            value: 2024-11-07T20:00:01.000Z
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Date
+          value: Tue, 12 Nov 2024 08:02:35 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "127"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 201,
+              "data": {
+                  "result_code": "0",
+                  "result_description": "Success",
+                  "data": {
+                      "order_id": "15224",
+                      "is_send_notification": false
+                  }
+              }
+          }
+  - name: "Svc Digisign Doc - Send Document #1-VIT-241211 [Individual]"
+    request:
+      url: "{{BASE_URL}}/v1/digisigns/senddocument/"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{API_TOKEN}}"
+      params:
+        - name: provider_id
+          value: 3261a59d-ea2c-456b-bcff-cd841a066eb7
+          type: query
+          disabled: true
+        - name: company_id
+          value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+          type: query
+          disabled: true
+        - name: provider_name
+          value: PERURI
+          type: query
+          disabled: true
+        - name: endpoint_api
+          value: https://apgdev.peruri.co.id:19044/gateway
+          type: query
+          disabled: true
+        - name: user_update
+          value: Admin3
+          type: query
+          disabled: true
+      body:
+        type: multipart-form
+        data:
+          - name: pdf_file
+            type: file
+            value:
+              - postman-cloud:///1ef968f8-fe1b-4bc0-ae08-3001dc0f1d2e
+          - name: document_id
+            type: text
+            value: 1c80b684-b6fe-49ab-8298-cff6b85805a3
+          - name: company_id
+            type: text
+            value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+          - name: business_unit_id
+            type: text
+            value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          - name: organization_id
+            type: text
+            value: 730a774b-105f-44aa-99ed-16f24c061a95
+          - name: fcm_token
+            type: text
+            value: ""
+          - name: system_id
+            type: text
+            value: xxx-jec
+            disabled: true
+          - name: file_name
+            type: text
+            value: MEDICAL_RESUME_24_12_11_001.pdf
+          - name: file_url
+            type: text
+            value: /file_storage/1ca99dfd-39e9-4ba5-a275-fcbb8682d6c0/2da6a1bd-ba62-43ec-91f8-4085d5d6d498/53aad077-9fb1-4f08-85f3-af9fd9a36517
+          - name: document_content
+            type: text
+            value: ""
+            disabled: true
+          - name: is_send_notification
+            type: text
+            value: "true"
+          - name: user_create
+            type: text
+            value: Checker1
+          - name: created_at
+            type: text
+            value: 2024-12-11T02:10:11.000Z
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Date
+          value: Wed, 11 Dec 2024 03:38:56 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "127"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 201,
+              "data": {
+                  "result_code": "0",
+                  "result_description": "Success",
+                  "data": {
+                      "order_id": "26927",
+                      "is_send_notification": false
+                  }
+              }
+          }

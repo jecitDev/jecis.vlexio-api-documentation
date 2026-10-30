@@ -1,0 +1,165 @@
+info:
+  name: Get By Id Copy
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/service-units/item-services/:business_unit_id/:service_unit_id/:item_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  params:
+    - name: business_unit_id
+      value: 33b109c5-dd64-480c-8100-68fe17deaf3e
+      type: path
+    - name: service_unit_id
+      value: SU002
+      type: path
+    - name: item_id
+      value: 64e6e830-36af-4389-afcf-34d04c5aa54a
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Get By Id
+    request:
+      url: "{{BASE_URL}}/v1/service-units/item-services/:business_unit_id/:service_unit_id/:item_id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      params:
+        - name: business_unit_id
+          value: 33b109c5-dd64-480c-8100-68fe17deaf3e
+          type: path
+        - name: service_unit_id
+          value: SU002
+          type: path
+        - name: item_id
+          value: 64e6e830-36af-4389-afcf-34d04c5aa54a
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: date
+          value: Thu, 10 Sep 2026 06:56:31 GMT
+        - name: content-type
+          value: application/json
+        - name: content-length
+          value: "537"
+        - name: x-xss-protection
+          value: "0"
+        - name: x-content-type-options
+          value: nosniff
+        - name: x-frame-options
+          value: SAMEORIGIN
+        - name: cross-origin-embedder-policy
+          value: require-corp
+        - name: cross-origin-opener-policy
+          value: same-origin
+        - name: cross-origin-resource-policy
+          value: same-origin
+        - name: origin-agent-cluster
+          value: ?1
+        - name: referrer-policy
+          value: no-referrer
+        - name: x-dns-prefetch-control
+          value: off
+        - name: x-download-options
+          value: noopen
+        - name: x-permitted-cross-domain-policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+            "code": 200,
+            "data": {
+              "business_unit_id": "33b109c5-dd64-480c-8100-68fe17deaf3e",
+              "chart_of_account_id": "e9635c50-6f5e-4249-8183-22a1dfe3309b",
+              "chart_of_account_id_biaya_honor_dokter": "",
+              "chart_of_account_id_discount": "",
+              "chart_of_account_id_hutang_honor_dokter": "",
+              "chart_of_account_id_jasa_produksi": "",
+              "created_at": "2026-09-10T13:54:47+07:00",
+              "is_active": true,
+              "item_id": "64e6e830-36af-4389-afcf-34d04c5aa54a",
+              "service_unit_id": "SU002",
+              "subledger_id": 1,
+              "subledger_id_discount": 0,
+              "updated_at": "",
+              "user_create": "ferdinand",
+              "user_update": ""
+            }
+          }
+  - name: Not Found
+    request:
+      url: "{{BASE_URL}}/v1/service-units/item-services/:business_unit_id/:service_unit_id/:item_id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      params:
+        - name: business_unit_id
+          value: 33b109c5-dd64-480c-8100-68fe17deaf3e
+          type: path
+        - name: service_unit_id
+          value: SU003
+          type: path
+        - name: item_id
+          value: 64e6e830-36af-4389-afcf-34d04c5aa54a
+          type: path
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: date
+          value: Thu, 10 Sep 2026 06:56:54 GMT
+        - name: content-type
+          value: application/json
+        - name: content-length
+          value: "62"
+        - name: x-xss-protection
+          value: "0"
+        - name: x-content-type-options
+          value: nosniff
+        - name: x-frame-options
+          value: SAMEORIGIN
+        - name: cross-origin-embedder-policy
+          value: require-corp
+        - name: cross-origin-opener-policy
+          value: same-origin
+        - name: cross-origin-resource-policy
+          value: same-origin
+        - name: origin-agent-cluster
+          value: ?1
+        - name: referrer-policy
+          value: no-referrer
+        - name: x-dns-prefetch-control
+          value: off
+        - name: x-download-options
+          value: noopen
+        - name: x-permitted-cross-domain-policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+            "status": 404,
+            "message": "service_unit_item_service.not_found"
+          }

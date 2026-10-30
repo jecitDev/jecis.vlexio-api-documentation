@@ -1,0 +1,77 @@
+info:
+  name: Insert Patient
+  type: http
+  seq: 1
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/patients"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r\n    \"external_id\": \"\",\r\n    \"business_unit_id\": \"18e9ea73-7343-4be2-a8e4-47b652e56981\",\r\n    \"patient_id\": \"\",\r\n    \"medical_no\": \"\",\r\n    \"sr_salutation\": \"Title-001\",\r\n    \"first_name\": \"Dimas\",\r\n    \"middle_name\": \"Arya\",\r\n    \"last_name\": \"Pratama\",\r\n    \"city_of_birth\": \"Yogyakarta\",\r\n    \"date_of_birth\": \"1998-04-17T00:00:00+07:00\",\r\n    \"sr_mobile_no_type\": \"SocialMedia-001\",\r\n    \"sex\": \"M\",\r\n    \"phone\": \"0274123456\",\r\n    \"mobile_phone\": \"081234567890\",\r\n    \"email\": \"dimas.pratama@example.com\",\r\n    \"ssn\": \"3471041704980001\",\r\n    \"mother_ssn\": \"\",\r\n    \"sr_education\": \"Education-004\",\r\n    \"sr_marital_status\": \"MaritalStatus-001\",\r\n    \"sr_nationality\": \"Nationality-001\",\r\n    \"sr_occupation\": \"Occupation-005\",\r\n    \"sr_patient_category\": \"PatientCategory-001\",\r\n    \"sr_religion\": \"Religion-001\",\r\n    \"address_street_name\": \"Jl. Kenanga No. 18\",\r\n    \"address_district\": \"Sleman\",\r\n    \"address_city\": \"Sleman\",\r\n    \"address_country\": \"Indonesia\",\r\n    \"address_state\": \"Daerah Istimewa Yogyakarta\",\r\n    \"address_zipcode\": \"55581\",\r\n    \"notes\": \"\",\r\n    \"is_active\": true,\r\n    \"patient_identity_card_type\": \"\",\r\n    \"region_id\": \"a7fa55e6-99da-4c2b-bccf-416fd9d390c7\",\r\n    \"appointment_no\": \"\",\r\n    \"sr_ethnic\": \"Ethnic-001\",\r\n    \"sr_blood_type\": \"BloodType-001\",\r\n    \"sr_rhesus\": \"Rhesus-001\",\r\n    \"temp_address_street_name\": \"\",\r\n    \"temp_address_district\": \"\",\r\n    \"temp_address_city\": \"\",\r\n    \"temp_address_country\": \"\",\r\n    \"temp_address_state\": \"\",\r\n    \"temp_address_zipcode\": \"\",\r\n    \"temp_other_phone\": \"\",\r\n    \"temp_fax_no\": \"\",\r\n    \"emg_contact_name\": \"Rina Pratami\",\r\n    \"emg_sr_relation\": \"Relation-002\",\r\n    \"emg_address_street_name\": \"Jl. Melati No. 7\",\r\n    \"emg_address_district\": \"Depok\",\r\n    \"emg_address_city\": \"Sleman\",\r\n    \"emg_address_country\": \"Indonesia\",\r\n    \"emg_address_state\": \"Daerah Istimewa Yogyakarta\",\r\n    \"emg_address_zipcode\": \"55281\",\r\n    \"emg_other_phone\": \"082112345678\",\r\n    \"emg_fax_no\": \"\",\r\n    \"user_create\": \"raihan\",\r\n    \"created_at\": \"2026-09-10T10:32:15+07:00\",\r\n    \"force_insert\": false,\r\n\r\n    \"id_satu_sehat\": \"\",\r\n    \"reg_satu_sehat_at\": null,\r\n    \"bpjs_no\": \"\",\r\n    \"first_visit_date\": null,\r\n    \"first_visit_business_unit\": null,\r\n    \"last_visit_date\": null,\r\n    \"last_visit_business_unit\": null,\r\n    \"number_of_visit\": null,\r\n    \"old_medical_no\": \"\"\r\n}"
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/patients"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r\n    \"external_id\": \"minim cupidatat deserunt laboris\",\r\n    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r\n    \"sr_salutation\": \"aliqua ea\",\r\n    \"first_name\": \"surya\",\r\n    \"middle_name\": \"adhi\",\r\n    \"last_name\": \"waskito\",\r\n    \"city_of_birth\": \"Magelang\",\r\n    \"date_of_birth\": \"2000-02-26T00:00:00+07:00\",\r\n    \"sex\": \"Male\",\r\n    \"phone\": \"081330868663\",\r\n    \"mobile_phone\": \"081330868663\",\r\n    \"email\": \"surya@jec.co.id\",\r\n    \"ssn\": \"aute ipsum et\",\r\n    \"mother_ssn\": \"sint in consequat\",\r\n    \"sr_education\": \"sed reprehenderit\",\r\n    \"sr_marital_status\": \"deserunt consectetur\",\r\n    \"sr_nationality\": \"in\",\r\n    \"sr_occupation\": \"reprehenderit dolore\",\r\n    \"sr_patient_category\": \"non ad irure nostrud\",\r\n    \"sr_religion\": \"dolor ea sint ut\",\r\n    \"address_street_name\": \"elit cupidatat minim quis esse\",\r\n    \"address_district\": \"sed\",\r\n    \"address_city\": \"minim reprehenderit\",\r\n    \"address_country\": \"laborum\",\r\n    \"address_state\": \"tempor ullamco culpa Excepteur voluptate\",\r\n    \"address_zipcode\": \"in ipsum\",\r\n    \"notes\": \"incididunt elit ut in\",\r\n    \"is_active\": true,\r\n    \"user_create\": \"ut\",\r\n    \"created_at\": \"2025-03-18T14:08:41+07:00\"\r\n}"
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Date
+          value: Wed, 19 Mar 2025 12:07:21 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "139"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 201,
+              "data": {
+                  "patient_id": "PKDY250319-0004",
+                  "medical_no": "002-000-00-25",
+                  "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517"
+              }
+          }

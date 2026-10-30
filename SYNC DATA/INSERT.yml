@@ -1,0 +1,114 @@
+info:
+  name: INSERT
+  type: http
+  seq: 3
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/syncdata"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r\n    \"destination\": [\r\n        {\r\n            \"url\": \"http://send.com/api\",\r\n            \"header\": \"{\\\"Authorization\\\":\\\"\\\",\\\"Content-Type\\\":\\\"application/json\\\"}\",\r\n            \"parameter\": \"{\\\"DbType\\\":\\\"SQLSERVER\\\",\\\"DirPath\\\":\\\"/Images/imgPatientDocument/ResearchData/\\\",\\\"Mode\\\":\\\"0\\\",\\\"ResearchID\\\":\\\"$(ResearchListID)\\\",\\\"ResearchTitle\\\":\\\"$(ResearchTitle)\\\",\\\"StringQuery\\\":\\\"$(StringQuery)\\\",\\\"Submode\\\":\\\"0\\\",\\\"WebConfig\\\":\\\"136073054165181130096072009118087041248182067026246084225140064234204080103221226109003051098123253197248183057096057241193229001127066134212119042115161107037088019195011181121079050067157007109209038010166230238069225128196197225050118078019235011233076206247162134217119206191041016071034102200170147178176254008152016075058144174068183052121251126099146036199165119118175043142215035210134185150170030075248160103247103086117043\\\"}\",\r\n            \"method\": \"POST\"\r\n        },\r\n        {\r\n            \"url\": \"http://send2.com/api\",\r\n            \"header\": \"{\\\"Authorization\\\":\\\"\\\",\\\"Content-Type\\\":\\\"application/json\\\"}\",\r\n            \"parameter\": \"{\\\"DbType\\\":\\\"SQLSERVER\\\",\\\"DirPath\\\":\\\"/Images/imgPatientDocument/ResearchData/\\\",\\\"Mode\\\":\\\"0\\\",\\\"ResearchID\\\":\\\"$(ResearchListID)\\\",\\\"ResearchTitle\\\":\\\"$(ResearchTitle)\\\",\\\"StringQuery\\\":\\\"$(StringQuery)\\\",\\\"Submode\\\":\\\"0\\\",\\\"WebConfig\\\":\\\"136073054165181130096072009118087041248182067026246084225140064234204080103221226109003051098123253197248183057096057241193229001127066134212119042115161107037088019195011181121079050067157007109209038010166230238069225128196197225050118078019235011233076206247162134217119206191041016071034102200170147178176254008152016075058144174068183052121251126099146036199165119118175043142215035210134185150170030075248160103247103086117043\\\"}\",\r\n            \"method\": \"POST\"\r\n        }\r\n    ],\r\n    \"is_active\": true,\r\n    \"name\": \"Send Email Reminder\",\r\n    \"schedule\": {\r\n        \"end\": \"18:00\",\r\n        \"freq_h\": 1,\r\n        \"freq_m\": 12,\r\n        \"freq_s\": 0,\r\n        \"start\": \"07:00\"\r\n    },\r\n    \"source\": {\r\n        \"header\": \"{\\\"Authorization\\\":\\\"\\\",\\\"Content-Type\\\":\\\"application/json\\\"}\",\r\n        \"isPostEndpoint\": true,\r\n        \"method\": \"GET\",\r\n        \"parameter\": \"{\\\"DbType\\\":\\\"SQLSERVER\\\",\\\"DirPath\\\":\\\"/Images/imgPatientDocument/ResearchData/\\\",\\\"Mode\\\":\\\"0\\\",\\\"ResearchID\\\":\\\"$(ResearchListID)\\\",\\\"ResearchTitle\\\":\\\"$(ResearchTitle)\\\",\\\"StringQuery\\\":\\\"$(StringQuery)\\\",\\\"Submode\\\":\\\"0\\\",\\\"WebConfig\\\":\\\"136073054165181130096072009118087041248182067026246084225140064234204080103221226109003051098123253197248183057096057241193229001127066134212119042115161107037088019195011181121079050067157007109209038010166230238069225128196197225050118078019235011233076206247162134217119206191041016071034102200170147178176254008152016075058144174068183052121251126099146036199165119118175043142215035210134185150170030075248160103247103086117043\\\"}\",\r\n        \"PostEndpoint\": {\r\n            \"header\": \"{\\\"Authorization\\\":\\\"\\\",\\\"Content-Type\\\":\\\"application/json\\\"}\",\r\n            \"method\": \"PUT\",\r\n            \"parameter\": \"{\\\"DbType\\\":\\\"SQLSERVER\\\",\\\"DirPath\\\":\\\"/Images/imgPatientDocument/ResearchData/\\\",\\\"Mode\\\":\\\"0\\\",\\\"ResearchID\\\":\\\"$(ResearchListID)\\\",\\\"ResearchTitle\\\":\\\"$(ResearchTitle)\\\",\\\"StringQuery\\\":\\\"$(StringQuery)\\\",\\\"Submode\\\":\\\"0\\\",\\\"WebConfig\\\":\\\"136073054165181130096072009118087041248182067026246084225140064234204080103221226109003051098123253197248183057096057241193229001127066134212119042115161107037088019195011181121079050067157007109209038010166230238069225128196197225050118078019235011233076206247162134217119206191041016071034102200170147178176254008152016075058144174068183052121251126099146036199165119118175043142215035210134185150170030075248160103247103086117043\\\"}\",\r\n            \"url\": \"http://email.com/api/update\"\r\n        },\r\n        \"url\": \"http://email.com/api\"\r\n    },\r\n    \"type\": \"API\",\r\n    \"url\": \"http://172.16.20.40:5959\",\r\n    \"company_id\": \"2da6a1bd-ba62-43ec-91f8-4085d5d6d498\",\r\n    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\"\r\n}"
+  auth: inherit
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: INSERT
+    request:
+      url: "{{BASE_URL}}/v1/syncdata"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r\n    \"destination\": [\r\n        {\r\n            \"url\": \"http://send.com/api\",\r\n            \"header\": \"{\\\"Authorization\\\":\\\"\\\",\\\"Content-Type\\\":\\\"application/json\\\"}\",\r\n            \"parameter\": \"{\\\"DbType\\\":\\\"SQLSERVER\\\",\\\"DirPath\\\":\\\"/Images/imgPatientDocument/ResearchData/\\\",\\\"Mode\\\":\\\"0\\\",\\\"ResearchID\\\":\\\"$(ResearchListID)\\\",\\\"ResearchTitle\\\":\\\"$(ResearchTitle)\\\",\\\"StringQuery\\\":\\\"$(StringQuery)\\\",\\\"Submode\\\":\\\"0\\\",\\\"WebConfig\\\":\\\"136073054165181130096072009118087041248182067026246084225140064234204080103221226109003051098123253197248183057096057241193229001127066134212119042115161107037088019195011181121079050067157007109209038010166230238069225128196197225050118078019235011233076206247162134217119206191041016071034102200170147178176254008152016075058144174068183052121251126099146036199165119118175043142215035210134185150170030075248160103247103086117043\\\"}\",\r\n            \"method\": \"POST\"\r\n        },\r\n        {\r\n            \"url\": \"http://send2.com/api\",\r\n            \"header\": \"{\\\"Authorization\\\":\\\"\\\",\\\"Content-Type\\\":\\\"application/json\\\"}\",\r\n            \"parameter\": \"{\\\"DbType\\\":\\\"SQLSERVER\\\",\\\"DirPath\\\":\\\"/Images/imgPatientDocument/ResearchData/\\\",\\\"Mode\\\":\\\"0\\\",\\\"ResearchID\\\":\\\"$(ResearchListID)\\\",\\\"ResearchTitle\\\":\\\"$(ResearchTitle)\\\",\\\"StringQuery\\\":\\\"$(StringQuery)\\\",\\\"Submode\\\":\\\"0\\\",\\\"WebConfig\\\":\\\"136073054165181130096072009118087041248182067026246084225140064234204080103221226109003051098123253197248183057096057241193229001127066134212119042115161107037088019195011181121079050067157007109209038010166230238069225128196197225050118078019235011233076206247162134217119206191041016071034102200170147178176254008152016075058144174068183052121251126099146036199165119118175043142215035210134185150170030075248160103247103086117043\\\"}\",\r\n            \"method\": \"POST\"\r\n        }\r\n    ],\r\n    \"is_active\": true,\r\n    \"name\": \"Send Email Reminder\",\r\n    \"schedule\": {\r\n        \"end\": \"18:00\",\r\n        \"freq_h\": 1,\r\n        \"freq_m\": 12,\r\n        \"freq_s\": 0,\r\n        \"start\": \"07:00\"\r\n    },\r\n    \"source\": {\r\n        \"header\": \"{\\\"Authorization\\\":\\\"\\\",\\\"Content-Type\\\":\\\"application/json\\\"}\",\r\n        \"isPostEndpoint\": true,\r\n        \"method\": \"GET\",\r\n        \"parameter\": \"{\\\"DbType\\\":\\\"SQLSERVER\\\",\\\"DirPath\\\":\\\"/Images/imgPatientDocument/ResearchData/\\\",\\\"Mode\\\":\\\"0\\\",\\\"ResearchID\\\":\\\"$(ResearchListID)\\\",\\\"ResearchTitle\\\":\\\"$(ResearchTitle)\\\",\\\"StringQuery\\\":\\\"$(StringQuery)\\\",\\\"Submode\\\":\\\"0\\\",\\\"WebConfig\\\":\\\"136073054165181130096072009118087041248182067026246084225140064234204080103221226109003051098123253197248183057096057241193229001127066134212119042115161107037088019195011181121079050067157007109209038010166230238069225128196197225050118078019235011233076206247162134217119206191041016071034102200170147178176254008152016075058144174068183052121251126099146036199165119118175043142215035210134185150170030075248160103247103086117043\\\"}\",\r\n        \"PostEndpoint\": {\r\n            \"header\": \"{\\\"Authorization\\\":\\\"\\\",\\\"Content-Type\\\":\\\"application/json\\\"}\",\r\n            \"method\": \"PUT\",\r\n            \"parameter\": \"{\\\"DbType\\\":\\\"SQLSERVER\\\",\\\"DirPath\\\":\\\"/Images/imgPatientDocument/ResearchData/\\\",\\\"Mode\\\":\\\"0\\\",\\\"ResearchID\\\":\\\"$(ResearchListID)\\\",\\\"ResearchTitle\\\":\\\"$(ResearchTitle)\\\",\\\"StringQuery\\\":\\\"$(StringQuery)\\\",\\\"Submode\\\":\\\"0\\\",\\\"WebConfig\\\":\\\"136073054165181130096072009118087041248182067026246084225140064234204080103221226109003051098123253197248183057096057241193229001127066134212119042115161107037088019195011181121079050067157007109209038010166230238069225128196197225050118078019235011233076206247162134217119206191041016071034102200170147178176254008152016075058144174068183052121251126099146036199165119118175043142215035210134185150170030075248160103247103086117043\\\"}\",\r\n            \"url\": \"http://email.com/api/update\"\r\n        },\r\n        \"url\": \"http://email.com/api\"\r\n    },\r\n    \"type\": \"API\",\r\n    \"url\": \"http://172.16.20.40:5959\",\r\n    \"company_id\": \"2da6a1bd-ba62-43ec-91f8-4085d5d6d498\",\r\n    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\"\r\n}"
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Date
+          value: Fri, 04 Oct 2024 02:11:42 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "4181"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 201,
+              "data": {
+                  "id": "19",
+                  "name": "Send Email Reminder",
+                  "type": "API",
+                  "is_active": true,
+                  "schedule": {
+                      "freq_h": 1,
+                      "freq_m": 12,
+                      "start": "07:00",
+                      "end": "18:00"
+                  },
+                  "source": {
+                      "url": "http://email.com/api",
+                      "header": "{\"Authorization\":\"\",\"Content-Type\":\"application/json\"}",
+                      "parameter": "{\"DbType\":\"SQLSERVER\",\"DirPath\":\"/Images/imgPatientDocument/ResearchData/\",\"Mode\":\"0\",\"ResearchID\":\"$(ResearchListID)\",\"ResearchTitle\":\"$(ResearchTitle)\",\"StringQuery\":\"$(StringQuery)\",\"Submode\":\"0\",\"WebConfig\":\"136073054165181130096072009118087041248182067026246084225140064234204080103221226109003051098123253197248183057096057241193229001127066134212119042115161107037088019195011181121079050067157007109209038010166230238069225128196197225050118078019235011233076206247162134217119206191041016071034102200170147178176254008152016075058144174068183052121251126099146036199165119118175043142215035210134185150170030075248160103247103086117043\"}",
+                      "method": "GET",
+                      "isPostEndpoint": true,
+                      "PostEndpoint": {
+                          "url": "http://email.com/api",
+                          "header": "{\"Authorization\":\"\",\"Content-Type\":\"application/json\"}",
+                          "parameter": "{\"DbType\":\"SQLSERVER\",\"DirPath\":\"/Images/imgPatientDocument/ResearchData/\",\"Mode\":\"0\",\"ResearchID\":\"$(ResearchListID)\",\"ResearchTitle\":\"$(ResearchTitle)\",\"StringQuery\":\"$(StringQuery)\",\"Submode\":\"0\",\"WebConfig\":\"136073054165181130096072009118087041248182067026246084225140064234204080103221226109003051098123253197248183057096057241193229001127066134212119042115161107037088019195011181121079050067157007109209038010166230238069225128196197225050118078019235011233076206247162134217119206191041016071034102200170147178176254008152016075058144174068183052121251126099146036199165119118175043142215035210134185150170030075248160103247103086117043\"}",
+                          "method": "GET"
+                      }
+                  },
+                  "destination": [
+                      {
+                          "url": "http://send.com/api",
+                          "header": "{\"Authorization\":\"\",\"Content-Type\":\"application/json\"}",
+                          "parameter": "{\"DbType\":\"SQLSERVER\",\"DirPath\":\"/Images/imgPatientDocument/ResearchData/\",\"Mode\":\"0\",\"ResearchID\":\"$(ResearchListID)\",\"ResearchTitle\":\"$(ResearchTitle)\",\"StringQuery\":\"$(StringQuery)\",\"Submode\":\"0\",\"WebConfig\":\"136073054165181130096072009118087041248182067026246084225140064234204080103221226109003051098123253197248183057096057241193229001127066134212119042115161107037088019195011181121079050067157007109209038010166230238069225128196197225050118078019235011233076206247162134217119206191041016071034102200170147178176254008152016075058144174068183052121251126099146036199165119118175043142215035210134185150170030075248160103247103086117043\"}",
+                          "method": "POST"
+                      },
+                      {
+                          "url": "http://send2.com/api",
+                          "header": "{\"Authorization\":\"\",\"Content-Type\":\"application/json\"}",
+                          "parameter": "{\"DbType\":\"SQLSERVER\",\"DirPath\":\"/Images/imgPatientDocument/ResearchData/\",\"Mode\":\"0\",\"ResearchID\":\"$(ResearchListID)\",\"ResearchTitle\":\"$(ResearchTitle)\",\"StringQuery\":\"$(StringQuery)\",\"Submode\":\"0\",\"WebConfig\":\"136073054165181130096072009118087041248182067026246084225140064234204080103221226109003051098123253197248183057096057241193229001127066134212119042115161107037088019195011181121079050067157007109209038010166230238069225128196197225050118078019235011233076206247162134217119206191041016071034102200170147178176254008152016075058144174068183052121251126099146036199165119118175043142215035210134185150170030075248160103247103086117043\"}",
+                          "method": "POST"
+                      }
+                  ],
+                  "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498"
+              }
+          }

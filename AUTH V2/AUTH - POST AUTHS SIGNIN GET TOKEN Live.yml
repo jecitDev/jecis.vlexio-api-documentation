@@ -1,0 +1,88 @@
+info:
+  name: AUTH - POST AUTHS SIGNIN GET TOKEN Live
+  type: http
+  seq: 3
+http:
+  method: POST
+  url: "{{BASE_URL}}/auths/get_token"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+      disabled: true
+  body:
+    type: json
+    data: "{\r\n    \"email\": \"{{userid}}\",\r\n    \"password\": \"{{password}}\",\r\n    \"company_id\": \"71b53dd1-2802-4527-8b5c-d54173392222\",\r\n    \"business_unit_id\": \"33b109c5-dd64-480c-8100-68fe17deaf3e\",\r\n    \"fcm_token\": \"\",\r\n    \"station_id\": 1,\r\n    \"app\": \"vlexio\"\r\n}\r\n"
+  auth: inherit
+runtime:
+  variables:
+    - name: password
+      value: Sijec123
+    - name: userid
+      value: "21170"
+  scripts:
+    - type: after-response
+      code: "var data = res.getBody();\r\nbru.setCollectionVar(\"xtoken\", data.data.access_token);\r\nbru.setCollectionVar(\"API_TOKEN\", data.data.access_token);\r\nbru.setCollectionVar(\"master_xtoken\", data.data.access_token);\r\nbru.setCollectionVar(\"x-refresh-token\", data.data.refresh_token);"
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: AUTH - POST AUTHS SIGNIN GET TOKEN
+    request:
+      url: "{{BASE_URL}}/auths/get_token"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+          disabled: true
+      body:
+        type: json
+        data: "{\r\n    \"email\": \"fernando.riyo@jec.co.id\",\r\n    \"password\": \"\",\r\n    \"company_id\": \"706cded9-0fca-4ed8-a68c-08ab6c4f3a7f\",\r\n    \"business_unit_id\": \"e10997e9-7b7f-4037-b299-0e3cd954d619\",\r\n    \"fcm_token\":\"\",\r\n    \"station_id\":1,\r\n    \"app\":\"web\"\r\n}"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 06 Jun 2024 01:53:13 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "1399"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "access_token": "",
+                  "refresh_token": "",
+                  "user_id": "21170",
+                  "user_name": "Fernando Riyo J Simbolon ",
+                  "email": "fernando.riyo@jec.co.id",
+                  "expire_in": 1717640594
+              }
+          }

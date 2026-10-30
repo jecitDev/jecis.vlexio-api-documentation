@@ -1,0 +1,81 @@
+info:
+  name: Retry
+  type: http
+  seq: 2
+
+http:
+  method: PATCH
+  url: "{{BASE_URL}}/v1/export-pages/:id/retry"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  params:
+    - name: id
+      value: 3a14c517-f07e-42ea-accb-6f07b6374581
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Retry
+    request:
+      url: "{{BASE_URL}}/v1/export-pages/:id/retry"
+      method: PATCH
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      params:
+        - name: id
+          value: fbdf9e64-6da7-43ad-b4e7-b77c16538d3a
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: date
+          value: Sun, 04 Oct 2026 16:20:12 GMT
+        - name: content-type
+          value: application/json
+        - name: content-length
+          value: "64"
+        - name: x-xss-protection
+          value: "0"
+        - name: x-content-type-options
+          value: nosniff
+        - name: x-frame-options
+          value: SAMEORIGIN
+        - name: cross-origin-embedder-policy
+          value: require-corp
+        - name: cross-origin-opener-policy
+          value: same-origin
+        - name: cross-origin-resource-policy
+          value: same-origin
+        - name: origin-agent-cluster
+          value: ?1
+        - name: referrer-policy
+          value: no-referrer
+        - name: x-dns-prefetch-control
+          value: off
+        - name: x-download-options
+          value: noopen
+        - name: x-permitted-cross-domain-policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+            "code": 200,
+            "data": {
+              "message": "Successfully retry export jobs"
+            }
+          }

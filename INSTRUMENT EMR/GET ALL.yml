@@ -1,0 +1,196 @@
+info:
+  name: GET ALL
+  type: http
+  seq: 2
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/instrument_emr?business_unit_id=53aad077-9fb1-4f08-85f3-af9fd9a36517&page=1&page_size=2"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: query
+    - name: name
+      value: ea sit
+      type: query
+      disabled: true
+    - name: type
+      value: aliqua lab
+      type: query
+      disabled: true
+    - name: page
+      value: "1"
+      type: query
+    - name: page_size
+      value: "2"
+      type: query
+  body:
+    type: json
+    data: ""
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/instrument_emr?business_unit_id=0fb2ad94-d1be-4a75-b4fc-77af31850455&page=1&page_size=2"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: business_unit_id
+          value: 0fb2ad94-d1be-4a75-b4fc-77af31850455
+          type: query
+        - name: name
+          value: ea sit
+          type: query
+          disabled: true
+        - name: type
+          value: aliqua lab
+          type: query
+          disabled: true
+        - name: page
+          value: "1"
+          type: query
+        - name: page_size
+          value: "2"
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 17 Mar 2025 02:44:04 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "336"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "page": 1,
+                  "page_size": 2,
+                  "total_items": 1,
+                  "instrument": [
+                      {
+                          "business_unit_id": "0fb2ad94-d1be-4a75-b4fc-77af31850455",
+                          "id": "f1d81b89-8cea-461c-abc6-3fce963ba882",
+                          "name": "other instrument",
+                          "type": "aliquip dolore Ut",
+                          "hasil_test": {
+                              "value": [
+                                  "jec namber wan"
+                              ]
+                          },
+                          "user_create": "kito",
+                          "created_at": "2025-03-12T14:30:45+07:00"
+                      }
+                  ]
+              }
+          }
+  - name: No Data
+    request:
+      url: "{{BASE_URL}}/v1/instrument_emr?business_unit_id=0fb2ad94-d1be-4a75-b4fc-77af31850455&name=failed&type=failed"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: business_unit_id
+          value: 0fb2ad94-d1be-4a75-b4fc-77af31850455
+          type: query
+        - name: name
+          value: ea sit
+          type: query
+          disabled: true
+        - name: type
+          value: aliqua lab
+          type: query
+          disabled: true
+        - name: name
+          value: failed
+          type: query
+        - name: type
+          value: failed
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 17 Mar 2025 02:44:56 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "45"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "page": 1,
+                  "page_size": 10
+              }
+          }

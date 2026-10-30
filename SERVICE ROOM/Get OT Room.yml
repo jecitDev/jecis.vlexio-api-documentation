@@ -1,0 +1,210 @@
+info:
+  name: Get OT Room
+  type: http
+  seq: 10
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/serviceroom/operation_theater_room/:business_unit_id?date=2025-07-09"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: date
+      value: 2025-07-09
+      type: query
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Get OT Room Copy
+    request:
+      url: "{{BASE_URL}}/v1/serviceroom/operation_theater_room/:business_unit_id?date=2025-07-9"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: date
+          value: 2025-07-9
+          type: query
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 21 Jul 2025 09:24:08 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "2350"
+        - name: Connection
+          value: keep-alive
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "data": [
+                      {
+                          "site_id": "002",
+                          "room_id": "C1-101",
+                          "service_unit_id": "C101",
+                          "room_name": "Operating Theatre 1",
+                          "notes": "Test kamar Operasi1",
+                          "operational_time_from": "07:00",
+                          "operational_time_to": "18:59",
+                          "is_blocked": true
+                      },
+                      {
+                          "site_id": "002",
+                          "room_id": "C1-102",
+                          "service_unit_id": "C101",
+                          "room_name": "Operating Theatre 2",
+                          "notes": "Test kamar Operasi1",
+                          "operational_time_from": "07:00",
+                          "operational_time_to": "18:59"
+                      },
+                      {
+                          "site_id": "002",
+                          "room_id": "C1-103",
+                          "service_unit_id": "C101",
+                          "room_name": "Operating Theatre 3",
+                          "notes": "Test kamar Operasi1",
+                          "operational_time_from": "07:00",
+                          "operational_time_to": "20:59"
+                      },
+                      {
+                          "site_id": "002",
+                          "room_id": "C1-104",
+                          "service_unit_id": "C101",
+                          "room_name": "Operating Theatre 4",
+                          "notes": "Test kamar Operasi1",
+                          "operational_time_from": "07:00",
+                          "operational_time_to": "18:59"
+                      },
+                      {
+                          "site_id": "002",
+                          "room_id": "C1-105",
+                          "service_unit_id": "C101",
+                          "room_name": "Operating Theatre 5",
+                          "notes": "Kamar Operasi 5",
+                          "operational_time_from": "07:00",
+                          "operational_time_to": "18:59"
+                      },
+                      {
+                          "site_id": "002",
+                          "room_id": "C2-101",
+                          "service_unit_id": "C201",
+                          "room_name": "Room for LASIK",
+                          "notes": "Operating Room Lasik",
+                          "operational_time_from": "08:00",
+                          "operational_time_to": "19:29"
+                      },
+                      {
+                          "site_id": "002",
+                          "room_id": "C2-102",
+                          "service_unit_id": "C201",
+                          "room_name": "Room for SMILE",
+                          "notes": "Operating Room Lasik",
+                          "operational_time_from": "07:30",
+                          "operational_time_to": "20:00"
+                      },
+                      {
+                          "site_id": "002",
+                          "room_id": "C3-04",
+                          "service_unit_id": "A104",
+                          "room_name": "ERG-VEP",
+                          "notes": "ERG-VEP",
+                          "operational_time_from": "07:00",
+                          "operational_time_to": "20:59"
+                      },
+                      {
+                          "site_id": "002",
+                          "room_id": "C3-101",
+                          "service_unit_id": "A104",
+                          "room_name": "Retcam",
+                          "notes": "Jadwal Retcam",
+                          "operational_time_from": "07:00",
+                          "operational_time_to": "21:59"
+                      },
+                      {
+                          "site_id": "002",
+                          "room_id": "C3-102",
+                          "service_unit_id": "A104",
+                          "room_name": "Laser",
+                          "notes": "Laser",
+                          "operational_time_from": "07:00",
+                          "operational_time_to": "21:59"
+                      },
+                      {
+                          "site_id": "002",
+                          "room_id": "C3-104",
+                          "service_unit_id": "A104",
+                          "room_name": "EUA , Incisi",
+                          "notes": "Evaluasi Under Anastesi",
+                          "operational_time_from": "07:00",
+                          "operational_time_to": "21:59"
+                      },
+                      {
+                          "site_id": "002",
+                          "room_id": "C3-105",
+                          "service_unit_id": "A104",
+                          "room_name": "Injeksi",
+                          "notes": "Jadwal Injeksi",
+                          "operational_time_from": "07:00",
+                          "operational_time_to": "18:00"
+                      },
+                      {
+                          "site_id": "002",
+                          "room_id": "C1-106",
+                          "service_unit_id": "C101",
+                          "room_name": "CALL CENTER",
+                          "operational_time_from": "07:00",
+                          "operational_time_to": "18:00"
+                      }
+                  ]
+              }
+          }

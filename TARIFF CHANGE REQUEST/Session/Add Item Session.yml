@@ -1,0 +1,251 @@
+info:
+  name: Add Item Session
+  type: http
+  seq: 7
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/tariff-requests/session/item/add"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"session_id\": \"f3cece2d-e726-40ed-883a-6e41db3d711c\",\r
+
+      \    \"business_unit_id\": \"33b109c5-dd64-480c-8100-68fe17deaf3e\",\r
+
+      \    \"item_id\": \"5f0b808e-2f02-46c3-95a0-28e93ca377d2\",\r
+
+      \    \"item_name\": \"AC SPLIT 1 PK DAIKINN #edit\",\r
+
+      \    \"is_allow_discount\": true,\r
+
+      \    \"components\": [\r
+
+      \        {\r
+
+      \            \"tariff_component_id\": \"01\",\r
+
+      \            \"is_allow_discount\": true,\r
+
+      \            \"amount\": \"10\",\r
+
+      \            \"is_supervision\": true,\r
+
+      \            \"supervision\": {\r
+
+      \                \"supervision_percentage\": 30,\r
+
+      \                \"dpjp_percentage\": 70\r
+
+      \            },\r
+
+      \            \"additionals\": [\r
+
+      \                {\r
+
+      \                    \"additional_id\": \"addition-001\",\r
+
+      \                    \"amount\": \"500000\",\r
+
+      \                    \"is_not_paid_on_cross\": false,\r
+
+      \                    \"billed_to_patient\": true\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"additional_id\": \"addition-002\",\r
+
+      \                    \"amount\": \"100000\",\r
+
+      \                    \"is_not_paid_on_cross\": true,\r
+
+      \                    \"billed_to_patient\": false\r
+
+      \                }\r
+
+      \            ],\r
+
+      \            \"deductions\": [\r
+
+      \                {\r
+
+      \                    \"deduction_id\": \"deduct-001\",\r
+
+      \                    \"amount\": \"5\",\r
+
+      \                    \"is_percent\": false\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"deduction_id\": \"deduct-002\",\r
+
+      \                    \"amount\": \"10\",\r
+
+      \                    \"is_percent\": true\r
+
+      \                }\r
+
+      \            ]\r
+
+      \        }\r
+
+      \    ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Add Item Session
+    request:
+      url: "{{BASE_URL}}/v1/tariff-requests/session/item/add"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"session_id\": \"f3cece2d-e726-40ed-883a-6e41db3d711c\",\r
+
+          \    \"business_unit_id\": \"33b109c5-dd64-480c-8100-68fe17deaf3e\",\r
+
+          \    \"item_id\": \"5f0b808e-2f02-46c3-95a0-28e93ca377d2\",\r
+
+          \    \"item_name\": \"AC SPLIT 1 PK DAIKINN #edit\",\r
+
+          \    \"is_allow_discount\": true,\r
+
+          \    \"components\": [\r
+
+          \        {\r
+
+          \            \"tariff_component_id\": \"01\",\r
+
+          \            \"is_allow_discount\": true,\r
+
+          \            \"amount\": \"10\",\r
+
+          \            \"is_supervision\": true,\r
+
+          \            \"supervision\": {\r
+
+          \                \"supervision_percentage\": 30,\r
+
+          \                \"dpjp_percentage\": 70\r
+
+          \            },\r
+
+          \            \"additionals\": [\r
+
+          \                {\r
+
+          \                    \"additional_id\": \"addition-001\",\r
+
+          \                    \"amount\": \"500000\",\r
+
+          \                    \"is_not_paid_on_cross\": false,\r
+
+          \                    \"billed_to_patient\": true\r
+
+          \                },\r
+
+          \                {\r
+
+          \                    \"additional_id\": \"addition-002\",\r
+
+          \                    \"amount\": \"100000\",\r
+
+          \                    \"is_not_paid_on_cross\": true,\r
+
+          \                    \"billed_to_patient\": false\r
+
+          \                }\r
+
+          \            ],\r
+
+          \            \"deductions\": [\r
+
+          \                {\r
+
+          \                    \"deduction_id\": \"deduct-001\",\r
+
+          \                    \"amount\": \"5\",\r
+
+          \                    \"is_percent\": false\r
+
+          \                },\r
+
+          \                {\r
+
+          \                    \"deduction_id\": \"deduct-002\",\r
+
+          \                    \"amount\": \"10\",\r
+
+          \                    \"is_percent\": true\r
+
+          \                }\r
+
+          \            ]\r
+
+          \        }\r
+
+          \    ]\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: date
+          value: Wed, 30 Sep 2026 08:51:05 GMT
+        - name: content-type
+          value: application/json
+        - name: content-length
+          value: "66"
+        - name: x-xss-protection
+          value: "0"
+        - name: x-content-type-options
+          value: nosniff
+        - name: x-frame-options
+          value: SAMEORIGIN
+        - name: cross-origin-embedder-policy
+          value: require-corp
+        - name: cross-origin-opener-policy
+          value: same-origin
+        - name: cross-origin-resource-policy
+          value: same-origin
+        - name: origin-agent-cluster
+          value: ?1
+        - name: referrer-policy
+          value: no-referrer
+        - name: x-dns-prefetch-control
+          value: off
+        - name: x-download-options
+          value: noopen
+        - name: x-permitted-cross-domain-policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+            "code": 200,
+            "data": {
+              "message": "Successfully add item to session"
+            }
+          }

@@ -1,0 +1,84 @@
+info:
+  name: INSERT
+  type: http
+  seq: 3
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/appstation"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r\n    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r\n    \"created_at\": \"2024-08-05T08:00:00+07:00\",\r\n    \"is_active\": true,\r\n    \"is_suspend\": false,\r\n    \"st_signature_port\": 3023,\r\n    \"st_video_station\": \"\",\r\n    \"station_name\": \"2 BDR-1\",\r\n    \"user_create\": \"21170\"\r\n}"
+  auth: inherit
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: INSERT
+    request:
+      url: "{{BASE_URL}}/v1/appstation"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r\n    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r\n    \"created_at\": \"2024-08-05T08:00:00+07:00\",\r\n    \"is_active\": true,\r\n    \"is_suspend\": false,\r\n    \"st_signature_port\": 3023,\r\n    \"st_video_station\": \"\",\r\n    \"station_name\": \"2 BDR-1\",\r\n    \"user_create\": \"21170\"\r\n}"
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Date
+          value: Tue, 06 Aug 2024 03:31:04 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "291"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 201,
+              "data": {
+                  "appStation": {
+                      "station_id": 7,
+                      "station_name": "2 BDR-1",
+                      "credential_key": "",
+                      "st_signature_port": 3023,
+                      "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                      "user_create": "21170",
+                      "created_at": "2024-08-05T08:00:00+07:00"
+                  }
+              }
+          }

@@ -1,0 +1,208 @@
+info:
+  name: Insert Guarantor
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/marketing/guarantor"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"business_unit_id\": [\"53aad077-9fb1-4f08-85f3-af9fd9a36517\", \"53aad077-9fb1-4f08-85f3-af9fd9a36518\"],\r
+
+      \    \"company_id\": \"df0ff1b4-c381-4f1a-a0ab-0702c789d46b\",\r
+
+      \    \"guarantor_name\": \"PT. Sehat Selalu\",\r
+
+      \    \"short_name\": \"Sehat\",\r
+
+      \    \"sr_guarantor_type\": \"INSURANCE\",\r
+
+      \    \"street_name\": \"Jl. Kesehatan No.1\",\r
+
+      \    \"district\": \"Kemang\",\r
+
+      \    \"city\": \"Jakarta Selatan\",\r
+
+      \    \"county\": \"DKI Jakarta\",\r
+
+      \    \"state\": \"Jakarta\",\r
+
+      \    \"zip_code\": \"12345\",\r
+
+      \    \"phone_no\": \"0211234567\",\r
+
+      \    \"fax_no\": \"0211234568\",\r
+
+      \    \"email\": \"info@sehat.com\",\r
+
+      \    \"mobile_phone_no\": \"08123456789\",\r
+
+      \    \"chart_of_account_id\": 101,\r
+
+      \    \"subledger_id\": 202,\r
+
+      \    \"finance_contact_person\": \"Agus Salim\",\r
+
+      \    \"finance_email\": \"finance@sehat.com\",\r
+
+      \    \"sr_guarantor_group\": \"Internal\",\r
+
+      \    \"sr_guarantor_group_payer\": \"Payer\",\r
+
+      \    \"user_create\": \"admin\",\r
+
+      \    \"created_at\": \"2025-03-18T14:08:41+07:00\",\r
+
+      \    \"is_use_cob\": true\r
+
+      }"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"business_unit_id\": [\"53aad077-9fb1-4f08-85f3-af9fd9a36517\", \"53aad077-9fb1-4f08-85f3-af9fd9a36518\"],\r
+
+          \    \"company_id\": \"df0ff1b4-c381-4f1a-a0ab-0702c789d46b\",\r
+
+          \    \"guarantor_name\": \"PT. Sehat Selalu\",\r
+
+          \    \"short_name\": \"Sehat\",\r
+
+          \    \"sr_guarantor_type\": \"INSURANCE\",\r
+
+          \    \"street_name\": \"Jl. Kesehatan No.1\",\r
+
+          \    \"district\": \"Kemang\",\r
+
+          \    \"city\": \"Jakarta Selatan\",\r
+
+          \    \"county\": \"DKI Jakarta\",\r
+
+          \    \"state\": \"Jakarta\",\r
+
+          \    \"zip_code\": \"12345\",\r
+
+          \    \"phone_no\": \"0211234567\",\r
+
+          \    \"fax_no\": \"0211234568\",\r
+
+          \    \"email\": \"info@sehat.com\",\r
+
+          \    \"mobile_phone_no\": \"08123456789\",\r
+
+          \    \"chart_of_account_id\": 101,\r
+
+          \    \"subledger_id\": 202,\r
+
+          \    \"finance_contact_person\": \"Agus Salim\",\r
+
+          \    \"finance_email\": \"finance@sehat.com\",\r
+
+          \    \"sr_guarantor_group\": \"Internal\",\r
+
+          \    \"sr_guarantor_group_payer\": \"Payer\",\r
+
+          \    \"user_create\": \"admin\",\r
+
+          \    \"created_at\": \"2025-03-18T14:08:41+07:00\",\r
+
+          \    \"is_use_cob\": true\r
+
+          }"
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Date
+          value: Thu, 10 Jul 2025 09:59:04 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "905"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 201,
+              "data": {
+                  "guarantor_id": "dc77ae8f-4dd3-4d95-9cfe-7e950888524b",
+                  "business_unit_id": [
+                      "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                      "53aad077-9fb1-4f08-85f3-af9fd9a36518"
+                  ],
+                  "company_id": "df0ff1b4-c381-4f1a-a0ab-0702c789d46b",
+                  "guarantor_name": "PT. Sehat Selalu",
+                  "short_name": "Sehat",
+                  "sr_guarantor_type": "INSURANCE",
+                  "is_active": true,
+                  "street_name": "Jl. Kesehatan No.1",
+                  "district": "Kemang",
+                  "city": "Jakarta Selatan",
+                  "county": "DKI Jakarta",
+                  "state": "Jakarta",
+                  "zip_code": "12345",
+                  "phone_no": "0211234567",
+                  "fax_no": "0211234568",
+                  "email": "info@sehat.com",
+                  "mobile_phone_no": "08123456789",
+                  "chart_of_account_id": 101,
+                  "subledger_id": 202,
+                  "finance_contact_person": "Agus Salim",
+                  "finance_email": "finance@sehat.com",
+                  "sr_guarantor_status": "1",
+                  "sr_guarantor_group": "Internal",
+                  "sr_guarantor_group_payer": "Payer",
+                  "user_create": "admin",
+                  "created_at": "2025-03-18T14:08:41+07:00",
+                  "guarantor_no": "G-KDY/20250710-0005",
+                  "is_use_cob": true
+              }
+          }

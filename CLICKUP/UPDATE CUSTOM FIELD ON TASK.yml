@@ -1,0 +1,33 @@
+info:
+  name: UPDATE CUSTOM FIELD ON TASK
+  type: http
+  seq: 10
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/clickup/task/:task_id/field/:custom_field_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: task_id
+      value: ""
+      type: path
+    - name: custom_field_id
+      value: ""
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \t\"value\": \"50fc999e-5231-4837-acf2-8d6a9a24f9a7\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

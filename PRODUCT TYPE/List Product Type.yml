@@ -1,0 +1,166 @@
+info:
+  name: List Product Type
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/product-types?page=1&page_size=10&sort_by=name&sort_order=asc&keywords=type"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: page_size
+      value: "10"
+      type: query
+    - name: sort_by
+      value: name
+      type: query
+    - name: sort_order
+      value: asc
+      type: query
+    - name: keywords
+      value: type
+      type: query
+    - name: category_id
+      value: non-medic
+      type: query
+      disabled: true
+    - name: is_active
+      value: "false"
+      type: query
+      disabled: true
+    - name: business_unit_id
+      value: 33b109c5-dd64-480c-8100-68fe17deaf3e
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: List Product Type
+    request:
+      url: "{{BASE_URL}}/v1/product-types?page=1&page_size=10&sort_by=name&sort_order=asc&keywords=type"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: page_size
+          value: "10"
+          type: query
+        - name: sort_by
+          value: name
+          type: query
+        - name: sort_order
+          value: asc
+          type: query
+        - name: keywords
+          value: type
+          type: query
+        - name: category_id
+          value: non-medic
+          type: query
+          disabled: true
+        - name: is_active
+          value: "true"
+          type: query
+          disabled: true
+        - name: business_unit_id
+          value: 33b109c5-dd64-480c-8100-68fe17deaf3e
+          type: query
+          disabled: true
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Wed, 05 Aug 2026 03:49:32 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "892"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "page": 1,
+                  "page_size": 10,
+                  "product_types": [
+                      {
+                          "business_unit_id": "33b109c5-dd64-480c-8100-68fe17deaf3e",
+                          "category_id": "non-medic",
+                          "created_at": "2026-08-05T10:46:13+07:00",
+                          "id": "0c6daad4-4b3d-49f2-aaae-3019b97d1ec5",
+                          "is_active": true,
+                          "name": "Product Type 1",
+                          "updated_at": "",
+                          "user_create": "ferdinand",
+                          "user_update": ""
+                      },
+                      {
+                          "business_unit_id": "33b109c5-dd64-480c-8100-68fe17deaf3e",
+                          "category_id": "non-medic",
+                          "created_at": "2026-08-05T10:46:45+07:00",
+                          "id": "6f6640db-1861-4df1-8ea1-31f79ccfacc1",
+                          "is_active": true,
+                          "name": "Product Type 2",
+                          "updated_at": "",
+                          "user_create": "ferdinand",
+                          "user_update": ""
+                      },
+                      {
+                          "business_unit_id": "33b109c5-dd64-480c-8100-68fe17deaf3e",
+                          "category_id": "non-medic",
+                          "created_at": "2026-08-05T10:47:10+07:00",
+                          "id": "1ed2b00d-bb36-44b7-afdc-2c81d1fb9284",
+                          "is_active": true,
+                          "name": "Product Type 3",
+                          "updated_at": "",
+                          "user_create": "ferdinand",
+                          "user_update": ""
+                      }
+                  ],
+                  "total_items": 3
+              }
+          }

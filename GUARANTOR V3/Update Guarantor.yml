@@ -1,0 +1,395 @@
+info:
+  name: Update Guarantor
+  type: http
+  seq: 6
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/marketing/guarantor/:guarantor_id/:company_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: guarantor_id
+      value: 7243ffda-a782-4836-abd6-697c0914f085
+      type: path
+    - name: company_id
+      value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"guarantor_id\": \"7243ffda-a782-4836-abd6-697c0914f085\",\r
+
+      \        \"business_unit_id\": [\r
+
+      \            \"53aad077-9fb1-4f08-85f3-af9fd9a36517\"\r
+
+      \        ],\r
+
+      \        \"company_id\": \"2da6a1bd-ba62-43ec-91f8-4085d5d6d498\",\r
+
+      \        \"guarantor_name\": \"STARK INDUSTRIES\",\r
+
+      \        \"short_name\": \"Stark\",\r
+
+      \        \"sr_guarantor_type\": \"COMPANY\",\r
+
+      \        \"is_active\": true,\r
+
+      \        \"is_enable\": true,\r
+
+      \        \"street_name\": \"Jl. Stark\",\r
+
+      \        \"district\": \"Kebayoran Baru\",\r
+
+      \        \"city\": \"Jakarta Selatan\",\r
+
+      \        \"county\": \"Gunung\",\r
+
+      \        \"state\": \"DKI Jakarta\",\r
+
+      \        \"zip_code\": \"46232\",\r
+
+      \        \"phone_no\": \"087722275005\",\r
+
+      \        \"fax_no\": \"0231232323\",\r
+
+      \        \"email\": \"tony@stark.com\",\r
+
+      \        \"mobile_phone_no\": \"087722275005\",\r
+
+      \        \"finance_contact_person\": \"Megan\",\r
+
+      \        \"finance_email\": \"megan@stark.com\",\r
+
+      \        \"sr_guarantor_status\": \"2\",\r
+
+      \        \"sr_guarantor_group\": \"7\",\r
+
+      \        \"sr_guarantor_group_payer\": \"4\",\r
+
+      \        \"user_create\": \"rama\",\r
+
+      \        \"created_at\": \"2025-07-20T11:46:50+07:00\",\r
+
+      \        \"user_update\": \"rama\",\r
+
+      \        \"updated_at\": \"2025-07-20T14:54:56+07:00\",\r
+
+      \        \"guarantor_no\": \"G-KDY/20250720-0001\",\r
+
+      \        \"is_auto_contract\": true\r
+
+      \    // \"business_unit_id\": [\"53aad077-9fb1-4f08-85f3-af9fd9a36517\"],\r
+
+      \    // \"guarantor_name\": \"CV. Sehat Sentosa Updated\",\r
+
+      \    // \"short_name\": \"Aman Sentosa\",\r
+
+      \    // \"sr_guarantor_type\": \"COMPANY\",\r
+
+      \    // \"street_name\": \"Jl. Damai No.88\",\r
+
+      \    // \"district\": \"Sukmajaya\",\r
+
+      \    // \"city\": \"Depok\",\r
+
+      \    // \"county\": \"Jawa Barat\",\r
+
+      \    // \"state\": \"Jawa Barat\",\r
+
+      \    // \"zip_code\": \"16412\",\r
+
+      \    // \"phone_no\": \"0217654321\",\r
+
+      \    // \"fax_no\": \"0217654322\",\r
+
+      \    // \"email\": \"contact@aman.co.id\",\r
+
+      \    // \"mobile_phone_no\": \"08987654321\",\r
+
+      \    // \"chart_of_account_id\": 102,\r
+
+      \    // \"subledger_id\": 203,\r
+
+      \    // \"finance_contact_person\": \"Siti Aminah\",\r
+
+      \    // \"finance_email\": \"finance@aman.co.id\",\r
+
+      \    // \"sr_guarantor_group\": \"\",\r
+
+      \    // \"sr_guarantor_group_payer\": \"1\",\r
+
+      \    // \"user_update\": \"ferdinand\",\r
+
+      \    // \"updated_at\": \"2025-03-25T09:00:00+07:00\",\r
+
+      \    // \"is_use_cob\": false\r
+
+      }"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Not Found
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/:guarantor_id/:business_unit_id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: guarantor_id
+          value: a59a4948-5791-4e0e-ae39-a51c16ad89f2
+          type: path
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \  \"guarantor_name\": \"CV. Aman Sentosa Updated\",\r
+
+          \  \"short_name\": \"Aman Sentosa\",\r
+
+          \  \"sr_guarantor_type\": \"COMPANY\",\r
+
+          \  \"is_active\": true,\r
+
+          \  \"is_enable\": false,\r
+
+          \  \"contract_id\": \"07f92f60-7936-4459-8626-54ffa1fa0383\",\r
+
+          \  \"street_name\": \"Jl. Damai No.88\",\r
+
+          \  \"district\": \"Sukmajaya\",\r
+
+          \  \"city\": \"Depok\",\r
+
+          \  \"county\": \"Jawa Barat\",\r
+
+          \  \"state\": \"Jawa Barat\",\r
+
+          \  \"zip_code\": \"16412\",\r
+
+          \  \"phone_no\": \"0217654321\",\r
+
+          \  \"fax_no\": \"0217654322\",\r
+
+          \  \"email\": \"contact@aman.co.id\",\r
+
+          \  \"mobile_phone_no\": \"08987654321\",\r
+
+          \  \"chart_of_account_id\": 102,\r
+
+          \  \"subledger_id\": 203,\r
+
+          \  \"finance_contact_person\": \"Siti Aminah\",\r
+
+          \  \"finance_email\": \"finance@aman.co.id\",\r
+
+          \  \"credit_limit\": 50000000.0,\r
+
+          \  \"aging\": 0,\r
+
+          \  \"sr_guarantor_status\": 2,\r
+
+          \  \"sr_guarantor_group\": 2,\r
+
+          \  \"sr_guarantor_group_payer\": 2,\r
+
+          \  \"user_update\": \"superadmin\",\r
+
+          \  \"updated_at\": \"2025-03-25T09:00:00+07:00\"\r
+
+          }\r\n"
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Date
+          value: Tue, 10 Jun 2025 03:53:32 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "40"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "no data found",
+              "status": 404
+          }
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/:guarantor_id/:company_id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: guarantor_id
+          value: a8186a9e-75d7-47d1-a676-14cd01b8c551
+          type: path
+        - name: company_id
+          value: df0ff1b4-c381-4f1a-a0ab-0702c789d46b
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"business_unit_id\": [\"53aad077-9fb1-4f08-85f3-af9fd9a36517\"],\r
+
+          \    \"guarantor_name\": \"CV. Sehat Sentosa Updated\",\r
+
+          \    \"short_name\": \"Aman Sentosa\",\r
+
+          \    \"sr_guarantor_type\": \"COMPANY\",\r
+
+          \    \"street_name\": \"Jl. Damai No.88\",\r
+
+          \    \"district\": \"Sukmajaya\",\r
+
+          \    \"city\": \"Depok\",\r
+
+          \    \"county\": \"Jawa Barat\",\r
+
+          \    \"state\": \"Jawa Barat\",\r
+
+          \    \"zip_code\": \"16412\",\r
+
+          \    \"phone_no\": \"0217654321\",\r
+
+          \    \"fax_no\": \"0217654322\",\r
+
+          \    \"email\": \"contact@aman.co.id\",\r
+
+          \    \"mobile_phone_no\": \"08987654321\",\r
+
+          \    \"chart_of_account_id\": 102,\r
+
+          \    \"subledger_id\": 203,\r
+
+          \    \"finance_contact_person\": \"Siti Aminah\",\r
+
+          \    \"finance_email\": \"finance@aman.co.id\",\r
+
+          \    \"sr_guarantor_group\": \"External\",\r
+
+          \    \"sr_guarantor_group_payer\": \"Payer\",\r
+
+          \    \"user_update\": \"ferdinand\",\r
+
+          \    \"updated_at\": \"2025-03-25T09:00:00+07:00\",\r
+
+          \    \"is_use_cob\": false\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Fri, 11 Jul 2025 02:51:01 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "881"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "guarantor_id": "a8186a9e-75d7-47d1-a676-14cd01b8c551",
+                  "business_unit_id": [
+                      "53aad077-9fb1-4f08-85f3-af9fd9a36517"
+                  ],
+                  "company_id": "df0ff1b4-c381-4f1a-a0ab-0702c789d46b",
+                  "guarantor_name": "CV. Sehat Sentosa Updated",
+                  "short_name": "Aman Sentosa",
+                  "sr_guarantor_type": "COMPANY",
+                  "is_active": true,
+                  "is_enable": true,
+                  "street_name": "Jl. Damai No.88",
+                  "district": "Sukmajaya",
+                  "city": "Depok",
+                  "county": "Jawa Barat",
+                  "state": "Jawa Barat",
+                  "zip_code": "16412",
+                  "phone_no": "0217654321",
+                  "fax_no": "0217654322",
+                  "email": "contact@aman.co.id",
+                  "mobile_phone_no": "08987654321",
+                  "chart_of_account_id": 102,
+                  "subledger_id": 203,
+                  "finance_contact_person": "Siti Aminah",
+                  "finance_email": "finance@aman.co.id",
+                  "sr_guarantor_status": "1",
+                  "sr_guarantor_group": "External",
+                  "sr_guarantor_group_payer": "Payer",
+                  "user_update": "ferdinand",
+                  "updated_at": "2025-03-25T09:00:00+07:00",
+                  "guarantor_no": "G-KDY/20250711-0001"
+              }
+          }

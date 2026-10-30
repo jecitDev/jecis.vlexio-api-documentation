@@ -1,0 +1,240 @@
+info:
+  name: Create
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/business-units"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  body:
+    type: json
+    data: "{   \r
+
+      \    \"company_id\": \"7db1e2f4-f1a7-4ee5-afd5-6e05940586e7\",\r
+
+      \    \"name\": \"JEC Cibubur\",\r
+
+      \    \"logo_url\": \"\",\r
+
+      \    \"description\": \"Rumah Sakit spesialis mata yang telah memiliki standar layanan internasional. Kami memiliki misi dan komitmen untuk dapat meningkatkan kualitas hidup masyarakat melalui pelayanan kesehatan mata. JEC juga selalu berupaya untuk bisa menjadi yang terdepan dalam pelayanan kesehatan khususnya buat pasien yang mengalami gangguan mata.\",\r
+
+      \    \"abbreviation\": \"KDY\",\r
+
+      \    \"m_domain_id\": \"1105caa9-8e07-4502-8eb3-6702b6440cc5\",\r
+
+      \    \"base_currency\": \"IDR\",\r
+
+      \    \"country\": \"IDN\",\r
+
+      \    \"m_timezone_id\": \"3a26a2a8-b4fb-403b-b280-2554e0f3bc81\",\r
+
+      \    \"addresses\": {\r
+
+      \        \"address_line1\": \"Jalan Terusan, Jl. Arjuna Utara Jl. Kedoya Pesing No.1, Kedoya Sel., Kec. Kb. Jeruk, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta\",\r
+
+      \        \"address_line2\": \"\",\r
+
+      \        \"city\": \"Jakarta Barat\",\r
+
+      \        \"postal_code\": \"11520\",\r
+
+      \        \"lat\": \"\",\r
+
+      \        \"long\": \"\"\r
+
+      \    },\r
+
+      \    \"contact\": {\r
+
+      \        \"phone\": \"+628041221000\",\r
+
+      \        \"email\": \"care@jec.co.id\",\r
+
+      \        \"fax\": \"\",\r
+
+      \        \"website\": \"\"\r
+
+      \    },\r
+
+      \    \"date_of_established\": \"2012-04-02T00:00:00+07:00\",\r
+
+      \    \"default_letterhead_id\": \"e2331208-f962-4811-9585-36b4fee25a67\",\r
+
+      \    \"category_id\": \"6cbb6a42-4c19-4b12-96e2-b2d8d6516e3d\",\r
+
+      \    \"is_corporate\": false,\r
+
+      \    \"m_status_id\": \"c1939a90-849e-43e0-8309-2f734f250d38\",\r
+
+      \    \"color_code\": \"#fcba03\",\r
+
+      \    \"created_at\": \"2025-10-02T14:08:41+07:00\",\r
+
+      \    \"user_create\": \"admin@system.com\",\r
+
+      \    \"oc_template_id\": \"d8603db6-ec03-472e-aa67-647f41aea9b5\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/business-units"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      body:
+        type: json
+        data: "{   \r
+
+          \    \"company_id\": \"7db1e2f4-f1a7-4ee5-afd5-6e05940586e7\",\r
+
+          \    \"name\": \"JEC Cibubur\",\r
+
+          \    \"logo_url\": \"\",\r
+
+          \    \"description\": \"Rumah Sakit spesialis mata yang telah memiliki standar layanan internasional. Kami memiliki misi dan komitmen untuk dapat meningkatkan kualitas hidup masyarakat melalui pelayanan kesehatan mata. JEC juga selalu berupaya untuk bisa menjadi yang terdepan dalam pelayanan kesehatan khususnya buat pasien yang mengalami gangguan mata.\",\r
+
+          \    \"abbreviation\": \"KDY\",\r
+
+          \    \"m_domain_id\": \"1105caa9-8e07-4502-8eb3-6702b6440cc5\",\r
+
+          \    \"base_currency\": \"IDR\",\r
+
+          \    \"country\": \"IDN\",\r
+
+          \    \"m_timezone_id\": \"3a26a2a8-b4fb-403b-b280-2554e0f3bc81\",\r
+
+          \    \"addresses\": {\r
+
+          \        \"address_line1\": \"Jalan Terusan, Jl. Arjuna Utara Jl. Kedoya Pesing No.1, Kedoya Sel., Kec. Kb. Jeruk, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta\",\r
+
+          \        \"address_line2\": \"\",\r
+
+          \        \"city\": \"Jakarta Barat\",\r
+
+          \        \"postal_code\": \"11520\",\r
+
+          \        \"lat\": \"\",\r
+
+          \        \"long\": \"\"\r
+
+          \    },\r
+
+          \    \"contact\": {\r
+
+          \        \"phone\": \"+628041221000\",\r
+
+          \        \"email\": \"care@jec.co.id\",\r
+
+          \        \"fax\": \"\",\r
+
+          \        \"website\": \"\"\r
+
+          \    },\r
+
+          \    \"date_of_established\": \"2012-04-02T00:00:00+07:00\",\r
+
+          \    \"default_letterhead_id\": \"e2331208-f962-4811-9585-36b4fee25a67\",\r
+
+          \    \"category_id\": \"6cbb6a42-4c19-4b12-96e2-b2d8d6516e3d\",\r
+
+          \    \"is_corporate\": false,\r
+
+          \    \"m_status_id\": \"c1939a90-849e-43e0-8309-2f734f250d38\",\r
+
+          \    \"color_code\": \"#fcba03\",\r
+
+          \    \"created_at\": \"2025-10-02T14:08:41+07:00\",\r
+
+          \    \"user_create\": \"admin@system.com\",\r
+
+          \    \"oc_template_id\": \"d8603db6-ec03-472e-aa67-647f41aea9b5\"\r
+
+          }"
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Date
+          value: Fri, 24 Oct 2025 03:36:51 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "1290"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 201,
+              "data": {
+                  "id": "52af6ac6-8411-4054-8022-4175aca8d649",
+                  "company_id": "7db1e2f4-f1a7-4ee5-afd5-6e05940586e7",
+                  "name": "JEC Cibubur",
+                  "description": "Rumah Sakit spesialis mata yang telah memiliki standar layanan internasional. Kami memiliki misi dan komitmen untuk dapat meningkatkan kualitas hidup masyarakat melalui pelayanan kesehatan mata. JEC juga selalu berupaya untuk bisa menjadi yang terdepan dalam pelayanan kesehatan khususnya buat pasien yang mengalami gangguan mata.",
+                  "abbreviation": "KDY",
+                  "m_domain_id": "1105caa9-8e07-4502-8eb3-6702b6440cc5",
+                  "base_currency": "IDR",
+                  "country": "IDN",
+                  "m_timezone_id": "3a26a2a8-b4fb-403b-b280-2554e0f3bc81",
+                  "addresses": {
+                      "address_line1": "Jalan Terusan, Jl. Arjuna Utara Jl. Kedoya Pesing No.1, Kedoya Sel., Kec. Kb. Jeruk, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta",
+                      "city": "Jakarta Barat",
+                      "postal_code": "11520"
+                  },
+                  "contact": {
+                      "phone": "+628041221000",
+                      "email": "care@jec.co.id"
+                  },
+                  "date_of_established": "2012-04-02T00:00:00+07:00",
+                  "default_letterhead_id": "e2331208-f962-4811-9585-36b4fee25a67",
+                  "category_id": "6cbb6a42-4c19-4b12-96e2-b2d8d6516e3d",
+                  "m_status_id": "c1939a90-849e-43e0-8309-2f734f250d38",
+                  "color_code": "#fcba03",
+                  "created_at": "2025-10-24T10:36:51+07:00",
+                  "user_create": "ferdinand",
+                  "oc_template_id": "d8603db6-ec03-472e-aa67-647f41aea9b5"
+              }
+          }

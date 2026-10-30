@@ -1,0 +1,45 @@
+info:
+  name: Update
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/ot-room-unlocks/:business_unit_id/:id"
+  headers:
+    - name: x-token
+      value: "{{admission_xtoken}}"
+  params:
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+    - name: id
+      value: "1"
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"room_id\": \"A1-410\",\r
+
+      \    \"unlock_date\": \"2025-07-13\",\r
+
+      \    \"start_time\": \"10:00\",\r
+
+      \    \"end_time\": \"12:00\",\r
+
+      \    \"reason\": \"Scheduled maintenance update\",\r
+
+      \    \"user_update\": \"update\",\r
+
+      \    \"updated_at\": \"2025-07-08T14:11:19+07:00\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

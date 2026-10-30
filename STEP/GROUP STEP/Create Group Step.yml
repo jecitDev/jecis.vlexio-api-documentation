@@ -1,0 +1,324 @@
+info:
+  name: Create Group Step
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/group-steps"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+      \    \"name\": \"CATARACT\",\r
+
+      \    \"description\": \"Pemeriksaan CDC Cataract\",\r
+
+      \    \"steps_id\": [\r
+
+      \        {\r
+
+      \            \"step_id\": \"748da9f5-4b5a-4c77-bbde-7f9c9a98b6c7\",\r
+
+      \            \"order\": 1\r
+
+      \        },\r
+
+      \        {\r
+
+      \            \"step_id\": \"6c06377d-8feb-463e-a96a-55462d7e5773\",\r
+
+      \            \"order\": 2\r
+
+      \        },\r
+
+      \        {\r
+
+      \            \"step_id\": \"b7ddb506-49cf-4e19-93ea-92c5c2b0da39\",\r
+
+      \            \"order\": 2\r
+
+      \        }\r
+
+      \    ],\r
+
+      \    \"is_active\": true,\r
+
+      \    \"user_create\": \"21170\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/group-steps"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{medical_record_xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+          \    \"name\": \"Medical Checkup Flow\",\r
+
+          \    \"description\": \"Standard medical checkup process with registration, examination, and reporting\",\r
+
+          \    \"steps_id\": [\r
+
+          \        {\r
+
+          \            \"step_id\": \"48547cc1-818f-47fe-a1d4-1c85f8395c2c\",\r
+
+          \            \"order\": 1\r
+
+          \        },\r
+
+          \        {\r
+
+          \            \"step_id\": \"c84d4ea9-a474-4be7-bb13-3cc35a528a71\",\r
+
+          \            \"order\": 2\r
+
+          \        }\r
+
+          \    ],\r
+
+          \    \"is_active\": true,\r
+
+          \    \"user_create\": \"admin\"\r
+
+          }"
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Date
+          value: Fri, 03 Oct 2025 07:05:19 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "186"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 201,
+              "data": {
+                  "id": "7545d4a7-224e-41e3-8d04-dce66a611d4f",
+                  "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "user_create": "admin",
+                  "created_at": "2025-10-03T14:05:15+07:00"
+              }
+          }
+  - name: Err name already exists within same business unit id
+    request:
+      url: "{{BASE_URL}}/v1/group-steps"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{medical_record_xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+          \    \"name\": \"Medical Checkup Flow\",\r
+
+          \    \"description\": \"Standard medical checkup process with registration, examination, and reporting\",\r
+
+          \    \"steps_id\": [\r
+
+          \        {\r
+
+          \            \"step_id\": \"48547cc1-818f-47fe-a1d4-1c85f8395c2c\",\r
+
+          \            \"order\": 1\r
+
+          \        },\r
+
+          \        {\r
+
+          \            \"step_id\": \"c84d4ea9-a474-4be7-bb13-3cc35a528a71\",\r
+
+          \            \"order\": 2\r
+
+          \        }\r
+
+          \    ],\r
+
+          \    \"is_active\": true,\r
+
+          \    \"user_create\": \"admin\"\r
+
+          }"
+    response:
+      status: 409
+      statusText: Conflict
+      headers:
+        - name: Date
+          value: Fri, 03 Oct 2025 02:34:28 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "57"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "group_step.name_already_exists",
+              "status": 409
+          }
+  - name: Err step not found
+    request:
+      url: "{{BASE_URL}}/v1/group-steps"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{medical_record_xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+          \    \"name\": \"Medical Checkup Flow\",\r
+
+          \    \"description\": \"Standard medical checkup process with registration, examination, and reporting\",\r
+
+          \    \"steps_id\": [\r
+
+          \        {\r
+
+          \            \"step_id\": \"48547cc1-818f-47fe-a1d4-1c85f8395b2c\",\r
+
+          \            \"order\": 1\r
+
+          \        },\r
+
+          \        {\r
+
+          \            \"step_id\": \"c84d4ea9-a474-4be7-bb13-3cc35a528a71\",\r
+
+          \            \"order\": 2\r
+
+          \        }\r
+
+          \    ],\r
+
+          \    \"is_active\": true,\r
+
+          \    \"user_create\": \"admin\"\r
+
+          }"
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Date
+          value: Fri, 03 Oct 2025 02:35:12 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "41"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "step.not_found",
+              "status": 404
+          }

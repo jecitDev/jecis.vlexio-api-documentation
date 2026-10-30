@@ -1,0 +1,130 @@
+info:
+  name: AUTH - POST AUTHS SIGNIN GET ACCESS
+  type: http
+  seq: 1
+http:
+  method: POST
+  url: "{{BASE_URL}}/auths/get_access"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\"email\":\"fernando.riyo@jec.co.id\",\"password\":\"\"}"
+  auth: inherit
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: AUTH - POST AUTHS SIGNIN GET ACCESS
+    request:
+      url: "{{BASE_URL}}/auths/get_access"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+          disabled: true
+      body:
+        type: json
+        data: "{\r\n    \"email\":\"fernando.riyo@jec.co.id\",\r\n    \"password\":\"\"\r\n}"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 06 Jun 2024 01:52:36 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "616"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "business_units": [
+                      {
+                          "company_id": "706cded9-0fca-4ed8-a68c-08ab6c4f3a7f",
+                          "business_unit_id": "e10997e9-7b7f-4037-b299-0e3cd954d619",
+                          "business_unit_name": "JEC@MENTENG",
+                          "company_name": "PT. Nitra Sanatadharma",
+                          "is_active": true,
+                          "active_date": "2024-01-01T00:00:00+07:00",
+                          "expire_date": "2025-01-01T00:00:00+07:00"
+                      },
+                      {
+                          "company_id": "706cded9-0fca-4ed8-a68c-08ab6c4f3a7f",
+                          "business_unit_id": "debf1c61-481f-4d88-8bab-66934741533e",
+                          "business_unit_name": "JEC@TAMBORA",
+                          "company_name": "PT. Nitra Sanatadharma",
+                          "is_active": true,
+                          "active_date": "2023-03-14T11:00:00+07:00",
+                          "expire_date": "2025-03-14T11:00:00+07:00"
+                      }
+                  ]
+              }
+          }
+docs: |-
+  Sign-in endpoint for the JECIS backend. Use this endpoint to authenticate a user with their email and password and obtain an access token that can be used to authorize subsequent requests.
+
+  **HTTP Request**
+
+  - Method: `POST`
+      
+  - URL: `{{BASE_URL}}/auths/get_access`
+      
+
+  **Headers**
+
+  - `x-token` (string, required): Static or pre-issued token required by the JECIS backend to allow the sign-in attempt.
+      
+
+  **Request Body (JSON)**
+
+  - `email` (string, required): User’s login email (e.g., `fernando.riyo@jec.co.id`).
+      
+  - `password` (string, required): User’s login password.
+      
+
+  **Successful Response (200 OK)**  
+  Typically returns:
+
+  - An access token (e.g., JWT) that must be sent in subsequent requests (commonly via an authorization or custom header).
+      
+  - Additional user/session information depending on backend implementation.
+      
+
+  **Error Responses**
+
+  - `4xx` (e.g., 400/401/403): Invalid credentials, missing/invalid `x-token`, or malformed request body.
+      
+  - `5xx`: Server-side errors when the authentication service is unavailable or fails unexpectedly.
+      
+
+  Use this request as the first step in workflows that require authenticated access to other JECIS backend endpoints.

@@ -1,0 +1,140 @@
+info:
+  name: Get Bank By Id
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/bank/:id"
+  headers:
+    - name: x-token
+      value: "{{master_xtoken}}"
+  params:
+    - name: id
+      value: "3"
+      type: path
+  body:
+    type: json
+    data: ""
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/bank/:id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{master_xtoken}}"
+      params:
+        - name: id
+          value: "1"
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 08 Apr 2025 02:40:23 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "147"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "bank_id": 1,
+                  "business_unit_id": "f2c4e8f0-1f6c-4c39-9a30-7fa4d2f9a6a9",
+                  "bank_name": "bank central sejahtera",
+                  "bi_code": "BSC123"
+              }
+          }
+  - name: Err Data Not Found
+    request:
+      url: "{{BASE_URL}}/v1/bank/:id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{master_xtoken}}"
+      params:
+        - name: id
+          value: "99"
+          type: path
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Date
+          value: Tue, 08 Apr 2025 02:43:10 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "37"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 404,
+              "error": "Data not found"
+          }

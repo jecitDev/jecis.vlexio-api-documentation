@@ -1,0 +1,89 @@
+info:
+  name: Import To Typesense
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/Item/sync_to_typesense"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Import To Typesense
+    request:
+      url: "{{BASE_URL}}/v1/Item/sync_to_typesense"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\"\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: :status
+          value: "200"
+        - name: date
+          value: Tue, 21 Apr 2026 04:37:27 GMT
+        - name: content-type
+          value: application/json
+        - name: content-length
+          value: "32"
+        - name: x-xss-protection
+          value: "0"
+        - name: x-content-type-options
+          value: nosniff
+        - name: x-frame-options
+          value: SAMEORIGIN
+        - name: cross-origin-embedder-policy
+          value: require-corp
+        - name: cross-origin-opener-policy
+          value: same-origin
+        - name: cross-origin-resource-policy
+          value: same-origin
+        - name: origin-agent-cluster
+          value: ?1
+        - name: referrer-policy
+          value: no-referrer
+        - name: x-dns-prefetch-control
+          value: off
+        - name: x-download-options
+          value: noopen
+        - name: x-permitted-cross-domain-policies
+          value: none
+        - name: vary
+          value: Origin
+        - name: access-control-allow-origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "total": 10
+              }
+          }

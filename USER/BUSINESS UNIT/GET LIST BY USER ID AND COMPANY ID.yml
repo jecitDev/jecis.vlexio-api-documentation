@@ -1,0 +1,149 @@
+info:
+  name: GET LIST BY USER ID AND COMPANY ID
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/user/business_unit/:company_id/:user_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: company_id
+      value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+      type: path
+    - name: user_id
+      value: "21170"
+      type: path
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: GET LIST BY USER ID AND COMPANY ID
+    request:
+      url: "{{BASE_URL}}/v1/user/business_unit/:company_id/:user_id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: company_id
+          value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+          type: path
+        - name: user_id
+          value: "21170"
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 24 Nov 2025 04:15:13 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "1598"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "user_id": "21170",
+                  "business_unit": [
+                      {
+                          "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",
+                          "company_name": "PT. Nitrasanata Dharma",
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "business_unit_name": "JEC @ KEDOYA",
+                          "active_date": "2024-05-18T00:00:00+07:00",
+                          "expire_date": "2029-05-18T00:00:00+07:00",
+                          "is_active": true,
+                          "departments": [
+                              {
+                                  "department_id": "937d88e6-1542-407b-9d4b-843325d233bf",
+                                  "department_name": "Internal Monitoring",
+                                  "is_all_service_units": true
+                              },
+                              {
+                                  "department_id": "df55c115-48a4-4d9a-81e3-966c3363a76e",
+                                  "department_name": "Surgical",
+                                  "service_units": [
+                                      {
+                                          "service_unit_id": "SU00002",
+                                          "service_unit_name": "Operating Theatre"
+                                      },
+                                      {
+                                          "service_unit_id": "C201",
+                                          "service_unit_name": "LASIK"
+                                      }
+                                  ]
+                              }
+                          ]
+                      },
+                      {
+                          "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",
+                          "company_name": "PT. Nitrasanata Dharma",
+                          "business_unit_id": "b15fe928-92ab-478f-99ba-1a156fd8d64c",
+                          "business_unit_name": "JEC PRIMASANA @ Tj. Priok",
+                          "active_date": "2024-06-02T00:00:00+07:00",
+                          "expire_date": "2024-06-02T00:00:00+07:00",
+                          "is_active": true
+                      },
+                      {
+                          "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",
+                          "company_name": "PT. Nitrasanata Dharma",
+                          "business_unit_id": "6b1cdcef-c172-4958-a12f-ea6f90259014",
+                          "business_unit_name": "JEC @ CIBUBUR",
+                          "active_date": "2024-06-25T00:00:00+07:00",
+                          "expire_date": "2027-06-25T00:00:00+07:00",
+                          "is_active": true
+                      },
+                      {
+                          "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",
+                          "company_name": "PT. Nitrasanata Dharma",
+                          "business_unit_id": "382003f2-2ccb-4dd8-af5b-e39c093f104e",
+                          "business_unit_name": "JEC @ MENTENG",
+                          "active_date": "2025-09-17T00:00:00+07:00",
+                          "expire_date": "2026-09-17T00:00:00+07:00",
+                          "is_active": true
+                      }
+                  ]
+              }
+          }

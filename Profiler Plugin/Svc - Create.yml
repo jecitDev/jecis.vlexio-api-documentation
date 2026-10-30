@@ -1,0 +1,285 @@
+info:
+  name: Svc - Create
+  type: http
+  seq: 3
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/profilerplugins/"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r\n    \"company_id\": \"1\",\r\n    \"business_unit_id\": \"1\",\r\n    \"profiler_name\": \"SEDNA MENTENG Whatsapp\",\r\n    \"profiler_description\": \"SEDNA MENTENG - Whatsapp Configuration\",\r\n    \"profiler_type\": \"ProfilerType-02\",\r\n    \"profiler_config\": {\r\n        \"url\": \"https://api-whatsapp.kata.ai/v1/messages\",\r\n        \"username\": \"jecis-mtg\",\r\n        \"password\": \"\",\r\n        \"token\": \"\",\r\n        \"whatsapp_type\":\"template\",\r\n        \"whatsapp_template_name\":\"test 123\",\r\n        \"whatsapp_recipient_type\":\"individual\",\r\n        \"whatsapp_namespace\":\"123123123\",\r\n        \"whatsapp_language\":\"id\",\r\n        \"smtp_host\": \"\",\r\n        \"smtp_port\": 0,\r\n        \"smtp_username\": \"\",\r\n        \"smtp_password\": \"\",\r\n        \"smtp_enable_ssl\": true,\r\n        \"smtp_enable_tls\": false,\r\n        \"beam_url\":\"https://beam.jec.co.id/v1/alb\",\r\n        \"beam_token\":\"\",\r\n        \"beam_connection\":\"ALBEDO@KORP\"\r\n\r\n    },\r\n    \"is_active\": true,\r\n    \"user_create\": \"Admin1\",\r\n    \"created_at\": \"2024-04-23T14:10:56+07:00\"\r\n}"
+  auth:
+    type: bearer
+    token: "{{xtoken}}"
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: "Svc - Create #1-240424"
+    request:
+      url: "{{BASE_URL}}/v1/profilerplugins/"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r\n    \"company_id\": \"1\",\r\n    \"business_unit_id\": \"1\",\r\n    \"profiler_name\": \"SEDNA MENTENG Whatsapp\",\r\n    \"profiler_description\": \"SEDNA MENTENG - Whatsapp Configuration\",\r\n    \"profiler_type\": \"ProfilerType-02\",\r\n    \"profiler_config\": {\r\n        \"url\": \"https://api-whatsapp.kata.ai/v1/messages\",\r\n        \"username\": \"jecis-mtg\",\r\n        \"password\": \"\",\r\n        \"token\": \"\",\r\n        \"smtp_host\": \"\",\r\n        \"smtp_port\": 0,\r\n        \"smtp_username\": \"\",\r\n        \"smtp_password\": \"\",\r\n        \"smtp_enable_ssl\": true,\r\n        \"smtp_enable_tls\": false\r\n    },\r\n    \"is_active\": true,\r\n    \"user_create\": \"Admin1\",\r\n    \"created_at\": \"2024-04-23T14:10:56+07:00\"\r\n}"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Wed, 24 Apr 2024 08:06:14 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "636"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "profiler_id": 4,
+                  "company_id": "1",
+                  "business_unit_id": "1",
+                  "profiler_name": "SEDNA MENTENG Whatsapp",
+                  "profiler_description": "SEDNA MENTENG - Whatsapp Configuration",
+                  "profiler_type": "ProfilerType-02",
+                  "profiler_config": {
+                      "url": "https://api-whatsapp.kata.ai/v1/messages",
+                      "username": "jecis-mtg",
+                      "password": "",
+                      "token": "",
+                      "smtp_host": "",
+                      "smtp_port": 0,
+                      "smtp_username": "",
+                      "smtp_password": "",
+                      "smtp_enable_ssl": true,
+                      "smtp_enable_tls": false
+                  },
+                  "is_active": true,
+                  "user_create": "Admin1",
+                  "created_at": "2024-04-23T14:10:56+07:00"
+              }
+          }
+  - name: Svc - Create OSS Alibaba
+    request:
+      url: "{{BASE_URL}}/v1/profilerplugins/"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r\n    \"company_id\": \"2da6a1bd-ba62-43ec-91f8-4085d5d6d498\",\r\n    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r\n    \"profiler_name\": \"OSS Alibaba Config Bucket User Profile\",\r\n    \"profiler_description\": \"Config For OSS Alibaba In Bucket Profile\",\r\n    \"profiler_type\": \"ProfilerType-06\",\r\n    \"profiler_config\": {\r\n        \"oss_access_key_id\":\"\",\r\n        \"oss_access_key_secret\":\"\",\r\n        \"oss_endpoint\":\"oss-ap-southeast-5.aliyuncs.com\",\r\n        \"oss_bucket_name\":\"emr-bucket-app\",\r\n        \"oss_object_path\":\"profiles/XX-patient-profile/\",\r\n        \"oss_object_acl\":\"private\"\r\n    },\r\n    \"is_active\": true,\r\n    \"user_create\": \"21170\",\r\n    \"created_at\": \"2024-04-23T14:10:56+07:00\"\r\n}"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 25 Jun 2024 01:02:04 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "671"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "profiler_id": 22,
+                  "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",
+                  "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "profiler_name": "OSS Alibaba Config Bucket Profile",
+                  "profiler_description": "Config For OSS Alibaba In Bucket Profile",
+                  "profiler_type": "ProfilerType-06",
+                  "profiler_config": {
+                      "oss_access_key_id": "",
+                      "oss_access_key_secret": "",
+                      "oss_endpoint": "oss-ap-southeast-5.aliyuncs.com",
+                      "oss_bucket_name": "emr-bucket-app",
+                      "oss_object_path": "profiles/XX-patient-profile/",
+                      "oss_object_acl": "oss.ACLPrivate",
+                      "storage_type":"OSSAlibaba"
+                  },
+                  "is_active": true,
+                  "user_create": "21170",
+                  "created_at": "2024-04-23T14:10:56+07:00"
+              }
+          }
+  - name: Svc - Create FTP
+    request:
+      url: "{{BASE_URL}}/v1/profilerplugins/"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r\n    \"company_id\": \"2da6a1bd-ba62-43ec-91f8-4085d5d6d498\",\r\n    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r\n    \"profiler_name\": \"FTP User Profile\",\r\n    \"profiler_description\": \"Config For FTP User Profile\",\r\n    \"profiler_type\": \"ProfilerType-06\",\r\n    \"profiler_config\": {\r\n        \"ftp_host\":\"172.16.20.54\",\r\n        \"ftp_port\":21,\r\n        \"ftp_username\":\"ftpuser\",\r\n        \"ftp_password\":\"\",\r\n        \"ftp_path\":\"/home/JECIS/UserProfile\",\r\n            \"storage_type\":\"FTP\"\r\n    },\r\n    \"is_active\": true,\r\n    \"user_create\": \"21170\",\r\n    \"created_at\": \"2024-04-23T14:10:56+07:00\"\r\n}"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 25 Jun 2024 08:02:17 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "371"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "profiler_id": 23,
+                  "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",
+                  "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "profiler_name": "FTP User Profile",
+                  "profiler_description": "Config For FTP User Profile",
+                  "profiler_type": "ProfilerType-06",
+                  "profiler_config": {},
+                  "is_active": true,
+                  "user_create": "21170",
+                  "created_at": "2024-04-23T14:10:56+07:00"
+              }
+          }
+  - name: Svc - Create Halo AI
+    request:
+      url: "{{BASE_URL}}/v1/profilerplugins/"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r\n    \"company_id\": \"71b53dd1-2802-4527-8b5c-d54173392222\",\r\n    \"business_unit_id\": \"18e9ea73-7343-4be2-a8e4-47b652e56981\",\r\n    \"profiler_name\": \"ADMISSION-APPOINTMENT SEND WA TO PATIENT\",\r\n    \"profiler_description\": \"ADMISSION-APPOINTMENT SEND WA TO PATIENT\",\r\n    \"profiler_type\": \"ProfilerType-08\",\r\n    \"profiler_config\": {\r\n        \"halo_ai_url\": \"https://api-whatsapp.kata.ai/v1/messages\",\r\n        \"halo_ai_authorization\": \"\",\r\n        \"halo_ai_business_id\": \"\",\r\n        \"halo_ai_channel_id\": \"\",\r\n        \"halo_ai_template\":\"template\"\r\n    },\r\n    \"is_active\": true,\r\n    \"user_create\": \"21170\",\r\n    \"created_at\": \"2024-04-23T14:10:56+07:00\"\r\n}"
+    response:
+      status: 500
+      statusText: Internal Server Error
+      headers:
+        - name: ":status"
+          value: "500"
+        - name: date
+          value: Mon, 21 Sep 2026 01:59:39 GMT
+        - name: content-type
+          value: application/json
+        - name: content-length
+          value: "59"
+        - name: x-xss-protection
+          value: "0"
+        - name: x-content-type-options
+          value: nosniff
+        - name: x-frame-options
+          value: SAMEORIGIN
+        - name: cross-origin-embedder-policy
+          value: require-corp
+        - name: cross-origin-opener-policy
+          value: same-origin
+        - name: cross-origin-resource-policy
+          value: same-origin
+        - name: origin-agent-cluster
+          value: "?1"
+        - name: referrer-policy
+          value: no-referrer
+        - name: x-dns-prefetch-control
+          value: "off"
+        - name: x-download-options
+          value: noopen
+        - name: x-permitted-cross-domain-policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+              "status": 500,
+              "message": "profiler.duplicate_profiler_name"
+          }

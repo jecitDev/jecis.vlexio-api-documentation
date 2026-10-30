@@ -1,0 +1,108 @@
+info:
+  name: Favorite
+  type: http
+  seq: 7
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/emr/sticky-notes/favorite/:business_unit_id/:id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+    - name: id
+      value: 4d942462-4e53-40b2-a0ba-ddf436f07099
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"updated_at\": \"2025-03-14T11:43:00+07:00\",\r
+
+      \    \"user_update\": \"ferdinand iskandar\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Favorite
+    request:
+      url: "{{BASE_URL}}/v1/emr/sticky-notes/favorite/:business_unit_id/:id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: business_unit_id
+          value: ff825f55-65d1-44a6-b3c4-322feb76f98a
+          type: path
+        - name: id
+          value: 10ffff29-6148-4720-9255-d37bcbc3f8d1
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"updated_at\": \"2025-03-14T11:43:00+07:00\",\r
+
+          \    \"user_update\": \"ferdinand iskandar\"\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Fri, 14 Mar 2025 04:44:38 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "199"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "business_unit_id": "ff825f55-65d1-44a6-b3c4-322feb76f98a",
+                  "id": "10ffff29-6148-4720-9255-d37bcbc3f8d1",
+                  "user_update": "ferdinand iskandar",
+                  "updated_at": "2025-03-14T11:43:00+07:00"
+              }
+          }

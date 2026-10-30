@@ -1,0 +1,7 @@
+info:
+  name: Book Rate
+  type: folder
+  seq: 109
+
+request:
+  auth: inherit

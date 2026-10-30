@@ -1,0 +1,458 @@
+info:
+  name: GET LIST
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/user?page=1&page_size=10&sort_by=user_id&sort_order=ASC&is_active=true&business_unit_id=53aad077-9fb1-4f08-85f3-af9fd9a36517&company_id=2da6a1bd-ba62-43ec-91f8-4085d5d6d498&user_initials=JH"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: page_size
+      value: "10"
+      type: query
+    - name: sort_by
+      value: user_id
+      type: query
+    - name: sort_order
+      value: ASC
+      type: query
+    - name: keywords
+      value: "12345"
+      type: query
+      disabled: true
+    - name: user_id
+      value: ""
+      type: query
+      disabled: true
+    - name: profession
+      value: ""
+      type: query
+      disabled: true
+    - name: user_name
+      value: ""
+      type: query
+      disabled: true
+    - name: email
+      value: ""
+      type: query
+      disabled: true
+    - name: mobile_no
+      value: "0811"
+      type: query
+      disabled: true
+    - name: nik
+      value: "3275031901860020"
+      type: query
+      disabled: true
+    - name: is_active
+      value: "true"
+      type: query
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: query
+    - name: company_id
+      value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+      type: query
+    - name: npwp
+      value: "12345"
+      type: query
+      disabled: true
+    - name: user_initials
+      value: JH
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: GET LIST
+    request:
+      url: "{{BASE_URL}}/v1/user?page=1&page_size=10&sort_by=user_id&sort_order=ASC&is_active=true&business_unit_id=53aad077-9fb1-4f08-85f3-af9fd9a36517&company_id=2da6a1bd-ba62-43ec-91f8-4085d5d6d498&user_initials=JH"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: page_size
+          value: "10"
+          type: query
+        - name: sort_by
+          value: user_id
+          type: query
+        - name: sort_order
+          value: ASC
+          type: query
+        - name: keywords
+          value: "12345"
+          type: query
+          disabled: true
+        - name: user_id
+          value: ""
+          type: query
+          disabled: true
+        - name: profession
+          value: ""
+          type: query
+          disabled: true
+        - name: user_name
+          value: ""
+          type: query
+          disabled: true
+        - name: email
+          value: ""
+          type: query
+          disabled: true
+        - name: mobile_no
+          value: "0811"
+          type: query
+          disabled: true
+        - name: nik
+          value: "3275031901860020"
+          type: query
+          disabled: true
+        - name: is_active
+          value: "true"
+          type: query
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: query
+        - name: company_id
+          value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+          type: query
+        - name: npwp
+          value: "12345"
+          type: query
+          disabled: true
+        - name: user_initials
+          value: JH
+          type: query
+      body:
+        type: json
+        data: ""
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Wed, 26 Nov 2025 01:26:40 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "6167"
+        - name: Connection
+          value: keep-alive
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "page": 1,
+                  "page_size": 10,
+                  "total_items": 76,
+                  "users": [
+                      {
+                          "krs_id": "1024",
+                          "user_id": "1024",
+                          "user_type": "StandardUser",
+                          "user_name": "Rezky Firmansyah",
+                          "email": "rezkyfirmansyah@mail.com",
+                          "user_initials": "RF",
+                          "sex": "M",
+                          "date_birth": "1997-12-26T00:00:00+07:00",
+                          "religion": "Religion-001",
+                          "address": "Jl. Juana No.21, RT.7/RW.6, Dukuh Atas, Menteng",
+                          "province": "Indonesia",
+                          "city": "Jakarta",
+                          "county": "Menteng",
+                          "nationality": "Indonesian",
+                          "phone_no": "02318302345",
+                          "mobile_no": "08112445005",
+                          "sr_language": "en-US",
+                          "nik": "3238739892392898",
+                          "npwp": "121232313222222",
+                          "font_size": "FontSize-01",
+                          "page_after_login": "01.01.02",
+                          "sr_profession": 1,
+                          "sr_profession_name": "Other Officer",
+                          "is_active": true,
+                          "user_create": "rama",
+                          "created_at": "2025-04-09T13:14:56+07:00",
+                          "user_update": "20371",
+                          "updated_at": "2025-10-29T11:17:58+07:00"
+                      },
+                      {
+                          "krs_id": "108194",
+                          "user_id": "109194",
+                          "user_type": "StandardUser",
+                          "user_name": "Rama Edwinda P",
+                          "email": "ramaedwindap@gmail.com",
+                          "user_initials": "REP",
+                          "sex": "M",
+                          "date_birth": "1998-12-26T00:00:00+07:00",
+                          "religion": "Religion-001",
+                          "address": "Jl. Juana No.21, RT.7/RW.6, Dukuh Atas, Menteng",
+                          "province": "DKI-Jakarta",
+                          "city": "Jakarta",
+                          "county": "Menteng",
+                          "nationality": "Indonesia Raya",
+                          "phone_no": "02313502345",
+                          "mobile_no": "087722265005",
+                          "sr_language": "en-US",
+                          "nik": "3424141212120018",
+                          "npwp": "123123123123123",
+                          "font_size": "FontSize-01",
+                          "sr_profession": 1,
+                          "sr_profession_name": "Other Officer",
+                          "is_active": true,
+                          "user_create": "rama",
+                          "created_at": "2025-04-07T17:17:14+07:00",
+                          "user_update": "rama",
+                          "updated_at": "2025-10-15T14:05:13+07:00"
+                      },
+                      {
+                          "krs_id": "21170",
+                          "user_id": "20371",
+                          "user_type": "StandardUser",
+                          "user_name": "Budi Arifianto",
+                          "email": "arifianto.budi@jec.co.id",
+                          "user_initials": "JH",
+                          "sex": "M",
+                          "date_birth": "1986-01-19T00:00:00+07:00",
+                          "religion": "Religion-001",
+                          "address": "Jl. Terusan Arjuna Utara No.1",
+                          "province": "Jakarta",
+                          "city": "Jakarta Barat",
+                          "county": "Jakarta Barat",
+                          "nationality": "Indonesia",
+                          "phone_no": "081316850225",
+                          "mobile_no": "081316850225",
+                          "sr_language": "en-US",
+                          "img_url": "/file_storage/b052c3a2-7101-4218-9a88-67481fe6ff0c/2da6a1bd-ba62-43ec-91f8-4085d5d6d498/53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "nik": "3275031901860020",
+                          "npwp": "123451121212121",
+                          "font_size": "FontSize-01",
+                          "page_after_login": "00",
+                          "sr_profession": 4,
+                          "sr_profession_name": "Pharmacists",
+                          "is_active": true,
+                          "user_create": "21170",
+                          "created_at": "2024-07-11T10:52:55+07:00",
+                          "user_update": "20371",
+                          "updated_at": "2025-10-27T08:14:21+07:00"
+                      },
+                      {
+                          "krs_id": "20568 ",
+                          "user_id": "20568",
+                          "user_type": "StandardUser",
+                          "user_name": "Bambang Sugianto",
+                          "email": "bambang.sugianto@jec.co.id",
+                          "user_initials": "bambang",
+                          "sex": "M",
+                          "date_birth": "1990-01-01T00:00:00+07:00",
+                          "religion": "Religion-001",
+                          "address": "Cibubur",
+                          "city": "Jakarta",
+                          "mobile_no": "081383898333",
+                          "sr_language": "en-US",
+                          "nik": "-",
+                          "npwp": "-",
+                          "font_size": "FontSize-01",
+                          "sr_profession": 1,
+                          "sr_profession_name": "Other Officer",
+                          "is_active": true,
+                          "user_create": "21239",
+                          "created_at": "2025-03-01T05:00:00+07:00",
+                          "user_update": "20818",
+                          "updated_at": "2025-03-10T11:55:54+07:00"
+                      },
+                      {
+                          "krs_id": "20667",
+                          "user_id": "20667",
+                          "user_type": "StandardUser",
+                          "user_name": "Markus Simanjuntak",
+                          "email": "markus.simanjuntak@jec.co.id",
+                          "user_initials": "markus",
+                          "sex": "M",
+                          "date_birth": "1990-01-01T00:00:00+07:00",
+                          "religion": "Religion-001",
+                          "address": "-",
+                          "city": "-",
+                          "mobile_no": "-",
+                          "sr_language": "en-US",
+                          "nik": "-",
+                          "font_size": "FontSize-01",
+                          "sr_profession": 1,
+                          "sr_profession_name": "Other Officer",
+                          "is_active": true,
+                          "user_create": "21239",
+                          "created_at": "2025-03-01T05:00:00+07:00",
+                          "user_update": "20818",
+                          "updated_at": "2025-03-07T10:05:38+07:00"
+                      },
+                      {
+                          "krs_id": "20720",
+                          "user_id": "20720",
+                          "user_type": "StandardUser",
+                          "user_name": "Praseptian Setyawada",
+                          "email": "praseptian@jec.co.id",
+                          "user_initials": "pr",
+                          "sex": "M",
+                          "date_birth": "1990-01-01T00:00:00+07:00",
+                          "religion": "Religion-001",
+                          "address": "-",
+                          "city": "-",
+                          "mobile_no": "-",
+                          "sr_language": "en-US",
+                          "nik": "-",
+                          "font_size": "FontSize-01",
+                          "sr_profession": 1,
+                          "sr_profession_name": "Other Officer",
+                          "is_active": true,
+                          "user_create": "21239",
+                          "created_at": "2025-03-01T05:00:00+07:00",
+                          "user_update": "20818",
+                          "updated_at": "2025-03-07T10:06:52+07:00"
+                      },
+                      {
+                          "krs_id": "20740",
+                          "user_id": "20740",
+                          "user_type": "StandardUser",
+                          "user_name": "Maulana Sukandar",
+                          "email": "mul@jec.co.id",
+                          "user_initials": "maulana",
+                          "sex": "M",
+                          "date_birth": "1990-01-01T00:00:00+07:00",
+                          "religion": "Religion-001",
+                          "address": "-",
+                          "city": "-",
+                          "mobile_no": "-",
+                          "sr_language": "en-US",
+                          "nik": "-",
+                          "font_size": "FontSize-01",
+                          "sr_profession": 1,
+                          "sr_profession_name": "Other Officer",
+                          "is_active": true,
+                          "user_create": "21239",
+                          "created_at": "2025-03-01T05:00:00+07:00",
+                          "user_update": "nando",
+                          "updated_at": "2025-03-23T23:25:55+07:00"
+                      },
+                      {
+                          "krs_id": "20746",
+                          "user_id": "20746",
+                          "user_type": "StandardUser",
+                          "user_name": "Purkon",
+                          "email": "purkon@jec.co.id",
+                          "user_initials": "purkon",
+                          "sex": "M",
+                          "date_birth": "1987-07-28T00:00:00+07:00",
+                          "religion": "Religion-001",
+                          "address": "Jl. Terusan Arjuna Utara No.1",
+                          "city": "Jakarta",
+                          "mobile_no": "087722275005",
+                          "sr_language": "en-US",
+                          "nik": "12081293091221",
+                          "font_size": "FontSize-01",
+                          "sr_profession": 1,
+                          "sr_profession_name": "Other Officer",
+                          "is_active": true,
+                          "user_create": "21239",
+                          "created_at": "2025-03-01T05:00:00+07:00",
+                          "user_update": "20746",
+                          "updated_at": "2025-03-14T11:18:02+07:00"
+                      },
+                      {
+                          "krs_id": "20750",
+                          "user_id": "20750",
+                          "user_type": "StandardUser",
+                          "user_name": "David Bugis",
+                          "email": "davidbugis@jec.co.id",
+                          "user_initials": "david",
+                          "sex": "M",
+                          "date_birth": "1990-01-01T00:00:00+07:00",
+                          "religion": "Religion-001",
+                          "address": "-",
+                          "city": "-",
+                          "mobile_no": "-",
+                          "sr_language": "en-US",
+                          "nik": "-",
+                          "font_size": "FontSize-01",
+                          "sr_profession": 1,
+                          "sr_profession_name": "Other Officer",
+                          "is_active": true,
+                          "user_create": "21239",
+                          "created_at": "2025-03-01T05:00:00+07:00",
+                          "user_update": "nando",
+                          "updated_at": "2025-03-19T14:24:29+07:00"
+                      },
+                      {
+                          "krs_id": "20809",
+                          "user_id": "20809",
+                          "user_type": "StandardUser",
+                          "user_name": "Syaifulloh",
+                          "email": "syaifulloh@jec.co.id",
+                          "user_initials": "ipul",
+                          "sex": "M",
+                          "date_birth": "1990-01-01T00:00:00+07:00",
+                          "religion": "Religion-001",
+                          "address": "-",
+                          "city": "-",
+                          "mobile_no": "-",
+                          "sr_language": "en-US",
+                          "nik": "-",
+                          "font_size": "FontSize-01",
+                          "sr_profession": 1,
+                          "sr_profession_name": "Other Officer",
+                          "is_active": true,
+                          "user_create": "Admin",
+                          "created_at": "2025-03-06T10:06:29+07:00",
+                          "user_update": "20818",
+                          "updated_at": "2025-03-07T10:09:46+07:00"
+                      }
+                  ]
+              }
+          }

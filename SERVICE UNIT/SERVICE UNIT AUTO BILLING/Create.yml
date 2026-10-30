@@ -1,0 +1,138 @@
+info:
+  name: Create
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/service-units/auto-bill-items"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"business_unit_id\": \"33b109c5-dd64-480c-8100-68fe17deaf3e\",\r
+
+      \    \"service_unit_id\": \"SU002\",\r
+
+      \    \"item_id\": \"ea7eb26c-5411-4919-b9fd-0a86d8a7a048\",\r
+
+      \    \"quantity\": 1.50,\r
+
+      \    \"sr_item_unit\": \"PCS\",\r
+
+      \    \"is_auto_payment\": true,\r
+
+      \    \"is_active\": true,\r
+
+      \    \"is_generate_on_registration\": true,\r
+
+      \    \"is_generate_on_new_registration\": false,\r
+
+      \    \"is_generate_on_referral\": false,\r
+
+      \    \"guarantor_id\": \"d4e25bbb-41f1-4178-8062-c2c393149937\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Create
+    request:
+      url: "{{BASE_URL}}/v1/service-units/auto-bill-items"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"business_unit_id\": \"33b109c5-dd64-480c-8100-68fe17deaf3e\",\r
+
+          \    \"service_unit_id\": \"SU002\",\r
+
+          \    \"item_id\": \"ea7eb26c-5411-4919-b9fd-0a86d8a7a048\",\r
+
+          \    \"quantity\": 1.50,\r
+
+          \    \"sr_item_unit\": \"PCS\",\r
+
+          \    \"is_auto_payment\": true,\r
+
+          \    \"is_active\": true,\r
+
+          \    \"is_generate_on_registration\": true,\r
+
+          \    \"is_generate_on_new_registration\": false,\r
+
+          \    \"is_generate_on_referral\": false,\r
+
+          \    \"guarantor_id\": \"d4e25bbb-41f1-4178-8062-c2c393149937\"\r
+
+          }"
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: date
+          value: Wed, 09 Sep 2026 04:36:16 GMT
+        - name: content-type
+          value: application/json
+        - name: content-length
+          value: "426"
+        - name: x-xss-protection
+          value: "0"
+        - name: x-content-type-options
+          value: nosniff
+        - name: x-frame-options
+          value: SAMEORIGIN
+        - name: cross-origin-embedder-policy
+          value: require-corp
+        - name: cross-origin-opener-policy
+          value: same-origin
+        - name: cross-origin-resource-policy
+          value: same-origin
+        - name: origin-agent-cluster
+          value: ?1
+        - name: referrer-policy
+          value: no-referrer
+        - name: x-dns-prefetch-control
+          value: off
+        - name: x-download-options
+          value: noopen
+        - name: x-permitted-cross-domain-policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+            "code": 201,
+            "data": {
+              "business_unit_id": "33b109c5-dd64-480c-8100-68fe17deaf3e",
+              "service_unit_id": "SU002",
+              "item_id": "ea7eb26c-5411-4919-b9fd-0a86d8a7a048",
+              "quantity": 1.5,
+              "sr_item_unit": "PCS",
+              "is_auto_payment": true,
+              "is_generate_on_registration": true,
+              "is_generate_on_new_registration": false,
+              "is_active": true,
+              "created_at": "2026-09-09T11:36:17+07:00",
+              "user_create": "ferdinand",
+              "guarantor_id": "d4e25bbb-41f1-4178-8062-c2c393149937"
+            }
+          }

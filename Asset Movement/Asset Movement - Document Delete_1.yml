@@ -1,0 +1,40 @@
+info:
+  name: Asset Movement - Document Delete_1
+  type: http
+  seq: 15
+
+http:
+  method: DELETE
+  url: "{{BASE_URL}}/v1/AssetList/document/:id/:company_id/:business_unit_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: id
+      value: 62dcd65e-160b-46f4-b073-34aafb1c85d1
+      type: path
+    - name: company_id
+      value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+      type: path
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"sequence_no\": \"006\",\r
+
+      \    \"user_update\": \"API_VoidX1\",\r
+
+      \    \"updated_at\": \"2024-03-13T13:24:42+08:00\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

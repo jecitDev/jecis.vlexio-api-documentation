@@ -1,0 +1,226 @@
+info:
+  name: Update
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/service-units/auto-bill-items/:business_unit_id/:service_unit_id/:item_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  params:
+    - name: business_unit_id
+      value: 33b109c5-dd64-480c-8100-68fe17deaf3e
+      type: path
+    - name: service_unit_id
+      value: SU003
+      type: path
+    - name: item_id
+      value: ea7eb26c-5411-4919-b9fd-0a86d8a7a048
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"quantity\": 2.50,\r
+
+      \    \"sr_item_unit\": \"PCS\",\r
+
+      \    \"is_auto_payment\": true,\r
+
+      \    \"is_active\": true,\r
+
+      \    \"is_generate_on_registration\": true,\r
+
+      \    \"is_generate_on_new_registration\": false,\r
+
+      \    \"is_generate_on_referral\": true,\r
+
+      \    \"guarantor_id\": \"d4e25bbb-41f1-4178-8062-c2c393149937\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Update
+    request:
+      url: "{{BASE_URL}}/v1/service-units/auto-bill-items/:business_unit_id/:service_unit_id/:item_id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      params:
+        - name: business_unit_id
+          value: 33b109c5-dd64-480c-8100-68fe17deaf3e
+          type: path
+        - name: service_unit_id
+          value: SU001
+          type: path
+        - name: item_id
+          value: ea7eb26c-5411-4919-b9fd-0a86d8a7a048
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"quantity\": 2.50,\r
+
+          \    \"sr_item_unit\": \"PCS\",\r
+
+          \    \"is_auto_payment\": true,\r
+
+          \    \"is_active\": true,\r
+
+          \    \"is_generate_on_registration\": true,\r
+
+          \    \"is_generate_on_new_registration\": false,\r
+
+          \    \"is_generate_on_referral\": true,\r
+
+          \    \"guarantor_id\": \"d4e25bbb-41f1-4178-8062-c2c393149937\"\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: date
+          value: Wed, 09 Sep 2026 04:46:19 GMT
+        - name: content-type
+          value: application/json
+        - name: content-length
+          value: "457"
+        - name: x-xss-protection
+          value: "0"
+        - name: x-content-type-options
+          value: nosniff
+        - name: x-frame-options
+          value: SAMEORIGIN
+        - name: cross-origin-embedder-policy
+          value: require-corp
+        - name: cross-origin-opener-policy
+          value: same-origin
+        - name: cross-origin-resource-policy
+          value: same-origin
+        - name: origin-agent-cluster
+          value: ?1
+        - name: referrer-policy
+          value: no-referrer
+        - name: x-dns-prefetch-control
+          value: off
+        - name: x-download-options
+          value: noopen
+        - name: x-permitted-cross-domain-policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+            "code": 200,
+            "data": {
+              "business_unit_id": "33b109c5-dd64-480c-8100-68fe17deaf3e",
+              "service_unit_id": "SU001",
+              "item_id": "ea7eb26c-5411-4919-b9fd-0a86d8a7a048",
+              "quantity": 2.5,
+              "sr_item_unit": "PCS",
+              "is_auto_payment": true,
+              "is_generate_on_registration": true,
+              "is_generate_on_new_registration": false,
+              "is_generate_on_referral": true,
+              "is_active": true,
+              "updated_at": "2026-09-09T11:46:20+07:00",
+              "user_update": "ferdinand",
+              "guarantor_id": "d4e25bbb-41f1-4178-8062-c2c393149937"
+            }
+          }
+  - name: Not Found
+    request:
+      url: "{{BASE_URL}}/v1/service-units/auto-bill-items/:business_unit_id/:service_unit_id/:item_id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      params:
+        - name: business_unit_id
+          value: 33b109c5-dd64-480c-8100-68fe17deaf3e
+          type: path
+        - name: service_unit_id
+          value: SU003
+          type: path
+        - name: item_id
+          value: ea7eb26c-5411-4919-b9fd-0a86d8a7a048
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"quantity\": 2.50,\r
+
+          \    \"sr_item_unit\": \"PCS\",\r
+
+          \    \"is_auto_payment\": true,\r
+
+          \    \"is_active\": true,\r
+
+          \    \"is_generate_on_registration\": true,\r
+
+          \    \"is_generate_on_new_registration\": false,\r
+
+          \    \"is_generate_on_referral\": true,\r
+
+          \    \"guarantor_id\": \"d4e25bbb-41f1-4178-8062-c2c393149937\"\r
+
+          }"
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: date
+          value: Wed, 09 Sep 2026 04:46:54 GMT
+        - name: content-type
+          value: application/json
+        - name: content-length
+          value: "64"
+        - name: x-xss-protection
+          value: "0"
+        - name: x-content-type-options
+          value: nosniff
+        - name: x-frame-options
+          value: SAMEORIGIN
+        - name: cross-origin-embedder-policy
+          value: require-corp
+        - name: cross-origin-opener-policy
+          value: same-origin
+        - name: cross-origin-resource-policy
+          value: same-origin
+        - name: origin-agent-cluster
+          value: ?1
+        - name: referrer-policy
+          value: no-referrer
+        - name: x-dns-prefetch-control
+          value: off
+        - name: x-download-options
+          value: noopen
+        - name: x-permitted-cross-domain-policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+            "status": 404,
+            "message": "service_unit_auto_bill_item.not_found"
+          }

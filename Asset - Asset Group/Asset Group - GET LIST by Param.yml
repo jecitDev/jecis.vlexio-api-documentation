@@ -1,0 +1,134 @@
+info:
+  name: Asset Group - GET LIST by Param
+  type: http
+  seq: 1
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/MAssetGroup/listbyparam"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: is_active
+      value: "false"
+      type: query
+      disabled: true
+  body:
+    type: text
+    data: ""
+  auth:
+    type: bearer
+    token: "{{xtoken}}"
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: API Asset Group - GET LIST by Param
+    request:
+      url: "{{BASE_URL}}/v1/MAssetGroup/listbyparam"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: is_active
+          value: "false"
+          type: query
+          disabled: true
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 06 Jan 2025 07:22:08 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "1302"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "MAssetGroups": [
+                      {
+                          "asset_group_name": "Vehicles",
+                          "asset_group_description": "Group for all vehicle assets",
+                          "asset_accumulation_id": 101,
+                          "sr_asset_group_category": "Transport",
+                          "asset_depreciation_id": 201,
+                          "asset_coa_id": 301,
+                          "default_use_full_life": 5,
+                          "is_active": true,
+                          "user_create": "admin",
+                          "created_at": "2024-10-12T13:24:42+08:00"
+                      },
+                      {
+                          "asset_group_name": "Vehicles Machinery",
+                          "asset_group_description": "Group for machinery and equipment",
+                          "asset_accumulation_id": 102,
+                          "sr_asset_group_category": "Manufacturing",
+                          "asset_depreciation_id": 202,
+                          "asset_coa_id": 302,
+                          "default_use_full_life": 10,
+                          "is_active": true,
+                          "user_create": "admin",
+                          "created_at": "2024-10-12T13:24:42+08:00"
+                      },
+                      {
+                          "asset_group_name": "IT Equipment",
+                          "asset_group_description": "Group for IT-related equipment",
+                          "asset_accumulation_id": 103,
+                          "sr_asset_group_category": "Technology",
+                          "asset_depreciation_id": 203,
+                          "asset_coa_id": 303,
+                          "default_use_full_life": 7,
+                          "is_active": false,
+                          "user_create": "admin",
+                          "created_at": "2024-10-12T13:24:42+08:00"
+                      },
+                      {
+                          "asset_group_name": "Real Estate",
+                          "asset_group_description": "Group for land and buildings",
+                          "asset_accumulation_id": 104,
+                          "sr_asset_group_category": "Property",
+                          "asset_depreciation_id": 204,
+                          "asset_coa_id": 304,
+                          "default_use_full_life": 30,
+                          "is_active": false,
+                          "user_create": "user2",
+                          "created_at": "2024-10-12T13:24:42+08:00"
+                      }
+                  ]
+              }
+          }

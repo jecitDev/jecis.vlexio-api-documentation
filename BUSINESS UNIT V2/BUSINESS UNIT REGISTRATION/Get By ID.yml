@@ -1,0 +1,152 @@
+info:
+  name: Get By ID
+  type: http
+  seq: 6
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/business-unit-registrations/:id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: id
+      value: fdafb965-a800-47e3-9440-dbbd32c7e304
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/business-unit-registrations/:id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: id
+          value: fdafb965-a800-47e3-9440-dbbd32c7e304
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 13 Oct 2025 07:41:06 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "703"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "attachment_url": [
+                      {
+                          "name": "d24a8896-94fa-4c5f-845b-28d75ad4ddc1.png",
+                          "url": "/file_storage/company/7db1e2f4-f1a7-4ee5-afd5-6e05940586e7/business_unit/607fef10-21b9-4f3c-acb8-eba67c5ecd4a/registration/d24a8896-94fa-4c5f-845b-28d75ad4ddc1.png"
+                      }
+                  ],
+                  "business_unit_id": "607fef10-21b9-4f3c-acb8-eba67c5ecd4a",
+                  "created_at": "2025-10-13T14:30:53+07:00",
+                  "id": "fdafb965-a800-47e3-9440-dbbd32c7e304",
+                  "is_active": true,
+                  "issuing_country": "IDN",
+                  "m_type_id": "35b167a5-cadb-4313-a256-53170d327fa8",
+                  "updated_at": "2025-10-13T14:41:04+07:00",
+                  "user_create": "ferdinand",
+                  "user_update": "ferdinand",
+                  "valid_from": "2025-10-02T14:08:41+07:00",
+                  "valid_to": "2025-10-20T14:08:41+07:00",
+                  "value": "01.234.567.8-091.000"
+              }
+          }
+  - name: Not Found
+    request:
+      url: "{{BASE_URL}}/v1/business-unit-registrations/:id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: id
+          value: 13dfb8a8-4f68-47c7-8b3d-c8bc812205d8
+          type: path
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Date
+          value: Mon, 13 Oct 2025 07:37:00 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "64"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "business_unit_registrations.not_found",
+              "status": 404
+          }

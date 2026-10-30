@@ -1,0 +1,197 @@
+info:
+  name: Create
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/Fabric"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+      \    \"fabric_name\": \"Sample Fabric 3\",\r
+
+      \    \"short_name\": \"SF003\",\r
+
+      \    \"contract_number\": \"ABC123\",\r
+
+      \    \"contract_start\": \"2024-02-28T13:24:42+08:00\",\r
+
+      \    \"contract_end\": \"2024-02-28T13:24:42+08:00\",\r
+
+      \    \"contract_summary\": \"Contract Summary\",\r
+
+      \    \"contact_person\": \"Budi\",\r
+
+      \    \"is_pkp\": false,\r
+
+      \    \"tax_registration_no\": \"TAX123\",\r
+
+      \    \"street_name\": \"123 Street\",\r
+
+      \    \"district\": \"District B\",\r
+
+      \    \"city\": \"City B\",\r
+
+      \    \"county\": \"County B\",\r
+
+      \    \"state\": \"State B\",\r
+
+      \    \"zip_code\": \"12345\",\r
+
+      \    \"phone_no\": \"123-456-789\",\r
+
+      \    \"fax_no\": \"123-456-789\",\r
+
+      \    \"email\": \"budi@gmail.com\",\r
+
+      \    \"mobile_phone_no\": \"123-456-789\",\r
+
+      \    \"is_active\": true,\r
+
+      \    \"user_create\": \"Ferdinand\",\r
+
+      \    \"created_at\": \"2025-04-10T13:58:23+07:00\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Create
+    request:
+      url: "{{BASE_URL}}/v1/Fabric"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+          \    \"fabric_name\": \"Sample Fabric 3\",\r
+
+          \    \"short_name\": \"SF003\",\r
+
+          \    \"contract_number\": \"ABC123\",\r
+
+          \    \"contract_start\": \"2024-02-28T13:24:42+08:00\",\r
+
+          \    \"contract_end\": \"2024-02-28T13:24:42+08:00\",\r
+
+          \    \"contract_summary\": \"Contract Summary\",\r
+
+          \    \"contact_person\": \"Budi\",\r
+
+          \    \"is_pkp\": false,\r
+
+          \    \"tax_registration_no\": \"TAX123\",\r
+
+          \    \"street_name\": \"123 Street\",\r
+
+          \    \"district\": \"District B\",\r
+
+          \    \"city\": \"City B\",\r
+
+          \    \"county\": \"County B\",\r
+
+          \    \"state\": \"State B\",\r
+
+          \    \"zip_code\": \"12345\",\r
+
+          \    \"phone_no\": \"123-456-789\",\r
+
+          \    \"fax_no\": \"123-456-789\",\r
+
+          \    \"email\": \"budi@gmail.com\",\r
+
+          \    \"mobile_phone_no\": \"123-456-789\",\r
+
+          \    \"is_active\": true,\r
+
+          \    \"user_create\": \"Ferdinand\",\r
+
+          \    \"created_at\": \"2025-04-10T13:58:23+07:00\"\r
+
+          }"
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Date
+          value: Fri, 11 Apr 2025 09:17:13 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "677"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 201,
+              "data": {
+                  "fabric_id": "FBC000003",
+                  "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "fabric_name": "Sample Fabric 3",
+                  "short_name": "SF003",
+                  "contract_number": "ABC123",
+                  "contract_start": "2024-02-28T13:24:42+08:00",
+                  "contract_end": "2024-02-28T13:24:42+08:00",
+                  "contract_summary": "Contract Summary",
+                  "contact_person": "Budi",
+                  "tax_registration_no": "TAX123",
+                  "street_name": "123 Street",
+                  "district": "District B",
+                  "city": "City B",
+                  "county": "County B",
+                  "state": "State B",
+                  "zip_code": "12345",
+                  "phone_no": "123-456-789",
+                  "fax_no": "123-456-789",
+                  "email": "budi@gmail.com",
+                  "mobile_phone_no": "123-456-789",
+                  "is_active": true,
+                  "created_at": "2025-04-10T13:58:23+07:00",
+                  "user_create": "Ferdinand"
+              }
+          }

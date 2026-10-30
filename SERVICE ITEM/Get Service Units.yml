@@ -1,0 +1,102 @@
+info:
+  name: Get Service Units
+  type: http
+  seq: 8
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/item-services/:business_unit_id/:item_id/service-units"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  params:
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+    - name: item_id
+      value: 601707bb-3e3d-4b69-bf10-a1b0fe372fa2
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Get Service Units
+    request:
+      url: "{{BASE_URL}}/v1/item-services/:business_unit_id/:item_id/service-units"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      params:
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: path
+        - name: item_id
+          value: 601707bb-3e3d-4b69-bf10-a1b0fe372fa2
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 22 Jan 2026 03:54:38 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "288"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "item_id": "601707bb-3e3d-4b69-bf10-a1b0fe372fa2",
+                  "service_units": [
+                      {
+                          "service_unit_id": "SU00005",
+                          "service_unit_name": "General Medicine 5"
+                      },
+                      {
+                          "service_unit_id": "SU00003",
+                          "service_unit_name": "General Medicine 2"
+                      }
+                  ]
+              }
+          }

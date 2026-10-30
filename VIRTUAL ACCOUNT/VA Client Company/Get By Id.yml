@@ -1,0 +1,89 @@
+info:
+  name: Get By Id
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/va-client-companies/:vac_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  params:
+    - name: vac_id
+      value: c3e6cd13-142e-4fa8-99c8-05a5fc831dce
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Get By Id
+    request:
+      url: "{{BASE_URL}}/v1/va-client-companies/:vac_id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      params:
+        - name: vac_id
+          value: 0b68981c-ea64-46ab-898e-023081169819
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: date
+          value: Thu, 08 Oct 2026 06:35:18 GMT
+        - name: content-type
+          value: application/json
+        - name: content-length
+          value: "291"
+        - name: x-xss-protection
+          value: "0"
+        - name: x-content-type-options
+          value: nosniff
+        - name: x-frame-options
+          value: SAMEORIGIN
+        - name: cross-origin-embedder-policy
+          value: require-corp
+        - name: cross-origin-opener-policy
+          value: same-origin
+        - name: cross-origin-resource-policy
+          value: same-origin
+        - name: origin-agent-cluster
+          value: ?1
+        - name: referrer-policy
+          value: no-referrer
+        - name: x-dns-prefetch-control
+          value: off
+        - name: x-download-options
+          value: noopen
+        - name: x-permitted-cross-domain-policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+            "code": 200,
+            "data": {
+              "bank_name": "Bank Central Asia",
+              "client_id": "CLI-001",
+              "company_id": "71b53dd1-2802-4527-8b5c-d54173392222",
+              "created_at": "2026-10-08T13:30:03+07:00",
+              "is_active": true,
+              "updated_at": "",
+              "user_create": "ferdinan",
+              "user_update": "",
+              "vac_id": "0b68981c-ea64-46ab-898e-023081169819"
+            }
+          }

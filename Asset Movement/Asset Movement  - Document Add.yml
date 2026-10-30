@@ -1,0 +1,137 @@
+info:
+  name: Asset Movement  - Document Add
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/AssetMovement/document/:id/:company_id/:business_unit_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: id
+      value: 62dcd65e-160b-46f4-b073-34aafb1c85d1
+      type: path
+    - name: company_id
+      value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+      type: path
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+  body:
+    type: multipart-form
+    data:
+      - name: user_update
+        type: text
+        value: "20994"
+      - name: updated_at
+        type: text
+        value: 2024-10-21T13:24:42+08:00
+      - name: file_name
+        type: text
+        value: docMovementX1
+      - name: file
+        type: file
+        value:
+          - /C:/Users/USER/Documents/TEST buat PDF.pdf
+      - name: note
+        type: text
+        value: Movementricky9
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Asset List - Document Add API
+    request:
+      url: "{{BASE_URL}}/v1/AssetList/document/:id/:company_id/:business_unit_id"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: id
+          value: 999.ROOM01.002
+          type: path
+        - name: company_id
+          value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+          type: path
+        - name: business_unit_id
+          value: f64e10b4-0cbf-4fee-ac09-1a4fa199696c
+          type: path
+      body:
+        type: multipart-form
+        data:
+          - name: user_update
+            type: text
+            value: ronaldX
+          - name: updated_at
+            type: text
+            value: 2024-10-21T13:24:42+08:00
+          - name: file_name
+            type: text
+            value: testnamaFile4
+          - name: file
+            type: file
+            value:
+              - /C:/Users/USER/Documents/TEST buat PDF.pdf
+          - name: note
+            type: text
+            value: catatan ricky4
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 06 Jan 2026 03:29:51 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "332"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "asset_id": "999.ROOM01.002",
+                  "sequence_no": "006",
+                  "document_url": "/file_storage/5b35fef5-0175-4638-b01c-42342ae77e6b/2da6a1bd-ba62-43ec-91f8-4085d5d6d498/53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "note": "catatan ricky4",
+                  "user_update": "ronaldX",
+                  "updated_at": "2026-01-06T10:29:52+07:00",
+                  "file_name": "testnamaFile4.pdf"
+              }
+          }

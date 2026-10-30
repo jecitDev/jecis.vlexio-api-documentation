@@ -1,0 +1,107 @@
+info:
+  name: List Product Type Variants By ID
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/product-types/:id/variants?page=1&page_size=10&keywords=1"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: page_size
+      value: "10"
+      type: query
+    - name: keywords
+      value: "1"
+      type: query
+    - name: id
+      value: c204aa5e-8427-4ddf-9134-2ed2b472341b
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: List Product Type Variants
+    request:
+      url: "{{BASE_URL}}/v1/product-types/:id/variants?page=1&page_size=10&keywords=1"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: page_size
+          value: "10"
+          type: query
+        - name: keywords
+          value: "1"
+          type: query
+        - name: id
+          value: c204aa5e-8427-4ddf-9134-2ed2b472341b
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Wed, 05 Aug 2026 04:28:17 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "145"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "page": 1,
+                  "page_size": 10,
+                  "total_items": 1,
+                  "variants": [
+                      {
+                          "id": "a30a9ddd-4b7d-4050-8a43-549af8a8c02e",
+                          "name": "19 LITER, GALON"
+                      }
+                  ]
+              }
+          }

@@ -1,0 +1,213 @@
+info:
+  name: UPDATE
+  type: http
+  seq: 5
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/ServiceRoom/:id/:company_id/:business_unit_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: id
+      value: C1-106
+      type: path
+    - name: company_id
+      value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+      type: path
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"company_id\": \"2da6a1bd-ba62-43ec-91f8-4085d5d6d498\",\r
+
+      \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+      \    // \"site_id\": \"002\",\r
+
+      \    \"room_id\": \"C1-106\",\r
+
+      \    \"service_unit_id\": \"C101\",\r
+
+      \    \"room_name\": \"CALL CENTER\",\r
+
+      \    \"is_operating_room\": true,\r
+
+      \    \"operational_time_from\": \"07:00\",\r
+
+      \    \"operational_time_to\": \"18:00\",\r
+
+      \    \"is_active\": true,\r
+
+      \    \"user_update\": \"afan\",\r
+
+      \    \"updated_at\": \"2019-01-07T17:32:15+07:00\",\r
+
+      \    \"floor_level\":\"10\",\r
+
+      \    \"ext_code\":\"\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: UPDATE
+    request:
+      url: "{{BASE_URL}}/v1/ServiceRoom/:id/:healthcareid"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: id
+          value: API011
+          type: path
+        - name: healthcareid
+          value: "010"
+          type: path
+      body:
+        type: json
+        data: "// {\r
+
+          //     \"updated_at\": {\r
+
+          //         \"seconds\": 1700106669\r
+
+          //     },\r
+
+          //     \"is_active\": true,\r
+
+          //     \"is_operating_room\": true,\r
+
+          //     \"minutes_per_slot\": 10,\r
+
+          //     \"notes\": \"ut occaecat enim\",\r
+
+          //     \"operational_time_from\": \"09:00\",\r
+
+          //     \"operational_time_to\": \"21:00\",\r
+
+          //     \"room_id\": \"API011\",\r
+
+          //     \"room_name\": \"Ruang Dokter 1A\",\r
+
+          //     \"service_unit_id\": \"A101\",\r
+
+          //     \"site_id\": \"010\",\r
+
+          //     \"site_room_id\": \"siteAPI010\",\r
+
+          //     \"user_update\": \"nando\"\r
+
+          // }\r
+
+          \ {\r
+
+          \                // \"company_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+          \                // \"business_unit_id\": \"2da6a1bd-ba62-43ec-91f8-4085d5d6d498\",\r
+
+          \                  \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+          \                \"company_id\": \"2da6a1bd-ba62-43ec-91f8-4085d5d6d498\",\r
+
+          \                \"site_id\": \"010\",\r
+
+          \                \"room_id\": \"API011\",\r
+
+          \                \"site_room_id\": \"siteAPI010\",\r
+
+          \                \"service_unit_id\": \"A101\",\r
+
+          \                \"room_name\": \"Ruang Dokter 1A\",\r
+
+          \                \"notes\": \"ut occaecat enim\",\r
+
+          \                \"is_operating_room\": false,\r
+
+          \                \"operational_time_from\": \"09:00\",\r
+
+          \                \"operational_time_to\": \"21:00\",\r
+
+          \                \"minutes_per_slot\": 10,\r
+
+          \                \"is_active\": false,\r
+
+          \                \"user_create\": \"nando\",\r
+
+          \                \"created_at\": \"2024-03-01T08:00:00+07:00\",\r
+
+          \                \"user_update\": \"nando\",\r
+
+          \                \"updated_at\": \"2024-03-01T08:00:00+07:00\"\r
+
+          \            }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 16 Nov 2023 04:02:42 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "333"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "site_id": "010",
+                  "room_id": "API010",
+                  "site_room_id": "siteAPI010",
+                  "service_unit_id": "A101",
+                  "room_name": "Ruang Dokter 1A",
+                  "notes": "ut occaecat enim",
+                  "is_operating_room": true,
+                  "operational_time_from": "09:00",
+                  "operational_time_to": "21:00",
+                  "minutes_per_slot": 10,
+                  "user_update": "nando",
+                  "updated_at": {
+                      "seconds": 1700106669
+                  }
+              }
+          }

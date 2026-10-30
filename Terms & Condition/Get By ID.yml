@@ -1,0 +1,144 @@
+info:
+  name: Get By ID
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/terms/:id"
+  headers:
+    - name: x-token
+      value: "{{x_token}}"
+  params:
+    - name: id
+      value: 356e5350-d3c2-4663-9d76-49b1cd36004e
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/terms/:id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{x_token}}"
+      params:
+        - name: id
+          value: 356e5350-d3c2-4663-9d76-49b1cd36004f
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 17 Nov 2025 03:45:41 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "547"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "id": "356e5350-d3c2-4663-9d76-49b1cd36004f",
+                  "business_unit_id": "7a8cf54a-4b22-450e-911f-8a305831cb6a",
+                  "name": "Terms and Conditions - General",
+                  "content": "<html><body><h1>Terms and Conditions</h1><p>By using our services, you agree to the following terms...</p></body></html>",
+                  "module_id": "03.01",
+                  "is_active": true,
+                  "created_at": "2025-11-17T10:40:50+07:00",
+                  "user_create": "ferdinand",
+                  "updated_at": "2025-11-17T10:44:38+07:00",
+                  "user_update": "ferdinand"
+              }
+          }
+  - name: Not Found
+    request:
+      url: "{{BASE_URL}}/v1/terms/:id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{x_token}}"
+      params:
+        - name: id
+          value: 356e5350-d3c2-4663-9d76-49b1cd36004e
+          type: path
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Date
+          value: Mon, 17 Nov 2025 03:46:01 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "42"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "terms.not_found",
+              "status": 404
+          }

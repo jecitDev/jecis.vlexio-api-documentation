@@ -1,0 +1,114 @@
+info:
+  name: Floor - LIST
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: http://127.0.0.1:8080/v1/MasterFloorLevel?page=1&page_size=2
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: page_size
+      value: "2"
+      type: query
+    - name: sort_by
+      value: id
+      type: query
+      disabled: true
+    - name: sort_order
+      value: asc
+      type: query
+      disabled: true
+    - name: category_code
+      value: CAT001
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Asset Category - LIST API
+    request:
+      url: http://127.0.0.1:8080/v1/Category?page=1&page_size=2&category_code=CAT001
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: page_size
+          value: "2"
+          type: query
+        - name: sort_by
+          value: id
+          type: query
+          disabled: true
+        - name: sort_order
+          value: asc
+          type: query
+          disabled: true
+        - name: category_code
+          value: CAT001
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Wed, 16 Jul 2025 07:41:45 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "43"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "page": 1,
+                  "pageSize": 2
+              }
+          }

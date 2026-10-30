@@ -1,0 +1,44 @@
+info:
+  name: Item Group - ADD
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/MAssetGroup"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"asset_group_name\": \"VehiclesX3\",\r
+
+      \    \"asset_group_description\": \"Group for all vehicle assets\",\r
+
+      \    \"asset_accumulation_id\": 1,\r
+
+      \    \"sr_asset_group_category\": \"ASC001\",\r
+
+      \    \"asset_depreciation_id\": 2,\r
+
+      \    \"asset_coa_id\": 3,\r
+
+      \    \"default_use_full_life\": 5,\r
+
+      \    \"user_create\": \"admin\",\r
+
+      \    \"created_at\": \"2024-03-01T13:24:42+08:00\",\r
+
+      \    \"is_active\": true\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

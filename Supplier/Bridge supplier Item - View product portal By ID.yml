@@ -1,0 +1,730 @@
+info:
+  name: Bridge supplier Item - View product portal By ID
+  type: http
+  seq: 11
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/Supplier-Portal/product/:ITEM_ID_PORTAL/:business_unit_ID"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: ITEM_ID_PORTAL
+      value: 76df4e04-290a-4365-89f2-535849f791ef
+      type: path
+    - name: business_unit_ID
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+  body:
+    type: json
+    data: ""
+  auth: inherit
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: Bridge supplier Item - View product portal API
+    request:
+      url: "{{BASE_URL}}/v1/Supplier-Portal/product/List?page=1&page_size=10&business_unit_id=53aad077-9fb1-4f08-85f3-af9fd9a36517"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: page_size
+          value: "10"
+          type: query
+        - name: sort_by
+          value: id
+          type: query
+          disabled: true
+        - name: sort_order
+          value: asc
+          type: query
+          disabled: true
+        - name: category_code
+          value: CAT001
+          type: query
+          disabled: true
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 14 Apr 2026 01:12:23 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "18929"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "data": {
+                      "pagination": {
+                          "current_page": 1,
+                          "has_next": true,
+                          "has_prev": false,
+                          "per_page": 10,
+                          "total_items": 51,
+                          "total_pages": 6
+                      },
+                      "products": [
+                          {
+                              "brand": "e1273408-fdec-4b9e-8a5b-b79d268d417a",
+                              "brand_detail": {
+                                  "id": "e1273408-fdec-4b9e-8a5b-b79d268d417a",
+                                  "name": "DAIKIN"
+                              },
+                              "category": {
+                                  "code": "NM",
+                                  "id": "0d7ee742-39b7-4608-a8c0-dd38b6b2d033",
+                                  "name": "Non-Medic"
+                              },
+                              "category_id": "0d7ee742-39b7-4608-a8c0-dd38b6b2d033",
+                              "country_of_origin": "JP",
+                              "created_at": "2026-03-31T09:49:20+07:00",
+                              "currency": {
+                                  "code": "IDR",
+                                  "id": "19b2510b-c841-43c9-aa6e-8b4be605228b",
+                                  "symbol": "Rp"
+                              },
+                              "currency_id": "19b2510b-c841-43c9-aa6e-8b4be605228b",
+                              "description": "Wall-mounted split air conditioner with energy-efficient inverter technology. \nCooling capacity suitable for small to medium rooms (10–18 m²). \nLow noise operation, eco-friendly refrigerant (R32), and fast cooling mode. \nIncludes remote control and washable air filter.",
+                              "discount": 10,
+                              "id": "61eb6d8d-fe2a-4a1b-96b8-9b1518d83ba0",
+                              "image_url": "http://emr-bucket-app.oss-ap-southeast-5.aliyuncs.com/supplier-portal%2Fdev%2Fdocument%2Fproducts%2Fphotos%2F61eb6d8d-fe2a-4a1b-96b8-9b1518d83ba0%2F6a3e00e1-69cf-4cac-9b83-d079a3d4afee.jpeg?Expires=1776136343&OSSAccessKeyId=&Signature=CINCnRp24IfGwAxJggC%2Fyni3mWc%3D",
+                              "is_active": true,
+                              "lead_time_days": 7,
+                              "manufacturer": "Daikin Industries Ltd.",
+                              "minimum_order_quantity": 10,
+                              "price_per_unit": 3500000,
+                              "primary_photo": {
+                                  "FileName": "7b6c32dc4b1842aa88ba8c15128264c3~.jpeg.jpeg",
+                                  "FilePath": "supplier-portal/dev/document/products/photos/61eb6d8d-fe2a-4a1b-96b8-9b1518d83ba0/6a3e00e1-69cf-4cac-9b83-d079a3d4afee.jpeg",
+                                  "ID": "40fc41e9-a70b-49a1-8db8-a2be5ab77553"
+                              },
+                              "product_name": "AC DAIKIN 1/2PK WHITE X445",
+                              "status": "draft",
+                              "stock_quantity": 0,
+                              "supplier_id": "8f59cb53-6b0d-413a-bc77-7c355d6b49df",
+                              "supplier_id_vlexio": "",
+                              "supplier_name_vlexio": "",
+                              "technical_specifications": "- Cooling Capacity: 5000 BTU/h\n- Power Consumption: 350 W\n- Refrigerant Type: R32\n- Voltage: 220–240V / 50Hz\n- Noise Level: 25 dB (low)\n- Indoor Unit Dimensions: 770 x 285 x 225 mm\n- Outdoor Unit Dimensions: 658 x 550 x 273 mm\n- Weight (Indoor): 8 kg\n- Weight (Outdoor): 24 kg",
+                              "type": "1e2ac6b1-e985-47a2-958c-cccc0584c078",
+                              "type_detail": {
+                                  "id": "1e2ac6b1-e985-47a2-958c-cccc0584c078",
+                                  "name": "AC"
+                              },
+                              "unit_of_measure": {
+                                  "code": "PCS",
+                                  "id": "01a8a474-32bc-4018-b7ec-2c3571b7f122",
+                                  "name": "Piece"
+                              },
+                              "unit_of_measure_id": "01a8a474-32bc-4018-b7ec-2c3571b7f122",
+                              "updated_at": "",
+                              "user_create": "27e44e37-d805-4b0f-8651-94b230f6cbff",
+                              "user_update": "",
+                              "variant": "eea274cd-b16f-4dc0-b3f8-e3e171ae44c8",
+                              "variant_detail": {
+                                  "id": "eea274cd-b16f-4dc0-b3f8-e3e171ae44c8",
+                                  "name": "1.5 PK"
+                              },
+                              "warranty_terms": "1-year general warranty, 3-year compressor warranty"
+                          },
+                          {
+                              "brand": "bc1ce9c6-8f81-42a8-9a0c-0ec59699748c",
+                              "brand_detail": {
+                                  "id": "bc1ce9c6-8f81-42a8-9a0c-0ec59699748c",
+                                  "name": "AMIDIS"
+                              },
+                              "category": {
+                                  "code": "NM",
+                                  "id": "0d7ee742-39b7-4608-a8c0-dd38b6b2d033",
+                                  "name": "Non-Medic"
+                              },
+                              "category_id": "0d7ee742-39b7-4608-a8c0-dd38b6b2d033",
+                              "country_of_origin": "AL",
+                              "created_at": "2026-03-27T17:20:14+07:00",
+                              "currency": {
+                                  "code": "IDR",
+                                  "id": "19b2510b-c841-43c9-aa6e-8b4be605228b",
+                                  "symbol": "Rp"
+                              },
+                              "currency_id": "19b2510b-c841-43c9-aa6e-8b4be605228b",
+                              "description": "AIR MINEREAL AMIDIS 5 LITER, GALON",
+                              "discount": 20,
+                              "id": "c3fc6c18-6ad8-4852-ab7c-d303dc4d7cf0",
+                              "is_active": true,
+                              "lead_time_days": 20,
+                              "manufacturer": "amidis man",
+                              "minimum_order_quantity": 20,
+                              "price_per_unit": 20000,
+                              "primary_photo": {
+                                  "FileName": "",
+                                  "FilePath": "",
+                                  "ID": ""
+                              },
+                              "product_name": "amidis",
+                              "status": "draft",
+                              "stock_quantity": 0,
+                              "supplier_id": "829ae48f-852d-4fe6-a819-638de5509bf9",
+                              "supplier_id_vlexio": "",
+                              "supplier_name_vlexio": "",
+                              "technical_specifications": "tech amidis",
+                              "type": "6acdca32-af95-4fc5-bfca-b659db7577db",
+                              "type_detail": {
+                                  "id": "6acdca32-af95-4fc5-bfca-b659db7577db",
+                                  "name": "AIR MINEREAL"
+                              },
+                              "unit_of_measure": {
+                                  "code": "PCS",
+                                  "id": "01a8a474-32bc-4018-b7ec-2c3571b7f122",
+                                  "name": "Piece"
+                              },
+                              "unit_of_measure_id": "01a8a474-32bc-4018-b7ec-2c3571b7f122",
+                              "updated_at": "",
+                              "user_create": "c5cc52a5-a51d-4811-8e35-6281a1ae6b60",
+                              "user_update": "",
+                              "variant": "87687b6c-8a60-4f0b-a61b-e0d95883a9db",
+                              "variant_detail": {
+                                  "id": "87687b6c-8a60-4f0b-a61b-e0d95883a9db",
+                                  "name": "5 LITER, GALON"
+                              },
+                              "warranty_terms": "amidis Terms"
+                          },
+                          {
+                              "brand": "bc1ce9c6-8f81-42a8-9a0c-0ec59699748c",
+                              "brand_detail": {
+                                  "id": "bc1ce9c6-8f81-42a8-9a0c-0ec59699748c",
+                                  "name": "AMIDIS"
+                              },
+                              "category": {
+                                  "code": "NM",
+                                  "id": "0d7ee742-39b7-4608-a8c0-dd38b6b2d033",
+                                  "name": "Non-Medic"
+                              },
+                              "category_id": "0d7ee742-39b7-4608-a8c0-dd38b6b2d033",
+                              "country_of_origin": "AL",
+                              "created_at": "2026-03-27T17:18:59+07:00",
+                              "currency": {
+                                  "code": "IDR",
+                                  "id": "19b2510b-c841-43c9-aa6e-8b4be605228b",
+                                  "symbol": "Rp"
+                              },
+                              "currency_id": "19b2510b-c841-43c9-aa6e-8b4be605228b",
+                              "description": "AIR MINEREAL AMIDIS 5 LITER, GALON",
+                              "discount": 20,
+                              "id": "28ed566b-9606-46f8-b170-cf2f1d378737",
+                              "is_active": true,
+                              "lead_time_days": 20,
+                              "manufacturer": "amidis man",
+                              "minimum_order_quantity": 20,
+                              "price_per_unit": 20000,
+                              "primary_photo": {
+                                  "FileName": "",
+                                  "FilePath": "",
+                                  "ID": ""
+                              },
+                              "product_name": "amidis",
+                              "status": "draft",
+                              "stock_quantity": 0,
+                              "supplier_id": "829ae48f-852d-4fe6-a819-638de5509bf9",
+                              "supplier_id_vlexio": "",
+                              "supplier_name_vlexio": "",
+                              "technical_specifications": "tech amidis",
+                              "type": "6acdca32-af95-4fc5-bfca-b659db7577db",
+                              "type_detail": {
+                                  "id": "6acdca32-af95-4fc5-bfca-b659db7577db",
+                                  "name": "AIR MINEREAL"
+                              },
+                              "unit_of_measure": {
+                                  "code": "PCS",
+                                  "id": "01a8a474-32bc-4018-b7ec-2c3571b7f122",
+                                  "name": "Piece"
+                              },
+                              "unit_of_measure_id": "01a8a474-32bc-4018-b7ec-2c3571b7f122",
+                              "updated_at": "",
+                              "user_create": "c5cc52a5-a51d-4811-8e35-6281a1ae6b60",
+                              "user_update": "",
+                              "variant": "87687b6c-8a60-4f0b-a61b-e0d95883a9db",
+                              "variant_detail": {
+                                  "id": "87687b6c-8a60-4f0b-a61b-e0d95883a9db",
+                                  "name": "5 LITER, GALON"
+                              },
+                              "warranty_terms": "amidis Terms"
+                          },
+                          {
+                              "brand": "e1273408-fdec-4b9e-8a5b-b79d268d417a",
+                              "brand_detail": {
+                                  "id": "e1273408-fdec-4b9e-8a5b-b79d268d417a",
+                                  "name": "DAIKIN"
+                              },
+                              "category": {
+                                  "code": "NM",
+                                  "id": "0d7ee742-39b7-4608-a8c0-dd38b6b2d033",
+                                  "name": "Non-Medic"
+                              },
+                              "category_id": "0d7ee742-39b7-4608-a8c0-dd38b6b2d033",
+                              "country_of_origin": "ID",
+                              "created_at": "2026-03-27T17:08:57+07:00",
+                              "currency": {
+                                  "code": "IDR",
+                                  "id": "19b2510b-c841-43c9-aa6e-8b4be605228b",
+                                  "symbol": "Rp"
+                              },
+                              "currency_id": "19b2510b-c841-43c9-aa6e-8b4be605228b",
+                              "description": "Daikin ACs are premium, energy-efficient cooling solutions known for advanced inverter technology, rapid cooling, and durable R32 refrigerant systems. They offer superior comfort through quiet operation (as low as 19 dB(A)), intelligent sensors, and smart PCB technology that protects against unstable voltage, ideal for residential and commercial spaces.",
+                              "discount": 10,
+                              "id": "f594fca0-d2a9-44c0-8d02-0a59d140fb5f",
+                              "image_url": "http://emr-bucket-app.oss-ap-southeast-5.aliyuncs.com/supplier-portal%2Fdev%2Fdocument%2Fproducts%2Fphotos%2Ff594fca0-d2a9-44c0-8d02-0a59d140fb5f%2F48c00524-787c-40fa-9a43-d2eda64a8966.jpg?Expires=1776136343&OSSAccessKeyId=&Signature=Polu4Bt1SPZwhvykyZltbDnvi34%3D",
+                              "is_active": true,
+                              "lead_time_days": 6,
+                              "manufacturer": "DAIKIN",
+                              "minimum_order_quantity": 10,
+                              "price_per_unit": 2500000,
+                              "primary_photo": {
+                                  "FileName": "ac-split-daikin-inverter-05-pk-ftkc15tvm4-1.jpg",
+                                  "FilePath": "supplier-portal/dev/document/products/photos/f594fca0-d2a9-44c0-8d02-0a59d140fb5f/48c00524-787c-40fa-9a43-d2eda64a8966.jpg",
+                                  "ID": "de356cbf-11af-4cb7-8183-fd75007e850b"
+                              },
+                              "product_name": "AC DAIKIN 2PK PUTIH",
+                              "status": "draft",
+                              "stock_quantity": 0,
+                              "supplier_id": "25ce9f4a-27ea-4155-87c2-e8f85a10a537",
+                              "supplier_id_vlexio": "",
+                              "supplier_name_vlexio": "",
+                              "technical_specifications": "R32 eco-friendly refrigerant, inverter technology for energy efficiency, and low voltage operation (130V-265V)",
+                              "type": "1e2ac6b1-e985-47a2-958c-cccc0584c078",
+                              "type_detail": {
+                                  "id": "1e2ac6b1-e985-47a2-958c-cccc0584c078",
+                                  "name": "AC"
+                              },
+                              "unit_of_measure": {
+                                  "code": "PCS",
+                                  "id": "01a8a474-32bc-4018-b7ec-2c3571b7f122",
+                                  "name": "Piece"
+                              },
+                              "unit_of_measure_id": "01a8a474-32bc-4018-b7ec-2c3571b7f122",
+                              "updated_at": "2026-04-02T12:20:38+07:00",
+                              "user_create": "a291bdaf-657c-4b83-aa2d-bda286999899",
+                              "user_update": "a291bdaf-657c-4b83-aa2d-bda286999899",
+                              "variant": "01a6f6bf-0e71-46fd-a487-9e0877cd4d4e",
+                              "variant_detail": {
+                                  "id": "01a6f6bf-0e71-46fd-a487-9e0877cd4d4e",
+                                  "name": "2 PK FTC50NV14 ( NON INVERTER)"
+                              },
+                              "warranty_terms": "Perlindungan 3 tahun untuk kompresor dan 1 tahun untuk suku cadang (sparepart), sering kali mencakup jaminan penggantian suku cadang hingga 10 tahun ke depan."
+                          },
+                          {
+                              "brand": "e1273408-fdec-4b9e-8a5b-b79d268d417a",
+                              "brand_detail": {
+                                  "id": "e1273408-fdec-4b9e-8a5b-b79d268d417a",
+                                  "name": "DAIKIN"
+                              },
+                              "category": {
+                                  "code": "NM",
+                                  "id": "0d7ee742-39b7-4608-a8c0-dd38b6b2d033",
+                                  "name": "Non-Medic"
+                              },
+                              "category_id": "0d7ee742-39b7-4608-a8c0-dd38b6b2d033",
+                              "country_of_origin": "ID",
+                              "created_at": "2026-03-27T16:55:01+07:00",
+                              "currency": {
+                                  "code": "IDR",
+                                  "id": "19b2510b-c841-43c9-aa6e-8b4be605228b",
+                                  "symbol": "Rp"
+                              },
+                              "currency_id": "19b2510b-c841-43c9-aa6e-8b4be605228b",
+                              "description": "AC DAIKIN 2 PK FTC50NV14 ( NON INVERTER)",
+                              "discount": 10,
+                              "id": "427b26ab-4f9d-4c6a-976d-1dcebda3534d",
+                              "image_url": "http://emr-bucket-app.oss-ap-southeast-5.aliyuncs.com/supplier-portal%2Fdev%2Fdocument%2Fproducts%2Fphotos%2F427b26ab-4f9d-4c6a-976d-1dcebda3534d%2Fa14b85d2-0cbf-4b43-8000-8c74cd6cd3d0.jpeg?Expires=1776136343&OSSAccessKeyId=&Signature=XhhIr1P0mA768Ia3qHWLOGXYg1w%3D",
+                              "is_active": true,
+                              "lead_time_days": 2,
+                              "manufacturer": "FT12391230",
+                              "minimum_order_quantity": 1,
+                              "price_per_unit": 2000000,
+                              "primary_photo": {
+                                  "FileName": "AC_Daikin_2_pk_1774605301746599668.jpeg",
+                                  "FilePath": "supplier-portal/dev/document/products/photos/427b26ab-4f9d-4c6a-976d-1dcebda3534d/a14b85d2-0cbf-4b43-8000-8c74cd6cd3d0.jpeg",
+                                  "ID": "862ea7ed-50af-4db5-9c2b-76b1d1b0923e"
+                              },
+                              "product_name": "AC Daikin 2 pk",
+                              "status": "draft",
+                              "stock_quantity": 0,
+                              "supplier_id": "022b3454-9f9f-47d2-bc5f-859c50d0ec29",
+                              "supplier_id_vlexio": "1dd3e469-ad93-4cc4-b35c-da0fad6550b2",
+                              "supplier_name_vlexio": "PT Jaya Jaya Jaya",
+                              "technical_specifications": "",
+                              "type": "1e2ac6b1-e985-47a2-958c-cccc0584c078",
+                              "type_detail": {
+                                  "id": "1e2ac6b1-e985-47a2-958c-cccc0584c078",
+                                  "name": "AC"
+                              },
+                              "unit_of_measure": {
+                                  "code": "PCS",
+                                  "id": "01a8a474-32bc-4018-b7ec-2c3571b7f122",
+                                  "name": "Piece"
+                              },
+                              "unit_of_measure_id": "01a8a474-32bc-4018-b7ec-2c3571b7f122",
+                              "updated_at": "2026-03-30T06:03:38+07:00",
+                              "user_create": "ee6fd1bd-ef4e-4735-8534-bf2d59828829",
+                              "user_update": "ee6fd1bd-ef4e-4735-8534-bf2d59828829",
+                              "variant": "01a6f6bf-0e71-46fd-a487-9e0877cd4d4e",
+                              "variant_detail": {
+                                  "id": "01a6f6bf-0e71-46fd-a487-9e0877cd4d4e",
+                                  "name": "2 PK FTC50NV14 ( NON INVERTER)"
+                              },
+                              "warranty_terms": "No Waranty"
+                          },
+                          {
+                              "brand": "e0e385e5-99e7-45e0-9f5e-91b330d5ef15",
+                              "brand_detail": {
+                                  "id": "e0e385e5-99e7-45e0-9f5e-91b330d5ef15",
+                                  "name": "AQUA"
+                              },
+                              "category": {
+                                  "code": "NM",
+                                  "id": "0d7ee742-39b7-4608-a8c0-dd38b6b2d033",
+                                  "name": "Non-Medic"
+                              },
+                              "category_id": "0d7ee742-39b7-4608-a8c0-dd38b6b2d033",
+                              "country_of_origin": "ID",
+                              "created_at": "2026-03-27T14:51:03+07:00",
+                              "currency": {
+                                  "code": "IDR",
+                                  "id": "19b2510b-c841-43c9-aa6e-8b4be605228b",
+                                  "symbol": "Rp"
+                              },
+                              "currency_id": "19b2510b-c841-43c9-aa6e-8b4be605228b",
+                              "description": "Spec Aqua",
+                              "discount": 10,
+                              "id": "536c313e-844e-4077-9ed5-bd531be28d72",
+                              "image_url": "http://emr-bucket-app.oss-ap-southeast-5.aliyuncs.com/supplier-portal%2Fdev%2Fdocument%2Fproducts%2Fphotos%2F536c313e-844e-4077-9ed5-bd531be28d72%2Fc10d9c96-741a-42f6-85d4-07858d8066bf.jpeg?Expires=1776136343&OSSAccessKeyId=&Signature=B%2BSSXNnCNBEPzgZhqfTKcfwsyBI%3D",
+                              "is_active": true,
+                              "lead_time_days": 10,
+                              "manufacturer": "Aqua Man",
+                              "minimum_order_quantity": 10,
+                              "price_per_unit": 10000,
+                              "primary_photo": {
+                                  "FileName": "aqua.jpeg",
+                                  "FilePath": "supplier-portal/dev/document/products/photos/536c313e-844e-4077-9ed5-bd531be28d72/c10d9c96-741a-42f6-85d4-07858d8066bf.jpeg",
+                                  "ID": "dbe840ec-997a-4707-9aa0-6b8f562258b6"
+                              },
+                              "product_name": "Aqua",
+                              "status": "draft",
+                              "stock_quantity": 0,
+                              "supplier_id": "f34b5735-118d-431e-86f7-84cd65fdec94",
+                              "supplier_id_vlexio": "",
+                              "supplier_name_vlexio": "",
+                              "technical_specifications": "Tech Aqua",
+                              "type": "6525eefe-16c5-4794-94b5-eb42165658e5",
+                              "type_detail": {
+                                  "id": "6525eefe-16c5-4794-94b5-eb42165658e5",
+                                  "name": "AIR MINERAL"
+                              },
+                              "unit_of_measure": {
+                                  "code": "PCS",
+                                  "id": "01a8a474-32bc-4018-b7ec-2c3571b7f122",
+                                  "name": "Piece"
+                              },
+                              "unit_of_measure_id": "01a8a474-32bc-4018-b7ec-2c3571b7f122",
+                              "updated_at": "",
+                              "user_create": "eb1f4dda-265a-4dad-a3d7-b6dfca20cf09",
+                              "user_update": "",
+                              "variant": "87687b6c-8a60-4f0b-a61b-e0d95883a9db",
+                              "variant_detail": {
+                                  "id": "87687b6c-8a60-4f0b-a61b-e0d95883a9db",
+                                  "name": "5 LITER, GALON"
+                              },
+                              "warranty_terms": "War Aqua"
+                          },
+                          {
+                              "brand": "e1273408-fdec-4b9e-8a5b-b79d268d417a",
+                              "brand_detail": {
+                                  "id": "e1273408-fdec-4b9e-8a5b-b79d268d417a",
+                                  "name": "DAIKIN"
+                              },
+                              "category": {
+                                  "code": "NM",
+                                  "id": "0d7ee742-39b7-4608-a8c0-dd38b6b2d033",
+                                  "name": "Non-Medic"
+                              },
+                              "category_id": "0d7ee742-39b7-4608-a8c0-dd38b6b2d033",
+                              "country_of_origin": "ID",
+                              "created_at": "2026-03-26T14:35:56+07:00",
+                              "currency": {
+                                  "code": "IDR",
+                                  "id": "19b2510b-c841-43c9-aa6e-8b4be605228b",
+                                  "symbol": "Rp"
+                              },
+                              "currency_id": "19b2510b-c841-43c9-aa6e-8b4be605228b",
+                              "description": "AC DAIKIN 1.5 PK",
+                              "discount": 0,
+                              "id": "994017a5-1853-4763-96a9-6e539b3e9bf0",
+                              "image_url": "http://emr-bucket-app.oss-ap-southeast-5.aliyuncs.com/supplier-portal%2Fdev%2Fdocument%2Fproducts%2Fphotos%2F994017a5-1853-4763-96a9-6e539b3e9bf0%2Fb5d1dbc8-3490-4341-9341-d9bdbd7846d4.jpeg?Expires=1776136343&OSSAccessKeyId=&Signature=JyWY8TUR14bcaz8yYMfNJgU0Hj0%3D",
+                              "is_active": true,
+                              "lead_time_days": 5,
+                              "manufacturer": "1FT123123",
+                              "minimum_order_quantity": 1,
+                              "price_per_unit": 2000000,
+                              "primary_photo": {
+                                  "FileName": "AC_1_1_2_PK_1774510556594759930.jpeg",
+                                  "FilePath": "supplier-portal/dev/document/products/photos/994017a5-1853-4763-96a9-6e539b3e9bf0/b5d1dbc8-3490-4341-9341-d9bdbd7846d4.jpeg",
+                                  "ID": "bf1bd3a7-b793-4aaa-be16-12393a6ae7d2"
+                              },
+                              "product_name": "AC 1 1/2 PK",
+                              "status": "draft",
+                              "stock_quantity": 0,
+                              "supplier_id": "013d5e73-d1d7-4210-ad66-75d941a436b4",
+                              "supplier_id_vlexio": "604ae64d-5b31-4696-afa7-a1e58ae42de4",
+                              "supplier_name_vlexio": "SUPPLIER 982",
+                              "technical_specifications": "",
+                              "type": "1e2ac6b1-e985-47a2-958c-cccc0584c078",
+                              "type_detail": {
+                                  "id": "1e2ac6b1-e985-47a2-958c-cccc0584c078",
+                                  "name": "AC"
+                              },
+                              "unit_of_measure": {
+                                  "code": "PCS",
+                                  "id": "01a8a474-32bc-4018-b7ec-2c3571b7f122",
+                                  "name": "Piece"
+                              },
+                              "unit_of_measure_id": "01a8a474-32bc-4018-b7ec-2c3571b7f122",
+                              "updated_at": "",
+                              "user_create": "1cae4f2c-3081-4be5-b002-291f6dfe7937",
+                              "user_update": "",
+                              "variant": "eea274cd-b16f-4dc0-b3f8-e3e171ae44c8",
+                              "variant_detail": {
+                                  "id": "eea274cd-b16f-4dc0-b3f8-e3e171ae44c8",
+                                  "name": "1.5 PK"
+                              },
+                              "warranty_terms": ""
+                          },
+                          {
+                              "brand": "e1273408-fdec-4b9e-8a5b-b79d268d417a",
+                              "brand_detail": {
+                                  "id": "e1273408-fdec-4b9e-8a5b-b79d268d417a",
+                                  "name": "DAIKIN"
+                              },
+                              "category": {
+                                  "code": "NM",
+                                  "id": "0d7ee742-39b7-4608-a8c0-dd38b6b2d033",
+                                  "name": "Non-Medic"
+                              },
+                              "category_id": "0d7ee742-39b7-4608-a8c0-dd38b6b2d033",
+                              "country_of_origin": "ID",
+                              "created_at": "2026-03-26T13:12:32+07:00",
+                              "currency": {
+                                  "code": "IDR",
+                                  "id": "19b2510b-c841-43c9-aa6e-8b4be605228b",
+                                  "symbol": "Rp"
+                              },
+                              "currency_id": "19b2510b-c841-43c9-aa6e-8b4be605228b",
+                              "description": "AC DAIKIN 1.5 PK",
+                              "discount": 0,
+                              "id": "dbe7088c-216a-4abe-a863-015f95dbfc67",
+                              "is_active": true,
+                              "lead_time_days": 5,
+                              "manufacturer": "FT203-03-123",
+                              "minimum_order_quantity": 1,
+                              "price_per_unit": 2000000,
+                              "primary_photo": {
+                                  "FileName": "",
+                                  "FilePath": "",
+                                  "ID": ""
+                              },
+                              "product_name": "AC daikin 1 1/2 PK",
+                              "status": "draft",
+                              "stock_quantity": 0,
+                              "supplier_id": "013d5e73-d1d7-4210-ad66-75d941a436b4",
+                              "supplier_id_vlexio": "604ae64d-5b31-4696-afa7-a1e58ae42de4",
+                              "supplier_name_vlexio": "SUPPLIER 982",
+                              "technical_specifications": "",
+                              "type": "1e2ac6b1-e985-47a2-958c-cccc0584c078",
+                              "type_detail": {
+                                  "id": "1e2ac6b1-e985-47a2-958c-cccc0584c078",
+                                  "name": "AC"
+                              },
+                              "unit_of_measure": {
+                                  "code": "PCS",
+                                  "id": "01a8a474-32bc-4018-b7ec-2c3571b7f122",
+                                  "name": "Piece"
+                              },
+                              "unit_of_measure_id": "01a8a474-32bc-4018-b7ec-2c3571b7f122",
+                              "updated_at": "",
+                              "user_create": "1cae4f2c-3081-4be5-b002-291f6dfe7937",
+                              "user_update": "",
+                              "variant": "eea274cd-b16f-4dc0-b3f8-e3e171ae44c8",
+                              "variant_detail": {
+                                  "id": "eea274cd-b16f-4dc0-b3f8-e3e171ae44c8",
+                                  "name": "1.5 PK"
+                              },
+                              "warranty_terms": ""
+                          },
+                          {
+                              "brand": "e1273408-fdec-4b9e-8a5b-b79d268d417a",
+                              "brand_detail": {
+                                  "id": "e1273408-fdec-4b9e-8a5b-b79d268d417a",
+                                  "name": "DAIKIN"
+                              },
+                              "category": {
+                                  "code": "NM",
+                                  "id": "0d7ee742-39b7-4608-a8c0-dd38b6b2d033",
+                                  "name": "Non-Medic"
+                              },
+                              "category_id": "0d7ee742-39b7-4608-a8c0-dd38b6b2d033",
+                              "country_of_origin": "ID",
+                              "created_at": "2026-03-26T13:12:32+07:00",
+                              "currency": {
+                                  "code": "IDR",
+                                  "id": "19b2510b-c841-43c9-aa6e-8b4be605228b",
+                                  "symbol": "Rp"
+                              },
+                              "currency_id": "19b2510b-c841-43c9-aa6e-8b4be605228b",
+                              "description": "AC DAIKIN 2 PK FTC50NV14 ( NON INVERTER)",
+                              "discount": 0,
+                              "id": "d2278c5c-619e-4960-84e2-21351373049b",
+                              "is_active": true,
+                              "lead_time_days": 4,
+                              "manufacturer": "FTC50NV14",
+                              "minimum_order_quantity": 1,
+                              "price_per_unit": 2500000,
+                              "primary_photo": {
+                                  "FileName": "",
+                                  "FilePath": "",
+                                  "ID": ""
+                              },
+                              "product_name": "AC daikin 2 PK Non inverter",
+                              "status": "draft",
+                              "stock_quantity": 0,
+                              "supplier_id": "013d5e73-d1d7-4210-ad66-75d941a436b4",
+                              "supplier_id_vlexio": "604ae64d-5b31-4696-afa7-a1e58ae42de4",
+                              "supplier_name_vlexio": "SUPPLIER 982",
+                              "technical_specifications": "",
+                              "type": "1e2ac6b1-e985-47a2-958c-cccc0584c078",
+                              "type_detail": {
+                                  "id": "1e2ac6b1-e985-47a2-958c-cccc0584c078",
+                                  "name": "AC"
+                              },
+                              "unit_of_measure": {
+                                  "code": "PCS",
+                                  "id": "01a8a474-32bc-4018-b7ec-2c3571b7f122",
+                                  "name": "Piece"
+                              },
+                              "unit_of_measure_id": "01a8a474-32bc-4018-b7ec-2c3571b7f122",
+                              "updated_at": "",
+                              "user_create": "1cae4f2c-3081-4be5-b002-291f6dfe7937",
+                              "user_update": "",
+                              "variant": "01a6f6bf-0e71-46fd-a487-9e0877cd4d4e",
+                              "variant_detail": {
+                                  "id": "01a6f6bf-0e71-46fd-a487-9e0877cd4d4e",
+                                  "name": "2 PK FTC50NV14 ( NON INVERTER)"
+                              },
+                              "warranty_terms": ""
+                          },
+                          {
+                              "brand": "e1273408-fdec-4b9e-8a5b-b79d268d417a",
+                              "brand_detail": {
+                                  "id": "e1273408-fdec-4b9e-8a5b-b79d268d417a",
+                                  "name": "DAIKIN"
+                              },
+                              "category": {
+                                  "code": "NM",
+                                  "id": "0d7ee742-39b7-4608-a8c0-dd38b6b2d033",
+                                  "name": "Non-Medic"
+                              },
+                              "category_id": "0d7ee742-39b7-4608-a8c0-dd38b6b2d033",
+                              "country_of_origin": "ID",
+                              "created_at": "2026-03-26T11:30:08+07:00",
+                              "currency": {
+                                  "code": "IDR",
+                                  "id": "19b2510b-c841-43c9-aa6e-8b4be605228b",
+                                  "symbol": "Rp"
+                              },
+                              "currency_id": "19b2510b-c841-43c9-aa6e-8b4be605228b",
+                              "description": "AC DAIKIN 1.5 PK",
+                              "discount": 0,
+                              "id": "ad9ea5e1-fe2e-44f4-bcde-bf4b4b8d2c0f",
+                              "is_active": true,
+                              "lead_time_days": 5,
+                              "manufacturer": "FT203-03-123",
+                              "minimum_order_quantity": 1,
+                              "price_per_unit": 2000000,
+                              "primary_photo": {
+                                  "FileName": "",
+                                  "FilePath": "",
+                                  "ID": ""
+                              },
+                              "product_name": "AC daikin 1 1/2 PK",
+                              "status": "draft",
+                              "stock_quantity": 0,
+                              "supplier_id": "b2517d7c-3099-441b-b979-26a8ec65b93e",
+                              "supplier_id_vlexio": "",
+                              "supplier_name_vlexio": "",
+                              "technical_specifications": "",
+                              "type": "1e2ac6b1-e985-47a2-958c-cccc0584c078",
+                              "type_detail": {
+                                  "id": "1e2ac6b1-e985-47a2-958c-cccc0584c078",
+                                  "name": "AC"
+                              },
+                              "unit_of_measure": {
+                                  "code": "PCS",
+                                  "id": "01a8a474-32bc-4018-b7ec-2c3571b7f122",
+                                  "name": "Piece"
+                              },
+                              "unit_of_measure_id": "01a8a474-32bc-4018-b7ec-2c3571b7f122",
+                              "updated_at": "",
+                              "user_create": "bd1d45c2-63b6-4f62-8667-747e03e2f0ed",
+                              "user_update": "",
+                              "variant": "eea274cd-b16f-4dc0-b3f8-e3e171ae44c8",
+                              "variant_detail": {
+                                  "id": "eea274cd-b16f-4dc0-b3f8-e3e171ae44c8",
+                                  "name": "1.5 PK"
+                              },
+                              "warranty_terms": ""
+                          }
+                      ]
+                  },
+                  "message": "Products retrieved successfully",
+                  "status": "success"
+              }
+          }

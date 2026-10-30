@@ -1,0 +1,7 @@
+info:
+  name: SUPPLIER_PORTAL
+  type: folder
+  seq: 105
+
+request:
+  auth: inherit

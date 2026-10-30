@@ -1,0 +1,123 @@
+info:
+  name: BY ID
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/user_group/:user_id/:company_id/:business_unit_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: user_id
+      value: rama
+      type: path
+    - name: company_id
+      value: 706cded9-0fca-4ed8-a68c-08ab6c4f3a7f
+      type: path
+    - name: business_unit_id
+      value: e10997e9-7b7f-4037-b299-0e3cd954d619
+      type: path
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: BY ID
+    request:
+      url: "{{BASE_URL}}/v1/user_group/:user_id/:company_id/:business_unit_id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: user_id
+          value: rama
+          type: path
+        - name: company_id
+          value: 706cded9-0fca-4ed8-a68c-08ab6c4f3a7f
+          type: path
+        - name: business_unit_id
+          value: e10997e9-7b7f-4037-b299-0e3cd954d619
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 06 Jun 2024 03:53:49 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "700"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "usergroups": [
+                      {
+                          "business_unit_id": "e10997e9-7b7f-4037-b299-0e3cd954d619",
+                          "company_id": "706cded9-0fca-4ed8-a68c-08ab6c4f3a7f",
+                          "created_at": "2024-03-19T00:00:00+07:00",
+                          "group_id": "EMR_ADMIN",
+                          "group_name": "ADMIN EMR",
+                          "is_active": true,
+                          "updated_at": "2024-03-19T00:00:00+07:00",
+                          "user_create": "admin",
+                          "user_id": "rama",
+                          "user_name": "",
+                          "user_update": "admin"
+                      },
+                      {
+                          "business_unit_id": "e10997e9-7b7f-4037-b299-0e3cd954d619",
+                          "company_id": "706cded9-0fca-4ed8-a68c-08ab6c4f3a7f",
+                          "created_at": "2024-03-19T00:00:00+07:00",
+                          "group_id": "ITS",
+                          "group_name": "IT SUPPORT",
+                          "is_active": true,
+                          "updated_at": "2024-06-04T09:00:06+07:00",
+                          "user_create": "admin",
+                          "user_id": "rama",
+                          "user_name": "",
+                          "user_update": "rama"
+                      }
+                  ]
+              }
+          }

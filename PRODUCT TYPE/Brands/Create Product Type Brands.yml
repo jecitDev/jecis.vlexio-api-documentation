@@ -1,0 +1,99 @@
+info:
+  name: Create Product Type Brands
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/product-types/:id/brands"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  params:
+    - name: id
+      value: c204aa5e-8427-4ddf-9134-2ed2b472341b
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"brand_ids\": [\"096852e0-a0bf-466c-ae6b-2f35f2a06057\", \"a450dce7-fe3e-41a2-97ca-243f5a7c920d\"]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Create Product Type Brands
+    request:
+      url: "{{BASE_URL}}/v1/product-types/:id/brands"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      params:
+        - name: id
+          value: c204aa5e-8427-4ddf-9134-2ed2b472341b
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"brand_ids\": [\"096852e0-a0bf-466c-ae6b-2f35f2a06057\", \"a450dce7-fe3e-41a2-97ca-243f5a7c920d\"]\r
+
+          }"
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Date
+          value: Wed, 05 Aug 2026 04:20:39 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "72"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 201,
+              "data": {
+                  "message": "Successfully added product type brands"
+              }
+          }

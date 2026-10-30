@@ -1,0 +1,16 @@
+info:
+  name: Abbreviation
+  type: folder
+  seq: 51
+
+request:
+  auth: inherit
+
+docs:
+  content: |-
+    ### \[TS-1380\] \[MASTER\]\[BE\] ABBREVIATION #1.0.0
+
+    ##### Oct 01, 2024
+
+    - CRUD Common
+  type: text/markdown

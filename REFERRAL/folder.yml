@@ -1,0 +1,7 @@
+info:
+  name: REFERRAL
+  type: folder
+  seq: 74
+
+request:
+  auth: inherit

@@ -1,0 +1,22 @@
+info:
+  name: ADD TAG TO TASK
+  type: http
+  seq: 7
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/clickup/list/192896881/member"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

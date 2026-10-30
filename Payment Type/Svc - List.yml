@@ -1,0 +1,192 @@
+info:
+  name: Svc - List
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/paymenttype/"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: page
+      value: "1"
+      type: query
+      disabled: true
+    - name: pageSize
+      value: ""
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: "{\r
+
+      \    \"page\": 1,\r
+
+      \    \"page_size\": 13\r
+
+      }"
+  auth:
+    type: bearer
+    token: "{{xtoken}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: "Svc - List #1"
+    request:
+      url: "{{BASE_URL}}/v1/paymenttype/"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{XTOKEN}}"
+      params:
+        - name: page
+          value: "1"
+          type: query
+          disabled: true
+        - name: pageSize
+          value: ""
+          type: query
+          disabled: true
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Fri, 13 Oct 2023 10:49:54 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "1661"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "page": 1,
+                  "page_size": 10,
+                  "total_items": 5,
+                  "paymenttypes": [
+                      {
+                          "sr_payment_type_id": "PaymentType-001",
+                          "payment_type_name": "Down Payment",
+                          "chart_of_account_id": -99,
+                          "subledger_id": -99,
+                          "is_active": true,
+                          "is_cashier_front_office": true,
+                          "create_at": {
+                              "seconds": 1697088232,
+                              "nanos": 961510000
+                          },
+                          "user_create": "21239",
+                          "last_update_date_time": {
+                              "seconds": 1697088232,
+                              "nanos": 961510000
+                          }
+                      },
+                      {
+                          "sr_payment_type_id": "PaymentType-002",
+                          "payment_type_name": "Payment",
+                          "chart_of_account_id": -99,
+                          "is_active": true,
+                          "is_cashier_front_office": true,
+                          "is_ar_payment": true,
+                          "create_at": {
+                              "seconds": 1697126196,
+                              "nanos": 811272000
+                          },
+                          "user_create": "21240",
+                          "last_update_date_time": {
+                              "seconds": 1697127226,
+                              "nanos": 534196000
+                          },
+                          "last_update_by_user_id": "21230"
+                      },
+                      {
+                          "sr_payment_type_id": "PaymentType-005",
+                          "payment_type_name": "Payment #1",
+                          "chart_of_account_id": 14,
+                          "subledger_id": -99,
+                          "is_active": true,
+                          "is_cashier_front_office": true,
+                          "create_at": {
+                              "seconds": 1697213553,
+                              "nanos": 475529000
+                          },
+                          "user_create": "21239",
+                          "last_update_date_time": {
+                              "seconds": 1697213553,
+                              "nanos": 475529000
+                          }
+                      },
+                      {
+                          "sr_payment_type_id": "PaymentType-006",
+                          "payment_type_name": "Payment #2",
+                          "chart_of_account_id": 14,
+                          "subledger_id": -99,
+                          "is_active": true,
+                          "is_cashier_front_office": true,
+                          "create_at": {
+                              "seconds": 1697213687,
+                              "nanos": 478884000
+                          },
+                          "user_create": "21239",
+                          "last_update_date_time": {
+                              "seconds": 1697213687,
+                              "nanos": 478884000
+                          }
+                      },
+                      {
+                          "sr_payment_type_id": "PaymentType-004",
+                          "payment_type_name": "Personal AR",
+                          "chart_of_account_id": 28,
+                          "subledger_id": -99,
+                          "is_cashier_front_office": true,
+                          "create_at": {
+                              "seconds": 1697126891,
+                              "nanos": 121390000
+                          },
+                          "user_create": "21239",
+                          "last_update_date_time": {
+                              "seconds": 1697127494,
+                              "nanos": 222715000
+                          },
+                          "last_update_by_user_id": "21232"
+                      }
+                  ]
+              }
+          }

@@ -1,0 +1,7 @@
+info:
+  name: Factory
+  type: folder
+  seq: 107
+
+request:
+  auth: inherit

@@ -1,0 +1,72 @@
+info:
+  name: AUTH - POST AUTHS SIGNOUT
+  type: http
+  seq: 5
+http:
+  method: POST
+  url: "{{BASE_URL}}/auths/logout"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r\n    \"access_token\":\"{{xtoken}}\",\r\n    \"fcm_token\":\"\",\r\n    \"app\":\"web\"\r\n\r\n}"
+  auth: inherit
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: AUTH - POST AUTHS SIGNOUT
+    request:
+      url: "{{BASE_URL}}/auths/logout"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r\n    \"access_token\":\"{{xtoken}}\",\r\n    \"fcm_token\":\"\",\r\n    \"app\":\"web\"\r\n\r\n}"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 29 Oct 2024 06:23:20 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "39"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "is_success": true
+              }
+          }

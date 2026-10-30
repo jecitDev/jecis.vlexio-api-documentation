@@ -1,0 +1,235 @@
+info:
+  name: Insert Bank
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/bank"
+  headers:
+    - name: x-token
+      value: "{{master_xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \  \"business_unit_id\": \"9f37f3c4-8b9e-4d89-9940-7c9630b176c2\",\r
+
+      \  \"bank_name\": \"bank rakyat maju\",\r
+
+      \  \"bi_code\": \"BRM456\",\r
+
+      \  \"user_create\": \"jane_smith\",\r
+
+      \  \"created_at\": \"2025-04-07T10:30:00+07:00\"\r
+
+      }\r\n"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Err Duplicate Name
+    request:
+      url: "{{BASE_URL}}/v1/bank"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{master_xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \  \"business_unit_id\": \"f2c4e8f0-1f6c-4c39-9a30-7fa4d2f9a6a9\",\r
+
+          \  \"bank_name\": \"bank central sejahtera\",\r
+
+          \  \"bi_code\": \"BSC123\",\r
+
+          \  \"user_create\": \"john_doe\",\r
+
+          \  \"created_at\": \"2025-03-18T14:08:41+07:00\"\r
+
+          }\r\n"
+    response:
+      status: 500
+      statusText: Internal Server Error
+      headers:
+        - name: Date
+          value: Tue, 08 Apr 2025 02:24:57 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "46"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "bank.duplicate_name",
+              "status": 500
+          }
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/bank"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{master_xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \  \"business_unit_id\": \"9f37f3c4-8b9e-4d89-9940-7c9630b176c2\",\r
+
+          \  \"bank_name\": \"bank rakyat maju\",\r
+
+          \  \"bi_code\": \"BRM456\",\r
+
+          \  \"user_create\": \"jane_smith\",\r
+
+          \  \"created_at\": \"2025-04-07T10:30:00+07:00\"\r
+
+          }\r\n"
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Date
+          value: Tue, 08 Apr 2025 02:26:32 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "139"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 201,
+              "data": {
+                  "bank_name": "bank rakyat maju",
+                  "bi_code": "BRM456",
+                  "user_create": "jane_smith",
+                  "created_at": "2025-04-07T10:30:00+07:00"
+              }
+          }
+  - name: Err Request
+    request:
+      url: "{{BASE_URL}}/v1/bank"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{master_xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \  \"business_unit_id\": \"9f37f3c4-8b9e-4d89-9940-7c9630b176\",\r
+
+          \  \"bank_name\": \"bank rakyat maju\",\r
+
+          \  \"bi_code\": \"BRM456\",\r
+
+          \  \"user_create\": \"jane_smith\",\r
+
+          \  \"created_at\": \"2025-04-07T10:30:00+07:00\"\r
+
+          }\r\n"
+    response:
+      status: 400
+      statusText: Bad Request
+      headers:
+        - name: Date
+          value: Tue, 08 Apr 2025 02:35:56 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "72"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "[validation_request|not_uuid4|BusinessUnitId]",
+              "status": 400
+          }

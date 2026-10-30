@@ -1,0 +1,256 @@
+info:
+  name: Add Guarantor Virtual Account
+  type: http
+  seq: 44
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/marketing/guarantor/guarantor-virtual-accounts"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+      \    \"guarantor_id\": \"e7dd7eba-ec35-491f-b663-e14ee5dc6c72\",\r
+
+      \    \"nama_bank\": \"PERMATA\",\r
+
+      \    \"atas_nama\": \"Jane Doe\",\r
+
+      \    \"no_rek_va\": \"387481749454\",\r
+
+      \    \"user_create\": \"admin\",\r
+
+      \    \"created_at\": \"2025-07-20T14:00:00+07:00\"\r
+
+      }\r\n"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/guarantor-virtual-accounts"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+          \    \"guarantor_id\": \"e7dd7eba-ec35-491f-b663-e14ee5dc6c72\",\r
+
+          \    \"nama_bank\": \"BCA\",\r
+
+          \    \"atas_nama\": \"John Doet\",\r
+
+          \    \"no_rek_va\": \"3728462337\",\r
+
+          \    \"user_create\": \"admin\",\r
+
+          \    \"created_at\": \"2025-07-20T14:00:00+07:00\"\r
+
+          }\r\n"
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Date
+          value: Thu, 24 Jul 2025 04:44:46 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "324"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 201,
+              "data": {
+                  "id": "dfb98da9-dd43-4b0f-8137-86a42016d7fe",
+                  "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "guarantor_id": "e7dd7eba-ec35-491f-b663-e14ee5dc6c72",
+                  "nama_bank": "BCA",
+                  "atas_nama": "John Doet",
+                  "no_rek_va": "3728462337",
+                  "is_active": true,
+                  "user_create": "admin",
+                  "created_at": "2025-07-20T14:00:00+07:00"
+              }
+          }
+  - name: Guarantor Not Found
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/guarantor-virtual-accounts"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+          \    \"guarantor_id\": \"e7dd7eba-ec35-491f-b663-e14ee5dc6c71\",\r
+
+          \    \"nama_bank\": \"BCA\",\r
+
+          \    \"atas_nama\": \"John Doet\",\r
+
+          \    \"no_rek_va\": \"3728462337\",\r
+
+          \    \"user_create\": \"admin\",\r
+
+          \    \"created_at\": \"2025-07-20T14:00:00+07:00\"\r
+
+          }\r\n"
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Date
+          value: Thu, 24 Jul 2025 04:45:19 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "46"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "guarantor.not_found",
+              "status": 404
+          }
+  - name: Business Unit Id Does Not Match or Exists in Guarantor
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/guarantor-virtual-accounts"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36518\",\r
+
+          \    \"guarantor_id\": \"e7dd7eba-ec35-491f-b663-e14ee5dc6c72\",\r
+
+          \    \"nama_bank\": \"BCA\",\r
+
+          \    \"atas_nama\": \"John Doet\",\r
+
+          \    \"no_rek_va\": \"3728462337\",\r
+
+          \    \"user_create\": \"admin\",\r
+
+          \    \"created_at\": \"2025-07-20T14:00:00+07:00\"\r
+
+          }\r\n"
+    response:
+      status: 500
+      statusText: Internal Server Error
+      headers:
+        - name: Date
+          value: Thu, 24 Jul 2025 04:45:37 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "107"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "guarantor_virtual_account.business_unit_id_does_not_match_or_exists_in_guarantor",
+              "status": 500
+          }

@@ -1,0 +1,124 @@
+info:
+  name: Extract OCR
+  type: http
+  seq: 10
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/patients/extract_ocr"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: multipart-form
+    data:
+      - name: file
+        type: file
+        value:
+          - /C:/Users/USER/Downloads/ktp.png
+      - name: card_type
+        type: text
+        value: ektp
+      - name: business_unit_id
+        type: text
+        value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/patients/extract_ocr"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: multipart-form
+        data:
+          - name: file
+            type: file
+            value:
+              - /C:/Users/USER/Downloads/ktp.png
+          - name: card_type
+            type: text
+            value: ektp
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 12 Jun 2025 01:50:31 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "693"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "extracted_images": {
+                      "provinsi": "DKI Jakarta",
+                      "kota": "Jakarta Timur",
+                      "nik": "3175070101999999",
+                      "nama": "Billy Bumblebee Sifulan",
+                      "tempat_tgl_lahir": "Surabaya, 01-01-1990",
+                      "jenis_kelamin": "Laki-Laki",
+                      "gol_darah": "AB",
+                      "alamat": "Jl Dimana No 100",
+                      "rt_rw": "001/001",
+                      "kel_desa": "Antah Berantah",
+                      "kecamatan": "Duren Sawit",
+                      "agama": "Islam",
+                      "status_perkawinan": "Kawin",
+                      "pekerjaan": "Karyawan Swasta",
+                      "kewarganegaraan": "WNI",
+                      "kode_pos": "13440",
+                      "zip_code": "13440"
+                  },
+                  "images_info": {
+                      "metadata": {
+                          "resolution": "800x550 pixels",
+                          "mean_brightness": 188.52,
+                          "sharpness": 1587.56,
+                          "blurriness": "No",
+                          "tilted_effect": "The card is tilted by 90.00 degrees.",
+                          "tilted_angle": "90.00",
+                          "size": 598.1533203125
+                      }
+                  }
+              }
+          }

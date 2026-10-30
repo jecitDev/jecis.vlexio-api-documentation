@@ -1,0 +1,7 @@
+info:
+  name: Payment Type_1
+  type: folder
+  seq: 78
+
+request:
+  auth: inherit

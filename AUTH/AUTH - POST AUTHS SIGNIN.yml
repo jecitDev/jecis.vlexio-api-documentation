@@ -1,0 +1,24 @@
+info:
+  name: AUTH - POST AUTHS SIGNIN
+  type: http
+  seq: 1
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/auths/signin"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r\n    \"email\":\"fajar.wahyudianto@jec.co.id\",\r\n    \"password\":\"\"\r\n}"
+  auth: inherit
+runtime:
+  scripts:
+    - type: after-response
+      code: "var data = res.getBody();\r\nbru.setCollectionVar(\"xtoken\", data.data.access_token);\r\nbru.setCollectionVar(\"x-refresh-token\", data.data.refresh_token);"
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

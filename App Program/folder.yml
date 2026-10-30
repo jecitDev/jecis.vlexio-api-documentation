@@ -1,0 +1,44 @@
+info:
+  name: App Program
+  type: folder
+  seq: 6
+
+request:
+  auth: inherit
+
+docs:
+  content: |-
+    ### \[TS-1215\] \[MASTER\] APP PROGRAM #1.0.1
+
+    ##### Jun 24, 2024
+
+    - Consume Product from Company App Service for Product Name
+        
+    - Add Field Product Name `Enhance`
+        
+
+    ##### Jun 21, 2024
+
+    - Add List By Module Service `Enhance`
+        
+    - Add Field Is No Crud `Enhance`
+        
+
+    ### \[TS-1215\] \[MASTER\] APP PROGRAM #1.0.0
+
+    ##### May 07, 2024
+
+    - Handle Null Value (Int32) `Enhance`
+        
+    - Add List By Param Service `Enhance`
+        
+
+    ##### May 06, 2024
+
+    - Add Field Is Module `Enhance`
+        
+
+    ##### May 03, 2024
+
+    - CRUD Common
+  type: text/markdown

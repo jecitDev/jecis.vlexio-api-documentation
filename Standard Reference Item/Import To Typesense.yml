@@ -1,0 +1,26 @@
+info:
+  name: Import To Typesense
+  type: http
+  seq: 7
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/standardreferenceitems/sync_to_typesense"
+  headers:
+    - name: x-token
+      value: "{{master_xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"company_id\": \"2da6a1bd-ba62-43ec-91f8-4085d5d6d498\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

@@ -1,0 +1,332 @@
+info:
+  name: INSERT
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/user_group"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"created_at\": \"2024-03-19T00:00:00+07:00\",\r
+
+      \    \"group_id\": \"ITS\",\r
+
+      \    \"is_active\": true,\r
+
+      \    \"user_create\": \"admin\",\r
+
+      \    \"user_id\": \"21170\",\r
+
+      \    \"business_unit_id\": \"e10997e9-7b7f-4037-b299-0e3cd954d619\",\r
+
+      \    \"company_id\": \"706cded9-0fca-4ed8-a68c-08ab6c4f3a7f\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: INSERT
+    request:
+      url: "{{BASE_URL}}/v1/user_group"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"created_at\": \"2024-03-19T00:00:00+07:00\",\r
+
+          \    \"group_id\": \"ITS\",\r
+
+          \    \"is_active\": true,\r
+
+          \    \"user_create\": \"admin\",\r
+
+          \    \"user_id\": \"21171\",\r
+
+          \    \"business_unit_id\": 1,\r
+
+          \    \"company_id\": 1\r
+
+          }"
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Date
+          value: Tue, 07 May 2024 07:28:03 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "293"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 201,
+              "data": {
+                  "usergroups": [
+                      {
+                          "business_unit_id": 1,
+                          "company_id": 1,
+                          "created_at": "2024-03-19T00:00:00+07:00",
+                          "group_id": "ITS",
+                          "group_name": "IT SUPPORT",
+                          "is_active": true,
+                          "updated_at": "2024-03-19T00:00:00+07:00",
+                          "user_create": "admin",
+                          "user_id": "21171",
+                          "user_name": "",
+                          "user_update": "admin"
+                      }
+                  ]
+              }
+          }
+  - name: GROUP NOT FOUND
+    request:
+      url: "{{BASE_URL}}/v1/user_group"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"created_at\": \"2024-03-19T00:00:00+07:00\",\r
+
+          \    \"group_id\": \"ITSS\",\r
+
+          \    \"is_active\": true,\r
+
+          \    \"user_create\": \"admin\",\r
+
+          \    \"user_id\": \"21171\",\r
+
+          \    \"business_unit_id\": \"e10997e9-7b7f-4037-b299-0e3cd954d619\",\r
+
+          \    \"company_id\": \"706cded9-0fca-4ed8-a68c-08ab6c4f3a7f\"\r
+
+          }"
+    response:
+      status: 500
+      statusText: Internal Server Error
+      headers:
+        - name: Date
+          value: Thu, 06 Jun 2024 08:57:41 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "53"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "user_group.group_not_found",
+              "status": 500
+          }
+  - name: USER NOT FOUND
+    request:
+      url: "{{BASE_URL}}/v1/user_group"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"created_at\": \"2024-03-19T00:00:00+07:00\",\r
+
+          \    \"group_id\": \"ITS\",\r
+
+          \    \"is_active\": true,\r
+
+          \    \"user_create\": \"admin\",\r
+
+          \    \"user_id\": \"211711\",\r
+
+          \    \"business_unit_id\": \"e10997e9-7b7f-4037-b299-0e3cd954d619\",\r
+
+          \    \"company_id\": \"706cded9-0fca-4ed8-a68c-08ab6c4f3a7f\"\r
+
+          }"
+    response:
+      status: 500
+      statusText: Internal Server Error
+      headers:
+        - name: Date
+          value: Thu, 06 Jun 2024 09:01:50 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "53"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "user_group.group_not_found",
+              "status": 500
+          }
+  - name: USER CANNOT ACCESS BUSINESS UNIT
+    request:
+      url: "{{BASE_URL}}/v1/user_group"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"created_at\": \"2024-03-19T00:00:00+07:00\",\r
+
+          \    \"group_id\": \"ITS\",\r
+
+          \    \"is_active\": true,\r
+
+          \    \"user_create\": \"admin\",\r
+
+          \    \"user_id\": \"21171\",\r
+
+          \    \"business_unit_id\": \"debf1c61-481f-4d88-8bab-66934741533e\",\r
+
+          \    \"company_id\": \"706cded9-0fca-4ed8-a68c-08ab6c4f3a7f\"\r
+
+          }"
+    response:
+      status: 500
+      statusText: Internal Server Error
+      headers:
+        - name: Date
+          value: Thu, 06 Jun 2024 09:02:59 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "67"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "user_group.user_business_unit_not_active",
+              "status": 500
+          }

@@ -1,0 +1,7 @@
+info:
+  name: LOG MONITORING
+  type: folder
+  seq: 33
+
+request:
+  auth: inherit

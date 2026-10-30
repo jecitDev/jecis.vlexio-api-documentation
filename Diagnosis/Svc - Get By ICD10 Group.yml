@@ -1,0 +1,126 @@
+info:
+  name: Svc - Get By ICD10 Group
+  type: http
+  seq: 5
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/diagnosiss/icd10group/:group_no/:company_id"
+  headers:
+    - name: x-token
+      value: "{{API_TOKEN}}"
+  params:
+    - name: group_no
+      value: "001"
+      type: path
+    - name: company_id
+      value: "1"
+      type: path
+  body:
+    type: json
+    data: ""
+  auth:
+    type: bearer
+    token: "{{xtoken}}"
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: "Svc - Get By ICD10 Group #1-20240605"
+    request:
+      url: "{{BASE_URL}}/v1/diagnosiss/icd10group/:group_no/:company_id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{API_TOKEN}}"
+      params:
+        - name: group_no
+          value: "001"
+          type: path
+        - name: company_id
+          value: "1"
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 06 Jun 2024 05:03:33 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "768"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "diagnosiss": [
+                      {
+                          "code": "A000",
+                          "company_id": "1",
+                          "description": "Cholera Due To Vibrio Cholerae 01 Biov..",
+                          "icd10": "A00.0",
+                          "specialty_id": "SMF029",
+                          "group_no": "001",
+                          "is_active": true,
+                          "user_create": "Admin",
+                          "created_at": "2024-06-03T17:26:02+07:00"
+                      },
+                      {
+                          "code": "A001",
+                          "company_id": "1",
+                          "description": "Cholera Due To Vibrio Cholerae 01 Biov..",
+                          "icd10": "A00.1",
+                          "specialty_id": "SMF029",
+                          "group_no": "001",
+                          "is_active": true,
+                          "user_create": "Admin",
+                          "created_at": "2024-06-03T05:00:00+07:00"
+                      },
+                      {
+                          "code": "A009",
+                          "company_id": "1",
+                          "description": "Cholera Unsp",
+                          "icd10": "A00.9",
+                          "specialty_id": "S0003",
+                          "group_no": "001",
+                          "notes": "#edit",
+                          "is_active": true,
+                          "user_create": "Admin",
+                          "created_at": "2024-06-03T05:00:00+07:00",
+                          "user_update": "Admin4",
+                          "updated_at": "2024-06-03T22:00:00+07:00"
+                      }
+                  ]
+              }
+          }

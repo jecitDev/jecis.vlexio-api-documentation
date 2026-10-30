@@ -1,0 +1,390 @@
+info:
+  name: List
+  type: http
+  seq: 6
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/export-pages?page=1&page_size=10&sort_by=created_at&sort_order=desc&business_unit_id=33b109c5-dd64-480c-8100-68fe17deaf3e&user_id=21171"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: page_size
+      value: "10"
+      type: query
+    - name: sort_by
+      value: created_at
+      type: query
+    - name: sort_order
+      value: desc
+      type: query
+    - name: keywords
+      value: ""
+      type: query
+      disabled: true
+    - name: business_unit_id
+      value: 33b109c5-dd64-480c-8100-68fe17deaf3e
+      type: query
+    - name: user_id
+      value: "21171"
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: List
+    request:
+      url: "{{BASE_URL}}/v1/export-pages?page=1&page_size=10&sort_by=created_at&sort_order=desc&business_unit_id=33b109c5-dd64-480c-8100-68fe17deaf3e"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: page_size
+          value: "10"
+          type: query
+        - name: sort_by
+          value: created_at
+          type: query
+        - name: sort_order
+          value: desc
+          type: query
+        - name: keywords
+          value: ""
+          type: query
+          disabled: true
+        - name: business_unit_id
+          value: 33b109c5-dd64-480c-8100-68fe17deaf3e
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: date
+          value: Mon, 05 Oct 2026 07:31:39 GMT
+        - name: content-type
+          value: application/json
+        - name: content-length
+          value: "6737"
+        - name: x-xss-protection
+          value: "0"
+        - name: x-content-type-options
+          value: nosniff
+        - name: x-frame-options
+          value: SAMEORIGIN
+        - name: cross-origin-embedder-policy
+          value: require-corp
+        - name: cross-origin-opener-policy
+          value: same-origin
+        - name: cross-origin-resource-policy
+          value: same-origin
+        - name: origin-agent-cluster
+          value: ?1
+        - name: referrer-policy
+          value: no-referrer
+        - name: x-dns-prefetch-control
+          value: off
+        - name: x-download-options
+          value: noopen
+        - name: x-permitted-cross-domain-policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+            "code": 200,
+            "data": {
+              "export_jobs": [
+                {
+                  "attempts": 0,
+                  "business_unit_id": "33b109c5-dd64-480c-8100-68fe17deaf3e",
+                  "checksum_sha256": "",
+                  "completed_at": "",
+                  "created_at": "2026-10-05T14:30:39+07:00",
+                  "download_count": 0,
+                  "error_message": "unknown error",
+                  "expires_at": "",
+                  "export_type": "AssetList",
+                  "file_name": "",
+                  "file_path": "",
+                  "file_size_bytes": "0",
+                  "filters": {
+                    "test": "123"
+                  },
+                  "format": "",
+                  "id": "47986026-10ed-462c-9fc8-b1c3afdc76a0",
+                  "last_downloaded_at": "",
+                  "mime_type": "",
+                  "requested_at": "2026-10-05T14:30:39+07:00",
+                  "started_at": "2026-10-05T14:30:39+07:00",
+                  "status": "failed",
+                  "total_rows": "0",
+                  "updated_at": "2026-10-05T14:31:09+07:00",
+                  "user_id": "ferdinan"
+                },
+                {
+                  "attempts": 0,
+                  "business_unit_id": "33b109c5-dd64-480c-8100-68fe17deaf3e",
+                  "checksum_sha256": "",
+                  "completed_at": "2026-10-05T14:31:05+07:00",
+                  "created_at": "2026-10-05T14:30:35+07:00",
+                  "download_count": 0,
+                  "error_message": "",
+                  "expires_at": "2026-10-12T14:31:05+07:00",
+                  "export_type": "AssetList",
+                  "file_name": "Test Export",
+                  "file_path": "/file_storage/2bd63388-1e68-4d04-9c00-b26d5cc7dd10/71b53dd1-2802-4527-8b5c-d54173392222/1ace280b-f844-4e83-9a06-0215b8a67bc4",
+                  "file_size_bytes": "0",
+                  "filters": {
+                    "test": "123"
+                  },
+                  "format": "",
+                  "id": "4a341a7e-795f-4140-b26f-396b126b7dee",
+                  "last_downloaded_at": "",
+                  "mime_type": "",
+                  "requested_at": "2026-10-05T14:30:35+07:00",
+                  "started_at": "2026-10-05T14:30:35+07:00",
+                  "status": "completed",
+                  "total_rows": "100",
+                  "updated_at": "2026-10-05T14:31:05+07:00",
+                  "user_id": "ferdinan"
+                },
+                {
+                  "attempts": 0,
+                  "business_unit_id": "33b109c5-dd64-480c-8100-68fe17deaf3e",
+                  "checksum_sha256": "",
+                  "completed_at": "2026-10-05T14:24:50+07:00",
+                  "created_at": "2026-10-05T14:24:20+07:00",
+                  "download_count": 0,
+                  "error_message": "",
+                  "expires_at": "2026-10-12T14:24:50+07:00",
+                  "export_type": "AssetList",
+                  "file_name": "",
+                  "file_path": "/file_storage/2bd63388-1e68-4d04-9c00-b26d5cc7dd10/71b53dd1-2802-4527-8b5c-d54173392222/1ace280b-f844-4e83-9a06-0215b8a67bc4",
+                  "file_size_bytes": "0",
+                  "filters": {
+                    "test": "123"
+                  },
+                  "format": "",
+                  "id": "9d20ab82-a469-45ba-b5cd-b2e650a86e3a",
+                  "last_downloaded_at": "",
+                  "mime_type": "",
+                  "requested_at": "2026-10-05T14:24:20+07:00",
+                  "started_at": "2026-10-05T14:24:20+07:00",
+                  "status": "completed",
+                  "total_rows": "0",
+                  "updated_at": "2026-10-05T14:24:50+07:00",
+                  "user_id": "ferdinan"
+                },
+                {
+                  "attempts": 0,
+                  "business_unit_id": "33b109c5-dd64-480c-8100-68fe17deaf3e",
+                  "checksum_sha256": "",
+                  "completed_at": "2026-10-05T14:24:49+07:00",
+                  "created_at": "2026-10-05T14:24:19+07:00",
+                  "download_count": 0,
+                  "error_message": "",
+                  "expires_at": "2026-10-12T14:24:49+07:00",
+                  "export_type": "AssetList",
+                  "file_name": "",
+                  "file_path": "/file_storage/2bd63388-1e68-4d04-9c00-b26d5cc7dd10/71b53dd1-2802-4527-8b5c-d54173392222/1ace280b-f844-4e83-9a06-0215b8a67bc4",
+                  "file_size_bytes": "0",
+                  "filters": {
+                    "test": "123"
+                  },
+                  "format": "",
+                  "id": "c4693345-e26b-4961-bf03-84a4ac4e0b99",
+                  "last_downloaded_at": "",
+                  "mime_type": "",
+                  "requested_at": "2026-10-05T14:24:19+07:00",
+                  "started_at": "2026-10-05T14:24:19+07:00",
+                  "status": "completed",
+                  "total_rows": "0",
+                  "updated_at": "2026-10-05T14:24:49+07:00",
+                  "user_id": "ferdinan"
+                },
+                {
+                  "attempts": 0,
+                  "business_unit_id": "33b109c5-dd64-480c-8100-68fe17deaf3e",
+                  "checksum_sha256": "",
+                  "completed_at": "",
+                  "created_at": "2026-10-05T14:24:19+07:00",
+                  "download_count": 0,
+                  "error_message": "unknown error",
+                  "expires_at": "",
+                  "export_type": "AssetList",
+                  "file_name": "",
+                  "file_path": "",
+                  "file_size_bytes": "0",
+                  "filters": {
+                    "test": "123"
+                  },
+                  "format": "",
+                  "id": "e56571b7-9c58-44b3-9f57-97d1edec0ca2",
+                  "last_downloaded_at": "",
+                  "mime_type": "",
+                  "requested_at": "2026-10-05T14:24:19+07:00",
+                  "started_at": "2026-10-05T14:24:19+07:00",
+                  "status": "failed",
+                  "total_rows": "0",
+                  "updated_at": "2026-10-05T14:24:49+07:00",
+                  "user_id": "ferdinan"
+                },
+                {
+                  "attempts": 0,
+                  "business_unit_id": "33b109c5-dd64-480c-8100-68fe17deaf3e",
+                  "checksum_sha256": "",
+                  "completed_at": "",
+                  "created_at": "2026-10-05T14:24:18+07:00",
+                  "download_count": 0,
+                  "error_message": "unknown error",
+                  "expires_at": "",
+                  "export_type": "AssetList",
+                  "file_name": "",
+                  "file_path": "",
+                  "file_size_bytes": "0",
+                  "filters": {
+                    "test": "123"
+                  },
+                  "format": "",
+                  "id": "8a62d07c-fe18-4a26-811d-a6cf995c0b5b",
+                  "last_downloaded_at": "",
+                  "mime_type": "",
+                  "requested_at": "2026-10-05T14:24:18+07:00",
+                  "started_at": "2026-10-05T14:24:18+07:00",
+                  "status": "failed",
+                  "total_rows": "0",
+                  "updated_at": "2026-10-05T14:24:48+07:00",
+                  "user_id": "ferdinan"
+                },
+                {
+                  "attempts": 0,
+                  "business_unit_id": "33b109c5-dd64-480c-8100-68fe17deaf3e",
+                  "checksum_sha256": "",
+                  "completed_at": "",
+                  "created_at": "2026-10-05T14:24:17+07:00",
+                  "download_count": 0,
+                  "error_message": "unknown error",
+                  "expires_at": "",
+                  "export_type": "AssetList",
+                  "file_name": "",
+                  "file_path": "",
+                  "file_size_bytes": "0",
+                  "filters": {
+                    "test": "123"
+                  },
+                  "format": "",
+                  "id": "02270b7d-1255-47d9-8b3e-0d6b5b86012b",
+                  "last_downloaded_at": "",
+                  "mime_type": "",
+                  "requested_at": "2026-10-05T14:24:17+07:00",
+                  "started_at": "2026-10-05T14:24:17+07:00",
+                  "status": "failed",
+                  "total_rows": "0",
+                  "updated_at": "2026-10-05T14:24:47+07:00",
+                  "user_id": "ferdinan"
+                },
+                {
+                  "attempts": 0,
+                  "business_unit_id": "33b109c5-dd64-480c-8100-68fe17deaf3e",
+                  "checksum_sha256": "",
+                  "completed_at": "",
+                  "created_at": "2026-10-05T14:20:32+07:00",
+                  "download_count": 0,
+                  "error_message": "unknown error",
+                  "expires_at": "",
+                  "export_type": "AssetList",
+                  "file_name": "",
+                  "file_path": "",
+                  "file_size_bytes": "0",
+                  "filters": {
+                    "test": "123"
+                  },
+                  "format": "",
+                  "id": "22ec47de-f672-42b0-8bbb-43ed4419b306",
+                  "last_downloaded_at": "",
+                  "mime_type": "",
+                  "requested_at": "2026-10-05T14:20:32+07:00",
+                  "started_at": "2026-10-05T14:21:54+07:00",
+                  "status": "failed",
+                  "total_rows": "0",
+                  "updated_at": "2026-10-05T14:22:24+07:00",
+                  "user_id": "ferdinan"
+                },
+                {
+                  "attempts": 0,
+                  "business_unit_id": "33b109c5-dd64-480c-8100-68fe17deaf3e",
+                  "checksum_sha256": "",
+                  "completed_at": "",
+                  "created_at": "2026-10-05T14:20:32+07:00",
+                  "download_count": 0,
+                  "error_message": "unknown error",
+                  "expires_at": "",
+                  "export_type": "AssetList",
+                  "file_name": "",
+                  "file_path": "",
+                  "file_size_bytes": "0",
+                  "filters": {
+                    "test": "123"
+                  },
+                  "format": "",
+                  "id": "ffb65163-191b-41e1-8d73-703d210ffdcb",
+                  "last_downloaded_at": "",
+                  "mime_type": "",
+                  "requested_at": "2026-10-05T14:20:32+07:00",
+                  "started_at": "2026-10-05T14:21:24+07:00",
+                  "status": "failed",
+                  "total_rows": "0",
+                  "updated_at": "2026-10-05T14:21:54+07:00",
+                  "user_id": "ferdinan"
+                },
+                {
+                  "attempts": 0,
+                  "business_unit_id": "33b109c5-dd64-480c-8100-68fe17deaf3e",
+                  "checksum_sha256": "",
+                  "completed_at": "2026-10-05T14:21:54+07:00",
+                  "created_at": "2026-10-05T14:20:31+07:00",
+                  "download_count": 0,
+                  "error_message": "",
+                  "expires_at": "2026-10-12T14:21:54+07:00",
+                  "export_type": "AssetList",
+                  "file_name": "",
+                  "file_path": "/file_storage/2bd63388-1e68-4d04-9c00-b26d5cc7dd10/71b53dd1-2802-4527-8b5c-d54173392222/1ace280b-f844-4e83-9a06-0215b8a67bc4",
+                  "file_size_bytes": "0",
+                  "filters": {
+                    "test": "123"
+                  },
+                  "format": "",
+                  "id": "73370be9-1973-47c0-a70d-9d1e9d87d4d4",
+                  "last_downloaded_at": "",
+                  "mime_type": "",
+                  "requested_at": "2026-10-05T14:20:31+07:00",
+                  "started_at": "2026-10-05T14:21:24+07:00",
+                  "status": "completed",
+                  "total_rows": "0",
+                  "updated_at": "2026-10-05T14:21:54+07:00",
+                  "user_id": "ferdinan"
+                }
+              ],
+              "page": 1,
+              "page_size": 10,
+              "total_items": 14
+            }
+          }

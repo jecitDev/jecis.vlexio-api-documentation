@@ -1,0 +1,7 @@
+info:
+  name: Asset Movement
+  type: folder
+  seq: 136
+
+request:
+  auth: inherit

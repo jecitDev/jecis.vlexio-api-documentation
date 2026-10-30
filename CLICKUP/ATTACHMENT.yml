@@ -1,0 +1,32 @@
+info:
+  name: ATTACHMENT
+  type: http
+  seq: 11
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/clickup/task/:task_id/attachment"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: task_id
+      value: ""
+      type: path
+  body:
+    type: multipart-form
+    data:
+      - name: filename
+        type: text
+        value: ""
+      - name: attachment
+        type: file
+        value: []
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

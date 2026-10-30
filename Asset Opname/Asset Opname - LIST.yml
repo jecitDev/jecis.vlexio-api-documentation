@@ -1,0 +1,144 @@
+info:
+  name: Asset Opname - LIST
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/AssetOpname/list?page=1&page_size=20&sort_by=id&sort_order=asc&keywords="
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: page_size
+      value: "20"
+      type: query
+    - name: sort_by
+      value: id
+      type: query
+    - name: sort_order
+      value: asc
+      type: query
+    - name: keywords
+      value: ""
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Asset Opname - LIST API 2
+    request:
+      url: "{{BASE_URL}}/v1/AssetOpname/list?page=1&page_size=20&sort_by=asset_opname_code&sort_order=asc&keywords="
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: page_size
+          value: "20"
+          type: query
+        - name: sort_by
+          value: asset_opname_code
+          type: query
+        - name: sort_order
+          value: asc
+          type: query
+        - name: keywords
+          value: ""
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Fri, 17 Apr 2026 14:43:02 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "1146"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "page": 1,
+                  "pageSize": 20,
+                  "total_items": 2,
+                  "AssetOpnamePeriodes": [
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "business_unit_id_opname": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "asset_opname_code": "AO/NSD/KDY/2026-001",
+                          "asset_opname_status": "02",
+                          "asset_opname_start_date": "2027-05-25T13:58:23+07:00",
+                          "asset_opname_end_date": "2026-09-20T13:58:23+07:00",
+                          "is_void": false,
+                          "created_at": "2024-10-22T13:24:42+08:00",
+                          "user_create": "admin",
+                          "updated_at": "",
+                          "user_update": "",
+                          "business_unit_name": "JEC @ KEDOYA",
+                          "company_name": "PT. Nitrasanata Dharma",
+                          "status_name": "ON PROGRESS"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "business_unit_id_opname": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "asset_opname_code": "AO/NSD/KDY/2026-002",
+                          "asset_opname_status": "03",
+                          "asset_opname_start_date": "2027-05-25T13:58:23+07:00",
+                          "asset_opname_end_date": "2026-09-20T13:58:23+07:00",
+                          "is_void": false,
+                          "created_at": "2026-04-17T20:55:00+07:00",
+                          "user_create": "admin",
+                          "updated_at": "2026-04-17T21:35:50+07:00",
+                          "user_update": "closeOPpname",
+                          "business_unit_name": "JEC @ KEDOYA",
+                          "company_name": "PT. Nitrasanata Dharma",
+                          "status_name": "DONE"
+                      }
+                  ]
+              }
+          }

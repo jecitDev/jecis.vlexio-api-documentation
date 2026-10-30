@@ -1,0 +1,131 @@
+info:
+  name: Search
+  type: http
+  seq: 28
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/marketing/guarantor/search?business_unit_id=53aad077-9fb1-4f08-85f3-af9fd9a36517&text= &max_hits=30&page=1"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: query
+    - name: text
+      value: " "
+      type: query
+    - name: max_hits
+      value: "30"
+      type: query
+    - name: page
+      value: "1"
+      type: query
+    - name: company_id
+      value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: ""
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Search
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/search?text=sehat&max_hits=2&page=1&company_id=df0ff1b4-c381-4f1a-a0ab-0702c789d46b"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36519
+          type: query
+          disabled: true
+        - name: text
+          value: sehat
+          type: query
+        - name: max_hits
+          value: "2"
+          type: query
+        - name: page
+          value: "1"
+          type: query
+        - name: company_id
+          value: df0ff1b4-c381-4f1a-a0ab-0702c789d46b
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Fri, 11 Jul 2025 02:48:19 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "555"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "total": 1,
+                  "page": 1,
+                  "result": [
+                      {
+                          "guarantor_id": "dc77ae8f-4dd3-4d95-9cfe-7e950888524b",
+                          "company_id": "df0ff1b4-c381-4f1a-a0ab-0702c789d46b",
+                          "business_unit_id": [
+                              "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                              "53aad077-9fb1-4f08-85f3-af9fd9a36518"
+                          ],
+                          "guarantor_name": "PT. Sehat Selalu",
+                          "short_name": "Sehat",
+                          "sr_guarantor_type": "INSURANCE",
+                          "sr_guarantor_status": "2",
+                          "is_active": true,
+                          "is_enable": true,
+                          "phone_number": "0211234567",
+                          "fax_number": "0211234568",
+                          "email": "info@sehat.com",
+                          "mobile_phone_no": "08123456789",
+                          "guarantor_no": "G-KDY/20250710-0005"
+                      }
+                  ]
+              }
+          }

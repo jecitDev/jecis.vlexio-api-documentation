@@ -1,0 +1,232 @@
+info:
+  name: Asset List - Bulk Generate Barcode
+  type: http
+  seq: 15
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/AssetList/bulk"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"updated_at\": \"Ut\",\r
+
+      \    \"user_update\": \"minim proident sint\",\r
+
+      \    \"AssetBulksProto\": [\r
+
+      \        {\r
+
+      \            \"company_id\": \"2da6a1bd-ba62-43ec-91f8-4085d5d6d498\",\r
+
+      \            \"business_unit_id\": \"f64e10b4-0cbf-4fee-ac09-1a4fa199696c\",\r
+
+      \            \"asset_id\": \"999.ROOM01.001\",\r
+
+      \            \"asset_category_id\": 101,\r
+
+      \            \"depreciation_begin_date\": \"2025-10-05T13:24:42+08:00\",\r
+
+      \            \"user_update\": \"GRPC Edit\",\r
+
+      \            \"updated_at\": \"2024-10-28T13:24:42+08:00\"\r
+
+      \        },\r
+
+      \        {\r
+
+      \            \"company_id\": \"2da6a1bd-ba62-43ec-91f8-4085d5d6d498\",\r
+
+      \            \"business_unit_id\": \"f64e10b4-0cbf-4fee-ac09-1a4fa199696c\",\r
+
+      \            \"asset_id\": \"999.ROOM01.002\",\r
+
+      \            \"asset_category_id\": 101,\r
+
+      \            \"depreciation_begin_date\": \"2025-07-05T13:24:42+08:00\",\r
+
+      \            \"user_update\": \"GRPC Edit\",\r
+
+      \            \"updated_at\": \"2024-10-28T13:24:42+08:00\"\r
+
+      \        },\r
+
+      \        {\r
+
+      \            \"company_id\": \"2da6a1bd-ba62-43ec-91f8-4085d5d6d498\",\r
+
+      \            \"business_unit_id\": \"f64e10b4-0cbf-4fee-ac09-1a4fa199696c\",\r
+
+      \            \"asset_id\": \"999.ROOM01.003\",\r
+
+      \            \"asset_category_id\": 102,\r
+
+      \            \"depreciation_begin_date\": \"2024-03-06T13:24:42+08:00\",\r
+
+      \            \"user_update\": \"GRPC Edit\",\r
+
+      \            \"updated_at\": \"2024-10-28T13:24:42+08:00\"\r
+
+      \        }\r
+
+      \    ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Asset List - Bulk Generate Barcode API
+    request:
+      url: http://127.0.0.1:8080/v1/AssetList/bulk
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"updated_at\": \"Ut\",\r
+
+          \    \"user_update\": \"minim proident sint\",\r
+
+          \    \"AssetBulksProto\": [\r
+
+          \        {\r
+
+          \            \"company_id\": \"2da6a1bd-ba62-43ec-91f8-4085d5d6d498\",\r
+
+          \            \"business_unit_id\": \"f64e10b4-0cbf-4fee-ac09-1a4fa199696c\",\r
+
+          \            \"asset_id\": \"999.ROOM01.001\",\r
+
+          \            \"asset_category_id\": 101,\r
+
+          \            \"depreciation_begin_date\": \"2025-10-05T13:24:42+08:00\",\r
+
+          \            \"user_update\": \"GRPC Edit\",\r
+
+          \            \"updated_at\": \"2024-10-28T13:24:42+08:00\"\r
+
+          \        },\r
+
+          \        {\r
+
+          \            \"company_id\": \"2da6a1bd-ba62-43ec-91f8-4085d5d6d498\",\r
+
+          \            \"business_unit_id\": \"f64e10b4-0cbf-4fee-ac09-1a4fa199696c\",\r
+
+          \            \"asset_id\": \"999.ROOM01.002\",\r
+
+          \            \"asset_category_id\": 101,\r
+
+          \            \"depreciation_begin_date\": \"2025-07-05T13:24:42+08:00\",\r
+
+          \            \"user_update\": \"GRPC Edit\",\r
+
+          \            \"updated_at\": \"2024-10-28T13:24:42+08:00\"\r
+
+          \        },\r
+
+          \        {\r
+
+          \            \"company_id\": \"2da6a1bd-ba62-43ec-91f8-4085d5d6d498\",\r
+
+          \            \"business_unit_id\": \"f64e10b4-0cbf-4fee-ac09-1a4fa199696c\",\r
+
+          \            \"asset_id\": \"999.ROOM01.003\",\r
+
+          \            \"asset_category_id\": 102,\r
+
+          \            \"depreciation_begin_date\": \"2024-11-06T13:24:42+08:00\",\r
+
+          \            \"user_update\": \"GRPC Edit\",\r
+
+          \            \"updated_at\": \"2024-10-28T13:24:42+08:00\"\r
+
+          \        }\r
+
+          \    ]\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 23 Dec 2025 09:14:05 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "824"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "AssetBulkResponsesSuccessProto": [
+                      {
+                          "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",
+                          "business_unit_id": "f64e10b4-0cbf-4fee-ac09-1a4fa199696c",
+                          "asset_id": "999.ROOM01.001",
+                          "asset_category_id": 101,
+                          "depreciation_begin_date": "2025-10-05T13:24:42+08:00",
+                          "kode_barcode": "NSD/NSD/2510-01-0004"
+                      },
+                      {
+                          "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",
+                          "business_unit_id": "f64e10b4-0cbf-4fee-ac09-1a4fa199696c",
+                          "asset_id": "999.ROOM01.002",
+                          "asset_category_id": 101,
+                          "depreciation_begin_date": "2025-07-05T13:24:42+08:00",
+                          "kode_barcode": "NSD/NSD/2507-01-0004"
+                      },
+                      {
+                          "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",
+                          "business_unit_id": "f64e10b4-0cbf-4fee-ac09-1a4fa199696c",
+                          "asset_id": "999.ROOM01.003",
+                          "asset_category_id": 102,
+                          "depreciation_begin_date": "2024-11-06T13:24:42+08:00",
+                          "kode_barcode": "NSD/NSD/2411-01-0004"
+                      }
+                  ]
+              }
+          }

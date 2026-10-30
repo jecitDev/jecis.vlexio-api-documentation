@@ -1,0 +1,143 @@
+info:
+  name: Get Service Gateway Config
+  type: http
+  seq: 12
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/business-unit-accounts/service-gateway?business_unit_id=607fef10-21b9-4f3c-acb8-eba67c5ecd4a"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: business_unit_id
+      value: 607fef10-21b9-4f3c-acb8-eba67c5ecd4a
+      type: query
+  auth: inherit
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/business-unit-accounts/service-gateway?business_unit_id=607fef10-21b9-4f3c-acb8-eba67c5ecd4a"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: business_unit_id
+          value: 607fef10-21b9-4f3c-acb8-eba67c5ecd4a
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Wed, 29 Oct 2025 03:18:07 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "429"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "id": "f2f29ac8-1635-489b-a84c-28f7563ade1c",
+                  "business_unit_id": "607fef10-21b9-4f3c-acb8-eba67c5ecd4a",
+                  "name": "SERVICE GATEWAY",
+                  "config": {
+                      "endpoint_address": "https://gateway.example.com/api",
+                      "endpoint_token": ""
+                  },
+                  "is_active": true,
+                  "created_at": "2025-10-29T09:54:38+07:00",
+                  "user_create": "ferdinand",
+                  "updated_at": "2025-10-29T10:09:09+07:00",
+                  "user_update": "ferdinand"
+              }
+          }
+  - name: Not Found
+    request:
+      url: "{{BASE_URL}}/v1/business-unit-accounts/service-gateway?business_unit_id=607fef10-21b9-4f3c-acb8-eba67c5ecd4b"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: business_unit_id
+          value: 607fef10-21b9-4f3c-acb8-eba67c5ecd4b
+          type: query
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Date
+          value: Wed, 29 Oct 2025 03:18:42 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "73"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "business_unit_accounts.configuration_not_found",
+              "status": 404
+          }

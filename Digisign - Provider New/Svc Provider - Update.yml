@@ -1,0 +1,389 @@
+info:
+  name: Svc Provider - Update
+  type: http
+  seq: 6
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/digisigns/providers/:id/:company_id"
+  headers:
+    - name: x-token
+      value: "{{API_TOKEN}}"
+  params:
+    - name: provider_id
+      value: 5372055a-3600-4590-8e27-b93d5fa9fc16
+      type: query
+      disabled: true
+    - name: company_id
+      value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+      type: query
+      disabled: true
+    - name: id
+      value: 5372055a-3600-4590-8e27-b93d5fa9fc16
+      type: path
+    - name: company_id
+      value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+      type: path
+  body:
+    type: json
+    data: "{\r\n    \"provider_code\": \"DISG-PERURI\",\r\n    \"provider_name\": \"PERURI\",\r\n    \"endpoint_api\": \"https://apgdev.peruri.co.id:19044/gateway\",\r\n    \"configurations\": {\r\n        \"system_id\": \"RS-JEC\",\r\n        \"username\": \"\",\r\n        \"key\": \"\",\r\n        \"api_key\": \"\",\r\n        \"credential_key\": \"\",\r\n        \"jwt\": \"\",\r\n        \"token\": \"\",\r\n        \"is_send_notification\": true,\r\n        \"is_send_email\": true,\r\n        \"is_send_sms\": false,\r\n        \"is_send_whatsapp\": false,\r\n        \"is_jecis_send_email\": true,\r\n        \"is_jecis_send_whatsapp\": true\r\n    },\r\n    \"date_contract\": \"2024-10-01T00:00:00+07:00\",\r\n    \"contract_expiry\": \"2025-10-30T00:00:00+07:00\",\r\n    \"is_active\": true,\r\n    \"user_update\": \"Admin3\",\r\n    \"updated_at\": \"2024-11-28T17:02:45+07:00\"\r\n}"
+  auth:
+    type: bearer
+    token: "{{xtoken}}"
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: "Svc Provider - Update #1-241017"
+    request:
+      url: "{{BASE_URL}}/v1/digisigns/providers/:id/:company_id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{API_TOKEN}}"
+      params:
+        - name: provider_id
+          value: 3261a59d-ea2c-456b-bcff-cd841a066eb7
+          type: query
+          disabled: true
+        - name: company_id
+          value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+          type: query
+          disabled: true
+        - name: id
+          value: b7aeddc7-beb4-4e89-bae1-1b7df547dd38
+          type: path
+        - name: company_id
+          value: 6e684367-d6bc-4733-9cc7-8ab0417fa1a4
+          type: path
+      body:
+        type: json
+        data: "{\r\n    \"provider_name\": \"PRIVY ID\",\r\n    \"endpoint_api\": \"https://gateway.privy.id:2024/signature\",\r\n    \"configurations\": {\r\n        \"credential_key\": \"\",\r\n        \"jwt\": \"\"\r\n    },\r\n    \"date_contract\": \"2024-10-01T03:00:00+07:00\",\r\n    \"contract_expiry\": \"2025-10-30T23:59:00+07:00\",\r\n    \"is_active\": true,\r\n    \"user_update\": \"Admin2\",\r\n    \"updated_at\": \"2024-10-01T13:00:00+07:00\"\r\n}"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 17 Oct 2024 05:05:35 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "1050"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "provider_id": "b7aeddc7-beb4-4e89-bae1-1b7df547dd38",
+                  "company_id": "6e684367-d6bc-4733-9cc7-8ab0417fa1a4",
+                  "provider_name": "PRIVY ID",
+                  "endpoint_api": "https://gateway.privy.id:2024/signature",
+                  "configurations": {
+                      "credential_key": "",
+                      "jwt": ""
+                  },
+                  "date_contract": "2024-10-01T03:00:00+07:00",
+                  "contract_expiry": "2025-10-30T23:59:00+07:00",
+                  "is_active": true,
+                  "user_create": "Admin1",
+                  "created_at": "2024-10-01T03:00:00+07:00",
+                  "user_update": "Admin2",
+                  "updated_at": "2024-10-01T13:00:00+07:00"
+              }
+          }
+  - name: "Svc Provider - Update #2-241104"
+    request:
+      url: "{{BASE_URL}}/v1/digisigns/providers/:id/:company_id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{API_TOKEN}}"
+      params:
+        - name: provider_id
+          value: 3261a59d-ea2c-456b-bcff-cd841a066eb7
+          type: query
+          disabled: true
+        - name: company_id
+          value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+          type: query
+          disabled: true
+        - name: id
+          value: ac7f7cfe-0532-4ec3-9aaf-7fd795647324
+          type: path
+        - name: company_id
+          value: 6e684367-d6bc-4733-9cc7-8ab0417fa1a4
+          type: path
+      body:
+        type: json
+        data: "{\r\n    \"provider_name\": \"IT CORPORATE\",\r\n    \"endpoint_api\": \"https://service.corporate.com:1000/gateway\",\r\n    \"configurations\": {\r\n        \"key\": \"corporate-key\",\r\n        \"username\": \"corp-username\",\r\n        \"token\": \"\"\r\n    },\r\n    \"date_contract\": \"2024-11-01T03:00:00+07:00\",\r\n    \"contract_expiry\": \"2025-11-30T23:59:00+07:00\",\r\n    \"is_active\": true,\r\n    \"user_update\": \"Admin2\",\r\n    \"updated_at\": \"2024-11-04T13:00:00+07:00\"\r\n}"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 04 Nov 2024 04:01:22 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "541"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "provider_id": "ac7f7cfe-0532-4ec3-9aaf-7fd795647324",
+                  "company_id": "6e684367-d6bc-4733-9cc7-8ab0417fa1a4",
+                  "provider_name": "IT CORPORATE",
+                  "endpoint_api": "https://service.corporate.com:1000/gateway",
+                  "configurations": {
+                      "username": "corp-username",
+                      "key": "corporate-key",
+                      "token": ""
+                  },
+                  "date_contract": "2024-11-01T03:00:00+07:00",
+                  "contract_expiry": "2025-11-30T23:59:00+07:00",
+                  "is_active": true,
+                  "user_create": "Admin1",
+                  "created_at": "2024-11-01T03:00:00+07:00",
+                  "user_update": "Admin2",
+                  "updated_at": "2024-11-04T13:00:00+07:00"
+              }
+          }
+  - name: "Svc Provider - Update #3-241115"
+    request:
+      url: "{{BASE_URL}}/v1/digisigns/providers/:id/:company_id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{API_TOKEN}}"
+      params:
+        - name: provider_id
+          value: 5372055a-3600-4590-8e27-b93d5fa9fc16
+          type: query
+          disabled: true
+        - name: company_id
+          value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+          type: query
+          disabled: true
+        - name: id
+          value: 5372055a-3600-4590-8e27-b93d5fa9fc16
+          type: path
+        - name: company_id
+          value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+          type: path
+      body:
+        type: json
+        data: "{\r\n    \"provider_code\": \"DISG-PERURI\",\r\n    \"provider_name\": \"PERURI\",\r\n    \"endpoint_api\": \"https://apgdev.peruri.co.id:19044/gateway\",\r\n    \"configurations\": {\r\n        \"system_id\": \"RS-JEC\",\r\n        \"username\": \"\",\r\n        \"key\": \"\",\r\n        \"api_key\": \"\",\r\n        \"credential_key\": \"\",\r\n        \"jwt\": \"\",\r\n        \"token\": \"\",\r\n        \"is_send_notification\": true,\r\n        \"is_send_email\": true,\r\n        \"is_send_sms\": false,\r\n        \"is_send_whatsapp\": false\r\n    },\r\n    \"date_contract\": \"2024-10-01T00:00:00+07:00\",\r\n    \"contract_expiry\": \"2025-10-30T00:00:00+07:00\",\r\n    \"is_active\": true,\r\n    \"user_update\": \"Admin3\",\r\n    \"updated_at\": \"2024-11-15T15:12:45+07:00\"\r\n}"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Fri, 15 Nov 2024 08:30:14 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "1195"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "provider_id": "5372055a-3600-4590-8e27-b93d5fa9fc16",
+                  "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",
+                  "provider_code": "DISG-PERURI",
+                  "provider_name": "PERURI",
+                  "endpoint_api": "https://apgdev.peruri.co.id:19044/gateway",
+                  "configurations": {
+                      "system_id": "RS-JEC",
+                      "credential_key": "",
+                      "jwt": "",
+                      "is_send_notification": true,
+                      "is_send_email": true,
+                      "is_send_sms": false,
+                      "is_send_whatsapp": false
+                  },
+                  "date_contract": "2024-10-01T00:00:00+07:00",
+                  "contract_expiry": "2025-10-30T00:00:00+07:00",
+                  "is_active": true,
+                  "user_create": "Admin1",
+                  "created_at": "2024-10-01T03:00:00+07:00",
+                  "user_update": "Admin3",
+                  "updated_at": "2024-11-15T15:12:45+07:00"
+              }
+          }
+  - name: "Svc Provider - Update #4-241128"
+    request:
+      url: "{{BASE_URL}}/v1/digisigns/providers/:id/:company_id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{API_TOKEN}}"
+      params:
+        - name: provider_id
+          value: 5372055a-3600-4590-8e27-b93d5fa9fc16
+          type: query
+          disabled: true
+        - name: company_id
+          value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+          type: query
+          disabled: true
+        - name: id
+          value: 5372055a-3600-4590-8e27-b93d5fa9fc16
+          type: path
+        - name: company_id
+          value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+          type: path
+      body:
+        type: json
+        data: "{\r\n    \"provider_code\": \"DISG-PERURI\",\r\n    \"provider_name\": \"PERURI\",\r\n    \"endpoint_api\": \"https://apgdev.peruri.co.id:19044/gateway\",\r\n    \"configurations\": {\r\n        \"system_id\": \"RS-JEC\",\r\n        \"username\": \"\",\r\n        \"key\": \"\",\r\n        \"api_key\": \"\",\r\n        \"credential_key\": \"\",\r\n        \"jwt\": \"\",\r\n        \"token\": \"\",\r\n        \"is_send_notification\": true,\r\n        \"is_send_email\": true,\r\n        \"is_send_sms\": false,\r\n        \"is_send_whatsapp\": false,\r\n        \"is_jecis_send_email\": true,\r\n        \"is_jecis_send_whatsapp\": true\r\n    },\r\n    \"date_contract\": \"2024-10-01T00:00:00+07:00\",\r\n    \"contract_expiry\": \"2025-10-30T00:00:00+07:00\",\r\n    \"is_active\": true,\r\n    \"user_update\": \"Admin3\",\r\n    \"updated_at\": \"2024-11-28T17:02:45+07:00\"\r\n}"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 28 Nov 2024 09:55:22 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "1252"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "provider_id": "5372055a-3600-4590-8e27-b93d5fa9fc16",
+                  "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",
+                  "provider_code": "DISG-PERURI",
+                  "provider_name": "PERURI",
+                  "endpoint_api": "https://apgdev.peruri.co.id:19044/gateway",
+                  "configurations": {
+                      "system_id": "RS-JEC",
+                      "credential_key": "",
+                      "jwt": "",
+                      "is_send_notification": true,
+                      "is_send_email": true,
+                      "is_send_sms": false,
+                      "is_send_whatsapp": false,
+                      "is_jecis_send_email": true,
+                      "is_jecis_send_whatsapp": true
+                  },
+                  "date_contract": "2024-10-01T00:00:00+07:00",
+                  "contract_expiry": "2025-10-30T00:00:00+07:00",
+                  "is_active": true,
+                  "user_create": "Admin1",
+                  "created_at": "2024-10-01T03:00:00+07:00",
+                  "user_update": "Admin3",
+                  "updated_at": "2024-11-28T17:02:45+07:00"
+              }
+          }

@@ -1,0 +1,223 @@
+info:
+  name: Bridge supplier Item - Add
+  type: http
+  seq: 16
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/Supplier/items"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \  \"id_supplier\": \"a630a800-ef4c-4b7d-bffa-a3f97f55fb20\",\r
+
+      \  \"item_id\": \"43341054-68b3-42ac-9ac1-c99c97d0d903\",\r
+
+      \  \"item_id_portal\": \"744c0373-3443-470c-9725-fa10e65c4972\",\r
+
+      \  \"currency_id_portal\": \"USD\",\r
+
+      \    \"discount_portal\": \"velit incididunt reprehenderit cillum\",\r
+
+      \    \"item_name_portal\": \"dolore et in voluptate in\",\r
+
+      \    \"lead_time_portal\": \"aute consequat minim sunt non\",\r
+
+      \    \"minimum_order_quantity_portal\": \"ullamco\",\r
+
+      \    \"price_per_unit_portal\": \"anim Excepteur voluptate\",\r
+
+      \    \"unit_of_measure_portal\": \"laboris laborum aliquip irure exercitation\",\r
+
+      \r
+
+      \  \"currency_code\": \"USD\",\r
+
+      \  \"price\": \"150000.0000\",\r
+
+      \  \"purchase_discount1\": \"5.00\",\r
+
+      \  \"purchase_discount2\": \"2.50\",\r
+
+      \  \"discount_in_nominal\": \"7500.0000\",\r
+
+      \  \"price_after_discount\": \"142500.0000\",\r
+
+      \  \"is_active\": true,\r
+
+      \  \"lead_time\": 7,\r
+
+      \  \"dpp\": \"135000.0000\",\r
+
+      \  \"qty\": 100,\r
+
+      \  \"minimal_order\": 10,\r
+
+      \  \"unit\": \"PCS\",\r
+
+      \  \"unit_po\": \"BOX\",\r
+
+      \  \"ppn\": \"11\",\r
+
+      \  \"price_after_ppn\": \"158175.0000\",\r
+
+      \  \"is_transportation_in\": true,\r
+
+      \  \"transportation_cost\": \"25000.0000\",\r
+
+      \  \"is_consignment\": false,\r
+
+      \  \"conversion_factor\": \"1.0000\",\r
+
+      \r
+
+      \  \"user_create\": \"admin_user\",\r
+
+      \  \"created_at\": \"2024-02-28T13:24:42+08:00\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Bridge supplier Item - Add API
+    request:
+      url: "{{BASE_URL}}/v1/Supplier/items"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \  \"id_supplier\": \"a630a800-ef4c-4b7d-bffa-a3f97f55fb19\",\r
+
+          \  \"item_id\": \"43341054-68b3-42ac-9ac1-c99c97d0d903\",\r
+
+          \  \"item_id_portal\": \"744c0373-3443-470c-9725-fa10e65c4972\",\r
+
+          \  \"currency_code\": \"USD\",\r
+
+          \  \"price\": \"150000.0000\",\r
+
+          \  \"purchase_discount1\": \"5.00\",\r
+
+          \  \"purchase_discount2\": \"2.50\",\r
+
+          \  \"discount_in_nominal\": \"7500.0000\",\r
+
+          \  \"price_after_discount\": \"142500.0000\",\r
+
+          \  \"is_active\": true,\r
+
+          \  \"lead_time\": 7,\r
+
+          \  \"dpp\": \"135000.0000\",\r
+
+          \  \"qty\": 100,\r
+
+          \  \"minimal_order\": 10,\r
+
+          \  \"unit\": \"PCS\",\r
+
+          \  \"unit_po\": \"BOX\",\r
+
+          \  \"ppn\": \"11\",\r
+
+          \  \"price_after_ppn\": \"158175.0000\",\r
+
+          \  \"is_transportation_in\": true,\r
+
+          \  \"transportation_cost\": \"25000.0000\",\r
+
+          \  \"is_consignment\": false,\r
+
+          \  \"conversion_factor\": \"1.0000\",\r
+
+          \  \"item_name_portal\": \"Premium Medical Gloves - Size M\",\r
+
+          \  \"user_create\": \"admin_user\",\r
+
+          \  \"created_at\": \"2024-02-28T13:24:42+08:00\"\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 14 Apr 2026 01:13:48 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "738"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "id_supplier": "a630a800-ef4c-4b7d-bffa-a3f97f55fb19",
+                  "item_id": "43341054-68b3-42ac-9ac1-c99c97d0d903",
+                  "item_id_portal": "744c0373-3443-470c-9725-fa10e65c4972",
+                  "currency_code": "USD",
+                  "price": "150000.0000",
+                  "purchase_discount1": "5.00",
+                  "purchase_discount2": "2.50",
+                  "discount_in_nominal": "7500.0000",
+                  "price_after_discount": "142500.0000",
+                  "is_active": true,
+                  "lead_time": 7,
+                  "dpp": "135000.0000",
+                  "qty": 100,
+                  "minimal_order": 10,
+                  "unit": "PCS",
+                  "unit_po": "BOX",
+                  "ppn": "11",
+                  "price_after_ppn": "158175.0000",
+                  "is_transportation_in": true,
+                  "transportation_cost": "25000.0000",
+                  "is_consignment": false,
+                  "conversion_factor": "1.0000",
+                  "item_name_portal": "Premium Medical Gloves - Size M",
+                  "user_create": "admin_user",
+                  "created_at": "2024-02-28T13:24:42+08:00"
+              }
+          }

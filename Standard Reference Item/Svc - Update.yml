@@ -1,0 +1,263 @@
+info:
+  name: Svc - Update
+  type: http
+  seq: 6
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/standardreferenceitems/:id/:company_id/:item_id"
+  headers:
+    - name: x-token
+      value: "{{XTOKEN}}"
+  params:
+    - name: id
+      value: EmailPriority
+      type: path
+    - name: company_id
+      value: "1"
+      type: path
+    - name: item_id
+      value: "2"
+      type: path
+  body:
+    type: json
+    data: "{\r\n    \"standard_reference_id\": \"EmailPriority\",\r\n    \"company_id\": \"1\",\r\n    \"business_unit_id\": \"1\",\r\n    \"item_id\": \"2\",\r\n    \"coa_id\": -99,\r\n    \"subledger_id\": -99,\r\n    \"item_name\": \"Top Edit\",\r\n    \"is_active\": true,\r\n    \"is_used_by_system\": true,\r\n    \"user_update\": \"Checker\",\r\n    \"updated_at\": \"2024-04-18T12:00:00+07:00\"\r\n}"
+  auth:
+    type: bearer
+    token: "{{xtoken}}"
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: Svc - Update
+    request:
+      url: "{{BASE_URL}}/v1/standardreferenceitem/:id/:item_id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{XTOKEN}}"
+      params:
+        - name: id
+          value: RouteSE
+          type: path
+        - name: item_id
+          value: OD
+          type: path
+      body:
+        type: json
+        data: "{\r\n    \"coa_id\": -99,\r\n    \"is_active\": true,\r\n    \"is_used_by_system\": false,\r\n    \"item_id\": \"OD\",\r\n    \"item_name\": \"OD\",\r\n    \"last_update_by_user_id\": \"21239\",\r\n    \"last_update_datetime\": {\r\n        \"seconds\": 1695116075,\r\n        \"nanos\": 607059000\r\n    },\r\n    \"note\": \"1\",\r\n    \"reference_id\": null,\r\n    \"standard_reference_id\": \"RouteSE\",\r\n    \"subledger_id\": -99\r\n}"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Wed, 20 Sep 2023 08:03:18 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "244"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "standard_reference_id": "RouteSE",
+                  "item_id": "OD",
+                  "item_name": "OD",
+                  "note": "1",
+                  "is_active": true,
+                  "last_update_datetime": {
+                      "seconds": 1695116075,
+                      "nanos": 607059000
+                  },
+                  "last_update_by_user_id": "21239",
+                  "coa_id": -99,
+                  "subledger_id": -99
+              }
+          }
+  - name: "Svc - Update #2"
+    request:
+      url: "{{BASE_URL}}/v1/standardreferenceitems/:id/:item_id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{XTOKEN}}"
+      params:
+        - name: id
+          value: AcctDbCr
+          type: path
+        - name: item_id
+          value: "0"
+          type: path
+      body:
+        type: json
+        data: "{\r\n    \"standard_reference_id\": \"AcctDbCr\",\r\n    \"item_id\": \"0\",\r\n    \"coa_id\": -99,\r\n    \"subledger_id\": -99,\r\n    \"reference_id\": \"COA\",\r\n    \"item_name\": \"---\",\r\n    \"note\": \"ipsum et ullamco teamdu #api\",\r\n    \"is_active\": true,\r\n    \"is_used_by_system\": true,\r\n    \"user_update\": \"Admin2\",\r\n    \"updated_at\": {\r\n        \"nanos\": 98057828,\r\n        \"seconds\": 1698057830\r\n    }\r\n}"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 23 Oct 2023 03:44:38 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "373"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "standard_reference_id": "AcctDbCr",
+                  "item_id": "0",
+                  "coa_id": -99,
+                  "subledger_id": -99,
+                  "reference_id": "COA",
+                  "item_name": "---",
+                  "note": "ipsum et ullamco teamdu #api",
+                  "is_active": true,
+                  "is_used_by_system": true,
+                  "user_create": "Admin1",
+                  "created_at": {
+                      "seconds": 1698057828,
+                      "nanos": 98058000
+                  },
+                  "user_update": "Admin2",
+                  "updated_at": {
+                      "seconds": 1698057830,
+                      "nanos": 98058000
+                  }
+              }
+          }
+  - name: "Svc - Update #3-240322"
+    request:
+      url: "{{BASE_URL}}/v1/standardreferenceitems/:id/:company_id/:item_id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{XTOKEN}}"
+      params:
+        - name: id
+          value: UserType
+          type: path
+        - name: company_id
+          value: "1"
+          type: path
+        - name: item_id
+          value: Pharmacy
+          type: path
+      body:
+        type: json
+        data: "{\r\n    \"standard_reference_id\": \"UserType\",\r\n    \"company_id\": \"1\",\r\n    \"business_unit_id\": \"3\",\r\n    \"item_id\": \"Pharmacy\",\r\n    \"coa_id\": -99,\r\n    \"subledger_id\": -99,\r\n    \"item_name\": \"Pharmacy User\",\r\n    \"is_active\": true,\r\n    \"is_used_by_system\": true,\r\n    \"user_update\": \"Admin2\",\r\n    \"updated_at\": \"2024-03-22T10:13:00+07:00\"\r\n}"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Fri, 22 Mar 2024 04:41:20 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "346"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "standard_reference_id": "UserType",
+                  "company_id": "1",
+                  "business_unit_id": "3",
+                  "item_id": "Pharmacy",
+                  "coa_id": -99,
+                  "subledger_id": -99,
+                  "item_name": "Pharmacy User",
+                  "is_active": true,
+                  "is_used_by_system": true,
+                  "user_create": "Admin",
+                  "created_at": "2024-03-22T09:13:00+07:00",
+                  "user_update": "Admin2",
+                  "updated_at": "2024-03-22T10:13:00+07:00"
+              }
+          }

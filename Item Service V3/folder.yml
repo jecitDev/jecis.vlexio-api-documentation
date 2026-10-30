@@ -1,0 +1,7 @@
+info:
+  name: Item Service V3
+  type: folder
+  seq: 126
+
+request:
+  auth: inherit

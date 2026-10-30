@@ -1,0 +1,175 @@
+info:
+  name: GET CONSENT
+  type: http
+  seq: 7
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/satu-sehat/consent/:healthcareid/:nik"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: healthcareid
+      value: "002"
+      type: path
+    - name: nik
+      value: "1571036509880001"
+      type: path
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: GET CONSENT
+    request:
+      url: "{{BASE_URL}}/v1/satu-sehat/consent/:healthcareid/:nik"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: healthcareid
+          value: "002"
+          type: path
+        - name: nik
+          value: "9271060312000001"
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 22 Feb 2024 02:38:21 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "209"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "patientId": "P02478375538",
+                  "status": "active",
+                  "period": {
+                      "start": {
+                          "seconds": 1708512316,
+                          "nanos": 518266000
+                      },
+                      "end": {
+                          "seconds": -62135596800
+                      }
+                  },
+                  "dateTime": {
+                      "seconds": 1708512316,
+                      "nanos": 518266000
+                  }
+              }
+          }
+  - name: GET CONSENT NOT FOUND
+    request:
+      url: "{{BASE_URL}}/v1/satu-sehat/consent/:healthcareid/:nik"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: healthcareid
+          value: "002"
+          type: path
+        - name: nik
+          value: "9201076001000007"
+          type: path
+    response:
+      status: 406
+      statusText: Not Acceptable
+      headers:
+        - name: Date
+          value: Thu, 22 Feb 2024 02:38:59 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "189"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 406,
+              "error": {
+                  "errorData": {
+                      "resourceType": "OperationOutcome",
+                      "text": {},
+                      "issue": [
+                          {
+                              "severity": "error",
+                              "code": "not-found",
+                              "details": {
+                                  "text": "The reference provided was not found."
+                              }
+                          }
+                      ]
+                  }
+              }
+          }

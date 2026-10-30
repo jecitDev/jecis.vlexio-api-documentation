@@ -1,0 +1,137 @@
+info:
+  name: Item - Get By ID
+  type: http
+  seq: 5
+http:
+  method: GET
+  url: http://127.0.0.1:8080/v1/Item/get/:id
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: id
+      value: c508e30e-6f1c-4094-8b52-cddca62dba3d
+      type: path
+  body:
+    type: text
+    data: ""
+  auth:
+    type: bearer
+    token: "{{xtoken}}"
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: Item - Get By ID
+    request:
+      url: http://127.0.0.1:8080/v1/Item/get/:id
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: id
+          value: c508e30e-6f1c-4094-8b52-cddca62dba3d
+          type: path
+    response:
+      status: 200
+      statusText: OK API
+      headers:
+        - name: Date
+          value: Tue, 07 Apr 2026 02:26:24 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "1224"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "item_id": "c508e30e-6f1c-4094-8b52-cddca62dba3d",
+                  "item_code": "MED-00002",
+                  "item_name": "Eyefresh",
+                  "description": "Eyefresh eye",
+                  "item_group_id": 101,
+                  "sr_item_type": "PHARMACEUTICAL",
+                  "sr_dosage_form": "TABLET",
+                  "product_account_id": "ACC-98765",
+                  "abc_class": "A",
+                  "is_maintain_stock": true,
+                  "brand": "Panadol",
+                  "registration_no": "REG-2024-0045",
+                  "base_uom": "PCS",
+                  "transaction_uom": "BOX",
+                  "is_consignment": false,
+                  "is_active": true,
+                  "coverage": [
+                      "53aad077-9fb1-4f08-85f3-af9fd9a36518",
+                      "53aad077-9fb1-4f08-85f3-af9fd9a36519"
+                  ],
+                  "user_create": "admin_user",
+                  "created_at": "2025-10-20T13:58:23+07:00",
+                  "fabric_id": "GSK Pharmaceuticals",
+                  "variant": "Regular Strength",
+                  "type": "OTC",
+                  "is_inventory_item": true,
+                  "notes": "Store below 25°C. Keep away from moisture.",
+                  "is_formularium": true,
+                  "is_compounding_item": false,
+                  "is_controlled_substance": false,
+                  "shelf_life_in_days": 730,
+                  "end_of_life": 730,
+                  "valuation_method": "FIFO",
+                  "weight_per_unit": "0.5",
+                  "weight_uom": "KG",
+                  "sr_purchase_unit": "BOX",
+                  "lead_time": 5,
+                  "min_order": 10,
+                  "safety_stock": 50,
+                  "is_allow_purchase": true,
+                  "object_uom": [
+                      {
+                          "uom": "BOX",
+                          "conversion_factor": 12
+                      },
+                      {
+                          "uom": "PACK",
+                          "conversion_factor": 24
+                      },
+                      {
+                          "uom": "PALLET",
+                          "conversion_factor": 500
+                      }
+                  ]
+              }
+          }

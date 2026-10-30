@@ -1,0 +1,182 @@
+info:
+  name: ADD ENCOUNTER
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/satu-sehat/encounter"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"encounter\": {\r
+
+      \        \"historyArrived\": {\r
+
+      \            \"start\": {\r
+
+      \                \"nanos\": 0,\r
+
+      \                \"seconds\": 1704247422\r
+
+      \            },\r
+
+      \            \"end\": {\r
+
+      \                \"nanos\": 0,\r
+
+      \                \"seconds\": 1704247422\r
+
+      \            }\r
+
+      \        },\r
+
+      \        \"period\": {\r
+
+      \            \"start\": {\r
+
+      \                \"nanos\": 0,\r
+
+      \                \"seconds\": 1704247422\r
+
+      \            }\r
+
+      \        }\r
+
+      \    },\r
+
+      \    \"registrationNo\": \"REG/OP/240902-0025\",\r
+
+      \    \"healthcareId\": \"002\",\r
+
+      \    \"locationId\": \"A1-303\",\r
+
+      \    \"paramedicNIK\": \"3322071302900002\",\r
+
+      \    \"patientName\": \"Claudia Sintia\",\r
+
+      \    \"patientNIK\": \"9204014804000002\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: ADD ENCOUNTER
+    request:
+      url: "{{BASE_URL}}/v1/satu-sehat/encounter"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"encounter\": {\r
+
+          \        \"historyArrived\": {\r
+
+          \            \"start\": {\r
+
+          \                \"nanos\": 0,\r
+
+          \                \"seconds\": 1704247422\r
+
+          \            },\r
+
+          \            \"end\": {\r
+
+          \                \"nanos\": 0,\r
+
+          \                \"seconds\": 1704247422\r
+
+          \            }\r
+
+          \        },\r
+
+          \        \"period\": {\r
+
+          \            \"start\": {\r
+
+          \                \"nanos\": 0,\r
+
+          \                \"seconds\": 1704247422\r
+
+          \            }\r
+
+          \        }\r
+
+          \    },\r
+
+          \    \"registrationNo\": \"REG/OP/240902-0025\",\r
+
+          \    \"healthcareId\": \"002\",\r
+
+          \    \"locationId\": \"A1-303\",\r
+
+          \    \"paramedicNIK\": \"3322071302900002\",\r
+
+          \    \"patientName\": \"Claudia Sintia\",\r
+
+          \    \"patientNIK\": \"9204014804000002\"\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Wed, 05 Nov 2025 09:11:45 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "101"
+        - name: Connection
+          value: keep-alive
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "encounterId": "661c158b-761a-4897-8c20-88a329fcb2e7",
+                  "patientId": "P03647103112"
+              }
+          }

@@ -1,0 +1,124 @@
+info:
+  name: Create
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/letterheads"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: multipart-form
+    data:
+      - name: file
+        type: file
+        value:
+          - /C:/Users/pf2e7/Downloads/Pengajuan_Kerja_Sama_JEC.pdf
+      - name: business_unit_id
+        type: text
+        value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      - name: name
+        type: text
+        value: test
+      - name: m_type_id
+        type: text
+        value: 1c7124bc-a4b7-4634-ad26-b39eddf2c19b
+      - name: created_at
+        type: text
+        value: 2025-03-18T14:08:41+07:00
+      - name: user_create
+        type: text
+        value: ferdinand
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/letterheads"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: multipart-form
+        data:
+          - name: file
+            type: file
+            value:
+              - /C:/Users/pf2e7/Downloads/Pengajuan_Kerja_Sama_JEC.pdf
+          - name: business_unit_id
+            type: text
+            value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          - name: name
+            type: text
+            value: test
+          - name: m_type_id
+            type: text
+            value: 1c7124bc-a4b7-4634-ad26-b39eddf2c19b
+          - name: created_at
+            type: text
+            value: 2025-03-18T14:08:41+07:00
+          - name: user_create
+            type: text
+            value: ferdinand
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Date
+          value: Wed, 24 Sep 2025 09:11:54 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "405"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 201,
+              "data": {
+                  "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "id": "76876532-e9a4-4597-9564-50ac222fa6fc",
+                  "name": "test",
+                  "url": "/file_storage/7c6c4e01-052e-4730-ac25-ac6141d3fcf8/2da6a1bd-ba62-43ec-91f8-4085d5d6d498/53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "m_type_id": "1c7124bc-a4b7-4634-ad26-b39eddf2c19b",
+                  "is_active": true,
+                  "created_at": "2025-03-18T14:08:41+07:00",
+                  "user_create": "ferdinand"
+              }
+          }

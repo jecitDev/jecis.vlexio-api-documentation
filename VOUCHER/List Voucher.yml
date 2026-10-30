@@ -1,0 +1,233 @@
+info:
+  name: List Voucher
+  type: http
+  seq: 5
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/promo/voucher/:id?page=1&page_size=50&sort_by=voucher_number&sort_order=asc&keywords=sum"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: page_size
+      value: "50"
+      type: query
+    - name: sort_by
+      value: voucher_number
+      type: query
+    - name: sort_order
+      value: asc
+      type: query
+    - name: keywords
+      value: sum
+      type: query
+    - name: voucher_number
+      value: SurgeryNo-0003
+      type: query
+      disabled: true
+    - name: payment_method
+      value: card
+      type: query
+      disabled: true
+    - name: is_used
+      value: "true"
+      type: query
+      disabled: true
+    - name: payment_no
+      value: untung
+      type: query
+      disabled: true
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: query
+      disabled: true
+    - name: id
+      value: 3a037e29-71c4-42be-b4f9-cf1de0d2b900
+      type: path
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: List Voucher
+    request:
+      url: "{{BASE_URL}}/v1/promo/voucher/:id?page=1&page_size=10&sort_by=voucher_number&sort_order=desc&keywords=SUMM"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: page_size
+          value: "10"
+          type: query
+        - name: sort_by
+          value: voucher_number
+          type: query
+        - name: sort_order
+          value: desc
+          type: query
+        - name: keywords
+          value: SUMM
+          type: query
+        - name: voucher_number
+          value: SurgeryNo-0003
+          type: query
+          disabled: true
+        - name: payment_method
+          value: card
+          type: query
+          disabled: true
+        - name: is_used
+          value: "true"
+          type: query
+          disabled: true
+        - name: payment_no
+          value: untung
+          type: query
+          disabled: true
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: query
+          disabled: true
+        - name: id
+          value: 8f96d1fa-5059-4bb9-b78f-b370e70c3732
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Wed, 06 Aug 2025 03:41:51 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "2539"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "page": 1,
+                  "page_size": 10,
+                  "total_items": 5,
+                  "vouchers": [
+                      {
+                          "package_voucher_id": "c143c318-ff00-401e-a823-fee1a842ee45",
+                          "package_id": "8f96d1fa-5059-4bb9-b78f-b370e70c3732",
+                          "voucher_number": "SUMM-0000000005",
+                          "voucher_name": "Summer Health Promo 2025",
+                          "amount": 50000,
+                          "expired_date": "2025-12-31T00:00:00Z",
+                          "is_paid": true,
+                          "payment_method": "BANK_TRANSFER",
+                          "payment_date_time": "2025-08-01T14:30:00+07:00",
+                          "payment_by_user_id": "user456",
+                          "created_at": "2025-08-04T10:30:00+07:00",
+                          "user_create": "302303",
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517"
+                      },
+                      {
+                          "package_voucher_id": "74d787e1-2e0e-4ee9-9ef9-9fe224b401e4",
+                          "package_id": "8f96d1fa-5059-4bb9-b78f-b370e70c3732",
+                          "voucher_number": "SUMM-0000000004",
+                          "voucher_name": "Summer Health Promo 2025",
+                          "amount": 50000,
+                          "expired_date": "2025-12-31T00:00:00Z",
+                          "is_paid": true,
+                          "payment_method": "BANK_TRANSFER",
+                          "payment_date_time": "2025-08-01T14:30:00+07:00",
+                          "payment_by_user_id": "user456",
+                          "created_at": "2025-08-04T10:30:00+07:00",
+                          "user_create": "302303",
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517"
+                      },
+                      {
+                          "package_voucher_id": "cba0e33d-27ed-4da2-8700-f0cc3728205c",
+                          "package_id": "8f96d1fa-5059-4bb9-b78f-b370e70c3732",
+                          "voucher_number": "SUMM-0000000003",
+                          "voucher_name": "Summer Health Promo 2025",
+                          "amount": 50000,
+                          "expired_date": "2025-12-31T00:00:00Z",
+                          "is_paid": true,
+                          "payment_method": "BANK_TRANSFER",
+                          "payment_date_time": "2025-08-01T14:30:00+07:00",
+                          "payment_by_user_id": "user456",
+                          "created_at": "2025-08-04T10:30:00+07:00",
+                          "user_create": "302303",
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517"
+                      },
+                      {
+                          "package_voucher_id": "5b6cfee0-402d-448d-8772-26b887bbff4e",
+                          "package_id": "8f96d1fa-5059-4bb9-b78f-b370e70c3732",
+                          "voucher_number": "SUMM-0000000002",
+                          "voucher_name": "Summer Health Promo 2025",
+                          "amount": 50000,
+                          "expired_date": "2025-12-31T00:00:00Z",
+                          "is_paid": true,
+                          "payment_method": "BANK_TRANSFER",
+                          "payment_date_time": "2025-08-01T14:30:00+07:00",
+                          "payment_by_user_id": "user456",
+                          "created_at": "2025-08-04T10:30:00+07:00",
+                          "user_create": "302303",
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517"
+                      },
+                      {
+                          "package_voucher_id": "ff7d5ee6-8355-434a-bbeb-ace0032cfb19",
+                          "package_id": "8f96d1fa-5059-4bb9-b78f-b370e70c3732",
+                          "voucher_number": "SUMM-0000000001",
+                          "voucher_name": "Summer Health Promo 2025",
+                          "amount": 50000,
+                          "expired_date": "2025-12-31T00:00:00Z",
+                          "is_paid": true,
+                          "payment_method": "BANK_TRANSFER",
+                          "payment_date_time": "2025-08-01T14:30:00+07:00",
+                          "payment_by_user_id": "user456",
+                          "created_at": "2025-08-04T10:30:00+07:00",
+                          "user_create": "302303",
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517"
+                      }
+                  ]
+              }
+          }

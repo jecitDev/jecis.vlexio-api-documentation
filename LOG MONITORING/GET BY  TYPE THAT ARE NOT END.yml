@@ -1,0 +1,115 @@
+info:
+  name: GET BY  TYPE THAT ARE NOT END
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/LogMonitoring/by-type-not-end?business_unit_id=53aad077-9fb1-4f08-85f3-af9fd9a36517&type=Login"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: query
+    - name: type
+      value: Login
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: GET BY TYPE THAT ARE NOT END
+    request:
+      url: "{{BASE_URL}}/v1/LogMonitoring/by-type-not-end?business_unit_id=53aad077-9fb1-4f08-85f3-af9fd9a36517&type=Login"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: query
+        - name: type
+          value: Login
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 01 Aug 2024 08:13:50 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "651"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "log_monitoring": [
+                      {
+                          "doc_id": "rjDwDJEBaQnEaTDamS7H",
+                          "start": "2024-07-31T07:00:21+07:00",
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "user_id": "21170",
+                          "user_name": "Fernando RIyo Junedy Simbolon",
+                          "email": "fernando.riyo@jec.co.id",
+                          "ip_address": "172.16.20.120",
+                          "station_id": "1",
+                          "station_name": "Default",
+                          "type": "Login"
+                      },
+                      {
+                          "doc_id": "ec__DJEBCrx8pwRZnJTx",
+                          "start": "2024-08-01T07:00:21+07:00",
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "user_id": "rama",
+                          "user_name": "Fernando RIyo Junedy Simbolon",
+                          "email": "rama@mail.co.id",
+                          "ip_address": "172.16.20.120",
+                          "station_id": "1",
+                          "station_name": "Default",
+                          "type": "Login"
+                      }
+                  ]
+              }
+          }

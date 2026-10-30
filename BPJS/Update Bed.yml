@@ -1,0 +1,34 @@
+info:
+  name: Update Bed
+  type: http
+  seq: 14
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/bpjs/bed"
+  headers:
+    - name: x-token
+      value: ""
+  body:
+    type: json
+    data: "{\r
+
+      \    \"business_unit_id\": \"\",\r
+
+      \    \"kode_kelas\": \"\",\r
+
+      \    \"nama_ruangan\": \"\",\r
+
+      \    \"kapasitas\": 0,\r
+
+      \    \"tersedia\": 0\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

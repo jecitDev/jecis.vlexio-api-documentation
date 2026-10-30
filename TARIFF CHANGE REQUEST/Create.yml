@@ -1,0 +1,526 @@
+info:
+  name: Create
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/tariff-requests"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+      \    \"tariff_request_number\": \"TR260211-00005\",\r
+
+      \    \"starting_date\": \"2026-01-21T15:27:28+07:00\",\r
+
+      \    \"notes\": \"pengajuan kenaikan tariff Q1 2026\",\r
+
+      \    \"tariffs\": [\r
+
+      \        {\r
+
+      \            \"item_id\": \"ff971d64-9ee7-4431-8a63-a3c5c9999127\",\r
+
+      \            \"tariff_components\": [\r
+
+      \                {\r
+
+      \                    \"tariff_component_id\": \"01\",\r
+
+      \                    \"amount\": 300000,\r
+
+      \                    \"allow_discount\": false,\r
+
+      \                    \"is_supervision\": true,\r
+
+      \                    \"supervision\": {\r
+
+      \                        \"supervision_percentage\": 30,\r
+
+      \                        \"dpjp_percentage\": 70\r
+
+      \                    },\r
+
+      \                    \"additionals\": [\r
+
+      \                        {\r
+
+      \                            \"additional_id\": \"faf1ab28-9ce3-456c-a1ea-a5089f2ff9ee\",\r
+
+      \                            \"amount\": 500000,\r
+
+      \                            \"is_not_paid_on_cross\": true,\r
+
+      \                            \"billed_to_patient\": true\r
+
+      \                        },\r
+
+      \                        {\r
+
+      \                            \"additional_id\": \"faf1ab28-9ce3-456c-a1ea-a5089f2ff9ef\",\r
+
+      \                            \"amount\": 100000,\r
+
+      \                            \"is_not_paid_on_cross\": true,\r
+
+      \                            \"billed_to_patient\": true\r
+
+      \                        }\r
+
+      \                    ],\r
+
+      \                    \"deductions\": [\r
+
+      \                        {\r
+
+      \                            \"deduction_id\": \"2da63cdf-bb61-4794-a1e9-5cc771080a75\",\r
+
+      \                            \"amount\": 5,\r
+
+      \                            \"is_percent\": true\r
+
+      \                        },\r
+
+      \                        {\r
+
+      \                            \"deduction_id\": \"2da63cdf-bb61-4794-a1e9-5cc771080a74\",\r
+
+      \                            \"amount\": 10,\r
+
+      \                            \"is_percent\": true\r
+
+      \                        }\r
+
+      \                    ]\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"tariff_component_id\": \"03\",\r
+
+      \                    \"amount\": 500000,\r
+
+      \                    \"allow_discount\": true,\r
+
+      \                    \"is_supervision\": true,\r
+
+      \                    \"supervision\": {\r
+
+      \                        \"supervision_percentage\": 30,\r
+
+      \                        \"dpjp_percentage\": 70\r
+
+      \                    },\r
+
+      \                    \"additionals\": [\r
+
+      \                        {\r
+
+      \                            \"additional_id\": \"faf1ab28-9ce3-456c-a1ea-a5089f2ff9ee\",\r
+
+      \                            \"amount\": 400000,\r
+
+      \                            \"is_not_paid_on_cross\": true,\r
+
+      \                            \"billed_to_patient\": true\r
+
+      \                        },\r
+
+      \                        {\r
+
+      \                            \"additional_id\": \"faf1ab28-9ce3-456c-a1ea-a5089f2ff9ef\",\r
+
+      \                            \"amount\": 300000,\r
+
+      \                            \"is_not_paid_on_cross\": true,\r
+
+      \                            \"billed_to_patient\": true\r
+
+      \                        }\r
+
+      \                    ],\r
+
+      \                    \"deductions\": [\r
+
+      \                        {\r
+
+      \                            \"deduction_id\": \"2da63cdf-bb61-4794-a1e9-5cc771080a75\",\r
+
+      \                            \"amount\": 5,\r
+
+      \                            \"is_percent\": true\r
+
+      \                        },\r
+
+      \                        {\r
+
+      \                            \"deduction_id\": \"2da63cdf-bb61-4794-a1e9-5cc771080a74\",\r
+
+      \                            \"amount\": 10,\r
+
+      \                            \"is_percent\": true\r
+
+      \                        }\r
+
+      \                    ]\r
+
+      \                }\r
+
+      \            ]\r
+
+      \        },\r
+
+      \        {\r
+
+      \            \"item_id\": \"714016b3-0517-41f5-9b67-63245cdf8b43\",\r
+
+      \            \"tariff_components\": [\r
+
+      \                {\r
+
+      \                    \"tariff_component_id\": \"01\",\r
+
+      \                    \"amount\": 200000,\r
+
+      \                    \"allow_discount\": false,\r
+
+      \                    \"is_supervision\": false,\r
+
+      \                    \"additionals\": [\r
+
+      \                        {\r
+
+      \                            \"additional_id\": \"faf1ab28-9ce3-456c-a1ea-a5089f2ff9ee\",\r
+
+      \                            \"amount\": 500000,\r
+
+      \                            \"is_not_paid_on_cross\": true,\r
+
+      \                            \"billed_to_patient\": true\r
+
+      \                        }\r
+
+      \                    ],\r
+
+      \                    \"deductions\": [\r
+
+      \                        {\r
+
+      \                            \"deduction_id\": \"2da63cdf-bb61-4794-a1e9-5cc771080a75\",\r
+
+      \                            \"amount\": 5000,\r
+
+      \                            \"is_percent\": false\r
+
+      \                        }\r
+
+      \                    ]\r
+
+      \                }\r
+
+      \            ]\r
+
+      \        }\r
+
+      \    ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Create
+    request:
+      url: "{{BASE_URL}}/v1/tariff-requests"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+          \    \"tariff_request_number\": \"TR260211-00005\",\r
+
+          \    \"starting_date\": \"2026-01-20T15:27:28+07:00\",\r
+
+          \    \"notes\": \"pengajuan kenaikan tariff Q1 2026\",\r
+
+          \    \"tariffs\": [\r
+
+          \        {\r
+
+          \            \"item_id\": \"7cba34a2-a0a5-4174-a1d8-5dc2df751537\",\r
+
+          \            \"tariff_components\": [\r
+
+          \                {\r
+
+          \                    \"tariff_component_id\": \"01\",\r
+
+          \                    \"amount\": 200000,\r
+
+          \                    \"allow_discount\": false,\r
+
+          \                    \"is_supervision\": true,\r
+
+          \                    \"supervision\": {\r
+
+          \                        \"supervision_percentage\": 30,\r
+
+          \                        \"dpjp_percentage\": 70\r
+
+          \                    },\r
+
+          \                    \"additionals\": [\r
+
+          \                        {\r
+
+          \                            \"additional_id\": \"faf1ab28-9ce3-456c-a1ea-a5089f2ff9ee\",\r
+
+          \                            \"amount\": 500000,\r
+
+          \                            \"is_not_paid_on_cross\": true,\r
+
+          \                            \"billed_to_patient\": true\r
+
+          \                        },\r
+
+          \                        {\r
+
+          \                            \"additional_id\": \"faf1ab28-9ce3-456c-a1ea-a5089f2ff9ef\",\r
+
+          \                            \"amount\": 100000,\r
+
+          \                            \"is_not_paid_on_cross\": true,\r
+
+          \                            \"billed_to_patient\": true\r
+
+          \                        }\r
+
+          \                    ],\r
+
+          \                    \"deductions\": [\r
+
+          \                        {\r
+
+          \                            \"deduction_id\": \"2da63cdf-bb61-4794-a1e9-5cc771080a75\",\r
+
+          \                            \"amount\": 5,\r
+
+          \                            \"is_percent\": true\r
+
+          \                        },\r
+
+          \                        {\r
+
+          \                            \"deduction_id\": \"2da63cdf-bb61-4794-a1e9-5cc771080a74\",\r
+
+          \                            \"amount\": 10,\r
+
+          \                            \"is_percent\": true\r
+
+          \                        }\r
+
+          \                    ]\r
+
+          \                },\r
+
+          \                {\r
+
+          \                    \"tariff_component_id\": \"02\",\r
+
+          \                    \"amount\": 400000,\r
+
+          \                    \"allow_discount\": false,\r
+
+          \                    \"is_supervision\": true,\r
+
+          \                    \"supervision\": {\r
+
+          \                        \"supervision_percentage\": 30,\r
+
+          \                        \"dpjp_percentage\": 70\r
+
+          \                    },\r
+
+          \                    \"additionals\": [\r
+
+          \                        {\r
+
+          \                            \"additional_id\": \"faf1ab28-9ce3-456c-a1ea-a5089f2ff9ee\",\r
+
+          \                            \"amount\": 500000,\r
+
+          \                            \"is_not_paid_on_cross\": true,\r
+
+          \                            \"billed_to_patient\": true\r
+
+          \                        },\r
+
+          \                        {\r
+
+          \                            \"additional_id\": \"faf1ab28-9ce3-456c-a1ea-a5089f2ff9ef\",\r
+
+          \                            \"amount\": 100000,\r
+
+          \                            \"is_not_paid_on_cross\": true,\r
+
+          \                            \"billed_to_patient\": true\r
+
+          \                        }\r
+
+          \                    ],\r
+
+          \                    \"deductions\": [\r
+
+          \                        {\r
+
+          \                            \"deduction_id\": \"2da63cdf-bb61-4794-a1e9-5cc771080a75\",\r
+
+          \                            \"amount\": 5,\r
+
+          \                            \"is_percent\": true\r
+
+          \                        },\r
+
+          \                        {\r
+
+          \                            \"deduction_id\": \"2da63cdf-bb61-4794-a1e9-5cc771080a74\",\r
+
+          \                            \"amount\": 10,\r
+
+          \                            \"is_percent\": true\r
+
+          \                        }\r
+
+          \                    ]\r
+
+          \                }\r
+
+          \            ]\r
+
+          \        },\r
+
+          \        {\r
+
+          \            \"item_id\": \"4f278a30-85f4-43a9-89c9-a7ecff21b01a\",\r
+
+          \            \"tariff_components\": [\r
+
+          \                {\r
+
+          \                    \"tariff_component_id\": \"01\",\r
+
+          \                    \"amount\": 200000,\r
+
+          \                    \"allow_discount\": false,\r
+
+          \                    \"is_supervision\": false,\r
+
+          \                    \"additionals\": [\r
+
+          \                        {\r
+
+          \                            \"additional_id\": \"faf1ab28-9ce3-456c-a1ea-a5089f2ff9ee\",\r
+
+          \                            \"amount\": 500000,\r
+
+          \                            \"is_not_paid_on_cross\": true,\r
+
+          \                            \"billed_to_patient\": true\r
+
+          \                        }\r
+
+          \                    ],\r
+
+          \                    \"deductions\": [\r
+
+          \                        {\r
+
+          \                            \"deduction_id\": \"2da63cdf-bb61-4794-a1e9-5cc771080a75\",\r
+
+          \                            \"amount\": 5000,\r
+
+          \                            \"is_percent\": false\r
+
+          \                        }\r
+
+          \                    ]\r
+
+          \                }\r
+
+          \            ]\r
+
+          \        }\r
+
+          \    ]\r
+
+          }"
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Date
+          value: Thu, 12 Feb 2026 09:09:31 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "188"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 201,
+              "data": {
+                  "tariff_request_id": "d99c5701-e495-4d43-87cd-cc4b14ee9fde",
+                  "tariff_request_number": "TR260211-00005",
+                  "created_at": "2026-02-12T16:09:31+07:00",
+                  "user_create": "ferdinand"
+              }
+          }

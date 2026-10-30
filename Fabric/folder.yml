@@ -1,0 +1,7 @@
+info:
+  name: Fabric
+  type: folder
+  seq: 82
+
+request:
+  auth: inherit

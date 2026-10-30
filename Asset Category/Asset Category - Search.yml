@@ -1,0 +1,129 @@
+info:
+  name: Asset Category - Search
+  type: http
+  seq: 6
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/AssetCategory/search?max_hits=4&page=1&text=Tanah&coverage_business_unit_id=f64e10b4-0cbf-4fee-ac09-1a4fa199696c"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: max_hits
+      value: "4"
+      type: query
+    - name: page
+      value: "1"
+      type: query
+    - name: text
+      value: Tanah
+      type: query
+    - name: coverage_business_unit_id
+      value: f64e10b4-0cbf-4fee-ac09-1a4fa199696c
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Asset Category - Search API
+    request:
+      url: "{{BASE_URL}}/v1/AssetCategory/search?max_hits=4&page=1&text=Tanah&coverage_business_unit_id=f64e10b4-0cbf-4fee-ac09-1a4fa199696c"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: max_hits
+          value: "4"
+          type: query
+        - name: page
+          value: "1"
+          type: query
+        - name: text
+          value: Tanah
+          type: query
+        - name: coverage_business_unit_id
+          value: f64e10b4-0cbf-4fee-ac09-1a4fa199696c
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Wed, 17 Dec 2025 09:01:09 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "543"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "Total": 3,
+                  "Page": 1,
+                  "result": [
+                      {
+                          "business_unit_id": "f64e10b4-0cbf-4fee-ac09-1a4fa199696c",
+                          "category_id": 1,
+                          "category_code": "01.00.000",
+                          "category_level": 1,
+                          "category_name": "Tanah",
+                          "is_active": true
+                      },
+                      {
+                          "business_unit_id": "f64e10b4-0cbf-4fee-ac09-1a4fa199696c",
+                          "category_id": 1,
+                          "category_code": "01.00.000",
+                          "category_level": 1,
+                          "category_name": "Tanah",
+                          "is_active": true
+                      },
+                      {
+                          "business_unit_id": "f64e10b4-0cbf-4fee-ac09-1a4fa199696c",
+                          "category_id": 1,
+                          "category_code": "01.00.000",
+                          "category_level": 1,
+                          "category_name": "Tanah",
+                          "is_active": true
+                      }
+                  ]
+              }
+          }

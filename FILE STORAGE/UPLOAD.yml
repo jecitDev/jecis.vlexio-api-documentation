@@ -1,0 +1,124 @@
+info:
+  name: UPLOAD
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/file_storage/upload"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: multipart-form
+    data:
+      - name: file
+        type: file
+        value:
+          - /C:/Users/USER/Downloads/2606517_5856.jpg
+      - name: business_unit_id
+        type: text
+        value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      - name: company_id
+        type: text
+        value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+      - name: storage_id
+        type: text
+        value: "22"
+      - name: user_create
+        type: text
+        value: "21170"
+      - name: created_at
+        type: text
+        value: 2024-06-25T14:10:56+07:00
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: "UPLOAD #1-241015"
+    request:
+      url: "{{BASE_URL}}/v1/file_storage/upload"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: multipart-form
+        data:
+          - name: file
+            type: file
+            value:
+              - /C:/Users/USER/Downloads/2606517_5856.jpg
+          - name: business_unit_id
+            type: text
+            value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          - name: company_id
+            type: text
+            value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+          - name: storage_id
+            type: text
+            value: "22"
+          - name: user_create
+            type: text
+            value: "21170"
+          - name: created_at
+            type: text
+            value: 2024-06-25T14:10:56+07:00
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Server
+          value: nginx/1.22.0 (Ubuntu)
+        - name: Date
+          value: Tue, 15 Oct 2024 07:39:14 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "241"
+        - name: Connection
+          value: keep-alive
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "file_url": "/file_storage/6cdee97f-1360-4c9c-b74e-e13327c35f6a/2da6a1bd-ba62-43ec-91f8-4085d5d6d498/53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "file_size": 453624,
+                  "user_create": "21170",
+                  "created_at": "2024-06-25T14:10:56+07:00"
+              }
+          }

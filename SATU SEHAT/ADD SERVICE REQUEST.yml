@@ -1,0 +1,66 @@
+info:
+  name: ADD SERVICE REQUEST
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/satu-sehat/service_request"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"effective_date\": \"2024-11-08T13:28:00+00:00\",\r
+
+      \    \"encounter_id\": \"56a92da0-a81e-4f2c-ae73-5a95953eaeb3\",\r
+
+      \    \"healthcare_id\": \"002\",\r
+
+      \    \"patient_nik\": \"9271060312000001\",\r
+
+      \    \"practitioner_nik\": \"7209061211900001\",\r
+
+      \    \"registration_no\": \"REG/OP/241108-0002\",\r
+
+      \    \"patient_id\": \"\",\r
+
+      \    \"performer_practitioner_id\": \"\",\r
+
+      \    \"performer_practitioner_nik\": \"7209061211900001\",\r
+
+      \    \"requester_practitioner_id\": \"\",\r
+
+      \    \"requester_practitioner_nik\": \"7209061211900001\",\r
+
+      \    \"accession_no\": \"ACSKDY0002\",\r
+
+      \    \"authored_on\": \"2024-11-08T13:28:00+00:00\",\r
+
+      \    \"category_snomed_code\": \"363679005\",\r
+
+      \    \"category_snomed_name\": \"Imaging\",\r
+
+      \    \"code_loinc_code\": \"98035-9\",\r
+
+      \    \"code_loinc_name\": \"US Eye\",\r
+
+      \    \"note\": \"\",\r
+
+      \    \"occurrence_date\": \"2024-11-08T13:28:00+00:00\",\r
+
+      \    \"priority\": \"\",\r
+
+      \    \"reason_code_text\": \"\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

@@ -1,0 +1,652 @@
+info:
+  name: Create Task Copy
+  type: http
+  seq: 4
+http:
+  method: POST
+  url: "{{BASE_URL}}/crm_form/list/task?business_unit_id=33b109c5-dd64-480c-8100-68fe17deaf3e"
+  headers:
+    - name: x-token
+      value: ""
+      disabled: true
+    - name: X-Captcha-Token
+      value: ""
+  params:
+    - name: business_unit_id
+      value: 33b109c5-dd64-480c-8100-68fe17deaf3e
+      type: query
+  body:
+    type: json
+    data: "{\r\n    \"name\": \"Test Create Task 2\"\r\n}"
+  auth: inherit
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: Create Task
+    request:
+      url: "{{BASE_URL}}/crm_form/list/task?business_unit_id=33b109c5-dd64-480c-8100-68fe17deaf3e"
+      method: POST
+      headers:
+        - name: x-token
+          value: ""
+          disabled: true
+        - name: X-Captcha-Token
+          value: ""
+      params:
+        - name: business_unit_id
+          value: 33b109c5-dd64-480c-8100-68fe17deaf3e
+          type: query
+      body:
+        type: json
+        data: "{\r\n    \"name\": \"Test Create Task 1\"\r\n}"
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Date
+          value: Wed, 15 Jul 2026 09:38:45 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "10100"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+              "code": 201,
+              "data": {
+                  "archived": false,
+                  "assignees": [],
+                  "checklists": [],
+                  "creator": {
+                      "color": "#04a9f4",
+                      "email": "ticketit@jec.co.id",
+                      "id": 54661600,
+                      "profilePicture": null,
+                      "username": "Ticket Bot"
+                  },
+                  "custom_fields": [
+                      {
+                          "date_created": "1776851436454",
+                          "hide_from_guests": false,
+                          "id": "7f65be11-cde1-4b17-b9bc-b9c81b4d9915",
+                          "name": "Account",
+                          "required": false,
+                          "type": "short_text",
+                          "type_config": {}
+                      },
+                      {
+                          "date_created": "1776851757290",
+                          "hide_from_guests": false,
+                          "id": "6789b018-d524-49b5-9eed-1e4b098c79b3",
+                          "name": "Age",
+                          "required": false,
+                          "type": "formula",
+                          "type_config": {
+                              "calculation_state": "ready",
+                              "formula": "ROUNDDOWN(DAYS(TODAY(), CUSTOM_FIELD_0edf29ed_f860_472b_b3d6_4062b129081d) / 365.25, 0)",
+                              "is_dynamic": true,
+                              "reset_at": 1776851866583,
+                              "return_types": [
+                                  "null",
+                                  "number"
+                              ],
+                              "simple": false,
+                              "version": "1.12"
+                          }
+                      },
+                      {
+                          "date_created": "1776310893058",
+                          "hide_from_guests": false,
+                          "id": "29f8e589-3394-4242-b1bc-28adf33a8686",
+                          "name": "BASELINE_due_date",
+                          "required": false,
+                          "type": "multi_key",
+                          "type_config": {
+                              "feature": "baselines",
+                              "subfield_type": "date",
+                              "subfield_type_id": 4
+                          }
+                      },
+                      {
+                          "date_created": "1776310893253",
+                          "hide_from_guests": false,
+                          "id": "9b7b141d-9d65-43cf-9ab2-080d5cead67b",
+                          "name": "BASELINE_duration",
+                          "required": false,
+                          "type": "multi_key",
+                          "type_config": {
+                              "feature": "baselines",
+                              "subfield_to_string_mode": "duration",
+                              "subfield_type": "number",
+                              "subfield_type_id": 7
+                          }
+                      },
+                      {
+                          "date_created": "1776310893367",
+                          "hide_from_guests": false,
+                          "id": "5e27f5fc-2b98-4004-898e-806fde78afd3",
+                          "name": "BASELINE_start_date",
+                          "required": false,
+                          "type": "multi_key",
+                          "type_config": {
+                              "feature": "baselines",
+                              "subfield_type": "date",
+                              "subfield_type_id": 4
+                          }
+                      },
+                      {
+                          "date_created": "1776310893169",
+                          "hide_from_guests": false,
+                          "id": "76a84ca6-71d2-4332-beb1-3de796f934ba",
+                          "name": "BASELINE_status",
+                          "required": false,
+                          "type": "multi_key",
+                          "type_config": {
+                              "feature": "baselines",
+                              "subfield_to_string_mode": "status",
+                              "subfield_type": "short_text",
+                              "subfield_type_id": 15
+                          }
+                      },
+                      {
+                          "date_created": "1776409399938",
+                          "hide_from_guests": false,
+                          "id": "38908374-3365-4661-a5e7-8fcf4c1712da",
+                          "name": "Campaign Type",
+                          "required": false,
+                          "type": "drop_down",
+                          "type_config": {
+                              "options": [
+                                  {
+                                      "color": "#6647f0",
+                                      "id": "1a06068f-18eb-44f5-b448-ba811bc6ad22",
+                                      "name": "Conference",
+                                      "orderindex": 0
+                                  },
+                                  {
+                                      "color": "#3e63dd",
+                                      "id": "6863d9d8-4552-4f4e-a469-f5ab7ea9d467",
+                                      "name": "Webinar",
+                                      "orderindex": 1
+                                  },
+                                  {
+                                      "color": "#0091ff",
+                                      "id": "065d182b-49c3-4735-b2e8-f28bbfcd9166",
+                                      "name": "Public Relation",
+                                      "orderindex": 2
+                                  },
+                                  {
+                                      "color": "#12a594",
+                                      "id": "3026e777-c6b1-4c58-8ff7-1e6df5c6ed49",
+                                      "name": "Partners",
+                                      "orderindex": 3
+                                  },
+                                  {
+                                      "color": "#ffc53d",
+                                      "id": "ad262081-c511-422e-8dac-5a8feb08cbe3",
+                                      "name": "Referral Program",
+                                      "orderindex": 4
+                                  },
+                                  {
+                                      "color": "#f76808",
+                                      "id": "371542f4-f7ab-4f80-a13f-f31a84357fe2",
+                                      "name": "Advertisement",
+                                      "orderindex": 5
+                                  },
+                                  {
+                                      "color": "#a18072",
+                                      "id": "4de33c0d-0a8a-43c4-a603-3da99f9a854b",
+                                      "name": "Banner Ads",
+                                      "orderindex": 6
+                                  },
+                                  {
+                                      "color": "#e93d82",
+                                      "id": "fc838892-ca60-4844-8c67-1f9ce56b6e95",
+                                      "name": "Email",
+                                      "orderindex": 7
+                                  },
+                                  {
+                                      "color": "#ab4aba",
+                                      "id": "0ab5717c-5459-441d-b860-407fcd4f9c50",
+                                      "name": "Telemarketing",
+                                      "orderindex": 8
+                                  },
+                                  {
+                                      "color": "#0e0e0e",
+                                      "id": "cd5f2ac5-b9f6-4a82-89fe-ddcc57555f9f",
+                                      "name": "Others",
+                                      "orderindex": 9
+                                  }
+                              ],
+                              "sorting": "manual"
+                          }
+                      },
+                      {
+                          "date_created": "1776068423147",
+                          "hide_from_guests": false,
+                          "id": "19397493-26a6-4151-8386-1131e7c6ef1f",
+                          "name": "City",
+                          "required": false,
+                          "type": "short_text",
+                          "type_config": {}
+                      },
+                      {
+                          "date_created": "1776077828932",
+                          "hide_from_guests": false,
+                          "id": "ee6dbff5-68b2-4ca7-8209-2c88399a402c",
+                          "name": "Convert To Contact",
+                          "required": false,
+                          "type": "checkbox",
+                          "type_config": {}
+                      },
+                      {
+                          "date_created": "1776068469169",
+                          "hide_from_guests": false,
+                          "id": "3fe26fb1-e840-41b4-b40f-1cf78e84dd50",
+                          "name": "Country",
+                          "required": false,
+                          "type": "short_text",
+                          "type_config": {}
+                      },
+                      {
+                          "date_created": "1776068395185",
+                          "hide_from_guests": false,
+                          "id": "119ecc1d-7f94-456c-a34a-e90c1d9e0614",
+                          "name": "County",
+                          "required": false,
+                          "type": "short_text",
+                          "type_config": {}
+                      },
+                      {
+                          "date_created": "1776068409891",
+                          "hide_from_guests": false,
+                          "id": "f83d5644-9604-4790-a246-64bc1e8aae3d",
+                          "name": "District",
+                          "required": false,
+                          "type": "short_text",
+                          "type_config": {}
+                      },
+                      {
+                          "date_created": "1770708138530",
+                          "hide_from_guests": false,
+                          "id": "515a98ae-1ba0-4080-89a1-45ab546fcf61",
+                          "name": "Event Promotion",
+                          "required": false,
+                          "type": "short_text",
+                          "type_config": {}
+                      },
+                      {
+                          "date_created": "1776935301774",
+                          "hide_from_guests": false,
+                          "id": "b295c21d-28d7-4e3e-bd3f-99a36e272f9f",
+                          "name": "Last Execute On",
+                          "required": false,
+                          "type": "date",
+                          "type_config": {}
+                      },
+                      {
+                          "date_created": "1776068047461",
+                          "hide_from_guests": false,
+                          "id": "d5d690ae-4041-423d-9aa6-427cb404765e",
+                          "name": "Lead Source",
+                          "required": false,
+                          "type": "drop_down",
+                          "type_config": {
+                              "options": [
+                                  {
+                                      "color": "#FF4081",
+                                      "id": "f4d001e6-4659-456f-93d0-9800b7c526a4",
+                                      "name": "Advertisement",
+                                      "orderindex": 0
+                                  },
+                                  {
+                                      "color": "#7C4DFF",
+                                      "id": "e6dddc8e-95b6-4a09-935e-3fe5a9ccc321",
+                                      "name": "Public Seminar",
+                                      "orderindex": 1
+                                  },
+                                  {
+                                      "color": "#b6b6ff",
+                                      "id": "e105ba58-f130-4361-ba63-d824a0686ba0",
+                                      "name": "Web Mail",
+                                      "orderindex": 2
+                                  },
+                                  {
+                                      "color": "#aec0f5",
+                                      "id": "7b1ff17f-40c4-4e08-bd72-79bba99d6cb3",
+                                      "name": "Chat",
+                                      "orderindex": 3
+                                  },
+                                  {
+                                      "color": "#96c7f2",
+                                      "id": "abf680e9-bfd0-4835-919a-2a230d304978",
+                                      "name": "Partner",
+                                      "orderindex": 4
+                                  },
+                                  {
+                                      "color": "#8dcec3",
+                                      "id": "e0ef29d9-085f-4b97-bc74-0949466b3bb2",
+                                      "name": "Instagram",
+                                      "orderindex": 5
+                                  },
+                                  {
+                                      "color": "#92ceac",
+                                      "id": "616771a9-4679-4736-a387-114e1fc60e06",
+                                      "name": "Facebook",
+                                      "orderindex": 6
+                                  },
+                                  {
+                                      "color": "#e9c162",
+                                      "id": "d89764a5-acab-4370-862a-48d71826f20c",
+                                      "name": "Event JEC",
+                                      "orderindex": 7
+                                  }
+                              ],
+                              "sorting": "manual"
+                          }
+                      },
+                      {
+                          "date_created": "1776068380233",
+                          "hide_from_guests": false,
+                          "id": "936e392a-74d4-4906-af0d-74b491f10713",
+                          "name": "Location",
+                          "required": false,
+                          "type": "text",
+                          "type_config": {}
+                      },
+                      {
+                          "date_created": "1776068450221",
+                          "hide_from_guests": false,
+                          "id": "d3f23a28-7362-4c9c-9126-93ed3a1549d9",
+                          "name": "State",
+                          "required": false,
+                          "type": "short_text",
+                          "type_config": {}
+                      },
+                      {
+                          "date_created": "1776068339766",
+                          "hide_from_guests": false,
+                          "id": "928254ed-92c9-4ffd-bf2d-753ba4cfbddb",
+                          "name": "Street Name",
+                          "required": false,
+                          "type": "short_text",
+                          "type_config": {}
+                      },
+                      {
+                          "date_created": "1776158923382",
+                          "hide_from_guests": false,
+                          "id": "894a0503-ab89-4f68-bbdc-515290c6ecb4",
+                          "name": "Team Name",
+                          "required": false,
+                          "type": "short_text",
+                          "type_config": {}
+                      },
+                      {
+                          "date_created": "1776068490235",
+                          "hide_from_guests": false,
+                          "id": "89587dda-a7a8-4528-b093-a16b64833c65",
+                          "name": "Zip Code",
+                          "required": false,
+                          "type": "short_text",
+                          "type_config": {}
+                      },
+                      {
+                          "date_created": "1658455651886",
+                          "hide_from_guests": false,
+                          "id": "7c9c75fb-89e4-4b8a-91d5-642d5703de32",
+                          "name": "✉️ Email",
+                          "required": false,
+                          "type": "email",
+                          "type_config": {}
+                      },
+                      {
+                          "date_created": "1776067896948",
+                          "hide_from_guests": false,
+                          "id": "55c69f25-08ce-435f-aab8-7853747183b6",
+                          "name": "🌐 Website",
+                          "required": false,
+                          "type": "url",
+                          "type_config": {}
+                      },
+                      {
+                          "date_created": "1776068249807",
+                          "hide_from_guests": false,
+                          "id": "c2612944-1f39-4a16-82bb-20e139712dc8",
+                          "name": "👤 Lead Owner",
+                          "required": false,
+                          "type": "short_text",
+                          "type_config": {}
+                      },
+                      {
+                          "date_created": "1776074527323",
+                          "hide_from_guests": false,
+                          "id": "301ed6ae-7a78-42f4-8ee3-d3b70d255a44",
+                          "name": "💯 Last Score",
+                          "required": false,
+                          "type": "number",
+                          "type_config": {
+                              "number_format": "en-US"
+                          },
+                          "value": "0",
+                          "value_richtext": null
+                      },
+                      {
+                          "date_created": "1770719814696",
+                          "hide_from_guests": false,
+                          "id": "0edf29ed-f860-472b-b3d6-4062b129081d",
+                          "name": "📆 Date of Birth",
+                          "required": false,
+                          "type": "date",
+                          "type_config": {}
+                      },
+                      {
+                          "date_created": "1776067857519",
+                          "hide_from_guests": false,
+                          "id": "d219a979-8d2d-458b-9e5d-26ea27fb6893",
+                          "name": "📞 Mobile Phone",
+                          "required": false,
+                          "type": "phone",
+                          "type_config": {}
+                      },
+                      {
+                          "date_created": "1776067770522",
+                          "hide_from_guests": false,
+                          "id": "e402a0e7-7634-453d-b0c6-7c374ad52863",
+                          "name": "🚻 Gender",
+                          "required": false,
+                          "type": "drop_down",
+                          "type_config": {
+                              "options": [
+                                  {
+                                      "color": "#FF4081",
+                                      "id": "079403c1-b2f1-49fe-964d-63c2abdd63e3",
+                                      "name": "Male",
+                                      "orderindex": 0
+                                  },
+                                  {
+                                      "color": "#7C4DFF",
+                                      "id": "11bb78ad-61f2-4a86-9e36-9ff7c4e24341",
+                                      "name": "Female",
+                                      "orderindex": 1
+                                  }
+                              ],
+                              "sorting": "manual"
+                          }
+                      },
+                      {
+                          "date_created": "1776067542176",
+                          "hide_from_guests": false,
+                          "id": "7b693d51-f424-4f8f-bb9b-6aaa215578bb",
+                          "name": "#1 Salutation",
+                          "required": false,
+                          "type": "drop_down",
+                          "type_config": {
+                              "options": [
+                                  {
+                                      "color": "#fff",
+                                      "id": "f3b799ba-7bf2-4225-99ce-fa1f6cc22061",
+                                      "name": "Tn.",
+                                      "orderindex": 0
+                                  },
+                                  {
+                                      "color": "#fff",
+                                      "id": "5fa8d015-efcf-4bae-bd03-6ce3936d3967",
+                                      "name": "Ny.",
+                                      "orderindex": 1
+                                  },
+                                  {
+                                      "color": "#fff",
+                                      "id": "7c521958-77bb-4176-9c7d-fb49575acfda",
+                                      "name": "An.",
+                                      "orderindex": 2
+                                  },
+                                  {
+                                      "color": "#fff",
+                                      "id": "771b7006-7ab9-446b-9b57-08a670b9deef",
+                                      "name": "Nn.",
+                                      "orderindex": 3
+                                  }
+                              ],
+                              "sorting": "manual"
+                          }
+                      },
+                      {
+                          "date_created": "1776067681832",
+                          "hide_from_guests": false,
+                          "id": "c7ece4e7-0b0a-4d9e-b2ef-5dae9ed8f7c3",
+                          "name": "#2 Title",
+                          "required": false,
+                          "type": "short_text",
+                          "type_config": {}
+                      },
+                      {
+                          "date_created": "1776067379169",
+                          "hide_from_guests": false,
+                          "id": "eec1b4e0-c0ba-41bc-ac6c-7a81a287aaf6",
+                          "name": "#3 First Name",
+                          "required": false,
+                          "type": "short_text",
+                          "type_config": {}
+                      },
+                      {
+                          "date_created": "1776067409813",
+                          "hide_from_guests": false,
+                          "id": "d57a4b00-3437-4f70-895e-dfb6de35213e",
+                          "name": "#4 Last Name",
+                          "required": false,
+                          "type": "short_text",
+                          "type_config": {}
+                      },
+                      {
+                          "date_created": "1770708138530",
+                          "hide_from_guests": false,
+                          "id": "ec4c1817-b4f0-444e-b2f9-cf582a4ea7f6",
+                          "name": "☎️ Phone Number",
+                          "required": false,
+                          "type": "phone",
+                          "type_config": {}
+                      }
+                  ],
+                  "custom_id": null,
+                  "custom_item_id": 0,
+                  "date_closed": null,
+                  "date_created": "1784108326129",
+                  "date_done": null,
+                  "date_updated": "1784108326157",
+                  "dependencies": [],
+                  "description": "",
+                  "due_date": null,
+                  "folder": {
+                      "access": true,
+                      "hidden": false,
+                      "id": "90168464449",
+                      "name": "CRM"
+                  },
+                  "group_assignees": [],
+                  "id": "86d3q0w0u",
+                  "linked_tasks": [],
+                  "list": {
+                      "access": true,
+                      "id": "901614457619",
+                      "name": "Leads"
+                  },
+                  "locations": [],
+                  "name": "Test Create Task 1",
+                  "orderindex": "121912641.00000000000000000000000000000000",
+                  "parent": null,
+                  "permission_level": "create",
+                  "points": null,
+                  "priority": null,
+                  "project": {
+                      "access": true,
+                      "hidden": false,
+                      "id": "90168464449",
+                      "name": "CRM"
+                  },
+                  "sharing": {
+                      "public": false,
+                      "public_fields": [
+                          "assignees",
+                          "priority",
+                          "due_date",
+                          "content",
+                          "comments",
+                          "attachments",
+                          "customFields",
+                          "subtasks",
+                          "tags",
+                          "checklists",
+                          "coverimage"
+                      ],
+                      "public_share_expires_on": null,
+                      "seo_optimized": false,
+                      "token": null
+                  },
+                  "space": {
+                      "id": "90162426653"
+                  },
+                  "start_date": null,
+                  "status": {
+                      "color": "#e5484d",
+                      "id": "sc901614457619_0ho7CCWZ",
+                      "orderindex": 0,
+                      "status": "not contacted",
+                      "type": "open"
+                  },
+                  "tags": [],
+                  "team_id": "25617311",
+                  "text_content": "",
+                  "time_estimate": null,
+                  "time_spent": 0,
+                  "top_level_parent": null,
+                  "url": "https://app.clickup.com/t/86d3q0w0u",
+                  "watchers": []
+              }
+          }

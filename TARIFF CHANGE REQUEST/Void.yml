@@ -1,0 +1,171 @@
+info:
+  name: Void
+  type: http
+  seq: 6
+
+http:
+  method: DELETE
+  url: "{{BASE_URL}}/v1/tariff-requests/:business_unit_id/:tariff_request_id/void"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  params:
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+    - name: tariff_request_id
+      value: bf59a804-3e7d-4650-a7a2-c751a16dd671
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"reason\": \"Test void\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/tariff-requests/:business_unit_id/:tariff_request_id/void"
+      method: DELETE
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      params:
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: path
+        - name: tariff_request_id
+          value: d99c5701-e495-4d43-87cd-cc4b14ee9fde
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"reason\": \"Test void\"\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Fri, 13 Feb 2026 08:20:55 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "80"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "message": "Tariff Request has been successfully cancelled"
+              }
+          }
+  - name: Not Found
+    request:
+      url: "{{BASE_URL}}/v1/tariff-requests/:business_unit_id/:tariff_request_id/void"
+      method: DELETE
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      params:
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: path
+        - name: tariff_request_id
+          value: d99c5701-e495-4d43-87cd-cc4b14ee9fdf
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"reason\": \"Test void\"\r
+
+          }"
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Date
+          value: Fri, 13 Feb 2026 08:21:42 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "51"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "tariff_request.not_found",
+              "status": 404
+          }

@@ -1,0 +1,156 @@
+info:
+  name: BY ID
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/emr/sticky-notes/:business_unit_id/:id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+    - name: id
+      value: 4d942462-4e53-40b2-a0ba-ddf436f07099
+      type: path
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: BY ID
+    request:
+      url: "{{BASE_URL}}/v1/emr/sticky-notes/:business_unit_id/:id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: business_unit_id
+          value: 9d9c4d4e-03f6-43a8-9ffa-4e242fd41a91
+          type: path
+        - name: id
+          value: 5329d859-a141-4ed6-8c8c-c936f9ef99be
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Fri, 14 Mar 2025 04:19:55 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "372"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "business_unit_id": "9d9c4d4e-03f6-43a8-9ffa-4e242fd41a91",
+                  "created_at": "2025-03-13T21:16:50+07:00",
+                  "id": "5329d859-a141-4ed6-8c8c-c936f9ef99be",
+                  "is_active": true,
+                  "is_favorite": true,
+                  "notes": "test123",
+                  "patient_id": "5935c06b-89be-44a3-809d-4716f5e11fa7",
+                  "updated_at": "2025-03-14T09:09:00+07:00",
+                  "user_create": "ferdinand iskandar",
+                  "user_update": "Jamal Doe"
+              }
+          }
+  - name: NOT FOUND
+    request:
+      url: "{{BASE_URL}}/v1/emr/sticky-notes/:business_unit_id/:id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: business_unit_id
+          value: 5329d859-a141-4ed6-8c8c-c936f9ef99be
+          type: path
+        - name: id
+          value: 9d9c4d4e-03f6-43a8-9ffa-4e242fd41a91
+          type: path
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Date
+          value: Fri, 14 Mar 2025 04:22:21 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "36"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "not_found",
+              "status": 404
+          }

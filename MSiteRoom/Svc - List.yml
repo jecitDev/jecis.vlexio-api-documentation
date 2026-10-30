@@ -1,0 +1,92 @@
+info:
+  name: Svc - List
+  type: http
+  seq: 1
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/MSiteRoom?page=1&page_size=50&sort_order=DESC&company_id=2da6a1bd-ba62-43ec-91f8-4085d5d6d498"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: page_size
+      value: "50"
+      type: query
+    - name: sort_order
+      value: DESC
+      type: query
+    - name: sort_by
+      value: site_room_id
+      type: query
+      description: site_room_id || site_id
+      disabled: true
+    - name: keywords
+      value: grpc
+      type: query
+      disabled: true
+    - name: created_at
+      value: ""
+      type: query
+      disabled: true
+    - name: floor_level
+      value: "02"
+      type: query
+      disabled: true
+    - name: company_id
+      value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+      type: query
+    - name: is_active
+      value: "true"
+      type: query
+      disabled: true
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: query
+      disabled: true
+    - name: room_id
+      value: GM01
+      type: query
+      disabled: true
+    - name: site_room_id
+      value: "01.06"
+      type: query
+      disabled: true
+    - name: site_id
+      value: "002"
+      type: query
+      disabled: true
+    - name: site_room_description
+      value: ""
+      type: query
+      disabled: true
+    - name: site_room_name
+      value: Conference Room A
+      type: query
+      disabled: true
+    - name: updated_at
+      value: ""
+      type: query
+      disabled: true
+    - name: user_create
+      value: Admin
+      type: query
+      disabled: true
+    - name: user_update
+      value: ""
+      type: query
+      disabled: true
+  body:
+    type: text
+    data: ""
+  auth:
+    type: bearer
+    token: "{{xtoken}}"
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

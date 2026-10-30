@@ -1,0 +1,190 @@
+info:
+  name: Search
+  type: http
+  seq: 9
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/Fabric/search?max_hits=10&page=1&text&business_unit_id=33b109c5-dd64-480c-8100-68fe17deaf3e"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: max_hits
+      value: "10"
+      type: query
+    - name: page
+      value: "1"
+      type: query
+    - name: text
+      value: ""
+      type: query
+    - name: business_unit_id
+      value: 33b109c5-dd64-480c-8100-68fe17deaf3e
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Search
+    request:
+      url: "{{BASE_URL}}/v1/Fabric/search?max_hits=10&page=1&text&business_unit_id=33b109c5-dd64-480c-8100-68fe17deaf3e"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: max_hits
+          value: "10"
+          type: query
+        - name: page
+          value: "1"
+          type: query
+        - name: text
+          value: ""
+          type: query
+        - name: business_unit_id
+          value: 33b109c5-dd64-480c-8100-68fe17deaf3e
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Fri, 07 Aug 2026 04:28:19 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "2194"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "total": 4,
+                  "page": 1,
+                  "result": [
+                      {
+                          "fabric_id": "FBC000001",
+                          "fabric_name": "Fabric Tier 2",
+                          "short_name": "FT0001",
+                          "contract_number": "ABC123",
+                          "contract_start": "2025-04-11T13:24:42+08:00",
+                          "contract_end": "2026-04-11T13:24:42+08:00",
+                          "contract_summary": "Contract Summary",
+                          "contact_person": "Ferdinand",
+                          "tax_registration_no": "TAX123",
+                          "street_name": "123 Street",
+                          "district": "District B",
+                          "city": "City B",
+                          "county": "County B",
+                          "state": "State B",
+                          "zip_code": "12345",
+                          "phone_no": "123-456-789",
+                          "fax_no": "123-456-789",
+                          "email": "ferdinand@example.com",
+                          "mobile_phone_no": "123-456-789",
+                          "is_active": true
+                      },
+                      {
+                          "fabric_id": "FBC000007",
+                          "fabric_name": "Sample Fabric 1",
+                          "short_name": "SF003",
+                          "contract_number": "ABC123",
+                          "contract_start": "2024-02-28T13:24:42+08:00",
+                          "contract_end": "2024-02-28T13:24:42+08:00",
+                          "contract_summary": "Contract Summary",
+                          "contact_person": "Budi",
+                          "tax_registration_no": "TAX123",
+                          "street_name": "123 Street",
+                          "district": "District B",
+                          "city": "City B",
+                          "county": "County B",
+                          "state": "State B",
+                          "zip_code": "12345",
+                          "phone_no": "123-456-789",
+                          "fax_no": "123-456-789",
+                          "email": "budi@gmail.com",
+                          "mobile_phone_no": "123-456-789",
+                          "is_active": true
+                      },
+                      {
+                          "fabric_id": "FBC000002",
+                          "fabric_name": "Sample Fabric 3",
+                          "short_name": "SF003",
+                          "contract_number": "ABC123",
+                          "contract_start": "2024-02-28T13:24:42+08:00",
+                          "contract_end": "2024-02-28T13:24:42+08:00",
+                          "contract_summary": "Contract Summary",
+                          "contact_person": "Budi",
+                          "tax_registration_no": "TAX123",
+                          "street_name": "123 Street",
+                          "district": "District B",
+                          "city": "City B",
+                          "county": "County B",
+                          "state": "State B",
+                          "zip_code": "12345",
+                          "phone_no": "123-456-789",
+                          "fax_no": "123-456-789",
+                          "email": "budi@gmail.com",
+                          "mobile_phone_no": "123-456-789",
+                          "is_active": true
+                      },
+                      {
+                          "fabric_id": "FBC000006",
+                          "fabric_name": "Sample Fabric 2",
+                          "short_name": "SF003",
+                          "contract_number": "ABC123",
+                          "contract_start": "2024-02-28T13:24:42+08:00",
+                          "contract_end": "2024-02-28T13:24:42+08:00",
+                          "contract_summary": "Contract Summary",
+                          "contact_person": "Budi",
+                          "tax_registration_no": "TAX123",
+                          "street_name": "123 Street",
+                          "district": "District B",
+                          "city": "City B",
+                          "county": "County B",
+                          "state": "State B",
+                          "zip_code": "12345",
+                          "phone_no": "123-456-789",
+                          "fax_no": "123-456-789",
+                          "email": "budi@gmail.com",
+                          "mobile_phone_no": "123-456-789",
+                          "is_active": true
+                      }
+                  ]
+              }
+          }

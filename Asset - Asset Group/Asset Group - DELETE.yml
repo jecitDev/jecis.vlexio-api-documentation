@@ -1,0 +1,34 @@
+info:
+  name: Asset Group - DELETE
+  type: http
+  seq: 3
+
+http:
+  method: DELETE
+  url: "{{BASE_URL}}/v1/MAssetGroup/:id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: id
+      value: AG001
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \        \"user_update\": \"rickydeL\",\r
+
+      \        \"updated_at\":  \"2024-02-28T13:24:42+08:00\"\r
+
+      \        \r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

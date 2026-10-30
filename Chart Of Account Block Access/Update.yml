@@ -1,0 +1,168 @@
+info:
+  name: Update
+  type: http
+  seq: 5
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/ChartOfAccountBlockAccess/:chartofaccountid/:businessunitid"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: chartofaccountid
+      value: "321"
+      type: path
+    - name: businessunitid
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"user_update\": \"Ferdinand\",\r
+
+      \    \"updated_at\": \"2025-04-09T14:49:23+07:00\",\r
+
+      \    \"chartOfAccountBlockAccessResponseUpdateListProto_\": [\r
+
+      \        {\r
+
+      \            \"sr_program_id\": \"02.23.19\",\r
+
+      \            \"healthcare_id\": \"008\"\r
+
+      \        },\r
+
+      \        {\r
+
+      \            \"sr_program_id\": \"02.13.20\",\r
+
+      \            \"healthcare_id\": \"005\"\r
+
+      \        }\r
+
+      \    ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Update
+    request:
+      url: "{{BASE_URL}}/v1/ChartOfAccountBlockAccess/:chartofaccountid/:businessunitid"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: chartofaccountid
+          value: "321"
+          type: path
+        - name: businessunitid
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"user_update\": \"Ferdinand\",\r
+
+          \    \"updated_at\": \"2025-04-09T14:49:23+07:00\",\r
+
+          \    \"chartOfAccountBlockAccessResponseUpdateListProto_\": [\r
+
+          \        {\r
+
+          \            \"sr_program_id\": \"02.23.19\",\r
+
+          \            \"healthcare_id\": \"008\"\r
+
+          \        },\r
+
+          \        {\r
+
+          \            \"sr_program_id\": \"02.13.20\",\r
+
+          \            \"healthcare_id\": \"005\"\r
+
+          \        }\r
+
+          \    ]\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 10 Apr 2025 10:48:03 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "649"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "chart_of_account_id": 321,
+                  "user_update": "Ferdinand",
+                  "updated_at": "2025-04-09T14:49:23+07:00",
+                  "chartOfAccountBlockAccessResponseAddListProto_": [
+                      {
+                          "cba_id": 7,
+                          "healthcare_id": "008",
+                          "chart_of_account_id": 321,
+                          "sr_program_id": "02.23.19",
+                          "user_create": "Ferdinand",
+                          "created_at": "2025-04-09T14:49:23+07:00",
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517"
+                      },
+                      {
+                          "cba_id": 8,
+                          "healthcare_id": "005",
+                          "chart_of_account_id": 321,
+                          "sr_program_id": "02.13.20",
+                          "user_create": "Ferdinand",
+                          "created_at": "2025-04-09T14:49:23+07:00",
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517"
+                      }
+                  ]
+              }
+          }

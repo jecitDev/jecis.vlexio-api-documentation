@@ -1,0 +1,42 @@
+info:
+  name: Upload Profile Picture
+  type: http
+  seq: 12
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/patients/upload_photo/:patient_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: patient_id
+      value: PKDY250710-0002
+      type: path
+  body:
+    type: multipart-form
+    data:
+      - name: file
+        type: file
+        value:
+          - /C:/Users/USER/Pictures/vlcsnap-2025-03-20-09h25m17s111.png
+      - name: business_unit_id
+        type: text
+        value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      - name: company_id
+        type: text
+        value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+      - name: user_update
+        type: text
+        value: "21170"
+      - name: updated_at
+        type: text
+        value: 2024-07-11T09:00:00+07:00
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

@@ -1,0 +1,162 @@
+info:
+  name: List
+  type: http
+  seq: 7
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/business-unit-accounts?page=1&page_size=10&sort_by=id&sort_order=desc&name=&is_active=true"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: page_size
+      value: "10"
+      type: query
+    - name: sort_by
+      value: id
+      type: query
+    - name: sort_order
+      value: desc
+      type: query
+    - name: keywords
+      value: ""
+      type: query
+      disabled: true
+    - name: name
+      value: ""
+      type: query
+    - name: is_active
+      value: "true"
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: List
+    request:
+      url: "{{BASE_URL}}/v1/business-unit-accounts?page=1&page_size=10&sort_by=id&sort_order=desc&name=&is_active=true"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: page_size
+          value: "10"
+          type: query
+        - name: sort_by
+          value: id
+          type: query
+        - name: sort_order
+          value: desc
+          type: query
+        - name: keywords
+          value: ""
+          type: query
+          disabled: true
+        - name: name
+          value: ""
+          type: query
+        - name: is_active
+          value: "true"
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 14 Oct 2025 03:26:05 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "791"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "business_unit_accounts": [
+                      {
+                          "config": {
+                              "currency": "IDR",
+                              "region": "IDN"
+                          },
+                          "created_at": "2025-10-14T10:23:46+07:00",
+                          "id": "af1acecd-2cdc-4966-8877-12507aa2f10f",
+                          "is_active": true,
+                          "name": "test 2",
+                          "updated_at": "",
+                          "user_create": "ferdinand",
+                          "user_update": ""
+                      },
+                      {
+                          "config": {
+                              "currency": "IDR",
+                              "region": "IDN"
+                          },
+                          "created_at": "2025-10-14T10:23:51+07:00",
+                          "id": "70a3efc7-b1f3-4a76-8bc3-e5e2821687d4",
+                          "is_active": true,
+                          "name": "",
+                          "updated_at": "",
+                          "user_create": "ferdinand",
+                          "user_update": ""
+                      },
+                      {
+                          "config": {
+                              "currency": "IDR",
+                              "region": "IDN"
+                          },
+                          "created_at": "2025-10-14T10:23:25+07:00",
+                          "id": "41ca8b01-1699-4876-a7f1-0b832b6c655e",
+                          "is_active": true,
+                          "name": "test 1 #updated",
+                          "updated_at": "2025-10-14T10:25:10+07:00",
+                          "user_create": "ferdinand",
+                          "user_update": "ferdinand"
+                      }
+                  ],
+                  "page": 1,
+                  "page_size": 10,
+                  "total_items": 3
+              }
+          }

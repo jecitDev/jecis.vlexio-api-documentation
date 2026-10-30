@@ -1,0 +1,101 @@
+info:
+  name: Svc - Update
+  type: http
+  seq: 5
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/paymenttype/:id"
+  headers:
+    - name: x-token
+      value: "{{XTOKEN}}"
+  params:
+    - name: id
+      value: PaymentType-004
+      type: path
+  body:
+    type: json
+    data: "{\r\n    \"sr_payment_type_id\": \"PaymentType-004\",\r\n    \"payment_type_name\": \"Corporate AR\",\r\n    \"chart_of_account_id\": 27,\r\n    \"subledger_id\": -99,\r\n    \"is_active\": true,\r\n    \"is_cashier_front_office\": true,\r\n    \"user_update\": \"21239\",\r\n    \"updated_at\": {\r\n        \"seconds\": 1697552727,\r\n        \"nanos\": 199161000\r\n    }\r\n}"
+  auth:
+    type: bearer
+    token: "{{xtoken}}"
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: Svc - Update
+    request:
+      url: "{{BASE_URL}}/v1/paymenttype/:id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{XTOKEN}}"
+      params:
+        - name: id
+          value: PaymentType-004
+          type: path
+      body:
+        type: json
+        data: "{\r\n    \"sr_payment_type_id\": \"PaymentType-004\",\r\n    \"payment_type_name\": \"Personal AR\",\r\n    \"chart_of_account_id\": 28,\r\n    \"subledger_id\": 88,\r\n    \"is_active\": true,\r\n    \"is_cashier_front_office\": true,\r\n    \"last_update_date_time\": {\r\n        \"seconds\": 1697127494,\r\n        \"nanos\": 222715000\r\n    },\r\n    \"last_update_by_user_id\": \"21232\"\r\n}"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Fri, 13 Oct 2023 11:07:11 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "358"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "sr_payment_type_id": "PaymentType-004",
+                  "payment_type_name": "Personal AR",
+                  "chart_of_account_id": 28,
+                  "subledger_id": 88,
+                  "is_active": true,
+                  "is_cashier_front_office": true,
+                  "create_at": {
+                      "seconds": 1697126891,
+                      "nanos": 121390000
+                  },
+                  "user_create": "21239",
+                  "last_update_date_time": {
+                      "seconds": 1697220432,
+                      "nanos": 379491000
+                  },
+                  "last_update_by_user_id": "21232"
+              }
+          }

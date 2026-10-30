@@ -1,0 +1,7 @@
+info:
+  name: BPJS
+  type: folder
+  seq: 144
+
+request:
+  auth: inherit

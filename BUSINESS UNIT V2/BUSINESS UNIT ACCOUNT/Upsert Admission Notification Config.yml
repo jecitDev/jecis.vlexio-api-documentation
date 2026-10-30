@@ -1,0 +1,128 @@
+info:
+  name: Upsert Admission Notification Config
+  type: http
+  seq: 36
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/business-unit-accounts/admission-notification"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"business_unit_id\": \"33b109c5-dd64-480c-8100-68fe17deaf3e\",\r
+
+      \    \"config\": {\r
+
+      \        \"is_email_appointment\": true,\r
+
+      \        \"is_whatsapp_appointment\": false,\r
+
+      \        \"email_profile_id\": \"1234\",\r
+
+      \        \"whatsapp_profile_id\": \"4321\"\r
+
+      \    },\r
+
+      \    \"created_at\": \"2026-07-15T10:00:00+07:00\",\r
+
+      \    \"user_create\": \"ferdinand\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Upsert Admission Notification Config
+    request:
+      url: "{{BASE_URL}}/v1/business-unit-accounts/admission-notification"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"business_unit_id\": \"33b109c5-dd64-480c-8100-68fe17deaf3e\",\r
+
+          \    \"config\": {\r
+
+          \        \"is_email_appointment\": false,\r
+
+          \        \"is_whatsapp_appointment\": true,\r
+
+          \        \"email_profile_id\": \"123\",\r
+
+          \        \"whatsapp_profile_id\": \"321\"\r
+
+          \    },\r
+
+          \    \"created_at\": \"2026-07-15T10:00:00+07:00\",\r
+
+          \    \"user_create\": \"ferdinand\"\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: date
+          value: Mon, 21 Sep 2026 02:21:17 GMT
+        - name: content-type
+          value: application/json
+        - name: content-length
+          value: "396"
+        - name: x-xss-protection
+          value: "0"
+        - name: x-content-type-options
+          value: nosniff
+        - name: x-frame-options
+          value: SAMEORIGIN
+        - name: cross-origin-embedder-policy
+          value: require-corp
+        - name: cross-origin-opener-policy
+          value: same-origin
+        - name: cross-origin-resource-policy
+          value: same-origin
+        - name: origin-agent-cluster
+          value: ?1
+        - name: referrer-policy
+          value: no-referrer
+        - name: x-dns-prefetch-control
+          value: off
+        - name: x-download-options
+          value: noopen
+        - name: x-permitted-cross-domain-policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+            "code": 200,
+            "data": {
+              "business_unit_id": "33b109c5-dd64-480c-8100-68fe17deaf3e",
+              "config": {
+                "email_profile_id": "123",
+                "is_email_appointment": false,
+                "is_whatsapp_appointment": true,
+                "whatsapp_profile_id": "321"
+              },
+              "created_at": "2026-09-21T09:21:17+07:00",
+              "id": "f44178df-bb9d-473a-bd89-ea03e67faf8e",
+              "is_active": true,
+              "name": "ADMISSION_NOTIFICATION",
+              "updated_at": "",
+              "user_create": "ferdinand",
+              "user_update": ""
+            }
+          }

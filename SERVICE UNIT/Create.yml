@@ -1,0 +1,164 @@
+info:
+  name: Create
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/service-units"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"company_id\": \"2da6a1bd-ba62-43ec-91f8-4085d5d6d498\",\r
+
+      \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+      \    \"service_unit_id\": \"SU002\",\r
+
+      \    \"department_id\": \"550e8400-e29b-41d4-a716-446655440020\",\r
+
+      \    \"service_unit_name\": \"Emergency Department\",\r
+
+      \    \"short_name\": \"ER\",\r
+
+      \    \"location_id\": \"LOC001\",\r
+
+      \    \"sr_registration_type\": \"EMERGENCY\",\r
+
+      \    \"is_dispensary_unit\": false,\r
+
+      \    \"is_purchasing_unit\": false,\r
+
+      \    \"chart_of_account_id_acrual\": \"5f0cf8ff-cb2d-451e-8506-f194bf9ebb80\",\r
+
+      \    \"subledger_id_acrual\": 200001,\r
+
+      \    \"is_emergency\": true,\r
+
+      \    \"is_telemedicine\": false,\r
+
+      \    \"is_optic\": false,\r
+
+      \    \"color_code\": \"#FF0000\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/service-units"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"company_id\": \"7db1e2f4-f1a7-4ee5-afd5-6e05940586e7\",\r
+
+          \    \"business_unit_id\": \"607fef10-21b9-4f3c-acb8-eba67c5ecd4a\",\r
+
+          \    \"service_unit_id\": \"SU001\",\r
+
+          \    \"department_id\": \"550e8400-e29b-41d4-a716-446655440020\",\r
+
+          \    \"service_unit_name\": \"Emergency Department\",\r
+
+          \    \"short_name\": \"ER\",\r
+
+          \    \"location_id\": \"LOC001\",\r
+
+          \    \"sr_registration_type\": \"EMERGENCY\",\r
+
+          \    \"is_dispensary_unit\": false,\r
+
+          \    \"is_purchasing_unit\": false,\r
+
+          \    \"chart_of_account_id_acrual\": 100001,\r
+
+          \    \"subledger_id_acrual\": 200001,\r
+
+          \    \"is_emergency\": true,\r
+
+          \    \"is_telemedicine\": false,\r
+
+          \    \"is_optic\": false,\r
+
+          \    \"color_code\": \"#FF0000\"\r
+
+          }"
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Date
+          value: Fri, 24 Oct 2025 10:19:50 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "500"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 201,
+              "data": {
+                  "company_id": "7db1e2f4-f1a7-4ee5-afd5-6e05940586e7",
+                  "business_unit_id": "607fef10-21b9-4f3c-acb8-eba67c5ecd4a",
+                  "service_unit_id": "SU001",
+                  "department_id": "550e8400-e29b-41d4-a716-446655440020",
+                  "service_unit_name": "Emergency Department",
+                  "short_name": "ER",
+                  "location_id": "LOC001",
+                  "sr_registration_type": "EMERGENCY",
+                  "chart_of_account_id_acrual": 100001,
+                  "subledger_id_acrual": 200001,
+                  "is_emergency": true,
+                  "is_active": true,
+                  "user_create": "ferdinand",
+                  "created_at": "2025-10-24T17:19:51+07:00"
+              }
+          }

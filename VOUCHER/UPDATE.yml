@@ -1,0 +1,149 @@
+info:
+  name: UPDATE
+  type: http
+  seq: 7
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/promo/voucher"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"amount\": 50,\r
+
+      \    \"business_unit_id\": \"840b3330-3c69-44f2-8910-2d47498e27d0\",\r
+
+      \    \"created_at\": \"2025-03-25T13:03:45+07:00\",\r
+
+      \    \"expired_date\": \"2025-04-20T13:03:45+07:00\",\r
+
+      \    \"is_paid\": true,\r
+
+      \    \"package_id\": \"74a0d456-825f-43d8-b140-008537896628\",\r
+
+      \    \"package_voucher_id\": \"9bc444e4-0a8d-4db5-ae04-2a45d5047a60\",\r
+
+      \    \"payment_by_user_id\": \"7867\",\r
+
+      \    \"payment_date_time\": \"2025-03-25T13:03:45+07:00\",\r
+
+      \    \"payment_method\": \"ex do\",\r
+
+      \    \"voucher_name\": \"Promo Ramadhan\",\r
+
+      \    \"voucher_number\": \"WIN25-0000000035\",\r
+
+      \    \"user_create\": \"admin2\",\r
+
+      \    \"amount_in_percent\": false\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: UPDATE
+    request:
+      url: "{{BASE_URL}}/v1/promo/voucher"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"amount\": 50,\r
+
+          \    \"business_unit_id\": \"840b3330-3c69-44f2-8910-2d47498e27d0\",\r
+
+          \    \"created_at\": \"2025-03-25T13:03:45+07:00\",\r
+
+          \    \"expired_date\": \"2025-04-20T13:03:45+07:00\",\r
+
+          \    \"is_paid\": true,\r
+
+          \    \"package_id\": \"69287a21-eee0-4f69-b25c-4f2bd78719f1\",\r
+
+          \    \"package_voucher_id\": \"214d2e0b-cd94-4351-87c7-0d64bfbdf519\",\r
+
+          \    \"payment_by_user_id\": \"7867\",\r
+
+          \    \"payment_date_time\": \"2025-03-25T13:03:45+07:00\",\r
+
+          \    \"payment_method\": \"ex do\",\r
+
+          \    \"voucher_name\": \"Promo Ramadhan\",\r
+
+          \    \"voucher_number\": \"AppointmentNo-0008\",\r
+
+          \    \"user_create\": \"admin2\"\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 07 Apr 2025 04:23:38 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "500"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "package_voucher_id": "81ae81a8-2f68-4e22-9376-a67ba795c00c",
+                  "package_id": "69287a21-eee0-4f69-b25c-4f2bd78719f1",
+                  "voucher_number": "AppointmentNo-0008",
+                  "amount": 50,
+                  "expired_date": "2025-04-20T00:00:00Z",
+                  "is_paid": true,
+                  "payment_method": "ex do",
+                  "payment_date_time": "2025-03-25T13:03:45+07:00",
+                  "payment_by_user_id": "7867",
+                  "created_at": "2025-03-25T13:03:45+07:00",
+                  "updated_at": "2025-03-25T13:03:45+07:00",
+                  "user_create": "admin2",
+                  "business_unit_id": "840b3330-3c69-44f2-8910-2d47498e27d0"
+              }
+          }

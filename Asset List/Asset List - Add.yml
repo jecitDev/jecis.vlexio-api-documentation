@@ -1,0 +1,299 @@
+info:
+  name: Asset List - Add
+  type: http
+  seq: 7
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/AssetList/"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"company_id\": \"2da6a1bd-ba62-43ec-91f8-4085d5d6d498\",\r
+
+      \    \"business_unit_id\": \"f64e10b4-0cbf-4fee-ac09-1a4fa199696c\",\r
+
+      \    \"business_unit_id_ownership\": \"f64e10b4-0cbf-4fee-ac09-1a4fa199696c\",\r
+
+      \    \"business_unit_id_ownership_location\": \"DL102\",\r
+
+      \    \"asset_description\": \"kamera Insta 120\",\r
+
+      \    \"asset_category_id\": 101,\r
+
+      \    \"asset_group_id\": \"GRP\",\r
+
+      \    \"site_room_id\": \"ROOM01\",\r
+
+      \    \"asset_quantity\": 5,\r
+
+      \    \"asset_available\": 0,\r
+
+      \    \"sr_asset_brand\": \"Grundfos\",\r
+
+      \    \"asset_uom\": \"Unit\",\r
+
+      \    \"po_business_unit_id\": \"f64e10b4-0cbf-4fee-ac09-1a4fa199696c\",\r
+
+      \    \"po_number\": \"PO-2025-00123\",\r
+
+      \    \"item_id\": \"ITEM-001\",\r
+
+      \    \"po_sequence_no\": \"001\",\r
+
+      \    \"purchase_date\": \"2024-10-21T13:24:42+08:00\",\r
+
+      \    \"purchase_value\": 12500,\r
+
+      \    \"por_date\": \"2024-10-22T13:24:42+08:00\",\r
+
+      \    \"supplier_id\": \"SUPP001\",\r
+
+      \    \"asset_serial_number\": \"SN-XP200-887766\",\r
+
+      \    \"asset_condition\": \"GD\",\r
+
+      \    \"notes\": \"Handphone Oppo Note\",\r
+
+      \    \"sr_depreciation_method\": \"STRAIGHT\",\r
+
+      \    \"depreciation_begin_date\": \"2024-10-25T13:24:42+08:00\",\r
+
+      \    \"depreciation_use_full_life\": 10,\r
+
+      \    \"salvage_value\": 1250,\r
+
+      \    \"last_depreciation_period\": 202503,\r
+
+      \    \"kode_barcode\": \"BC-ASSET-00123\",\r
+
+      \    \"por_number\": \"POR-2025-00123\",\r
+
+      \    \"group_fiskal\": \"FISCAL-G2\",\r
+
+      \    \"depreciation_method_fiskal\": \"DECLINE\",\r
+
+      \    \"depreciation_begin_date_fiskal\": \"2024-10-24T13:24:42+08:00\",\r
+
+      \    \"depreciation_use_full_life_fiskal\": 8,\r
+
+      \    \"salvage_value_fiskal\": 1000,\r
+
+      \    \"last_depreciation_period_fiskal\": 202503,\r
+
+      \    \"user_create\": \"Rama\",\r
+
+      \    \"created_at\": \"2024-10-25T13:24:42+08:00\",\r
+
+      \    \"is_fixed_asset\": true,\r
+
+      \    \"is_depreciate\": true,\r
+
+      \    \"is_reconcile\": false,\r
+
+      \    \"is_active\": true,\r
+
+      \    \"is_existing_asset\": true ,\r
+
+      \     \"ip_address\": \"172.16.20.39\"\r
+
+      \r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Asset List - Add API
+    request:
+      url: "{{BASE_URL}}/v1/AssetList/"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"company_id\": \"2da6a1bd-ba62-43ec-91f8-4085d5d6d498\",\r
+
+          \    \"business_unit_id\": \"f64e10b4-0cbf-4fee-ac09-1a4fa199696c\",\r
+
+          \    \"business_unit_id_ownership\": \"f64e10b4-0cbf-4fee-ac09-1a4fa199696c\",\r
+
+          \    \"business_unit_id_ownership_location\": \"DL102\",\r
+
+          \    \"asset_description\": \"Handphone POC F7 PRo X\",\r
+
+          \    \"asset_category_id\": 101,\r
+
+          \    \"asset_group_id\": \"GRP\",\r
+
+          \    \"site_room_id\": \"ROOM01\",\r
+
+          \    \"asset_quantity\": 5,\r
+
+          \    \"asset_available\": 0,\r
+
+          \    \"sr_asset_brand\": \"Grundfos\",\r
+
+          \    \"asset_uom\": \"Unit\",\r
+
+          \    \"po_business_unit_id\": \"f64e10b4-0cbf-4fee-ac09-1a4fa199696c\",\r
+
+          \    \"po_number\": \"PO-2025-00123\",\r
+
+          \    \"item_id\": \"ITEM-001\",\r
+
+          \    \"po_sequence_no\": \"001\",\r
+
+          \    \"purchase_date\": \"2024-10-21T13:24:42+08:00\",\r
+
+          \    \"purchase_value\": 12500,\r
+
+          \    \"por_date\": \"2024-10-22T13:24:42+08:00\",\r
+
+          \    \"supplier_id\": \"SUPP001\",\r
+
+          \    \"asset_serial_number\": \"SN-XP200-887766\",\r
+
+          \    \"asset_condition\": \"GD\",\r
+
+          \    \"notes\": \"Handphone Oppo Note\",\r
+
+          \    \"sr_depreciation_method\": \"STRAIGHT\",\r
+
+          \    \"depreciation_begin_date\": \"2024-10-25T13:24:42+08:00\",\r
+
+          \    \"depreciation_use_full_life\": 10,\r
+
+          \    \"salvage_value\": 1250,\r
+
+          \    \"last_depreciation_period\": 202503,\r
+
+          \    \"kode_barcode\": \"BC-ASSET-00123\",\r
+
+          \    \"por_number\": \"POR-2025-00123\",\r
+
+          \    \"group_fiskal\": \"FISCAL-G2\",\r
+
+          \    \"depreciation_method_fiskal\": \"DECLINE\",\r
+
+          \    \"depreciation_begin_date_fiskal\": \"2024-10-24T13:24:42+08:00\",\r
+
+          \    \"depreciation_use_full_life_fiskal\": 8,\r
+
+          \    \"salvage_value_fiskal\": 1000,\r
+
+          \    \"last_depreciation_period_fiskal\": 202503,\r
+
+          \    \"user_create\": \"20994\",\r
+
+          \    \"created_at\": \"2024-10-25T13:24:42+08:00\",\r
+
+          \    \"is_fixed_asset\": true,\r
+
+          \    \"is_depreciate\": true,\r
+
+          \    \"is_reconcile\": false,\r
+
+          \    \"is_active\": true,\r
+
+          \    \"is_existing_asset\": true ,\r
+
+          \     \"ip_address\": \"172.16.20.39\"\r
+
+          \r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 10 Feb 2026 08:17:37 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "1285"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",
+                  "business_unit_id": "f64e10b4-0cbf-4fee-ac09-1a4fa199696c",
+                  "asset_id": "999.ROOM01.014",
+                  "business_unit_id_ownership": "f64e10b4-0cbf-4fee-ac09-1a4fa199696c",
+                  "business_unit_id_ownership_location": "DL102",
+                  "asset_description": "Handphone POC F7 PRo X",
+                  "asset_category_id": 101,
+                  "site_room_id": "ROOM01",
+                  "is_fixed_asset": true,
+                  "asset_quantity": 5,
+                  "asset_uom": "Unit",
+                  "po_business_unit_id": "f64e10b4-0cbf-4fee-ac09-1a4fa199696c",
+                  "po_number": "PO-2025-00123",
+                  "item_id": "ITEM-001",
+                  "po_sequence_no": "001",
+                  "purchase_date": "2024-10-21T13:24:42+08:00",
+                  "purchase_value": 12500,
+                  "por_date": "2024-10-22T13:24:42+08:00",
+                  "supplier_id": "SUPP001",
+                  "asset_serial_number": "SN-XP200-887766",
+                  "asset_condition": "GD",
+                  "notes": "Handphone Oppo Note",
+                  "is_depreciate": true,
+                  "sr_depreciation_method": "STRAIGHT",
+                  "depreciation_begin_date": "2024-10-25T13:24:42+08:00",
+                  "depreciation_use_full_life": 10,
+                  "salvage_value": 1250,
+                  "kode_barcode": "NSD/NSD/2410-03-0014",
+                  "por_number": "POR-2025-00123",
+                  "depreciation_method_fiskal": "DECLINE",
+                  "depreciation_begin_date_fiskal": "2024-10-24T13:24:42+08:00",
+                  "depreciation_use_full_life_fiskal": 8,
+                  "salvage_value_fiskal": 1000,
+                  "is_active": true,
+                  "is_existing_asset": true,
+                  "user_create": "20994",
+                  "created_at": "2026-02-10T15:17:37+07:00"
+              }
+          }

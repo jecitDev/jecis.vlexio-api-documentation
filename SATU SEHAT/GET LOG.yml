@@ -1,0 +1,138 @@
+info:
+  name: GET LOG
+  type: http
+  seq: 14
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/satu-sehat/logs/?healthcare_id=002&send_date_time_start=2024-03-25T00%3A00%3A27%2B07%3A00&send_date_time_end=2024-03-29T23%3A00%3A27%2B07%3A00"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: healthcare_id
+      value: "002"
+      type: query
+    - name: send_date_time_start
+      value: 2024-03-25T00%3A00%3A27%2B07%3A00
+      type: query
+    - name: send_date_time_end
+      value: 2024-03-29T23%3A00%3A27%2B07%3A00
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: GET LOG
+    request:
+      url: "{{BASE_URL}}/v1/satu-sehat/logs/?healthcare_id=002&send_date_time_start=2024-03-25T00%3A00%3A27%2B07%3A00&send_date_time_end=2024-03-29T23%3A00%3A27%2B07%3A00"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: healthcare_id
+          value: "002"
+          type: query
+        - name: send_date_time_start
+          value: 2024-03-25T00%3A00%3A27%2B07%3A00
+          type: query
+        - name: send_date_time_end
+          value: 2024-03-29T23%3A00%3A27%2B07%3A00
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 01 Apr 2024 01:37:21 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "4728"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "logs": [
+                      {
+                          "id": "BulkUpdateEncounter||1711590463",
+                          "method": "BulkUpdateEncounter",
+                          "api_type": "BUNDLE",
+                          "type": [
+                              "ENCOUNTER",
+                              "CONDITION"
+                          ],
+                          "id_satu_sehat": [
+                              "d06a65e3-ab7c-479d-9708-39ae5b90c5f2",
+                              "32d047b3-1ffc-41dc-8102-49a71614ea02"
+                          ],
+                          "registration_no": "REG/OP/240221-0001",
+                          "healthcare_id": "002",
+                          "send_date_time": "2024-03-28T01:47:43+00:00",
+                          "request": "{\"condition\":[{\"code\":\"H28.2\",\"display\":\"CATARACT AND OTHER DISORDERS OF LENS IN DISEASES CLASSIFIED ELSEWHERE: Cataract in other diseases classified elsewhere [H28.2+]\",\"encounter_id\":\"d06a65e3-ab7c-479d-9708-39ae5b90c5f2\",\"id\":\"32d047b3-1ffc-41dc-8102-49a71614ea02\",\"patient_id\":\"P02478375538\",\"patient_name\":\"FANFAN SYAFRONI\",\"period\":{\"end\":\"2024-02-21T01:50:00Z\",\"start\":\"2024-02-21T01:20:58Z\"}}],\"encounter\":{\"history_arrived\":{\"end\":\"2024-02-21T01:20:58Z\",\"start\":\"2024-02-21T01:20:58Z\"},\"history_finish\":{\"end\":\"2024-02-21T01:50:00Z\",\"start\":\"2024-02-21T01:50:00Z\"},\"history_inprogress\":{\"end\":\"2024-02-21T01:58:34Z\",\"start\":\"2024-02-21T01:56:11Z\"},\"id\":\"d06a65e3-ab7c-479d-9708-39ae5b90c5f2\",\"period\":{\"end\":\"2024-02-21T01:50:00Z\",\"start\":\"2024-02-21T01:20:58Z\"}},\"healthcare_id\":\"002\",\"location_id\":\"A1-203\",\"paramedic_nik\":\"3322071302900002\",\"patient_id\":\"P02478375538\",\"patient_name\":\"FANFAN SYAFRONI\",\"patient_nik\":\"9271060312000001\",\"practitioner_id\":\"10006926841\",\"practitioner_name\":\"Practitioner 2\",\"registration_no\":\"REG/OP/240221-0001\",\"s_location_id\":\"8ca62d95-443c-47e9-a3ec-570bb5209237\",\"s_location_name\":\"Lt.2 Room 2C\",\"s_organization_id\":\"366f6e73-b229-440b-a9b0-15e9b53772ce\"}",
+                          "response": "{\"conditions\":[{\"code\":\"H28.2\",\"condition_id\":\"32d047b3-1ffc-41dc-8102-49a71614ea02\",\"display\":\"CATARACT AND OTHER DISORDERS OF LENS IN DISEASES CLASSIFIED ELSEWHERE: Cataract in other diseases classified elsewhere [H28.2+]\"}],\"encounter_id\":\"d06a65e3-ab7c-479d-9708-39ae5b90c5f2\",\"patient_id\":\"P02478375538\"}",
+                          "status_response": "SUCCESS",
+                          "error_response": "\"\""
+                      },
+                      {
+                          "id": "BulkUpdateEncounter||1711590522",
+                          "method": "BulkUpdateEncounter",
+                          "api_type": "BUNDLE",
+                          "type": [
+                              "ENCOUNTER",
+                              "CONDITION"
+                          ],
+                          "id_satu_sehat": [
+                              "4449f173-8ea4-4e3f-9d39-ec7f8dac0b88",
+                              "6c65bcc2-76f8-409c-b8e4-893d8cafb0c7",
+                              "6a0ba71f-bb87-4d31-8e6a-4f0e07798d0b"
+                          ],
+                          "registration_no": "REG/OP/240221-0002",
+                          "healthcare_id": "002",
+                          "send_date_time": "2024-03-28T01:48:42+00:00",
+                          "request": "{\"condition\":[{\"code\":\"Z01.0\",\"display\":\"OTHER SPECIAL EXAMINATIONS AND INVESTIGATIONS OF PERSONS WITHOUT COMPLAINT AND REPORTED DIAGNOSIS: Examination of eyes and vision [Z01.0]\",\"encounter_id\":\"4449f173-8ea4-4e3f-9d39-ec7f8dac0b88\",\"id\":\"6c65bcc2-76f8-409c-b8e4-893d8cafb0c7\",\"patient_id\":\"P03647103112\",\"patient_name\":\"BUDI ARIFIANTO\",\"period\":{\"end\":\"2024-02-21T03:50:00Z\",\"start\":\"2024-02-21T03:20:59Z\"}},{\"code\":\"H52.1\",\"display\":\"DISORDERS OF REFRACTION AND ACCOMMODATION: Myopia [H52.1]\",\"encounter_id\":\"4449f173-8ea4-4e3f-9d39-ec7f8dac0b88\",\"id\":\"6a0ba71f-bb87-4d31-8e6a-4f0e07798d0b\",\"patient_id\":\"P03647103112\",\"patient_name\":\"BUDI ARIFIANTO\",\"period\":{\"end\":\"2024-02-21T03:50:00Z\",\"start\":\"2024-02-21T03:20:59Z\"}}],\"encounter\":{\"history_arrived\":{\"end\":\"2024-02-21T03:20:59Z\",\"start\":\"2024-02-21T03:20:59Z\"},\"history_finish\":{\"end\":\"2024-02-21T03:50:00Z\",\"start\":\"2024-02-21T03:50:00Z\"},\"history_inprogress\":{\"end\":\"2024-02-21T08:01:39Z\",\"start\":\"2024-02-21T08:00:40Z\"},\"id\":\"4449f173-8ea4-4e3f-9d39-ec7f8dac0b88\",\"period\":{\"end\":\"2024-02-21T03:50:00Z\",\"start\":\"2024-02-21T03:20:59Z\"}},\"healthcare_id\":\"002\",\"location_id\":\"A1-203\",\"paramedic_nik\":\"3322071302900002\",\"patient_id\":\"P03647103112\",\"patient_name\":\"BUDI ARIFIANTO\",\"patient_nik\":\"9204014804000002\",\"practitioner_id\":\"10006926841\",\"practitioner_name\":\"Practitioner 2\",\"registration_no\":\"REG/OP/240221-0002\",\"s_location_id\":\"8ca62d95-443c-47e9-a3ec-570bb5209237\",\"s_location_name\":\"Lt.2 Room 2C\",\"s_organization_id\":\"366f6e73-b229-440b-a9b0-15e9b53772ce\"}",
+                          "response": "{\"conditions\":[{\"code\":\"Z01.0\",\"condition_id\":\"6c65bcc2-76f8-409c-b8e4-893d8cafb0c7\",\"display\":\"OTHER SPECIAL EXAMINATIONS AND INVESTIGATIONS OF PERSONS WITHOUT COMPLAINT AND REPORTED DIAGNOSIS: Examination of eyes and vision [Z01.0]\"},{\"code\":\"H52.1\",\"condition_id\":\"6a0ba71f-bb87-4d31-8e6a-4f0e07798d0b\",\"display\":\"DISORDERS OF REFRACTION AND ACCOMMODATION: Myopia [H52.1]\"}],\"encounter_id\":\"4449f173-8ea4-4e3f-9d39-ec7f8dac0b88\",\"patient_id\":\"P03647103112\"}",
+                          "status_response": "SUCCESS",
+                          "error_response": "\"\""
+                      }
+                  ]
+              }
+          }

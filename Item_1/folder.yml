@@ -1,0 +1,7 @@
+info:
+  name: Item_1
+  type: folder
+  seq: 114
+
+request:
+  auth: inherit

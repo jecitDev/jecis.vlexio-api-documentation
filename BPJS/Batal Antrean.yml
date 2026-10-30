@@ -1,0 +1,32 @@
+info:
+  name: Batal Antrean
+  type: http
+  seq: 13
+
+http:
+  method: DELETE
+  url: "{{BASE_URL}}/v1/bpjs/antrean/:kode_booking"
+  headers:
+    - name: x-token
+      value: ""
+  params:
+    - name: kode_booking
+      value: ""
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"business_unit_id\": \"\",\r
+
+      \    \"keterangan\": \"\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

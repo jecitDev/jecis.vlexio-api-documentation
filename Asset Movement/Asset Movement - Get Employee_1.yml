@@ -1,0 +1,42 @@
+info:
+  name: Asset Movement - Get Employee_1
+  type: http
+  seq: 16
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/AssetMovement/getemployee/:business_unit_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: page
+      value: "1"
+      type: query
+      disabled: true
+    - name: page_size
+      value: "20"
+      type: query
+      disabled: true
+    - name: sort_by
+      value: id
+      type: query
+      disabled: true
+    - name: sort_order
+      value: asc
+      type: query
+      disabled: true
+    - name: is_active
+      value: "false"
+      type: query
+      disabled: true
+    - name: business_unit_id
+      value: 33b109c5-dd64-480c-8100-68fe17deaf3e
+      type: path
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

@@ -1,0 +1,152 @@
+info:
+  name: REACTIVATE
+  type: http
+  seq: 6
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/instrument_emr/reactivate/:business_unit_id/:id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: business_unit_id
+      value: 0fb2ad94-d1be-4a75-b4fc-77af31850455
+      type: path
+    - name: id
+      value: f1d81b89-8cea-461c-abc6-3fce963ba882
+      type: path
+  body:
+    type: json
+    data: "{\r\n    \"user_update\": \"reactivate instrument\",\r\n    \"updated_at\": \"2025-03-12T14:30:45+07:00\"\r\n}"
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/instrument_emr/reactivate/:business_unit_id/:id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: business_unit_id
+          value: 0fb2ad94-d1be-4a75-b4fc-77af31850455
+          type: path
+        - name: id
+          value: f1d81b89-8cea-461c-abc6-3fce963ba882
+          type: path
+      body:
+        type: json
+        data: "{\r\n    \"user_update\": \"reactivate instrument\",\r\n    \"updated_at\": \"2025-03-12T14:30:45+07:00\"\r\n}"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 17 Mar 2025 02:56:11 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "202"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "business_unit_id": "0fb2ad94-d1be-4a75-b4fc-77af31850455",
+                  "id": "f1d81b89-8cea-461c-abc6-3fce963ba882",
+                  "user_update": "reactivate instrument",
+                  "updated_at": "2025-03-12T14:30:45+07:00"
+              }
+          }
+  - name: Data Not Found
+    request:
+      url: "{{BASE_URL}}/v1/instrument_emr/reactivate/:business_unit_id/:id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: business_unit_id
+          value: 0fb2ad94-d1be-4a75-b4fc-77af31850455
+          type: path
+        - name: id
+          value: f1d81b89-8cea-461c-abc6-3fce963ba8c2
+          type: path
+      body:
+        type: json
+        data: "{\r\n    \"user_update\": \"reactivate instrument\",\r\n    \"updated_at\": \"2025-03-12T14:30:45+07:00\"\r\n}"
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Date
+          value: Mon, 17 Mar 2025 02:56:32 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "41"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "data not found",
+              "status": 404
+          }

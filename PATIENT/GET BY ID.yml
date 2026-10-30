@@ -1,0 +1,177 @@
+info:
+  name: GET BY ID
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/patients/:business_unit_id/:patient_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+    - name: patient_id
+      value: PKDY250710-0002
+      type: path
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/patients/:business_unit_id/:patient_id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{admission_xtoken}}"
+      params:
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: path
+        - name: patient_id
+          value: f62904cd-9cf0-40d4-94d9-f75e0e4b7935
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Wed, 19 Mar 2025 07:40:38 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "1117"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "patient": {
+                      "patient_id": "f62904cd-9cf0-40d4-94d9-f75e0e4b7935",
+                      "medical_no": "002-000-00-23",
+                      "external_id": "hehe",
+                      "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                      "sr_salutation": "aliqua ea",
+                      "first_name": "surya",
+                      "middle_name": "adhi",
+                      "last_name": "waskito",
+                      "city_of_birth": "Magelang",
+                      "date_of_birth": "2000-02-26T00:00:00+07:00",
+                      "sex": "Male",
+                      "phone": "081330868663",
+                      "mobile_phone": "081330868663",
+                      "email": "surya@jec.co.id",
+                      "ssn": "aute ipsum et",
+                      "mother_ssn": "sint in consequat",
+                      "sr_education": "sed reprehenderit",
+                      "sr_marital_status": "deserunt consectetur",
+                      "sr_nationality": "in",
+                      "sr_occupation": "reprehenderit dolore",
+                      "sr_patient_category": "non ad irure nostrud",
+                      "sr_religion": "dolor ea sint ut",
+                      "address_street_name": "elit cupidatat minim quis esse",
+                      "address_district": "sed",
+                      "address_city": "minim reprehenderit",
+                      "address_country": "laborum",
+                      "address_state": "tempor ullamco culpa Excepteur voluptate",
+                      "address_zipcode": "in ipsum",
+                      "notes": "incididunt elit ut in",
+                      "user_create": "ut",
+                      "created_at": "2025-03-18T14:08:41+07:00",
+                      "user_update": "delete patient",
+                      "updated_at": "2025-03-18T14:08:41+07:00"
+                  }
+              }
+          }
+  - name: Data Not Found
+    request:
+      url: "{{BASE_URL}}/v1/patients/:business_unit_id/:patient_id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{admission_xtoken}}"
+      params:
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36527
+          type: path
+        - name: patient_id
+          value: f62904cd-9cf0-40d4-94d9-f75e0e4b7935
+          type: path
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Date
+          value: Wed, 19 Mar 2025 07:40:54 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "41"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "data not found",
+              "status": 404
+          }

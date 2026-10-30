@@ -1,0 +1,119 @@
+info:
+  name: Search
+  type: http
+  seq: 9
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/account-references/search?text=&max_hits=10&page=1&reference_name=CompanyStatus"
+  params:
+    - name: text
+      value: ""
+      type: query
+    - name: max_hits
+      value: "10"
+      type: query
+    - name: page
+      value: "1"
+      type: query
+    - name: reference_name
+      value: CompanyStatus
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Search
+    request:
+      url: "{{BASE_URL}}/account-references/search?text=&max_hits=10&page=1"
+      method: GET
+      params:
+        - name: text
+          value: ""
+          type: query
+        - name: max_hits
+          value: "10"
+          type: query
+        - name: page
+          value: "1"
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 29 Sep 2025 07:33:32 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "616"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "total": 5,
+                  "page": 1,
+                  "result": [
+                      {
+                          "id": "aab7419a-8ace-49d3-bf61-343941d7c864",
+                          "reference_name": "CompanyStatus",
+                          "name": "Inactive",
+                          "is_active": true
+                      },
+                      {
+                          "id": "c1939a90-849e-43e0-8309-2f734f250d38",
+                          "reference_name": "CompanyStatus",
+                          "name": "Draft",
+                          "is_active": true
+                      },
+                      {
+                          "id": "50db9bea-b606-4a34-8871-18486ac1ead6",
+                          "reference_name": "CompanyStatus",
+                          "name": "Suspended",
+                          "is_active": true
+                      },
+                      {
+                          "id": "5533361e-2345-4e64-aefa-481558061268",
+                          "reference_name": "CompanyStatus",
+                          "name": "Active",
+                          "is_active": true
+                      },
+                      {
+                          "id": "feabf150-79b2-43f3-a144-0274e744687e",
+                          "reference_name": "CompanyStatus",
+                          "name": "Deleted",
+                          "is_active": true
+                      }
+                  ]
+              }
+          }

@@ -1,0 +1,38 @@
+info:
+  name: Create Rencana Kontrol
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/bpjs/rencana-kontrol"
+  headers:
+    - name: x-token
+      value: ""
+  body:
+    type: json
+    data: "{\r
+
+      \    \"business_unit_id\": \"\",\r
+
+      \    \"no_kartu\": \"\",\r
+
+      \    \"no_sep\": \"\",\r
+
+      \    \"kode_dokter\": \"\",\r
+
+      \    \"poli_kontrol\": \"\",\r
+
+      \    \"tgl_rencana_kontrol\": \"\",\r
+
+      \    \"user\": \"\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

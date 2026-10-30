@@ -1,0 +1,7 @@
+info:
+  name: BANK ACCOUNT
+  type: folder
+  seq: 70
+
+request:
+  auth: inherit

@@ -1,0 +1,336 @@
+info:
+  name: UPDATE
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/patients/:business_unit_id/:patient_id"
+  headers:
+    - name: x-token
+      value: "{{admission_xtoken}}"
+  params:
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+    - name: patient_id
+      value: PKDY250407-0001
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"external_id\": \"minim cupidatat deserunt laboris\",\r
+
+      \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+      \    \"sr_salutation\": \"aliqua ea\",\r
+
+      \    \"first_name\": \"suryaaa\",\r
+
+      \    \"middle_name\": \"adhi\",\r
+
+      \    \"last_name\": \"waskito\",\r
+
+      \    \"city_of_birth\": \"Magelang\",\r
+
+      \    \"date_of_birth\": \"2000-02-26T00:00:00+07:00\",\r
+
+      \    \"sex\": \"Male\",\r
+
+      \    \"phone\": \"081330868663\",\r
+
+      \    \"mobile_phone\": \"081330868663\",\r
+
+      \    \"email\": \"surya@jec.co.id\",\r
+
+      \    \"ssn\": \"1234123123231\",\r
+
+      \    \"mother_ssn\": \"sint in consequat\",\r
+
+      \    \"sr_education\": \"sed reprehenderit\",\r
+
+      \    \"sr_marital_status\": \"deserunt consectetur\",\r
+
+      \    \"sr_nationality\": \"in\",\r
+
+      \    \"sr_occupation\": \"reprehenderit dolore\",\r
+
+      \    \"sr_patient_category\": \"non ad irure nostrud\",\r
+
+      \    \"sr_religion\": \"dolor ea sint ut\",\r
+
+      \    \"address_street_name\": \"elit cupidatat minim quis esse\",\r
+
+      \    \"address_district\": \"sed\",\r
+
+      \    \"address_city\": \"minim reprehenderit\",\r
+
+      \    \"address_country\": \"laborum\",\r
+
+      \    \"address_state\": \"tempor ullamco culpa Excepteur voluptate\",\r
+
+      \    \"address_zipcode\": \"in ipsum\",\r
+
+      \    \"notes\": \"incididunt elit ut in\",\r
+
+      \    \"is_active\": true,\r
+
+      \    \"user_create\": \"ut\",\r
+
+      \    \"created_at\": \"2025-03-18T14:08:41+07:00\"\r
+
+      }"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/patients/:business_unit_id/:patient_id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{admission_xtoken}}"
+      params:
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: path
+        - name: patient_id
+          value: f62904cd-9cf0-40d4-94d9-f75e0e4b7935
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"external_id\": \"hehe\",\r
+
+          \    \"sr_salutation\": \"aliqua ea\",\r
+
+          \    \"first_name\": \"surya\",\r
+
+          \    \"middle_name\": \"adhi\",\r
+
+          \    \"last_name\": \"waskito\",\r
+
+          \    \"city_of_birth\": \"Magelang\",\r
+
+          \    \"date_of_birth\": \"2000-02-26T00:00:00+07:00\",\r
+
+          \    \"sex\": \"Male\",\r
+
+          \    \"phone\": \"081330868663\",\r
+
+          \    \"mobile_phone\": \"081330868663\",\r
+
+          \    \"email\": \"surya@jec.co.id\",\r
+
+          \    \"ssn\": \"aute ipsum et\",\r
+
+          \    \"mother_ssn\": \"sint in consequat\",\r
+
+          \    \"sr_education\": \"sed reprehenderit\",\r
+
+          \    \"sr_marital_status\": \"deserunt consectetur\",\r
+
+          \    \"sr_nationality\": \"in\",\r
+
+          \    \"sr_occupation\": \"reprehenderit dolore\",\r
+
+          \    \"sr_patient_category\": \"non ad irure nostrud\",\r
+
+          \    \"sr_religion\": \"dolor ea sint ut\",\r
+
+          \    \"address_street_name\": \"elit cupidatat minim quis esse\",\r
+
+          \    \"address_district\": \"sed\",\r
+
+          \    \"address_city\": \"minim reprehenderit\",\r
+
+          \    \"address_country\": \"laborum\",\r
+
+          \    \"address_state\": \"tempor ullamco culpa Excepteur voluptate\",\r
+
+          \    \"address_zipcode\": \"in ipsum\",\r
+
+          \    \"notes\": \"incididunt elit ut in\",\r
+
+          \    \"is_active\": true,\r
+
+          \    \"user_update\": \"update patient data\",\r
+
+          \    \"updated_at\": \"2025-03-18T14:08:41+07:00\"\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Wed, 19 Mar 2025 07:41:15 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "150"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "patient_id": "f62904cd-9cf0-40d4-94d9-f75e0e4b7935",
+                  "user_update": "update patient data",
+                  "updated_at": "2025-03-18T14:08:41+07:00"
+              }
+          }
+  - name: Data Not Found
+    request:
+      url: "{{BASE_URL}}/v1/patients/:business_unit_id/:patient_id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{admission_xtoken}}"
+      params:
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36527
+          type: path
+        - name: patient_id
+          value: f62904cd-9cf0-40d4-94d9-f75e0e4b7935
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"external_id\": \"hehe\",\r
+
+          \    \"sr_salutation\": \"aliqua ea\",\r
+
+          \    \"first_name\": \"surya\",\r
+
+          \    \"middle_name\": \"adhi\",\r
+
+          \    \"last_name\": \"waskito\",\r
+
+          \    \"city_of_birth\": \"Magelang\",\r
+
+          \    \"date_of_birth\": \"2000-02-26T00:00:00+07:00\",\r
+
+          \    \"sex\": \"Male\",\r
+
+          \    \"phone\": \"081330868663\",\r
+
+          \    \"mobile_phone\": \"081330868663\",\r
+
+          \    \"email\": \"surya@jec.co.id\",\r
+
+          \    \"ssn\": \"aute ipsum et\",\r
+
+          \    \"mother_ssn\": \"sint in consequat\",\r
+
+          \    \"sr_education\": \"sed reprehenderit\",\r
+
+          \    \"sr_marital_status\": \"deserunt consectetur\",\r
+
+          \    \"sr_nationality\": \"in\",\r
+
+          \    \"sr_occupation\": \"reprehenderit dolore\",\r
+
+          \    \"sr_patient_category\": \"non ad irure nostrud\",\r
+
+          \    \"sr_religion\": \"dolor ea sint ut\",\r
+
+          \    \"address_street_name\": \"elit cupidatat minim quis esse\",\r
+
+          \    \"address_district\": \"sed\",\r
+
+          \    \"address_city\": \"minim reprehenderit\",\r
+
+          \    \"address_country\": \"laborum\",\r
+
+          \    \"address_state\": \"tempor ullamco culpa Excepteur voluptate\",\r
+
+          \    \"address_zipcode\": \"in ipsum\",\r
+
+          \    \"notes\": \"incididunt elit ut in\",\r
+
+          \    \"is_active\": true,\r
+
+          \    \"user_update\": \"update patient data\",\r
+
+          \    \"updated_at\": \"2025-03-18T14:08:41+07:00\"\r
+
+          }"
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Date
+          value: Wed, 19 Mar 2025 07:41:29 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "41"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "data not found",
+              "status": 404
+          }

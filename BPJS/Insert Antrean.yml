@@ -1,0 +1,72 @@
+info:
+  name: Insert Antrean
+  type: http
+  seq: 11
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/bpjs/antrean"
+  headers:
+    - name: x-token
+      value: ""
+  body:
+    type: json
+    data: "{\r
+
+      \    \"business_unit_id\": \"\",\r
+
+      \    \"kode_booking\": \"\",\r
+
+      \    \"jenis_pasien\": \"\",\r
+
+      \    \"nomor_kartu\": \"\",\r
+
+      \    \"nik\": \"\",\r
+
+      \    \"no_hp\": \"\",\r
+
+      \    \"kode_poli\": \"\",\r
+
+      \    \"nama_poli\": \"\",\r
+
+      \    \"pasien_baru\": 0,\r
+
+      \    \"no_rm\": \"\",\r
+
+      \    \"tanggal_periksa\": \"\",\r
+
+      \    \"kode_dokter\": 0,\r
+
+      \    \"nama_dokter\": \"\",\r
+
+      \    \"jam_praktek\": \"\",\r
+
+      \    \"jenis_kunjungan\": 0,\r
+
+      \    \"nomor_referensi\": \"\",\r
+
+      \    \"nomor_antrean\": \"\",\r
+
+      \    \"angka_antrean\": 0,\r
+
+      \    \"estimasi_dilayani\": 0,\r
+
+      \    \"sisa_kuota_jkn\": 0,\r
+
+      \    \"kuota_jkn\": 0,\r
+
+      \    \"sisa_kuota_non_jkn\": 0,\r
+
+      \    \"kuota_non_jkn\": 0,\r
+
+      \    \"keterangan\": \"\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

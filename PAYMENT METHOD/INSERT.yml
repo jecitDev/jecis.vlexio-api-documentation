@@ -1,0 +1,130 @@
+info:
+  name: INSERT
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/bridgepaymentmethods"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"coa_id\": 123,\r
+
+      \    \"created_at\": {\r
+
+      \        \"seconds\": 1699847234\r
+
+      \    },\r
+
+      \    \"is_active\": true,\r
+
+      \    \"sr_payment_method_id\": \"PaymentMethod-004\",\r
+
+      \    \"sr_payment_type_id\": \"PaymentType-001\",\r
+
+      \    \"subledger_id\": 12,\r
+
+      \    \"user_create\": \"nando\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: INSERT
+    request:
+      url: "{{BASE_URL}}/v1/bridgepaymentmethods"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"coa_id\": 123,\r
+
+          \    \"created_at\": {\r
+
+          \        \"seconds\": 1699847234\r
+
+          \    },\r
+
+          \    \"is_active\": true,\r
+
+          \    \"sr_payment_method_id\": \"PaymentMethod-004\",\r
+
+          \    \"sr_payment_type_id\": \"PaymentType-001\",\r
+
+          \    \"subledger_id\": 12,\r
+
+          \    \"user_create\": \"nando\"\r
+
+          }"
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Date
+          value: Mon, 13 Nov 2023 07:48:40 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "247"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 201,
+              "data": {
+                  "sr_payment_method_id": "PaymentMethod-004",
+                  "sr_payment_type_id": "PaymentType-001",
+                  "coa_id": 123,
+                  "subledger_id": 12,
+                  "is_active": true,
+                  "user_create": "nando",
+                  "created_at": {
+                      "seconds": 1699847234
+                  },
+                  "updated_at": {
+                      "seconds": -62135596800
+                  }
+              }
+          }

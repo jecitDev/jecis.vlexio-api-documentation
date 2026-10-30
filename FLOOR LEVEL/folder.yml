@@ -1,0 +1,7 @@
+info:
+  name: FLOOR LEVEL
+  type: folder
+  seq: 72
+
+request:
+  auth: inherit

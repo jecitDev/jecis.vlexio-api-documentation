@@ -1,0 +1,7 @@
+info:
+  name: VA Template Business Unit
+  type: folder
+  seq: 2
+
+request:
+  auth: inherit

@@ -1,0 +1,7 @@
+info:
+  name: WIDGET DASHBOARD
+  type: folder
+  seq: 20
+
+request:
+  auth: inherit

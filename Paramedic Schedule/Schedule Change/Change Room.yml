@@ -1,0 +1,38 @@
+info:
+  name: Change Room
+  type: http
+  seq: 3
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/paramedicschedule/change/room_change"
+  headers:
+    - name: x-token
+      value: "{{admission_xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+      \    \"id_psd\": [438, 439],\r
+
+      \    \"schedule_date_start\": \"2025-08-05T00:00:00+07:00\",\r
+
+      \    \"schedule_date_end\": \"2025-08-08T00:00:00+07:00\",\r
+
+      \    \"room_id\": \"D1-202\",\r
+
+      \    \"user_update\": \"update room\",\r
+
+      \    \"updated_at\": \"2025-08-05T00:00:00+07:00\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

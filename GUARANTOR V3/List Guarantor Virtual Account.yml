@@ -1,0 +1,152 @@
+info:
+  name: List Guarantor Virtual Account
+  type: http
+  seq: 47
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/marketing/guarantor/guarantor-virtual-accounts?page&page_size&sort_by&sort_order&keywords=doe&is_active=true"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: page
+      value: ""
+      type: query
+    - name: page_size
+      value: ""
+      type: query
+    - name: sort_by
+      value: ""
+      type: query
+    - name: sort_order
+      value: ""
+      type: query
+    - name: keywords
+      value: doe
+      type: query
+    - name: business_unit_id
+      value: ""
+      type: query
+      disabled: true
+    - name: guarantor_id
+      value: ""
+      type: query
+      disabled: true
+    - name: is_active
+      value: "true"
+      type: query
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/guarantor-virtual-accounts?page&page_size&sort_by&sort_order&keywords=doe&is_active=true"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: page
+          value: ""
+          type: query
+        - name: page_size
+          value: ""
+          type: query
+        - name: sort_by
+          value: ""
+          type: query
+        - name: sort_order
+          value: ""
+          type: query
+        - name: keywords
+          value: doe
+          type: query
+        - name: business_unit_id
+          value: ""
+          type: query
+          disabled: true
+        - name: guarantor_id
+          value: ""
+          type: query
+          disabled: true
+        - name: is_active
+          value: "true"
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 24 Jul 2025 04:49:20 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "697"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "page": 1,
+                  "page_size": 20,
+                  "total_items": 2,
+                  "virtual_accounts": [
+                      {
+                          "id": "bc1646cb-bdcd-4031-b427-81213e218029",
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "guarantor_id": "e7dd7eba-ec35-491f-b663-e14ee5dc6c72",
+                          "nama_bank": "BCA",
+                          "atas_nama": "John Doet",
+                          "no_rek_va": "3728462337",
+                          "is_active": true,
+                          "user_create": "admin",
+                          "created_at": "2025-07-20T14:00:00+07:00"
+                      },
+                      {
+                          "id": "9e77ad54-1cc1-4ea8-8aed-766fdf2fd1db",
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "guarantor_id": "e7dd7eba-ec35-491f-b663-e14ee5dc6c72",
+                          "nama_bank": "PERMATA",
+                          "atas_nama": "Jane Doe",
+                          "no_rek_va": "387481749454",
+                          "is_active": true,
+                          "user_create": "admin",
+                          "created_at": "2025-07-20T14:00:00+07:00"
+                      }
+                  ]
+              }
+          }

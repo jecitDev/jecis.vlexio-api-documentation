@@ -1,0 +1,289 @@
+info:
+  name: Svc - List By Param
+  type: http
+  seq: 2
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/chartofaccount/listbyparam?chart_of_account_id=7&is_active=true"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: chart_of_account_id
+      value: "7"
+      type: query
+    - name: chart_of_account_code
+      value: ""
+      type: query
+      disabled: true
+    - name: chart_of_account_name
+      value: ""
+      type: query
+      disabled: true
+    - name: account_level
+      value: ""
+      type: query
+      disabled: true
+    - name: general_account
+      value: ""
+      type: query
+      disabled: true
+    - name: normal_balance
+      value: ""
+      type: query
+      disabled: true
+    - name: account_group
+      value: ""
+      type: query
+      disabled: true
+    - name: subledger_id
+      value: ""
+      type: query
+      disabled: true
+    - name: tree_code
+      value: ""
+      type: query
+      disabled: true
+    - name: definition
+      value: ""
+      type: query
+      disabled: true
+    - name: is_active
+      value: "true"
+      type: query
+    - name: is_detail
+      value: ""
+      type: query
+      disabled: true
+    - name: is_document_number_enabled
+      value: ""
+      type: query
+      disabled: true
+    - name: user_create
+      value: "21239"
+      type: query
+      disabled: true
+    - name: created_at
+      value: ""
+      type: query
+      disabled: true
+    - name: user_update
+      value: admin3
+      type: query
+      disabled: true
+    - name: updated_at
+      value: ""
+      type: query
+      disabled: true
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: query
+      disabled: true
+  auth:
+    type: bearer
+    token: "{{xtoken}}"
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: Svc - List By Param
+    request:
+      url: "{{BASE_URL}}/v1/chartofaccount/listbyparam?is_active=true&business_unit_id=53aad077-9fb1-4f08-85f3-af9fd9a36517"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: chart_of_account_id
+          value: ""
+          type: query
+          disabled: true
+        - name: chart_of_account_code
+          value: ""
+          type: query
+          disabled: true
+        - name: chart_of_account_name
+          value: ""
+          type: query
+          disabled: true
+        - name: account_level
+          value: ""
+          type: query
+          disabled: true
+        - name: general_account
+          value: ""
+          type: query
+          disabled: true
+        - name: normal_balance
+          value: ""
+          type: query
+          disabled: true
+        - name: account_group
+          value: ""
+          type: query
+          disabled: true
+        - name: subledger_id
+          value: ""
+          type: query
+          disabled: true
+        - name: tree_code
+          value: ""
+          type: query
+          disabled: true
+        - name: definition
+          value: ""
+          type: query
+          disabled: true
+        - name: is_active
+          value: "true"
+          type: query
+        - name: is_detail
+          value: ""
+          type: query
+          disabled: true
+        - name: is_document_number_enabled
+          value: ""
+          type: query
+          disabled: true
+        - name: user_create
+          value: "21239"
+          type: query
+          disabled: true
+        - name: created_at
+          value: ""
+          type: query
+          disabled: true
+        - name: user_update
+          value: admin3
+          type: query
+          disabled: true
+        - name: updated_at
+          value: ""
+          type: query
+          disabled: true
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 08 Apr 2025 09:37:18 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "1902"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "chartofaccounts": [
+                      {
+                          "chart_of_account_id": 1,
+                          "chart_of_account_code": "1.00.00.00.00",
+                          "chart_of_account_name": "AKTIVA",
+                          "normal_balance": "D",
+                          "account_group": 2,
+                          "is_active": true,
+                          "is_detail": false,
+                          "is_document_number_enabled": false,
+                          "user_create": "21239",
+                          "created_at": "2025-04-08T11:51:27+07:00",
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517"
+                      },
+                      {
+                          "chart_of_account_id": 2,
+                          "chart_of_account_code": "3.00.00.00.00",
+                          "chart_of_account_name": "EKUITAS",
+                          "normal_balance": "K",
+                          "account_group": 16,
+                          "subledger_id": -99,
+                          "is_active": true,
+                          "is_detail": false,
+                          "is_document_number_enabled": false,
+                          "user_create": "admin1",
+                          "created_at": "2025-04-08T14:49:23+07:00",
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517"
+                      },
+                      {
+                          "chart_of_account_id": 3,
+                          "chart_of_account_code": "3.00.00.00.00",
+                          "chart_of_account_name": "EKUITAS",
+                          "normal_balance": "K",
+                          "account_group": 16,
+                          "subledger_id": -99,
+                          "definition": "This is #api ...",
+                          "is_active": true,
+                          "is_detail": false,
+                          "is_document_number_enabled": false,
+                          "user_create": "admin1",
+                          "created_at": "2025-04-08T14:49:23+07:00",
+                          "user_update": "admin3",
+                          "updated_at": "2025-04-08T14:49:23+07:00",
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517"
+                      },
+                      {
+                          "chart_of_account_id": 4,
+                          "chart_of_account_code": "5.00.00.00.00",
+                          "chart_of_account_name": "EKUITAS",
+                          "account_level": 1,
+                          "normal_balance": "K",
+                          "account_group": 16,
+                          "subledger_id": 2,
+                          "is_active": true,
+                          "is_detail": false,
+                          "is_document_number_enabled": false,
+                          "user_create": "admin1",
+                          "created_at": "2025-04-08T14:49:23+07:00",
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517"
+                      },
+                      {
+                          "chart_of_account_id": 5,
+                          "chart_of_account_code": "2.00.00.00.00",
+                          "chart_of_account_name": "EKUITAS",
+                          "account_level": 1,
+                          "normal_balance": "K",
+                          "account_group": 16,
+                          "subledger_id": 2,
+                          "is_active": true,
+                          "is_detail": false,
+                          "is_document_number_enabled": false,
+                          "user_create": "admin1",
+                          "created_at": "2025-04-08T14:49:23+07:00",
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517"
+                      }
+                  ]
+              }
+          }

@@ -1,0 +1,108 @@
+info:
+  name: Insert
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/patient_related"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+      \    \"patient_id\": \"PKDY250324-0002\",\r
+
+      \    \"target_business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+      \    \"target_patient_id\": \"PKDY250723-0001\",\r
+
+      \    \"user_create\": \"admin\",\r
+
+      \    \"created_at\": \"2025-05-10T14:08:41+07:00\"\r
+
+      }"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Insert
+    request:
+      url: "{{BASE_URL}}/v1/patient_related"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "// {\r
+
+          //     \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+          //     \"patient_id\": \"PKDY250324-0002\",\r
+
+          //     \"target_business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+          //     \"target_patient_id\": \"PKDY250723-0001\",\r
+
+          //     \"user_create\": \"admin\",\r
+
+          //     \"created_at\": \"2025-05-10T14:08:41+07:00\"\r
+
+          // }\r
+
+          {\"business_unit_id\":\"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\"patient_id\":\"PKDY250722-0002\",\"target_business_unit_id\":\"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\"target_patient_id\":\"PKDY250602-0002\",\"user_create\":\"raihan\",\"created_at\":\"2025-08-13T11:07:12+07:00\"}"
+    response:
+      status: 500
+      statusText: Internal Server Error
+      headers:
+        - name: Date
+          value: Wed, 13 Aug 2025 04:08:08 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "126"
+        - name: Connection
+          value: keep-alive
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "failed to insert patient_related: pq: permission denied for sequence patient_related_unified_id_seq",
+              "status": 500
+          }

@@ -1,0 +1,225 @@
+info:
+  name: Group Step Reorder Step
+  type: http
+  seq: 9
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/group-steps/:id/reorder"
+  headers:
+    - name: x-token
+      value: "{{medical_record_xtoken}}"
+  params:
+    - name: id
+      value: 7545d4a7-224e-41e3-8d04-dce66a611d4f
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+      \    \"steps_order\": [\r
+
+      \        {\r
+
+      \            \"step_id\": \"48547cc1-818f-47fe-a1d4-1c85f8395c2c\",\r
+
+      \            \"order\": 1\r
+
+      \        },\r
+
+      \        {\r
+
+      \            \"step_id\": \"e49cdadb-fcef-47bf-8c3e-21873e976b79\",\r
+
+      \            \"order\": 2\r
+
+      \        }\r
+
+      \    ],\r
+
+      \    \"user_update\": \"admin\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/group-steps/:id/reorder"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{medical_record_xtoken}}"
+      params:
+        - name: id
+          value: 7545d4a7-224e-41e3-8d04-dce66a611d4f
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+          \    \"steps_order\": [\r
+
+          \        {\r
+
+          \            \"step_id\": \"48547cc1-818f-47fe-a1d4-1c85f8395c2c\",\r
+
+          \            \"order\": 1\r
+
+          \        },\r
+
+          \        {\r
+
+          \            \"step_id\": \"e49cdadb-fcef-47bf-8c3e-21873e976b79\",\r
+
+          \            \"order\": 2\r
+
+          \        }\r
+
+          \    ],\r
+
+          \    \"user_update\": \"admin\"\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 06 Oct 2025 00:54:33 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "186"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "id": "7545d4a7-224e-41e3-8d04-dce66a611d4f",
+                  "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "user_update": "admin",
+                  "updated_at": "2025-10-06T07:54:32+07:00"
+              }
+          }
+  - name: Err no data found
+    request:
+      url: "{{BASE_URL}}/v1/group-steps/:id/reorder"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{medical_record_xtoken}}"
+      params:
+        - name: id
+          value: 7545d4a7-224e-41e3-8d04-dce66a611d4a
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+          \    \"steps_order\": [\r
+
+          \        {\r
+
+          \            \"step_id\": \"48547cc1-818f-47fe-a1d4-1c85f8395c2c\",\r
+
+          \            \"order\": 1\r
+
+          \        },\r
+
+          \        {\r
+
+          \            \"step_id\": \"e49cdadb-fcef-47bf-8c3e-21873e976b79\",\r
+
+          \            \"order\": 2\r
+
+          \        }\r
+
+          \    ],\r
+
+          \    \"user_update\": \"admin\"\r
+
+          }"
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Date
+          value: Mon, 06 Oct 2025 00:55:57 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "47"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "group_step.not_found",
+              "status": 404
+          }

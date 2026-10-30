@@ -1,0 +1,21 @@
+info:
+  name: Exam Setup - Version Form
+  type: folder
+  seq: 46
+
+request:
+  auth: inherit
+
+docs:
+  content: |-
+    ### \[TS-1292\] \[MASTER\]\[BE\] EXAM SETUP : VERSION FORM #1.0.0
+
+    ##### Jul 18, 2024
+
+    - Handle Parameter Exam Setup ID in List Service `Enhance`
+        
+
+    ##### Jul 08, 2024
+
+    - CRUD Common
+  type: text/markdown

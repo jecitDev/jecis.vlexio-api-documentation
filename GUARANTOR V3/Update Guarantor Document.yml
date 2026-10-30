@@ -1,0 +1,192 @@
+info:
+  name: Update Guarantor Document
+  type: http
+  seq: 30
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/marketing/guarantor/contract/document/:id/:contract_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: id
+      value: "1"
+      type: path
+    - name: contract_id
+      value: c56d1401-f53c-49cd-ba48-ac5fc4bee82c
+      type: path
+  body:
+    type: multipart-form
+    data:
+      - name: file
+        type: file
+        value:
+          - /C:/Users/pf2e7/Downloads/lorem.ipsum.pdf
+      - name: user_update
+        type: text
+        value: ferdinand
+      - name: updated_at
+        type: text
+        value: 2025-06-16T14:08:41+07:00
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Not Found
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/contract/document/:id/:contract_id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: id
+          value: "39"
+          type: path
+        - name: contract_id
+          value: 7947b8dc-1103-46b1-bec4-721cc7c9e129
+          type: path
+      body:
+        type: multipart-form
+        data:
+          - name: file
+            type: file
+            value:
+              - /C:/Users/pf2e7/Downloads/lorem_ipsum.pdf
+          - name: is_active
+            type: text
+            value: "true"
+          - name: user_update
+            type: text
+            value: ferdinand
+          - name: updated_at
+            type: text
+            value: 2025-06-16T14:08:41+07:00
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Date
+          value: Fri, 04 Jul 2025 09:29:19 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "55"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "guarantor_document.not_found",
+              "status": 404
+          }
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/contract/document/:id/:contract_id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: id
+          value: "1"
+          type: path
+        - name: contract_id
+          value: c56d1401-f53c-49cd-ba48-ac5fc4bee82c
+          type: path
+      body:
+        type: multipart-form
+        data:
+          - name: file
+            type: file
+            value:
+              - /C:/Users/pf2e7/Downloads/lorem.ipsum.pdf
+          - name: user_update
+            type: text
+            value: ferdinand
+          - name: updated_at
+            type: text
+            value: 2025-06-16T14:08:41+07:00
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Fri, 11 Jul 2025 03:01:09 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "338"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "seq_id": 1,
+                  "contract_id": "c56d1401-f53c-49cd-ba48-ac5fc4bee82c",
+                  "file_name": "lorem.ipsum",
+                  "document_path": "/file_storage/16ff5f1c-b64a-411e-be5b-f2c3db462ea0/2da6a1bd-ba62-43ec-91f8-4085d5d6d498/53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "is_active": true,
+                  "user_update": "ferdinand",
+                  "updated_at": "2025-06-16T14:08:41+07:00"
+              }
+          }

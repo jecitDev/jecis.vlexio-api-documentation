@@ -1,0 +1,162 @@
+info:
+  name: Delete Membership
+  type: http
+  seq: 4
+
+http:
+  method: DELETE
+  url: "{{BASE_URL}}/v1/marketing/membership/:membership_id"
+  headers:
+    - name: x-token
+      value: "{{marketing_xtoken}}"
+  params:
+    - name: membership_id
+      value: 864fdca4-be49-4d2c-b6be-da25f822ca01
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"user_update\": \"delete data\",\r
+
+      \    \"updated_at\": \"2025-04-01T00:00:00+07:00\"\r
+
+      }"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/marketing/membership/:membership_id"
+      method: DELETE
+      headers:
+        - name: x-token
+          value: "{{marketing_xtoken}}"
+      params:
+        - name: membership_id
+          value: 864fdca4-be49-4d2c-b6be-da25f822ca01
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"user_update\": \"delete data\",\r
+
+          \    \"updated_at\": \"2025-04-01T00:00:00+07:00\"\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 03 Apr 2025 02:49:23 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "88"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "success": true,
+                  "message": "delete membership program by id success"
+              }
+          }
+  - name: No Data Found
+    request:
+      url: "{{BASE_URL}}/v1/marketing/membership/:membership_id"
+      method: DELETE
+      headers:
+        - name: x-token
+          value: "{{marketing_xtoken}}"
+      params:
+        - name: membership_id
+          value: 864fdca4-be49-4d2c-b6be-da25f822ca09
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"user_update\": \"delete data\",\r
+
+          \    \"updated_at\": \"2025-04-01T00:00:00+07:00\"\r
+
+          }"
+    response:
+      status: 500
+      statusText: Internal Server Error
+      headers:
+        - name: Date
+          value: Thu, 03 Apr 2025 02:53:37 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "40"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "no data found",
+              "status": 500
+          }

@@ -1,0 +1,196 @@
+info:
+  name: "[Deprecated] List Guarantor Book Rate"
+  type: http
+  seq: 42
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/marketing/guarantor/company_book_rate?page=1&page_size=100&sort_order=desc&sort_by=service_code"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: page_size
+      value: "100"
+      type: query
+    - name: sort_order
+      value: desc
+      type: query
+    - name: sort_by
+      value: service_code
+      type: query
+    - name: department
+      value: inpatient
+      type: query
+      disabled: true
+    - name: service_unit
+      value: ""
+      type: query
+      disabled: true
+    - name: sub_service
+      value: ""
+      type: query
+      disabled: true
+    - name: sentra
+      value: ""
+      type: query
+      disabled: true
+    - name: class_name
+      value: ""
+      type: query
+      disabled: true
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/company_book_rate?page=1&page_size=10&sort_order=desc&sort_by=service_code"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: page_size
+          value: "10"
+          type: query
+        - name: sort_order
+          value: desc
+          type: query
+        - name: sort_by
+          value: service_code
+          type: query
+        - name: department
+          value: inpatient
+          type: query
+          disabled: true
+        - name: service_unit
+          value: ""
+          type: query
+          disabled: true
+        - name: sub_service
+          value: ""
+          type: query
+          disabled: true
+        - name: sentra
+          value: ""
+          type: query
+          disabled: true
+        - name: class_name
+          value: ""
+          type: query
+          disabled: true
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 21 Jul 2025 04:14:55 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "1353"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "page": 1,
+                  "page_size": 10,
+                  "total_items": 4,
+                  "book_rates": [
+                      {
+                          "service_code": "CDC-0001",
+                          "service_desc": "Allegro Oculyzer (Pentacam)",
+                          "department": "outpatient",
+                          "service_unit": "C D C",
+                          "sub_service": "None",
+                          "sentra": "RAJAL",
+                          "class_name": "non class",
+                          "initial_tatal_amount": 780000,
+                          "initial_rs_amount": 780000,
+                          "agreement_tatal_amount": 702000,
+                          "agreement_rs_amount": 702000
+                      },
+                      {
+                          "service_code": "ASSES-0001",
+                          "service_desc": "Assesment Medis Pra Tindakan A",
+                          "department": "outpatient",
+                          "service_unit": "OPERATING THEATRE",
+                          "sub_service": "None",
+                          "sentra": "RAJAL",
+                          "class_name": "non class",
+                          "initial_tatal_amount": 120000,
+                          "initial_rs_amount": 40000,
+                          "initial_anes_amount": 80000,
+                          "agreement_tatal_amount": 108000,
+                          "agreement_rs_amount": 36000,
+                          "agreement_anes_amount": 72000
+                      },
+                      {
+                          "service_code": "ADM-0001",
+                          "service_desc": "Administrasi Pasien",
+                          "department": "outpatient",
+                          "service_unit": "EYE CLINIC",
+                          "sub_service": "None",
+                          "sentra": "RAJAL",
+                          "class_name": "non class",
+                          "initial_tatal_amount": 95000,
+                          "initial_rs_amount": 95000,
+                          "agreement_tatal_amount": 85500,
+                          "agreement_rs_amount": 85500
+                      },
+                      {
+                          "service_code": "1000001",
+                          "service_desc": "Infus Syringe Pump",
+                          "department": "inpatient",
+                          "service_unit": "IN PATIENT",
+                          "sub_service": "None",
+                          "sentra": "IN PATIENT",
+                          "class_name": "non class",
+                          "initial_tatal_amount": 255000,
+                          "initial_rs_amount": 255000,
+                          "agreement_tatal_amount": 229500,
+                          "agreement_rs_amount": 229500
+                      }
+                  ]
+              }
+          }

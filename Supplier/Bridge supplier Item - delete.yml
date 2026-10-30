@@ -1,0 +1,35 @@
+info:
+  name: Bridge supplier Item - delete
+  type: http
+  seq: 19
+
+http:
+  method: DELETE
+  url: "{{BASE_URL}}/v1/Supplier/items/:id_supplier/:item_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: id_supplier
+      value: a630a800-ef4c-4b7d-bffa-a3f97f55fb19
+      type: path
+    - name: item_id
+      value: 43341054-68b3-42ac-9ac1-c99c97d0d903
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"user_update\": \"rickyDel\",\r
+
+      \    \"updated_at\": \"2024-03-01T13:24:42+08:00\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

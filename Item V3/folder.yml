@@ -1,0 +1,7 @@
+info:
+  name: Item V3
+  type: folder
+  seq: 125
+
+request:
+  auth: inherit

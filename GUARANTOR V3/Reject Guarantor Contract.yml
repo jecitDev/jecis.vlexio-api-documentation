@@ -1,0 +1,289 @@
+info:
+  name: Reject Guarantor Contract
+  type: http
+  seq: 39
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/marketing/guarantor/contract/reject/:contract_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: contract_id
+      value: dd9f0165-b7dc-474e-9fb1-dda99839dd71
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \   \"rejected_by\": \"user_admin\",\r
+
+      \   \"rejected_date_time\": \"2025-07-17T14:08:41+07:00\"\r
+
+      }"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Already Approved
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/contract/approve/:contract_id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: contract_id
+          value: d3a1196a-754e-40ef-8b37-6c8d3e9e04cd
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \   \"approved_by\": \"user_admin\",\r
+
+          \   \"approved_date_time\": \"2025-07-17T14:08:41+07:00\"\r
+
+          }"
+    response:
+      status: 500
+      statusText: Internal Server Error
+      headers:
+        - name: Date
+          value: Thu, 17 Jul 2025 02:11:30 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "62"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "guarantor_contract.already_approved",
+              "status": 500
+          }
+  - name: Not Found
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/contract/approve/:contract_id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: contract_id
+          value: f5cb7a9e-38da-4a1a-b813-f9eeebd79deb
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \   \"approved_by\": \"user_admin\",\r
+
+          \   \"approved_date_time\": \"2025-07-17T14:08:41+07:00\"\r
+
+          }"
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Date
+          value: Thu, 17 Jul 2025 02:12:29 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "55"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "guarantor_contract.not_found",
+              "status": 404
+          }
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/contract/reject/:contract_id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: contract_id
+          value: dd9f0165-b7dc-474e-9fb1-dda99839dd71
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \   \"rejected_by\": \"user_admin\",\r
+
+          \   \"rejected_date_time\": \"2025-07-17T14:08:41+07:00\"\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Fri, 18 Jul 2025 06:27:30 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "150"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "contract_id": "dd9f0165-b7dc-474e-9fb1-dda99839dd71",
+                  "rejected_by": "user_admin",
+                  "rejected_date_time": "2025-07-17T14:08:41+07:00"
+              }
+          }
+  - name: Already Rejected
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/contract/reject/:contract_id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: contract_id
+          value: dd9f0165-b7dc-474e-9fb1-dda99839dd71
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \   \"rejected_by\": \"user_admin\",\r
+
+          \   \"rejected_date_time\": \"2025-07-17T14:08:41+07:00\"\r
+
+          }"
+    response:
+      status: 500
+      statusText: Internal Server Error
+      headers:
+        - name: Date
+          value: Fri, 18 Jul 2025 06:27:56 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "62"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "guarantor_contract.already_rejected",
+              "status": 500
+          }

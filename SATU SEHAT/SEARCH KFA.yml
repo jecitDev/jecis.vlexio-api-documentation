@@ -1,0 +1,144 @@
+info:
+  name: SEARCH KFA
+  type: http
+  seq: 15
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/satu-sehat/kfa/search-by-keywords/?healthcareId=002&keywords=panadol"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: healthcareId
+      value: "002"
+      type: query
+    - name: keywords
+      value: panadol
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: SUCCESS
+    request:
+      url: "{{BASE_URL}}/v1/satu-sehat/kfa/search-by-keywords/?healthcareId=002&keywords=panadol"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: healthcareId
+          value: "002"
+          type: query
+        - name: keywords
+          value: panadol
+          type: query
+      body:
+        type: json
+        data: ""
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 02 Dec 2025 00:35:58 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "757"
+        - name: Connection
+          value: keep-alive
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "items": [
+                      {
+                          "kfa_code": "93009884",
+                          "kfa_description": "PANADOL ANAK-ANAK"
+                      },
+                      {
+                          "kfa_code": "93008620",
+                          "kfa_description": "PANADOL FLU & BATUK"
+                      },
+                      {
+                          "kfa_code": "93004396",
+                          "kfa_description": "PARADOL"
+                      },
+                      {
+                          "kfa_code": "93009878",
+                          "kfa_description": "PANADOL ANAK-ANAK"
+                      },
+                      {
+                          "kfa_code": "93009302",
+                          "kfa_description": "PANADOL ADVANCE"
+                      },
+                      {
+                          "kfa_code": "93002749",
+                          "kfa_description": "PANADOL EXTRA"
+                      },
+                      {
+                          "kfa_code": "93002800",
+                          "kfa_description": "PANADOL ANAK-ANAK"
+                      },
+                      {
+                          "kfa_code": "93002799",
+                          "kfa_description": "PANADOL ANAK-ANAK"
+                      },
+                      {
+                          "kfa_code": "93008619",
+                          "kfa_description": "PANADOL COLD + FLU"
+                      },
+                      {
+                          "kfa_code": "93002794",
+                          "kfa_description": "PANADOL ANAK-ANAK"
+                      },
+                      {
+                          "kfa_code": "93002797",
+                          "kfa_description": "PANADOL ANAK-ANAK"
+                      },
+                      {
+                          "kfa_code": "93002785",
+                          "kfa_description": "PANADOL"
+                      }
+                  ]
+              }
+          }

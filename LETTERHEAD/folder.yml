@@ -1,0 +1,7 @@
+info:
+  name: LETTERHEAD
+  type: folder
+  seq: 117
+
+request:
+  auth: inherit

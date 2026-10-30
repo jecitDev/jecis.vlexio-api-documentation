@@ -1,0 +1,203 @@
+info:
+  name: UPDATE
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/UserWidget/:id/:business_unit_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: id
+      value: e331fbdc-ad83-46bc-abba-6cd3510131fb
+      type: path
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+      \    \"updated_at\": \"2024-11-19T08:00:00+07:00\",\r
+
+      \    \"user_id\":\"rama\",\r
+
+      \    \"type_id\":\"1\",\r
+
+      \    \"template\": [\r
+
+      \        {\r
+
+      \            \"h\": 1,\r
+
+      \            \"w\": 2,\r
+
+      \            \"x\": 4,\r
+
+      \            \"y\": 5,\r
+
+      \            \"minH\": 6,\r
+
+      \            \"i\": \"allergi\"\r
+
+      \        },\r
+
+      \        {\r
+
+      \            \"h\": 1,\r
+
+      \            \"w\": 2,\r
+
+      \            \"x\": 3,\r
+
+      \            \"y\": 4,\r
+
+      \            \"minH\": 6,\r
+
+      \            \"maxH\": 2,\r
+
+      \            \"maxW\": 5,\r
+
+      \            \"minW\": 6,\r
+
+      \            \"i\": \"notes\"\r
+
+      \        }\r
+
+      \    ],\r
+
+      \    \"user_update\": \"21170\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: UPDATE
+    request:
+      url: "{{BASE_URL}}/v1/UserWidget/:id/:business_unit_id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: id
+          value: e331fbdc-ad83-46bc-abba-6cd3510131fb
+          type: path
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+          \    \"updated_at\": \"2024-11-19T08:00:00+07:00\",\r
+
+          \    \"user_id\":\"rama\",\r
+
+          \    \"type_id\":\"1\",\r
+
+          \    \"template\": [\r
+
+          \        {\r
+
+          \            \"h\": 1,\r
+
+          \            \"w\": 2,\r
+
+          \            \"x\": 4,\r
+
+          \            \"y\": 5,\r
+
+          \            \"minH\": 6,\r
+
+          \            \"i\": \"allergi\"\r
+
+          \        },\r
+
+          \        {\r
+
+          \            \"h\": 1,\r
+
+          \            \"w\": 2,\r
+
+          \            \"x\": 3,\r
+
+          \            \"y\": 4,\r
+
+          \            \"minH\": 6,\r
+
+          \            \"maxH\": 2,\r
+
+          \            \"maxW\": 5,\r
+
+          \            \"minW\": 6,\r
+
+          \            \"i\": \"notes\"\r
+
+          \        }\r
+
+          \    ],\r
+
+          \    \"user_update\": \"21170\"\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 19 Nov 2024 07:01:42 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "128"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "id": "e331fbdc-ad83-46bc-abba-6cd3510131fb",
+                  "user_update": "21170",
+                  "updated_at": "2024-11-19T08:00:00+07:00"
+              }
+          }

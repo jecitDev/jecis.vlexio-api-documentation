@@ -1,0 +1,255 @@
+info:
+  name: Get By Id
+  type: http
+  seq: 9
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/promo/:id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: id
+      value: 3a037e29-71c4-42be-b4f9-cf1de0d2b900
+      type: path
+  body:
+    type: text
+    data: "{\r
+
+      \  \"package_name\": \"Summer Health Promo 2025\",\r
+
+      \  \"package_short_name\": \"SUM25\",\r
+
+      \  \"sr_package_status\": \"1\",\r
+
+      \  \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+      \  \"package_pic\": \"user123\",\r
+
+      \  \"package_type\": \"Voucher\",\r
+
+      \  \"package_start\": \"2025-09-01T00:00:00+07:00\",\r
+
+      \  \"package_end\": \"2025-12-31T23:59:59+07:00\",\r
+
+      \  \"is_global\": true,\r
+
+      \  \"is_auto_approve\": false,\r
+
+      \  \"is_include_item_medical\": true,\r
+
+      \  \"is_include_item_medical_special_rule\": false,\r
+
+      \  \"is_include_item_medical_zero_revenue\": false,\r
+
+      \  \"is_include_item_medical_in_percent\": true,\r
+
+      \  \"is_include_item_medical_to_guarantor\": false,\r
+
+      \  \"item_medical_value\": 15.5,\r
+
+      \  \"is_include_item_non_medical\": true,\r
+
+      \  \"is_include_item_non_medical_to_guarantor\": false,\r
+
+      \  \"is_include_item_service\": true,\r
+
+      \  \"is_include_item_service_to_guarantor\": true,\r
+
+      \  \"is_include_item_optic\": false,\r
+
+      \  \"is_include_item_optic_special_rule\": false,\r
+
+      \  \"is_include_item_optic_zero_revenue\": false,\r
+
+      \  \"is_include_item_optic_in_percent\": false,\r
+
+      \  \"is_include_item_optic_to_guarantor\": false,\r
+
+      \  \"item_optic_value\": 0.0,\r
+
+      \  \"bill_transaction_type\": \"REGULAR\",\r
+
+      \  \"bill_receipt_type\": \"STANDARD\",\r
+
+      \  \"bill_is_block_auto_bill_registration\": false,\r
+
+      \  \"bill_is_show_discount\": true,\r
+
+      \  \"bill_is_hide_amount\": false,\r
+
+      \  \"is_active\": true,\r
+
+      \  \"created_at\": \"2025-08-04T10:30:00+07:00\",\r
+
+      \  \"user_create\": \"302303\",\r
+
+      \  \"is_need_voucher\": false,\r
+
+      \  \"count_voucher\": 5,\r
+
+      \  \"voucher_amount\": 50000,\r
+
+      \  \"voucher_expired\": \"2025-12-31T23:59:59+07:00\",\r
+
+      \  \"voucher_is_paid\": true,\r
+
+      \  \"voucher_payment_method\": \"BANK_TRANSFER\",\r
+
+      \  \"voucher_payment_by_user_id\": \"user456\",\r
+
+      \  \"voucher_payment_date_time\": \"2025-08-01T14:30:00+07:00\",\r
+
+      \  \"sr_campaign_type\": \"Event\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/promo/:id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: id
+          value: 8f96d1fa-5059-4bb9-b78f-b370e70c3732
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 05 Aug 2025 09:28:35 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "1026"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "package_id": "8f96d1fa-5059-4bb9-b78f-b370e70c3732",
+                  "package_no": "PP-KDY/20250805-0005",
+                  "package_name": "Winter Health Promotion 2025",
+                  "package_short_name": "FHP25",
+                  "sr_package_status": "2",
+                  "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "package_pic": "john.doe",
+                  "package_type": "SEASONAL",
+                  "package_start": "2025-09-01T00:00:00+07:00",
+                  "package_end": "2025-12-31T23:59:59+07:00",
+                  "is_global": true,
+                  "is_include_item_medical": true,
+                  "is_include_item_medical_in_percent": true,
+                  "is_include_item_medical_to_guarantor": true,
+                  "item_medical_value": 15.5,
+                  "is_include_item_service": true,
+                  "is_include_item_service_to_guarantor": true,
+                  "is_include_item_optic": true,
+                  "is_include_item_optic_in_percent": true,
+                  "item_optic_value": 10,
+                  "bill_transaction_type": "REGULAR",
+                  "bill_receipt_type": "STANDARD",
+                  "bill_is_show_discount": true,
+                  "is_active": true,
+                  "created_at": "2025-08-04T10:30:00+07:00",
+                  "user_create": "302303",
+                  "updated_at": "2025-08-05T15:30:45+07:00",
+                  "user_update": "302303",
+                  "is_need_voucher": true,
+                  "sr_campaign_type": "PackageSystem"
+              }
+          }
+  - name: Not Found
+    request:
+      url: "{{BASE_URL}}/v1/promo/:id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: id
+          value: 8f96d1fa-5059-4bb9-b78f-b370e70c3730
+          type: path
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Date
+          value: Tue, 05 Aug 2025 09:33:32 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "50"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "promo.package_not_found",
+              "status": 404
+          }

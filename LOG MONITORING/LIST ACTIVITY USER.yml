@@ -1,0 +1,147 @@
+info:
+  name: LIST ACTIVITY USER
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/LogMonitoring/by-user?user_id=raihan&start=2025-01-01T07:00:00%2B07:00&end=2025-01-31T09:00:00%2B07:00&business_unit_id=53aad077-9fb1-4f08-85f3-af9fd9a36517"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: user_id
+      value: raihan
+      type: query
+    - name: start
+      value: 2025-01-01T07:00:00%2B07:00
+      type: query
+    - name: end
+      value: 2025-01-31T09:00:00%2B07:00
+      type: query
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: LIST ACTIVITY USER
+    request:
+      url: "{{BASE_URL}}/v1/LogMonitoring/by-user?user_id=21170&start=2024-07-31T07:00:00%2B07:00&end=2024-07-31T09:00:00%2B07:00&business_unit_id=53aad077-9fb1-4f08-85f3-af9fd9a36517"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: user_id
+          value: "21170"
+          type: query
+        - name: start
+          value: 2024-07-31T07:00:00%2B07:00
+          type: query
+        - name: end
+          value: 2024-07-31T09:00:00%2B07:00
+          type: query
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 01 Aug 2024 07:28:43 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "1200"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "log_monitoring": [
+                      {
+                          "doc_id": "9YK_BpEB9ZDWEkjLMKJE",
+                          "start": "2024-07-31T08:00:21+07:00",
+                          "end": "2024-07-31T08:02:21+07:00",
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "user_id": "21170",
+                          "user_name": "Fernando RIyo Junedy Simbolon",
+                          "email": "fernando.riyo@jec.co.id",
+                          "ip_address": "172.16.20.120",
+                          "program_id": "01.01.01",
+                          "path": "/appointment",
+                          "station_id": "1",
+                          "station_name": "Default",
+                          "type": "Open Page - Appointment"
+                      },
+                      {
+                          "doc_id": "pYKXBpEB9ZDWEkjLHElP",
+                          "start": "2024-07-31T08:00:21+07:00",
+                          "end": "2024-07-31T08:02:21+07:00",
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "user_id": "21170",
+                          "user_name": "Fernando RIyo Junedy Simbolon",
+                          "email": "fernando.riyo@jec.co.id",
+                          "ip_address": "172.16.20.120",
+                          "program_id": "01.01.01",
+                          "path": "/appointment",
+                          "station_id": "1",
+                          "station_name": "Default",
+                          "data":"{patient_mr:002-003-02}",
+                          "type": "Open Patient Data"
+                      },
+                      {
+                          "doc_id": "nYTDB5EB9ZDWEkjLJOUV",
+                          "start": "2024-07-31T07:00:21+07:00",
+                          "end": "2024-07-31T08:04:21+07:00",
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "user_id": "21170",
+                          "user_name": "Fernando RIyo Junedy Simbolon",
+                          "email": "fernando.riyo@jec.co.id",
+                          "ip_address": "172.16.20.120",
+                          "station_id": "1",
+                          "station_name": "Default",
+                          "type": "Login"
+                      }
+                  ]
+              }
+          }

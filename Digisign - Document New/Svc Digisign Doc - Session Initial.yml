@@ -1,0 +1,35 @@
+info:
+  name: Svc Digisign Doc - Session Initial
+  type: http
+  seq: 9
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/digisigns/sessioninitial"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"company_id\": \"2da6a1bd-ba62-43ec-91f8-4085d5d6d498\",\r
+
+      \    \"system_id\": \"RS-JEC\",\r
+
+      \    \"email\": \"mraihann0@gmail.com\",\r
+
+      \    \"is_send_email\": true,\r
+
+      \    \"is_send_sms\": false,\r
+
+      \    \"is_send_whatsapp\": false\r
+
+      }"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

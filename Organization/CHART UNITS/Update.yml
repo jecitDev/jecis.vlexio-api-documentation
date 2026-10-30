@@ -1,0 +1,152 @@
+info:
+  name: Update
+  type: http
+  seq: 2
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/org-charts/:id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  params:
+    - name: id
+      value: f52fd70b-4cc2-40b1-b712-28ed0f3ca534
+      type: path
+  body:
+    type: json
+    data: "{\r\n    \"business_unit_id\": \"607fef10-21b9-4f3c-acb8-eba67c5ecd4a\",\r\n    \"name\": \"Director of Vacant\",\r\n    \"abbreviation\": \"Divac\",\r\n    \"level_id\": \"5fdc7310-5e19-426d-afd1-65d7ad226b4d\",\r\n    \"parent_id\": \"2db51d0f-a438-4d51-ac56-ab36c1610abe\",\r\n    \"description\": \"\",\r\n    \"sort_order\": 2,\r\n    \"is_profit_center\": false,\r\n    \"pic\": \"302303\",\r\n    \"position\": \"\"\r\n}"
+  auth:
+    type: bearer
+    token: "{{xtoken}}"
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/org-charts/:id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      params:
+        - name: id
+          value: aaf0d2e2-b6f7-4744-b1d5-a150e194a8f4
+          type: path
+      body:
+        type: json
+        data: "{\r\n    \"business_unit_id\": \"607fef10-21b9-4f3c-acb8-eba67c5ecd4a\",\r\n    \"name\": \"Director of Operation\",\r\n    \"abbreviation\": \"Dirop\",\r\n    \"level_id\": \"5fdc7310-5e19-426d-afd1-65d7ad226b4d\",\r\n    \"parent_id\": \"2db51d0f-a438-4d51-ac56-ab36c1610abe\",\r\n    \"description\": \"\",\r\n    \"sort_order\": 1,\r\n    \"is_profit_center\": false,\r\n    \"pic\": \"302303\",\r\n    \"position\": \"\"\r\n}"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 21 Oct 2025 09:14:48 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "190"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "id": "aaf0d2e2-b6f7-4744-b1d5-a150e194a8f4",
+                  "business_unit_id": "607fef10-21b9-4f3c-acb8-eba67c5ecd4a",
+                  "updated_at": "2025-10-21T16:14:49+07:00",
+                  "user_update": "ferdinand"
+              }
+          }
+  - name: Not Found
+    request:
+      url: "{{BASE_URL}}/v1/org-charts/:id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      params:
+        - name: id
+          value: 85367399-f601-41c0-834c-6c29d9e69db8
+          type: path
+      body:
+        type: json
+        data: "{\r\n    \"business_unit_id\": \"607fef10-21b9-4f3c-acb8-eba67c5ecd4a\",\r\n    \"name\": \"Director of Operation\",\r\n    \"abbreviation\": \"Dirop\",\r\n    \"level_id\": \"5fdc7310-5e19-426d-afd1-65d7ad226b4d\",\r\n    \"parent_id\": \"2db51d0f-a438-4d51-ac56-ab36c1610abe\",\r\n    \"description\": \"\",\r\n    \"sort_order\": 1,\r\n    \"is_profit_center\": false,\r\n    \"pic\": \"302303\",\r\n    \"position\": \"\"\r\n}"
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Date
+          value: Tue, 21 Oct 2025 09:08:25 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "55"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "organization_chart.not_found",
+              "status": 404
+          }

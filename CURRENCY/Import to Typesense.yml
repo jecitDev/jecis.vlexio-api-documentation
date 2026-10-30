@@ -1,0 +1,69 @@
+info:
+  name: Import to Typesense
+  type: http
+  seq: 8
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/currencies/sync_to_typesense"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Import to Typesense
+    request:
+      url: "{{BASE_URL}}/currencies/sync_to_typesense"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 25 Sep 2025 09:48:33 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "31"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "total": 2
+              }
+          }

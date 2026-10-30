@@ -1,0 +1,121 @@
+info:
+  name: Reactivate
+  type: http
+  seq: 6
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/admedika/terminals/:id/reactivate"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  params:
+    - name: id
+      value: 5c50f0a5-c876-4041-af6a-5f31c2bbb26f
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"code\": \"\",\r
+
+      \    \"name\": \"\",\r
+
+      \    \"customer_id\": \"\",\r
+
+      \    \"security_word_enc\": \"\",\r
+
+      \    \"default_request_id\": \"\",\r
+
+      \    \"environment\": \"\",\r
+
+      \    \"is_active\": true\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Reactivate
+    request:
+      url: "{{BASE_URL}}/v1/admedika/terminals/:id/reactivate"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      params:
+        - name: id
+          value: 5c50f0a5-c876-4041-af6a-5f31c2bbb26f
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"code\": \"\",\r
+
+          \    \"name\": \"\",\r
+
+          \    \"customer_id\": \"\",\r
+
+          \    \"security_word_enc\": \"\",\r
+
+          \    \"default_request_id\": \"\",\r
+
+          \    \"environment\": \"\",\r
+
+          \    \"is_active\": true\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Fri, 23 Oct 2026 07:31:52 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "131"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+            "code": 200,
+            "data": {
+              "id": "5c50f0a5-c876-4041-af6a-5f31c2bbb26f",
+              "updated_at": "2026-10-23T14:31:52+07:00",
+              "user_update": "ferdinan"
+            }
+          }

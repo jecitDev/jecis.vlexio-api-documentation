@@ -1,0 +1,32 @@
+info:
+  name: Delete Rencana Kontrol
+  type: http
+  seq: 6
+
+http:
+  method: DELETE
+  url: "{{BASE_URL}}/v1/bpjs/rencana-kontrol/:no_surat_kontrol"
+  headers:
+    - name: x-token
+      value: ""
+  params:
+    - name: no_surat_kontrol
+      value: ""
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"business_unit_id\": \"\",\r
+
+      \    \"user\": \"\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

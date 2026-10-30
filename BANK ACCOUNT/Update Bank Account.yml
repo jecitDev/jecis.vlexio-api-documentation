@@ -1,0 +1,155 @@
+info:
+  name: Update Bank Account
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/bankaccount/0001/53aad077-9fb1-4f08-85f3-af9fd9a36517"
+  headers:
+    - name: x-token
+      value: "{{master_xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"no_rek\": \"1234567890\",\r
+
+      \    \"atas_nama_bank\": \"John Doe\",\r
+
+      \    \"bank_id\": 1,\r
+
+      \    \"bank_name\": \"Bank ABC Updated\",\r
+
+      \    \"chart_of_account_id\": 2001,\r
+
+      \    \"subledger_id\": 3001,\r
+
+      \    \"journal_code\": \"JRNL001\",\r
+
+      \    \"currency_code\": \"EMC\",\r
+
+      \    \"is_pajak\": true,\r
+
+      \    \"is_real_bank\": true,\r
+
+      \    \"is_payment_ar_bank\": false,\r
+
+      \    \"healthcare_id\": \"002\",\r
+
+      \    \"is_active\": true,\r
+
+      \    \"user_update\": \"update data\",\r
+
+      \    \"updated_at\": \"2025-04-07T10:30:00+07:00\"\r
+
+      }"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/bankaccount/0001/53aad077-9fb1-4f08-85f3-af9fd9a36517"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{master_xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"no_rek\": \"1234567890\",\r
+
+          \    \"atas_nama_bank\": \"John Doe\",\r
+
+          \    \"bank_id\": 1,\r
+
+          \    \"bank_name\": \"Bank ABC Updated\",\r
+
+          \    \"chart_of_account_id\": 2001,\r
+
+          \    \"subledger_id\": 3001,\r
+
+          \    \"journal_code\": \"JRNL001\",\r
+
+          \    \"currency_code\": \"EMC\",\r
+
+          \    \"is_pajak\": true,\r
+
+          \    \"is_real_bank\": true,\r
+
+          \    \"is_payment_ar_bank\": false,\r
+
+          \    \"healthcare_id\": \"002\",\r
+
+          \    \"is_active\": true,\r
+
+          \    \"user_update\": \"update data\",\r
+
+          \    \"updated_at\": \"2025-04-07T10:30:00+07:00\"\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Wed, 09 Apr 2025 07:41:08 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "351"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "rek_id": "0001",
+                  "no_rek": "1234567890",
+                  "atas_nama_bank": "John Doe",
+                  "bank_id": 1,
+                  "bank_name": "Bank ABC Updated",
+                  "chart_of_account_id": 2001,
+                  "subledger_id": 3001,
+                  "journal_code": "JRNL001",
+                  "currency_code": "EMC",
+                  "is_pajak": true,
+                  "is_real_bank": true,
+                  "healthcare_id": "002",
+                  "user_update": "update data",
+                  "updated_at": "2025-04-07T10:30:00+07:00"
+              }
+          }

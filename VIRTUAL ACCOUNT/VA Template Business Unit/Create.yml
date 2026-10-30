@@ -1,0 +1,109 @@
+info:
+  name: Create
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/va-template-business-units"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"vab_id\": \"1eadbea0-c568-42fd-b43e-5788e5d5434d\",\r
+
+      \    \"business_unit_id\": \"33b109c5-dd64-480c-8100-68fe17deaf3e\",\r
+
+      \    \"vac_id\": \"0b68981c-ea64-46ab-898e-023081169819\",\r
+
+      \    \"va_prefix\": \"888123\",\r
+
+      \    \"is_active\": true\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Create
+    request:
+      url: "{{BASE_URL}}/v1/va-template-business-units"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"vab_id\": \"1eadbea0-c568-42fd-b43e-5788e5d5434d\",\r
+
+          \    \"business_unit_id\": \"33b109c5-dd64-480c-8100-68fe17deaf3e\",\r
+
+          \    \"vac_id\": \"0b68981c-ea64-46ab-898e-023081169819\",\r
+
+          \    \"va_prefix\": \"888123\",\r
+
+          \    \"is_active\": true\r
+
+          }"
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: date
+          value: Thu, 08 Oct 2026 07:56:55 GMT
+        - name: content-type
+          value: application/json
+        - name: content-length
+          value: "279"
+        - name: x-xss-protection
+          value: "0"
+        - name: x-content-type-options
+          value: nosniff
+        - name: x-frame-options
+          value: SAMEORIGIN
+        - name: cross-origin-embedder-policy
+          value: require-corp
+        - name: cross-origin-opener-policy
+          value: same-origin
+        - name: cross-origin-resource-policy
+          value: same-origin
+        - name: origin-agent-cluster
+          value: ?1
+        - name: referrer-policy
+          value: no-referrer
+        - name: x-dns-prefetch-control
+          value: off
+        - name: x-download-options
+          value: noopen
+        - name: x-permitted-cross-domain-policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+            "code": 201,
+            "data": {
+              "vab_id": "1eadbea0-c568-42fd-b43e-5788e5d5434d",
+              "business_unit_id": "33b109c5-dd64-480c-8100-68fe17deaf3e",
+              "vac_id": "0b68981c-ea64-46ab-898e-023081169819",
+              "va_prefix": "888123",
+              "is_active": true,
+              "created_at": "2026-10-08T14:56:56+07:00",
+              "user_create": "ferdinan"
+            }
+          }

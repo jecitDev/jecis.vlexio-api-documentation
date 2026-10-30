@@ -1,0 +1,172 @@
+info:
+  name: Svc - Update
+  type: http
+  seq: 5
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/standardreferences/:id/:company_id/"
+  headers:
+    - name: x-token
+      value: "{{XTOKEN}}"
+  params:
+    - name: id
+      value: EmailStatus
+      type: path
+    - name: company_id
+      value: "1"
+      type: path
+  body:
+    type: json
+    data: "{\r\n    \"standard_reference_id\": \"EmailStatus\",\r\n    \"company_id\": \"1\",\r\n    \"business_unit_id\": \"1,2\",\r\n    \"standard_reference_name\": \"Email Status\",\r\n    \"is_active\": false,\r\n    \"is_used_by_system\": true,\r\n    \"user_update\": \"Admin2\",\r\n    \"updated_at\": \"2024-04-04T23:00:00+07:00\",\r\n    \"standard_reference_items\": [\r\n        {\r\n            \"standard_reference_id\": \"EmailStatus\",\r\n            \"company_id\": \"1\",\r\n            \"business_unit_id\": \"1,2\",\r\n            \"item_id\": \"0\",\r\n            \"coa_id\": -99,\r\n            \"subledger_id\": -99,\r\n            \"reference_id\": \"\",\r\n            \"reference_id2\": \"\",\r\n            \"item_name\": \"NOT PROCESSED\",\r\n            \"note\": \"Waiting for process email.\",\r\n            \"is_active\": true,\r\n            \"is_used_by_system\": true,\r\n            \"user_update\": \"Admin3\",\r\n            \"updated_at\": \"2024-04-03T12:00:00+07:00\"\r\n        },\r\n        {\r\n            \"standard_reference_id\": \"EmailStatus\",\r\n            \"company_id\": \"1\",\r\n              \"business_unit_id\": \"1,2\",\r\n            \"item_id\": \"1\",\r\n            \"coa_id\": -99,\r\n            \"subledger_id\": -99,\r\n            \"reference_id\": \"\",\r\n            \"reference_id2\": \"\",\r\n            \"item_name\": \"SENT\",\r\n            \"note\": \"Email already sent by email server.\",\r\n            \"is_active\": true,\r\n            \"is_used_by_system\": true,\r\n            \"user_update\": \"Admin3\",\r\n            \"updated_at\": \"2024-04-03T12:00:00+07:00\"\r\n        },\r\n        {\r\n            \"standard_reference_id\": \"EmailStatus\",\r\n            \"company_id\": \"1\",\r\n            \"business_unit_id\": \"1,2\",\r\n            \"item_id\": \"2\",\r\n            \"coa_id\": -99,\r\n            \"subledger_id\": -99,\r\n            \"reference_id\": \"\",\r\n            \"reference_id2\": \"\",\r\n            \"item_name\": \"DELIVERED\",\r\n            \"note\": \"Email has been delivered to recipient.\",\r\n            \"is_active\": true,\r\n            \"is_used_by_system\": true,\r\n            \"user_update\": \"Admin3\",\r\n            \"updated_at\": \"2024-04-03T05:00:00+07:00\"\r\n        },\r\n        {\r\n            \"standard_reference_id\": \"EmailStatus\",\r\n            \"company_id\": \"1\",\r\n            \"business_unit_id\": \"1,2\",\r\n            \"item_id\": \"3\",\r\n            \"coa_id\": -99,\r\n            \"subledger_id\": -99,\r\n            \"reference_id\": \"\",\r\n            \"reference_id2\": \"\",\r\n            \"item_name\": \"READ\",\r\n            \"note\": \"Email has been read by the recipient.\",\r\n            \"is_active\": true,\r\n            \"is_used_by_system\": true,\r\n            \"user_update\": \"Admin1\",\r\n            \"updated_at\": \"2024-04-03T05:00:00+07:00\"\r\n        }        \r\n    ]    \r\n}"
+  auth:
+    type: bearer
+    token: "{{xtoken}}"
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: "Svc - Update #1-240404"
+    request:
+      url: "{{BASE_URL}}/v1/standardreferences/:id/:company_id/"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{XTOKEN}}"
+      params:
+        - name: id
+          value: EmailPriority
+          type: path
+        - name: company_id
+          value: "1"
+          type: path
+      body:
+        type: json
+        data: "{\r\n    \"standard_reference_id\": \"EmailPriority\",\r\n    \"company_id\": \"1\",\r\n    \"business_unit_id\": \"1,2\",\r\n    \"standard_reference_name\": \"Email Priority\",\r\n    \"is_active\": false,\r\n    \"is_used_by_system\": true,\r\n    \"user_update\": \"Admin2\",\r\n    \"updated_at\": \"2024-04-04T21:00:00+07:00\"\r\n}"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 04 Apr 2024 03:37:14 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "316"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "standard_reference_id": "EmailPriority",
+                  "company_id": "1",
+                  "business_unit_id": "1,2",
+                  "standard_reference_name": "Email Priority",
+                  "is_active": false,
+                  "is_used_by_system": true,
+                  "user_create": "Admin",
+                  "created_at": "2024-04-04T05:00:00+07:00",
+                  "user_update": "Admin2",
+                  "updated_at": "2024-04-04T21:00:00+07:00"
+              }
+          }
+  - name: "Svc - Update #1-240404 Bulk"
+    request:
+      url: "{{BASE_URL}}/v1/standardreferences/:id/:company_id/"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{XTOKEN}}"
+      params:
+        - name: id
+          value: EmailStatus
+          type: path
+        - name: company_id
+          value: "1"
+          type: path
+      body:
+        type: json
+        data: "{\r\n    \"standard_reference_id\": \"EmailStatus\",\r\n    \"company_id\": \"1\",\r\n    \"business_unit_id\": \"1,2\",\r\n    \"standard_reference_name\": \"Email Status\",\r\n    \"is_active\": false,\r\n    \"is_used_by_system\": true,\r\n    \"user_update\": \"Admin2\",\r\n    \"updated_at\": \"2024-04-04T23:00:00+07:00\",\r\n    \"standard_reference_items\": [\r\n        {\r\n            \"standard_reference_id\": \"EmailStatus\",\r\n            \"company_id\": \"1\",\r\n            \"business_unit_id\": \"1,2\",\r\n            \"item_id\": \"0\",\r\n            \"coa_id\": -99,\r\n            \"subledger_id\": -99,\r\n            \"reference_id\": \"\",\r\n            \"reference_id2\": \"\",\r\n            \"item_name\": \"NOT PROCESSED\",\r\n            \"note\": \"Waiting for process email.\",\r\n            \"is_active\": true,\r\n            \"is_used_by_system\": true,\r\n            \"user_update\": \"Admin3\",\r\n            \"updated_at\": \"2024-04-03T12:00:00+07:00\"\r\n        },\r\n        {\r\n            \"standard_reference_id\": \"EmailStatus\",\r\n            \"company_id\": \"1\",\r\n              \"business_unit_id\": \"1,2\",\r\n            \"item_id\": \"1\",\r\n            \"coa_id\": -99,\r\n            \"subledger_id\": -99,\r\n            \"reference_id\": \"\",\r\n            \"reference_id2\": \"\",\r\n            \"item_name\": \"SENT\",\r\n            \"note\": \"Email already sent by email server.\",\r\n            \"is_active\": true,\r\n            \"is_used_by_system\": true,\r\n            \"user_update\": \"Admin3\",\r\n            \"updated_at\": \"2024-04-03T12:00:00+07:00\"\r\n        },\r\n        {\r\n            \"standard_reference_id\": \"EmailStatus\",\r\n            \"company_id\": \"1\",\r\n            \"business_unit_id\": \"1,2\",\r\n            \"item_id\": \"2\",\r\n            \"coa_id\": -99,\r\n            \"subledger_id\": -99,\r\n            \"reference_id\": \"\",\r\n            \"reference_id2\": \"\",\r\n            \"item_name\": \"DELIVERED\",\r\n            \"note\": \"Email has been delivered to recipient.\",\r\n            \"is_active\": true,\r\n            \"is_used_by_system\": true,\r\n            \"user_update\": \"Admin3\",\r\n            \"updated_at\": \"2024-04-03T05:00:00+07:00\"\r\n        },\r\n        {\r\n            \"standard_reference_id\": \"EmailStatus\",\r\n            \"company_id\": \"1\",\r\n            \"business_unit_id\": \"1,2\",\r\n            \"item_id\": \"3\",\r\n            \"coa_id\": -99,\r\n            \"subledger_id\": -99,\r\n            \"reference_id\": \"\",\r\n            \"reference_id2\": \"\",\r\n            \"item_name\": \"READ\",\r\n            \"note\": \"Email has been read by the recipient.\",\r\n            \"is_active\": true,\r\n            \"is_used_by_system\": true,\r\n            \"user_update\": \"Admin1\",\r\n            \"updated_at\": \"2024-04-03T05:00:00+07:00\"\r\n        }        \r\n    ]    \r\n}"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 04 Apr 2024 09:01:48 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "312"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "standard_reference_id": "EmailStatus",
+                  "company_id": "1",
+                  "business_unit_id": "1,2",
+                  "standard_reference_name": "Email Status",
+                  "is_active": false,
+                  "is_used_by_system": true,
+                  "user_create": "Admin",
+                  "created_at": "2024-04-03T05:00:00+07:00",
+                  "user_update": "Admin2",
+                  "updated_at": "2024-04-04T23:00:00+07:00"
+              }
+          }

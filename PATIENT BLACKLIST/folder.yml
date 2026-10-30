@@ -1,0 +1,7 @@
+info:
+  name: PATIENT BLACKLIST
+  type: folder
+  seq: 99
+
+request:
+  auth: inherit

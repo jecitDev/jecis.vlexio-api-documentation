@@ -1,0 +1,104 @@
+info:
+  name: Get By Id
+  type: http
+  seq: 5
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/export-pages/:id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  params:
+    - name: id
+      value: 4a341a7e-795f-4140-b26f-396b126b7dee
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Get By Id
+    request:
+      url: "{{BASE_URL}}/v1/export-pages/:id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      params:
+        - name: id
+          value: 038e9583-e23a-43bc-a2e1-debb00477185
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: date
+          value: Sun, 04 Oct 2026 16:36:53 GMT
+        - name: content-type
+          value: application/json
+        - name: content-length
+          value: "616"
+        - name: x-xss-protection
+          value: "0"
+        - name: x-content-type-options
+          value: nosniff
+        - name: x-frame-options
+          value: SAMEORIGIN
+        - name: cross-origin-embedder-policy
+          value: require-corp
+        - name: cross-origin-opener-policy
+          value: same-origin
+        - name: cross-origin-resource-policy
+          value: same-origin
+        - name: origin-agent-cluster
+          value: ?1
+        - name: referrer-policy
+          value: no-referrer
+        - name: x-dns-prefetch-control
+          value: off
+        - name: x-download-options
+          value: noopen
+        - name: x-permitted-cross-domain-policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+            "code": 200,
+            "data": {
+              "attempts": 0,
+              "checksum_sha256": "",
+              "completed_at": "2026-10-04T23:16:18+07:00",
+              "created_at": "2026-10-04T23:14:27+07:00",
+              "download_count": 3,
+              "error_message": "",
+              "expires_at": "2026-10-11T23:16:18+07:00",
+              "export_type": "AssetList",
+              "file_name": "",
+              "file_path": "www.test-url.com",
+              "file_size_bytes": "0",
+              "filters": {
+                "test": "123"
+              },
+              "format": "",
+              "id": "038e9583-e23a-43bc-a2e1-debb00477185",
+              "last_downloaded_at": "2026-10-04T23:33:12+07:00",
+              "mime_type": "",
+              "requested_at": "",
+              "started_at": "2026-10-04T23:15:18+07:00",
+              "status": "completed",
+              "total_rows": "0",
+              "updated_at": "2026-10-04T23:33:12+07:00",
+              "user_id": "ferdinan"
+            }
+          }

@@ -1,0 +1,44 @@
+info:
+  name: Asset Opname - LIST Outstanding
+  type: http
+  seq: 8
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/AssetOpname/listoutstanding?page=1&page_size=20&sort_by=asset_opname_code&sort_order=asc&keywords=&asset_opname_code=AO-ND-KDY-2026-001&asset_opname_room_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: page_size
+      value: "20"
+      type: query
+    - name: sort_by
+      value: asset_opname_code
+      type: query
+    - name: sort_order
+      value: asc
+      type: query
+    - name: keywords
+      value: ""
+      type: query
+    - name: asset_opname_code
+      value: AO-ND-KDY-2026-001
+      type: query
+    - name: asset_opname_room_id
+      value: ""
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

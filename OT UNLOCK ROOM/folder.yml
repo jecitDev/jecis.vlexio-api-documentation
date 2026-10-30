@@ -1,0 +1,7 @@
+info:
+  name: OT UNLOCK ROOM
+  type: folder
+  seq: 102
+
+request:
+  auth: inherit

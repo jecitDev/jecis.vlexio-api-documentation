@@ -1,0 +1,96 @@
+info:
+  name: Create Task
+  type: http
+  seq: 9
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/clickup/list/:list_id/task"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: list_id
+      value: "192896881"
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \  \"name\": \"New Task Name\",\r
+
+      \  \"description\": \"New Task Description\",\r
+
+      \  \"tags\": [\r
+
+      \    \"API TESTING\"\r
+
+      \  ],\r
+
+      \  \"status\": \"Open\",\r
+
+      \  \"priority\": 3,\r
+
+      \  \"due_date\": 1508369194377,\r
+
+      \  \"due_date_time\": false,\r
+
+      \  \"time_estimate\": 8640000,\r
+
+      \  \"start_date\": 1567780450202,\r
+
+      \  \"start_date_time\": false,\r
+
+      \  \"notify_all\": true,\r
+
+      \  \"parent\": null,\r
+
+      \  \"links_to\": null,\r
+
+      \  \"check_required_custom_fields\": true,\r
+
+      \  \"custom_fields\": [\r
+
+      \    {\r
+
+      \      \"id\": \"0c1ce4a7-245c-47c9-848c-dfbaea7c3abb\",\r
+
+      \      \"value\": \"Arifianto\"\r
+
+      \    },\r
+
+      \    {\r
+
+      \      \"id\": \"7c9688a1-6c6a-4dc0-8557-5a10478c60f5\",\r
+
+      \      \"value\": \"19c804aa-1151-4eca-a26e-b29c928b81dc\"\r
+
+      \    },\r
+
+      \    {\r
+
+      \        \"id\":\"c41f3452-8aa1-4b23-b724-c033364e7567\",\r
+
+      \        \"value\":1565993299379\r
+
+      \    },\r
+
+      \    {\r
+
+      \        \"id\":\"97a33614-fb78-40df-8e4c-14d92c1acff4\",\r
+
+      \        \"value\":\"cf49b8dc-9144-4119-aa2f-5c19625acfd5\"\r
+
+      \    }\r
+
+      \  ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

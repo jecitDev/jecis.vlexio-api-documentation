@@ -1,0 +1,226 @@
+info:
+  name: Asset Category - Add
+  type: http
+  seq: 7
+
+http:
+  method: POST
+  url: http://127.0.0.1:8080/v1/AssetCategory/
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"object_depreciation_method\": [\r
+
+      \        {\r
+
+      \            \"finance_book\": \"FB1\",\r
+
+      \            \"sr_depreciation_method\": \"STRAIGHT_LINE\",\r
+
+      \            \"depreciation_use_full_life\": 1,\r
+
+      \            \"depreciation_frequency_month\": 12\r
+
+      \        } \r
+
+      \    ],\r
+
+      \    \"object_account\": [\r
+
+      \        {\r
+
+      \            \"coa_fixed_account\": \"1200\",\r
+
+      \            \"coa_accumulated_expense\": \"1290\",\r
+
+      \            \"coa_depreciation_expense\": \"1290\",\r
+
+      \            \"coa_capital_work_in_progress\": \"1300\"\r
+
+      \        }\r
+
+      \    ],\r
+
+      \    \"business_unit_id\": \"f64e10b4-0cbf-4fee-ac09-1a4fa199696c\",\r
+
+      \    \"category_level\": 2,\r
+
+      \    \"category_name\": \"Company Car 14\",\r
+
+      \    \"category_parent_id\": 100,\r
+
+      \    \"category_description\": \"Vehicles JEC 123\",\r
+
+      \    \"user_create\": \"rickylai\",\r
+
+      \    \"created_at\": \"2025-09-13T13:58:23+07:00\",\r
+
+      \    \"user_update\": \"\",\r
+
+      \    \"updated_at\": \"\",\r
+
+      \    \"is_active\": true,\r
+
+      \    \"is_enable_capital_work\": false,\r
+
+      \    \"is_non_depreciable_category\": false\r
+
+      }\r
+
+      \r\n"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Asset Category - Add API
+    request:
+      url: http://127.0.0.1:8080/v1/AssetCategory/
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"object_depreciation_method\": [\r
+
+          \        {\r
+
+          \            \"finance_book\": \"FB1\",\r
+
+          \            \"sr_depreciation_method\": \"STRAIGHT_LINE\",\r
+
+          \            \"depreciation_use_full_life\": 1,\r
+
+          \            \"depreciation_frequency_month\": 12\r
+
+          \        } \r
+
+          \    ],\r
+
+          \    \"object_account\": [\r
+
+          \        {\r
+
+          \            \"coa_fixed_account\": \"1200\",\r
+
+          \            \"coa_accumulated_expense\": \"1290\",\r
+
+          \            \"coa_depreciation_expense\": \"1290\",\r
+
+          \            \"coa_capital_work_in_progress\": \"1300\"\r
+
+          \        }\r
+
+          \    ],\r
+
+          \    \"business_unit_id\": \"f64e10b4-0cbf-4fee-ac09-1a4fa199696c\",\r
+
+          \    \"category_level\": 2,\r
+
+          \    \"category_name\": \"Company Car 14\",\r
+
+          \    \"category_parent_id\": 100,\r
+
+          \    \"category_description\": \"Vehicles JEC 123\",\r
+
+          \    \"user_create\": \"rickylai\",\r
+
+          \    \"created_at\": \"2025-09-13T13:58:23+07:00\",\r
+
+          \    \"user_update\": \"\",\r
+
+          \    \"updated_at\": \"\",\r
+
+          \    \"is_active\": true,\r
+
+          \    \"is_enable_capital_work\": false,\r
+
+          \    \"is_non_depreciable_category\": false\r
+
+          }\r
+
+          \r\n"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Wed, 17 Dec 2025 04:59:59 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "707"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "business_unit_id": "f64e10b4-0cbf-4fee-ac09-1a4fa199696c",
+                  "category_id": 692,
+                  "category_code": "03.07.000",
+                  "category_level": 2,
+                  "category_name": "Company Car 14",
+                  "category_parent_id": 100,
+                  "category_description": "Vehicles JEC 123",
+                  "is_active": true,
+                  "is_enable_capital_work": false,
+                  "is_non_depreciable_category": false,
+                  "object_depreciation_method": [
+                      {
+                          "finance_book": "FB1",
+                          "sr_depreciation_method": "STRAIGHT_LINE",
+                          "depreciation_use_full_life": 1,
+                          "depreciation_frequency_month": 12
+                      }
+                  ],
+                  "object_account": [
+                      {
+                          "coa_fixed_account": "1200",
+                          "coa_accumulated_expense": "1290",
+                          "coa_depreciation_expense": "1290",
+                          "coa_capital_work_in_progress": "1300"
+                      }
+                  ],
+                  "user_create": "rickylai",
+                  "created_at": "2025-12-17T11:59:59+07:00"
+              }
+          }

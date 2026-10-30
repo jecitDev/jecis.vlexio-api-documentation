@@ -1,0 +1,101 @@
+info:
+  name: Create Session
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/tariff-requests/session/create"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"mode\": \"create\", // create or edit\r
+
+      \    \"business_unit_id\": \"33b109c5-dd64-480c-8100-68fe17deaf3e\",\r
+
+      \    \"rate_book_id\": \"4cc7b32e-8446-4dae-87c5-f14c7bf5f54e\"\r
+
+      \    // required on edit\r
+
+      \    // \"tariff_request_id\": \"e64fd960-05e8-4107-91a9-b5b0f2c7acd6\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Create Session
+    request:
+      url: "{{BASE_URL}}/v1/tariff-requests/session/create"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"mode\": \"create\", // create or edit\r
+
+          \    \"business_unit_id\": \"33b109c5-dd64-480c-8100-68fe17deaf3e\",\r
+
+          \    // required on create\r
+
+          \    \"rate_book_id\": \"515be3a5-4609-4fa8-be83-f18b6d880c41\"\r
+
+          \    // required on edit\r
+
+          \    // \"tariff_request_id\": \"\"\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: date
+          value: Wed, 30 Sep 2026 06:41:45 GMT
+        - name: content-type
+          value: application/json
+        - name: content-length
+          value: "73"
+        - name: x-xss-protection
+          value: "0"
+        - name: x-content-type-options
+          value: nosniff
+        - name: x-frame-options
+          value: SAMEORIGIN
+        - name: cross-origin-embedder-policy
+          value: require-corp
+        - name: cross-origin-opener-policy
+          value: same-origin
+        - name: cross-origin-resource-policy
+          value: same-origin
+        - name: origin-agent-cluster
+          value: ?1
+        - name: referrer-policy
+          value: no-referrer
+        - name: x-dns-prefetch-control
+          value: off
+        - name: x-download-options
+          value: noopen
+        - name: x-permitted-cross-domain-policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+            "code": 200,
+            "data": {
+              "session_id": "8acb05af-49ec-4a25-9139-e240765d34a5"
+            }
+          }

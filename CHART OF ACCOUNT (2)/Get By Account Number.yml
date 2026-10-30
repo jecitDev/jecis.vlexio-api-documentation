@@ -1,0 +1,170 @@
+info:
+  name: Get By Account Number
+  type: http
+  seq: 9
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/coa/account-number/:account_number/:company_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: account_number
+      value: 1.00.00.00.01
+      type: path
+    - name: company_id
+      value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+      type: path
+  body:
+    type: text
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Not Found
+    request:
+      url: "{{BASE_URL}}/v1/coa/account-number/:account_number"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: account_number
+          value: 1.00.00.00.02
+          type: path
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Date
+          value: Thu, 18 Dec 2025 10:12:31 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "46"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "MasterCoa.not_found",
+              "status": 404
+          }
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/coa/account-number/:account_number/:company_id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: account_number
+          value: 1.00.00.00.01
+          type: path
+        - name: company_id
+          value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 22 Dec 2025 07:49:47 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "705"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "account_name": "Test 1 Child",
+                  "account_number": "1.00.00.00.01",
+                  "account_type": "ASSET",
+                  "balance_must_be": "CREDIT",
+                  "business_unit_ids": [
+                      {
+                          "business_unit_name": "JEC @ MENTENG",
+                          "id": "382003f2-2ccb-4dd8-af5b-e39c093f104e"
+                      },
+                      {
+                          "business_unit_name": "JEC @ KEDOYA",
+                          "id": "53aad077-9fb1-4f08-85f3-af9fd9a36517"
+                      }
+                  ],
+                  "coa_level": 1,
+                  "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",
+                  "company_name": "PT. Nitrasanata Dharma",
+                  "created_at": "2025-12-18T11:36:49+07:00",
+                  "description": "test 123",
+                  "id": "b9fd67da-d80a-4f88-8e81-d76ba6712e7c",
+                  "is_active": false,
+                  "is_group": false,
+                  "module_type": "EMPLOYEE",
+                  "parent_id": "",
+                  "updated_at": "2025-12-22T14:43:20+07:00",
+                  "user_create": "ferdinand",
+                  "user_update": "ferdinand"
+              }
+          }

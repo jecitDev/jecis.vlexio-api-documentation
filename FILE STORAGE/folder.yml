@@ -1,0 +1,7 @@
+info:
+  name: FILE STORAGE
+  type: folder
+  seq: 19
+
+request:
+  auth: inherit

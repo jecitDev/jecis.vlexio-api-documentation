@@ -1,0 +1,41 @@
+info:
+  name: Update
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/penerimaUang/:id/:businessunitid"
+  headers:
+    - name: x-token
+      value: "{{finance_xtoken}}"
+  params:
+    - name: id
+      value: "1"
+      type: path
+    - name: businessunitid
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"sentra_name\": \"Dummy Sentra Update\",\r
+
+      \    \"service_unit_id\": \"SU001\",\r
+
+      \    \"is_active\": true,\r
+
+      \    \"user_update\": \"admin\",\r
+
+      \    \"updated_at\": \"2025-04-17T10:58:23+07:00\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

@@ -1,0 +1,128 @@
+info:
+  name: Material Request - GET By ID
+  type: http
+  seq: 3
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/MaterialRequest/get/:business_unit_id?transaction_no=DRE/KDY/2510-00004"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: transaction_no
+      value: DRE/KDY/2510-00004
+      type: query
+    - name: business_unit_id
+      value: f64e10b4-0cbf-4fee-ac09-1a4fa199696c
+      type: path
+  body:
+    type: text
+    data: ""
+  auth:
+    type: bearer
+    token: "{{xtoken}}"
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: paramedic Schedule - GET LIST api
+    request:
+      url: "{{BASE_URL}}/v1/ParamedicSchedule?page=1&page_size=2"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: page_size
+          value: "2"
+          type: query
+      body:
+        type: text
+        data: ""
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Server
+          value: nginx/1.20.1
+        - name: Date
+          value: Thu, 17 Apr 2025 04:51:55 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "764"
+        - name: Connection
+          value: keep-alive
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "page": 1,
+                  "page_size": 2,
+                  "total_items": 3,
+                  "ParamedicSchedules": [
+                      {
+                          "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "id_ps": 6,
+                          "healthcare_id": "002",
+                          "service_unit_id": "SU00001",
+                          "paramedic_id": "D0020",
+                          "period_year": "2025",
+                          "exam_duration": 20,
+                          "notes": "Routine check-up",
+                          "is_void": false,
+                          "user_create": "admin",
+                          "created_at": "2024-03-01T13:24:42+08:00"
+                      },
+                      {
+                          "company_id": "2da6a1bd-ba62-43ec-91f8-4085d5d6d498",
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "id_ps": 7,
+                          "healthcare_id": "002",
+                          "service_unit_id": "SU00001",
+                          "paramedic_id": "D310",
+                          "period_year": "2025",
+                          "exam_duration": 20,
+                          "notes": "Routine check-up",
+                          "is_void": false,
+                          "user_create": "admin",
+                          "created_at": "2024-03-01T13:24:42+08:00"
+                      }
+                  ]
+              }
+          }

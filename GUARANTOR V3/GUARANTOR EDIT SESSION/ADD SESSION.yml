@@ -1,0 +1,93 @@
+info:
+  name: ADD SESSION
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/marketing/guarantor/contract/session"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"contract_id\": \"e5fce88d-8087-4a0f-9416-5cd764f5ffe5\"\r
+
+      }\r\n"
+
+runtime:
+  scripts:
+    - type: after-response
+      code: "var data = res.getBody();\r
+
+        bru.setCollectionVar(\"guarantor_item_rule_session_id\", data.data.session_id);"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/contract/rate-book/session"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"contract_id\": \"cdf9ba26-a461-4a2f-b029-0a6d60b2a5e7\"\r
+
+          }\r\n"
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Date
+          value: Mon, 25 Aug 2025 02:27:05 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "73"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 201,
+              "data": {
+                  "session_id": "e5d49570-df8f-4d9b-86ec-9d0212c6df7e"
+              }
+          }

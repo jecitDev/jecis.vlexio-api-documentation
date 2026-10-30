@@ -1,0 +1,123 @@
+info:
+  name: Search Promo
+  type: http
+  seq: 34
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/promo/search?business_unit_id=53aad077-9fb1-4f08-85f3-af9fd9a36517&max_hits=10&page=1"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: query
+    - name: text
+      value: school
+      type: query
+      disabled: true
+    - name: max_hits
+      value: "10"
+      type: query
+    - name: page
+      value: "1"
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Search Promo
+    request:
+      url: "{{BASE_URL}}/v1/promo/search?business_unit_id=53aad077-9fb1-4f08-85f3-af9fd9a36517&text=school&max_hits=10&page=1"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: query
+        - name: text
+          value: school
+          type: query
+        - name: max_hits
+          value: "10"
+          type: query
+        - name: page
+          value: "1"
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 21 Aug 2025 02:16:03 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "610"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "total": 2,
+                  "page": 1,
+                  "result": [
+                      {
+                          "package_id": "a358f799-e84b-4067-abd8-e784f51ce895",
+                          "business_unit_id": [
+                              "53aad077-9fb1-4f08-85f3-af9fd9a36517"
+                          ],
+                          "package_name": "Back to School Vision Check",
+                          "package_short_name": "BSVC",
+                          "package_start": "2025-08-13T00:00:00+07:00",
+                          "package_end": "2025-08-16T00:00:00+07:00"
+                      },
+                      {
+                          "package_id": "97cf636d-470e-4554-9110-a91760d8ee6c",
+                          "business_unit_id": [
+                              "53aad077-9fb1-4f08-85f3-af9fd9a36517"
+                          ],
+                          "package_name": "Back-to-School Eye Exam Edit",
+                          "package_short_name": "SchoolVisionEdit",
+                          "package_start": "2025-09-01T00:00:00+07:00",
+                          "package_end": "2025-12-31T23:59:59+07:00"
+                      }
+                  ]
+              }
+          }

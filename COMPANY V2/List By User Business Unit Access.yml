@@ -1,0 +1,614 @@
+info:
+  name: List By User Business Unit Access
+  type: http
+  seq: 11
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/companies/me?page=1&page_size=10&sort_by=name&sort_order=desc"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: page_size
+      value: "10"
+      type: query
+    - name: sort_by
+      value: name
+      type: query
+    - name: sort_order
+      value: desc
+      type: query
+    - name: keywords
+      value: rs
+      type: query
+      disabled: true
+    - name: parent_company_id
+      value: 8b7992fc-c5f9-41ad-87be-111ca8f18540
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: List By User Business Unit Access
+    request:
+      url: "{{BASE_URL}}/v1/companies/me?page=1&page_size=10&sort_by=name&sort_order=desc"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: page_size
+          value: "10"
+          type: query
+        - name: sort_by
+          value: name
+          type: query
+        - name: sort_order
+          value: desc
+          type: query
+        - name: keywords
+          value: rs
+          type: query
+          disabled: true
+        - name: parent_company_id
+          value: 8b7992fc-c5f9-41ad-87be-111ca8f18540
+          type: query
+          disabled: true
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: date
+          value: Thu, 08 Oct 2026 03:00:14 GMT
+        - name: content-type
+          value: application/json
+        - name: content-length
+          value: "10151"
+        - name: x-xss-protection
+          value: "0"
+        - name: x-content-type-options
+          value: nosniff
+        - name: x-frame-options
+          value: SAMEORIGIN
+        - name: cross-origin-embedder-policy
+          value: require-corp
+        - name: cross-origin-opener-policy
+          value: same-origin
+        - name: cross-origin-resource-policy
+          value: same-origin
+        - name: origin-agent-cluster
+          value: ?1
+        - name: referrer-policy
+          value: no-referrer
+        - name: x-dns-prefetch-control
+          value: off
+        - name: x-download-options
+          value: noopen
+        - name: x-permitted-cross-domain-policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+            "code": 200,
+            "data": {
+              "companies": [
+                {
+                  "abbreviation": "ND",
+                  "addresses": {
+                    "address_line1": "Jl. Terusan Arjuna Utara No. 1 Kedoya Jakarta Barat 11520",
+                    "address_line2": "",
+                    "city": "",
+                    "county": "",
+                    "district": "",
+                    "lat": "",
+                    "long": "",
+                    "postal_code": ""
+                  },
+                  "base_currency": "IDR",
+                  "contact": {
+                    "email": "care@jec.co.id",
+                    "fax": "",
+                    "phone": "021023021",
+                    "website": ""
+                  },
+                  "country": "ID",
+                  "created_at": "2025-01-17T08:00:00+07:00",
+                  "date_of_established": "",
+                  "default_letterhead_id": "",
+                  "description": "",
+                  "id": "71b53dd1-2802-4527-8b5c-d54173392222",
+                  "logo_url": "",
+                  "m_domain_id": "f45b568b-97a1-4f9c-8d7d-174434c27525",
+                  "m_domain_name": "Healthcare",
+                  "m_status_id": "3f753fc4-6ac5-4985-a7f8-0c3d2c18b91d",
+                  "m_status_name": "Active",
+                  "m_timezone_id": "4106ab0b-5e90-47f9-98a6-e42673a4a616",
+                  "m_timezone_name": "Asia/Jakarta",
+                  "name": "PT. Nitrasanata Dharma",
+                  "parent_company_id": "",
+                  "product_ids": [
+                    {
+                      "product_id": "ee197431-276d-453d-857c-412f347dae19"
+                    },
+                    {
+                      "product_id": "c59a1873-7e7d-44b6-a06c-4f093f59f687"
+                    },
+                    {
+                      "product_id": "a080ba43-11d1-42a2-b13f-794540d9ca4d"
+                    },
+                    {
+                      "product_id": "ec8be9c7-c606-436a-930a-5545bb8e8025"
+                    },
+                    {
+                      "product_id": "e80800f9-cb6d-40c4-ad9d-0343b105dfe2"
+                    }
+                  ],
+                  "updated_at": "",
+                  "user_create": "21170",
+                  "user_update": ""
+                },
+                {
+                  "abbreviation": "OMI",
+                  "addresses": {
+                    "address_line1": "",
+                    "address_line2": "",
+                    "city": "",
+                    "county": "",
+                    "district": "",
+                    "lat": "",
+                    "long": "",
+                    "postal_code": ""
+                  },
+                  "base_currency": "IDR",
+                  "contact": {
+                    "email": "care@jec.co.id",
+                    "fax": "",
+                    "phone": "",
+                    "website": ""
+                  },
+                  "country": "ID",
+                  "created_at": "2025-01-17T08:00:00+07:00",
+                  "date_of_established": "",
+                  "default_letterhead_id": "",
+                  "description": "",
+                  "id": "0fa13644-0e4e-4b38-8af3-9f4c52d23a0d",
+                  "logo_url": "",
+                  "m_domain_id": "f45b568b-97a1-4f9c-8d7d-174434c27525",
+                  "m_domain_name": "Healthcare",
+                  "m_status_id": "3f753fc4-6ac5-4985-a7f8-0c3d2c18b91d",
+                  "m_status_name": "Active",
+                  "m_timezone_id": "4106ab0b-5e90-47f9-98a6-e42673a4a616",
+                  "m_timezone_name": "Asia/Jakarta",
+                  "name": "PT Orbita Medika Indonesia",
+                  "parent_company_id": "b281ee15-0530-4a7f-9d59-06bc54bb776d",
+                  "product_ids": [
+                    {
+                      "product_id": "ee197431-276d-453d-857c-412f347dae19"
+                    },
+                    {
+                      "product_id": "c59a1873-7e7d-44b6-a06c-4f093f59f687"
+                    },
+                    {
+                      "product_id": "a080ba43-11d1-42a2-b13f-794540d9ca4d"
+                    },
+                    {
+                      "product_id": "ec8be9c7-c606-436a-930a-5545bb8e8025"
+                    },
+                    {
+                      "product_id": "e80800f9-cb6d-40c4-ad9d-0343b105dfe2"
+                    }
+                  ],
+                  "updated_at": "",
+                  "user_create": "21170",
+                  "user_update": ""
+                },
+                {
+                  "abbreviation": "ORBITA",
+                  "addresses": {
+                    "address_line1": "",
+                    "address_line2": "",
+                    "city": "",
+                    "county": "",
+                    "district": "",
+                    "lat": "",
+                    "long": "",
+                    "postal_code": ""
+                  },
+                  "base_currency": "IDR",
+                  "contact": {
+                    "email": "care-orbita@jec.co.id",
+                    "fax": "",
+                    "phone": "",
+                    "website": ""
+                  },
+                  "country": "ID",
+                  "created_at": "2024-04-29T10:00:00+07:00",
+                  "date_of_established": "",
+                  "default_letterhead_id": "",
+                  "description": "",
+                  "id": "b281ee15-0530-4a7f-9d59-06bc54bb776d",
+                  "logo_url": "",
+                  "m_domain_id": "f45b568b-97a1-4f9c-8d7d-174434c27525",
+                  "m_domain_name": "Healthcare",
+                  "m_status_id": "3f753fc4-6ac5-4985-a7f8-0c3d2c18b91d",
+                  "m_status_name": "Active",
+                  "m_timezone_id": "4106ab0b-5e90-47f9-98a6-e42673a4a616",
+                  "m_timezone_name": "Asia/Jakarta",
+                  "name": "PT Orbita",
+                  "parent_company_id": "8b7992fc-c5f9-41ad-87be-111ca8f18540",
+                  "product_ids": [
+                    {
+                      "product_id": "ee197431-276d-453d-857c-412f347dae19"
+                    },
+                    {
+                      "product_id": "c59a1873-7e7d-44b6-a06c-4f093f59f687"
+                    },
+                    {
+                      "product_id": "a080ba43-11d1-42a2-b13f-794540d9ca4d"
+                    },
+                    {
+                      "product_id": "ec8be9c7-c606-436a-930a-5545bb8e8025"
+                    },
+                    {
+                      "product_id": "e80800f9-cb6d-40c4-ad9d-0343b105dfe2"
+                    }
+                  ],
+                  "updated_at": "",
+                  "user_create": "nando",
+                  "user_update": ""
+                },
+                {
+                  "abbreviation": "MA",
+                  "addresses": {
+                    "address_line1": "",
+                    "address_line2": "",
+                    "city": "",
+                    "county": "",
+                    "district": "",
+                    "lat": "",
+                    "long": "",
+                    "postal_code": ""
+                  },
+                  "base_currency": "IDR",
+                  "contact": {
+                    "email": "care@jec.co.id",
+                    "fax": "",
+                    "phone": "",
+                    "website": ""
+                  },
+                  "country": "ID",
+                  "created_at": "2025-01-17T08:00:00+07:00",
+                  "date_of_established": "",
+                  "default_letterhead_id": "",
+                  "description": "",
+                  "id": "7405fcb1-c6ef-4d66-8717-dcb5d388240b",
+                  "logo_url": "",
+                  "m_domain_id": "f45b568b-97a1-4f9c-8d7d-174434c27525",
+                  "m_domain_name": "Healthcare",
+                  "m_status_id": "3f753fc4-6ac5-4985-a7f8-0c3d2c18b91d",
+                  "m_status_name": "Active",
+                  "m_timezone_id": "4106ab0b-5e90-47f9-98a6-e42673a4a616",
+                  "m_timezone_name": "Asia/Jakarta",
+                  "name": "PT Mitra Anwari",
+                  "parent_company_id": "8b7992fc-c5f9-41ad-87be-111ca8f18540",
+                  "product_ids": [
+                    {
+                      "product_id": "ee197431-276d-453d-857c-412f347dae19"
+                    },
+                    {
+                      "product_id": "c59a1873-7e7d-44b6-a06c-4f093f59f687"
+                    },
+                    {
+                      "product_id": "a080ba43-11d1-42a2-b13f-794540d9ca4d"
+                    },
+                    {
+                      "product_id": "ec8be9c7-c606-436a-930a-5545bb8e8025"
+                    },
+                    {
+                      "product_id": "e80800f9-cb6d-40c4-ad9d-0343b105dfe2"
+                    }
+                  ],
+                  "updated_at": "",
+                  "user_create": "21170",
+                  "user_update": ""
+                },
+                {
+                  "abbreviation": "JMP",
+                  "addresses": {
+                    "address_line1": "",
+                    "address_line2": "",
+                    "city": "",
+                    "county": "",
+                    "district": "",
+                    "lat": "",
+                    "long": "",
+                    "postal_code": ""
+                  },
+                  "base_currency": "IDR",
+                  "contact": {
+                    "email": "care-pms@jec.co.id",
+                    "fax": "",
+                    "phone": "",
+                    "website": ""
+                  },
+                  "country": "ID",
+                  "created_at": "2024-04-29T10:00:00+07:00",
+                  "date_of_established": "",
+                  "default_letterhead_id": "",
+                  "description": "",
+                  "id": "f494db98-22df-4267-9a6b-75cabc5bc203",
+                  "logo_url": "",
+                  "m_domain_id": "f45b568b-97a1-4f9c-8d7d-174434c27525",
+                  "m_domain_name": "Healthcare",
+                  "m_status_id": "3f753fc4-6ac5-4985-a7f8-0c3d2c18b91d",
+                  "m_status_name": "Active",
+                  "m_timezone_id": "4106ab0b-5e90-47f9-98a6-e42673a4a616",
+                  "m_timezone_name": "Asia/Jakarta",
+                  "name": "PT JEC Medika Primasana",
+                  "parent_company_id": "8b7992fc-c5f9-41ad-87be-111ca8f18540",
+                  "product_ids": [
+                    {
+                      "product_id": "ee197431-276d-453d-857c-412f347dae19"
+                    },
+                    {
+                      "product_id": "c59a1873-7e7d-44b6-a06c-4f093f59f687"
+                    },
+                    {
+                      "product_id": "a080ba43-11d1-42a2-b13f-794540d9ca4d"
+                    },
+                    {
+                      "product_id": "ec8be9c7-c606-436a-930a-5545bb8e8025"
+                    },
+                    {
+                      "product_id": "e80800f9-cb6d-40c4-ad9d-0343b105dfe2"
+                    }
+                  ],
+                  "updated_at": "",
+                  "user_create": "nando",
+                  "user_update": ""
+                },
+                {
+                  "abbreviation": "JMI",
+                  "addresses": {
+                    "address_line1": "",
+                    "address_line2": "",
+                    "city": "",
+                    "county": "",
+                    "district": "",
+                    "lat": "",
+                    "long": "",
+                    "postal_code": ""
+                  },
+                  "base_currency": "IDR",
+                  "contact": {
+                    "email": "care@jec.co.id",
+                    "fax": "",
+                    "phone": "",
+                    "website": ""
+                  },
+                  "country": "ID",
+                  "created_at": "2025-01-17T08:00:00+07:00",
+                  "date_of_established": "",
+                  "default_letterhead_id": "",
+                  "description": "",
+                  "id": "8b7992fc-c5f9-41ad-87be-111ca8f18540",
+                  "logo_url": "",
+                  "m_domain_id": "f45b568b-97a1-4f9c-8d7d-174434c27525",
+                  "m_domain_name": "Healthcare",
+                  "m_status_id": "3f753fc4-6ac5-4985-a7f8-0c3d2c18b91d",
+                  "m_status_name": "Active",
+                  "m_timezone_id": "4106ab0b-5e90-47f9-98a6-e42673a4a616",
+                  "m_timezone_name": "Asia/Jakarta",
+                  "name": "PT JEC Medika Indonesia",
+                  "parent_company_id": "71b53dd1-2802-4527-8b5c-d54173392222",
+                  "product_ids": [
+                    {
+                      "product_id": "ee197431-276d-453d-857c-412f347dae19"
+                    },
+                    {
+                      "product_id": "c59a1873-7e7d-44b6-a06c-4f093f59f687"
+                    },
+                    {
+                      "product_id": "a080ba43-11d1-42a2-b13f-794540d9ca4d"
+                    },
+                    {
+                      "product_id": "ec8be9c7-c606-436a-930a-5545bb8e8025"
+                    },
+                    {
+                      "product_id": "e80800f9-cb6d-40c4-ad9d-0343b105dfe2"
+                    }
+                  ],
+                  "updated_at": "",
+                  "user_create": "21170",
+                  "user_update": ""
+                },
+                {
+                  "abbreviation": "JCS",
+                  "addresses": {
+                    "address_line1": "",
+                    "address_line2": "",
+                    "city": "",
+                    "county": "",
+                    "district": "",
+                    "lat": "",
+                    "long": "",
+                    "postal_code": ""
+                  },
+                  "base_currency": "IDR",
+                  "contact": {
+                    "email": "care@jec.co.id",
+                    "fax": "",
+                    "phone": "",
+                    "website": ""
+                  },
+                  "country": "ID",
+                  "created_at": "2025-01-17T08:00:00+07:00",
+                  "date_of_established": "",
+                  "default_letterhead_id": "",
+                  "description": "",
+                  "id": "137dc0d2-ab42-4091-9690-3f3ea25330f3",
+                  "logo_url": "",
+                  "m_domain_id": "f45b568b-97a1-4f9c-8d7d-174434c27525",
+                  "m_domain_name": "Healthcare",
+                  "m_status_id": "3f753fc4-6ac5-4985-a7f8-0c3d2c18b91d",
+                  "m_status_name": "Active",
+                  "m_timezone_id": "4106ab0b-5e90-47f9-98a6-e42673a4a616",
+                  "m_timezone_name": "Asia/Jakarta",
+                  "name": "PT JEC Candi Sejahtera",
+                  "parent_company_id": "8b7992fc-c5f9-41ad-87be-111ca8f18540",
+                  "product_ids": [
+                    {
+                      "product_id": "ee197431-276d-453d-857c-412f347dae19"
+                    },
+                    {
+                      "product_id": "c59a1873-7e7d-44b6-a06c-4f093f59f687"
+                    },
+                    {
+                      "product_id": "a080ba43-11d1-42a2-b13f-794540d9ca4d"
+                    },
+                    {
+                      "product_id": "ec8be9c7-c606-436a-930a-5545bb8e8025"
+                    },
+                    {
+                      "product_id": "e80800f9-cb6d-40c4-ad9d-0343b105dfe2"
+                    }
+                  ],
+                  "updated_at": "",
+                  "user_create": "21170",
+                  "user_update": ""
+                },
+                {
+                  "abbreviation": "JBV",
+                  "addresses": {
+                    "address_line1": "",
+                    "address_line2": "",
+                    "city": "",
+                    "county": "",
+                    "district": "",
+                    "lat": "",
+                    "long": "",
+                    "postal_code": ""
+                  },
+                  "base_currency": "IDR",
+                  "contact": {
+                    "email": "care@jec.co.id",
+                    "fax": "",
+                    "phone": "",
+                    "website": ""
+                  },
+                  "country": "ID",
+                  "created_at": "2025-01-17T08:00:00+07:00",
+                  "date_of_established": "",
+                  "default_letterhead_id": "",
+                  "description": "",
+                  "id": "d5c68232-ce64-4f63-928d-a025a983defb",
+                  "logo_url": "",
+                  "m_domain_id": "f45b568b-97a1-4f9c-8d7d-174434c27525",
+                  "m_domain_name": "Healthcare",
+                  "m_status_id": "3f753fc4-6ac5-4985-a7f8-0c3d2c18b91d",
+                  "m_status_name": "Active",
+                  "m_timezone_id": "4106ab0b-5e90-47f9-98a6-e42673a4a616",
+                  "m_timezone_name": "Asia/Jakarta",
+                  "name": "PT JEC BALI VISION",
+                  "parent_company_id": "8b7992fc-c5f9-41ad-87be-111ca8f18540",
+                  "product_ids": [
+                    {
+                      "product_id": "ee197431-276d-453d-857c-412f347dae19"
+                    },
+                    {
+                      "product_id": "c59a1873-7e7d-44b6-a06c-4f093f59f687"
+                    },
+                    {
+                      "product_id": "a080ba43-11d1-42a2-b13f-794540d9ca4d"
+                    },
+                    {
+                      "product_id": "ec8be9c7-c606-436a-930a-5545bb8e8025"
+                    },
+                    {
+                      "product_id": "e80800f9-cb6d-40c4-ad9d-0343b105dfe2"
+                    }
+                  ],
+                  "updated_at": "",
+                  "user_create": "21170",
+                  "user_update": ""
+                },
+                {
+                  "abbreviation": "GMH",
+                  "addresses": {
+                    "address_line1": "-",
+                    "address_line2": "",
+                    "city": "Administrasi Jakarta Barat",
+                    "county": "Kedoya Selatan",
+                    "district": "Kebon Jeruk",
+                    "lat": "-6.181245803833008",
+                    "long": "106.75692749023438",
+                    "postal_code": "11520"
+                  },
+                  "base_currency": "IDR",
+                  "contact": {
+                    "email": "care@jec.co.id",
+                    "fax": "",
+                    "phone": "+62000000000",
+                    "website": ""
+                  },
+                  "country": "ID",
+                  "created_at": "2025-01-17T08:00:00+07:00",
+                  "date_of_established": "",
+                  "default_letterhead_id": "",
+                  "description": "",
+                  "id": "3c4f4698-8b25-4534-8993-b4d6e900ce5d",
+                  "logo_url": "",
+                  "m_domain_id": "f45b568b-97a1-4f9c-8d7d-174434c27525",
+                  "m_domain_name": "Healthcare",
+                  "m_status_id": "3f753fc4-6ac5-4985-a7f8-0c3d2c18b91d",
+                  "m_status_name": "Active",
+                  "m_timezone_id": "4106ab0b-5e90-47f9-98a6-e42673a4a616",
+                  "m_timezone_name": "Asia/Jakarta",
+                  "name": "PT Graha Mukti Husada",
+                  "parent_company_id": "8b7992fc-c5f9-41ad-87be-111ca8f18540",
+                  "product_ids": [
+                    {
+                      "product_id": "ee197431-276d-453d-857c-412f347dae19"
+                    },
+                    {
+                      "product_id": "c59a1873-7e7d-44b6-a06c-4f093f59f687"
+                    },
+                    {
+                      "product_id": "a080ba43-11d1-42a2-b13f-794540d9ca4d"
+                    },
+                    {
+                      "product_id": "ec8be9c7-c606-436a-930a-5545bb8e8025"
+                    },
+                    {
+                      "product_id": "e80800f9-cb6d-40c4-ad9d-0343b105dfe2"
+                    }
+                  ],
+                  "updated_at": "2026-01-08T13:30:59+07:00",
+                  "user_create": "21170",
+                  "user_update": "21170"
+                }
+              ],
+              "page": 1,
+              "page_size": 10,
+              "total_items": 9
+            }
+          }

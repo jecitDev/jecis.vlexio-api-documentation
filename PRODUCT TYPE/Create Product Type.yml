@@ -1,0 +1,110 @@
+info:
+  name: Create Product Type
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/product-types"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"name\": \"Product Type 1\",\r
+
+      \    \"category_id\": \"non-medic\",\r
+
+      \    \"is_active\": true,\r
+
+      \    \"business_unit_id\": \"33b109c5-dd64-480c-8100-68fe17deaf3e\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Create Product Type
+    request:
+      url: "{{BASE_URL}}/v1/product-types"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"name\": \"Product Type 2\",\r
+
+          \    \"category_id\": \"non-medic\",\r
+
+          \    \"is_active\": true,\r
+
+          \    \"business_unit_id\": \"33b109c5-dd64-480c-8100-68fe17deaf3e\"\r
+
+          }"
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Date
+          value: Wed, 05 Aug 2026 03:46:45 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "216"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 201,
+              "data": {
+                  "product_type": {
+                      "id": "6f6640db-1861-4df1-8ea1-31f79ccfacc1",
+                      "name": "Product Type 2",
+                      "category_id": "non-medic",
+                      "is_active": true,
+                      "user_create": "ferdinand",
+                      "created_at": "2026-08-05T10:46:45+07:00"
+                  }
+              }
+          }

@@ -1,0 +1,34 @@
+info:
+  name: CREATE
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/clickup/task/:task_id/comment"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: task_id
+      value: ""
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \  \"comment_text\": \"testing 123 log\",\r
+
+      \  \"assignee\": null,\r
+
+      \  \"notify_all\": true\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

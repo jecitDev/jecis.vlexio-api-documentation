@@ -1,0 +1,170 @@
+info:
+  name: Get Tariff History
+  type: http
+  seq: 7
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/item-services/:business_unit_id/:item_id/tariff-history?page=1&page_size=10&sort_by=starting_date&sort_order=asc"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: page_size
+      value: "10"
+      type: query
+    - name: sort_by
+      value: starting_date
+      type: query
+    - name: sort_order
+      value: asc
+      type: query
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+    - name: item_id
+      value: 601707bb-3e3d-4b69-bf10-a1b0fe372fa2
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Get Tariff History
+    request:
+      url: "{{BASE_URL}}/v1/item-services/:business_unit_id/:item_id/tariff-history?page=1&page_size=10&sort_by=starting_date&sort_order=asc"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: page_size
+          value: "10"
+          type: query
+        - name: sort_by
+          value: starting_date
+          type: query
+        - name: sort_order
+          value: asc
+          type: query
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: path
+        - name: item_id
+          value: 601707bb-3e3d-4b69-bf10-a1b0fe372fa2
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 22 Jan 2026 03:33:18 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "1579"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "history": [
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "cito_value": 0,
+                          "is_admin_calculation": false,
+                          "is_allow_cito": false,
+                          "is_allow_discount": false,
+                          "is_allow_variable": false,
+                          "is_cito_in_percent": false,
+                          "item_id": "601707bb-3e3d-4b69-bf10-a1b0fe372fa2",
+                          "item_name": "Needling Anestesi Umum Anak",
+                          "rate_book_id": "38c56cc4-76fb-4aee-97da-94e4841a9389",
+                          "reference_no": "TR00001",
+                          "starting_date": "2025-06-05T08:58:23+07:00",
+                          "submission_date": "2025-06-05T08:58:23+07:00",
+                          "tariff": 12330000,
+                          "version": "Ver. 1"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "cito_value": 0,
+                          "is_admin_calculation": false,
+                          "is_allow_cito": false,
+                          "is_allow_discount": false,
+                          "is_allow_variable": false,
+                          "is_cito_in_percent": false,
+                          "item_id": "601707bb-3e3d-4b69-bf10-a1b0fe372fa2",
+                          "item_name": "Needling Anestesi Umum Anak",
+                          "rate_book_id": "ea65403e-0b15-41e6-a55e-45b7d909e80e",
+                          "reference_no": "TR00002",
+                          "starting_date": "2025-06-19T08:58:23+07:00",
+                          "submission_date": "2025-06-19T08:58:23+07:00",
+                          "tariff": 12330000,
+                          "version": "Ver. 2"
+                      },
+                      {
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "cito_value": 0,
+                          "is_admin_calculation": false,
+                          "is_allow_cito": false,
+                          "is_allow_discount": false,
+                          "is_allow_variable": false,
+                          "is_cito_in_percent": false,
+                          "item_id": "601707bb-3e3d-4b69-bf10-a1b0fe372fa2",
+                          "item_name": "Needling Anestesi Umum Anak",
+                          "rate_book_id": "1f5a1e7d-165a-4c4e-ae27-826fd64fc876",
+                          "reference_no": "TR00003",
+                          "starting_date": "2025-08-01T08:58:23+07:00",
+                          "submission_date": "2025-08-01T08:58:23+07:00",
+                          "tariff": 12330000,
+                          "version": "Ver. 3"
+                      }
+                  ],
+                  "page": 1,
+                  "page_size": 10,
+                  "total_items": 3
+              }
+          }

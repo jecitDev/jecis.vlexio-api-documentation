@@ -1,0 +1,26 @@
+info:
+  name: Profiler Plugin
+  type: folder
+  seq: 41
+
+request:
+  auth: inherit
+
+docs:
+  content: |-
+    ### \[TS-1232\] \[MASTER\] PROFILER PLUGIN #1.0.0
+
+    ##### April 26, 2024
+
+    - Handle Filter: Multi Profiler Type `Enhance`
+        
+
+    ##### April 25, 2024
+
+    - Add Field Template Print Configuration (JSON) `Enhance`
+        
+
+    ##### April 24, 2024
+
+    - CRUD Common
+  type: text/markdown

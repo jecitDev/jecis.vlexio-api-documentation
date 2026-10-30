@@ -1,0 +1,7 @@
+info:
+  name: Sub Ledger Group
+  type: folder
+  seq: 76
+
+request:
+  auth: inherit

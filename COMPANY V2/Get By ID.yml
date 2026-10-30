@@ -1,0 +1,165 @@
+info:
+  name: Get By ID
+  type: http
+  seq: 7
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/companies/:id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: id
+      value: 1dc886f8-8642-4525-b655-861cca4f2b47
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/companies/:id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: id
+          value: 1dc886f8-8642-4525-b655-861cca4f2b46
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 02 Oct 2025 09:33:52 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "1242"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "abbreviation": "KDY",
+                  "addresses": {
+                      "address_line1": "Jalan Terusan, Jl. Arjuna Utara Jl. Kedoya Pesing No.1, Kedoya Sel., Kec. Kb. Jeruk, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta",
+                      "address_line2": "",
+                      "city": "Jakarta Barat",
+                      "lat": "",
+                      "long": "",
+                      "postal_code": "11520"
+                  },
+                  "base_currency": "IDR",
+                  "contact": {
+                      "email": "care@jec.co.id",
+                      "fax": "",
+                      "phone": "+628041221000",
+                      "website": ""
+                  },
+                  "country": "IDN",
+                  "created_at": "2025-10-02T14:08:41+07:00",
+                  "date_of_established": "2012-04-02T00:00:00+07:00",
+                  "default_letterhead_id": "e2331208-f962-4811-9585-36b4fee25a67",
+                  "description": "Rumah Sakit spesialis mata yang telah memiliki standar layanan internasional. Kami memiliki misi dan komitmen untuk dapat meningkatkan kualitas hidup masyarakat melalui pelayanan kesehatan mata. JEC juga selalu berupaya untuk bisa menjadi yang terdepan dalam pelayanan kesehatan khususnya buat pasien yang mengalami gangguan mata.",
+                  "id": "1dc886f8-8642-4525-b655-861cca4f2b46",
+                  "logo_url": "",
+                  "m_domain_id": "1105caa9-8e07-4502-8eb3-6702b6440cc5",
+                  "m_status_id": "c1939a90-849e-43e0-8309-2f734f250d38",
+                  "m_timezone_id": "3a26a2a8-b4fb-403b-b280-2554e0f3bc81",
+                  "name": "JEC Kedoya",
+                  "parent_company_id": "",
+                  "updated_at": "",
+                  "user_create": "admin@system.com",
+                  "user_update": ""
+              }
+          }
+  - name: Not Found
+    request:
+      url: "{{BASE_URL}}/v1/companies/:id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: id
+          value: 1dc886f8-8642-4525-b655-861cca4f2b47
+          type: path
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Date
+          value: Thu, 02 Oct 2025 09:34:19 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "46"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "companies.not_found",
+              "status": 404
+          }

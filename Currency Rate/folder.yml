@@ -1,0 +1,7 @@
+info:
+  name: Currency Rate
+  type: folder
+  seq: 80
+
+request:
+  auth: inherit

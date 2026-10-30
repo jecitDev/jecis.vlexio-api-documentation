@@ -1,0 +1,649 @@
+info:
+  name: Update
+  type: http
+  seq: 5
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/rate-books/:business_unit_id/:rate_book_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  params:
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+    - name: rate_book_id
+      value: b6347186-8ee4-4603-8f27-e41b918088f0
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"rate_book_name\": \"General Tariff 2026#updated\",\r
+
+      \    \"coverage\": [\r
+
+      \        \"a20cd8f4-6fb6-426b-8107-f36d0ee73547\"\r
+
+      \    ],\r
+
+      \    \"reference_no\": \"RB-2026-001\",\r
+
+      \    \"starting_date\": \"2026-01-10T15:27:28+07:00\",\r
+
+      \    \"items\": [\r
+
+      \        {\r
+
+      \            \"item_id\": \"43341054-68b3-42ac-9ac1-c99c97d0d903\",\r
+
+      \            \"item_name\": \"Laptop#updated\",\r
+
+      \            \"is_allow_discount\": true,\r
+
+      \            \"components\": [\r
+
+      \                {\r
+
+      \                    \"tariff_component_id\": \"01\",\r
+
+      \                    \"is_allow_discount\": true,\r
+
+      \                    \"is_supervision\": false,\r
+
+      \                    //   \"supervision\":,\r
+
+      \                    //   \"additionals\":,\r
+
+      \                    //   \"deductions\":\r
+
+      \                    \"additionals\": [\r
+
+      \                        {\r
+
+      \                            \"additional_id\": \"addition-001\",\r
+
+      \                            \"amount\": \"400000\",\r
+
+      \                            \"is_not_paid_on_cross\": true,\r
+
+      \                            \"billed_to_patient\": false\r
+
+      \                        },\r
+
+      \                        {\r
+
+      \                            \"additional_id\": \"addition-002\",\r
+
+      \                            \"amount\": \"100000\",\r
+
+      \                            \"is_not_paid_on_cross\": false,\r
+
+      \                            \"billed_to_patient\": true\r
+
+      \                        }\r
+
+      \                    ],\r
+
+      \                    \"deductions\": [\r
+
+      \                        {\r
+
+      \                            \"deduction_id\": \"deduct-001\",\r
+
+      \                            \"amount\": \"5\",\r
+
+      \                            \"is_percent\": true\r
+
+      \                        },\r
+
+      \                        {\r
+
+      \                            \"deduction_id\": \"deduct-002\",\r
+
+      \                            \"amount\": \"10\",\r
+
+      \                            \"is_percent\": true\r
+
+      \                        }\r
+
+      \                    ]\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"tariff_component_id\": \"02\",\r
+
+      \                    \"is_allow_discount\": false,\r
+
+      \                    \"is_supervision\": false\r
+
+      \                    //   \"supervision\":,\r
+
+      \                    //   \"additionals\":,\r
+
+      \                    //   \"deductions\":\r
+
+      \                }\r
+
+      \            ]\r
+
+      \        },\r
+
+      \        {\r
+
+      \            \"item_id\": \"23ba3c9d-f35a-40ec-8bad-66e13d704df2\",\r
+
+      \            \"item_name\": \"LCD#updated\",\r
+
+      \            \"is_allow_discount\": true,\r
+
+      \            \"components\": [\r
+
+      \                {\r
+
+      \                    \"tariff_component_id\": \"01\",\r
+
+      \                    \"is_allow_discount\": true,\r
+
+      \                    \"is_supervision\": false\r
+
+      \                    //   \"supervision\":,\r
+
+      \                    //   \"additionals\":,\r
+
+      \                    //   \"deductions\":\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"tariff_component_id\": \"02\",\r
+
+      \                    \"is_allow_discount\": false,\r
+
+      \                    \"is_supervision\": false\r
+
+      \                    //   \"supervision\":,\r
+
+      \                    //   \"additionals\":,\r
+
+      \                    //   \"deductions\":\r
+
+      \                }\r
+
+      \            ]\r
+
+      \        }\r
+
+      \    ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Update
+    request:
+      url: "{{BASE_URL}}/v1/rate-books/:business_unit_id/:rate_book_id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      params:
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: path
+        - name: rate_book_id
+          value: b6347186-8ee4-4603-8f27-e41b918088f0
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"rate_book_name\": \"General Tariff 2026#updated\",\r
+
+          \    \"coverage\": [\r
+
+          \        \"a20cd8f4-6fb6-426b-8107-f36d0ee73547\",\r
+
+          \        \"23aa0eef-cb81-448f-a7a6-6a7e0f848e3a\"\r
+
+          \    ],\r
+
+          \    \"reference_no\": \"RB-2026-001\",\r
+
+          \    \"starting_date\": \"2026-01-10T15:27:28+07:00\",\r
+
+          \    \"items\": [\r
+
+          \        {\r
+
+          \            \"item_id\": \"43341054-68b3-42ac-9ac1-c99c97d0d903\",\r
+
+          \            \"item_name\": \"Laptop#updated\",\r
+
+          \            \"is_allow_discount\": true,\r
+
+          \            \"components\": [\r
+
+          \                {\r
+
+          \                    \"tariff_component_id\": \"01\",\r
+
+          \                    \"is_allow_discount\": true,\r
+
+          \                    \"is_supervision\": false,\r
+
+          \                    //   \"supervision\":,\r
+
+          \                    //   \"additionals\":,\r
+
+          \                    //   \"deductions\":\r
+
+          \                    \"additionals\": [\r
+
+          \                        {\r
+
+          \                            \"additional_id\": \"addition-001\",\r
+
+          \                            \"amount\": \"400000\",\r
+
+          \                            \"is_not_paid_on_cross\": true,\r
+
+          \                            \"billed_to_patient\": false\r
+
+          \                        },\r
+
+          \                        {\r
+
+          \                            \"additional_id\": \"addition-002\",\r
+
+          \                            \"amount\": \"100000\",\r
+
+          \                            \"is_not_paid_on_cross\": false,\r
+
+          \                            \"billed_to_patient\": true\r
+
+          \                        }\r
+
+          \                    ],\r
+
+          \                    \"deductions\": [\r
+
+          \                        {\r
+
+          \                            \"deduction_id\": \"deduct-001\",\r
+
+          \                            \"amount\": \"5\",\r
+
+          \                            \"is_percent\": true\r
+
+          \                        },\r
+
+          \                        {\r
+
+          \                            \"deduction_id\": \"deduct-002\",\r
+
+          \                            \"amount\": \"10\",\r
+
+          \                            \"is_percent\": true\r
+
+          \                        }\r
+
+          \                    ]\r
+
+          \                },\r
+
+          \                {\r
+
+          \                    \"tariff_component_id\": \"02\",\r
+
+          \                    \"is_allow_discount\": false,\r
+
+          \                    \"is_supervision\": false\r
+
+          \                    //   \"supervision\":,\r
+
+          \                    //   \"additionals\":,\r
+
+          \                    //   \"deductions\":\r
+
+          \                }\r
+
+          \            ]\r
+
+          \        },\r
+
+          \        {\r
+
+          \            \"item_id\": \"23ba3c9d-f35a-40ec-8bad-66e13d704df2\",\r
+
+          \            \"item_name\": \"LCD#updated\",\r
+
+          \            \"is_allow_discount\": true,\r
+
+          \            \"components\": [\r
+
+          \                {\r
+
+          \                    \"tariff_component_id\": \"01\",\r
+
+          \                    \"is_allow_discount\": true,\r
+
+          \                    \"is_supervision\": false\r
+
+          \                    //   \"supervision\":,\r
+
+          \                    //   \"additionals\":,\r
+
+          \                    //   \"deductions\":\r
+
+          \                },\r
+
+          \                {\r
+
+          \                    \"tariff_component_id\": \"02\",\r
+
+          \                    \"is_allow_discount\": false,\r
+
+          \                    \"is_supervision\": false\r
+
+          \                    //   \"supervision\":,\r
+
+          \                    //   \"additionals\":,\r
+
+          \                    //   \"deductions\":\r
+
+          \                }\r
+
+          \            ]\r
+
+          \        }\r
+
+          \    ]\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 13 Apr 2026 06:43:38 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "51"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "message": "Rate book updated"
+              }
+          }
+  - name: Not Found
+    request:
+      url: "{{BASE_URL}}/v1/rate-books/:business_unit_id/:rate_book_id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      params:
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: path
+        - name: rate_book_id
+          value: b6347186-8ee4-4603-8f27-e41b918088f1
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"rate_book_name\": \"General Tariff 2026#updated\",\r
+
+          \    \"coverage\": [\r
+
+          \        \"a20cd8f4-6fb6-426b-8107-f36d0ee73547\",\r
+
+          \        \"23aa0eef-cb81-448f-a7a6-6a7e0f848e3a\"\r
+
+          \    ],\r
+
+          \    \"reference_no\": \"RB-2026-001\",\r
+
+          \    \"starting_date\": \"2026-01-10T15:27:28+07:00\",\r
+
+          \    \"items\": [\r
+
+          \        {\r
+
+          \            \"item_id\": \"43341054-68b3-42ac-9ac1-c99c97d0d903\",\r
+
+          \            \"item_name\": \"Laptop#updated\",\r
+
+          \            \"is_allow_discount\": true,\r
+
+          \            \"components\": [\r
+
+          \                {\r
+
+          \                    \"tariff_component_id\": \"01\",\r
+
+          \                    \"is_allow_discount\": true,\r
+
+          \                    \"is_supervision\": false,\r
+
+          \                    //   \"supervision\":,\r
+
+          \                    //   \"additionals\":,\r
+
+          \                    //   \"deductions\":\r
+
+          \                    \"additionals\": [\r
+
+          \                        {\r
+
+          \                            \"additional_id\": \"addition-001\",\r
+
+          \                            \"amount\": \"400000\",\r
+
+          \                            \"is_not_paid_on_cross\": true,\r
+
+          \                            \"billed_to_patient\": false\r
+
+          \                        },\r
+
+          \                        {\r
+
+          \                            \"additional_id\": \"addition-002\",\r
+
+          \                            \"amount\": \"100000\",\r
+
+          \                            \"is_not_paid_on_cross\": false,\r
+
+          \                            \"billed_to_patient\": true\r
+
+          \                        }\r
+
+          \                    ],\r
+
+          \                    \"deductions\": [\r
+
+          \                        {\r
+
+          \                            \"deduction_id\": \"deduct-001\",\r
+
+          \                            \"amount\": \"5\",\r
+
+          \                            \"is_percent\": true\r
+
+          \                        },\r
+
+          \                        {\r
+
+          \                            \"deduction_id\": \"deduct-002\",\r
+
+          \                            \"amount\": \"10\",\r
+
+          \                            \"is_percent\": true\r
+
+          \                        }\r
+
+          \                    ]\r
+
+          \                },\r
+
+          \                {\r
+
+          \                    \"tariff_component_id\": \"02\",\r
+
+          \                    \"is_allow_discount\": false,\r
+
+          \                    \"is_supervision\": false\r
+
+          \                    //   \"supervision\":,\r
+
+          \                    //   \"additionals\":,\r
+
+          \                    //   \"deductions\":\r
+
+          \                }\r
+
+          \            ]\r
+
+          \        },\r
+
+          \        {\r
+
+          \            \"item_id\": \"23ba3c9d-f35a-40ec-8bad-66e13d704df2\",\r
+
+          \            \"item_name\": \"LCD#updated\",\r
+
+          \            \"is_allow_discount\": true,\r
+
+          \            \"components\": [\r
+
+          \                {\r
+
+          \                    \"tariff_component_id\": \"01\",\r
+
+          \                    \"is_allow_discount\": true,\r
+
+          \                    \"is_supervision\": false\r
+
+          \                    //   \"supervision\":,\r
+
+          \                    //   \"additionals\":,\r
+
+          \                    //   \"deductions\":\r
+
+          \                },\r
+
+          \                {\r
+
+          \                    \"tariff_component_id\": \"02\",\r
+
+          \                    \"is_allow_discount\": false,\r
+
+          \                    \"is_supervision\": false\r
+
+          \                    //   \"supervision\":,\r
+
+          \                    //   \"additionals\":,\r
+
+          \                    //   \"deductions\":\r
+
+          \                }\r
+
+          \            ]\r
+
+          \        }\r
+
+          \    ]\r
+
+          }"
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Date
+          value: Mon, 13 Apr 2026 06:45:03 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "46"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "status": 404,
+              "message": "book_rate.not_found"
+          }

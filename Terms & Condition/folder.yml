@@ -1,0 +1,7 @@
+info:
+  name: Terms & Condition
+  type: folder
+  seq: 124
+
+request:
+  auth: inherit

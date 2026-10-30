@@ -1,0 +1,305 @@
+info:
+  name: Bulk Insert Item Rule Component
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/marketing/membership/bulk-insert-item-rule-component"
+  headers:
+    - name: x-token
+      value: "{{marketing_xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"item_rule_component\": [\r
+
+      \        {\r
+
+      \            \"member_id\": \"864fdca4-be49-4d2c-b6be-da25f822ca01\",\r
+
+      \            \"sr_member_rule_type\": \"LIMIT\",\r
+
+      \            \"item_id\": \"ITEM-001\",\r
+
+      \            \"tariff_component_id\": \"2\",\r
+
+      \            \"amount_value\": 1000000.0,\r
+
+      \            \"is_value_in_percent\": false,\r
+
+      \            \"is_include\": true,\r
+
+      \            \"tariff_source\": \"I\",\r
+
+      \            \"is_active\": true,\r
+
+      \            \"user_create\": \"admin_user\",\r
+
+      \            \"created_at\": \"2025-03-26T14:00:00+07:00\"\r
+
+      \        },\r
+
+      \        {\r
+
+      \            \"member_id\": \"9bf7495b-2436-462b-bfb0-68f288b59028\",\r
+
+      \            \"sr_member_rule_type\": \"DAYS\",\r
+
+      \            \"item_id\": \"ITEM-002\",\r
+
+      \            \"tariff_component_id\": \"1\",\r
+
+      \            \"amount_value\": 30,\r
+
+      \            \"is_value_in_percent\": false,\r
+
+      \            \"is_include\": false,\r
+
+      \            \"tariff_source\": \"E\",\r
+
+      \            \"is_active\": true,\r
+
+      \            \"user_create\": \"admin_user\",\r
+
+      \            \"created_at\": \"2025-03-26T14:00:00+07:00\"\r
+
+      \        }\r
+
+      \    ]\r
+
+      }"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/marketing/membership/bulk-insert-item-rule-component"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{marketing_xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"item_rule_component\": [\r
+
+          \        {\r
+
+          \            \"member_id\": \"864fdca4-be49-4d2c-b6be-da25f822ca01\",\r
+
+          \            \"sr_member_rule_type\": \"LIMIT\",\r
+
+          \            \"item_id\": \"ITEM-001\",\r
+
+          \            \"tariff_component_id\": \"2\",\r
+
+          \            \"amount_value\": 1000000.0,\r
+
+          \            \"is_value_in_percent\": false,\r
+
+          \            \"is_include\": true,\r
+
+          \            \"tariff_source\": \"I\",\r
+
+          \            \"is_active\": true,\r
+
+          \            \"user_create\": \"admin_user\",\r
+
+          \            \"created_at\": \"2025-03-26T14:00:00+07:00\"\r
+
+          \        },\r
+
+          \        {\r
+
+          \            \"member_id\": \"9bf7495b-2436-462b-bfb0-68f288b59028\",\r
+
+          \            \"sr_member_rule_type\": \"DAYS\",\r
+
+          \            \"item_id\": \"ITEM-002\",\r
+
+          \            \"tariff_component_id\": \"1\",\r
+
+          \            \"amount_value\": 30,\r
+
+          \            \"is_value_in_percent\": false,\r
+
+          \            \"is_include\": false,\r
+
+          \            \"tariff_source\": \"E\",\r
+
+          \            \"is_active\": true,\r
+
+          \            \"user_create\": \"admin_user\",\r
+
+          \            \"created_at\": \"2025-03-26T14:00:00+07:00\"\r
+
+          \        }\r
+
+          \    ]\r
+
+          }"
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Date
+          value: Thu, 03 Apr 2025 03:20:00 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "599"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 201,
+              "data": {
+                  "item_rule_component": [
+                      {
+                          "seq_id": 11,
+                          "member_id": "864fdca4-be49-4d2c-b6be-da25f822ca01",
+                          "sr_member_rule_type": "LIMIT",
+                          "item_id": "ITEM-001",
+                          "tariff_component_id": "2 ",
+                          "amount_value": 1000000,
+                          "is_include": true,
+                          "tariff_source": "I",
+                          "is_active": true,
+                          "user_create": "admin_user",
+                          "created_at": "2025-03-26T14:00:00+07:00"
+                      },
+                      {
+                          "seq_id": 12,
+                          "member_id": "9bf7495b-2436-462b-bfb0-68f288b59028",
+                          "sr_member_rule_type": "DAYS",
+                          "item_id": "ITEM-002",
+                          "tariff_component_id": "1 ",
+                          "amount_value": 30,
+                          "tariff_source": "E",
+                          "is_active": true,
+                          "user_create": "admin_user",
+                          "created_at": "2025-03-26T14:00:00+07:00"
+                      }
+                  ]
+              }
+          }
+  - name: Membership ID Not Found
+    request:
+      url: "{{BASE_URL}}/v1/marketing/membership/bulk-insert-item-rule-component"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{marketing_xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"item_rule_component\": [\r
+
+          \        {\r
+
+          \            \"member_id\": \"864fdca4-be49-4d2c-b6be-da25f822ca09\",\r
+
+          \            \"sr_member_rule_type\": \"LIMIT\",\r
+
+          \            \"item_id\": \"ITEM-001\",\r
+
+          \            \"tariff_component_id\": \"2\",\r
+
+          \            \"amount_value\": 1000000.0,\r
+
+          \            \"is_value_in_percent\": false,\r
+
+          \            \"is_include\": true,\r
+
+          \            \"tariff_source\": \"I\",\r
+
+          \            \"is_active\": true,\r
+
+          \            \"user_create\": \"admin_user\",\r
+
+          \            \"created_at\": \"2025-03-26T14:00:00+07:00\"\r
+
+          \        }\r
+
+          \    ]\r
+
+          }"
+    response:
+      status: 500
+      statusText: Internal Server Error
+      headers:
+        - name: Date
+          value: Thu, 03 Apr 2025 03:20:37 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "40"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "no data found",
+              "status": 500
+          }

@@ -1,0 +1,142 @@
+info:
+  name: Search
+  type: http
+  seq: 8
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/ServiceRoom/search?max_hits=4&page=1&text=dokter&business_unit_id=2da6a1bd-ba62-43ec-91f8-4085d5d6d498&is_operating_room=false&operational_time=18:00"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: max_hits
+      value: "4"
+      type: query
+    - name: page
+      value: "1"
+      type: query
+    - name: text
+      value: dokter
+      type: query
+    - name: business_unit_id
+      value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+      type: query
+    - name: is_operating_room
+      value: "false"
+      type: query
+    - name: operational_time
+      value: 18:00
+      type: query
+    - name: service_unit_id
+      value: SU006
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Search
+    request:
+      url: "{{BASE_URL}}/v1/ServiceRoom/search?max_hits=4&page=1&text=dokter&business_unit_id=2da6a1bd-ba62-43ec-91f8-4085d5d6d498&is_operating_room=false&operational_time=18:00"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: max_hits
+          value: "4"
+          type: query
+        - name: page
+          value: "1"
+          type: query
+        - name: text
+          value: dokter
+          type: query
+        - name: business_unit_id
+          value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+          type: query
+        - name: is_operating_room
+          value: "false"
+          type: query
+        - name: operational_time
+          value: 18:00
+          type: query
+        - name: service_unit_id
+          value: SU006
+          type: query
+          disabled: true
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 29 Apr 2025 06:06:41 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "473"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "result": [
+                      {
+                          "room_id": "API012",
+                          "room_name": "Ruang Dokter 1S",
+                          "company_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "is_operating_room": true,
+                          "operating_time_from": "09:00",
+                          "operating_time_to": "21:00",
+                          "minutes_per_slot": 10,
+                          "service_unit_id": "A101"
+                      },
+                      {
+                          "room_id": "API011",
+                          "room_name": "Ruang Dokter 1A",
+                          "company_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "operating_time_from": "09:00",
+                          "operating_time_to": "21:00",
+                          "minutes_per_slot": 10,
+                          "service_unit_id": "A101"
+                      }
+                  ]
+              }
+          }

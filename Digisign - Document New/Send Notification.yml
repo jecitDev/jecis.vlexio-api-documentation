@@ -1,0 +1,56 @@
+info:
+  name: Send Notification
+  type: http
+  seq: 15
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/digisigns/sendnotification"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"company_id\": \"2da6a1bd-ba62-43ec-91f8-4085d5d6d498\",\r
+
+      \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+      \    \"uploader_email\": [\r
+
+      \        // \"fajar.wahyudianto@jec.co.id\",\r
+
+      \        // \"fwahyudi06@gmail.com\",\r
+
+      \        \"mraihann0@gmail.com\"\r
+
+      \    ],\r
+
+      \    \"cc_email\": [],\r
+
+      \    \"bcc_email\": [\r
+
+      \        // \"me@fwahyudianto.id\",\r
+
+      \        \"mraihann0@gmail.com\"\r
+
+      \    ],\r
+
+      \    \"subject\": \"Digisign Document has been signed\",\r
+
+      \    \"message\": \"MEDICAL_RESUME_25_05_27_001 [INDI].pdf, MEDICAL_RESUME_25_05_27_002 [INDI].pdf\",\r
+
+      \    \"updated_at\": \"2025-05-27T15:11:28+07:00\"\r
+
+      }"
+  auth:
+    type: bearer
+    token: "{{xtoken}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

@@ -1,0 +1,196 @@
+info:
+  name: Paramedic Schedule - LIST Paramedic Schedule By Month
+  type: http
+  seq: 9
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/ParamedicSchedule/listparamedicschedulebymonth?business_unit_id=53aad077-9fb1-4f08-85f3-af9fd9a36517&service_unit_id=A108&paramedic_id=DKDY0006&period_year=2025&period_month=7&sr_category_schedule=BPJS"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: query
+    - name: service_unit_id
+      value: A108
+      type: query
+    - name: paramedic_id
+      value: DKDY0006
+      type: query
+    - name: period_year
+      value: "2025"
+      type: query
+    - name: period_month
+      value: "7"
+      type: query
+    - name: sr_category_schedule
+      value: BPJS
+      type: query
+    - name: sr_schedule_type
+      value: Registration
+      type: query
+      disabled: true
+  body:
+    type: text
+    data: ""
+  auth:
+    type: bearer
+    token: "{{xtoken}}"
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: Paramedic Schedule - LIST Paramedic Schedule By Month API2
+    request:
+      url: "{{BASE_URL}}/v1/ParamedicSchedule/listparamedicschedulebymonth?business_unit_id=53aad077-9fb1-4f08-85f3-af9fd9a36517&service_unit_id=SU00001&paramedic_id=DKDY0002&period_year=2025&period_month=4"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: query
+        - name: service_unit_id
+          value: SU00001
+          type: query
+        - name: paramedic_id
+          value: DKDY0002
+          type: query
+        - name: period_year
+          value: "2025"
+          type: query
+        - name: period_month
+          value: "4"
+          type: query
+        - name: sr_category_schedule
+          value: BPJS
+          type: query
+          disabled: true
+      body:
+        type: text
+        data: ""
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 03 Jun 2025 09:11:30 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "1404"
+        - name: Connection
+          value: keep-alive
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "paramedicScheduleGetScheduleResponses": [
+                      {
+                          "id_psd": 63,
+                          "id_ps": 6,
+                          "schedule_date": "2025-04-01T13:24:42+08:00",
+                          "operational_time_id": "POI8:30-50",
+                          "room_id": "R002",
+                          "sr_category_schedule": "BPJS"
+                      },
+                      {
+                          "id_psd": 64,
+                          "id_ps": 6,
+                          "schedule_date": "2025-04-02T13:24:42+08:00",
+                          "operational_time_id": "POI8:30-50",
+                          "room_id": "R002",
+                          "sr_category_schedule": "BPJS"
+                      },
+                      {
+                          "id_psd": 65,
+                          "id_ps": 6,
+                          "schedule_date": "2025-04-03T13:24:42+08:00",
+                          "operational_time_id": "POI8:30-50",
+                          "room_id": "R002",
+                          "sr_category_schedule": "BPJS"
+                      },
+                      {
+                          "id_psd": 66,
+                          "id_ps": 6,
+                          "schedule_date": "2025-04-04T13:24:42+08:00",
+                          "operational_time_id": "POI8:30-50",
+                          "room_id": "R002",
+                          "sr_category_schedule": "BPJS"
+                      },
+                      {
+                          "id_psd": 60,
+                          "id_ps": 6,
+                          "schedule_date": "2025-04-07T13:24:42+08:00",
+                          "operational_time_id": "OP001",
+                          "room_id": "R002",
+                          "sr_category_schedule": "BPJS"
+                      },
+                      {
+                          "id_psd": 62,
+                          "id_ps": 6,
+                          "schedule_date": "2025-04-09T13:24:42+08:00",
+                          "operational_time_id": "OP001",
+                          "room_id": "R002",
+                          "sr_category_schedule": "BPJS"
+                      },
+                      {
+                          "id_psd": 44,
+                          "id_ps": 6,
+                          "schedule_date": "2025-04-18T13:24:42+08:00",
+                          "operational_time_id": "OP001",
+                          "room_id": "R002",
+                          "sr_category_schedule": "BPJS"
+                      },
+                      {
+                          "id_psd": 45,
+                          "id_ps": 7,
+                          "schedule_date": "2025-04-22T13:24:42+08:00",
+                          "operational_time_id": "POI8:30-50",
+                          "room_id": "R002",
+                          "sr_category_schedule": "NonBPJS"
+                      },
+                      {
+                          "id_psd": 46,
+                          "id_ps": 7,
+                          "schedule_date": "2025-04-23T13:24:42+08:00",
+                          "operational_time_id": "POI8:30-50",
+                          "room_id": "R002",
+                          "sr_category_schedule": "NonBPJS"
+                      }
+                  ]
+              }
+          }

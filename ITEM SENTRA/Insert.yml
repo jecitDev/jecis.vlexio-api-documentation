@@ -1,0 +1,36 @@
+info:
+  name: Insert
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/itemSentra"
+  headers:
+    - name: x-token
+      value: "{{billing_xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+      \    \"sentra_name\": \"Dummy Sentra 1\",\r
+
+      \    \"service_unit_id\": \"SU001\",\r
+
+      \    \"is_active\": true,\r
+
+      \    \"user_create\": \"admin\",\r
+
+      \    \"created_at\": \"2025-04-17T10:58:23+07:00\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

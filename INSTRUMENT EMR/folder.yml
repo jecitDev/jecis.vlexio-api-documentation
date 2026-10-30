@@ -1,0 +1,7 @@
+info:
+  name: INSTRUMENT EMR
+  type: folder
+  seq: 63
+
+request:
+  auth: inherit

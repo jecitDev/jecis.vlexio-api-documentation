@@ -1,0 +1,122 @@
+info:
+  name: Svc - Update
+  type: http
+  seq: 5
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/digisigns/providers/:id/:company_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: provider_id
+      value: 3261a59d-ea2c-456b-bcff-cd841a066eb7
+      type: query
+      disabled: true
+    - name: company_id
+      value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+      type: query
+      disabled: true
+    - name: id
+      value: b7aeddc7-beb4-4e89-bae1-1b7df547dd38
+      type: path
+    - name: company_id
+      value: 6e684367-d6bc-4733-9cc7-8ab0417fa1a4
+      type: path
+  body:
+    type: json
+    data: "{\r\n    \"provider_name\": \"PRIVY ID\",\r\n    \"endpoint_api\": \"https://gateway.privy.id:2024/signature\",\r\n    \"configurations\": {\r\n        \"credential_key\": \"\",\r\n        \"jwt\": \"\"\r\n    },\r\n    \"date_contract\": \"2024-10-01T03:00:00+07:00\",\r\n    \"contract_expiry\": \"2025-10-30T23:59:00+07:00\",\r\n    \"is_active\": true,\r\n    \"user_update\": \"Admin2\",\r\n    \"updated_at\": \"2024-10-01T13:00:00+07:00\"\r\n}"
+  auth:
+    type: bearer
+    token: "{{xtoken}}"
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: "Svc - Update #1-241017"
+    request:
+      url: "{{BASE_URL}}/v1/digisigns/providers/:id/:company_id"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{API_TOKEN}}"
+      params:
+        - name: provider_id
+          value: 3261a59d-ea2c-456b-bcff-cd841a066eb7
+          type: query
+          disabled: true
+        - name: company_id
+          value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+          type: query
+          disabled: true
+        - name: id
+          value: b7aeddc7-beb4-4e89-bae1-1b7df547dd38
+          type: path
+        - name: company_id
+          value: 6e684367-d6bc-4733-9cc7-8ab0417fa1a4
+          type: path
+      body:
+        type: json
+        data: "{\r\n    \"provider_name\": \"PRIVY ID\",\r\n    \"endpoint_api\": \"https://gateway.privy.id:2024/signature\",\r\n    \"configurations\": {\r\n        \"credential_key\": \"\",\r\n        \"jwt\": \"\"\r\n    },\r\n    \"date_contract\": \"2024-10-01T03:00:00+07:00\",\r\n    \"contract_expiry\": \"2025-10-30T23:59:00+07:00\",\r\n    \"is_active\": true,\r\n    \"user_update\": \"Admin2\",\r\n    \"updated_at\": \"2024-10-01T13:00:00+07:00\"\r\n}"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 17 Oct 2024 05:05:35 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "1050"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "provider_id": "b7aeddc7-beb4-4e89-bae1-1b7df547dd38",
+                  "company_id": "6e684367-d6bc-4733-9cc7-8ab0417fa1a4",
+                  "provider_name": "PRIVY ID",
+                  "endpoint_api": "https://gateway.privy.id:2024/signature",
+                  "configurations": {
+                      "credential_key": "",
+                      "jwt": ""
+                  },
+                  "date_contract": "2024-10-01T03:00:00+07:00",
+                  "contract_expiry": "2025-10-30T23:59:00+07:00",
+                  "is_active": true,
+                  "user_create": "Admin1",
+                  "created_at": "2024-10-01T03:00:00+07:00",
+                  "user_update": "Admin2",
+                  "updated_at": "2024-10-01T13:00:00+07:00"
+              }
+          }

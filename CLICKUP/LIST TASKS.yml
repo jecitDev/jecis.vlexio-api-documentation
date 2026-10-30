@@ -1,0 +1,26 @@
+info:
+  name: LIST TASKS
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: '{{BASE_URL}}/clickup/list/192896881/task?custom_fields=[{"field_id": "950f33f1-2908-43e1-a2b4-b57fe79fc139","operator": "=","name": "Email","type": "text","value": "it.development@jec.co.id","required": false}]'
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: custom_fields
+      value: '[{"field_id": "950f33f1-2908-43e1-a2b4-b57fe79fc139","operator": "=","name": "Email","type": "text","value": "it.development@jec.co.id","required": false}]'
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

@@ -1,0 +1,321 @@
+info:
+  name: ACTIVATE USER
+  type: http
+  seq: 9
+http:
+  method: POST
+  url: "{{BASE_URL}}/auth_activation/activate_user"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+      disabled: true
+  body:
+    type: json
+    data: "{\r\n    \"password\": \"\",\r\n    \"verification_code\": \"6038\",\r\n    \"activation_code\": \"731b4f42-cfb8-4035-967d-c19fc7c9f8c1\",\r\n    \"user_id\": \"211701\",\r\n    \"email\": \"fernandoriyo7@gmail.com\"\r\n}"
+  auth: inherit
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: ACTIVATION CODE NOT MATCH
+    request:
+      url: "{{BROKER_URL}}/auth_activation/activate_user"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r\n    \"password\": \"\",\r\n    \"verification_code\": \"0474\",\r\n    \"activation_code\": \"e36d5626-b96d-45e7-a6a1-3fefd83a3e66\",\r\n    \"user_id\": \"302301\",\r\n    \"email\": \"iskandarferdinand12@gmail.com\"\r\n}"
+    response:
+      status: 403
+      statusText: Forbidden
+      headers:
+        - name: Date
+          value: Fri, 21 Mar 2025 08:24:22 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "57"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+              "message": "user_activation.code_not_match",
+              "status": 403
+          }
+  - name: VERIFICATION CODE NOT MATCH
+    request:
+      url: "{{BROKER_URL}}/auth_activation/activate_user"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r\n    \"password\": \"\",\r\n    \"verification_code\": \"7001\",\r\n    \"activation_code\": \"924ef2a1-23eb-4eba-b3d9-2c4cc6640128\",\r\n    \"user_id\": \"302301\",\r\n    \"email\": \"iskandarferdinand12@gmail.com\"\r\n}"
+    response:
+      status: 403
+      statusText: Forbidden
+      headers:
+        - name: Date
+          value: Fri, 21 Mar 2025 08:25:05 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "70"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+              "message": "user_activation.verification_code_not_match",
+              "status": 403
+          }
+  - name: EMAIL NOT MATCH
+    request:
+      url: "{{BROKER_URL}}/auth_activation/activate_user"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r\n    \"password\": \"\",\r\n    \"verification_code\": \"0474\",\r\n    \"activation_code\": \"924ef2a1-23eb-4eba-b3d9-2c4cc6640128\",\r\n    \"user_id\": \"302301\",\r\n    \"email\": \"iskandarferdinand@gmail.com\"\r\n}"
+    response:
+      status: 403
+      statusText: Forbidden
+      headers:
+        - name: Date
+          value: Fri, 21 Mar 2025 08:25:28 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "58"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+              "message": "user_activation.email_not_match",
+              "status": 403
+          }
+  - name: ACTIVATE USER
+    request:
+      url: "{{BROKER_URL}}/auth_activation/activate_user"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+          disabled: true
+      body:
+        type: json
+        data: "{\r\n    \"password\": \"\",\r\n    \"verification_code\": \"0474\",\r\n    \"activation_code\": \"924ef2a1-23eb-4eba-b3d9-2c4cc6640128\",\r\n    \"user_id\": \"302301\",\r\n    \"email\": \"iskandarferdinand12@gmail.com\"\r\n}"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Fri, 21 Mar 2025 10:17:44 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "80"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "user_id": "302301",
+                  "email": "iskandarferdinand12@gmail.com"
+              }
+          }
+  - name: VERIFICATION CODE EXPIRED OR USED
+    request:
+      url: "{{BROKER_URL}}/auth_activation/activate_user"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r\n    \"password\": \"\",\r\n    \"verification_code\": \"0474\",\r\n    \"activation_code\": \"924ef2a1-23eb-4eba-b3d9-2c4cc6640128\",\r\n    \"user_id\": \"302301\",\r\n    \"email\": \"iskandarferdinand12@gmail.com\"\r\n}"
+    response:
+      status: 403
+      statusText: Forbidden
+      headers:
+        - name: Date
+          value: Fri, 21 Mar 2025 08:26:10 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "84"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+              "message": "user_activation.verification_code_expired_or_already_used",
+              "status": 403
+          }
+  - name: ALREADY ACTIVATED
+    request:
+      url: "{{BROKER_URL}}/auth_activation/activate_user"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+          disabled: true
+      body:
+        type: json
+        data: "{\r\n    \"password\": \"\",\r\n    \"verification_code\": \"7263\",\r\n    \"activation_code\": \"4c27bec0-7f9a-4a36-930a-2efd864ec499\",\r\n    \"user_id\": \"302301\",\r\n    \"email\": \"iskandarferdinand12@gmail.com\"\r\n}"
+    response:
+      status: 500
+      statusText: Internal Server Error
+      headers:
+        - name: Date
+          value: Mon, 24 Mar 2025 08:23:30 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "60"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+              "message": "user_activation.already_activated",
+              "status": 500
+          }

@@ -1,0 +1,143 @@
+info:
+  name: INSERT
+  type: http
+  seq: 1
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/instrument_emr"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r\n    \"business_unit_id\": \"0fb2ad94-d1be-4a75-b4fc-77af31850455\",\r\n    \"name\": \"other instrument\",\r\n    \"type\": \"aliquip dolore Ut\",\r\n    \"hasil_test\": {\"value\": [\"jec namber wan\"]},\r\n    \"asset_id\": \"ipsum irure\",\r\n    \"is_active\": true,\r\n    \"user_create\": \"kito\",\r\n    \"created_at\": \"2025-03-12T14:30:45+07:00\"\r\n}"
+  auth: inherit
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/instrument_emr"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r\n    \"business_unit_id\": \"0fb2ad94-d1be-4a75-b4fc-77af31850455\",\r\n    \"name\": \"other instrument\",\r\n    \"type\": \"aliquip dolore Ut\",\r\n    \"hasil_test\": {\"value\": [\"jec namber wan\"]},\r\n    \"asset_id\": \"ipsum irure\",\r\n    \"is_active\": true,\r\n    \"user_create\": \"kito\",\r\n    \"created_at\": \"2025-03-12T14:30:45+07:00\"\r\n}"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 17 Mar 2025 02:37:03 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "337"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "instrument": {
+                      "business_unit_id": "0fb2ad94-d1be-4a75-b4fc-77af31850455",
+                      "id": "f1d81b89-8cea-461c-abc6-3fce963ba882",
+                      "name": "other instrument",
+                      "type": "aliquip dolore Ut",
+                      "hasil_test": {
+                          "value": [
+                              "jec namber wan"
+                          ]
+                      },
+                      "asset_id": "ipsum irure",
+                      "is_active": true,
+                      "user_create": "kito",
+                      "created_at": "2025-03-12T14:30:45+07:00"
+                  }
+              }
+          }
+  - name: Error Request Payload
+    request:
+      url: "{{BASE_URL}}/v1/instrument_emr"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r\n    \"business_unit_id\": \"123987456\",\r\n    \"name\": \"other instrument\",\r\n    \"type\": \"aliquip dolore Ut\",\r\n    \"hasil_test\": {\"value\": [\"jec namber wan\"]},\r\n    \"asset_id\": \"ipsum irure\",\r\n    \"is_active\": \"true\",\r\n    \"user_create\": \"kito\",\r\n    \"created_at\": \"2025-03-12T14:30:45+07:00\"\r\n}"
+    response:
+      status: 500
+      statusText: Internal Server Error
+      headers:
+        - name: Date
+          value: Mon, 17 Mar 2025 02:41:25 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "119"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "json: cannot unmarshal string into Go struct field CreateRequestProto.is_active of type bool",
+              "status": 500
+          }

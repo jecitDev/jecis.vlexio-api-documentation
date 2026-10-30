@@ -1,0 +1,40 @@
+info:
+  name: PATCH
+  type: http
+  seq: 5
+
+http:
+  method: PATCH
+  url: "{{BASE_URL}}/v1/patients/:business_unit_id/:patient_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+    - name: patient_id
+      value: PKDY250407-0001
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"user_update\":\"21170\",\r
+
+      \    \"updated_at\":\"2025-06-12T14:57:00+07:00\",\r
+
+      \    \"data\":[\r
+
+      \        {\"field\":\"first_name\",\"value\":\"suryai\"}\r
+
+      \    ]\r
+
+      }"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

@@ -1,0 +1,182 @@
+info:
+  name: Upload Attachment
+  type: http
+  seq: 8
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/company-registrations/:id/attachment"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  params:
+    - name: id
+      value: 13dfb8a8-4f68-47c7-8b3d-c8bc812205d8
+      type: path
+  body:
+    type: multipart-form
+    data:
+      - name: file
+        type: file
+        value:
+          - /C:/Users/pf2e7/Downloads/v2osk-P_hTMaVlkzk-unsplash.jpg
+      - name: created_at
+        type: text
+        value: 2025-09-03T07:08:41.000Z
+      - name: user_create
+        type: text
+        value: ferdinand
+  auth:
+    type: bearer
+    token: "{{xtoken}}"
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/company-registrations/:id/attachment"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      params:
+        - name: id
+          value: 13dfb8a8-4f68-47c7-8b3d-c8bc812205d8
+          type: path
+      body:
+        type: multipart-form
+        data:
+          - name: file
+            type: file
+            value:
+              - /C:/Users/pf2e7/Downloads/image-2025-09-01.png
+          - name: created_at
+            type: text
+            value: 2025-09-03T07:08:41.000Z
+          - name: user_create
+            type: text
+            value: ferdinand
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 09 Oct 2025 03:26:17 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "258"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "id": "13dfb8a8-4f68-47c7-8b3d-c8bc812205d8",
+                  "file_url": "/file_storage/company/13dfb8a8-4f68-47c7-8b3d-c8bc812205d8/registration/67ebb0db-b93f-4a86-a600-d8488860fd1b.png",
+                  "created_at": "2025-10-09T10:26:17+07:00",
+                  "user_create": "ferdinand"
+              }
+          }
+  - name: Not Found
+    request:
+      url: "{{BASE_URL}}/v1/company-registrations/:id/attachment"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      params:
+        - name: id
+          value: 13dfb8a8-4f68-47c7-8b3d-c8bc812205d7
+          type: path
+      body:
+        type: multipart-form
+        data:
+          - name: file
+            type: file
+            value:
+              - /C:/Users/pf2e7/Downloads/image-2025-09-01.png
+          - name: created_at
+            type: text
+            value: 2025-09-03T07:08:41.000Z
+          - name: user_create
+            type: text
+            value: ferdinand
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Date
+          value: Thu, 09 Oct 2025 03:29:00 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "58"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "company_registrations.not_found",
+              "status": 404
+          }

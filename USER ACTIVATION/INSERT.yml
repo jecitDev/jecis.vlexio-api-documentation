@@ -1,0 +1,253 @@
+info:
+  name: INSERT
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{GATEWAY_URL}}/v1/user-activation"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"address\": \"Jln. Terusan arjuna utara no 1\",\r
+
+      \    \"auto_capital\": false,\r
+
+      \    \"city\": \"Jakarta\",\r
+
+      \    \"county\": \"Jakarta\",\r
+
+      \    \"created_at\": \"2025-03-21T00:00:00+07:00\",\r
+
+      \    \"date_birth\": \"2001-12-25T00:00:00+07:00\",\r
+
+      \    \"email\": \"iskandarferdinand12@gmail.com\",\r
+
+      \    \"font_size\": \"12\",\r
+
+      \    \"img_url\": \"\",\r
+
+      \    \"is_active\": true,\r
+
+      \    \"krs_id\": \"302301\",\r
+
+      \    \"mobile_no\": \"08122345672\",\r
+
+      \    \"nationality\": \"Indonesia\",\r
+
+      \    \"nik\": \"9999999999999999\",\r
+
+      \    \"npwp\": \"\",\r
+
+      \    \"page_after_login\": \"\",\r
+
+      \    \"phone_no\": \"\",\r
+
+      \    \"province\": \"DKI Jakarta\",\r
+
+      \    \"religion\": \"\",\r
+
+      \    \"sex\": \"M\",\r
+
+      \    \"signature_url\": \"\",\r
+
+      \    \"sr_language\": \"id-ID\",\r
+
+      \    \"sr_profession\": 1,\r
+
+      \    \"status\": \"1\",\r
+
+      \    \"user_create\": \"admin\",\r
+
+      \    \"user_id\": \"302301\",\r
+
+      \    \"user_initials\": \"Ferdi\",\r
+
+      \    \"user_name\": \"Ferdinand Iskandar\",\r
+
+      \    \"user_type\": \"StandardUser\",\r
+
+      \    \"business_units\": [\r
+
+      \        {\r
+
+      \            \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+      \            \"company_id\": \"2da6a1bd-ba62-43ec-91f8-4085d5d6d498\",\r
+
+      \            \"activate_date\": \"2025-03-19T10:33:00+07:00\",\r
+
+      \            \"expire_date\": \"2026-03-18T14:15:00+07:00\",\r
+
+      \            \"is_active\": true\r
+
+      \        }\r
+
+      \    ],\r
+
+      \    \"group_id\": [\r
+
+      \        {\r
+
+      \            \"id\": \"ITS\"\r
+
+      \        },\r
+
+      \        {\r
+
+      \            \"id\": \"SUPERADMIN\"\r
+
+      \        }\r
+
+      \    ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: INSERT
+    request:
+      url: "{{GATEWAY_URL}}/v1/user-activation"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"address\": \"Jln. Terusan arjuna utara no 1\",\r
+
+          \    \"auto_capital\": false,\r
+
+          \    \"city\": \"Jakarta\",\r
+
+          \    \"county\": \"Jakarta\",\r
+
+          \    \"created_at\": \"2025-03-21T00:00:00+07:00\",\r
+
+          \    \"date_birth\": \"2001-12-25T00:00:00+07:00\",\r
+
+          \    \"email\": \"iskandarferdinand12@gmail.com\",\r
+
+          \    \"font_size\": \"12\",\r
+
+          \    \"img_url\": \"\",\r
+
+          \    \"is_active\": true,\r
+
+          \    \"krs_id\": \"302301\",\r
+
+          \    \"mobile_no\": \"08122345672\",\r
+
+          \    \"nationality\": \"Indonesia\",\r
+
+          \    \"nik\": \"9999999999999999\",\r
+
+          \    \"npwp\": \"\",\r
+
+          \    \"page_after_login\": \"\",\r
+
+          \    \"phone_no\": \"\",\r
+
+          \    \"province\": \"DKI Jakarta\",\r
+
+          \    \"religion\": \"\",\r
+
+          \    \"sex\": \"M\",\r
+
+          \    \"signature_url\": \"\",\r
+
+          \    \"sr_language\": \"id-ID\",\r
+
+          \    \"sr_profession\": 1,\r
+
+          \    \"status\": \"1\",\r
+
+          \    \"user_create\": \"admin\",\r
+
+          \    \"user_id\": \"302301\",\r
+
+          \    \"user_initials\": \"Ferdi\",\r
+
+          \    \"user_name\": \"Ferdinand Iskandar\",\r
+
+          \    \"user_type\": \"StandardUser\",\r
+
+          \    \"business_units\": [\r
+
+          \        {\r
+
+          \            \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+          \            \"company_id\": \"2da6a1bd-ba62-43ec-91f8-4085d5d6d498\",\r
+
+          \            \"activate_date\": \"2025-03-19T10:33:00+07:00\",\r
+
+          \            \"expire_date\": \"2026-03-18T14:15:00+07:00\",\r
+
+          \            \"is_active\": true\r
+
+          \        }\r
+
+          \    ]\r
+
+          }"
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Date
+          value: Fri, 21 Mar 2025 07:38:38 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "103"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 201,
+              "data": {
+                  "user_id": "302301",
+                  "user_create": "admin",
+                  "created_at": "2025-03-21T00:00:00+07:00"
+              }
+          }

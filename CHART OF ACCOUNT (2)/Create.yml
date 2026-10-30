@@ -1,0 +1,131 @@
+info:
+  name: Create
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/coa"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"parent_id\": \"0eeb8a91-f73c-4b0f-a9f3-da34d6d61659\",\r
+
+      \    \"account_number\": \"1.00.00.00.03\",\r
+
+      \    \"account_name\": \"Test 3 Child\",\r
+
+      \    \"account_type\": \"ASSET\",\r
+
+      \    \"balance_must_be\": \"DEBIT\",\r
+
+      \    \"is_group\": false,\r
+
+      \    \"module_type\": \"ITEM\",\r
+
+      \    \"company_id\": \"2da6a1bd-ba62-43ec-91f8-4085d5d6d498\",\r
+
+      \    \"business_unit_ids\": [\"53aad077-9fb1-4f08-85f3-af9fd9a36517\", \"b15fe928-92ab-478f-99ba-1a156fd8d64c\"],\r
+
+      \    \"description\": \"test 123\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Create
+    request:
+      url: "{{BASE_URL}}/v1/coa"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"parent_id\": \"0eeb8a91-f73c-4b0f-a9f3-da34d6d61659\",\r
+
+          \    \"account_number\": \"1.00.00.00.02\",\r
+
+          \    \"account_name\": \"Test 2 Child\",\r
+
+          \    \"account_type\": \"ASSET\",\r
+
+          \    \"balance_must_be\": \"DEBIT\",\r
+
+          \    \"is_group\": false,\r
+
+          \    \"module_type\": \"ITEM\",\r
+
+          \    \"company_id\": \"2da6a1bd-ba62-43ec-91f8-4085d5d6d498\",\r
+
+          \    \"business_unit_ids\": [\"53aad077-9fb1-4f08-85f3-af9fd9a36517\", \"b15fe928-92ab-478f-99ba-1a156fd8d64c\"],\r
+
+          \    \"description\": \"test 123\"\r
+
+          }"
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Date
+          value: Mon, 22 Dec 2025 07:53:38 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "179"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 201,
+              "data": {
+                  "account_number": "1.00.00.00.02",
+                  "coa_level": 2,
+                  "created_at": "2025-12-22T14:53:38+07:00",
+                  "id": "e67ea5f2-0f8c-4420-8d27-8fa03475ad6f",
+                  "user_create": "ferdinand"
+              }
+          }

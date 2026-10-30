@@ -1,0 +1,243 @@
+info:
+  name: Get Voucher Header By Package Id
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/promo/voucher-header/:id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: id
+      value: 9a368312-f26a-49e1-80bd-b12e085cecaf
+      type: path
+  body:
+    type: text
+    data: "{\r
+
+      \  \"package_name\": \"Fall Health Promo 2025\",\r
+
+      \  \"package_short_name\": \"Fall25\",\r
+
+      \  \"sr_package_status\": \"1\",\r
+
+      \  \"business_unit_id\": \"53aad077-9fb1-4f08-85f3-af9fd9a36517\",\r
+
+      \  \"package_pic\": \"user123\",\r
+
+      \  \"package_type\": \"Voucher\",\r
+
+      \  \"package_start\": \"2025-09-01T00:00:00+07:00\",\r
+
+      \  \"package_end\": \"2025-12-31T23:59:59+07:00\",\r
+
+      \  \"is_global\": true,\r
+
+      \  \"is_auto_approve\": false,\r
+
+      \  \"is_include_item_medical\": true,\r
+
+      \  \"is_include_item_medical_special_rule\": false,\r
+
+      \  \"is_include_item_medical_zero_revenue\": false,\r
+
+      \  \"is_include_item_medical_in_percent\": true,\r
+
+      \  \"is_include_item_medical_to_guarantor\": false,\r
+
+      \  \"item_medical_value\": 15.5,\r
+
+      \  \"is_include_item_non_medical\": true,\r
+
+      \  \"is_include_item_non_medical_to_guarantor\": false,\r
+
+      \  \"is_include_item_service\": true,\r
+
+      \  \"is_include_item_service_to_guarantor\": true,\r
+
+      \  \"is_include_item_optic\": false,\r
+
+      \  \"is_include_item_optic_special_rule\": false,\r
+
+      \  \"is_include_item_optic_zero_revenue\": false,\r
+
+      \  \"is_include_item_optic_in_percent\": false,\r
+
+      \  \"is_include_item_optic_to_guarantor\": false,\r
+
+      \  \"item_optic_value\": 0.0,\r
+
+      \  \"bill_transaction_type\": \"REGULAR\",\r
+
+      \  \"bill_receipt_type\": \"STANDARD\",\r
+
+      \  \"bill_is_block_auto_bill_registration\": false,\r
+
+      \  \"bill_is_show_discount\": true,\r
+
+      \  \"bill_is_hide_amount\": false,\r
+
+      \  \"is_active\": true,\r
+
+      \  \"created_at\": \"2025-08-04T10:30:00+07:00\",\r
+
+      \  \"user_create\": \"302303\",\r
+
+      \  \"is_need_voucher\": true,\r
+
+      \  \"count_voucher\": 5,\r
+
+      \  \"voucher_amount\": 50000,\r
+
+      \  \"voucher_expired\": \"2025-12-31T23:59:59+07:00\",\r
+
+      \  \"voucher_is_paid\": true,\r
+
+      \  \"voucher_payment_method\": \"BANK_TRANSFER\",\r
+
+      \  \"voucher_payment_by_user_id\": \"user456\",\r
+
+      \  \"voucher_payment_date_time\": \"2025-08-01T14:30:00+07:00\",\r
+
+      \  \"sr_campaign_type\": \"Event\",\r
+
+      \  \"voucher_alias\": \"\",\r
+
+      \  \"availability_on\": [\"53aad077-9fb1-4f08-85f3-af9fd9a36517\", \"b15fe928-92ab-478f-99ba-1a156fd8d64c\"],\r
+
+      \  \"voucher_amount_in_percent\": false\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Not Found
+    request:
+      url: "{{BASE_URL}}/v1/promo/voucher-header/:id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: id
+          value: 14f2ee9b-aed7-4933-bd85-0a1ee98b42af
+          type: path
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Date
+          value: Tue, 05 Aug 2025 09:51:30 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "51"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "message": "voucher_header.not_found",
+              "status": 404
+          }
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/promo/voucher-header/:id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: id
+          value: 14f2ee9b-aed7-4933-bd85-0a1ee98b42ae
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Wed, 06 Aug 2025 03:45:00 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "328"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "availability_on": [
+                      "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                      "b15fe928-92ab-478f-99ba-1a156fd8d64c"
+                  ],
+                  "package_id": "14f2ee9b-aed7-4933-bd85-0a1ee98b42ae",
+                  "total_claimed": 7,
+                  "total_generated": 155,
+                  "total_remaining": 148,
+                  "voucher_alias": "",
+                  "voucher_amount": 50000,
+                  "voucher_amount_in_percent": false,
+                  "voucher_count": 10
+              }
+          }

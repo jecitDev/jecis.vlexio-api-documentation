@@ -1,0 +1,102 @@
+info:
+  name: Upload PKP Document
+  type: http
+  seq: 21
+
+http:
+  method: PATCH
+  url: "{{BASE_URL}}/v1/supplier/:id/doc_pkp"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  params:
+    - name: id
+      value: e221cdd3-0529-4266-ac05-f9b8b105f3fc
+      type: path
+  body:
+    type: multipart-form
+    data:
+      - name: file
+        type: file
+        value:
+          - /C:/Users/pf2e7/Downloads/Pengajuan_Kerja_Sama_JEC.pdf
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Upload PKP Document
+    request:
+      url: "{{BASE_URL}}/v1/supplier/:id/doc_pkp"
+      method: PATCH
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      params:
+        - name: id
+          value: e221cdd3-0529-4266-ac05-f9b8b105f3fc
+          type: path
+      body:
+        type: multipart-form
+        data:
+          - name: file
+            type: file
+            value:
+              - /C:/Users/pf2e7/Downloads/Pengajuan_Kerja_Sama_JEC.pdf
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 06 Aug 2026 12:18:25 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "171"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "id": "e221cdd3-0529-4266-ac05-f9b8b105f3fc",
+                  "document_url": "test/pkp_document.pdf",
+                  "user_update": "ferdinand",
+                  "updated_at": "2026-08-06T19:18:25+07:00"
+              }
+          }

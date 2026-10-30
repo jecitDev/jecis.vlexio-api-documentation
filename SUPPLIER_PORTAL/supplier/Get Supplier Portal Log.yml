@@ -1,0 +1,126 @@
+info:
+  name: Get Supplier Portal Log
+  type: http
+  seq: 9
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/Supplier-Portal/Supplier/GetLogSupplierPortal/:id/:business_unit_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: version
+      value: "20260826111224"
+      type: query
+      disabled: true
+    - name: id
+      value: cf110072-71a6-4ca6-bca5-9ec346711e95
+      type: path
+    - name: business_unit_id
+      value: 33b109c5-dd64-480c-8100-68fe17deaf3e
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Get Supplier Portal Log
+    request:
+      url: "{{BASE_URL}}/v1/Supplier-Portal/Supplier/GetLogSupplierPortal/:id/:business_unit_id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: version
+          value: "20260826111224"
+          type: query
+          disabled: true
+        - name: id
+          value: cf110072-71a6-4ca6-bca5-9ec346711e95
+          type: path
+        - name: business_unit_id
+          value: 33b109c5-dd64-480c-8100-68fe17deaf3e
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Fri, 28 Aug 2026 09:53:54 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "955"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "data": {
+                      "logs": [
+                          {
+                              "data_after": {},
+                              "data_before": {},
+                              "id": "b9af8975-a118-4e0d-9b83-b7195cc6f556",
+                              "log_date": "2026-08-28T14:59:36+07:00",
+                              "log_user": "c88b154f-25be-450c-ae0c-df2c1ec04778",
+                              "operation": "create_supplier",
+                              "supplier_id": "7d344165-ea77-4131-ba35-3ef09a5b9fa0",
+                              "version": "20260828075936"
+                          },
+                          {
+                              "data_after": {},
+                              "data_before": {},
+                              "id": "aaf99bd1-a28d-438f-84b5-f74936a1d06c",
+                              "log_date": "2026-08-28T15:10:31+07:00",
+                              "log_user": "227837a4-219c-4de1-8fd7-6196d9361352",
+                              "operation": "delete_supplier",
+                              "supplier_id": "7d344165-ea77-4131-ba35-3ef09a5b9fa0",
+                              "version": "20260828081031"
+                          },
+                          {
+                              "data_after": {},
+                              "data_before": {},
+                              "id": "546c447a-d97c-4f61-b5fb-1cea6a0c73a3",
+                              "log_date": "2026-08-28T15:12:41+07:00",
+                              "log_user": "227837a4-219c-4de1-8fd7-6196d9361352",
+                              "operation": "reactivate_supplier",
+                              "supplier_id": "7d344165-ea77-4131-ba35-3ef09a5b9fa0",
+                              "version": "20260828081241"
+                          }
+                      ]
+                  },
+                  "message": "Log supplier by version retrieved successfully",
+                  "status": "success"
+              }
+          }

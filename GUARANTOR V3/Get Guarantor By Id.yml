@@ -1,0 +1,209 @@
+info:
+  name: Get Guarantor By Id
+  type: http
+  seq: 5
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/marketing/guarantor/:guarantor_id/:company_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: guarantor_id
+      value: a8186a9e-75d7-47d1-a676-14cd01b8c551
+      type: path
+    - name: company_id
+      value: df0ff1b4-c381-4f1a-a0ab-0702c789d46b
+      type: path
+  body:
+    type: json
+    data: ""
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/:guarantor_id/:company_id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: guarantor_id
+          value: 100984d4-be79-47d2-a6ac-73175a2722e8
+          type: path
+        - name: company_id
+          value: df0ff1b4-c381-4f1a-a0ab-0702c789d46b
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Wed, 02 Jul 2025 08:28:26 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "929"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "guarantor_id": "100984d4-be79-47d2-a6ac-73175a2722e8",
+                  "business_unit_id": [
+                      "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                      "53aad077-9fb1-4f08-85f3-af9fd9a36518"
+                  ],
+                  "company_id": "df0ff1b4-c381-4f1a-a0ab-0702c789d46b",
+                  "guarantor_name": "CV. Aman Sentosa Updated",
+                  "short_name": "Sehat",
+                  "sr_guarantor_type": "INSURANCE",
+                  "is_active": true,
+                  "street_name": "Jl. Kesehatan No.1",
+                  "district": "Kemang",
+                  "city": "Jakarta Selatan",
+                  "county": "DKI Jakarta",
+                  "state": "Jakarta",
+                  "zip_code": "12345",
+                  "phone_no": "0211234567",
+                  "fax_no": "0211234568",
+                  "email": "info@sehat.com",
+                  "mobile_phone_no": "08123456789",
+                  "chart_of_account_id": 102,
+                  "subledger_id": 202,
+                  "finance_contact_person": "Agus Salim",
+                  "finance_email": "finance@sehat.com",
+                  "sr_guarantor_status": "Draft",
+                  "sr_guarantor_group": "Internal",
+                  "sr_guarantor_group_payer": "Payer",
+                  "user_create": "admin",
+                  "created_at": "2025-03-18T14:08:41+07:00",
+                  "user_update": "ferdinand",
+                  "updated_at": "2025-03-18T14:08:41+07:00"
+              }
+          }
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/marketing/guarantor/:guarantor_id/:company_id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: guarantor_id
+          value: a8186a9e-75d7-47d1-a676-14cd01b8c551
+          type: path
+        - name: company_id
+          value: df0ff1b4-c381-4f1a-a0ab-0702c789d46b
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Fri, 11 Jul 2025 03:03:08 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "949"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "guarantor_id": "a8186a9e-75d7-47d1-a676-14cd01b8c551",
+                  "business_unit_id": [
+                      "53aad077-9fb1-4f08-85f3-af9fd9a36517"
+                  ],
+                  "company_id": "df0ff1b4-c381-4f1a-a0ab-0702c789d46b",
+                  "guarantor_name": "CV. Sehat Sentosa Updated",
+                  "short_name": "Aman Sentosa",
+                  "sr_guarantor_type": "COMPANY",
+                  "is_active": true,
+                  "is_enable": true,
+                  "street_name": "Jl. Damai No.88",
+                  "district": "Sukmajaya",
+                  "city": "Depok",
+                  "county": "Jawa Barat",
+                  "state": "Jawa Barat",
+                  "zip_code": "16412",
+                  "phone_no": "0217654321",
+                  "fax_no": "0217654322",
+                  "email": "contact@aman.co.id",
+                  "mobile_phone_no": "08987654321",
+                  "chart_of_account_id": 102,
+                  "subledger_id": 203,
+                  "finance_contact_person": "Siti Aminah",
+                  "finance_email": "finance@aman.co.id",
+                  "sr_guarantor_status": "1",
+                  "sr_guarantor_group": "External",
+                  "sr_guarantor_group_payer": "Payer",
+                  "user_create": "admin_user",
+                  "created_at": "2025-06-05T14:08:41+07:00",
+                  "user_update": "ferdinand",
+                  "updated_at": "2025-03-25T09:00:00+07:00",
+                  "guarantor_no": "G-KDY/20250711-0001"
+              }
+          }

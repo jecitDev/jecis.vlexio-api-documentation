@@ -1,0 +1,7 @@
+info:
+  name: EXAM SETUP
+  type: folder
+  seq: 92
+
+request:
+  auth: inherit

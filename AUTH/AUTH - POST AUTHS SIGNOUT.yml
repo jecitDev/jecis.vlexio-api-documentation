@@ -1,0 +1,28 @@
+info:
+  name: AUTH - POST AUTHS SIGNOUT
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/auths/signout"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: text
+    data: "{\r
+
+      \    \"email\":\"fernando.riyo@jec.co.id\",\r
+
+      \    \"password\":\"\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

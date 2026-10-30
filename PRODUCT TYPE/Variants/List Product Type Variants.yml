@@ -1,0 +1,121 @@
+info:
+  name: List Product Type Variants
+  type: http
+  seq: 5
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/product-types/variants?page=1&page_size=10&business_unit_id=33b109c5-dd64-480c-8100-68fe17deaf3e"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: page_size
+      value: "10"
+      type: query
+    - name: keywords
+      value: "1"
+      type: query
+      disabled: true
+    - name: business_unit_id
+      value: 33b109c5-dd64-480c-8100-68fe17deaf3e
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: List Product Type Variants
+    request:
+      url: "{{BASE_URL}}/v1/product-types/variants?page=1&page_size=10&business_unit_id=33b109c5-dd64-480c-8100-68fe17deaf3e"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: page_size
+          value: "10"
+          type: query
+        - name: business_unit_id
+          value: 33b109c5-dd64-480c-8100-68fe17deaf3e
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 06 Aug 2026 06:55:49 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "630"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "page": 1,
+                  "page_size": 10,
+                  "total_items": 4,
+                  "variants": [
+                      {
+                          "product_type_id": "87175174-f63d-40bb-9249-25673b31f061",
+                          "variant_id": "4d4368f3-1360-4e89-afa0-38f075913058",
+                          "variant_name": "1.5 PK"
+                      },
+                      {
+                          "product_type_id": "87175174-f63d-40bb-9249-25673b31f061",
+                          "variant_id": "a30a9ddd-4b7d-4050-8a43-549af8a8c02e",
+                          "variant_name": "19 LITER, GALON"
+                      },
+                      {
+                          "product_type_id": "87175174-f63d-40bb-9249-25673b31f061",
+                          "variant_id": "f79a44ab-3082-462d-9ab5-7ad536441a25",
+                          "variant_name": "1 PK"
+                      },
+                      {
+                          "product_type_id": "c204aa5e-8427-4ddf-9134-2ed2b472341b",
+                          "variant_id": "a30a9ddd-4b7d-4050-8a43-549af8a8c02e",
+                          "variant_name": "19 LITER, GALON"
+                      }
+                  ]
+              }
+          }

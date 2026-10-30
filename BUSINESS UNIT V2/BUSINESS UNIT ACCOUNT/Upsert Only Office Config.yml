@@ -1,0 +1,124 @@
+info:
+  name: Upsert Only Office Config
+  type: http
+  seq: 10
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/business-unit-accounts/only-office"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"business_unit_id\": \"7a8cf54a-4b22-450e-911f-8a305831cb6a\",\r
+
+      \    \"config\": {\r
+
+      \        \"auth_key\": \"12345678\",\r
+
+      \        \"api_url\": \"https:/onlyoffice.com\"\r
+
+      \    }\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/business-unit-accounts/clickup"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"business_unit_id\": \"e691b064-cf1c-4c20-b8ba-caeceec712cb\",\r
+
+          \    \"config\": {\r
+
+          \        \"space_id\": \"12345678\",\r
+
+          \        \"list_id\": \"901234567890\",\r
+
+          \        \"business_unit\": \"1985df48-a77f-4fa3-9841-84f1d5d51492\",\r
+
+          \        \"auth\": \"pk_12345678_ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890\"\r
+
+          \    }\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Wed, 29 Oct 2025 03:16:02 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "463"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "id": "f09f726d-a45d-4765-82d6-15ee3eb28831",
+                  "business_unit_id": "e691b064-cf1c-4c20-b8ba-caeceec712cb",
+                  "name": "CLICK UP",
+                  "config": {
+                      "space_id": "12345678",
+                      "list_id": "901234567890",
+                      "business_unit": "1985df48-a77f-4fa3-9841-84f1d5d51492",
+                      "auth": "pk_12345678_ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+                  },
+                  "is_active": true,
+                  "created_at": "2025-10-29T10:15:02+07:00",
+                  "user_create": "ferdinand",
+                  "updated_at": "2025-10-29T10:16:02+07:00",
+                  "user_update": "ferdinand"
+              }
+          }

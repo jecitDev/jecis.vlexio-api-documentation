@@ -1,0 +1,98 @@
+info:
+  name: AUTH - UNBLOCK USER
+  type: http
+  seq: 6
+
+http:
+  method: DELETE
+  url: "{{BASE_URL}}/auths/unblock"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+      disabled: true
+  body:
+    type: json
+    data: "{\r
+
+      \    \"email\": \"21170\"\r
+
+      }\r\n"
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: "var data = res.getBody();\r
+
+        bru.setCollectionVar(\"xtoken\", data.data.access_token);\r
+
+        bru.setCollectionVar(\"API_TOKEN\", data.data.access_token);\r
+
+        bru.setCollectionVar(\"master_xtoken\", data.data.access_token);\r
+
+        bru.setCollectionVar(\"x-refresh-token\", data.data.refresh_token);"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: AUTH - UNBLOCK USER
+    request:
+      url: "{{BASE_URL}}/auths/unblock"
+      method: DELETE
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+          disabled: true
+      body:
+        type: json
+        data: "{\r
+
+          \    \"email\": \"fernando.riyo@jec.co.id\"\r
+
+          }\r\n"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Fri, 07 Nov 2025 07:12:56 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "40"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "status": "Success"
+              }
+          }

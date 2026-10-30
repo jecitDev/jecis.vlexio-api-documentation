@@ -1,0 +1,45 @@
+info:
+  name: Auto Number
+  type: folder
+  seq: 37
+
+request:
+  auth: inherit
+
+docs:
+  content: |-
+    ### \[TS-1003\] \[MASTER\] APP Auto Number #1.0.2
+
+    ##### Jun 27, 2024
+
+    - Consume Business Unit from Company App Service for Code or Initial
+        
+    - Convert Healthcare ID (Type) to UUID Type `[Enhance]`
+        
+    - Change Format Type Field: CreatedAt & UpdatedAt from Timestamps to ISODateTime
+        
+    - Add Parameter page; page_size; and keywords
+        
+
+    ### \[TS-1003\] \[MASTER\] APP Auto Number #1.0.1
+
+    ##### Jan 31, 2024
+
+    - Add Update Last Service
+        
+    - Add Get Last Service
+        
+
+    ### \[TS-1003\] \[MASTER\] APP Auto Number #1.0.0
+
+    ##### Nov 08, 2023
+
+    - Add Generate Code Service
+        
+
+    ##### Oct 31, 2023
+
+    - CRUD Common
+        
+    - Initial Task
+  type: text/markdown

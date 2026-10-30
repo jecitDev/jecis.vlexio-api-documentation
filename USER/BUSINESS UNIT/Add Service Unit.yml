@@ -1,0 +1,117 @@
+info:
+  name: Add Service Unit
+  type: http
+  seq: 10
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/user/business_unit/:user_id/:business_unit_id/departments/:department_id/service_units"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  params:
+    - name: user_id
+      value: "21170"
+      type: path
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+    - name: department_id
+      value: 6e6a6fbb-367e-4c6f-bae4-d3e7110ec3b8
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"service_unit_id\": \"A108\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/user/business_unit/:user_id/:business_unit_id/departments/:department_id/service_units"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      params:
+        - name: user_id
+          value: "21170"
+          type: path
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: path
+        - name: department_id
+          value: df55c115-48a4-4d9a-81e3-966c3363a76e
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"service_unit_id\": \"SU00002\"\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 24 Nov 2025 03:43:05 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "287"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                  "department_id": "df55c115-48a4-4d9a-81e3-966c3363a76e",
+                  "service_unit_id": "SU00002",
+                  "service_unit_name": "Operating Theatre",
+                  "updated_at": "2025-11-24T10:43:05+07:00",
+                  "user_id": "21170",
+                  "user_update": "ferdinand"
+              }
+          }

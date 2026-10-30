@@ -1,0 +1,128 @@
+info:
+  name: Queue EDoc
+  type: http
+  seq: 14
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/admedika/queues/:id/edocs"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-Branch-ID
+      value: "{{xbranchid}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  params:
+    - name: id
+      value: a9de1d85-9349-44c0-9cc1-069952c8abb6
+      type: path
+  body:
+    type: multipart-form
+    data:
+      - name: file
+        type: file
+        value:
+          - /C:/Users/pf2e7/Downloads/Pengajuan_Kerja_Sama_JEC.pdf
+      - name: business_unit_id
+        type: text
+        value: 33b109c5-dd64-480c-8100-68fe17deaf3e
+      - name: doc_type
+        type: text
+        value: HASIL_LAB
+      - name: remarks
+        type: text
+        value: Uploaded via Postman test
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Queue EDoc
+    request:
+      url: "{{BASE_URL}}/v1/admedika/queues/:id/edocs"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-Branch-ID
+          value: "{{xbranchid}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      params:
+        - name: id
+          value: a9de1d85-9349-44c0-9cc1-069952c8abb6
+          type: path
+      body:
+        type: multipart-form
+        data:
+          - name: file
+            type: file
+            value:
+              - /C:/Users/pf2e7/Downloads/Pengajuan_Kerja_Sama_JEC.pdf
+          - name: business_unit_id
+            type: text
+            value: 33b109c5-dd64-480c-8100-68fe17deaf3e
+          - name: doc_type
+            type: text
+            value: HASIL_LAB
+          - name: remarks
+            type: text
+            value: Uploaded via Postman test
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 27 Oct 2026 12:40:26 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "383"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+            "code": 200,
+            "data": {
+              "file_url": "/file_storage/79dfa096-770e-46ce-b147-bc645ef6b126/71b53dd1-2802-4527-8b5c-d54173392222/33b109c5-dd64-480c-8100-68fe17deaf3e",
+              "response": {
+                "output": {
+                  "status_code": 603,
+                  "status_msg": "Customer is not registered",
+                  "reference_id": 0,
+                  "txn_data": null,
+                  "txn_response_datetime": "20261027194027"
+                }
+              },
+              "created_at": "2026-10-27T19:40:25+07:00",
+              "user_create": "ferdinan"
+            }
+          }

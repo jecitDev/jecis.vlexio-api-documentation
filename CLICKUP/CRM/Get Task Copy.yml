@@ -1,0 +1,580 @@
+info:
+  name: Get Task Copy
+  type: http
+  seq: 3
+http:
+  method: GET
+  url: "{{BASE_URL}}/crm_form/task/:task_id?business_unit_id=33b109c5-dd64-480c-8100-68fe17deaf3e"
+  headers:
+    - name: x-token
+      value: ""
+      disabled: true
+    - name: X-Captcha-Token
+      value: ""
+  params:
+    - name: business_unit_id
+      value: 33b109c5-dd64-480c-8100-68fe17deaf3e
+      type: query
+    - name: task_id
+      value: 86d2tp9xb
+      type: path
+  auth: inherit
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+examples:
+  - name: Get Task
+    request:
+      url: "{{BASE_URL}}/crm_form/Task/:task_id?business_unit_id=33b109c5-dd64-480c-8100-68fe17deaf3e"
+      method: GET
+      headers:
+        - name: x-token
+          value: ""
+          disabled: true
+        - name: X-Captcha-Token
+          value: ""
+      params:
+        - name: business_unit_id
+          value: 33b109c5-dd64-480c-8100-68fe17deaf3e
+          type: query
+        - name: task_id
+          value: 86d2tp9xb
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Wed, 15 Jul 2026 09:37:04 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "8659"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: "?1"
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: "off"
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "archived": false,
+                  "assignees": [],
+                  "attachments": [],
+                  "checklists": [],
+                  "creator": {
+                      "color": "#04a9f4",
+                      "email": "ticketit@jec.co.id",
+                      "id": 54661600,
+                      "profilePicture": null,
+                      "username": "Ticket Bot"
+                  },
+                  "custom_fields": [
+                      {
+                          "date_created": "1776672508835",
+                          "hide_from_guests": false,
+                          "id": "11c05fce-c595-40e5-871e-d801962d1802",
+                          "name": "Account Number",
+                          "required": false,
+                          "type": "number",
+                          "type_config": {
+                              "number_format": "en-US"
+                          },
+                          "value": "123123",
+                          "value_richtext": null
+                      },
+                      {
+                          "date_created": "1776672629990",
+                          "hide_from_guests": false,
+                          "id": "f9284cb6-b254-48fa-b030-23be757c2736",
+                          "name": "Account Type",
+                          "required": false,
+                          "type": "drop_down",
+                          "type_config": {
+                              "options": [
+                                  {
+                                      "color": "#b6b6ff",
+                                      "id": "a0476832-1fa5-470e-8765-9990d1085edc",
+                                      "name": "Analyst",
+                                      "orderindex": 0
+                                  },
+                                  {
+                                      "color": "#aec0f5",
+                                      "id": "70e57473-ae3d-41f4-ac6a-0beb5f4251cd",
+                                      "name": "Competitor",
+                                      "orderindex": 1
+                                  },
+                                  {
+                                      "color": "#edadc8",
+                                      "id": "7884a91c-4997-4da5-80f3-f1a724d43b10",
+                                      "name": "Customer",
+                                      "orderindex": 2
+                                  },
+                                  {
+                                      "color": "#96c7f2",
+                                      "id": "e62e42f5-ff4c-4c15-ac40-1c05a0c9290e",
+                                      "name": "Distributor",
+                                      "orderindex": 3
+                                  },
+                                  {
+                                      "color": "#8dcec3",
+                                      "id": "48606502-ace9-4286-8f15-505c53463cdd",
+                                      "name": "Integrator",
+                                      "orderindex": 4
+                                  },
+                                  {
+                                      "color": "#92ceac",
+                                      "id": "59b15e5a-54d8-4603-89f5-cb4e1b429746",
+                                      "name": "Investor",
+                                      "orderindex": 5
+                                  },
+                                  {
+                                      "color": "#e9c162",
+                                      "id": "34e9837c-3169-4d79-a1ea-92a09972e02e",
+                                      "name": "Other",
+                                      "orderindex": 6
+                                  },
+                                  {
+                                      "color": "#ffaa7d",
+                                      "id": "f4646d62-f838-4b48-8893-80cc89ce59c2",
+                                      "name": "Partner",
+                                      "orderindex": 7
+                                  },
+                                  {
+                                      "color": "#6647f0",
+                                      "id": "2c249471-d8af-43a0-9e21-e3d7c4e45cd4",
+                                      "name": "Supplier",
+                                      "orderindex": 8
+                                  },
+                                  {
+                                      "color": "#3e63dd",
+                                      "id": "a35f6e48-1315-4b79-a709-5a166ebf1d41",
+                                      "name": "Vendor",
+                                      "orderindex": 9
+                                  }
+                              ],
+                              "sorting": "manual"
+                          },
+                          "value": 0,
+                          "value_richtext": null
+                      },
+                      {
+                          "date_created": "1776674851902",
+                          "hide_from_guests": false,
+                          "id": "ee90a55b-9e36-4c72-bf4c-12e5e4d02bd7",
+                          "name": "Annual Revenue",
+                          "required": false,
+                          "type": "currency",
+                          "type_config": {
+                              "currency_type": "IDR",
+                              "number_format": "en-US",
+                              "precision": 2
+                          },
+                          "value": "100000",
+                          "value_richtext": null
+                      },
+                      {
+                          "date_created": "1776310893058",
+                          "hide_from_guests": false,
+                          "id": "29f8e589-3394-4242-b1bc-28adf33a8686",
+                          "name": "BASELINE_due_date",
+                          "required": false,
+                          "type": "multi_key",
+                          "type_config": {
+                              "feature": "baselines",
+                              "subfield_type": "date",
+                              "subfield_type_id": 4
+                          }
+                      },
+                      {
+                          "date_created": "1776310893253",
+                          "hide_from_guests": false,
+                          "id": "9b7b141d-9d65-43cf-9ab2-080d5cead67b",
+                          "name": "BASELINE_duration",
+                          "required": false,
+                          "type": "multi_key",
+                          "type_config": {
+                              "feature": "baselines",
+                              "subfield_to_string_mode": "duration",
+                              "subfield_type": "number",
+                              "subfield_type_id": 7
+                          }
+                      },
+                      {
+                          "date_created": "1776310893367",
+                          "hide_from_guests": false,
+                          "id": "5e27f5fc-2b98-4004-898e-806fde78afd3",
+                          "name": "BASELINE_start_date",
+                          "required": false,
+                          "type": "multi_key",
+                          "type_config": {
+                              "feature": "baselines",
+                              "subfield_type": "date",
+                              "subfield_type_id": 4
+                          }
+                      },
+                      {
+                          "date_created": "1776310893169",
+                          "hide_from_guests": false,
+                          "id": "76a84ca6-71d2-4332-beb1-3de796f934ba",
+                          "name": "BASELINE_status",
+                          "required": false,
+                          "type": "multi_key",
+                          "type_config": {
+                              "feature": "baselines",
+                              "subfield_to_string_mode": "status",
+                              "subfield_type": "short_text",
+                              "subfield_type_id": 15
+                          }
+                      },
+                      {
+                          "date_created": "1776409399938",
+                          "hide_from_guests": false,
+                          "id": "38908374-3365-4661-a5e7-8fcf4c1712da",
+                          "name": "Campaign Type",
+                          "required": false,
+                          "type": "drop_down",
+                          "type_config": {
+                              "options": [
+                                  {
+                                      "color": "#6647f0",
+                                      "id": "1a06068f-18eb-44f5-b448-ba811bc6ad22",
+                                      "name": "Conference",
+                                      "orderindex": 0
+                                  },
+                                  {
+                                      "color": "#3e63dd",
+                                      "id": "6863d9d8-4552-4f4e-a469-f5ab7ea9d467",
+                                      "name": "Webinar",
+                                      "orderindex": 1
+                                  },
+                                  {
+                                      "color": "#0091ff",
+                                      "id": "065d182b-49c3-4735-b2e8-f28bbfcd9166",
+                                      "name": "Public Relation",
+                                      "orderindex": 2
+                                  },
+                                  {
+                                      "color": "#12a594",
+                                      "id": "3026e777-c6b1-4c58-8ff7-1e6df5c6ed49",
+                                      "name": "Partners",
+                                      "orderindex": 3
+                                  },
+                                  {
+                                      "color": "#ffc53d",
+                                      "id": "ad262081-c511-422e-8dac-5a8feb08cbe3",
+                                      "name": "Referral Program",
+                                      "orderindex": 4
+                                  },
+                                  {
+                                      "color": "#f76808",
+                                      "id": "371542f4-f7ab-4f80-a13f-f31a84357fe2",
+                                      "name": "Advertisement",
+                                      "orderindex": 5
+                                  },
+                                  {
+                                      "color": "#a18072",
+                                      "id": "4de33c0d-0a8a-43c4-a603-3da99f9a854b",
+                                      "name": "Banner Ads",
+                                      "orderindex": 6
+                                  },
+                                  {
+                                      "color": "#e93d82",
+                                      "id": "fc838892-ca60-4844-8c67-1f9ce56b6e95",
+                                      "name": "Email",
+                                      "orderindex": 7
+                                  },
+                                  {
+                                      "color": "#ab4aba",
+                                      "id": "0ab5717c-5459-441d-b860-407fcd4f9c50",
+                                      "name": "Telemarketing",
+                                      "orderindex": 8
+                                  },
+                                  {
+                                      "color": "#0e0e0e",
+                                      "id": "cd5f2ac5-b9f6-4a82-89fe-ddcc57555f9f",
+                                      "name": "Others",
+                                      "orderindex": 9
+                                  }
+                              ],
+                              "sorting": "manual"
+                          },
+                          "value": 0,
+                          "value_richtext": null
+                      },
+                      {
+                          "date_created": "1776068423147",
+                          "hide_from_guests": false,
+                          "id": "19397493-26a6-4151-8386-1131e7c6ef1f",
+                          "name": "City",
+                          "required": false,
+                          "type": "short_text",
+                          "type_config": {},
+                          "value": "Rejang Lebong",
+                          "value_richtext": null
+                      },
+                      {
+                          "date_created": "1776068469169",
+                          "hide_from_guests": false,
+                          "id": "3fe26fb1-e840-41b4-b40f-1cf78e84dd50",
+                          "name": "Country",
+                          "required": false,
+                          "type": "short_text",
+                          "type_config": {},
+                          "value": "Indonesia",
+                          "value_richtext": null
+                      },
+                      {
+                          "date_created": "1776673421317",
+                          "hide_from_guests": false,
+                          "id": "6b2eb0ff-47b2-410f-90a4-5090ee8df60b",
+                          "name": "Industry",
+                          "required": false,
+                          "type": "drop_down",
+                          "type_config": {
+                              "options": [
+                                  {
+                                      "color": "#b6b6ff",
+                                      "id": "97043955-7a7b-4c03-94c9-cd239aaa5d6e",
+                                      "name": "Technology",
+                                      "orderindex": 0
+                                  },
+                                  {
+                                      "color": "#edadc8",
+                                      "id": "bfb166f9-c604-451a-a5c5-c4a0435e5737",
+                                      "name": "Government",
+                                      "orderindex": 1
+                                  },
+                                  {
+                                      "color": "#aec0f5",
+                                      "id": "62beda0d-dbb2-4f8f-b62c-5bef3e13dce5",
+                                      "name": "Data / Telecom",
+                                      "orderindex": 2
+                                  },
+                                  {
+                                      "color": "#96c7f2",
+                                      "id": "5fc3c2d5-7e51-41d7-833a-43f6790dba1c",
+                                      "name": "Service Provider",
+                                      "orderindex": 3
+                                  },
+                                  {
+                                      "color": "#8dcec3",
+                                      "id": "5121b779-2628-42bb-8ea8-cc6db367d974",
+                                      "name": "System Integrator",
+                                      "orderindex": 4
+                                  },
+                                  {
+                                      "color": "#92ceac",
+                                      "id": "5afec336-79c7-41e6-8884-3faef6c2178e",
+                                      "name": "Education",
+                                      "orderindex": 5
+                                  },
+                                  {
+                                      "color": "#e9c162",
+                                      "id": "fac0a12b-7df7-4117-990a-b2bfe11a711f",
+                                      "name": "Real Estate",
+                                      "orderindex": 6
+                                  },
+                                  {
+                                      "color": "#ffaa7d",
+                                      "id": "01e13998-a9d4-4901-950b-cfe5090c3dfd",
+                                      "name": "Consulting",
+                                      "orderindex": 7
+                                  },
+                                  {
+                                      "color": "#6647f0",
+                                      "id": "bde4ebc2-742c-4118-a5c9-456f88c91fe5",
+                                      "name": "Communications",
+                                      "orderindex": 8
+                                  },
+                                  {
+                                      "color": "#3e63dd",
+                                      "id": "fa42fd3d-832a-421e-9980-8b4df6bf1177",
+                                      "name": "Manufacturing",
+                                      "orderindex": 9
+                                  }
+                              ],
+                              "sorting": "manual"
+                          },
+                          "value": 0,
+                          "value_richtext": null
+                      },
+                      {
+                          "date_created": "1776675296300",
+                          "hide_from_guests": false,
+                          "id": "b6444a9e-e9a9-4ddb-b237-e4432d233f24",
+                          "name": "Number of Employee",
+                          "required": false,
+                          "type": "number",
+                          "type_config": {
+                              "number_format": "en-US"
+                          },
+                          "value": "100",
+                          "value_richtext": null
+                      },
+                      {
+                          "date_created": "1776672472329",
+                          "hide_from_guests": false,
+                          "id": "6ca1aef5-da7b-4bc7-9d4c-7be27362961b",
+                          "name": "Parent Account",
+                          "required": false,
+                          "type": "short_text",
+                          "type_config": {},
+                          "value": "PT. CDE",
+                          "value_richtext": null
+                      },
+                      {
+                          "date_created": "1776675416650",
+                          "hide_from_guests": false,
+                          "id": "fa58d59f-27cf-4d9b-890b-9cdc60628927",
+                          "name": "Province",
+                          "required": false,
+                          "type": "short_text",
+                          "type_config": {},
+                          "value": "Bengkulu",
+                          "value_richtext": null
+                      },
+                      {
+                          "date_created": "1776068339766",
+                          "hide_from_guests": false,
+                          "id": "928254ed-92c9-4ffd-bf2d-753ba4cfbddb",
+                          "name": "Street Name",
+                          "required": false,
+                          "type": "short_text",
+                          "type_config": {},
+                          "value": "Griya Mas Matahari Sumber",
+                          "value_richtext": null
+                      },
+                      {
+                          "date_created": "1776068490235",
+                          "hide_from_guests": false,
+                          "id": "89587dda-a7a8-4528-b093-a16b64833c65",
+                          "name": "Zip Code",
+                          "required": false,
+                          "type": "short_text",
+                          "type_config": {},
+                          "value": "39154",
+                          "value_richtext": null
+                      },
+                      {
+                          "date_created": "1776067896948",
+                          "hide_from_guests": false,
+                          "id": "55c69f25-08ce-435f-aab8-7853747183b6",
+                          "name": "🌐 Website",
+                          "required": false,
+                          "type": "url",
+                          "type_config": {},
+                          "value": "fgh.com",
+                          "value_richtext": null
+                      },
+                      {
+                          "date_created": "1770708138530",
+                          "hide_from_guests": false,
+                          "id": "ec4c1817-b4f0-444e-b2f9-cf582a4ea7f6",
+                          "name": "☎️ Phone Number",
+                          "required": false,
+                          "type": "phone",
+                          "type_config": {},
+                          "value": "+6287722275005",
+                          "value_richtext": null
+                      }
+                  ],
+                  "custom_id": "CID-10120",
+                  "custom_item_id": 0,
+                  "date_closed": null,
+                  "date_created": "1777273501629",
+                  "date_done": null,
+                  "date_updated": "1777273501838",
+                  "dependencies": [],
+                  "description": "",
+                  "due_date": null,
+                  "folder": {
+                      "access": true,
+                      "hidden": false,
+                      "id": "90168464449",
+                      "name": "CRM"
+                  },
+                  "group_assignees": [],
+                  "id": "86d2tp9xb",
+                  "linked_tasks": [],
+                  "list": {
+                      "access": true,
+                      "id": "901614567748",
+                      "name": "Account"
+                  },
+                  "locations": [],
+                  "name": "PT. FGH",
+                  "orderindex": "120510657.00000000000000000000000000000000",
+                  "parent": null,
+                  "permission_level": "create",
+                  "points": null,
+                  "priority": null,
+                  "project": {
+                      "access": true,
+                      "hidden": false,
+                      "id": "90168464449",
+                      "name": "CRM"
+                  },
+                  "sharing": {
+                      "public": false,
+                      "public_fields": [
+                          "assignees",
+                          "priority",
+                          "due_date",
+                          "content",
+                          "comments",
+                          "attachments",
+                          "customFields",
+                          "subtasks",
+                          "tags",
+                          "checklists",
+                          "coverimage"
+                      ],
+                      "public_share_expires_on": null,
+                      "seo_optimized": false,
+                      "token": null
+                  },
+                  "space": {
+                      "id": "90162426653"
+                  },
+                  "start_date": null,
+                  "status": {
+                      "color": "#87909e",
+                      "id": "p90162426653_9JHl3vUQ",
+                      "orderindex": 0,
+                      "status": "to do",
+                      "type": "open"
+                  },
+                  "tags": [],
+                  "team_id": "25617311",
+                  "text_content": "",
+                  "time_estimate": null,
+                  "time_spent": 0,
+                  "top_level_parent": null,
+                  "url": "https://app.clickup.com/t/86d2tp9xb",
+                  "watchers": []
+              }
+          }

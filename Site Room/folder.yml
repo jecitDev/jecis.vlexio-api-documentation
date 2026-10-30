@@ -1,0 +1,7 @@
+info:
+  name: Site Room
+  type: folder
+  seq: 135
+
+request:
+  auth: inherit

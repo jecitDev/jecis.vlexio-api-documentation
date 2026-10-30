@@ -1,0 +1,135 @@
+info:
+  name: Get List Master Examination Item
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/master-examination-items?business_unit_id=53aad077-9fb1-4f08-85f3-af9fd9a36517&page=1&page_size=10&sort_by=created_at&sort_order=ASC"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: query
+    - name: keyword
+      value: Comprehensive
+      type: query
+      disabled: true
+    - name: page
+      value: "1"
+      type: query
+    - name: page_size
+      value: "10"
+      type: query
+    - name: sort_by
+      value: created_at
+      type: query
+    - name: sort_order
+      value: ASC
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/master-examination-items?business_unit_id=53aad077-9fb1-4f08-85f3-af9fd9a36517&keyword=Comprehensive&page=1&page_size=10&sort_by=created_at&sort_order=ASC"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{medical_record_xtoken}}"
+      params:
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: query
+        - name: keyword
+          value: Comprehensive
+          type: query
+        - name: page
+          value: "1"
+          type: query
+        - name: page_size
+          value: "10"
+          type: query
+        - name: sort_by
+          value: created_at
+          type: query
+        - name: sort_order
+          value: ASC
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Wed, 08 Oct 2025 01:21:37 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "467"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "page": 1,
+                  "page_size": 10,
+                  "total_items": 1,
+                  "examination_items": [
+                      {},
+                      {
+                          "id": "194ed7c0-1944-4f3f-803d-4fa0d9dde925",
+                          "business_unit_id": "53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                          "examination_id": "550e8400-e29b-41d4-a716-446655440000",
+                          "name": "Eye Examination",
+                          "description": "Comprehensive eye examination including visual acuity and OCT",
+                          "item_list": [
+                              "OCT-1",
+                              "OCT-2",
+                              "OCT-3"
+                          ],
+                          "is_active": true,
+                          "user_create": "admin",
+                          "created_at": "2025-10-08T07:55:55+07:00"
+                      }
+                  ]
+              }
+          }

@@ -1,0 +1,130 @@
+info:
+  name: BY ID
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/paramedic/:id/:company_id/:business_unit_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: id
+      value: DKDY0006
+      type: path
+    - name: company_id
+      value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+      type: path
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: BY ID
+    request:
+      url: "{{BASE_URL}}/v1/paramedic/:id/:company_id/:business_unit_id"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: id
+          value: DKDY0006
+          type: path
+        - name: company_id
+          value: 2da6a1bd-ba62-43ec-91f8-4085d5d6d498
+          type: path
+        - name: business_unit_id
+          value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+          type: path
+      body:
+        type: json
+        data: ""
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Wed, 26 Nov 2025 01:38:42 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "911"
+        - name: Connection
+          value: keep-alive
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "paramedic_id": "DKDY0006",
+                  "paramedic_profile": {
+                      "user_id": "JH",
+                      "user_name": "DR. Dr. Johan A. Hutauruk, SpM(K)",
+                      "email": "johan.hutauruk@jec.co.id",
+                      "user_initials": "JH",
+                      "sex": "M",
+                      "date_birth": "1994-01-01T00:00:00+07:00",
+                      "address": "Jln. Terusan arjuna utara no 1",
+                      "city": "Jakarta Barat",
+                      "mobile_no": "081219651411",
+                      "sr_language": "id-ID",
+                      "img_url": "/file_storage/fa74db2b-1e7c-4842-857b-54a0ebe5f0d4/2da6a1bd-ba62-43ec-91f8-4085d5d6d498/53aad077-9fb1-4f08-85f3-af9fd9a36517",
+                      "nik": "12081293091231",
+                      "font_size": "FontSize-01",
+                      "sr_profession": 3,
+                      "sr_profession_name": "Doctor"
+                  },
+                  "user_id": "JH",
+                  "specialty": "SMF007",
+                  "spesialisasi": "Specialization-001",
+                  "spesialisasi_name": "Ophthalmologist",
+                  "registration_no": "MED-001234",
+                  "is_available": true,
+                  "initial_step": "JH",
+                  "is_active": true,
+                  "user_create": "rama",
+                  "created_at": "2025-05-07T17:25:44+07:00",
+                  "user_update": "20371",
+                  "updated_at": "2025-10-03T17:37:11+07:00"
+              }
+          }

@@ -1,0 +1,214 @@
+info:
+  name: Svc - Update
+  type: http
+  seq: 6
+
+http:
+  method: PUT
+  url: "{{BASE_URL}}/v1/autonumbers/:id/:eff_date"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: id
+      value: MedicalNo
+      type: path
+    - name: eff_date
+      value: 2023-10-25
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"prefix\": \"\",\r
+
+      \    \"separator_after_prefix\": \"\",\r
+
+      \    \"is_used_branch\": true,\r
+
+      \    \"branch_type\": \"CODE\",\r
+
+      \    \"separator_after_branch\": \"\",\r
+
+      \    \"is_used_department\": false,\r
+
+      \    \"separator_after_dept\": \"\",\r
+
+      \    \"is_used_year\": false,\r
+
+      \    \"year_digit\": 0,\r
+
+      \    \"separator_after_year\": \"\",\r
+
+      \    \"is_used_month\": false,\r
+
+      \    \"is_month_in_romawi\": false,\r
+
+      \    \"separator_after_month\": \"\",\r
+
+      \    \"is_used_day\": false,\r
+
+      \    \"separator_after_day\": \"-\",\r
+
+      \    \"number_length\": 0,\r
+
+      \    \"number_group_length\": 0,\r
+
+      \    \"number_group_separator\": \"\",\r
+
+      \    \"number_format\": \"[%BRANCH_ID%]-000-00-00\",\r
+
+      \    \"is_active\": true,\r
+
+      \    \"user_update\": \"Admin2\",\r
+
+      \    \"updated_at\": {\r
+
+      \        \"seconds\": 1698753085,\r
+
+      \        \"nanos\": 361143000\r
+
+      \    }\r
+
+      }"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: "Svc - Update #2"
+    request:
+      url: "{{BASE_URL}}/v1/autonumbers/:id/:eff_date"
+      method: PUT
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: id
+          value: MedicalNo
+          type: path
+        - name: eff_date
+          value: 2023-10-25
+          type: path
+      body:
+        type: json
+        data: "{\r
+
+          \    \"prefix\": \"\",\r
+
+          \    \"separator_after_prefix\": \"\",\r
+
+          \    \"is_used_branch\": true,\r
+
+          \    \"branch_type\": \"CODE\",\r
+
+          \    \"separator_after_branch\": \"\",\r
+
+          \    \"is_used_department\": false,\r
+
+          \    \"separator_after_dept\": \"\",\r
+
+          \    \"is_used_year\": false,\r
+
+          \    \"year_digit\": 0,\r
+
+          \    \"separator_after_year\": \"\",\r
+
+          \    \"is_used_month\": false,\r
+
+          \    \"is_month_in_romawi\": false,\r
+
+          \    \"separator_after_month\": \"\",\r
+
+          \    \"is_used_day\": false,\r
+
+          \    \"separator_after_day\": \"-\",\r
+
+          \    \"number_length\": 0,\r
+
+          \    \"number_group_length\": 0,\r
+
+          \    \"number_group_separator\": \"\",\r
+
+          \    \"number_format\": \"[%BRANCH_IDx%]-000-00-00\",\r
+
+          \    \"is_active\": true,\r
+
+          \    \"user_update\": \"Admin2\",\r
+
+          \    \"updated_at\": {\r
+
+          \        \"seconds\": 1698753085,\r
+
+          \        \"nanos\": 361143000\r
+
+          \    }\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Tue, 31 Oct 2023 09:48:30 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "373"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "sr_auto_number": "MedicalNo",
+                  "effective_date": {
+                      "seconds": 1698217200
+                  },
+                  "is_used_branch": true,
+                  "branch_type": "CODE",
+                  "separator_after_day": "-",
+                  "number_format": "[%BRANCH_IDx%]-000-00-00",
+                  "is_active": true,
+                  "user_create": "Admin1",
+                  "created_at": {
+                      "seconds": 1698753085,
+                      "nanos": 698753000
+                  },
+                  "user_update": "Admin2",
+                  "updated_at": {
+                      "seconds": 1698753085,
+                      "nanos": 361143000
+                  }
+              }
+          }

@@ -1,0 +1,7 @@
+info:
+  name: VISIT TYPE
+  type: folder
+  seq: 73
+
+request:
+  auth: inherit

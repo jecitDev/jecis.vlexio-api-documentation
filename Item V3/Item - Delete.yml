@@ -1,0 +1,29 @@
+info:
+  name: Item - Delete
+  type: http
+  seq: 8
+http:
+  method: DELETE
+  url: "{{BASE_URL}}/v1/Item/:id/:business_unit_id"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: id
+      value: "0000000043"
+      type: path
+    - name: business_unit_id
+      value: 53aad077-9fb1-4f08-85f3-af9fd9a36517
+      type: path
+  body:
+    type: json
+    data: "{\r\n    \"user_update\": \"API_Void\",\r\n    \"updated_at\": \"2024-03-13T13:24:42+08:00\"\r\n}"
+  auth:
+    type: bearer
+    token: "{{xtoken}}"
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

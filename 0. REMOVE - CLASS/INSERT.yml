@@ -1,0 +1,127 @@
+info:
+  name: INSERT
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/v1/class"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"class_name\": \"Class ZZB\",\r
+
+      \    \"created_at\": {\r
+
+      \        \"seconds\": 1699857778\r
+
+      \    },\r
+
+      \    \"is_active\": true,\r
+
+      \    \"is_in_patient_class\": false,\r
+
+      \    \"qty_bed\": 12,\r
+
+      \    \"short_name\": \"CZ\",\r
+
+      \    \"user_create\": \"nando\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: INSERT
+    request:
+      url: "{{BASE_URL}}/v1/class"
+      method: POST
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      body:
+        type: json
+        data: "{\r
+
+          \    \"class_name\": \"Class ZZB\",\r
+
+          \    \"created_at\": {\r
+
+          \        \"seconds\": 1699857778\r
+
+          \    },\r
+
+          \    \"is_active\": true,\r
+
+          \    \"is_in_patient_class\": false,\r
+
+          \    \"qty_bed\": 12,\r
+
+          \    \"short_name\": \"CZ\",\r
+
+          \    \"user_create\": \"nando\"\r
+
+          }"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 13 Nov 2023 07:20:17 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "170"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: Vary
+          value: Origin
+        - name: Access-Control-Allow-Origin
+          value: "*"
+      body:
+        type: json
+        data: |-
+          {
+              "code": 200,
+              "data": {
+                  "class_id": "C009",
+                  "class_name": "Class ZZB",
+                  "short_name": "CZ",
+                  "qty_bed": 12,
+                  "is_active": true,
+                  "user_create": "nando",
+                  "created_at": {
+                      "seconds": 1699857778
+                  }
+              }
+          }

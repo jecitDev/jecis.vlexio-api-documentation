@@ -1,0 +1,7 @@
+info:
+  name: VIRTUAL ACCOUNT
+  type: folder
+  seq: 146
+
+request:
+  auth: inherit
