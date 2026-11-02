@@ -1,0 +1,141 @@
+info:
+  name: List
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/admedika/coverage?page=1&page_size=10&sort_order=desc&sort_by=created_at"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: page_size
+      value: "10"
+      type: query
+    - name: sort_order
+      value: desc
+      type: query
+    - name: sort_by
+      value: created_at
+      type: query
+    - name: is_active
+      value: "false"
+      type: query
+      disabled: true
+    - name: keywords
+      value: n
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: List
+    request:
+      url: "{{BASE_URL}}/v1/admedika/coverage?page=1&page_size=10&sort_order=desc&sort_by=created_at"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: page_size
+          value: "10"
+          type: query
+        - name: sort_order
+          value: desc
+          type: query
+        - name: sort_by
+          value: created_at
+          type: query
+        - name: is_active
+          value: "false"
+          type: query
+          disabled: true
+        - name: keywords
+          value: n
+          type: query
+          disabled: true
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Mon, 02 Nov 2026 07:54:20 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "523"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+            "code": 200,
+            "data": {
+              "coverages": [
+                {
+                  "created_at": "2026-11-02T14:52:01+07:00",
+                  "description": "RAWAT JALAN",
+                  "general_note": "General Practitioner",
+                  "id": "02",
+                  "is_active": true,
+                  "name": "GP",
+                  "updated_at": "2026-11-02T14:53:08+07:00",
+                  "user_create": "ferdinan",
+                  "user_update": "ferdinan"
+                },
+                {
+                  "created_at": "2026-11-02T14:49:40+07:00",
+                  "description": "RAWAT INAP",
+                  "general_note": "Hospital & Surgery",
+                  "id": "01",
+                  "is_active": true,
+                  "name": "HNS",
+                  "updated_at": "",
+                  "user_create": "ferdinan",
+                  "user_update": ""
+                }
+              ],
+              "page": 1,
+              "page_size": 10,
+              "total_items": 2
+            }
+          }
