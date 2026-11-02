@@ -1,7 +1,8 @@
 info:
   name: List Admedika Logs
   type: http
-  seq: 18
+  seq: 19
+
 http:
   method: GET
   url: "{{BASE_URL}}/v1/admedika/audit/logs?page=1&page_size=10&sort_by=created_at&sort_order=desc"
@@ -38,12 +39,14 @@ http:
       type: query
       disabled: true
   auth: inherit
+
 settings:
   encodeUrl: true
   timeout: 0
   followRedirects: true
   maxRedirects: 5
   forwardAuthorizationHeader: false
+
 examples:
   - name: List Admedika Logs
     request:
@@ -104,11 +107,11 @@ examples:
         - name: Cross-Origin-Resource-Policy
           value: same-origin
         - name: Origin-Agent-Cluster
-          value: "?1"
+          value: ?1
         - name: Referrer-Policy
           value: no-referrer
         - name: X-Dns-Prefetch-Control
-          value: "off"
+          value: off
         - name: X-Download-Options
           value: noopen
         - name: X-Permitted-Cross-Domain-Policies
