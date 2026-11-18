@@ -1,7 +1,7 @@
 info:
-  name: Coverage
+  name: His To Coverage
   type: folder
-  seq: 20
+  seq: 6
 
 request:
   auth: inherit

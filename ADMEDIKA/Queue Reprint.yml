@@ -1,7 +1,7 @@
 info:
   name: Queue Reprint
   type: http
-  seq: 16
+  seq: 20
 
 http:
   method: GET

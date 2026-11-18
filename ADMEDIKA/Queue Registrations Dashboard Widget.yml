@@ -1,0 +1,128 @@
+info:
+  name: Queue Registrations Dashboard Widget
+  type: http
+  seq: 11
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/admedika/queues/dashboard/widget?business_unit_id=33b109c5-dd64-480c-8100-68fe17deaf3e"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-Branch-ID
+      value: "{{xbranchid}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  params:
+    - name: keywords
+      value: REG-260813
+      type: query
+      disabled: true
+    - name: status
+      value: WAIT
+      type: query
+      disabled: true
+    - name: date_from
+      value: 2026-10-27
+      type: query
+      disabled: true
+    - name: date_to
+      value: 2026-10-27
+      type: query
+      disabled: true
+    - name: discharge_status
+      value: SELESAI
+      type: query
+      disabled: true
+    - name: business_unit_id
+      value: 33b109c5-dd64-480c-8100-68fe17deaf3e
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Queue Registrations Dashboard Widget
+    request:
+      url: "{{BASE_URL}}/v1/admedika/queues/dashboard/widget?business_unit_id=33b109c5-dd64-480c-8100-68fe17deaf3e"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-Branch-ID
+          value: "{{xbranchid}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      params:
+        - name: keywords
+          value: REG-260813
+          type: query
+          disabled: true
+        - name: status
+          value: WAIT
+          type: query
+          disabled: true
+        - name: date_from
+          value: 2026-10-27
+          type: query
+          disabled: true
+        - name: date_to
+          value: 2026-10-27
+          type: query
+          disabled: true
+        - name: discharge_status
+          value: SELESAI
+          type: query
+          disabled: true
+        - name: business_unit_id
+          value: 33b109c5-dd64-480c-8100-68fe17deaf3e
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 12 Nov 2026 10:39:47 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "108"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+            "code": 200,
+            "data": {
+              "total_approved": 1,
+              "total_not_approved": 3,
+              "total_not_yet_eligible": 0,
+              "total_patient": 4
+            }
+          }
