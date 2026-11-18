@@ -15,24 +15,24 @@ http:
       value: "{{xuserid}}"
   body:
     type: json
-    data: "{\r
-
-      \    \"reg_no\": \"REG-260813-002\",\r
-
-      \    \"terminal_id\": \"JEC-MENTENG\",\r
-
-      \    \"patient_id\": \"PKDY260911-0001\",\r
-
-      \    \"card_no\": \"8000991200072687\",\r
-
-      \    \"coverage_id\": \"02\",\r
-
-      \    \"remarks\": \"test123\",\r
-
-      \    \"business_unit_id\": \"33b109c5-dd64-480c-8100-68fe17deaf3e\"\r
-
-      }"
+    data: |-
+      {
+          "reg_no": "REG-261118-002",
+          "terminal_id": "928be8b2-72c8-4c42-8384-9b3661be5ac1",
+          "patient_id": "PKDY260911-0001",
+          "card_no": "8000991200072687",
+          "coverage_id": "02",
+          "remarks": "test123",
+          "business_unit_id": "18e9ea73-7343-4be2-a8e4-47b652e56981"
+      }
   auth: inherit
+
+runtime:
+  variables:
+    - name: xbranchid
+      value: 3a7672ab-6430-43cb-95a5-46877d652ba9
+    - name: xuserid
+      value: "21170"
 
 settings:
   encodeUrl: true

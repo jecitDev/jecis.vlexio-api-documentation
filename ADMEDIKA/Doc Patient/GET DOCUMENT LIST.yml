@@ -1,0 +1,113 @@
+info:
+  name: GET DOCUMENT LIST
+  type: http
+  seq: 20
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/admedika/patient-documents?business_unit_id=18e9ea73-7343-4be2-a8e4-47b652e56981&patient_id=002221122-0017&start_date=2026-08-28&end_date=2026-08-28"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+    - name: X-User-ID
+      value: "{{xuserid}}"
+  params:
+    - name: business_unit_id
+      value: 18e9ea73-7343-4be2-a8e4-47b652e56981
+      type: query
+    - name: patient_id
+      value: 002221122-0017
+      type: query
+    - name: start_date
+      value: 2026-08-28
+      type: query
+    - name: end_date
+      value: 2026-08-28
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: SUCCESS
+    request:
+      url: "{{BASE_URL}}/v1/admedika/patient-documents?business_unit_id=18e9ea73-7343-4be2-a8e4-47b652e56981&patient_id=002221122-0017&start_date=2026-08-28&end_date=2026-08-28"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+        - name: X-User-ID
+          value: "{{xuserid}}"
+      params:
+        - name: business_unit_id
+          value: 18e9ea73-7343-4be2-a8e4-47b652e56981
+          type: query
+        - name: patient_id
+          value: 002221122-0017
+          type: query
+        - name: start_date
+          value: 2026-08-28
+          type: query
+        - name: end_date
+          value: 2026-08-28
+          type: query
+      body:
+        type: json
+        data: ""
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: date
+          value: Wed, 18 Nov 2026 10:36:23 GMT
+        - name: content-type
+          value: application/json
+        - name: content-length
+          value: "281"
+        - name: x-xss-protection
+          value: "0"
+        - name: x-content-type-options
+          value: nosniff
+        - name: x-frame-options
+          value: SAMEORIGIN
+        - name: cross-origin-embedder-policy
+          value: require-corp
+        - name: cross-origin-opener-policy
+          value: same-origin
+        - name: cross-origin-resource-policy
+          value: same-origin
+        - name: origin-agent-cluster
+          value: ?1
+        - name: referrer-policy
+          value: no-referrer
+        - name: x-dns-prefetch-control
+          value: off
+        - name: x-download-options
+          value: noopen
+        - name: x-permitted-cross-domain-policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+            "code": 200,
+            "data": {
+              "patient_documents": [
+                {
+                  "document_date": "2026-08-28T14:21:11Z",
+                  "document_type": "LAB/RAD",
+                  "document_url": "~/Images/imgPatientDocument/2026/08/9ca982a9-d149-4edc-98d0-5eebb24f4956.pdf",
+                  "document_name": "EKSPERTISE MCU THORAX 27.08.2026.pdf",
+                  "healthcare_id": "002"
+                }
+              ]
+            }
+          }
