@@ -40,6 +40,11 @@ http:
       disabled: true
   auth: inherit
 
+runtime:
+  variables:
+    - name: xbranchid
+      value: 3a7672ab-6430-43cb-95a5-46877d652ba9
+
 settings:
   encodeUrl: true
   timeout: 0
