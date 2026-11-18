@@ -1,7 +1,7 @@
 info:
   name: Queue Cancel
   type: http
-  seq: 15
+  seq: 19
 
 http:
   method: POST

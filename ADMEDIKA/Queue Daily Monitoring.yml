@@ -1,7 +1,7 @@
 info:
   name: Queue Daily Monitoring
   type: http
-  seq: 11
+  seq: 15
 
 http:
   method: POST

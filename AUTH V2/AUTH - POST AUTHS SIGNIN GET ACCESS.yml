@@ -2,6 +2,7 @@ info:
   name: AUTH - POST AUTHS SIGNIN GET ACCESS
   type: http
   seq: 1
+
 http:
   method: POST
   url: "{{BASE_URL}}/auths/get_access"
@@ -10,14 +11,18 @@ http:
       value: "{{xtoken}}"
   body:
     type: json
-    data: "{\"email\":\"fernando.riyo@jec.co.id\",\"password\":\"\"}"
+    data: |-
+      {    "email": "{{userid}}",
+          "password": "{{password}}"}
   auth: inherit
+
 settings:
   encodeUrl: true
   timeout: 0
   followRedirects: true
   maxRedirects: 5
   forwardAuthorizationHeader: false
+
 examples:
   - name: AUTH - POST AUTHS SIGNIN GET ACCESS
     request:
@@ -29,7 +34,13 @@ examples:
           disabled: true
       body:
         type: json
-        data: "{\r\n    \"email\":\"fernando.riyo@jec.co.id\",\r\n    \"password\":\"\"\r\n}"
+        data: "{\r
+
+          \    \"email\":\"fernando.riyo@jec.co.id\",\r
+
+          \    \"password\":\"\"\r
+
+          }"
     response:
       status: 200
       statusText: OK
@@ -53,11 +64,11 @@ examples:
         - name: Cross-Origin-Resource-Policy
           value: same-origin
         - name: Origin-Agent-Cluster
-          value: "?1"
+          value: ?1
         - name: Referrer-Policy
           value: no-referrer
         - name: X-Dns-Prefetch-Control
-          value: "off"
+          value: off
         - name: X-Download-Options
           value: noopen
         - name: X-Permitted-Cross-Domain-Policies
@@ -90,6 +101,7 @@ examples:
                   ]
               }
           }
+
 docs: |-
   Sign-in endpoint for the JECIS backend. Use this endpoint to authenticate a user with their email and password and obtain an access token that can be used to authorize subsequent requests.
 
