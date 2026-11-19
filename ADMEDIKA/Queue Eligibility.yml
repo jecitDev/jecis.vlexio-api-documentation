@@ -19,31 +19,20 @@ http:
       type: path
   body:
     type: json
-    data: "{\r
-
-      \  \"terminal_id\": \"12372351\",\r
-
-      \  \"card_no\": \"8000991200072687\",\r
-
-      \  \"coverage_id\": \"02\",\r
-
-      \  \"diagnosis_code_list\": \"I10\",\r
-
-      \  \"physician_name\": \"dr. Test\",\r
-
-      \  \"accident_flag\": \"N\",\r
-
-      \  \"surgical_flag\": \"N\",\r
-
-      \  \"room_type\": \"\",\r
-
-      \  \"room_price\": \"\",\r
-
-      \  \"remarks\": \"\",\r
-
-      \  \"business_unit_id\": \"33b109c5-dd64-480c-8100-68fe17deaf3e\"\r
-
-      }"
+    data: |-
+      {
+        "terminal_id": "12372351",
+        "card_no": "8000991200017757",
+        "coverage_id": "02",
+        "diagnosis_code_list": "I10",
+        "physician_name": "dr. Test",
+        "accident_flag": "N",
+        "surgical_flag": "N",
+        "room_type": "",
+        "room_price": "",
+        "remarks": "",
+        "business_unit_id": "33b109c5-dd64-480c-8100-68fe17deaf3e"
+      }
   auth: inherit
 
 settings:
