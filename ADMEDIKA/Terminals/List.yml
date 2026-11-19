@@ -5,7 +5,7 @@ info:
 
 http:
   method: GET
-  url: "{{BASE_URL}}/v1/admedika/terminals?page=1&page_size=10&sort_by=created_at&sort_order=desc"
+  url: "{{BASE_URL}}/v1/admedika/terminals?page=1&page_size=10&sort_by=created_at&sort_order=desc&branch_id=3a7672ab-6430-43cb-95a5-46877d652ba9"
   headers:
     - name: x-token
       value: "{{xtoken}}"
@@ -25,9 +25,8 @@ http:
       value: desc
       type: query
     - name: branch_id
-      value: 4927303d-5a90-48ea-b2c5-994bac4942db
+      value: 3a7672ab-6430-43cb-95a5-46877d652ba9
       type: query
-      disabled: true
     - name: terminal_id
       value: "12372352"
       type: query

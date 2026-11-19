@@ -1,0 +1,365 @@
+info:
+  name: Get By User copy
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: "{{BASE_URL}}/v1/auditLogs/get-by-user?user_id=21170&start=2026-11-13&end=2026-11-21&business_unit_id=18e9ea73-7343-4be2-a8e4-47b652e56981"
+  headers:
+    - name: x-token
+      value: "{{xtoken}}"
+  params:
+    - name: user_id
+      value: "21170"
+      type: query
+    - name: start
+      value: 2026-11-13
+      type: query
+    - name: end
+      value: 2026-11-21
+      type: query
+    - name: business_unit_id
+      value: 18e9ea73-7343-4be2-a8e4-47b652e56981
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Success
+    request:
+      url: "{{BASE_URL}}/v1/auditLogs/get-by-user?user_id=surya&start=2026-11-13&end=2026-11-21"
+      method: GET
+      headers:
+        - name: x-token
+          value: "{{xtoken}}"
+      params:
+        - name: user_id
+          value: surya
+          type: query
+        - name: start
+          value: 2026-11-13
+          type: query
+        - name: end
+          value: 2026-11-21
+          type: query
+      body:
+        type: json
+        data: ""
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Date
+          value: Thu, 19 Nov 2026 05:50:59 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "7444"
+        - name: X-Xss-Protection
+          value: "0"
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: Cross-Origin-Embedder-Policy
+          value: require-corp
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: X-Dns-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+      body:
+        type: json
+        data: |-
+          {
+            "code": 200,
+            "data": {
+              "total_items": 5,
+              "audit_logs": [
+                {
+                  "id": "89f8f451-ddf8-45a7-b033-88992554e929",
+                  "domain": "appointment",
+                  "entity": "Reschedule",
+                  "operation": "PATCH",
+                  "primary_key": {
+                    "value": "APKDY/260925-00023:18e9ea73-7343-4be2-a8e4-47b652e56981"
+                  },
+                  "primary_key_str": "APKDY/260925-00023:18e9ea73-7343-4be2-a8e4-47b652e56981",
+                  "change_data": {
+                    "appointment_date": "2026-12-15T14:08:41+07:00",
+                    "appointment_no": "APKDY/260925-00023",
+                    "appointment_que": "1",
+                    "appointment_time": "16:30",
+                    "business_unit_id": "18e9ea73-7343-4be2-a8e4-47b652e56981",
+                    "id_date_slot": 2925,
+                    "lock_by": "admin",
+                    "lock_start": "2026-11-17T14:08:41+07:00",
+                    "shift": "7",
+                    "updated_at": "2026-11-17T10:58:48+07:00",
+                    "user_update": "surya"
+                  },
+                  "after_data": {
+                    "appointment_no": "APKDY/260925-00023",
+                    "business_unit_id": "18e9ea73-7343-4be2-a8e4-47b652e56981",
+                    "updated_at": "2026-11-17T10:58:48+07:00",
+                    "user_update": "surya"
+                  },
+                  "changed_by": "surya",
+                  "change_timestamp": "2026-11-17T03:58:48Z",
+                  "request_id": "f092e2d6-9a03-4a32-a79d-c1ba4c6c723d",
+                  "ip_address": "127.0.0.1",
+                  "user_agent": "PostmanRuntime/2.16.2",
+                  "metadata": {
+                    "duration": 23,
+                    "method": "Reschedule"
+                  }
+                },
+                {
+                  "id": "8e354998-3511-4909-9f29-0cba418693bb",
+                  "domain": "appointment",
+                  "entity": "Patch",
+                  "operation": "PATCH",
+                  "primary_key": {
+                    "value": "APKDY/260925-00023:18e9ea73-7343-4be2-a8e4-47b652e56981"
+                  },
+                  "primary_key_str": "APKDY/260925-00023:18e9ea73-7343-4be2-a8e4-47b652e56981",
+                  "change_data": {
+                    "appointment_no": "APKDY/260925-00023",
+                    "business_unit_id": "18e9ea73-7343-4be2-a8e4-47b652e56981",
+                    "first_name": "alexander",
+                    "middle_name": "kim",
+                    "street_name": "Jl. Sudirman No. 123",
+                    "updated_at": "2026-11-17T10:55:33+07:00",
+                    "user_update": "surya"
+                  },
+                  "after_data": {
+                    "appointment_no": "APKDY/260925-00023",
+                    "business_unit_id": "18e9ea73-7343-4be2-a8e4-47b652e56981",
+                    "updated_at": "2026-11-17T10:55:33+07:00",
+                    "user_update": "surya"
+                  },
+                  "changed_by": "surya",
+                  "change_timestamp": "2026-11-17T03:55:34Z",
+                  "request_id": "075c5f7f-5ab3-493c-97cc-024b6070a36a",
+                  "ip_address": "127.0.0.1",
+                  "user_agent": "PostmanRuntime/2.16.2",
+                  "metadata": {
+                    "duration": 100,
+                    "method": "Patch"
+                  }
+                },
+                {
+                  "id": "7e6fad12-c6ba-499d-b14c-3bf1c4b86902",
+                  "domain": "referral",
+                  "entity": "Update",
+                  "operation": "UPDATE",
+                  "primary_key": {
+                    "value": "R000000003:18e9ea73-7343-4be2-a8e4-47b652e56981"
+                  },
+                  "primary_key_str": "R000000003:18e9ea73-7343-4be2-a8e4-47b652e56981",
+                  "change_data": {
+                    "business_unit_id": "18e9ea73-7343-4be2-a8e4-47b652e56981",
+                    "city": "Jakarta Barat",
+                    "company_id": "71b53dd1-2802-4527-8b5c-d54173392222",
+                    "county": "Kedoya",
+                    "district": "Kebun Jeruk",
+                    "email": "ferdinand@mail.com",
+                    "is_active": true,
+                    "mobile_phone_no": "08123912383",
+                    "phone_no": "09310932",
+                    "referral_id": "R000000003",
+                    "referral_name": "Test Referral Update",
+                    "short_name": "testreferralupdate",
+                    "spesialis": "SpesialisC",
+                    "sr_referral_group": "ReferralGroup-001",
+                    "state": "Jakarta",
+                    "street_name": "Jl. Terusan Arjuna Utara No.1",
+                    "tax_registration_no": "TaxRegis02",
+                    "updated_at": "2026-11-16T15:13:13+07:00",
+                    "user_update": "surya",
+                    "work_address": "Jl.Terusan Arjuna Utara No.1",
+                    "zip_code": "11520"
+                  },
+                  "after_data": {
+                    "business_unit_id": "18e9ea73-7343-4be2-a8e4-47b652e56981",
+                    "city": "Jakarta Barat",
+                    "company_id": "71b53dd1-2802-4527-8b5c-d54173392222",
+                    "county": "Kedoya",
+                    "district": "Kebun Jeruk",
+                    "email": "ferdinand@mail.com",
+                    "is_active": true,
+                    "mobile_phone_no": "08123912383",
+                    "phone_no": "09310932",
+                    "referral_id": "R000000003",
+                    "referral_name": "Test Referral Update",
+                    "short_name": "testreferralupdate",
+                    "spesialis": "SpesialisC",
+                    "sr_referral_group": "ReferralGroup-001",
+                    "state": "Jakarta",
+                    "street_name": "Jl. Terusan Arjuna Utara No.1",
+                    "tax_registration_no": "TaxRegis02",
+                    "updated_at": "2026-11-16T15:13:13+07:00",
+                    "user_update": "surya",
+                    "work_address": "Jl.Terusan Arjuna Utara No.1",
+                    "zip_code": "11520"
+                  },
+                  "changed_by": "surya",
+                  "change_timestamp": "2026-11-16T08:13:13Z",
+                  "request_id": "8d8d2093-4cbb-4d36-bd14-2e38f9af46f4",
+                  "ip_address": "127.0.0.1",
+                  "user_agent": "PostmanRuntime/2.16.2",
+                  "metadata": {
+                    "duration": 12,
+                    "method": "Update"
+                  }
+                },
+                {
+                  "id": "040bad3c-dc78-4db3-9ade-7f8120c830cf",
+                  "domain": "referral",
+                  "entity": "Update",
+                  "operation": "UPDATE",
+                  "primary_key": {
+                    "value": "R000000003:18e9ea73-7343-4be2-a8e4-47b652e56981"
+                  },
+                  "primary_key_str": "R000000003:18e9ea73-7343-4be2-a8e4-47b652e56981",
+                  "change_data": {
+                    "business_unit_id": "18e9ea73-7343-4be2-a8e4-47b652e56981",
+                    "city": "Jakarta Barat",
+                    "company_id": "71b53dd1-2802-4527-8b5c-d54173392222",
+                    "county": "Kedoya",
+                    "district": "Kebun Jeruk",
+                    "email": "ferdinand@mail.com",
+                    "is_active": true,
+                    "mobile_phone_no": "08123912383",
+                    "phone_no": "09310932",
+                    "referral_id": "R000000003",
+                    "referral_name": "Test Referral Update",
+                    "short_name": "testreferralupdate",
+                    "spesialis": "SpesialisC",
+                    "sr_referral_group": "ReferralGroup-001",
+                    "state": "Jakarta",
+                    "street_name": "Jl. Terusan Arjuna Utara No.1",
+                    "tax_registration_no": "TaxRegis02",
+                    "updated_at": "2026-11-16T15:06:53+07:00",
+                    "user_update": "surya",
+                    "work_address": "Jl.Terusan Arjuna Utara No.1",
+                    "zip_code": "11520"
+                  },
+                  "after_data": {
+                    "business_unit_id": "18e9ea73-7343-4be2-a8e4-47b652e56981",
+                    "city": "Jakarta Barat",
+                    "company_id": "71b53dd1-2802-4527-8b5c-d54173392222",
+                    "county": "Kedoya",
+                    "district": "Kebun Jeruk",
+                    "email": "ferdinand@mail.com",
+                    "is_active": true,
+                    "mobile_phone_no": "08123912383",
+                    "phone_no": "09310932",
+                    "referral_id": "R000000003",
+                    "referral_name": "Test Referral Update",
+                    "short_name": "testreferralupdate",
+                    "spesialis": "SpesialisC",
+                    "sr_referral_group": "ReferralGroup-001",
+                    "state": "Jakarta",
+                    "street_name": "Jl. Terusan Arjuna Utara No.1",
+                    "tax_registration_no": "TaxRegis02",
+                    "updated_at": "2026-11-16T15:06:53+07:00",
+                    "user_update": "surya",
+                    "work_address": "Jl.Terusan Arjuna Utara No.1",
+                    "zip_code": "11520"
+                  },
+                  "changed_by": "surya",
+                  "change_timestamp": "2026-11-16T08:06:53Z",
+                  "request_id": "cd203608-5d44-4009-b00e-3afc5a6635e0",
+                  "user_agent": "grpc-go/1.65.0",
+                  "metadata": {
+                    "duration": 23,
+                    "method": "Update"
+                  }
+                },
+                {
+                  "id": "f9a0fc4a-17c2-45f7-b4fb-1a67ac113def",
+                  "domain": "referral",
+                  "entity": "Update",
+                  "operation": "UPDATE",
+                  "primary_key": {
+                    "value": "R000000003:18e9ea73-7343-4be2-a8e4-47b652e56981"
+                  },
+                  "primary_key_str": "R000000003:18e9ea73-7343-4be2-a8e4-47b652e56981",
+                  "change_data": {
+                    "business_unit_id": "18e9ea73-7343-4be2-a8e4-47b652e56981",
+                    "city": "Jakarta Barat",
+                    "company_id": "71b53dd1-2802-4527-8b5c-d54173392222",
+                    "county": "Kedoya",
+                    "district": "Kebun Jeruk",
+                    "email": "ferdinand@mail.com",
+                    "is_active": true,
+                    "mobile_phone_no": "08123912383",
+                    "phone_no": "09310932",
+                    "referral_id": "R000000003",
+                    "referral_name": "Test Referral Update",
+                    "short_name": "testreferralupdate",
+                    "spesialis": "SpesialisC",
+                    "sr_referral_group": "ReferralGroup-001",
+                    "state": "Jakarta",
+                    "street_name": "Jl. Terusan Arjuna Utara No.1",
+                    "tax_registration_no": "TaxRegis02",
+                    "updated_at": "2026-11-16T14:58:39+07:00",
+                    "user_update": "surya",
+                    "work_address": "Jl.Terusan Arjuna Utara No.1",
+                    "zip_code": "11520"
+                  },
+                  "after_data": {
+                    "business_unit_id": "18e9ea73-7343-4be2-a8e4-47b652e56981",
+                    "city": "Jakarta Barat",
+                    "company_id": "71b53dd1-2802-4527-8b5c-d54173392222",
+                    "county": "Kedoya",
+                    "district": "Kebun Jeruk",
+                    "email": "ferdinand@mail.com",
+                    "is_active": true,
+                    "mobile_phone_no": "08123912383",
+                    "phone_no": "09310932",
+                    "referral_id": "R000000003",
+                    "referral_name": "Test Referral Update",
+                    "short_name": "testreferralupdate",
+                    "spesialis": "SpesialisC",
+                    "sr_referral_group": "ReferralGroup-001",
+                    "state": "Jakarta",
+                    "street_name": "Jl. Terusan Arjuna Utara No.1",
+                    "tax_registration_no": "TaxRegis02",
+                    "updated_at": "2026-11-16T14:58:39+07:00",
+                    "user_update": "surya",
+                    "work_address": "Jl.Terusan Arjuna Utara No.1",
+                    "zip_code": "11520"
+                  },
+                  "changed_by": "surya",
+                  "change_timestamp": "2026-11-16T07:58:39Z",
+                  "request_id": "aa1769a6-2ad9-42b3-b89a-e83201b33ba7",
+                  "user_agent": "grpc-go/1.65.0",
+                  "metadata": {
+                    "duration": 23,
+                    "method": "Update"
+                  }
+                }
+              ]
+            }
+          }

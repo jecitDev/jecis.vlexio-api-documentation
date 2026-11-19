@@ -17,10 +17,10 @@ http:
     type: json
     data: |-
       {
-          "reg_no": "REG-261118-002",
-          "terminal_id": "928be8b2-72c8-4c42-8384-9b3661be5ac1",
-          "patient_id": "PKDY260911-0001",
-          "card_no": "8000991200072687",
+          "reg_no": "REG-261118-003",
+          "terminal_id": "12372351",
+          "patient_id": "002221122-0017",
+          "card_no": "8000991200017757",
           "coverage_id": "02",
           "remarks": "test123",
           "business_unit_id": "18e9ea73-7343-4be2-a8e4-47b652e56981"
